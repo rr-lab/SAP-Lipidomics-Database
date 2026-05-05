@@ -1,4 +1,4 @@
-# Sorghum Lipid Database (SoLD): a database curation for lipid information for Sorghum Association Panel
+# The Sorghum Lipid Database (SoLD): population-scale lipidomics linking environmental and genetic variation in the Sorghum Association Panel
 
 **Authors:** Nirwan Tandukar¹,²,\*, Ruthie Stokes¹, Richard Boyles³, Zach Brenton⁴, Katherine Louie⁵, Christa Pennachhio⁵, Rubén Rellán-Álvarez¹,\*
 
