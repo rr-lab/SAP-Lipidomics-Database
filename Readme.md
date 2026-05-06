@@ -1,6 +1,6 @@
 # The Sorghum Lipid Database (SoLD): population-scale lipidomics linking environmental and genetic variation in the Sorghum Association Panel
 
-**Authors:** Nirwan Tandukar¹,²,\*, Ruthie Stokes¹, Richard Boyles³, Zach Brenton⁴, Katherine Louie⁵, Christa Pennachhio⁵, Rubén Rellán-Álvarez¹,\*
+**Authors:** Nirwan Tandukar¹,²,\*, Ruthie Lockhear¹, Richard Boyles³, Zach Brenton⁴, Katherine Louie⁵, Christa Pennachhio⁵, Rubén Rellán-Álvarez¹,\*
 
 **Affiliations:**
 
