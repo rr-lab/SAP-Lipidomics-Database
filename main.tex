@@ -51,7 +51,7 @@
 \title{The Sorghum Lipid Database (SoLD): population-scale lipidomics linking environmental and genetic variation in the Sorghum Association Panel}
 
 \author[$1$,$2$,*]{Nirwan Tandukar}
-\author[$1$]{Ruthie Stokes}
+\author[$1$]{Ruthie Lockhear}
 \author[$3$]{Richard Boyles}
 \author[$4$]{Zach Brenton}
 \author[$5$]{Katherine Louie}
@@ -552,7 +552,7 @@ Among the LIN candidates, a smaller subset was linked to defense-related process
 
 \section*{Conclusion}
 
-SoLD establishes a population-scale lipidomics resource for the SAP and shows that contrasting field contexts are associated with substantial lipidome remodeling. Across 244 annotated lipid species, LIN was consistently associated with four main compositional signatures relative to CTL: SQDG depletion, TG enrichment, PS-centered phospholipid redistribution, and coordinated lysophospholipid remodeling reflected in altered LPC/LPE balance. These patterns were supported across abundance contrasts, compositional analyses, chemical-space summaries, and lipid ontology enrichment, indicating coordinated redistribution across interconnected lipid pools rather than isolated changes in a few lipid classes. GWAS integration further showed that CTL-associated loci were enriched for genes linked to lipid and isoprenoid metabolism, chloroplast function, growth, and cell-wall processes, whereas LIN-associated loci were enriched for genes involved in nutrient signaling and remobilization, cell-wall remodeling, defense, developmental regulation, and cold-associated barrier and proteostasis functions. Together, these results position SoLD as both a community resource and an integrative framework for linking sorghum lipid diversity with environmental and genetic variation, further supported by a Shiny interface for exploration of lipid traits and GWAS results. Since CTL and LIN were sampled in different field years, future common-garden experiments that compare both regimes within the same year, together with targeted validation of top GWAS candidates, will be important for resolving causal mechanisms and confirming the biological roles of prioritized loci.
+SoLD establishes a population-scale lipidomics resource for the SAP and shows that contrasting field contexts are associated with substantial lipidome remodeling. Across 244 annotated lipid species, LIN was consistently associated with four main compositional signatures relative to CTL: SQDG depletion, TG enrichment, PS-centered phospholipid redistribution, and coordinated lysophospholipid remodeling reflected in the altered LPC/LPE balance. These patterns were supported across abundance contrasts, compositional analyses, chemical-space summaries, and lipid ontology enrichment, indicating coordinated redistribution across interconnected lipid pools rather than isolated changes in a few lipid classes. GWAS integration further showed that CTL-associated loci were enriched for genes linked to lipid and isoprenoid metabolism, chloroplast function, growth, and cell-wall processes, whereas LIN-associated loci were enriched for genes involved in nutrient signaling and remobilization, cell-wall remodeling, defense, developmental regulation, and cold-associated barrier and proteostasis functions. Together, these results position SoLD as both a community resource and an integrative framework for linking sorghum lipid diversity with environmental and genetic variation, further supported by a Shiny interface for exploration of lipid traits and GWAS results. Since CTL and LIN were sampled in different field years, future common-garden experiments that compare both regimes within the same year, together with targeted validation of top GWAS candidates, will be important for resolving causal mechanisms and confirming the biological roles of prioritized loci.
 
 
 \section*{Materials and methods}
@@ -561,7 +561,7 @@ SoLD establishes a population-scale lipidomics resource for the SAP and shows th
 
 In our study, we used the Sorghum Association Panel (SAP), consisting of 400 accessions designed to cover extensive genetic and phenotypic diversity. This collection includes both temperate-adapted breeding lines and tropical landraces. The panel represents five botanical races, bicolor, caudatum, durra, guinea, and kafir, capturing a diverse range of domestication and adaptation processes.
 
-SAP was first genotyped using simple sequence repeat markers, followed by low-coverage genotyping by sequencing (GBS). For a more comprehensive variation set, \cite{Boatwright2022} et al. resequenced all entries using whole genome sequencing (WGS) with an average depth of 38× (ranging from 25–72×). The variant data from WGS revealed approximately 43.98 million polymorphisms, including roughly 38 million SNPs with 5 million small insertions/deletions. While GBS variants were predominantly located in genic regions, the WGS data were more evenly distributed across genic and intergenic regions. Genome-wide linkage disequilibrium is approximately 20 kb, although there were deviations specific to each chromosome. The consequent high-density variant map establishes the resequenced SAP as a valuable tool for examining diversity and conducting GWAS.
+SAP was first genotyped using simple sequence repeat markers, followed by low-coverage genotyping by sequencing (GBS). For a more comprehensive variation set, \cite{Boatwright2022} et al. resequenced all entries using whole genome sequencing (WGS) with an average depth of 38× (ranging from 25–72×). The variant data from WGS revealed approximately 43.98 million polymorphisms, including roughly 38 million SNPs and 5 million small insertions/deletions. While GBS variants were predominantly located in genic regions, the WGS data were more evenly distributed across genic and intergenic regions. Genome-wide linkage disequilibrium is approximately 20 kb, although there were deviations specific to each chromosome. The consequent high-density variant map establishes the resequenced SAP as a valuable tool for examining diversity and conducting GWAS.
 
 We evaluated SAP accessions across two different field settings during two growing seasons (2019 and 2022) at the Pee Dee Research and Education Center, Clemson University, Florence, South Carolina. The "control" condition, herein denoted as CTL, involved standard agronomic inputs with sufficient levels of nitrogen (N) and phosphorus (P) along with a typical planting schedule. In contrast, the "low input" condition, herein denoted as LIN,  featured reduced N and P coupled with earlier planting to mimic a cold stress environment.
 
@@ -684,16 +684,13 @@ We conducted a functional ontology for lipids using LION/web (\cite{Molenaar2019
 \subsection*{Data Availability}
 
 Data processing and statistical analyses were performed in R (version 4.3.3). All the codes, figures, and pipeline are described in the GitHub repository: \url{https://github.com/rr-lab/SAP-Lipidomics-Database}.
+ 
 
-
-\section{Financial Disclosure Statement}
+\section{Acknowledgments}
 The work on this paper and Nirwan Tandukar was supported by the U.S. Department of Energy, Office of Science, Biological and Environmental Research program, Early Career Award Number DE-SC0021889.
 This work was supported by the Research Capacity Fund (HATCH), project award no. 7005660, from the U.S. Department of Agriculture’s National Institute of Food and Agriculture.  
 This work was supported in part by the Science and Technologies for Phosphorus Sustainability (STEPS) Center, a National Science Foundation Science and Technology Center (CBET-2019435).
-This work was performed in part by the Molecular Education, Technology and Research Innovation Center (METRIC) at NC State University, which is supported by the State of North Carolina. 
-
-\section{Acknowledgments}
-
+This work was supported by JGI Proposal ID: CSP-508500
 
 \bibliography{SoLD}
 
