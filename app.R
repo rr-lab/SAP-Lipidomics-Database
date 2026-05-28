@@ -19,6 +19,7 @@ library(visNetwork)       # Network visualization
 library(igraph)           # Graph/network analysis
 library(viridisLite)      # Colorblind-friendly palettes
 
+ 
 app_title <- "SAP Lipidomics Database"
 data_type_choices <- c(
   "Raw Signals" = "raw",
