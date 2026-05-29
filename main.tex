@@ -131,12 +131,11 @@ QC-based normalization improved technical reproducibility, increasing the propor
 
 \subsection*{Lipid variation across genotypes}
 
-To determine whether CTL--LIN lipid differences reflected population-wide reprogramming rather than a few outlier genotypes, we assessed effect size, stability, and significance. At the class-ratio level, median absolute log$_{10}$ effect size was 0.4743 (IQR 0.3589--0.7566; range 0.1154--1.1787); 27/33 ratios had absolute effects $\geq$0.3 and 16/33 $\geq$0.5 (Supplementary Table~S1). All 33 ratios showed perfect leave-one-out sign stability (1.0) and remained BH-significant (\(p_{\mathrm{adj}}<0.05\)). Across both environments, we quantified 244 lipid species, including 153 shared, 49 CTL-specific, and 42 LIN-specific species (Supplementary Fig.~\ref{fig:suppfig_s4_counts}A; Supplementary Table~S6A--C). At the species level, CLR-transformed abundances also shifted broadly, with a median absolute CLR effect size of 0.7084 (IQR 0.2324--2.0056; range 0.0144--7.3754); 91/153 species had absolute effects $\geq$0.5 and 61/153 $\geq$1.0 (Supplementary Table~S2). Of the 153 shared species, 151 were BH-significant, and all 153 showed jackknife stability of 1.0 (Supplementary Tables~S2--S3).
+To determine whether CTL–LIN lipid differences reflected population-wide remodeling rather than a few outlier genotypes, we assessed effect size, directional stability, and significance. At the class-ratio level, the median absolute log$*{10}$ effect size was 0.4743 (IQR 0.3589–0.7566; range 0.1154–1.1787), with 27/33 ratios showing absolute effects $\geq$0.3 and 16/33 $\geq$0.5 (Supplementary Table~S1). All 33 ratios were BH-significant (p$_{\mathrm{adj}}$<0.05) and showed perfect leave-one-out sign stability (1.0). Across both environments, we quantified 244 lipid species: 153 shared, 49 CTL-specific, and 42 LIN-specific (Supplementary Fig.~\ref{fig:suppfig_s4_counts}A; Supplementary Table~S6A–C). Species-level CLR abundances also shifted broadly, with a median absolute CLR effect size of 0.7084 (IQR 0.2324–2.0056; range 0.0144–7.3754); 91/153 shared species had absolute effects $\geq$0.5 and 61/153 $\geq$1.0 (Supplementary Table~S2). Of the 153 shared species, 151 were BH-significant, and all 153 showed jackknife stability of 1.0 (Supplementary Tables~S2–S3).
 
-Given this robustness, we next identified lipids with the greatest genetic variance. Monogalactosyldiacylglycerol(18:3/18:3) or MGDG(18:3/18:3) showed the highest genotype-level variance in both environments, where variance was computed on TIC-normalized lipid proportions across genotypes (Supplementary Fig.~\ref{fig:suppfig_s2_topvar}A,B; Supplementary Table~S4). Seven of the ten most variable lipids were shared between CTL and LIN (Supplementary Fig.~\ref{fig:suppfig_s2_topvar}C), indicating a conserved subset of lipid traits with strong genotype sensitivity across environments. Within this high-variance subset, phosphatidylcholines (PC) species were the most common class in both conditions (CTL: 7/10; LIN: 6/10; Supplementary ~\ref{fig:suppfig_s2_topvar}D; Supplementary Table~S4).
+We next asked whether lipid traits with high genotype-level variance were conserved across environments. MGDG(18:3/18:3) showed the highest genotype-level variance in both CTL and LIN, based on TIC-normalized lipid proportions across genotypes (Supplementary Fig.~\ref{fig:suppfig_s2_topvar}A,B; Supplementary Table~S4). Seven of the ten most variable lipids were shared between CTL and LIN, indicating a conserved subset of lipid traits with strong genotype sensitivity across environments (Supplementary Fig.~\ref{fig:suppfig_s2_topvar}C). Within this high-variance subset, phosphatidylcholine (PC) species were the most common class in both conditions (CTL: 7/10; LIN: 6/10; Supplementary Fig.~\ref{fig:suppfig_s2_topvar}D; Supplementary Table~S4).
 
-
-The recurrence of the same high-variance lipid traits across conditions provides an internal consistency check, indicating that genotype-dependent lipid variability is conserved in both cohorts rather than being driven mainly by condition-specific or instrument-related technical artifacts.
+Together, the stability of CTL--LIN contrasts and recurrence of high-variance lipid traits across environments indicate that genotype-dependent lipid variability was conserved across cohorts and was unlikely to be driven primarily by condition-specific outliers or technical artifacts.
 
 \subsection{Lipidome overview for CTL and LIN SAP}
 
@@ -172,13 +171,6 @@ To characterize structural remodeling beyond total class abundance, we summarize
 
 
 Together, the abundance-, composition-, ontology-, and chemical-space–based analyses show a coordinated lipidome redistribution associated with LIN, marked by SQDG depletion, TG enrichment, PS headgroup rebalancing, and extensive lysophospholipid remodeling.
-
-
-\subsection*{CTL recurrent GWAS signals highlight basal metabolism and growth}
-
-
-
-
 
 \subsection*{CTL recurrent GWAS signals highlight basal metabolism and growth}
 
@@ -581,12 +573,7 @@ SoLD establishes a population-scale lipidomics resource for the SAP and shows th
 \section*{Materials and methods}
 
 \subsection*{Plant Material and Growth Conditions}
-
-In our study, we used the Sorghum Association Panel (SAP), consisting of 400 accessions designed to cover extensive genetic and phenotypic diversity. This collection includes both temperate-adapted breeding lines and tropical landraces. The panel represents five botanical races, bicolor, caudatum, durra, guinea, and kafir, capturing a diverse range of domestication and adaptation processes.
-
-SAP was first genotyped using simple sequence repeat markers, followed by low-coverage genotyping by sequencing (GBS) \cite{Casa2008CommunityResourcesSorghum}. For a more comprehensive variation set, \cite{Boatwright2022} et al. resequenced all entries using whole genome sequencing (WGS) with an average depth of 38× (ranging from 25–72×). The variant data from WGS revealed approximately 43.98 million polymorphisms, including roughly 38 million SNPs and 5 million small insertions/deletions. While GBS variants were predominantly located in genic regions, the WGS data were more evenly distributed across genic and intergenic regions. Genome-wide linkage disequilibrium is approximately 20 kb, although there were deviations specific to each chromosome. The consequent high-density variant map establishes the resequenced SAP as a valuable tool for examining diversity and conducting GWAS.
-
-We evaluated SAP accessions across two different field settings during two growing seasons (2019 and 2022) at the Pee Dee Research and Education Center, Clemson University, Florence, South Carolina. The "control" condition, herein denoted as CTL, involved standard agronomic inputs with sufficient levels of nitrogen (N) and phosphorus (P) along with a typical planting schedule. In contrast, the "low input" condition, herein denoted as LIN,  featured reduced N and P coupled with earlier planting to mimic a cold stress environment.
+We used the Sorghum Association Panel (~400 genotypes), a genetically diverse collection of sorghum accessions representing major botanical races and broad phenotypic diversity \cite{Casa2008CommunityResourcesSorghum, Boatwright2022}. We evaluated SAP accessions across two different field settings during two growing seasons (2019 and 2022) at the Pee Dee Research and Education Center, Clemson University, Florence, South Carolina. The "control" condition, herein denoted as CTL, involved standard agronomic inputs with sufficient levels of nitrogen (N) and phosphorus (P) along with a typical planting schedule. In contrast, the "low input" condition, denoted as LIN,  featured reduced N and P coupled with earlier planting to mimic a cold stress environment.
 
 \subsection*{Lipidomics Analysis}
 
