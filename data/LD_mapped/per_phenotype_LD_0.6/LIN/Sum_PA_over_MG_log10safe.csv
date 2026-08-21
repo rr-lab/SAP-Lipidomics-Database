@@ -1,3 +1,0 @@
-trait,condition,layer,SNP,chr,ps,p_wald,gene,r2
-Sum_PA_over_MG_log10safe,LIN,sumratio,1:1188509,1,1188509,4.048594e-09,SORBI_3001G012600,0.794354
-Sum_PA_over_MG_log10safe,LIN,sumratio,1:1183172,1,1183172,5.414798e-09,SORBI_3001G012600,0.835013
