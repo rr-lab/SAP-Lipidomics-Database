@@ -1,0 +1,2 @@
+trait,condition,layer,SNP,chr,ps,p_wald,gene,r2
+TG(12:0_14:0_16:0),CTL,individual,6:25432115,6,25432115,4.010353e-09,SORBI_3006G040500,1

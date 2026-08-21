@@ -1,0 +1,7 @@
+Analysis	N_genes	N_FDR05_terms
+CTL_individual	1100	16
+CTL_sum_ratio	115	5
+CTL_combined	1165	16
+LIN_individual	4323	3
+LIN_sum_ratio	812	0
+LIN_combined	4323	3

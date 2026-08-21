@@ -1,0 +1,189 @@
+BaseAnalysis	source	term_id	term_name	N_thresholds_FDR05	Significant_thresholds	Best_FDR	Max_Fold_Enrichment	Max_intersection_size
+CTL_combined	GO:BP	GO:0010628	positive regulation of gene expression	2	20%;5%	0.0010877194726376228	10.698752228163993	10
+CTL_combined	GO:MF	GO:0004838	L-tyrosine-2-oxoglutarate transaminase activity	2	10%;20%	0.0018867360025614519	73.6747572815534	3
+CTL_combined	GO:MF	GO:0008793	aromatic-amino-acid transaminase activity	2	10%;20%	0.0020065611326794755	58.93980582524273	3
+CTL_combined	GO:BP	GO:0006572	L-tyrosine catabolic process	2	10%;20%	0.006199771777940145	47.76127320954907	3
+CTL_combined	GO:MF	GO:0045182	translation regulator activity	2	20%;5%	0.012646669885414576	8.153102336825143	8
+CTL_combined	GO:BP	GO:0006570	tyrosine metabolic process	2	10%;20%	0.014036040610707708	32.67876588021778	3
+CTL_combined	GO:BP	GO:0002181	cytoplasmic translation	1	20%	0.0010432304480228612	5.532080495673101	12
+CTL_combined	GO:BP	GO:0006412	translation	1	20%	0.0010432304480228612	3.2612724256925505	19
+CTL_combined	GO:BP	GO:0160307	protein biosynthetic process	1	20%	0.0010432304480228612	3.2612724256925505	19
+CTL_combined	GO:BP	GO:0045727	positive regulation of translation	1	20%	0.00268737551128258	5.945190402817522	9
+CTL_combined	GO:BP	GO:0006417	regulation of translation	1	20%	0.006199771777940145	4.5012749362531865	10
+CTL_combined	GO:BP	GO:2000765	regulation of cytoplasmic translation	1	20%	0.006199771777940145	5.651600753295669	8
+CTL_combined	GO:BP	GO:2000767	positive regulation of cytoplasmic translation	1	20%	0.006199771777940145	5.651600753295669	8
+CTL_combined	GO:BP	GO:0051246	regulation of protein metabolic process	1	20%	0.006465539265231873	3.684343348224943	12
+CTL_combined	GO:CC	GO:0042555	MCM complex	1	5%	0.01450246733791409	82.46846846846847	2
+CTL_combined	GO:BP	GO:0001732	formation of cytoplasmic translation initiation complex	1	20%	0.01776943509504302	20.808166409861325	3
+CTL_combined	GO:BP	GO:0010608	post-transcriptional regulation of gene expression	1	20%	0.01776943509504302	3.6858265782363056	10
+CTL_combined	GO:BP	GO:0051247	positive regulation of protein metabolic process	1	20%	0.01776943509504302	4.075189860685008	9
+CTL_combined	GO:MF	GO:0004329	formate-tetrahydrofolate ligase activity	1	5%	0.027772989404384774	595.1764705882352	1
+CTL_combined	GO:MF	GO:0008270	zinc ion binding	1	5%	0.027772989404384774	4.191383595691797	7
+CTL_combined	GO:MF	GO:0015293	symporter activity	1	5%	0.027772989404384774	14.756441419543025	3
+CTL_combined	GO:MF	GO:0043169	cation binding	1	5%	0.027772989404384774	2.2291253580083716	14
+CTL_combined	GO:MF	GO:0043715	2,3-diketo-5-methylthiopentyl-1-phosphate enolase activity	1	5%	0.027772989404384774	595.1764705882352	1
+CTL_combined	GO:MF	GO:0043716	2-hydroxy-3-keto-5-methylthiopentenyl-1-phosphate phosphatase activity	1	5%	0.027772989404384774	595.1764705882352	1
+CTL_combined	GO:MF	GO:0046570	methylthioribulose 1-phosphate dehydratase activity	1	5%	0.027772989404384774	595.1764705882352	1
+CTL_combined	GO:MF	GO:0046872	metal ion binding	1	5%	0.027772989404384774	2.2417192865846904	14
+CTL_combined	GO:MF	GO:0046914	transition metal ion binding	1	5%	0.027772989404384774	3.468394350747292	10
+CTL_combined	GO:BP	GO:1902047	polyamine transmembrane transport	1	20%	0.0365860145558818	43.598062953995154	2
+CTL_combined	GO:BP	GO:0009074	aromatic amino acid family catabolic process	1	20%	0.03836304253666767	15.259322033898306	3
+CTL_combined	GO:MF	GO:0004318	enoyl-[acyl-carrier-protein] reductase (NADH) activity	1	5%	0.03973169234610846	297.5882352941176	1
+CTL_combined	GO:MF	GO:0015136	sialic acid transmembrane transporter activity	1	5%	0.03973169234610846	297.5882352941176	1
+CTL_combined	GO:MF	GO:0043874	acireductone synthase activity	1	5%	0.03973169234610846	297.5882352941176	1
+CTL_combined	GO:MF	GO:0003727	single-stranded RNA binding	1	20%	0.04045064445190434	4.312643188235921	8
+CTL_combined	GO:MF	GO:0003743	translation initiation factor activity	1	20%	0.04045064445190434	9.231751824817517	4
+CTL_combined	GO:MF	GO:0015203	polyamine transmembrane transporter activity	1	20%	0.04045064445190434	42.20229405630865	2
+CTL_combined	GO:MF	GO:0180051	translation factor activity	1	20%	0.04045064445190434	7.033715676051441	5
+CTL_combined	GO:MF	GO:0003729	mRNA binding	1	20%	0.04159405884344244	2.5784443999490323	14
+CTL_combined	GO:BP	GO:0015846	polyamine transport	1	20%	0.04285794946749908	38.148305084745765	2
+CTL_combined	GO:BP	GO:0002183	cytoplasmic translational initiation	1	20%	0.045175341999468	13.87211093990755	3
+CTL_combined	GO:MF	GO:0005274	allantoin:proton symporter activity	1	5%	0.04760033525517544	148.7941176470588	1
+CTL_combined	GO:MF	GO:0015294	solute:monoatomic cation symporter activity	1	5%	0.04760033525517544	18.59926470588235	2
+CTL_combined	GO:MF	GO:0015295	solute:proton symporter activity	1	5%	0.04760033525517544	19.51398264223722	2
+CTL_combined	GO:MF	GO:0015391	nucleobase:monoatomic cation symporter activity	1	5%	0.04760033525517544	148.7941176470588	1
+CTL_combined	GO:MF	GO:0015505	uracil:monoatomic cation symporter activity	1	5%	0.04760033525517544	148.7941176470588	1
+CTL_combined	GO:MF	GO:0016631	enoyl-[acyl-carrier-protein] reductase [NAD(P)H] activity	1	5%	0.04760033525517544	198.3921568627451	1
+CTL_combined	GO:MF	GO:0016862	intramolecular oxidoreductase activity, interconverting keto- and enol-groups	1	5%	0.04760033525517544	148.7941176470588	1
+CTL_individual	GO:MF	GO:0004838	L-tyrosine-2-oxoglutarate transaminase activity	3	10%;20%;5%	7.741422813143539e-4	93.68518518518518	3
+CTL_individual	GO:MF	GO:0008793	aromatic-amino-acid transaminase activity	3	10%;20%;5%	8.246528117943034e-4	74.94814814814815	3
+CTL_individual	GO:BP	GO:0016054	organic acid catabolic process	3	10%;20%;5%	0.0019487152739557732	9.95686794956868	7
+CTL_individual	GO:BP	GO:0046395	carboxylic acid catabolic process	3	10%;20%;5%	0.0019487152739557732	9.95686794956868	7
+CTL_individual	GO:BP	GO:0006572	L-tyrosine catabolic process	3	10%;20%;5%	0.003548216642333533	62.95804195804196	3
+CTL_individual	GO:BP	GO:0006570	tyrosine metabolic process	3	10%;20%;5%	0.009877495965271864	43.07655502392344	3
+CTL_individual	GO:BP	GO:0009074	aromatic amino acid family catabolic process	3	10%;20%;5%	0.016083828227514772	27.28181818181818	3
+CTL_individual	GO:BP	GO:0002181	cytoplasmic translation	1	20%	3.5673015758347645e-5	6.19173237049591	14
+CTL_individual	GO:BP	GO:0006412	translation	1	20%	8.752189310816717e-5	3.4580372575379297	21
+CTL_individual	GO:BP	GO:0045727	positive regulation of translation	1	20%	8.752189310816717e-5	6.970963995354239	11
+CTL_individual	GO:BP	GO:0160307	protein biosynthetic process	1	20%	8.752189310816717e-5	3.4580372575379297	21
+CTL_individual	GO:BP	GO:0010628	positive regulation of gene expression	1	20%	1.656889812658508e-4	6.314873266379722	11
+CTL_individual	GO:BP	GO:2000765	regulation of cytoplasmic translation	1	20%	1.9371274269178854e-4	6.7773261065943995	10
+CTL_individual	GO:BP	GO:2000767	positive regulation of cytoplasmic translation	1	20%	1.9371274269178854e-4	6.7773261065943995	10
+CTL_individual	GO:BP	GO:0006417	regulation of translation	1	20%	2.654817897613693e-4	5.181955536369522	12
+CTL_individual	GO:BP	GO:0051246	regulation of protein metabolic process	1	20%	4.986984953545244e-4	4.123668842322226	14
+CTL_individual	GO:MF	GO:0045182	translation regulator activity	1	20%	0.0010003305805805036	6.507170879156217	10
+CTL_individual	GO:BP	GO:0051247	positive regulation of protein metabolic process	1	20%	0.0011736533596567672	4.778316566548455	11
+CTL_individual	GO:BP	GO:0010608	post-transcriptional regulation of gene expression	1	20%	0.0014328514243455647	4.243195475433016	12
+CTL_individual	GO:MF	GO:0003727	single-stranded RNA binding	1	20%	0.0023588957610365686	5.200986943559165	10
+CTL_individual	GO:MF	GO:0003729	mRNA binding	1	20%	0.0028130724799904673	3.02072284078536	17
+CTL_individual	GO:BP	GO:0009063	amino acid catabolic process	1	20%	0.007155415360670462	9.505859993664872	5
+CTL_individual	GO:BP	GO:0044282	small molecule catabolic process	1	20%	0.012158674560988618	5.337144308943089	7
+CTL_individual	GO:BP	GO:0001732	formation of cytoplasmic translation initiation complex	1	20%	0.014207316679377281	19.96230598669623	3
+CTL_individual	GO:MF	GO:0008441	3'(2'),5'-bisphosphate nucleotidase activity	1	20%	0.0233884197805447	57.00281690140846	2
+CTL_individual	GO:BP	GO:0170040	proteinogenic amino acid catabolic process	1	20%	0.02789594345842619	9.29461866047232	4
+CTL_individual	GO:BP	GO:1902047	polyamine transmembrane transport	1	20%	0.02789594345842619	41.825783972125436	2
+CTL_individual	GO:BP	GO:1901606	alpha-amino acid catabolic process	1	20%	0.030420551674341104	8.739716053876958	4
+CTL_individual	GO:BP	GO:0015846	polyamine transport	1	20%	0.03219858834297082	36.59756097560976	2
+CTL_individual	GO:BP	GO:0002183	cytoplasmic translational initiation	1	20%	0.035740057249674294	13.30820399113082	3
+CTL_individual	GO:MF	GO:0003743	translation initiation factor activity	1	20%	0.038757206109652886	8.90669014084507	4
+CTL_individual	GO:MF	GO:0015203	polyamine transmembrane transporter activity	1	20%	0.038757206109652886	40.716297786720325	2
+CTL_individual	GO:BP	GO:0006413	translational initiation	1	20%	0.04274647355998456	7.704749679075738	4
+CTL_individual	GO:BP	GO:0010557	positive regulation of macromolecule biosynthetic process	1	20%	0.04600017923134944	2.785973499873407	11
+CTL_individual	GO:BP	GO:0019752	carboxylic acid metabolic process	1	20%	0.047432963533225736	2.4909334695441196	13
+CTL_sum_ratio	GO:MF	GO:0008270	zinc ion binding	2	10%;20%	0.031505367532432514	6.786049631120053	4
+CTL_sum_ratio	GO:MF	GO:0015136	sialic acid transmembrane transporter activity	2	10%;20%	0.031505367532432514	843.1666666666665	1
+CTL_sum_ratio	GO:MF	GO:0015144	carbohydrate transmembrane transporter activity	2	10%;20%	0.031505367532432514	32.12063492063492	2
+CTL_sum_ratio	GO:MF	GO:0015293	symporter activity	2	10%;20%	0.031505367532432514	27.8732782369146	2
+CTL_sum_ratio	GO:BP	GO:0001192	maintenance of transcriptional fidelity during transcription elongation	1	5%	0.02025147532582485	900.3	1
+CTL_sum_ratio	GO:BP	GO:0001193	maintenance of transcriptional fidelity during transcription elongation by RNA polymerase II	1	5%	0.02025147532582485	900.3	1
+CTL_sum_ratio	GO:BP	GO:0033120	positive regulation of RNA splicing	1	5%	0.02025147532582485	750.25	1
+CTL_sum_ratio	GO:BP	GO:0048026	positive regulation of mRNA splicing, via spliceosome	1	5%	0.02025147532582485	750.25	1
+CTL_sum_ratio	GO:BP	GO:0050685	positive regulation of mRNA processing	1	5%	0.02025147532582485	750.25	1
+CTL_sum_ratio	GO:BP	GO:0006283	transcription-coupled nucleotide-excision repair	1	5%	0.022497889984613252	562.6875	1
+CTL_sum_ratio	GO:CC	GO:0005853	eukaryotic translation elongation factor 1 complex	1	5%	0.028669723402127145	1220.5333333333333	1
+LIN_combined	GO:BP	GO:1900036	positive regulation of cellular response to heat	2	10%;5%	0.019048296073424988	140.671875	2
+LIN_combined	GO:CC	GO:0005789	endoplasmic reticulum membrane	1	5%	0.001683381800192879	4.166116736830128	12
+LIN_combined	GO:CC	GO:0042175	nuclear outer membrane-endoplasmic reticulum membrane network	1	5%	0.001683381800192879	4.132964614255883	12
+LIN_combined	GO:CC	GO:0098827	endoplasmic reticulum subcompartment	1	5%	0.001683381800192879	4.143956541421457	12
+LIN_combined	GO:MF	GO:0042284	sphingolipid delta-4 desaturase activity	1	5%	0.009913147570554575	46.51954022988506	3
+LIN_combined	GO:BP	GO:0071249	cellular response to nitrate	1	10%	0.016038675249835217	48.403225806451616	3
+LIN_combined	GO:BP	GO:0010199	organ boundary specification between lateral organs and the meristem	1	5%	0.019048296073424988	93.78125	2
+LIN_combined	GO:BP	GO:0015860	purine nucleoside transmembrane transport	1	5%	0.019048296073424988	28.134375	3
+LIN_combined	GO:BP	GO:0048859	formation of anatomical boundary	1	5%	0.019048296073424988	93.78125	2
+LIN_combined	GO:BP	GO:0072530	purine-containing compound transmembrane transport	1	5%	0.019048296073424988	19.40301724137931	4
+LIN_combined	GO:BP	GO:0090691	formation of plant organ boundary	1	5%	0.019048296073424988	93.78125	2
+LIN_combined	GO:MF	GO:0015211	purine nucleoside transmembrane transporter activity	1	5%	0.02150179276761891	27.911724137931035	3
+LIN_combined	GO:MF	GO:0015932	nucleobase-containing compound transmembrane transporter activity	1	5%	0.02150179276761891	9.429636533084809	5
+LIN_combined	GO:MF	GO:0005345	purine nucleobase transmembrane transporter activity	1	5%	0.02296146088419222	23.25977011494253	3
+LIN_combined	GO:BP	GO:0006863	purine nucleobase transport	1	5%	0.02522440755883325	23.4453125	3
+LIN_combined	GO:BP	GO:1904823	purine nucleobase transmembrane transport	1	5%	0.02522440755883325	23.4453125	3
+LIN_combined	GO:BP	GO:1903798	regulation of miRNA processing	1	5%	0.02523516459289474	70.3359375	2
+LIN_combined	GO:MF	GO:0005337	nucleoside transmembrane transporter activity	1	5%	0.025394678296495003	20.933793103448277	3
+LIN_combined	GO:CC	GO:0031984	organelle subcompartment	1	5%	0.027748380184189278	2.9565989745246073	12
+LIN_combined	GO:BP	GO:1901642	nucleoside transmembrane transport	1	5%	0.02790052673932029	21.10078125	3
+LIN_combined	GO:MF	GO:0015205	nucleobase transmembrane transporter activity	1	5%	0.03236223406626074	18.20329835082459	3
+LIN_combined	GO:BP	GO:0015883	FAD transport	1	10%	0.032955676812718424	64.53763440860216	2
+LIN_combined	GO:BP	GO:0015884	folic acid transport	1	10%	0.032955676812718424	64.53763440860216	2
+LIN_combined	GO:BP	GO:0035350	FAD transmembrane transport	1	10%	0.032955676812718424	64.53763440860216	2
+LIN_combined	GO:BP	GO:0098838	folate transmembrane transport	1	10%	0.032955676812718424	64.53763440860216	2
+LIN_combined	GO:BP	GO:1902170	cellular response to reactive nitrogen species	1	10%	0.032955676812718424	32.26881720430108	3
+LIN_combined	GO:BP	GO:1904947	folate import into mitochondrion	1	10%	0.032955676812718424	64.53763440860216	2
+LIN_combined	GO:BP	GO:0015858	nucleoside transport	1	5%	0.03390979581637691	19.18252840909091	3
+LIN_combined	GO:BP	GO:1901699	cellular response to nitrogen compound	1	10%	0.03532551321102483	21.512544802867385	3
+LIN_combined	GO:BP	GO:0015851	nucleobase transport	1	5%	0.035561520013258394	18.34850543478261	3
+LIN_combined	GO:CC	GO:0016020	membrane	1	20%	0.038747629154962236	1.1768537162190285	278
+LIN_combined	GO:BP	GO:0070920	regulation of regulatory ncRNA processing	1	5%	0.04017946712592403	46.890625	2
+LIN_combined	GO:BP	GO:1900034	regulation of cellular response to heat	1	5%	0.04017946712592403	46.890625	2
+LIN_combined	GO:BP	GO:1901679	nucleotide transmembrane transport	1	10%	0.04489859907900651	19.361290322580647	3
+LIN_sum_ratio	GO:CC	GO:0005789	endoplasmic reticulum membrane	3	10%;20%;5%	6.365624742397933e-6	9.474555804726583	11
+LIN_sum_ratio	GO:CC	GO:0042175	nuclear outer membrane-endoplasmic reticulum membrane network	3	10%;20%;5%	6.365624742397933e-6	9.399161461452895	11
+LIN_sum_ratio	GO:CC	GO:0098827	endoplasmic reticulum subcompartment	3	10%;20%;5%	6.365624742397933e-6	9.424159231297185	11
+LIN_sum_ratio	GO:MF	GO:0042284	sphingolipid delta-4 desaturase activity	3	10%;20%;5%	2.092779424936764e-5	259.43589743589746	3
+LIN_sum_ratio	GO:CC	GO:0031984	organelle subcompartment	3	10%;20%;5%	9.870252629002094e-5	6.7238783130317685	11
+LIN_sum_ratio	GO:MF	GO:0016717	oxidoreductase activity, acting on paired donors, with oxidation of a pair of donors resulting in the reduction of molecular oxygen to two molecules of water	3	10%;20%;5%	6.658878743506071e-4	70.75524475524476	3
+LIN_sum_ratio	GO:CC	GO:0005783	endoplasmic reticulum	3	10%;20%;5%	0.0010496319642370683	4.101254480286738	16
+LIN_sum_ratio	GO:BP	GO:0030148	sphingolipid biosynthetic process	2	10%;5%	0.0021985125148067026	64.30714285714286	3
+LIN_sum_ratio	GO:MF	GO:0046914	transition metal ion binding	2	20%;5%	0.0043019202958926054	3.628474090012552	26
+LIN_sum_ratio	GO:CC	GO:0031090	organelle membrane	2	10%;5%	0.005644448391450392	2.8791256314992824	14
+LIN_sum_ratio	GO:CC	GO:0030864	cortical actin cytoskeleton	2	10%;5%	0.023705483941450334	590.5806451612904	1
+LIN_sum_ratio	GO:BP	GO:0071249	cellular response to nitrate	1	20%	6.947736008773998e-4	119.50884955752213	3
+LIN_sum_ratio	GO:BP	GO:1902170	cellular response to reactive nitrogen species	1	20%	0.0017210574793140915	79.67256637168141	3
+LIN_sum_ratio	GO:MF	GO:0004386	helicase activity	1	20%	0.0038259144673188326	6.961128310973512	8
+LIN_sum_ratio	GO:MF	GO:0015112	nitrate transmembrane transporter activity	1	20%	0.0043019202958926054	37.19852941176471	3
+LIN_sum_ratio	GO:MF	GO:0120545	nucleic acid conformation isomerase activity	1	20%	0.0043019202958926054	6.331664580725907	8
+LIN_sum_ratio	GO:BP	GO:1901699	cellular response to nitrogen compound	1	20%	0.004753083494495619	53.11504424778761	3
+LIN_sum_ratio	GO:BP	GO:0006665	sphingolipid metabolic process	1	5%	0.004921897318164014	39.143478260869564	3
+LIN_sum_ratio	GO:MF	GO:0015211	purine nucleoside transmembrane transporter activity	1	20%	0.006706560368042255	29.758823529411767	3
+LIN_sum_ratio	GO:BP	GO:1900036	positive regulation of cellular response to heat	1	20%	0.0070756136303480955	159.34513274336283	2
+LIN_sum_ratio	GO:BP	GO:0015706	nitrate transmembrane transport	1	20%	0.007367105405771815	39.836283185840706	3
+LIN_sum_ratio	GO:BP	GO:0010167	response to nitrate	1	20%	0.008455837751086957	31.869026548672565	3
+LIN_sum_ratio	GO:BP	GO:0010199	organ boundary specification between lateral organs and the meristem	1	20%	0.008455837751086957	106.23008849557522	2
+LIN_sum_ratio	GO:BP	GO:0015860	purine nucleoside transmembrane transport	1	20%	0.008455837751086957	31.869026548672565	3
+LIN_sum_ratio	GO:BP	GO:0048859	formation of anatomical boundary	1	20%	0.008455837751086957	106.23008849557522	2
+LIN_sum_ratio	GO:BP	GO:0090691	formation of plant organ boundary	1	20%	0.008455837751086957	106.23008849557522	2
+LIN_sum_ratio	GO:MF	GO:0005345	purine nucleobase transmembrane transporter activity	1	20%	0.010158211358437072	24.79901960784314	3
+LIN_sum_ratio	GO:BP	GO:0006863	purine nucleobase transport	1	20%	0.01107697220896194	26.557522123893804	3
+LIN_sum_ratio	GO:BP	GO:1904823	purine nucleobase transmembrane transport	1	20%	0.01107697220896194	26.557522123893804	3
+LIN_sum_ratio	GO:BP	GO:1902025	nitrate import	1	20%	0.01203014153006156	25.159757801583602	3
+LIN_sum_ratio	GO:BP	GO:1903798	regulation of miRNA processing	1	20%	0.01203014153006156	79.67256637168141	2
+LIN_sum_ratio	GO:BP	GO:1901642	nucleoside transmembrane transport	1	20%	0.012267404063085605	23.901769911504424	3
+LIN_sum_ratio	GO:MF	GO:0005337	nucleoside transmembrane transporter activity	1	20%	0.012296083524447473	22.319117647058828	3
+LIN_sum_ratio	GO:MF	GO:0005506	iron ion binding	1	5%	0.01314322024566633	8.244784876140809	5
+LIN_sum_ratio	GO:CC	GO:0012505	endomembrane system	1	10%	0.014750076977340348	2.4505186672403076	14
+LIN_sum_ratio	GO:BP	GO:0015858	nucleoside transport	1	20%	0.015394617005514902	21.728881737731296	3
+LIN_sum_ratio	GO:MF	GO:0016705	oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen	1	5%	0.016481300331290152	7.370337995337996	5
+LIN_sum_ratio	GO:BP	GO:0015851	nucleobase transport	1	20%	0.01658643817085379	20.784147749134284	3
+LIN_sum_ratio	GO:MF	GO:0015205	nucleobase transmembrane transporter activity	1	20%	0.01663927493809143	19.407928388746807	3
+LIN_sum_ratio	GO:MF	GO:0046872	metal ion binding	1	20%	0.01663927493809143	1.6412587633923625	41
+LIN_sum_ratio	GO:MF	GO:0120543	macromolecular conformation isomerase activity	1	20%	0.01663927493809143	4.297303036738161	8
+LIN_sum_ratio	GO:MF	GO:0043169	cation binding	1	20%	0.01685832657901204	1.6320382085418437	41
+LIN_sum_ratio	GO:BP	GO:0071705	nitrogen compound transport	1	20%	0.019657738909397343	4.395727799816905	8
+LIN_sum_ratio	GO:BP	GO:0045944	positive regulation of transcription by RNA polymerase II	1	20%	0.019885948552468394	5.938327928324081	6
+LIN_sum_ratio	GO:BP	GO:0070920	regulation of regulatory ncRNA processing	1	20%	0.019885948552468394	53.11504424778761	2
+LIN_sum_ratio	GO:BP	GO:1900034	regulation of cellular response to heat	1	20%	0.019885948552468394	53.11504424778761	2
+LIN_sum_ratio	GO:CC	GO:0016528	sarcoplasm	1	10%	0.024341072953701977	321.1929824561403	1
+LIN_sum_ratio	GO:CC	GO:0016529	sarcoplasmic reticulum	1	10%	0.024341072953701977	321.1929824561403	1
+LIN_sum_ratio	GO:CC	GO:0033017	sarcoplasmic reticulum membrane	1	10%	0.024341072953701977	321.1929824561403	1
+LIN_sum_ratio	GO:BP	GO:0072530	purine-containing compound transmembrane transport	1	20%	0.025729584342735402	16.483979249313396	3
+LIN_sum_ratio	GO:BP	GO:0006338	chromatin remodeling	1	20%	0.0285410794745731	4.534211094323332	7
+LIN_sum_ratio	GO:BP	GO:0010557	positive regulation of macromolecule biosynthetic process	1	20%	0.0285410794745731	3.0325198272958325	11
+LIN_sum_ratio	GO:BP	GO:0045893	positive regulation of DNA-templated transcription	1	20%	0.0285410794745731	3.9466286747582124	8
+LIN_sum_ratio	GO:BP	GO:1902680	positive regulation of RNA biosynthetic process	1	20%	0.0285410794745731	3.9466286747582124	8
+LIN_sum_ratio	GO:BP	GO:0009891	positive regulation of biosynthetic process	1	20%	0.03286844408217846	2.965814653429765	11
+LIN_sum_ratio	GO:MF	GO:0015932	nucleobase-containing compound transmembrane transporter activity	1	20%	0.03522698234618543	8.042925278219396	4
+LIN_sum_ratio	GO:BP	GO:0060966	regulation of gene silencing by regulatory ncRNA	1	20%	0.035356189594557934	35.41002949852508	2
+LIN_sum_ratio	GO:MF	GO:1901505	carbohydrate derivative transmembrane transporter activity	1	20%	0.036283661132687724	7.831269349845201	4
+LIN_sum_ratio	GO:BP	GO:1901264	carbohydrate derivative transport	1	20%	0.0384625992321518	8.068107987005714	4
+LIN_sum_ratio	GO:MF	GO:0016491	oxidoreductase activity	1	5%	0.03888919242833556	3.3403763618355895	8
+LIN_sum_ratio	GO:BP	GO:0070417	cellular response to cold	1	20%	0.041079911553429584	31.869026548672565	2
+LIN_sum_ratio	GO:BP	GO:0080135	regulation of cellular response to stress	1	20%	0.046959419412166054	11.950884955752212	3

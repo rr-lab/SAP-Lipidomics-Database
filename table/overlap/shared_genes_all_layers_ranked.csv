@@ -1,0 +1,355 @@
+GeneID,GeneName,n_records,tot_phen,best_p
+SORBI_3003G318650,Uncharacterized protein,2,65,3.37063e-12
+SORBI_3010G150600,Uncharacterized protein,4,60,1.414455e-18
+SORBI_3010G150700,PABC domain-containing protein,4,60,1.414455e-18
+SORBI_3010G150325,F-box domain-containing protein,4,60,1.414455e-18
+SORBI_3010G150575,Small ribosomal subunit protein uS5 C-terminal domain-containing protein,4,60,1.414455e-18
+SORBI_3010G151000,CMP-sialic acid transporter 1,4,59,1.414634e-13
+SORBI_3010G150900,Uncharacterized protein,4,59,1.414634e-13
+SORBI_3002G374200,DNA-directed RNA polymerase subunit,2,58,1.590391e-11
+SORBI_3010G150800,Cytoplasmic tRNA 2-thiolation protein 1 C-terminal domain-containing protein,3,58,1.414634e-13
+SORBI_3002G375200,DPL2 protein,2,57,1.590391e-11
+SORBI_3002G373800,Translation elongation factor EF1B beta_delta subunit guanine nucleotide exchange domain-containing protein,2,57,1.590391e-11
+SORBI_3002G373700,NGR2,2,57,1.590391e-11
+SORBI_3002G371500,RRM domain-containing protein,2,57,1.590391e-11
+SORBI_3002G373900,Uncharacterized protein,2,57,1.590391e-11
+SORBI_3009G153400,Dof zinc finger protein,2,55,4.936576e-11
+SORBI_3009G153366,Uncharacterized protein,2,55,4.936576e-11
+SORBI_3009G152800,Major facilitator superfamily (MFS) profile domain-containing protein,2,55,4.936576e-11
+SORBI_3010G151325,Protein FAR1-RELATED SEQUENCE,4,54,1.414634e-13
+SORBI_3010G151200,GRF-type domain-containing protein,4,53,1.414634e-13
+SORBI_3010G150701,Uncharacterized protein,4,53,1.414634e-13
+SORBI_3010G140600,BolA-like protein,3,38,4.460071e-15
+SORBI_3010G136200,SLH domain-containing protein,2,36,4.284987e-23
+SORBI_3010G136300,Uncharacterized protein,2,35,4.284987e-23
+SORBI_3010G136601,Uncharacterized protein,2,35,4.284987e-23
+SORBI_3010G136400,Uncharacterized protein,2,35,4.284987e-23
+SORBI_3010G136450,CCHC-type domain-containing protein,2,35,4.284987e-23
+SORBI_3010G136500,Uncharacterized protein,2,35,4.284987e-23
+SORBI_3010G144500,Uncharacterized protein,2,35,1.30833e-21
+SORBI_3010G136600,Uncharacterized protein,2,35,4.284987e-23
+SORBI_3002G221900,,2,24,1.913455e-11
+SORBI_3002G221400,C2H2-type domain-containing protein,2,24,7.642133e-27
+SORBI_3002G218800,Glycosyltransferase,2,23,7.642133e-27
+SORBI_3002G218600,BRX domain-containing protein,2,23,7.642133e-27
+SORBI_3002G218700,Mitochondrial carrier protein,2,23,7.642133e-27
+SORBI_3002G219000,Uncharacterized protein,2,23,7.642133e-27
+SORBI_3002G219100,Uncharacterized protein,2,23,7.642133e-27
+SORBI_3002G219200,Uncharacterized protein,2,23,7.642133e-27
+SORBI_3002G220100,Uncharacterized protein,2,23,7.642133e-27
+SORBI_3002G220200,formate--tetrahydrofolate ligase,2,23,7.642133e-27
+SORBI_3008G106200,Cytochrome P450,2,15,4.627337e-14
+SORBI_3010G064200,"1,3-beta-glucan synthase",2,15,3.397631e-16
+SORBI_3004G130001,Uncharacterized protein,2,14,3.487852e-22
+SORBI_3008G106550,DUF295 domain-containing protein,2,14,4.627337e-14
+SORBI_3008G105800,Cytochrome P450,2,14,4.627337e-14
+SORBI_3008G105600,Uncharacterized protein,2,14,4.627337e-14
+SORBI_3008G105500,Ureide permease 4,2,14,4.627337e-14
+SORBI_3010G140800,Uncharacterized protein,2,14,1.235556e-14
+SORBI_3008G106500,DUF1618 domain-containing protein,2,14,4.627337e-14
+SORBI_3005G110538,Protein kinase domain-containing protein,2,13,3.260375e-11
+SORBI_3008G105850,Uncharacterized protein,2,13,4.627337e-14
+SORBI_3005G110553,Uncharacterized protein,2,13,3.260375e-11
+SORBI_3005G110544,CR-type domain-containing protein,2,13,3.260375e-11
+SORBI_3005G110523,Uncharacterized protein,2,13,3.260375e-11
+SORBI_3005G110520,Uncharacterized protein,2,13,3.260375e-11
+SORBI_3005G110517,CASP-like protein,2,13,3.260375e-11
+SORBI_3005G110541,Probable bifunctional methylthioribulose-1-phosphate dehydratase_enolase-phosphatase E1,2,13,3.260375e-11
+SORBI_3005G110160,Uncharacterized protein,2,13,8.186128e-15
+SORBI_3008G105900,Uncharacterized protein,2,13,4.627337e-14
+SORBI_3005G110535,DNA replication licensing factor MCM2,2,13,3.260375e-11
+SORBI_3005G110120,Uncharacterized protein,2,13,8.186128e-15
+SORBI_3008G096200,Protein kinase domain-containing protein,2,12,3.318223e-31
+SORBI_3007G112100,,2,12,1.799445e-13
+SORBI_3007G112200,ENT domain-containing protein,2,12,1.799445e-13
+SORBI_3008G096300,Uncharacterized protein,2,12,3.318223e-31
+SORBI_3001G223100,Uncharacterized protein,2,12,7.079967e-11
+SORBI_3008G106301,Uncharacterized protein,2,12,4.627337e-14
+SORBI_3001G259400,Protein TIFY,2,12,1.45935e-11
+SORBI_3001G259600,Protein TIFY,2,12,1.626147e-12
+SORBI_3006G033001,,3,11,3.522187e-14
+SORBI_3009G111000,Pectinesterase,2,11,2.113399e-12
+SORBI_3009G111200,AP2_ERF domain-containing protein,2,11,2.113399e-12
+SORBI_3008G081400,Major facilitator superfamily (MFS) profile domain-containing protein,3,11,4.496153e-33
+SORBI_3006G048775,Nucleoplasmin-like domain-containing protein,2,11,3.126946e-13
+SORBI_3001G152700,,3,11,1.759403e-12
+SORBI_3001G259100,SPX domain-containing protein,2,11,1.45935e-11
+SORBI_3006G278300,Thaumatin-like protein,3,10,1.240061e-10
+SORBI_3008G095633,Uncharacterized protein,2,10,1.847673e-11
+SORBI_3006G278100,Late embryogenesis abundant protein LEA-2 subgroup domain-containing protein,3,10,1.240061e-10
+SORBI_3006G277900,,3,10,1.240061e-10
+SORBI_3006G277550,Plant heme peroxidase family profile domain-containing protein,3,10,1.240061e-10
+SORBI_3008G095500,W2 domain-containing protein,2,10,1.847673e-11
+SORBI_3008G095900,RING-type domain-containing protein,2,10,1.847673e-11
+SORBI_3008G096050,Aminotransferase-like plant mobile domain-containing protein,2,10,1.847673e-11
+SORBI_3008G096100,Aminopeptidase,2,10,1.847673e-11
+SORBI_3008G095400,Secreted protein,2,10,1.890035e-11
+SORBI_3008G095766,DUF6749 domain-containing protein,2,10,1.847673e-11
+SORBI_3008G096150,Uncharacterized protein,2,10,1.847673e-11
+SORBI_3006G278500,GMP synthase [glutamine-hydrolyzing],3,10,1.240061e-10
+SORBI_3001G356300,Uncharacterized protein,2,10,1.182781e-12
+SORBI_3001G357200,RRM domain-containing protein,2,10,1.182781e-12
+SORBI_3006G278600,Fe2OG dioxygenase domain-containing protein,3,10,1.240061e-10
+SORBI_3001G259000,Translation initiation factor eIF-2B beta subunit,2,10,1.726483e-11
+SORBI_3006G278400,C2H2-type domain-containing protein,3,10,1.240061e-10
+SORBI_3005G082950,Histone H2A C-terminal domain-containing protein,3,9,1.759403e-12
+SORBI_3008G081000,Uncharacterized protein,2,9,4.496153e-33
+SORBI_3008G062700,Uncharacterized protein,2,9,7.506041e-13
+SORBI_3008G081150,Uncharacterized protein,2,9,4.496153e-33
+SORBI_3006G210700,Potassium transporter,2,9,5.298874e-11
+SORBI_3008G095150,Uncharacterized protein,2,9,1.890035e-11
+SORBI_3006G210600,Protein ENDOSPERM DEFECTIVE 1,2,9,5.298874e-11
+SORBI_3008G095100,SAM domain-containing protein,2,9,2.2071e-11
+SORBI_3008G081200,Major facilitator superfamily (MFS) profile domain-containing protein,2,9,4.496153e-33
+SORBI_3008G095200,Uncharacterized protein,2,9,1.890035e-11
+SORBI_3001G171100,WIYLD domain-containing protein,3,8,2.978268e-14
+SORBI_3001G169100,Major facilitator superfamily (MFS) profile domain-containing protein,3,8,2.978268e-14
+SORBI_3001G168800,NPH3 domain-containing protein,3,8,2.978268e-14
+SORBI_3008G080900,Uncharacterized protein,2,8,5.121188e-14
+SORBI_3002G150866,,2,8,1.759403e-12
+SORBI_3002G332750,,3,8,3.936897e-23
+SORBI_3001G171001,WIYLD domain-containing protein,3,8,2.978268e-14
+SORBI_3001G171200,WIYLD domain-containing protein,3,7,2.978268e-14
+SORBI_3008G105366,Uncharacterized protein,2,7,7.031297e-12
+SORBI_3001G171500,Presenilin,3,7,2.978268e-14
+SORBI_3001G171600,Pentacotripeptide-repeat region of PRORP domain-containing protein,3,7,2.978268e-14
+SORBI_3001G171300,UDP-glucose 6-dehydrogenase,3,7,2.978268e-14
+SORBI_3010G142650,Uncharacterized protein,2,7,1.048507e-12
+SORBI_3003G389800,Uncharacterized protein,3,7,1.702729e-17
+SORBI_3010G143800,PHD-type domain-containing protein,2,6,2.276651e-10
+SORBI_3010G125500,RING-type domain-containing protein,2,6,5.991652e-11
+SORBI_3010G126100,Peptidase A1 domain-containing protein,2,6,5.483313e-12
+SORBI_3010G125900,Uncharacterized protein,2,6,5.483313e-12
+SORBI_3010G125700,Proteasome activator subunit 4,2,6,5.483313e-12
+SORBI_3003G368300,,3,6,7.022179e-10
+SORBI_3010G143700,Uncharacterized protein,2,6,2.276651e-10
+SORBI_3008G092800,AAA+ ATPase domain-containing protein,3,6,1.515294e-21
+SORBI_3001G259200,Glycosyltransferase,2,6,1.45935e-11
+SORBI_3010G134900,AT-hook motif nuclear-localized protein,2,5,3.193903e-12
+SORBI_3010G134801,CCHC-type domain-containing protein,2,5,3.193903e-12
+SORBI_3003G079800,,2,5,1.367717e-12
+SORBI_3010G142600,Uncharacterized protein,2,5,1.048507e-12
+SORBI_3010G150200,F-box domain-containing protein,2,5,1.414455e-18
+SORBI_3010G147833,Uncharacterized protein,2,5,7.295295e-13
+SORBI_3001G127300,Uncharacterized protein,2,5,1.177076e-10
+SORBI_3006G036400,,2,5,9.59957e-13
+SORBI_3001G167900,NADP-dependent oxidoreductase domain-containing protein,2,5,1.071587e-13
+SORBI_3001G168400,Protein kinase domain-containing protein,2,5,1.071587e-13
+SORBI_3001G168600,Serpin domain-containing protein,2,5,1.071587e-13
+SORBI_3001G168700,Uncharacterized protein,2,5,1.071587e-13
+SORBI_3006G036300,Flowering-promoting factor 1-like protein 3,2,5,9.59957e-13
+SORBI_3010G147300,Poly(A)-specific ribonuclease,2,5,7.295295e-13
+SORBI_3006G244100,DUF295 domain-containing protein,3,5,5.861319e-10
+SORBI_3005G098900,Uncharacterized protein,2,5,2.424645e-11
+SORBI_3006G244200,DUF295 domain-containing protein,3,5,1.258093e-13
+SORBI_3010G126400,Peptidase A1 domain-containing protein,2,5,7.169849e-10
+SORBI_3001G259250,Uncharacterized protein,2,5,1.45935e-11
+SORBI_3010G126000,DUF2415 domain-containing protein,2,5,5.483313e-12
+SORBI_3003G368100,,3,5,1.358718e-09
+SORBI_3003G368200,,3,5,1.358718e-09
+SORBI_3003G369066,,3,5,1.358718e-09
+SORBI_3010G150100,WRKY transcription factor 19,2,5,1.414455e-18
+SORBI_3010G149800,Uncharacterized protein,2,5,1.414455e-18
+SORBI_3010G147350,poly(A)-specific ribonuclease,2,5,7.295295e-13
+SORBI_3010G147250,poly(A)-specific ribonuclease,2,5,7.295295e-13
+SORBI_3010G126200,Uncharacterized protein,2,5,5.483313e-12
+SORBI_3010G140500,RING-type E3 ubiquitin transferase,2,4,5.034469e-11
+SORBI_3010G147966,Uncharacterized protein,2,4,7.295295e-13
+SORBI_3010G132400,,2,4,2.957355e-10
+SORBI_3010G140750,CCHC-type domain-containing protein,2,4,9.116389e-11
+SORBI_3010G141400,Toprim domain-containing protein,2,4,1.155804e-09
+SORBI_3010G134500,Exonuclease domain-containing protein,2,4,1.277089e-11
+SORBI_3010G134400,Acyltransferase,2,4,2.99833e-10
+SORBI_3010G132900,Uncharacterized protein,2,4,2.957355e-10
+SORBI_3006G038050,Uncharacterized protein,2,4,1.732315e-09
+SORBI_3010G132600,Selenoprotein O,2,4,2.957355e-10
+SORBI_3010G132550,Secreted protein,2,4,2.957355e-10
+SORBI_3010G132300,,2,4,2.957355e-10
+SORBI_3008G098300,ubiquitinyl hydrolase 1,2,4,6.939107e-17
+SORBI_3010G132100,,2,4,2.957355e-10
+SORBI_3010G126300,Uncharacterized protein,2,4,5.483313e-12
+SORBI_3010G125866,Uncharacterized protein,2,4,5.483313e-12
+SORBI_3010G142700,Uncharacterized protein,2,4,1.05987e-10
+SORBI_3010G143300,Neprosin domain-containing protein,2,4,1.05987e-10
+SORBI_3010G143500,Pyruvate phosphate dikinase AMP_ATP-binding domain-containing protein,2,4,2.276651e-10
+SORBI_3010G147500,phosphoribosylanthranilate isomerase,2,4,4.397667e-11
+SORBI_3010G139600,Protein kinase domain-containing protein,2,4,3.943959e-11
+SORBI_3010G132800,Uncharacterized protein,2,4,2.957355e-10
+SORBI_3006G038400,Vps72_YL1 C-terminal domain-containing protein,2,4,1.308538e-30
+SORBI_3003G077800,Uncharacterized protein,3,4,9.137469e-11
+SORBI_3005G184050,Uncharacterized protein,3,4,1.456216e-13
+SORBI_3001G022700,Cytochrome P450 CYP733A,3,4,2.282694e-15
+SORBI_3002G085800,UDP-glycosyltransferases domain-containing protein,2,4,4.251319e-15
+SORBI_3002G084900,Maternal effect embryo arrest 60,2,4,9.610667e-14
+SORBI_3001G457600,Ubiquitin-like domain-containing protein,2,4,3.447118e-10
+SORBI_3001G247600,NAD-dependent epimerase_dehydratase domain-containing protein,3,4,7.82254e-14
+SORBI_3006G038000,Uncharacterized protein,2,4,1.732315e-09
+SORBI_3001G400500,Calpain catalytic domain-containing protein,2,4,1.319865e-13
+SORBI_3003G077400,Peptidase M50 domain-containing protein,3,4,9.137469e-11
+SORBI_3003G077300,Uncharacterized protein,3,4,9.137469e-11
+SORBI_3003G106600,EXPERA domain-containing protein,2,4,6.188695e-11
+SORBI_3005G219900,,2,4,3.398881e-10
+SORBI_3005G220200,Uncharacterized protein,2,4,6.126551e-10
+SORBI_3006G037050,Uncharacterized protein,2,4,2.327867e-10
+SORBI_3001G021400,,2,4,7.25892e-12
+SORBI_3001G320000,Subtilisin-like protease,2,3,2.783649e-09
+SORBI_3010G134300,Uncharacterized protein,2,3,2.99833e-10
+SORBI_3010G143600,Morc S5 domain-containing protein,2,3,2.276651e-10
+SORBI_3003G369033,,2,3,3.167163e-09
+SORBI_3010G140150,CCHC-type domain-containing protein,2,3,1.082071e-10
+SORBI_3003G370100,,3,3,1.287754e-09
+SORBI_3003G369200,DNA polymerase,3,3,1.358718e-09
+SORBI_3009G019700,Uncharacterized protein,2,3,4.943539e-09
+SORBI_3010G142900,Oleosin,2,3,1.05987e-10
+SORBI_3010G141001,C-terminal associated domain-containing protein,2,3,6.119557e-10
+SORBI_3010G140100,Uncharacterized protein,2,3,2.450644e-12
+SORBI_3009G019800,,2,3,1.836467e-10
+SORBI_3003G367650,inorganic diphosphatase,2,3,3.167163e-09
+SORBI_3010G139000,SURP motif domain-containing protein,2,3,2.625621e-10
+SORBI_3010G139301,Uncharacterized protein,2,3,1.365799e-10
+SORBI_3010G138900,CMP_dCMP-type deaminase domain-containing protein,2,3,4.187232e-12
+SORBI_3003G175950,Uncharacterized protein,2,3,1.460947e-10
+SORBI_3003G166500,NAD-dependent epimerase_dehydratase domain-containing protein,2,3,7.077691e-10
+SORBI_3003G107500,Protein CHROMATIN REMODELING 8,2,3,1.139756e-10
+SORBI_3010G132500,Uncharacterized protein,2,3,2.957355e-10
+SORBI_3003G105900,RING-type domain-containing protein,2,3,6.188695e-11
+SORBI_3010G132000,Pollen-specific arabinogalacta protein BAN102,2,3,2.957355e-10
+SORBI_3003G366850,Uncharacterized protein,3,3,1.103826e-09
+SORBI_3010G139200,Uncharacterized protein,2,3,1.365799e-10
+SORBI_3003G368000,Tubby-like F-box protein,2,3,3.167163e-09
+SORBI_3003G368400,,2,3,3.167163e-09
+SORBI_3003G368800,,2,3,3.167163e-09
+SORBI_3003G369000,,2,3,3.167163e-09
+SORBI_3008G103200,Prolyl endopeptidase,2,3,1.98562e-10
+SORBI_3010G139100,non-specific serine_threonine protein kinase,2,3,1.365799e-10
+SORBI_3008G104601,,2,3,1.502745e-11
+SORBI_3010G133000,Uncharacterized protein,2,3,2.957355e-10
+SORBI_3005G144900,Uncharacterized protein,2,3,1.085784e-09
+SORBI_3010G149700,Peroxidase,2,3,1.414455e-18
+SORBI_3001G022900,Ferredoxin,2,3,2.282694e-15
+SORBI_3005G144201,,2,3,1.167477e-10
+SORBI_3005G144500,,2,3,1.085784e-09
+SORBI_3005G144600,Kinesin-like protein,2,3,1.085784e-09
+SORBI_3007G112301,,2,3,6.87099e-14
+SORBI_3005G144800,DUF4283 domain-containing protein,2,3,1.085784e-09
+SORBI_3010G150000,Uncharacterized protein,2,3,1.414455e-18
+SORBI_3005G183600,Dirigent protein,2,3,1.456216e-13
+SORBI_3001G022600,Uncharacterized protein,2,3,2.282694e-15
+SORBI_3001G022500,Lysine--tRNA ligase,2,3,2.282694e-15
+SORBI_3008G017100,PORR domain-containing protein,2,3,1.605798e-09
+SORBI_3008G016900,glutamine--fructose-6-phosphate transaminase (isomerizing),2,3,1.605798e-09
+SORBI_3001G022200,Late embryogenesis abundant protein LEA-2 subgroup domain-containing protein,2,3,3.492585e-15
+SORBI_3001G022100,Uncharacterized protein,2,3,3.492585e-15
+SORBI_3001G021900,Peptidase M20 dimerisation domain-containing protein,2,3,2.932034e-14
+SORBI_3001G022000,Peptidase M20 dimerisation domain-containing protein,2,3,3.492585e-15
+SORBI_3005G012200,non-specific serine_threonine protein kinase,3,3,5.638375e-10
+SORBI_3010G146500,,2,3,3.306483e-10
+SORBI_3006G037401,Uncharacterized protein,2,3,4.835503e-09
+SORBI_3010G146100,Uncharacterized protein,2,3,1.610997e-10
+SORBI_3010G146400,Auxin-responsive protein,2,3,3.306483e-10
+SORBI_3004G197700,DUF4283 domain-containing protein,3,3,6.003575e-11
+SORBI_3010G146200,Uncharacterized protein,2,3,1.610997e-10
+SORBI_3005G183900,ABC transporter domain-containing protein,2,3,1.466659e-11
+SORBI_3005G186700,Carboxypeptidase,3,3,3.372341e-11
+SORBI_3010G146350,Uncharacterized protein,2,3,2.625621e-10
+SORBI_3005G183700,Uncharacterized protein,2,3,1.466659e-11
+SORBI_3005G186800,Carboxypeptidase,3,3,3.372341e-11
+SORBI_3003G077900,,2,2,3.140747e-09
+SORBI_3001G021500,Cellulose synthase,2,2,7.25892e-12
+SORBI_3001G021700,,2,2,2.39402e-14
+SORBI_3001G021601,Uncharacterized protein,2,2,7.25892e-12
+SORBI_3001G021800,WH1 domain-containing protein,2,2,3.492585e-15
+SORBI_3010G135100,Uncharacterized protein,2,2,3.193903e-12
+SORBI_3003G078000,,2,2,3.140747e-09
+SORBI_3003G077500,Uncharacterized protein,2,2,3.140747e-09
+SORBI_3003G077600,DNA damage-binding protein 2,2,2,3.140747e-09
+SORBI_3003G077700,Protein root UVB sensitive 5,2,2,3.140747e-09
+SORBI_3001G261750,Uncharacterized protein,2,2,3.164879e-10
+SORBI_3001G022800,Actin,2,2,2.282694e-15
+SORBI_3001G261900,RNA uridylyltransferase,2,2,3.164879e-10
+SORBI_3001G262000,Uncharacterized protein,2,2,3.164879e-10
+SORBI_3001G285800,Uncharacterized protein,2,2,7.420687e-10
+SORBI_3001G295500,Uncharacterized protein,2,2,1.165916e-12
+SORBI_3001G295600,Uncharacterized protein,2,2,1.165916e-12
+SORBI_3010G142132,Uncharacterized protein,2,2,1.991446e-10
+SORBI_3010G141966,Uncharacterized protein,2,2,2.042273e-10
+SORBI_3010G141800,Ubiquitin-like protease family profile domain-containing protein,2,2,2.042273e-10
+SORBI_3010G141700,Protein FAR1-RELATED SEQUENCE,2,2,2.042273e-10
+SORBI_3010G141600,"Formate dehydrogenase, mitochondrial",2,2,1.479959e-10
+SORBI_3010G141500,Ubiquitin-like protease family profile domain-containing protein,2,2,1.479959e-10
+SORBI_3010G141433,Uncharacterized protein,2,2,5.401947e-11
+SORBI_3001G261700,LOB domain-containing protein,2,2,3.164879e-10
+SORBI_3001G260850,Uncharacterized protein,2,2,2.490756e-12
+SORBI_3001G195932,,2,2,1.330661e-09
+SORBI_3003G069950,Protein kinase domain-containing protein,2,2,3.624862e-11
+SORBI_3001G263900,,2,2,2.500389e-10
+SORBI_3001G021200,Uncharacterized protein,2,2,7.25892e-12
+SORBI_3003G185300,Dynein light chain,2,2,1.531726e-09
+SORBI_3004G259101,Rho GDP-dissociation inhibitor 1,2,2,4.644674e-10
+SORBI_3005G088700,Pectinesterase inhibitor domain-containing protein,2,2,1.000254e-10
+SORBI_3005G088600,Transmembrane protein,2,2,1.000254e-10
+SORBI_3005G088500,WAT1-related protein,2,2,1.000254e-10
+SORBI_3005G088100,Uncharacterized protein,2,2,1.000254e-10
+SORBI_3005G087900,Non-lysosomal glucosylceramidase,2,2,1.000254e-10
+SORBI_3005G054700,,2,2,1.986563e-09
+SORBI_3008G103066,,2,2,7.446227e-11
+SORBI_3004G140300,,2,2,4.396448e-10
+SORBI_3008G103800,Uncharacterized protein,2,2,1.502745e-11
+SORBI_3008G103900,RRM domain-containing protein,2,2,1.502745e-11
+SORBI_3008G104100,Uncharacterized protein,2,2,7.929619e-10
+SORBI_3008G105000,BTB domain-containing protein,2,2,2.843692e-09
+SORBI_3004G140600,Exonuclease domain-containing protein,2,2,4.396448e-10
+SORBI_3004G140501,BED-type domain-containing protein,2,2,4.396448e-10
+SORBI_3005G088900,CCR4-NOT transcription complex subunit 11,2,2,1.000254e-10
+SORBI_3005G125400,S-type anion channel SLAH3,2,2,2.08943e-12
+SORBI_3005G182701,,2,2,1.485947e-09
+SORBI_3005G182900,,2,2,1.466659e-11
+SORBI_3005G183100,Sulfotransferase,2,2,1.466659e-11
+SORBI_3005G183200,14-3-3 domain-containing protein,2,2,1.466659e-11
+SORBI_3005G183300,,2,2,1.456216e-13
+SORBI_3008G048933,Uncharacterized protein,2,2,2.114556e-16
+SORBI_3008G005800,Trichome birefringence-like N-terminal domain-containing protein,2,2,5.915794e-11
+SORBI_3008G005700,Uncharacterized protein,2,2,5.915794e-11
+SORBI_3008G005100,Trichome birefringence-like N-terminal domain-containing protein,2,2,5.915794e-11
+SORBI_3008G004900,Uncharacterized protein,2,2,5.915794e-11
+SORBI_3008G004800,Ferritin,2,2,5.915794e-11
+SORBI_3008G004600,E1 ubiquitin-activating enzyme,2,2,5.915794e-11
+SORBI_3005G223925,,2,2,2.117281e-10
+SORBI_3005G224300,,2,2,2.117281e-10
+SORBI_3005G225200,DUF1618 domain-containing protein,2,2,7.378797e-10
+SORBI_3004G140400,DNA2_NAM7 helicase-like C-terminal domain-containing protein,2,2,4.396448e-10
+SORBI_3004G104400,FAD-binding PCMH-type domain-containing protein,2,2,8.011247e-10
+SORBI_3003G185500,Uncharacterized protein,2,2,1.531726e-09
+SORBI_3010G127300,Protein kinase domain-containing protein,2,2,9.595744e-11
+SORBI_3010G125100,Ribosomal protein L46 N-terminal domain-containing protein,2,2,5.991652e-11
+SORBI_3010G125200,Serine_threonine-protein phosphatase 4 regulatory subunit 2,2,2,5.991652e-11
+SORBI_3010G125300,NB-ARC domain-containing protein,2,2,5.991652e-11
+SORBI_3003G266100,Symplekin C-terminal domain-containing protein,2,2,3.368183e-09
+SORBI_3003G252200,,2,2,6.551256e-11
+SORBI_3003G186200,RWP-RK domain-containing protein,2,2,1.531726e-09
+SORBI_3010G127550,CCHC-type domain-containing protein,2,2,9.595744e-11
+SORBI_3004G104300,,2,2,8.011247e-10
+SORBI_3010G127600,Peptidase A1 domain-containing protein,2,2,9.595744e-11
+SORBI_3010G131900,RING-type E3 ubiquitin transferase,2,2,3.071507e-10
+SORBI_3003G186000,RAVE complex protein Rav1 C-terminal domain-containing protein,2,2,1.531726e-09
+SORBI_3003G185900,,2,2,1.531726e-09
+SORBI_3003G185800,,2,2,1.531726e-09
+SORBI_3003G185600,Aspartate racemase,2,2,1.531726e-09
+SORBI_3010G125000,Steroid nuclear receptor ligand-binding,2,2,5.991652e-11
+SORBI_3010G124900,B-keto acyl reductase,2,2,5.991652e-11
+SORBI_3010G124800,Protein kinase domain-containing protein,2,2,5.991652e-11
+SORBI_3009G237400,Timeless N-terminal domain-containing protein,2,2,6.965395e-10
+SORBI_3009G221000,,2,2,1.222343e-09
+SORBI_3009G220800,Rx N-terminal domain-containing protein,2,2,1.222343e-09
+SORBI_3009G220700,Uncharacterized protein,2,2,1.222343e-09
+SORBI_3009G220500,,2,2,1.222343e-09
+SORBI_3004G103600,Actin-related protein 2_3 complex subunit 3,2,2,2.067558e-11
+SORBI_3004G103700,Uncharacterized protein,2,2,2.82693e-10
+SORBI_3004G103800,,2,2,8.011247e-10
+SORBI_3009G109000,Uncharacterized protein,2,2,1.45047e-09
+SORBI_3009G069600,Malic enzyme,2,2,1.093331e-10
+SORBI_3004G103901,Berberine_berberine-like domain-containing protein,2,2,8.011247e-10
+SORBI_3004G104100,,2,2,8.011247e-10
+SORBI_3004G104200,Berberine_berberine-like domain-containing protein,2,2,8.011247e-10
+SORBI_3004G104250,Pentacotripeptide-repeat region of PRORP domain-containing protein,2,2,8.011247e-10
+SORBI_3001G021000,Nicotinate phosphoribosyltransferase,2,2,7.25892e-12

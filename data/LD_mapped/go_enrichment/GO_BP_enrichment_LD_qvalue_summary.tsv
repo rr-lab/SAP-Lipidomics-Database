@@ -1,0 +1,5 @@
+layer	candidate_genes	genes_tested_with_GO_BP	terms_tested	qvalue_below_0.05
+CTL_individual	1100	375	61	2
+CTL_sumratio	115	48	7	1
+LIN_individual	4323	1733	306	0
+LIN_sumratio	812	329	48	7

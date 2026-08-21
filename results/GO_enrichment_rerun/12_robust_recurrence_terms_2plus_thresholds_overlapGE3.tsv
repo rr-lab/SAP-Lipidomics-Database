@@ -1,0 +1,25 @@
+BaseAnalysis	source	term_id	term_name	N_thresholds_FDR05	Significant_thresholds	Best_FDR	Max_Fold_Enrichment	Max_intersection_size
+CTL_combined	GO:BP	GO:0010628	positive regulation of gene expression	2	20%;5%	0.0010877194726376228	10.698752228163993	10
+CTL_combined	GO:MF	GO:0004838	L-tyrosine-2-oxoglutarate transaminase activity	2	10%;20%	0.0018867360025614519	73.6747572815534	3
+CTL_combined	GO:MF	GO:0008793	aromatic-amino-acid transaminase activity	2	10%;20%	0.0020065611326794755	58.93980582524273	3
+CTL_combined	GO:BP	GO:0006572	L-tyrosine catabolic process	2	10%;20%	0.006199771777940145	47.76127320954907	3
+CTL_combined	GO:MF	GO:0045182	translation regulator activity	2	20%;5%	0.012646669885414576	8.153102336825143	8
+CTL_combined	GO:BP	GO:0006570	tyrosine metabolic process	2	10%;20%	0.014036040610707708	32.67876588021778	3
+CTL_individual	GO:MF	GO:0004838	L-tyrosine-2-oxoglutarate transaminase activity	3	10%;20%;5%	7.741422813143539e-4	93.68518518518518	3
+CTL_individual	GO:MF	GO:0008793	aromatic-amino-acid transaminase activity	3	10%;20%;5%	8.246528117943034e-4	74.94814814814815	3
+CTL_individual	GO:BP	GO:0016054	organic acid catabolic process	3	10%;20%;5%	0.0019487152739557732	9.95686794956868	7
+CTL_individual	GO:BP	GO:0046395	carboxylic acid catabolic process	3	10%;20%;5%	0.0019487152739557732	9.95686794956868	7
+CTL_individual	GO:BP	GO:0006572	L-tyrosine catabolic process	3	10%;20%;5%	0.003548216642333533	62.95804195804196	3
+CTL_individual	GO:BP	GO:0006570	tyrosine metabolic process	3	10%;20%;5%	0.009877495965271864	43.07655502392344	3
+CTL_individual	GO:BP	GO:0009074	aromatic amino acid family catabolic process	3	10%;20%;5%	0.016083828227514772	27.28181818181818	3
+CTL_sum_ratio	GO:MF	GO:0008270	zinc ion binding	2	10%;20%	0.031505367532432514	6.786049631120053	4
+LIN_sum_ratio	GO:CC	GO:0005789	endoplasmic reticulum membrane	3	10%;20%;5%	6.365624742397933e-6	9.474555804726583	11
+LIN_sum_ratio	GO:CC	GO:0042175	nuclear outer membrane-endoplasmic reticulum membrane network	3	10%;20%;5%	6.365624742397933e-6	9.399161461452895	11
+LIN_sum_ratio	GO:CC	GO:0098827	endoplasmic reticulum subcompartment	3	10%;20%;5%	6.365624742397933e-6	9.424159231297185	11
+LIN_sum_ratio	GO:MF	GO:0042284	sphingolipid delta-4 desaturase activity	3	10%;20%;5%	2.092779424936764e-5	259.43589743589746	3
+LIN_sum_ratio	GO:CC	GO:0031984	organelle subcompartment	3	10%;20%;5%	9.870252629002094e-5	6.7238783130317685	11
+LIN_sum_ratio	GO:MF	GO:0016717	oxidoreductase activity, acting on paired donors, with oxidation of a pair of donors resulting in the reduction of molecular oxygen to two molecules of water	3	10%;20%;5%	6.658878743506071e-4	70.75524475524476	3
+LIN_sum_ratio	GO:CC	GO:0005783	endoplasmic reticulum	3	10%;20%;5%	0.0010496319642370683	4.101254480286738	16
+LIN_sum_ratio	GO:BP	GO:0030148	sphingolipid biosynthetic process	2	10%;5%	0.0021985125148067026	64.30714285714286	3
+LIN_sum_ratio	GO:MF	GO:0046914	transition metal ion binding	2	20%;5%	0.0043019202958926054	3.628474090012552	26
+LIN_sum_ratio	GO:CC	GO:0031090	organelle membrane	2	10%;5%	0.005644448391450392	2.8791256314992824	14

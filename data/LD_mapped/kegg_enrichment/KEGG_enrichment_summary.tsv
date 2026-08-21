@@ -1,0 +1,5 @@
+layer	candidate_genes	mapped_candidate_genes	mapped_background_genes	pathways_tested	bh_below_0.05
+CTL_individual	1100	379	2029	36	0
+CTL_sumratio	115	40	2029	2	0
+LIN_individual	4323	1736	2029	72	0
+LIN_sumratio	812	378	2029	17	0

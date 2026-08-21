@@ -1,0 +1,634 @@
+Condition,Lipid,BroadClass,Ambiguous,Scan,ProfileCorrelation,MappingStatus
+CTL,.alpha.-Amyrin,NA,FALSE,39650,0.903225193890711,excluded_low_confidence
+CTL,.alpha.-Ionone,Terpenoid,TRUE,10000,0.9999999999999991,retained_high_confidence
+CTL,.beta.-Amyrin,Terpenoid,TRUE,39650,0.880053297293294,excluded_low_confidence
+CTL,.beta.-Cryptoxanthin,Terpenoid,FALSE,29401,0.954310049904941,retained_high_confidence
+CTL,.beta.-Sitosterol,Sterol,FALSE,38484,0.8319580803155079,excluded_low_confidence
+CTL,.gamma.-Linolenoyl ethanolamide,N-acylethanolamine,TRUE,4825,0.9999999999999999,retained_high_confidence
+CTL,(-)-Caryophyllene oxide,Terpenoid,FALSE,11753,1.0000000000000002,retained_high_confidence
+CTL,alpha-Tocopherol,Vitamin,FALSE,21755,0.9464605196646737,excluded_low_confidence
+CTL,(+)-Pseudoephedrine,NA,TRUE,3775,0.9982647872881045,retained_high_confidence
+CTL,"(2E,4E,12Z)-N-(2-methylpropyl)octadeca-2,4,12-trienamide",Fatty acid amide,FALSE,10581,0.9999999999999991,retained_high_confidence
+CTL,"(2Z)-2-[(E)-6-(hydroxymethyl)-2,4,8,10-tetramethyldodec-2-enylidene]-4-methylpentanedioic acid",Prenol,FALSE,6495,0.9999999999999999,retained_high_confidence
+CTL,"(4R)-4-((5S,7R,9S,10S,13R,14S,17R)-7-hydroxy-10,13-dimethyl-3-oxohexadecahydro-1H-cyclopenta[a]phenanthren-17-yl)pentanoic acid",NA,FALSE,12459,1.0000000000000002,retained_high_confidence
+CTL,"[(2R)-2-ethylhexyl] 2-cyano-3,3-diphenylprop-2-enoate",NA,FALSE,7509,0.9999986052038952,retained_high_confidence
+CTL,"[2,3-di(heptadecanoyloxy)propyl] 2-(trimethylazaniumyl)ethyl phosphate",Glycerophospholipid,TRUE,26988,1.0000000000000002,retained_high_confidence
+CTL,"[2,3-dihydroxypropoxy][3-(hexadecanoyloxy)-2-[octadec-9-enoyloxy]propoxy]phosphinic acid",NA,FALSE,18402,0.9999999999999999,retained_high_confidence
+CTL,"1-({[2-(2-furylmethyl)-5-methylpyrrolidinyl]amino}methylene)-7-[8-({[2-(2-fury lmethyl)pyrrolidinyl]amino}methylene)-1,6-dihydroxy-3-methyl-5-(methylethyl)-7 -oxo(2-naphthyl)]-3,8-dihydroxy-6-methyl-4-(methylethyl)naphthalen-2-one",NA,FALSE,3719,0.9999839662251465,retained_high_confidence
+CTL,1-(1Z-Octadecenyl)-2-(9Z-octadecenoyl)-sn-glycero-3-phosphocholine,Glycerophospholipid,TRUE,27295,0.9540098992626238,retained_high_confidence
+CTL,1-(hexadecanoyloxy)-3-hydroxypropan-2-yl-octadec-9-enoate,Glycerolipid,TRUE,28209,1.0000000000000002,retained_high_confidence
+CTL,1-Arachidonoylglycerol,Glycerolipid,TRUE,7035,0.9999999999999997,retained_high_confidence
+CTL,1-heptadecanoyl-2-hydroxy-sn-glycero-3-phosphocholine,Glycerophospholipid,TRUE,10453,0.9999234481907655,retained_high_confidence
+CTL,1-Hexadecanoyl-2-(9Z-octadecenoyl)-sn-glycero-3-phosphoethanolamine,Glycerophospholipid,TRUE,23662,0.9966288501128108,retained_high_confidence
+CTL,1-Hexadecanoyl-sn-glycero-3-phosphocholine,Glycerophospholipid,TRUE,8318,0.9999999999999999,retained_high_confidence
+CTL,1-Linoleoylglycerol,NA,FALSE,5634,0.9999999868789479,retained_high_confidence
+CTL,1-Myristoyl-2-stearoyl-sn-glycero-3-phosphocholine,NA,TRUE,26913,0.9757403016810917,retained_high_confidence
+CTL,1-Octadecanamine,NA,FALSE,6577,1.0000000000000002,retained_high_confidence
+CTL,"1-Octadecanoyl-2-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-sn-glycero-3-phosphocholine",Glycerophospholipid,TRUE,26817,0.9999999999999999,retained_high_confidence
+CTL,1-Oleoyl-2-myristoyl-sn-glycero-3-phosphocholine,Glycerophospholipid,TRUE,24154,0.8552762704426289,excluded_low_confidence
+CTL,1-Oleoyl-2-palmitoyl-sn-glycero-3-phosphocholine,NA,FALSE,24711,0.7540932113022789,excluded_low_confidence
+CTL,1-Palmitoylglycerol,Glycerolipid,TRUE,19428,0.9069330359064488,excluded_low_confidence
+CTL,1-Phenylpyrrolidine,NA,FALSE,3775,0.9999999999999997,retained_high_confidence
+CTL,1-Stearoyl-2-linoleoyl-sn-glycero-3-phosphoethanolamine,NA,FALSE,24041,0.9821102487570265,retained_high_confidence
+CTL,1-Stearoyl-2-linoleoyl-sn-glycerol,Glycerophospholipid,TRUE,21227,0.9999999999999994,retained_high_confidence
+CTL,1-Stearoyl-2-oleoyl-sn-glycero-3-phosphoethanolamine,Glycerophospholipid,TRUE,22589,0.9999999999999991,retained_high_confidence
+CTL,"1,2-Benzenedicarboxylic acid",NA,FALSE,12355,1.0000000000000004,retained_high_confidence
+CTL,"1,2-Dierucoyl-sn-glycero-3-phosphocholine",Glycerophospholipid,TRUE,38763,0.9999999999999984,retained_high_confidence
+CTL,"1,2-Dihexadecanoyl-sn-glycero-3-phosphocholine",NA,FALSE,27820,0.9999999999999992,retained_high_confidence
+CTL,"1,2-Dilauroyl-sn-glycero-3-phosphoethanolamine",NA,FALSE,16924,0.9986681823881975,retained_high_confidence
+CTL,"1,2-Dilinoleoyl-sn-glycero-3-phosphoethanolamine",Glycerophospholipid,TRUE,19683,1.0000000000000002,retained_high_confidence
+CTL,"1,2-Dioleoyl-sn-glycerol",Glycerolipid,TRUE,11369,0.9999999999999996,retained_high_confidence
+CTL,"1,2-Ditetradecanoyl-sn-glycero-3-phosphocholine",Glycerophospholipid,TRUE,12000,0.9999999999999994,retained_high_confidence
+CTL,"14(15)-Epoxy-5Z,8Z,11Z-eicosatrienoic acid, methyl ester",NA,FALSE,16921,0.993668198279294,retained_high_confidence
+CTL,"1H-Indole-3-carboxamide, 1-(5-fluoropentyl)-N-tricyclo[3.3.1.1(3,7)]dec-1-yl-",Terpenoid,TRUE,4794,1.0000000000000007,retained_high_confidence
+CTL,"2-Ethylhexyl 2-cyano-3,3-diphenylacrylate",NA,FALSE,7509,1.000000000000002,retained_high_confidence
+CTL,2-Linoleoylglycerol,Glycerolipid,TRUE,26214,0.9131001759604106,excluded_low_confidence
+CTL,"3-Cyclopentene-1-octanoic acid, 2-(3-hydroxy-1-penten-1-yl)-5-oxo-",Fatty acid derivative,TRUE,4168,1.0000000000000002,retained_high_confidence
+CTL,3-Hydroxyechinenone,Terpenoid,FALSE,11100,0.9999999999999984,retained_high_confidence
+CTL,"4-amino-5-(5-hydroxy-2',6-dimethyl-5'-prop-1-en-2-ylspiro[7-oxabicyclo[4.1.0]heptane-3,1'-cyclopentane]-2-yl)oxy-5-oxopentanoic acid",Tetrapyrrole,FALSE,3012,1,retained_high_confidence
+CTL,4.alpha./.beta.-Hydroxyprostanozol,Fatty acid,TRUE,4402,0.9955815539572112,retained_high_confidence
+CTL,"5-Androstene-3.beta.,17.beta.-diol",Steroid,TRUE,10230,0.9999999999999997,retained_high_confidence
+CTL,"5.alpha.-Pregnan-3.alpha.,17-diol-20-one 3-sulfate",NA,FALSE,3719,0.9999999999999996,retained_high_confidence
+CTL,"8(9)-Epoxy-5Z,11Z,14Z-eicosatrienoic acid, methyl ester",Fatty acid derivative,TRUE,16921,0.9841460961612697,retained_high_confidence
+CTL,9-Oxo-11-(3-pentyl-2-oxiranyl)-10E-undecenoic acid,NA,FALSE,3099,1.0000000000000007,retained_high_confidence
+CTL,"9,12-Octadecadiynoic acid",NA,TRUE,6980,0.9999999999999986,retained_high_confidence
+CTL,"9,12,13,TriHODE",Fatty acid,TRUE,4402,0.9999999999999992,retained_high_confidence
+CTL,AC1L1X1Z,NA,FALSE,8731,0.9999933974481346,retained_high_confidence
+CTL,AEG(o-15:2/15:0),Ether lipid,FALSE,26054,1.0000000000000009,retained_high_confidence
+CTL,AEG(o-16:2/16:0),Ether lipid,FALSE,17938,0.9946006336868256,retained_high_confidence
+CTL,AEG(o-16:2/18:2),Ether lipid,TRUE,16278,0.9428123149592846,excluded_low_confidence
+CTL,AEG(o-16:3/16:0),Ether lipid,TRUE,17093,0.9966712806565365,retained_high_confidence
+CTL,AEG(o-18:3/16:1),Ether lipid,FALSE,26226,0.999999999999999,retained_high_confidence
+CTL,AEG(o-18:4/16:1),Ether lipid,FALSE,13741,0.930162617169491,excluded_low_confidence
+CTL,AEG(o-18:4/18:2),Ether lipid,FALSE,16558,1.0000000000000002,retained_high_confidence
+CTL,Alloxanthin,Terpenoid,TRUE,8526,1.0000000000000002,retained_high_confidence
+CTL,alpha-Carotene,NA,FALSE,33429,0.9995041876872426,retained_high_confidence
+CTL,Antheraxanthin,Terpenoid,FALSE,9918,0.9956528972977987,retained_high_confidence
+CTL,Apocarotenal,Terpenoid,FALSE,17978,0.9999999999999994,retained_high_confidence
+CTL,Arachidonoylthiophosphorylcholine,NA,FALSE,23570,1.0000000000000007,retained_high_confidence
+CTL,Austinoneol,NA,TRUE,3719,0.9999839399688071,retained_high_confidence
+CTL,B27A19,NA,FALSE,18264,1,retained_high_confidence
+CTL,beta-Carotene,Terpenoid,FALSE,33429,0.9998694638831407,retained_high_confidence
+CTL,beta-Zeacarotene,Terpenoid,FALSE,33455,0.999999999999999,retained_high_confidence
+CTL,Bis(2-ethylhexyl) sebacate,NA,TRUE,17562,1.0000000000000002,retained_high_confidence
+CTL,Boldenone cypionate,Steroid,FALSE,6944,1.0000000000000004,retained_high_confidence
+CTL,Celaxanthin,Terpenoid,TRUE,14115,0.9999999999999997,retained_high_confidence
+CTL,Cer(24:1),Sphingolipid,FALSE,10610,0.9999999999999996,retained_high_confidence
+CTL,Cer(d18:2/20:1),Sphingolipid,FALSE,23048,0.9999999999999994,retained_high_confidence
+CTL,Chlorophyll a,Tetrapyrrole,FALSE,26620,0.9779135719900927,retained_high_confidence
+CTL,cis-2-Decenoic acid,NA,TRUE,7957,0.999924065797018,retained_high_confidence
+CTL,CL(18:1),Glycerophospholipid,FALSE,33254,0.9999999999999999,retained_high_confidence
+CTL,Cycloartenol acetate,Terpenoid,FALSE,37824,0.7534545785878802,excluded_low_confidence
+CTL,D-erythro-Sphingosine C-20,Fatty acid amide,TRUE,11310,0.9999999999999992,retained_high_confidence
+CTL,DBP,NA,TRUE,12362,0.9999999999978533,retained_high_confidence
+CTL,DG(12:0/12:0/0:0),Glycerolipid,FALSE,16924,0.934382275836919,excluded_low_confidence
+CTL,DG(16:0/0:0/16:0),Glycerolipid,TRUE,27972,1.0000000000000007,retained_high_confidence
+CTL,DG(16:0/16:0/16:0),Glycerolipid,FALSE,17162,0.9575142153243801,retained_high_confidence
+CTL,DG(16:0/18:0/0:0),Glycerolipid,FALSE,31406,1.0000000000000002,retained_high_confidence
+CTL,DG(16:0/18:1/0:0),Glycerolipid,FALSE,18377,0.9111332229165546,excluded_low_confidence
+CTL,DG(16:0/18:2),Glycerolipid,TRUE,26863,0.9930050586843545,retained_high_confidence
+CTL,DG(16:0/18:3),Glycerolipid,TRUE,24388,0.997608346061383,retained_high_confidence
+CTL,DG(16:1/18:3/0:0),Glycerolipid,FALSE,23745,1.0000000000000004,retained_high_confidence
+CTL,DG(18:0/18:0/0:0),Glycerolipid,FALSE,32063,1.0000000000000002,retained_high_confidence
+CTL,DG(18:0/18:2/0:0),Glycerolipid,TRUE,28450,1.000000000000001,retained_high_confidence
+CTL,DG(18:1/18:2/0:0),Glycerolipid,FALSE,27091,1.0000000000000002,retained_high_confidence
+CTL,DG(18:1/18:3),Glycerolipid,TRUE,24945,1.0000000000000009,retained_high_confidence
+CTL,DG(18:1/2:0/0:0),Glycerolipid,FALSE,10624,0.9999999999999992,retained_high_confidence
+CTL,DG(18:2/18:2),Glycerolipid,FALSE,24945,0.990733331149029,retained_high_confidence
+CTL,DG(18:2/18:3/0:0),Glycerolipid,FALSE,23401,0.9999999999999996,retained_high_confidence
+CTL,DG(18:3/18:3/0:0),Glycerolipid,TRUE,16858,0.9904330678322377,retained_high_confidence
+CTL,DGDG(16:0/18:1),Glycerolipid,FALSE,21853,0.9628837155913582,retained_high_confidence
+CTL,DGDG(16:0/18:2),Glycerolipid,FALSE,20144,1.000000000000001,retained_high_confidence
+CTL,DGDG(16:0/18:3),Glycerolipid,FALSE,17800,0.9999999999999994,retained_high_confidence
+CTL,DGDG(18:0/18:2),Glycerolipid,TRUE,22489,1.0000000000000002,retained_high_confidence
+CTL,DGDG(18:0/18:3),Glycerolipid,FALSE,20319,1.0000000000000002,retained_high_confidence
+CTL,DGDG(18:2/18:3),Glycerolipid,FALSE,16218,1.0000000000000007,retained_high_confidence
+CTL,DGDG(18:2/18:4),Glycerolipid,FALSE,14423,0.9996176233994528,retained_high_confidence
+CTL,"Di(2,6-dimethyl-4-heptyl) phthalate",NA,TRUE,12377,0.9999879193200832,retained_high_confidence
+CTL,"Di(3,7-dimethyl-1-octyl) phthalate",NA,FALSE,12377,0.9922652314373748,retained_high_confidence
+CTL,Diadinochrome,Terpenoid,FALSE,8077,0.9843747862665555,retained_high_confidence
+CTL,Dibutyl phthalate,NA,FALSE,12362,0.9999999999983027,retained_high_confidence
+CTL,Diisodecyl phthalate,NA,FALSE,17773,0.9999999999569179,retained_high_confidence
+CTL,Diisooctyl phthalate,NA,TRUE,12576,1.0000000000000004,retained_high_confidence
+CTL,Dimethachlor,NA,FALSE,3776,0.9989332355700672,retained_high_confidence
+CTL,Dioctyl phthalate,NA,TRUE,12576,0.9999999999999661,retained_high_confidence
+CTL,Empenthrin,NA,TRUE,4581,0.9581175447178336,retained_high_confidence
+CTL,Erucamide,NA,FALSE,14165,1.0000000000000009,retained_high_confidence
+CTL,Ethcathinone,NA,TRUE,3797,0.9999999999999996,retained_high_confidence
+CTL,FA(18:4),Fatty acid,FALSE,6980,0.9999999999944141,retained_high_confidence
+CTL,FA(22:0) amide,Fatty acid amide,FALSE,16629,0.9999999999999997,retained_high_confidence
+CTL,FA(22:1),Fatty acid,FALSE,13631,0.8719272678829483,excluded_low_confidence
+CTL,GalCer(d18:2/18:1),NA,FALSE,20046,1.0000000000000007,retained_high_confidence
+CTL,GalCer(d18:2/20:1),NA,FALSE,23053,1.0000000000000009,retained_high_confidence
+CTL,GalCer(d18:2/22:1),NA,FALSE,25571,1.0000000000000007,retained_high_confidence
+CTL,gamma-sitosterol,Sterol,FALSE,4690,1.0000000000000007,retained_high_confidence
+CTL,gibberellic acid,Terpenoid,FALSE,4491,1,retained_high_confidence
+CTL,Ginsenoside F1,Terpenoid,TRUE,38263,0.9999999999999997,retained_high_confidence
+CTL,Hexadecylacetylglycerol,NA,FALSE,29601,0.9963085932335727,retained_high_confidence
+CTL,Iloprost,Terpenoid,TRUE,3902,0.9999999999999996,retained_high_confidence
+CTL,Lanosterol,Terpenoid,FALSE,39650,0.8791255064826515,excluded_low_confidence
+CTL,LPC 18:3,Glycerophospholipid,FALSE,5833,0.9999998838951852,retained_high_confidence
+CTL,LPC(16:0/0:0),Glycerophospholipid,FALSE,8318,0.9748928645509115,retained_high_confidence
+CTL,LPE(16:0/0:0),Glycerophospholipid,FALSE,6862,0.9999999992185595,retained_high_confidence
+CTL,Lupenone,Terpenoid,TRUE,38732,0.9841808126164854,retained_high_confidence
+CTL,Lupeol,Terpenoid,FALSE,39650,0.8945793472842224,excluded_low_confidence
+CTL,Lutein,Terpenoid,FALSE,12466,0.9541492945030764,retained_high_confidence
+CTL,Luteolin 7-glucoside,NA,TRUE,12916,0.9999999999999996,retained_high_confidence
+CTL,Luteolin-4'-O-glucoside,Flavonoid,TRUE,12916,0.9999994594795099,retained_high_confidence
+CTL,Lycopene,Terpenoid,FALSE,34040,0.9999999999999996,retained_high_confidence
+CTL,Medroxyprogesterone,Steroid,TRUE,4521,1,retained_high_confidence
+CTL,MG(12:0),Glycerolipid,FALSE,16189,0.9999999999991478,retained_high_confidence
+CTL,MG(16:1),Glycerolipid,FALSE,4564,0.9999999971932424,retained_high_confidence
+CTL,MG(18:0),Glycerolipid,FALSE,29601,0.9868690697108633,retained_high_confidence
+CTL,MG(18:3),Glycerolipid,FALSE,16921,0.9557249050496103,retained_high_confidence
+CTL,MGDG(16:0/18:1),Glycerolipid,FALSE,23949,1,retained_high_confidence
+CTL,MGDG(16:0/18:3),Glycerolipid,FALSE,20394,0.9933000198764855,retained_high_confidence
+CTL,MGDG(18:2/18:2),Glycerolipid,FALSE,20839,1.0000000000000002,retained_high_confidence
+CTL,MGDG(18:2/18:3),Glycerolipid,FALSE,18899,0.9999890817644627,retained_high_confidence
+CTL,MGDG(18:3/18:3),Glycerolipid,FALSE,16752,0.9999963335991277,retained_high_confidence
+CTL,MLS002695918-01!70356-09-1,NA,TRUE,7446,0.9887851695173014,retained_high_confidence
+CTL,Mono-2-ethylhexyl phthalate,NA,FALSE,12377,0.9999466449195493,retained_high_confidence
+CTL,Monoelaidin,NA,FALSE,11369,0.999999999999698,retained_high_confidence
+CTL,Monoisobutyl phthalate,NA,TRUE,12377,0.9999999999999997,retained_high_confidence
+CTL,N-acyl amino acid (C15:0),Fatty acid,FALSE,7290,1.0000000000000007,retained_high_confidence
+CTL,N-acylethanolamide (FA(15:0)),Fatty acid amide,FALSE,4482,0.9999999999999999,retained_high_confidence
+CTL,N-Cyclohexanecarbonylpentadecylamine,NA,FALSE,14165,0.9999999999999744,retained_high_confidence
+CTL,"N,N-Dimethyldodecylamine N-oxide",NA,FALSE,3916,0.999999999999999,retained_high_confidence
+CTL,Nandrolone,NA,FALSE,4581,0.9535808560153729,retained_high_confidence
+CTL,NCGC00380283-01!4-[5-[[4-[5-[acetyl(hydroxy)amino]pentylamino]-4-oxobutanoyl]-hydroxyamino]pentylamino]-4-oxobutanoic acid,Glycerophospholipid,TRUE,5451,1.000000000000001,retained_high_confidence
+CTL,"NCGC00385006-01_C25H36O2_Dicyclopenta[a,d]cycloocten-3(3aH)-one, 7-[(2Z)-1,5-dimethyl-2,4-hexadien-1-yl]-6,6a,7,8,9,9a,10,10a-octahydro-4-(hydroxymethyl)-1,9a-dimethyl-,(4E,6aS,7R,9aR,10aS)-",NA,FALSE,13490,0.9999999999999994,retained_high_confidence
+CTL,"NCGC00385123-01_C22H30O6_7b,9-Dihydroxy-3-(hydroxymethyl)-1,1,6,8-tetramethyl-5-oxo-1,1a,1b,4,4a,5,7a,7b,8,9-decahydro-9aH-cyclopropa[3,4]benzo[1,2-e]azulen-9a-yl acetate",Terpenoid,FALSE,3590,0.9990975661410819,retained_high_confidence
+CTL,"NCGC00386020-01_C18H28O3_8-{(1S,5R)-4-Oxo-5-[(2Z)-2-penten-1-yl]-2-cyclopenten-1-yl}octanoic acid",NA,FALSE,4581,0.970343380511142,retained_high_confidence
+CTL,Nostoxanthin,Terpenoid,FALSE,12266,1.0000000000000002,retained_high_confidence
+CTL,Oxandrolone,Steroid,FALSE,4328,1.000000000000001,retained_high_confidence
+CTL,Oxo fatty acid (18:3),Fatty acid,FALSE,4581,0.9669666446886767,retained_high_confidence
+CTL,PA(16:0/18:2)),Glycerophospholipid,FALSE,19728,0.9023919586537578,excluded_low_confidence
+CTL,Palmitoylserinol,Fatty acid amide derivative,FALSE,6671,1.0000000000000004,retained_high_confidence
+CTL,Panaxcerol B,Glycerolipid,FALSE,4830,0.9995723085196409,retained_high_confidence
+CTL,PC(14:0/18:2),Glycerophospholipid,TRUE,22057,0.8901214128590776,excluded_low_confidence
+CTL,PC(14:0/18:3),Glycerophospholipid,TRUE,19925,0.9999999999999991,retained_high_confidence
+CTL,PC(14:0/20:4),Glycerophospholipid,TRUE,20789,0.9445988377667658,excluded_low_confidence
+CTL,PC(14:0/22:5),Glycerophospholipid,FALSE,22341,0.9268953944243175,excluded_low_confidence
+CTL,PC(14:0/22:6),Glycerophospholipid,TRUE,19198,0.9999999999999999,retained_high_confidence
+CTL,PC(16:0/20:4),Glycerophospholipid,FALSE,23212,1.0000000000000009,retained_high_confidence
+CTL,PC(16:0/20:5),Glycerophospholipid,FALSE,21368,1.0000000000000002,retained_high_confidence
+CTL,PC(16:0/16:0),Glycerophospholipid,FALSE,26913,0.975740220225392,retained_high_confidence
+CTL,PC(16:0/18:0),Glycerophospholipid,FALSE,25527,0.991053036166124,retained_high_confidence
+CTL,PC(16:0/18:1),Glycerophospholipid,TRUE,27333,0.7645081171477816,excluded_low_confidence
+CTL,PC(16:0/18:2),Glycerophospholipid,TRUE,25527,0.9988666168039948,retained_high_confidence
+CTL,PC(16:0/18:3),Glycerophospholipid,TRUE,23125,0.9997254137754755,retained_high_confidence
+CTL,PC(16:0/20:3),Glycerophospholipid,TRUE,24909,0.840948886636336,excluded_low_confidence
+CTL,PC(16:0/20:4),Glycerophospholipid,TRUE,23009,0.9999999999999992,retained_high_confidence
+CTL,PC(16:0/20:5),Glycerophospholipid,TRUE,21081,0.99706102394784,retained_high_confidence
+CTL,PC(16:0/22:5),Glycerophospholipid,TRUE,23992,0.9077259802563454,excluded_low_confidence
+CTL,PC(16:0/22:6),Glycerophospholipid,TRUE,25225,0.9502732991086854,retained_high_confidence
+CTL,PC(16:1/16:1),Glycerophospholipid,FALSE,21417,1.0000000000000007,retained_high_confidence
+CTL,PC(16:1/16:1),Glycerophospholipid,FALSE,22057,0.8875879344678481,excluded_low_confidence
+CTL,PC(16:1/18:2),Glycerophospholipid,TRUE,24222,1.000000000000001,retained_high_confidence
+CTL,PC(18:0/18:2),Glycerophospholipid,TRUE,28282,0.9784730141755115,retained_high_confidence
+CTL,PC(18:0/18:3),Glycerophospholipid,FALSE,26290,0.9903301208184618,retained_high_confidence
+CTL,PC(18:0/20:2),Glycerophospholipid,FALSE,30089,0.9471724372799838,excluded_low_confidence
+CTL,PC(18:0/20:3),Glycerophospholipid,TRUE,28283,0.8924014565751468,excluded_low_confidence
+CTL,PC(18:1/18:2),Glycerophospholipid,FALSE,23570,0.8778077499909462,excluded_low_confidence
+CTL,PC(18:1/18:1),Glycerophospholipid,FALSE,28282,0.978775010970763,retained_high_confidence
+CTL,PC(18:1/20:1),Glycerophospholipid,TRUE,30089,0.9202971172940898,excluded_low_confidence
+CTL,PC(18:1/20:4),Glycerophospholipid,FALSE,28258,0.8473477962860224,excluded_low_confidence
+CTL,PC(18:1/22:1),Glycerophospholipid,TRUE,33994,0.9999999999999994,retained_high_confidence
+CTL,PC(18:1/24:0),Glycerophospholipid,FALSE,37511,1.0000000000000002,retained_high_confidence
+CTL,PC(18:1/24:1),Glycerophospholipid,TRUE,35849,0.9999999999999987,retained_high_confidence
+CTL,PC(18:2/0:0),Glycerophospholipid,FALSE,6973,1.0000000000000007,retained_high_confidence
+CTL,PC(18:2/20:0),Glycerophospholipid,FALSE,30089,0.9538077564879911,retained_high_confidence
+CTL,PC(18:3/0:0),Glycerophospholipid,FALSE,5833,0.9999999999999987,retained_high_confidence
+CTL,PE(14:0/22:6),Glycerophospholipid,TRUE,15933,0.9999999999999989,retained_high_confidence
+CTL,PE(16:0/0:0),Glycerophospholipid,FALSE,6862,1.0000000000000002,retained_high_confidence
+CTL,PE(16:0/18:0),Glycerophospholipid,FALSE,25664,0.999999999999998,retained_high_confidence
+CTL,PE(16:0/18:1),Glycerophospholipid,FALSE,19683,0.9972915414326791,retained_high_confidence
+CTL,PE(16:0/18:2),Glycerophospholipid,TRUE,21981,0.9999999999999996,retained_high_confidence
+CTL,PE(16:0/18:2),Glycerophospholipid,FALSE,21981,0.9967601881783893,retained_high_confidence
+CTL,PE(16:0/18:3),Glycerophospholipid,TRUE,19505,1.0000000000000007,retained_high_confidence
+CTL,PE(16:0/20:4),Glycerophospholipid,FALSE,19683,0.9793508526737353,retained_high_confidence
+CTL,PE(16:0/20:5),Glycerophospholipid,TRUE,18001,0.9999999999999997,retained_high_confidence
+CTL,PE(18:0/18:2),Glycerophospholipid,TRUE,24041,1.0000000000000002,retained_high_confidence
+CTL,PE(18:1/18:2),Glycerophospholipid,FALSE,22707,1.000000000000001,retained_high_confidence
+CTL,PE(18:2/18:3),Glycerophospholipid,FALSE,18001,0.9997079509989228,retained_high_confidence
+CTL,PE(18:3/18:3),Glycerophospholipid,FALSE,16861,0.9170179909832092,excluded_low_confidence
+CTL,PG(16:0/18:1),Glycerophospholipid,FALSE,18377,0.9946014332292162,retained_high_confidence
+CTL,PG(16:0/16:0),Glycerophospholipid,FALSE,14846,0.9999999999999992,retained_high_confidence
+CTL,PG(18:0/16:0),Glycerophospholipid,FALSE,20718,1.0000000000000007,retained_high_confidence
+CTL,"phenylmethyl(2S,3R)-3-hydroxy-2-[(phenylmethoxy)carbonylamino]butanoate",NA,FALSE,10014,0.9998467136228814,retained_high_confidence
+CTL,Pheophorbide a,Tetrapyrrole,TRUE,8341,0.919965679524615,excluded_low_confidence
+CTL,Pheophytin a,Tetrapyrrole,FALSE,30324,0.8898156784833535,excluded_low_confidence
+CTL,Phthalic anhydride,NA,FALSE,12377,0.9999963599532513,retained_high_confidence
+CTL,Phytosphingosine,Sphingolipid,FALSE,4953,0.9836227441776386,retained_high_confidence
+CTL,Pretilachlor,NA,TRUE,4541,1.0000000000000002,retained_high_confidence
+CTL,Primidone,NA,TRUE,2892,1.0000000000000013,retained_high_confidence
+CTL,PS(18:0/18:2),Glycerophospholipid,FALSE,15886,1,retained_high_confidence
+CTL,PS(18:0/20:4),Glycerophospholipid,FALSE,13600,1.0000000000000004,retained_high_confidence
+CTL,Simazine,NA,TRUE,2667,0.9999999999999984,retained_high_confidence
+CTL,SM(d18:1/17:0),Sphingolipid,FALSE,24698,0.9994089468085893,retained_high_confidence
+CTL,SPB 18:0;2OH,Sphingolipid,FALSE,5811,0.9999999970589286,retained_high_confidence
+CTL,SPHINGANINE,NA,TRUE,5811,0.9999999999999999,retained_high_confidence
+CTL,SQDG(16:0/14:0),Glycerolipid,FALSE,13357,1.0000000000000009,retained_high_confidence
+CTL,SQDG(16:0/16:0),Glycerolipid,FALSE,15686,0.9999999999999999,retained_high_confidence
+CTL,SQDG(16:0/18:0),Glycerolipid,FALSE,18512,1.0000000000000002,retained_high_confidence
+CTL,SQDG(16:0/18:1),Glycerolipid,FALSE,15865,0.9999999999999997,retained_high_confidence
+CTL,SQDG(16:0/18:2),Glycerolipid,FALSE,14411,1.0000000000000002,retained_high_confidence
+CTL,SQDG(16:0/18:3),Glycerolipid,FALSE,12862,0.9999999999999999,retained_high_confidence
+CTL,SQDG(16:1/18:3),Glycerolipid,FALSE,12212,0.9999999999999994,retained_high_confidence
+CTL,SQDG(18:0/18:3),Glycerolipid,FALSE,14909,0.9999999999999992,retained_high_confidence
+CTL,SQDG(18:1/18:3),Glycerolipid,TRUE,13314,1,retained_high_confidence
+CTL,SQDG(18:2/18:3),Glycerolipid,FALSE,12140,1.0000000000000007,retained_high_confidence
+CTL,SQDG(18:3/18:3),Glycerolipid,FALSE,11085,0.9999999999999999,retained_high_confidence
+CTL,TG(10:0/10:0/10:0),Glycerolipid,FALSE,24295,0.9999999999999999,retained_high_confidence
+CTL,TG(10:0/12:0/14:0),Glycerolipid,TRUE,31712,0.9999999999999996,retained_high_confidence
+CTL,TG(10:0/12:0/16:0),Glycerolipid,TRUE,32825,1.0000000000000002,retained_high_confidence
+CTL,TG(10:0/14:0/16:0),Glycerolipid,TRUE,34024,0.9999999999999999,retained_high_confidence
+CTL,TG(10:0/16:0/16:0),Glycerolipid,TRUE,34896,1.0000000000000002,retained_high_confidence
+CTL,TG(10:0/16:1/18:1),Glycerolipid,TRUE,34284,1.0000000000000002,retained_high_confidence
+CTL,TG(12:0/12:0/12:0),Glycerolipid,FALSE,31712,0.9788817846180985,retained_high_confidence
+CTL,TG(12:0/12:0/14:0),Glycerolipid,FALSE,32825,0.9999999998510698,retained_high_confidence
+CTL,TG(12:0/12:0/16:1),Glycerolipid,TRUE,32862,0.9999999999999996,retained_high_confidence
+CTL,TG(12:0/12:0/18:1),Glycerolipid,TRUE,34201,0.9999999999999999,retained_high_confidence
+CTL,TG(12:0/12:0/18:2),Glycerolipid,FALSE,33119,0.9999996247335214,retained_high_confidence
+CTL,TG(12:0/14:0/16:0),Glycerolipid,FALSE,34024,0.9942466838011652,retained_high_confidence
+CTL,TG(12:0/14:0/18:1),Glycerolipid,TRUE,34961,0.9999999999999996,retained_high_confidence
+CTL,TG(12:0/14:0/18:3),Glycerolipid,TRUE,33208,1,retained_high_confidence
+CTL,TG(12:0/16:0/16:0),Glycerolipid,FALSE,36131,0.9999999999999999,retained_high_confidence
+CTL,TG(12:0/16:0/18:1),Glycerolipid,TRUE,36607,0.9999999999999997,retained_high_confidence
+CTL,TG(12:0/16:0/18:2),Glycerolipid,TRUE,35392,1.0000000000000002,retained_high_confidence
+CTL,TG(12:0/16:0/18:3),Glycerolipid,TRUE,34610,0.9999999999999987,retained_high_confidence
+CTL,TG(12:0/18:1/18:1),Glycerolipid,TRUE,36647,1.0000000000000009,retained_high_confidence
+CTL,TG(12:0/18:1/18:2),Glycerolipid,TRUE,35888,1,retained_high_confidence
+CTL,TG(12:0/18:1/18:3),Glycerolipid,TRUE,34718,0.9999999999999991,retained_high_confidence
+CTL,TG(12:0/18:2/18:3),Glycerolipid,TRUE,34141,0.9999999999999997,retained_high_confidence
+CTL,TG(14:0/16:0/16:0),Glycerolipid,FALSE,36237,1.0000000000000009,retained_high_confidence
+CTL,TG(14:0/14:0/16:0),Glycerolipid,FALSE,36131,0.9999999939246299,retained_high_confidence
+CTL,TG(14:0/14:0/16:1),Glycerolipid,FALSE,34961,0.9999999142174552,retained_high_confidence
+CTL,TG(14:0/14:0/18:0),Glycerolipid,TRUE,37187,0.9980573289895418,retained_high_confidence
+CTL,TG(14:0/16:0/18:1),Glycerolipid,TRUE,37387,1.0000000000000009,retained_high_confidence
+CTL,TG(14:0/18:1/18:2),Glycerolipid,TRUE,36760,0.9999999999999997,retained_high_confidence
+CTL,TG(14:0/18:1/18:3),Glycerolipid,TRUE,36420,1.0000000000000009,retained_high_confidence
+CTL,TG(14:0/18:2/18:3),Glycerolipid,TRUE,34935,1.0000000000000007,retained_high_confidence
+CTL,TG(14:0/18:3/18:3),Glycerolipid,TRUE,34269,1.0000000000000002,retained_high_confidence
+CTL,TG(16:0/18:1/18:1),Glycerolipid,FALSE,37613,0.9999999999999994,retained_high_confidence
+CTL,TG(16:0/16:0/16:0),Glycerolipid,FALSE,38147,1,retained_high_confidence
+CTL,TG(16:0/16:0/18:1),Glycerolipid,FALSE,38323,1.0000000000000002,retained_high_confidence
+CTL,TG(16:0/16:0/18:2),Glycerolipid,TRUE,37506,1.0000000000000004,retained_high_confidence
+CTL,TG(16:0/16:0/20:1),Glycerolipid,TRUE,38985,0.9999999999999991,retained_high_confidence
+CTL,TG(16:0/18:0/18:2),Glycerolipid,TRUE,38495,0.9954247236973293,retained_high_confidence
+CTL,TG(16:0/18:1/18:2),Glycerolipid,FALSE,37831,1,retained_high_confidence
+CTL,TG(16:0/18:1/18:2),Glycerolipid,FALSE,37880,0.8604192325075112,excluded_low_confidence
+CTL,TG(16:0/18:1/18:3),Glycerolipid,TRUE,36808,0.999999999999999,retained_high_confidence
+CTL,TG(16:0/18:1/20:0),Glycerolipid,TRUE,39225,1.0000000000000002,retained_high_confidence
+CTL,TG(16:0/18:1/20:1),Glycerolipid,TRUE,38636,0.9999999999999996,retained_high_confidence
+CTL,TG(16:0/18:1/20:2),Glycerolipid,TRUE,38680,0.9999999999999991,retained_high_confidence
+CTL,TG(16:0/18:1/22:0),Glycerolipid,TRUE,39258,0.9757486517445267,retained_high_confidence
+CTL,TG(16:0/18:1/22:1),Glycerolipid,TRUE,39261,1.0000000000000007,retained_high_confidence
+CTL,TG(16:0/18:2/18:3),Glycerolipid,TRUE,36158,0.9999999999999997,retained_high_confidence
+CTL,TG(16:0/18:3/18:3),Glycerolipid,TRUE,35078,1.0000000000000002,retained_high_confidence
+CTL,TG(16:1/16:1/22:5),Glycerolipid,TRUE,35433,0.9993391430281494,retained_high_confidence
+CTL,TG(16:1/18:1/18:1),Glycerolipid,FALSE,37880,0.9344571848151377,excluded_low_confidence
+CTL,TG(16:1/20:1/20:2),Glycerolipid,TRUE,38794,0.999999999999999,retained_high_confidence
+CTL,TG(16:1/20:1/22:1),Glycerolipid,TRUE,39287,1.0000000000000002,retained_high_confidence
+CTL,TG(18:0/18:0/20:1),Glycerolipid,FALSE,39353,0.9999999999999994,retained_high_confidence
+CTL,TG(18:0/18:2/18:2),Glycerolipid,TRUE,37942,1.0000000000000004,retained_high_confidence
+CTL,TG(18:0/18:2/20:1),Glycerolipid,TRUE,39095,0.9999999999999999,retained_high_confidence
+CTL,TG(18:0/18:2/22:0),Glycerolipid,TRUE,39366,1.0000000000000007,retained_high_confidence
+CTL,TG(18:1/18:1/20:3),Glycerolipid,TRUE,38084,1.0000000000000007,retained_high_confidence
+CTL,TG(18:1/18:2/18:2),Glycerolipid,FALSE,37151,0.9999999999999996,retained_high_confidence
+CTL,TG(18:1/18:2/18:3),Glycerolipid,TRUE,36668,0.9999999999999992,retained_high_confidence
+CTL,TG(18:1/18:3/22:0),Glycerolipid,TRUE,39127,0.9999999999999994,retained_high_confidence
+CTL,TG(18:1/20:0/22:1),Glycerolipid,TRUE,39418,0.9999999999999997,retained_high_confidence
+CTL,TG(18:1/20:1/22:1),Glycerolipid,TRUE,39376,0.9999999999999992,retained_high_confidence
+CTL,TG(18:1/20:3/22:0),Glycerolipid,TRUE,39307,1.0000000000000002,retained_high_confidence
+CTL,TG(18:2/18:2/18:4),Glycerolipid,TRUE,34683,1.0000000000000002,retained_high_confidence
+CTL,TG(18:2/18:2/20:2),Glycerolipid,TRUE,37394,0.9999999999999999,retained_high_confidence
+CTL,TG(18:2/18:2/22:1),Glycerolipid,TRUE,38946,1.0000000000000002,retained_high_confidence
+CTL,TG(18:2/18:3/20:3),Glycerolipid,FALSE,35967,0.9999999999999999,retained_high_confidence
+CTL,TG(18:2/20:2/22:2),Glycerolipid,TRUE,39054,1.0000000000000004,retained_high_confidence
+CTL,TG(18:2/20:3/21:0),Glycerolipid,FALSE,39099,1.0000000000000004,retained_high_confidence
+CTL,TG(18:2/20:3/22:0),Glycerolipid,FALSE,39206,0.9999999999999991,retained_high_confidence
+CTL,TG(18:2/22:0/22:3),Glycerolipid,FALSE,39330,1.0000000000000002,retained_high_confidence
+CTL,TG(18:3/18:3/18:3),Glycerolipid,FALSE,34126,1.0000000000000002,retained_high_confidence
+CTL,TG(8:0/16:1/18:1),Glycerolipid,FALSE,33119,0.9999999999999989,retained_high_confidence
+CTL,Tri-p-tolylamine,NA,FALSE,5151,0.9999999999999997,retained_high_confidence
+CTL,Ubidecarenone,Prenol,FALSE,35522,1,retained_high_confidence
+CTL,Ubiquinone 9,NA,FALSE,33514,1.0000000000000007,retained_high_confidence
+CTL,Vitamin K1,Vitamin,FALSE,25014,0.9999999999999986,retained_high_confidence
+CTL,Zeaxanthin,Terpenoid,FALSE,12466,0.954149290017507,retained_high_confidence
+LIN,.alpha.-Amyrin,NA,FALSE,38150,0.8928596163482673,excluded_low_confidence
+LIN,.beta.-Amyrin acetate,Terpenoid,TRUE,38150,0.8516079050877424,excluded_low_confidence
+LIN,.beta.-Cryptoxanthin,Terpenoid,FALSE,27131,0.9848656864879146,retained_high_confidence
+LIN,.beta.-Sitosterol,Sterol,FALSE,35660,0.9478311637273646,excluded_low_confidence
+LIN,.gamma.-Linolenoyl ethanolamide,N-acylethanolamine,TRUE,4137,0.9999999999999991,retained_high_confidence
+LIN,"(2-{[3-(hexadecanoyloxy)-2-[octadeca-9,12-dienoyloxy]propyl phosphonato]oxy}ethyl)trimethylazanium",NA,FALSE,22165,0.9999999999999993,retained_high_confidence
+LIN,"(2R,6R)-2-methyl-6-tridecylpiperidine",Alkaloid-like compound,FALSE,5246,1.0000000000000004,retained_high_confidence
+LIN,"(6E,10E,14E,18E)-2,6,10,15,19,23-hexamethyltetracosa-6,10,14,18-tetraene-1,2,3,22,23-pentol",Terpenoid,TRUE,5455,1.0000000000000002,retained_high_confidence
+LIN,"[(2R)-2-ethylhexyl] 2-cyano-3,3-diphenylprop-2-enoate",NA,FALSE,6998,0.999999995142475,retained_high_confidence
+LIN,"1-({[2-(2-furylmethyl)-5-methylpyrrolidinyl]amino}methylene)-7-[8-({[2-(2-fury lmethyl)pyrrolidinyl]amino}methylene)-1,6-dihydroxy-3-methyl-5-(methylethyl)-7 -oxo(2-naphthyl)]-3,8-dihydroxy-6-methyl-4-(methylethyl)naphthalen-2-one",NA,FALSE,3144,0.9999999990728407,retained_high_confidence
+LIN,1-(1Z-Octadecenyl)-2-(9Z-octadecenoyl)-sn-glycero-3-phosphocholine,Glycerophospholipid,TRUE,20097,0.866639436378128,excluded_low_confidence
+LIN,1-(hexadecanoyloxy)-3-hydroxypropan-2-yl-octadec-9-enoate,Glycerolipid,TRUE,25680,1.0000000000000009,retained_high_confidence
+LIN,1-heptadecanoyl-2-hydroxy-sn-glycero-3-phosphocholine,Glycerophospholipid,TRUE,9545,0.997750810241376,retained_high_confidence
+LIN,1-Hexadecanoyl-2-(9Z-octadecenoyl)-sn-glycero-3-phosphoethanolamine,Glycerophospholipid,TRUE,21855,0.9999999999999973,retained_high_confidence
+LIN,1-Hexadecanoyl-sn-glycero-3-phosphocholine,NA,FALSE,9056,0.9999999999999984,retained_high_confidence
+LIN,1-Myristoyl-2-stearoyl-sn-glycero-3-phosphocholine,NA,TRUE,20097,0.8247664727839086,excluded_low_confidence
+LIN,1-Octadecanamine,NA,FALSE,8475,0.8201325852245819,excluded_low_confidence
+LIN,"1-Octadecanoyl-2-(5Z,8Z,11Z,14Z-eicosatetraenoyl)-sn-glycero-3-phosphocholine",Glycerophospholipid,TRUE,24600,1.0000000000000013,retained_high_confidence
+LIN,1-Oleoyl-2-palmitoyl-sn-glycero-3-phosphocholine,NA,FALSE,22887,0.8082429501107387,excluded_low_confidence
+LIN,1-Palmitoylglycerol,Glycerolipid,TRUE,16368,0.9733943944082079,retained_high_confidence
+LIN,1-Stearoyl-2-linoleoyl-sn-glycero-3-phosphoethanolamine,NA,FALSE,22318,0.9546488088242716,retained_high_confidence
+LIN,1-Stearoyl-2-linoleoyl-sn-glycerol,Glycerophospholipid,TRUE,19663,1.0000000000000007,retained_high_confidence
+LIN,"1,2-Di-(9Z-octadecenoyl)-sn-glycero-3-phosphoethanolamine",Glycerophospholipid,TRUE,22317,0.9999999999999997,retained_high_confidence
+LIN,"1,2-Dihexadecanoyl-sn-glycero-3-phosphocholine",Glycerophospholipid,TRUE,20097,0.8247652390525247,excluded_low_confidence
+LIN,"1,2-dihydroxyheptadec-16-yn-4-yl acetate",NA,FALSE,17323,1.0000000000000002,retained_high_confidence
+LIN,"1,2-Dilauroyl-sn-glycero-3-phosphoethanolamine",NA,FALSE,15329,0.9999999999999997,retained_high_confidence
+LIN,"1,2-Dilinoleoyl-sn-glycero-3-phosphoethanolamine",Glycerophospholipid,TRUE,18221,1.0000000000000007,retained_high_confidence
+LIN,"1,2-Dioleoyl-sn-glycerol",Glycerolipid,TRUE,10144,0.9999999999999989,retained_high_confidence
+LIN,"1,2-Ditetradecanoyl-sn-glycero-3-phosphocholine",Glycerophospholipid,TRUE,11821,1.0000000000000002,retained_high_confidence
+LIN,"1,2,6,6,10,17,20-heptamethyl-17-[N-(2-methylphenyl)carbamoyl]-12-oxopentacyclo [12.8.0.0<2,11>.0<5,10>.0<15,20>]docos-13-en-7-yl acetate",NA,TRUE,7138,0.9999999999999993,retained_high_confidence
+LIN,"11,14,17-Eicosatrienoic acid,(Z,Z,Z)-",NA,FALSE,17540,0.9804479939053368,retained_high_confidence
+LIN,"13-Keto-9Z,11E-octadecadienoic acid",Fatty acid derivative,TRUE,4205,0.9999999969575559,retained_high_confidence
+LIN,"13,14-Dihydro-15-ketoprostaglandin F2.alpha. isopropyl ester",Fatty acid derivative,TRUE,6304,0.9999999999999999,retained_high_confidence
+LIN,"13S-Hydroxy-9Z,11E,15Z-octadecatrienoic acid",NA,TRUE,4205,1.0000000000000002,retained_high_confidence
+LIN,14-demethyllanosterol,Sterol,FALSE,36343,0.9497872164468132,excluded_low_confidence
+LIN,"14(15)-Epoxy-5Z,8Z,11Z-eicosatrienoic acid, methyl ester",NA,FALSE,16049,0.9999768201206385,retained_high_confidence
+LIN,"16,16-Dimethylprostaglandin A1",Fatty acid derivative,FALSE,10077,1.0000000000000007,retained_high_confidence
+LIN,"17.alpha.-Methyl-5.beta.-androstan-3.alpha.,17.beta.-diol",Steroid,TRUE,17540,0.9681522586602183,retained_high_confidence
+LIN,"2-Ethylhexyl 2-cyano-3,3-diphenylacrylate",NA,FALSE,6998,1.0000000000000009,retained_high_confidence
+LIN,2-Linoleoylglycerol,Glycerolipid,TRUE,23927,0.9837455751464779,retained_high_confidence
+LIN,"2,2'-Dithiobis(benzothiazole)",,FALSE,4810,1.0000000000000009,retained_high_confidence
+LIN,22-Hydoxy-2-hopen-1-one,Terpenoid,TRUE,11279,0.9850754533254326,retained_high_confidence
+LIN,24S-Hydroxycholesterol,Sterol,TRUE,11312,1.000000000000001,retained_high_confidence
+LIN,3-Epilupeol,Terpenoid,TRUE,8847,0.9999999999999993,retained_high_confidence
+LIN,3-Methoxylimaprost,Fatty acid derivative,FALSE,5281,1,retained_high_confidence
+LIN,3.10S-Hydroxypheophorbide a,Tetrapyrrole,FALSE,7074,1.0000000000000018,retained_high_confidence
+LIN,"4,4'-Sulfonylbis[2-(prop-2-en-1-yl)phenol]",Fatty acid derivative,FALSE,2747,0.9999999996244135,retained_high_confidence
+LIN,4.alpha./.beta.-Hydroxyprostanozol,NA,TRUE,2890,1.0000000000000002,retained_high_confidence
+LIN,"5(6)-Epoxy-8Z,11Z,14Z-eicosatrienoic acid, methyl ester",NA,FALSE,16049,0.9985257379739512,retained_high_confidence
+LIN,7-Oxocholesterol,Sterol,TRUE,16958,0.9999999999999996,retained_high_confidence
+LIN,"8(9)-Epoxy-5Z,11Z,14Z-eicosatrienoic acid, methyl ester",Fatty acid derivative,TRUE,16049,0.998255807940288,retained_high_confidence
+LIN,"9,12-Octadecadiynoic acid",NA,TRUE,6974,0.9401139690794219,excluded_low_confidence
+LIN,"9,12,13,TriHODE",Fatty acid,FALSE,3842,1.0000000000000004,retained_high_confidence
+LIN,AEG(o-15:2/15:0),Ether lipid,FALSE,23744,0.9999999999999999,retained_high_confidence
+LIN,AEG(o-16:2/16:0),Ether lipid,FALSE,16529,0.98826465711102,retained_high_confidence
+LIN,AEG(o-16:2/18:2),Ether lipid,TRUE,14804,0.9393666205021339,excluded_low_confidence
+LIN,AEG(o-16:3/16:0),Ether lipid,TRUE,15732,0.9962839260518004,retained_high_confidence
+LIN,AEG(o-18:3/16:1),Ether lipid,FALSE,19753,1.0000000000000002,retained_high_confidence
+LIN,AEG(o-18:4/16:1),Ether lipid,FALSE,12704,0.9651802596973011,retained_high_confidence
+LIN,AEG(o-18:4/18:2),Ether lipid,FALSE,15303,0.9999999999999999,retained_high_confidence
+LIN,Alloxanthin,Terpenoid,TRUE,8841,0.9999999999999993,retained_high_confidence
+LIN,Alpha-Carotene,NA,TRUE,31470,0.9999999999999999,retained_high_confidence
+LIN,alpha-Tocopherol,Vitamin,FALSE,19975,0.9332223287656878,excluded_low_confidence
+LIN,Antheraxanthin,Terpenoid,FALSE,10070,0.9878959614547447,retained_high_confidence
+LIN,Apocarotenal,Terpenoid,FALSE,16562,1.0000000000000002,retained_high_confidence
+LIN,Arachidonoylthiophosphorylcholine,NA,FALSE,22376,1.0000000000000002,retained_high_confidence
+LIN,Austinoneol,NA,TRUE,3144,1,retained_high_confidence
+LIN,B10A30 Faulkner legacy library looks like sterol or lipid needs to be verified,NA,FALSE,31008,0.9999999999999996,retained_high_confidence
+LIN,B27A19,NA,FALSE,16820,1.0000000000000009,retained_high_confidence
+LIN,beta-Carotene,Terpenoid,FALSE,31470,0.9999999999999722,retained_high_confidence
+LIN,beta-Zeacarotene,Terpenoid,FALSE,31450,0.9999999999999999,retained_high_confidence
+LIN,Betulin,NA,TRUE,11667,0.9851568106847169,retained_high_confidence
+LIN,Boldenone cypionate,Steroid,FALSE,6307,1.0000000000000009,retained_high_confidence
+LIN,Celaxanthin,Terpenoid,TRUE,13536,1,retained_high_confidence
+LIN,Cembrane_Diterpene_minus_Me,NA,FALSE,20464,1.0000000000000004,retained_high_confidence
+LIN,Cer(24:1),Sphingolipid,FALSE,10189,1.0000000000000004,retained_high_confidence
+LIN,Chamissonolide,Terpenoid,TRUE,28255,1.0000000000000002,retained_high_confidence
+LIN,Chlorophyll a,Tetrapyrrole,FALSE,24314,0.9985248774196862,retained_high_confidence
+LIN,"Cholesta-4,6-dien-3-one",NA,FALSE,16958,0.9999997375833092,retained_high_confidence
+LIN,"Cholestan-3-one,(5.alpha.)-",Sterol,TRUE,36794,1.0000000000000002,retained_high_confidence
+LIN,Cholesterol,NA,FALSE,36794,0.9999979782549538,retained_high_confidence
+LIN,CocamidoprpylBetaine,NA,TRUE,2889,0.9999999999999997,retained_high_confidence
+LIN,Cycloartenol acetate,Terpenoid,FALSE,35895,0.8240069118553008,excluded_low_confidence
+LIN,DG(12:0/12:0/0:0),Glycerolipid,TRUE,10144,0.8898814052717672,excluded_low_confidence
+LIN,DG(16:0/16:0/16:0),Glycerolipid,FALSE,16434,0.9709084238256745,retained_high_confidence
+LIN,DG(16:0/18:1/0:0),Glycerolipid,FALSE,18266,0.9289009291097734,excluded_low_confidence
+LIN,DG(16:0/18:2/0:0),Glycerolipid,TRUE,24662,0.9980721382565416,retained_high_confidence
+LIN,DG(16:0/18:3/0:0),Glycerolipid,FALSE,22516,0.9998390396200202,retained_high_confidence
+LIN,DG(16:1/18:2/0:0),Glycerolipid,FALSE,23137,0.9999999999999993,retained_high_confidence
+LIN,DG(16:1/18:3/0:0),Glycerolipid,FALSE,21908,0.9999999999999999,retained_high_confidence
+LIN,DG(18:0/18:2/0:0),Glycerolipid,TRUE,25912,0.9999999999999989,retained_high_confidence
+LIN,DG(18:0/20:3/0:0),Glycerolipid,TRUE,24759,1.0000000000000007,retained_high_confidence
+LIN,DG(18:1/18:2/0:0),Glycerolipid,FALSE,24954,0.969974438988885,retained_high_confidence
+LIN,DG(18:1/18:3)/ DG (18:2/18:2),Glycerolipid,TRUE,22751,0.9999999999999989,retained_high_confidence
+LIN,DG(18:1/2:0/0:0),Glycerolipid,FALSE,10216,0.9991705501678919,retained_high_confidence
+LIN,DG(18:2/18:2/0:0),Glycerolipid,FALSE,22751,0.9903662093904423,retained_high_confidence
+LIN,DG(18:2/18:3/0:0),Glycerolipid,FALSE,21514,1.000000000000001,retained_high_confidence
+LIN,DG(18:3/18:3/0:0),Glycerolipid,TRUE,16092,0.9964764712648636,retained_high_confidence
+LIN,DG(8:0/8:0/0:0),Glycerolipid,FALSE,14468,0.9969866499228452,retained_high_confidence
+LIN,DGDG(16:0/18:1),Glycerolipid,FALSE,20170,0.9999999999999997,retained_high_confidence
+LIN,DGDG(16:0/18:2),Glycerolipid,FALSE,18523,1.0000000000000009,retained_high_confidence
+LIN,DGDG(16:0/18:3),Glycerolipid,FALSE,16421,0.9999999999999991,retained_high_confidence
+LIN,DGDG(18:0/18:2),Glycerolipid,TRUE,20948,1.0000000000000002,retained_high_confidence
+LIN,DGDG(18:0/18:3),Glycerolipid,FALSE,18361,1.0000000000000004,retained_high_confidence
+LIN,DGDG(18:2/18:3),Glycerolipid,FALSE,14620,1.0000000000000002,retained_high_confidence
+LIN,DGDG(18:2/18:4),Glycerolipid,FALSE,13390,1.0000000000000009,retained_high_confidence
+LIN,DGTS(34:5),Betaine lipid,FALSE,6767,0.9999999999999993,retained_high_confidence
+LIN,"Di(3,7-dimethyl-1-octyl) phthalate",NA,FALSE,16477,1.0000000000000009,retained_high_confidence
+LIN,Diadinochrome,Terpenoid,FALSE,7913,0.9781530335832944,retained_high_confidence
+LIN,"Didodecyl 3,3'-thiodipropionate",Lipid-like compound,TRUE,22585,1.0000000000000007,retained_high_confidence
+LIN,Diisodecyl phthalate,NA,FALSE,16477,0.9999999999981931,retained_high_confidence
+LIN,Dipterocarpol,NA,FALSE,12788,0.9999999999999992,retained_high_confidence
+LIN,Empenthrin,NA,TRUE,4090,0.9725060982952527,retained_high_confidence
+LIN,FA(18:4),Fatty acid,FALSE,6974,0.9760750474629218,retained_high_confidence
+LIN,FA(22:0) amide,Fatty acid amide,FALSE,3463,0.9999999999999993,retained_high_confidence
+LIN,FA(22:1),Fatty acid,FALSE,12670,0.8098825441738314,excluded_low_confidence
+LIN,Fucosterol,Sterol,FALSE,28803,0.8839566601543253,excluded_low_confidence
+LIN,GalCer(d18:2/18:1),NA,FALSE,18371,1,retained_high_confidence
+LIN,GalCer(d18:2/20:1),NA,FALSE,21281,1.0000000000000007,retained_high_confidence
+LIN,gamma-sitosterol,Sterol,FALSE,4046,0.9999999999999993,retained_high_confidence
+LIN,gibberellic acid,Terpenoid,FALSE,3913,1.000000000000001,retained_high_confidence
+LIN,Ginsenoside F1,Terpenoid,FALSE,5008,0.8151837644466007,excluded_low_confidence
+LIN,Glochidone,NA,FALSE,36476,0.9999999999999999,retained_high_confidence
+LIN,Glycerol Tri-n-octanoate - 40.0 eV,Glycerolipid,TRUE,14666,0.9999999999999996,retained_high_confidence
+LIN,h_42_ethylestrenol_m,NA,TRUE,17540,0.9999999999999993,retained_high_confidence
+LIN,Hydroperoxy fatty acid (18:3),Fatty acid,FALSE,3842,0.9961651387001148,retained_high_confidence
+LIN,Iloprost,Terpenoid,TRUE,3411,1,retained_high_confidence
+LIN,Lanosterol,Terpenoid,FALSE,37876,0.8048947317654888,excluded_low_confidence
+LIN,LPC 18:3,Glycerophospholipid,FALSE,4627,0.9999999919188758,retained_high_confidence
+LIN,LPC(16:0),Glycerophospholipid,TRUE,9056,0.972181331619576,retained_high_confidence
+LIN,LPC(16:0/0:0),Glycerophospholipid,FALSE,9056,0.940376175091657,excluded_low_confidence
+LIN,LPE(16:0/0:0),Glycerophospholipid,FALSE,6136,0.9999999988943262,retained_high_confidence
+LIN,Lupeol,Terpenoid,FALSE,38150,0.8801439952511263,excluded_low_confidence
+LIN,Lutein,Terpenoid,FALSE,12451,0.9118899634180422,excluded_low_confidence
+LIN,Lycopene,Terpenoid,FALSE,31481,1.0000000000000002,retained_high_confidence
+LIN,Medroxyprogesterone,Steroid,TRUE,3971,1,retained_high_confidence
+LIN,MG(12:0),Glycerolipid,FALSE,15045,0.9999999999990988,retained_high_confidence
+LIN,MG(18:3),Glycerolipid,FALSE,16049,0.9924057206813601,retained_high_confidence
+LIN,MGDG(16:0/18:1),Glycerolipid,FALSE,22210,0.9999999999999997,retained_high_confidence
+LIN,MGDG(16:0/18:3),Glycerolipid,FALSE,18798,0.9999999999999982,retained_high_confidence
+LIN,MGDG(18:2/18:2),Glycerolipid,FALSE,19179,0.9999999999999996,retained_high_confidence
+LIN,MGDG(18:2/18:3),Glycerolipid,FALSE,17390,0.9999999999999978,retained_high_confidence
+LIN,MGDG(18:3/18:3),Glycerolipid,FALSE,16342,0.9999999875935467,retained_high_confidence
+LIN,MLS002695918-01!70356-09-1,NA,TRUE,6887,0.9930468803101209,retained_high_confidence
+LIN,Monoelaidin,NA,FALSE,10144,0.9999999999998733,retained_high_confidence
+LIN,N-acyl amino acid (C15:0),Fatty acid,FALSE,6647,1.0000000000000007,retained_high_confidence
+LIN,N-acylethanolamide (FA(12:0)),Fatty acid amide,FALSE,3071,0.9999999896255828,retained_high_confidence
+LIN,N-acylethanolamide (FA(15:0)),Fatty acid amide,FALSE,3947,0.9999999999999986,retained_high_confidence
+LIN,"N,N-Dimethyldodecylamine N-oxide",NA,FALSE,3362,0.9999999999999999,retained_high_confidence
+LIN,NAE(16:0),Fatty acid,FALSE,7481,0.9999999998220944,retained_high_confidence
+LIN,NAE(18:0),Fatty acid,FALSE,9976,0.9999999999999989,retained_high_confidence
+LIN,Nandrolone,NA,FALSE,4090,0.9725201921440915,retained_high_confidence
+LIN,NCGC00164361-03!decanedioic acid,Terpenoid,TRUE,5216,1.0000000000000009,retained_high_confidence
+LIN,"NCGC00179780-02_C20H32O_(5xi,9xi)-Beyer-15-en-18-ol",NA,FALSE,17540,0.9790293258582441,retained_high_confidence
+LIN,NCGC00380283-01!4-[5-[[4-[5-[acetyl(hydroxy)amino]pentylamino]-4-oxobutanoyl]-hydroxyamino]pentylamino]-4-oxobutanoic acid,Glycerophospholipid,TRUE,4974,0.9999999999999997,retained_high_confidence
+LIN,"NCGC00384683-01_C30H50O_Lup-20(29)-en-3-ol,(3alpha)-",NA,FALSE,20840,1.0000000000000009,retained_high_confidence
+LIN,"NCGC00385123-01_C22H30O6_7b,9-Dihydroxy-3-(hydroxymethyl)-1,1,6,8-tetramethyl-5-oxo-1,1a,1b,4,4a,5,7a,7b,8,9-decahydro-9aH-cyclopropa[3,4]benzo[1,2-e]azulen-9a-yl acetate",Terpenoid,FALSE,3135,1.0000000000000009,retained_high_confidence
+LIN,"NCGC00386020-01_C18H28O3_8-{(1S,5R)-4-Oxo-5-[(2Z)-2-penten-1-yl]-2-cyclopenten-1-yl}octanoic acid",NA,FALSE,3842,0.9836658466048644,retained_high_confidence
+LIN,Nostoxanthin,Terpenoid,FALSE,7358,0.9996099883486678,retained_high_confidence
+LIN,Ophiobolin A,Terpenoid,TRUE,4042,1.0000000000000002,retained_high_confidence
+LIN,Oxo fatty acid (18:3),Fatty acid,FALSE,3842,0.9830720433302401,retained_high_confidence
+LIN,PA(16:0/18:1),Glycerophospholipid,FALSE,20662,1.0000000000000002,retained_high_confidence
+LIN,PA(16:0/18:2),Glycerophospholipid,FALSE,18323,0.9650019764169007,retained_high_confidence
+LIN,Panaxatriol,NA,FALSE,5455,0.9999995202996733,retained_high_confidence
+LIN,Panaxcerol B,Glycerolipid,FALSE,4104,0.9993878734505722,retained_high_confidence
+LIN,PC(14:0/18:2),Glycerophospholipid,FALSE,21334,0.9999999999999991,retained_high_confidence
+LIN,PC(14:0/18:3),Glycerophospholipid,TRUE,18583,1.0000000000000002,retained_high_confidence
+LIN,PC(14:0/22:5),Glycerophospholipid,FALSE,17452,1.0000000000000009,retained_high_confidence
+LIN,PC(14:0/22:6),Glycerophospholipid,TRUE,17937,0.9724993610060828,retained_high_confidence
+LIN,PC(16:0/16:0),Glycerophospholipid,FALSE,20097,0.7702173078040732,excluded_low_confidence
+LIN,PC(16:0/18:0),Glycerophospholipid,FALSE,20097,0.902738905635378,excluded_low_confidence
+LIN,PC(16:0/18:1),Glycerophospholipid,FALSE,20097,0.8255229359299558,excluded_low_confidence
+LIN,PC(16:0/18:2),Glycerophospholipid,TRUE,20097,0.8970353659063256,excluded_low_confidence
+LIN,PC(16:0/18:3),Glycerophospholipid,TRUE,16639,0.8350986564881343,excluded_low_confidence
+LIN,PC(16:0/20:1),Glycerophospholipid,TRUE,29173,1.0000000000000002,retained_high_confidence
+LIN,PC(16:0/20:3),Glycerophospholipid,TRUE,20097,0.8864054836822189,excluded_low_confidence
+LIN,PC(16:0/20:4),Glycerophospholipid,FALSE,18221,0.8780822929064099,excluded_low_confidence
+LIN,PC(16:0/20:5),Glycerophospholipid,TRUE,16639,0.8869060153623713,excluded_low_confidence
+LIN,PC(16:0/22:5),Glycerophospholipid,TRUE,22573,1.0000000000000004,retained_high_confidence
+LIN,PC(16:0/22:6),Glycerophospholipid,FALSE,23425,0.9210482537944708,excluded_low_confidence
+LIN,PC(16:1/16:1),Glycerophospholipid,TRUE,21334,0.9465765131658251,excluded_low_confidence
+LIN,PC(16:1/18:2),Glycerophospholipid,FALSE,21490,1,retained_high_confidence
+LIN,PC(16:1/20:4),Glycerophospholipid,TRUE,16639,0.8847905871969693,excluded_low_confidence
+LIN,PC(16:1/20:5),Glycerophospholipid,FALSE,19586,0.9728591538719622,retained_high_confidence
+LIN,PC(16:2/16:1),Glycerophospholipid,FALSE,19217,0.9327483696367075,excluded_low_confidence
+LIN,PC(18:0/18:1),Glycerophospholipid,FALSE,9545,0.9401576054265385,excluded_low_confidence
+LIN,PC(18:0/18:2),Glycerophospholipid,FALSE,20094,0.7223167433642096,excluded_low_confidence
+LIN,PC(18:0/18:3),Glycerophospholipid,FALSE,25826,0.839844685918409,excluded_low_confidence
+LIN,PC(18:0/20:2),Glycerophospholipid,FALSE,24064,0.9880061597944754,retained_high_confidence
+LIN,PC(18:0/20:3),Glycerophospholipid,TRUE,25778,1.0000000000000007,retained_high_confidence
+LIN,PC(18:1/18:2),Glycerophospholipid,FALSE,27103,0.6782742415880778,excluded_low_confidence
+LIN,PC(18:1/18:1),Glycerophospholipid,FALSE,26232,0.8686614678809401,excluded_low_confidence
+LIN,PC(18:1/20:1),Glycerophospholipid,TRUE,25826,0.8429055875276459,excluded_low_confidence
+LIN,PC(18:1/20:4),Glycerophospholipid,FALSE,25778,0.8857893380070405,excluded_low_confidence
+LIN,PC(18:1/24:1),Glycerophospholipid,TRUE,25790,0.867584855355744,excluded_low_confidence
+LIN,PC(18:2/0:0),Glycerophospholipid,FALSE,35352,0.6811081836397123,excluded_low_confidence
+LIN,PC(18:2/18:2),Glycerophospholipid,FALSE,20647,0.8685126382232244,excluded_low_confidence
+LIN,PC(18:2/20:0),Glycerophospholipid,FALSE,18221,0.8900196274819864,excluded_low_confidence
+LIN,PC(18:2/20:4),Glycerophospholipid,FALSE,26086,1,retained_high_confidence
+LIN,PC(18:3/0:0),Glycerophospholipid,FALSE,23425,0.9204702844394401,excluded_low_confidence
+LIN,PC(18:3/18:3),Glycerophospholipid,FALSE,4627,0.9999999999999997,retained_high_confidence
+LIN,PE(14:0/22:6),Glycerophospholipid,TRUE,17937,0.9428190134197754,excluded_low_confidence
+LIN,PE(16:0/0:0),Glycerophospholipid,FALSE,16833,1.0000000000000007,retained_high_confidence
+LIN,PE(16:0/18:0),Glycerophospholipid,FALSE,6136,1.0000000000000009,retained_high_confidence
+LIN,PE(16:0/18:1),Glycerophospholipid,FALSE,23450,0.9999999999999993,retained_high_confidence
+LIN,PE(16:0/18:2),Glycerophospholipid,TRUE,20097,0.9870651045381529,retained_high_confidence
+LIN,PE(16:0/18:3),Glycerophospholipid,TRUE,20097,0.9972786818100281,retained_high_confidence
+LIN,PE(16:0/20:4),Glycerophospholipid,FALSE,18118,0.9990483599960649,retained_high_confidence
+LIN,PE(16:0/20:5),Glycerophospholipid,TRUE,18221,0.9828908838570115,retained_high_confidence
+LIN,PE(16:1/18:2),Glycerophospholipid,FALSE,16639,1.0000000000000002,retained_high_confidence
+LIN,PE(18:0/18:2),Glycerophospholipid,TRUE,18118,1,retained_high_confidence
+LIN,PE(18:0/18:3),Glycerophospholipid,TRUE,22318,0.9999999999999993,retained_high_confidence
+LIN,PE(18:2/18:3),Glycerophospholipid,FALSE,21694,0.9143251128367677,excluded_low_confidence
+LIN,PE(18:3/18:3),Glycerophospholipid,FALSE,16639,0.9995904285812165,retained_high_confidence
+LIN,PG(16:0/18:1),Glycerophospholipid,FALSE,13391,0.9598830695544291,retained_high_confidence
+LIN,PG(16:0/16:0),Glycerophospholipid,FALSE,16890,0.9989279639621449,retained_high_confidence
+LIN,PG(16:0/18:0),Glycerophospholipid,FALSE,16890,0.9807622319598422,retained_high_confidence
+LIN,PG(16:0/18:1),Glycerophospholipid,FALSE,13678,0.9999999999999984,retained_high_confidence
+LIN,"phenylmethyl(2S,3R)-3-hydroxy-2-[(phenylmethoxy)carbonylamino]butanoate",NA,FALSE,9451,0.9999997356551465,retained_high_confidence
+LIN,Pheophorbide a,Tetrapyrrole,TRUE,19106,1.0000000000000009,retained_high_confidence
+LIN,Pheophytin a,Tetrapyrrole,FALSE,7854,0.9560742686333393,retained_high_confidence
+LIN,Phytosphingosine,Sphingolipid,FALSE,27746,0.9443578691793064,excluded_low_confidence
+LIN,Protopanaxadiol,Terpenoid,TRUE,4324,0.9999999999288952,retained_high_confidence
+LIN,PS(18:0/18:2),Glycerophospholipid,TRUE,35761,0.9246102892655427,excluded_low_confidence
+LIN,Schaftoside,Flavonoid,FALSE,14625,0.9999999999999986,retained_high_confidence
+LIN,Scutellarein tetramethyl ether,Flavonoid,TRUE,8496,1.0000000000000002,retained_high_confidence
+LIN,Sebacic acid,Dicarboxylic acid,TRUE,3329,1.0000000000000004,retained_high_confidence
+LIN,SM(d18:1/17:0),Sphingolipid,FALSE,5211,0.9999999999999999,retained_high_confidence
+LIN,SQDG(16:0/14:0),Glycerolipid,FALSE,11404,0.9999999999999988,retained_high_confidence
+LIN,SQDG(16:0/16:0),Glycerolipid,FALSE,12360,0.9999999999999989,retained_high_confidence
+LIN,SQDG(16:0/18:1),Glycerolipid,FALSE,14396,1,retained_high_confidence
+LIN,SQDG(16:0/18:2),Glycerolipid,FALSE,14659,0.9999999999999996,retained_high_confidence
+LIN,SQDG(16:0/18:3),Glycerolipid,FALSE,13436,1.0000000000000009,retained_high_confidence
+LIN,SQDG(16:1/18:3),Glycerolipid,FALSE,12003,0.9999999999999997,retained_high_confidence
+LIN,SQDG(18:0/18:3),Glycerolipid,FALSE,13037,0.9999999999999999,retained_high_confidence
+LIN,SQDG(18:1/18:3),Glycerolipid,TRUE,13767,1.0000000000000009,retained_high_confidence
+LIN,SQDG(18:2/18:3),Glycerolipid,FALSE,12338,0.9999999999999999,retained_high_confidence
+LIN,SQDG(18:3/18:3),Glycerolipid,FALSE,11368,1.0000000000000009,retained_high_confidence
+LIN,Stearidonic acid methyl ester,NA,TRUE,10406,1.0000000000000009,retained_high_confidence
+LIN,Sumaresinolic acid,Terpenoid,FALSE,6974,1.0000000000000002,retained_high_confidence
+LIN,Tetrapentylammonium cation,NA,FALSE,5008,0.9999999999999999,retained_high_confidence
+LIN,TG(10:0/10:0/10:0),Glycerolipid,FALSE,4540,0.9999999999999993,retained_high_confidence
+LIN,TG(10:0/10:0/14:0),Glycerolipid,TRUE,22440,0.9930101834897782,retained_high_confidence
+LIN,TG(10:0/12:0/14:0),Glycerolipid,TRUE,26475,0.9999999999999999,retained_high_confidence
+LIN,TG(10:0/12:0/16:0),Glycerolipid,TRUE,29211,1,retained_high_confidence
+LIN,TG(10:0/14:0/16:0),Glycerolipid,TRUE,30260,0.9999999999999993,retained_high_confidence
+LIN,TG(10:0/16:0/16:0),Glycerolipid,TRUE,31506,0.9999999999999993,retained_high_confidence
+LIN,TG(12:0/12:0/12:0),Glycerolipid,FALSE,32605,0.9999999999999993,retained_high_confidence
+LIN,TG(12:0/12:0/14:0),Glycerolipid,FALSE,29211,0.973722130009661,retained_high_confidence
+LIN,TG(12:0/12:0/18:1),Glycerolipid,TRUE,30260,0.9999999995464134,retained_high_confidence
+LIN,TG(12:0/14:0/16:0),Glycerolipid,FALSE,31713,1.0000000000000009,retained_high_confidence
+LIN,TG(12:0/14:0/18:1),Glycerolipid,TRUE,31506,0.9854158246195186,retained_high_confidence
+LIN,TG(12:0/16:0/16:0),Glycerolipid,TRUE,32708,0.9999999999999993,retained_high_confidence
+LIN,TG(12:0/16:0/18:1),Glycerolipid,TRUE,34053,1.0000000000000009,retained_high_confidence
+LIN,TG(12:0/16:0/18:3),Glycerolipid,TRUE,34571,0.9999999999999996,retained_high_confidence
+LIN,TG(12:0/18:1/18:3),Glycerolipid,TRUE,32206,0.9999999999999992,retained_high_confidence
+LIN,TG(12:0/18:2/18:3),Glycerolipid,TRUE,32376,1.0000000000000002,retained_high_confidence
+LIN,TG(14:0/14:0/16:1),Glycerolipid,FALSE,33758,0.9999999999999997,retained_high_confidence
+LIN,TG(14:0/14:0/18:0),Glycerolipid,TRUE,32708,0.9999999935476176,retained_high_confidence
+LIN,TG(14:0/14:1/18:1),Glycerolipid,TRUE,35343,1.0000000000000007,retained_high_confidence
+LIN,TG(14:0/16:0/18:1),Glycerolipid,TRUE,34063,1,retained_high_confidence
+LIN,TG(14:0/16:0/18:2),Glycerolipid,TRUE,35543,1,retained_high_confidence
+LIN,TG(14:0/16:1/18:2),Glycerolipid,TRUE,34692,1.0000000000000009,retained_high_confidence
+LIN,TG(14:0/16:1/22:6),Glycerolipid,TRUE,33742,1,retained_high_confidence
+LIN,TG(14:0/18:1/18:1),Glycerolipid,TRUE,32495,0.9999999999999999,retained_high_confidence
+LIN,TG(14:0/18:1/18:2),Glycerolipid,TRUE,35677,0.9999999999999999,retained_high_confidence
+LIN,TG(14:0/18:1/18:3),Glycerolipid,TRUE,34864,1.0000000000000004,retained_high_confidence
+LIN,TG(14:0/18:2/18:3),Glycerolipid,TRUE,34161,0.9999999999999991,retained_high_confidence
+LIN,TG(14:0/18:3/18:3),Glycerolipid,TRUE,32629,0.9999999999999992,retained_high_confidence
+LIN,TG(16:0/16:0/16:0),Glycerolipid,FALSE,31751,1.0000000000000002,retained_high_confidence
+LIN,TG(16:0/16:0/18:1),Glycerolipid,FALSE,36406,0.9999999999999996,retained_high_confidence
+LIN,TG(16:0/16:0/20:1),Glycerolipid,TRUE,36597,0.9981587269536173,retained_high_confidence
+LIN,TG(16:0/16:0/20:3),Glycerolipid,TRUE,37268,0.9999999999999999,retained_high_confidence
+LIN,TG(16:0/18:0/18:2),Glycerolipid,TRUE,37371,1,retained_high_confidence
+LIN,TG(16:0/18:0/22:1),Glycerolipid,FALSE,36738,0.9999999999999999,retained_high_confidence
+LIN,TG(16:0/18:1/18:2),Glycerolipid,FALSE,37753,0.9999999999999997,retained_high_confidence
+LIN,TG(16:0/18:1/18:3),Glycerolipid,TRUE,35927,1.0000000000000007,retained_high_confidence
+LIN,TG(16:0/18:1/20:0),Glycerolipid,TRUE,37133,0.9999999999999999,retained_high_confidence
+LIN,TG(16:0/18:1/20:2),Glycerolipid,FALSE,37592,0.9999999999999997,retained_high_confidence
+LIN,TG(16:0/18:1/22:0),Glycerolipid,TRUE,36039,0.9594852053407165,retained_high_confidence
+LIN,TG(16:0/18:2/18:3),Glycerolipid,TRUE,37627,0.9528089436725641,retained_high_confidence
+LIN,TG(16:0/18:2/22:0),Glycerolipid,TRUE,36407,1.0000000000000009,retained_high_confidence
+LIN,TG(16:0/18:3/18:3),Glycerolipid,TRUE,37633,1.0000000000000009,retained_high_confidence
+LIN,TG(16:1/16:1/22:5),Glycerolipid,TRUE,32785,1.0000000000000009,retained_high_confidence
+LIN,TG(16:1/20:1/20:2),Glycerolipid,TRUE,33139,0.9942822111450741,retained_high_confidence
+LIN,TG(18:0/18:0/18:2),Glycerolipid,TRUE,31778,0.9999999999999999,retained_high_confidence
+LIN,TG(18:0/18:1/18:2),Glycerolipid,TRUE,37326,0.9583223826844757,retained_high_confidence
+LIN,TG(18:0/18:1/22:0),Glycerolipid,FALSE,36856,0.9618985973773564,retained_high_confidence
+LIN,TG(18:0/18:2/18:2),Glycerolipid,FALSE,37859,0.9999999999999999,retained_high_confidence
+LIN,TG(18:0/18:2/18:3),Glycerolipid,FALSE,36131,0.9999999999999984,retained_high_confidence
+LIN,TG(18:0/18:2/20:1),Glycerolipid,TRUE,34845,1.0000000000000004,retained_high_confidence
+LIN,TG(18:0/18:2/22:0),Glycerolipid,TRUE,37402,0.9999999999999996,retained_high_confidence
+LIN,TG(18:1/18:1/18:1),Glycerolipid,FALSE,35338,1.0000000000000009,retained_high_confidence
+LIN,TG(18:1/18:1/18:2),Glycerolipid,TRUE,36861,0.9910264339755197,retained_high_confidence
+LIN,TG(18:1/18:1/20:3),Glycerolipid,TRUE,36131,0.9857935077715391,retained_high_confidence
+LIN,TG(18:1/18:2/18:2),Glycerolipid,FALSE,36182,1,retained_high_confidence
+LIN,TG(18:1/18:2/18:3),Glycerolipid,TRUE,34845,0.9999999999884328,retained_high_confidence
+LIN,TG(18:1/18:2/22:0),Glycerolipid,FALSE,34666,1.0000000000000009,retained_high_confidence
+LIN,TG(18:1/18:3/22:0),Glycerolipid,TRUE,37666,1.0000000000000002,retained_high_confidence
+LIN,TG(18:1/20:3/22:0),Glycerolipid,TRUE,37491,1.0000000000000013,retained_high_confidence
+LIN,TG(18:2/18:2/18:4),Glycerolipid,TRUE,37694,1.0000000000000009,retained_high_confidence
+LIN,TG(18:2/18:2/22:1),Glycerolipid,TRUE,32287,0.9999999999999992,retained_high_confidence
+LIN,TG(18:2/18:3/20:1),Glycerolipid,FALSE,34823,0.9999999999999999,retained_high_confidence
+LIN,TG(18:2/18:3/20:3),Glycerolipid,FALSE,34762,0.9801303390172195,retained_high_confidence
+LIN,TG(18:2/18:3/22:1),Glycerolipid,TRUE,33809,1.0000000000000007,retained_high_confidence
+LIN,TG(18:2/20:2/22:2),Glycerolipid,TRUE,36758,0.9999999999999988,retained_high_confidence
+LIN,TG(18:2/20:3/22:0),Glycerolipid,FALSE,37430,1.0000000000000002,retained_high_confidence
+LIN,TG(18:3/18:3/18:3),Glycerolipid,FALSE,37571,0.9999999999999999,retained_high_confidence
+LIN,TG(18:3/18:3/20:3),Glycerolipid,FALSE,31595,0.9999999999999997,retained_high_confidence
+LIN,TG(8:0/10:0/10:0),Glycerolipid,FALSE,32302,1.0000000000000016,retained_high_confidence
+LIN,Tri-p-tolylamine,NA,FALSE,20655,0.9999999999999996,retained_high_confidence
+LIN,"trimethyl(2-{[2-[octadeca-9,12-dienoyloxy]-3-(octadecanoyloxy)propyl phosphonato]oxy}ethyl)azanium",NA,TRUE,4435,0.9999999999999997,retained_high_confidence
+LIN,Ubidecarenone,Prenol,FALSE,25790,0.88922461232644,excluded_low_confidence
+LIN,Ubiquinone 9,NA,FALSE,33288,0.9999999999999999,retained_high_confidence
+LIN,Vitamin K1,Vitamin,FALSE,31001,1.0000000000000009,retained_high_confidence
+LIN,Zeaxanthin,Terpenoid,FALSE,22793,1.0000000000000002,retained_high_confidence
