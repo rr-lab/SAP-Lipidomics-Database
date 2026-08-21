@@ -18,14 +18,16 @@
 \DeclareOption{lineno}{\setboolean{displaylineno}{true}}
 
 % Ignore twocolumn if accidentally passed in main .tex
-\DeclareOption{twocolumn}{}
+\newboolean{usetwocolumn}
+\setboolean{usetwocolumn}{false}
+\DeclareOption{twocolumn}{\setboolean{usetwocolumn}{true}}
 
 % Pass all other options, such as 12pt, to extarticle
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{extarticle}}
 \ProcessOptions*
 
 % Force one-column base class
-\LoadClass[onecolumn]{extarticle}
+\ifthenelse{\boolean{usetwocolumn}}{\LoadClass[twocolumn]{extarticle}}{\LoadClass[onecolumn]{extarticle}}
 
 % Line numbers
 \RequirePackage[running,switch]{lineno}
@@ -317,8 +319,7 @@ Manuscript compiled: \today%
 % Manuscript format: force one column and double spacing
 % ==========================================================
 \AtBeginDocument{%
-  \onecolumn
-  \doublespacing
+  \ifthenelse{\boolean{usetwocolumn}}{\singlespacing}{\onecolumn\doublespacing}%
 }
 
 \endinput
