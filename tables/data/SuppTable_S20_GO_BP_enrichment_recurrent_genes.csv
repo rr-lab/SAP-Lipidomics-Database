@@ -1,0 +1,16 @@
+Condition,Recurrence_set,GO_term,GO_ID,N_background_genes,N_candidate_genes,Expected,Fold_enrichment,P_value,FDR_q_value
+CTL,top 10% (recurrence >=55),carbohydrate transmembrane transport,GO:0034219,26,6,0.50,11.91,8.06e-06,2.10e-04
+CTL,top 10% (recurrence >=55),regulation of defense response to fungus,GO:1900150,19,5,0.37,13.58,2.40e-05,3.12e-04
+CTL,top 10% (recurrence >=55),sterol metabolic process,GO:0016125,10,3,0.19,15.48,7.76e-04,6.72e-03
+CTL,top 5% (recurrence >=67),regulation of defense response to fungus,GO:1900150,19,3,0.17,17.36,6.32e-04,6.95e-03
+CTL,top 5% (recurrence >=67),cell wall modification,GO:0042545,29,3,0.26,11.37,2.23e-03,1.09e-02
+CTL,top 5% (recurrence >=67),DNA recombination,GO:0006310,32,3,0.29,10.31,2.97e-03,1.09e-02
+CTL,top 5% (recurrence >=67),pectin catabolic process,GO:0045490,37,3,0.34,8.91,4.50e-03,1.24e-02
+CTL,top 1% (recurrence >=68),regulation of defense response to fungus,GO:1900150,19,3,0.13,23.04,2.74e-04,1.37e-03
+LIN,top 10% (recurrence >=11),flavonoid biosynthetic process,GO:0009813,14,5,0.65,7.69,2.97e-04,1.84e-02
+LIN,top 5% (recurrence >=16),flavonoid biosynthetic process,GO:0009813,14,5,0.31,15.91,9.19e-06,2.66e-04
+LIN,top 5% (recurrence >=16),methionine biosynthetic process,GO:0009086,10,3,0.22,13.36,1.19e-03,1.72e-02
+LIN,top 5% (recurrence >=16),glucan metabolic process,GO:0044042,16,3,0.36,8.35,5.03e-03,3.64e-02
+LIN,top 5% (recurrence >=16),cellular response to phosphate starvation,GO:0016036,16,3,0.36,8.35,5.03e-03,3.64e-02
+LIN,top 5% (recurrence >=16),innate immune response-activating signaling pathway,GO:0002758,19,3,0.43,7.03,8.28e-03,4.80e-02
+LIN,top 1% (recurrence >=31),protein ubiquitination,GO:0016567,313,7,1.33,5.26,2.93e-04,5.85e-04
