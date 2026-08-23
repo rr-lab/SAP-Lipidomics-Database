@@ -1,0 +1,19 @@
+GeneID,GeneName,Best_P_Value_CTL,Best_P_Value_LIN,N_Phenotypes_CTL,N_Phenotypes_LIN
+SORBI_3010G150575,Small ribosomal subunit protein uS5 C-terminal domain-containing protein,1.414634e-13,3.732413e-11,34,16
+SORBI_3010G150600,Uncharacterized protein,1.414634e-13,3.732413e-11,34,16
+SORBI_3010G151200,GRF-type domain-containing protein,1.414634e-13,3.732413e-11,34,16
+SORBI_3010G151000,CMP-sialic acid transporter 1,1.414634e-13,3.732413e-11,34,16
+SORBI_3010G150900,Uncharacterized protein,1.414634e-13,3.732413e-11,34,16
+SORBI_3010G150800,Cytoplasmic tRNA 2-thiolation protein 1 C-terminal domain-containing protein,1.414634e-13,3.732413e-11,34,16
+SORBI_3010G150701,Uncharacterized protein,1.414634e-13,3.732413e-11,34,16
+SORBI_3010G150700,PABC domain-containing protein,1.414634e-13,3.732413e-11,34,16
+SORBI_3010G151325,Protein FAR1-RELATED SEQUENCE,1.414634e-13,3.732413e-11,34,16
+SORBI_3010G150325,F-box domain-containing protein,1.414634e-13,3.732413e-11,34,16
+SORBI_3001G169100,Major facilitator superfamily (MFS) profile domain-containing protein,2.176061e-09,2.978268e-14,3,2
+SORBI_3001G171600,Pentacotripeptide-repeat region of PRORP domain-containing protein,2.176061e-09,2.978268e-14,3,2
+SORBI_3001G171500,Presenilin,2.176061e-09,2.978268e-14,3,2
+SORBI_3001G171300,UDP-glucose 6-dehydrogenase,2.176061e-09,2.978268e-14,3,2
+SORBI_3001G171200,WIYLD domain-containing protein,2.176061e-09,2.978268e-14,3,2
+SORBI_3001G171100,WIYLD domain-containing protein,2.176061e-09,2.978268e-14,3,2
+SORBI_3001G171001,WIYLD domain-containing protein,2.176061e-09,2.978268e-14,3,2
+SORBI_3001G168800,NPH3 domain-containing protein,2.176061e-09,2.978268e-14,3,2
