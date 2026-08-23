@@ -234,7 +234,7 @@ Together, the abundance-, composition-, ontology- and chemical-space analyses su
 
 \subsection*{GWAS signal is concentrated under CTL and diffuse under LIN}
 
-We ran separate GWAS for each individual lipid trait, lipid-class sum, and lipid-class ratio in both trials, using a univariate linear mixed model with the first three genotype PCs to account for population structure (Fig.~\ref{fig:gwas_manhattan}). SNPs surpassing the Bonferroni genome-wide significance threshold ($p \leq 8.19 \times 10^{-9}$) were mapped to candidate genes using the LD-based cutoff of 0.4. Under CTL this identified 1,100 candidate genes for individual lipids and 115 for class sums and ratios (Supplementary Tables~S13 and~S14). Under LIN the same procedure identified 4,323 and 812 candidate genes (Supplementary Tables~S15 and~S16). Manhattan and quantile--quantile plots for every lipid phenotype in both trials are available in the SoLD Shiny application.
+We ran separate GWAS for each individual lipid trait, lipid-class sum, and lipid-class ratio in both trials, using a univariate linear mixed model with the first three genotype PCs to account for population structure (Fig.~\ref{fig:gwas_ctl_stacked}, Fig.~\ref{fig:gwas_lin_stacked}). SNPs surpassing the Bonferroni genome-wide significance threshold ($p \leq 8.19 \times 10^{-9}$) were mapped to candidate genes using the LD-based cutoff of 0.4. Under CTL this identified 1,100 candidate genes for individual lipids and 115 for class sums and ratios (Supplementary Tables~S13 and~S14). Under LIN the same procedure identified 4,323 and 812 candidate genes (Supplementary Tables~S15 and~S16).
 
 Because LD assigns several genes to each association, we also counted the independent 250~kb intervals those genes occupy. The individual-lipid sets reduce to 378 intervals under CTL and 971 under LIN, so LIN recovers about 2.6 times more independent loci rather than the four-fold excess suggested by gene counts. The two trials also differ in how concentrated that signal is. Under CTL, 281 of 1,100 individual-lipid candidates were associated with seven or more phenotypes, and the most recurrent locus reached 27. Under LIN only 11 of 4,323 reached seven phenotypes and the maximum was 13. The class-sum/ratio layer shows the same contrast, with a single CTL locus associated with 64 phenotypes against a LIN maximum of 20. CTL therefore yields fewer loci that each affect many lipid traits, whereas LIN yields more loci that each affect few.
 
@@ -330,6 +330,17 @@ In the LIN individual-lipid layer, the strongest association was observed for \t
 % \end{center}
 % \end{lscape}
 
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure2_GWAS_CTL.png}
+\caption{
+\textbf{Condition-specific stacked Manhattan plots for CTL lipid GWAS across representative individual-lipid and sum/ratio traits.} Columns denote recurrent loci: A, \textit{SORBI\_3006G248300} (individual); B, \textit{SORBI\_3001G276500} (individual); C, \textit{SORBI\_3002G373700} (sum/ratio); D, \textit{SORBI\_3003G141800} (sum/ratio). The vertical orange dashed line marks the lead SNP per locus, and horizontal dashed lines indicate the suggestive and stringent significance thresholds used in the GWAS plots. Lead SNPs and strongest observed association among the displayed traits were: A, SNP\_58780498 ($p_{\mathrm{Wald,min}}=1.37\times10^{-10}$); B, SNP\_53871418 ($p_{\mathrm{Wald,min}}=6.27\times10^{-12}$); C, SNP\_73174964 ($p_{\mathrm{Wald,min}}=7.77\times10^{-13}$); D, SNP\_14021625 ($p_{\mathrm{Wald,min}}=1.30\times10^{-10}$). Recurrent peaks at the same marker positions across multiple traits support a common locus-level signal.
+}
+\label{fig:gwas_ctl_stacked}
+\end{figure*}
+
+
+
 % Since many candidate genes were associated with multiple lipid phenotypes, we defined gene-level recurrence as the number of distinct phenotypes associated with each gene. We then evaluated GO biological-process overrepresentation separately for the LIN individual-lipid and class-sum/class-ratio candidate sets. No GO biological-process terms passed BH correction in the individual-lipid set. In contrast, seven GO biological-process terms passed BH correction in the LIN class-sum/class-ratio set. The significant terms included \textit{nucleotide transport}, \textit{purine nucleobase transport}, \textit{purine nucleoside transmembrane transport}, \textit{purine nucleobase transmembrane transport}, \textit{transmembrane transport}, \textit{nitrate assimilation}, and \textit{detection of stimulus}.
 
 % The three purine and nucleotide transport terms were represented by three candidate genes. For \textit{nucleotide transport}, the strongest and most recurrent gene was \texttt{SORBI\_3001G100800} (Folate transporter 1; $p = 7.42\times10^{-14}$; 1 phenotype; $r^2_{\max}=0.98$). For \textit{purine nucleobase transport}, \textit{purine nucleoside transmembrane transport}, and \textit{purine nucleobase transmembrane transport}, the strongest and most recurrent gene was \texttt{SORBI\_3006G195000} (probable purine permease; $p = 2.24\times10^{-17}$; 6 phenotypes; $r^2_{\max}=1.0$).
@@ -423,21 +434,11 @@ In the LIN individual-lipid layer, the strongest association was observed for \t
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=\textwidth]{fig/main/Figure4_GWAS_Manhattan.png}
-\caption{\textbf{The same candidate locus recurs across multiple lipid phenotypes
-within each trial.} Each column stacks four phenotypes that share one candidate
-locus, marked by the vertical line and named above it. \textbf{(A--D)}~CTL
-individual lipids, sharing \texttt{SORBI\_3006G040500} (phospholipid-transporting
-ATPase, chromosome~6). \textbf{(E--H)}~CTL class sums and ratios, sharing
-\texttt{SORBI\_3010G151000} (CMP-sialic acid transporter~1, chromosome~10).
-\textbf{(I--L)}~LIN individual lipids, sharing \texttt{SORBI\_3010G170000}
-(\textit{DGAT1}, chromosome~10). \textbf{(M--P)}~LIN class sums and ratios,
-sharing the chromosome~6 purine-permease array (\texttt{SORBI\_3006G195200}).
-Dashed horizontal lines mark the Bonferroni genome-wide threshold
-($p \leq 8.19 \times 10^{-9}$) and dotted lines the suggestive threshold
-($p \leq 1 \times 10^{-5}$). Point colour alternates by chromosome, with CTL in
-purple and LIN in yellow.}
-\label{fig:gwas_manhattan}
+\includegraphics[width=\textwidth]{fig/main/Figure3_GWAS_LIN.png}
+\caption{
+\textbf{Condition-specific stacked Manhattan plots for LIN lipid GWAS across representative individual-lipid and sum/ratio traits.} Columns denote recurrent loci: A, \textit{SORBI\_3001G384300} (individual); B, \textit{SORBI\_3004G107800} (individual); C, \textit{SORBI\_3001G222700} (sum/ratio); D, \textit{SORBI\_3001G256400} (sum/ratio). The vertical orange dashed line marks the lead SNP per locus, and horizontal dashed lines indicate the suggestive and stringent significance thresholds used in the GWAS plots. Lead SNPs and strongest observed association among the displayed traits were: A, SNP\_67183097 ($p_{\mathrm{Wald,min}}=5.72\times10^{-9}$); B, SNP\_10366823 ($p_{\mathrm{Wald,min}}=2.64\times10^{-9}$); C, SNP\_21276112 ($p_{\mathrm{Wald,min}}=1.96\times10^{-13}$); D, SNP\_29811579 ($p_{\mathrm{Wald,min}}=2.08\times10^{-16}$). Recurrent co-localized peaks across multiple traits indicate a common genomic signal per highlighted locus.
+}
+\label{fig:gwas_lin_stacked}
 \end{figure*}
 
 \subsection*{GO enrichment and cross-trial overlap both rest on a small number of genomic intervals}
