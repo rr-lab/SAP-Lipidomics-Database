@@ -117,571 +117,6 @@ A second challenge in large study lipidomics is genetic interpretation. GWAS of 
 Here, we present the Sorghum Lipid Database (SoLD), a curated lipidomics and GWAS resource for the SAP. Leaf samples collected between the V6 and V8 stages were profiled under two field regimes: a control environment (CTL) with sufficient nutrients and standard planting and a low-input regime (LIN) with reduced N and P, earlier planting that mimics cold, and minimal chemical management, including no insecticide, herbicide, or pesticide application. We interpret their contrasts conservatively as between-trial differences rather than direct causal treatment effects. We combine LC--MS lipidomics, compositional analysis, lipid ontology, GWAS of individual species and class-level traits, LD-aware GO enrichment, LINEX-based reaction mapping, and an interactive Shiny application. This framework identifies four major LIN-associated lipid signatures, which include SQDG depletion, TG enrichment, PS-centered phospholipid redistribution, and altered LPC/LPE balance. Furthermore, we prioritize candidate genes linked to nutrient acquisition, DG–TG cycling, phospholipid turnover, sphingolipid metabolism, and stress-associated membrane remodeling. Together, SoLD provides a resource for exploring sorghum lipid variation, candidate loci, and accessions for future validation. An interactive SoLD Shiny application that enables exploration of all datasets and results, available at \url{https://nirwan.shinyapps.io/SAP-Lipidomics-Database/}.
 
 
-\section{Results}
-
-\subsection*{QC and normalization yielded comparable LC-MS performance across conditions}
-
-We profiled early-stage lipids from SAP grown in two field conditions defined earlier. The workflow (Fig.~\ref{fig:fig1_lipidomics_landscape}A) comprised tissue collection and extraction, high-resolution LC-MS lipidomic profiling, GNPS-assisted lipid annotation, post-acquisition data correction with SERRF and SpATS \citep{Fan2019,RodriguezAlvarez2018}, and data dissemination via the SoLD Shiny app (\url{https://nirwan.shinyapps.io/SAP-Lipidomics-Database/}).
-
-Run-order quality control showed stable analytical performance (Supplementary~\ref{fig:suppfig_s1_qc}), with the total ion current (TIC) and the summed signal intensity per sample meeting expected values across system checks, internal standards, and blanks. TIC variability among QC samples was low (7.5\% CV for CTL and 6.0\% CV for LIN). SERRF normalization improved technical precision, reducing median QC-RSD from 3.6\% to 2.0\% in CTL and from 1.6\% to 0.3\% in LIN.
-
-QC-based normalization improved technical reproducibility, increasing the QC-RSD under $<30\%$ from 75.7\% to 94.1\% in CTL and from 77.3\% to 89.3\% in LIN (Supplementary Table~S1). PCA of normalized data showed tighter sample clustering than unprocessed data, while spatial correction largely removed broad row and column effects. Post-correction, lipid signal distributions remained similar across cohorts, and the adjusted trait matrix was used for all subsequent analyses.
-
-\subsection*{Lipid variation across genotypes}
-
-We summarized lipid-trait variability by examining trait distribution across genotypes within each environment. Lipid species were combined into class totals and transformed using centered log-ratio (CLR) due to the compositional nature of the data. TIC was used for sample-wise normalization. To determine whether CTL--LIN lipid differences reflected population-wide remodeling rather than a few outlier genotypes, we assessed effect size, directional stability, and significance (defined in Methods; Supplementary~\ref{fig:supp_class_sums_top_bottom}). At the class-ratio level, the median absolute log$_{10}$ effect size was 0.4743, with 27/33 ratios showing absolute effects $\geq$0.3 and 16/33 $\geq$0.5. All 33 ratios were BH-significant ($p_{\mathrm{adj}}<0.05$) and showed perfect leave-one-out sign stability (1.0).  A total of 244 lipid species were quantified, including 153 shared, 49 CTL-specific, and 42 LIN-specific. Species-level CLR abundances also shifted broadly, with a median absolute CLR effect size of 0.7084, and 91/153 shared species had absolute effects $\geq$0.5 and 61/153 $\geq$1.0. Of the 153 shared species, 151 were BH-significant, and all 153 showed jackknife stability of 1.0.
-
-We next asked whether lipid traits with high genotype-level variance were conserved across environments. Monogalactosyldiacylglycerol species, MGDG(18:3/18:3), showed the highest genotype-level variance in both conditions, based on TIC values. Seven of the ten most variable lipids were shared (Supplementary~\ref{fig:suppfig_s2_topvar}; Supplementary Table~S2), indicating a conserved subset of lipid traits with strong genotype sensitivity across environments. Within this high-variance subset, phosphatidylcholine (PC) species were the most common class (CTL: 7/10; LIN: 6/10). Furthermore, the genomic heritability was low in CTL, with only one terpenoid feature above \(h^2=0.20\) (Supplementary Table~S5). In contrast, LIN had 22 molecular features with \(h^2\geq0.20\), including TG(16:0/18:2/18:3) (\(h^2=0.522\)). These estimates are trial-specific and quantify genotype-associated variation within each field trial, not the heritability of the CTL--LIN difference.
-
-These analyses support three conclusions. First, CTL–LIN contrasts were not driven by outlier genotypes (Supplementary~\ref{fig:supp_upper_ranked}). Second, a subset of lipid traits was consistently genotype-sensitive across environments (Supplementary Tables~S3 and~S4). Third, the genetic tractability of that variability differed sharply between trials, indicating that genotype-associated lipid variation was environment-dependent.
-
-\subsection*{Lipid variation is largely independent of botanical race and population structure}
-
-The SAP is structured by botanical race and geographic origin \citep{Casa2008CommunityResourcesSorghum,Boatwright2022}. We next asked whether the lipid variation reflected that structure. We tested two groupings. The first was botanical race, collapsed into six groups: the five classical races (Bicolor, Caudatum, Durra, Guinea, Kafir) plus a Mixed group containing all intermediate designations (e.g., Durra--Bicolor, Kafir--Caudatum). The second grouping was marker-based genetic cluster ($K=6$), which covered 387 CTL and 355 LIN accessions and provides a more complete genetic description of population structure. We tested 14 traits per condition, which included total lipid signal and the 13 lipid classes (Supplementary Table~S6) using Kruskal--Wallis tests with BH correction, and summarized effect size as $\varepsilon^2$, the proportion of rank variance explained by the grouping.
-
-Botanical race explained none of the lipid variations. No traits were significant in either condition after BH correction (smallest $q=0.468$), and effect sizes were uniformly small ($\varepsilon^2 \le 0.033$ across all traits and conditions; Table~\ref{tab:race_structure}, Fig.~\ref{fig:fig6_race_structure}, per-race distributions in Supplementary~\ref{fig:S8_race_box_ctl} and~\ref{fig:S9_race_box_lin}). Marker-based genetic clusters gave the same result for 13 of 14 traits ($q>0.20$; $\varepsilon^2<0.021$). The only exception was phosphatidylserine (PS) under LIN, where cluster membership was strongly associated with PS abundance ($q=4.23\times10^{-7}$; $\varepsilon^2=0.110$). Under CTL, this trait showed only a weak, non-significant trend ($q=0.206$).
-
-Thus, race and genome-wide clusters each explain negligible variance in any lipid class. The associations we report here are unlikely to be simple artifacts of population stratification, and the genotype PCs in the mixed model are adequate for these traits. The exception, PS, occurs at a very low relative abundance, so it represents redistribution within a minor pool rather than a shift in the bulk lipidome.
-
-\begin{table}[!ht]
-\centering
-\caption{\textbf{Population structure explains little lipid-class variation.} Effect sizes ($\varepsilon^2$, proportion of rank variance explained) from Kruskal--Wallis tests of each trait against botanical race (six groups) and marker-based genetic cluster ($K=6$), computed separately within each field trial. $\varepsilon^2$ was truncated at zero. Significance is after Benjamini--Hochberg correction within condition: *** $q<0.001$; all other entries $q>0.20$.}
-\label{tab:race_structure}
-\small
-\begin{tabular}{lcccc}
-\toprule
-& \multicolumn{2}{c}{\textbf{Botanical race}} & \multicolumn{2}{c}{\textbf{Genetic cluster ($K=6$)}} \\
-\cmidrule(lr){2-3}\cmidrule(lr){4-5}
-\textbf{Trait} & \textbf{CTL} & \textbf{LIN} & \textbf{CTL} & \textbf{LIN} \\
-\midrule
-Total lipid (log$_{10}$ TIC) & 0.000 & 0.020 & 0.000 & 0.000 \\
-MGDG & 0.000 & 0.014 & 0.000 & 0.000 \\
-PC   & 0.000 & 0.006 & 0.002 & 0.000 \\
-DG   & 0.000 & 0.003 & 0.002 & 0.007 \\
-DGDG & 0.000 & 0.014 & 0.000 & 0.000 \\
-TG   & 0.025 & 0.000 & 0.010 & 0.013 \\
-PE   & 0.020 & 0.000 & 0.007 & 0.021 \\
-SQDG & 0.000 & 0.024 & 0.000 & 0.013 \\
-MG   & 0.017 & 0.000 & 0.005 & 0.012 \\
-PG   & 0.009 & 0.033 & 0.000 & 0.004 \\
-PA   & 0.015 & 0.000 & 0.000 & 0.005 \\
-LPC  & 0.008 & 0.000 & 0.003 & 0.004 \\
-PS   & 0.000 & 0.002 & 0.024 & \textbf{0.110}*** \\
-LPE  & 0.000 & 0.000 & 0.001 & 0.000 \\
-\midrule
-\textbf{$n$ accessions} & 222 & 211 & 387 & 355 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/main/Figure6_Race_Structure.png}
-\caption{\textbf{Botanical race and genetic structure explain almost none of the lipid-class variation.} Variance explained ($\varepsilon^2$) by botanical race (left) and by marker-based genetic cluster ($K=6$, right) for total lipid signal and 13 lipid classes, shown separately for CTL and LIN. No trait is significant by race in either condition after Benjamini--Hochberg correction. PS under LIN is the single trait strongly associated with genetic cluster.}
-\label{fig:fig6_race_structure}
-\end{figure*}
-
-\subsection*{Lipidome overview for CTL and LIN SAP}
-
-Principal component analysis (PCA) was employed to visualize the lipidome structure, concentrating on major glycerolipid and glycerophospholipid pools (Supplementary~\ref{fig:suppfig_s5_pca}). However, the other free fatty acids and minor lipid classes are available in the Shiny app. TG and PC were the most diverse classes in each environment (TG: 71 in CTL, 69 in LIN; PC: 39 in CTL, 38 in LIN; Supplementary~\ref{fig:suppfig_s4_counts}). PCA showed that lipid class strongly structured the dataset, with TGs separating from membrane lipids and galactolipids forming distinct clusters in both conditions (Supplementary~\ref{fig:suppfig_s5_pca}). Class-resolved PCA places neutral storage lipids, plastid galactolipids, and membrane glycerophospholipids in distinct compositional regions that facilitate class-level and reaction-network analyses, although it remains descriptive and does not test condition effects.
-
-At the class level (\%TIC), the lipidome exhibited a predominance of galactolipids and phospholipids. MGDG accounted for 34.5\% under CTL and 32.1\% under LIN, while PC remained relatively stable (25.6\% CTL vs. 24.8\% LIN). TG increased from 2.7\% (CTL) to 5.4\% (LIN), and SQDG decreased from 2.9\% (CTL) to 1.4\% (LIN). Compositional contrast analyses confirmed these trends (Supplementary~\ref{fig:suppfig_s3_comp}) and revealed coordinated headgroup rebalancing within the phospholipid network. CLR contrasts identified PS as one of the strongest positively shifted classes (Fig.~\ref{fig:fig1_lipidomics_landscape}B), and TG-referenced ALR contrasts showed PS increasing relative to multiple phospholipid pools (e.g., PC, phosphatidylethanolamine (PE), phosphatidylglycerol (PG)) despite modest absolute \%TIC shifts. Additionally, lysophospholipid remodeling (LPC/LPE) was observed under LIN, indicating stress-responsive turnover \citep{Hou2016,Rawat2021} rather than uniform scaling of total lyso-lipid abundance. Class-level CLR and ALR contrasts, per-class ratio statistics, and species counts by class and superclass are given in Supplementary Tables~S7 to~S12. 
-
-Together, the abundance and compositional analyses nominate four principal LIN-associated remodeling signatures relative to CTL: (i) SQDG depletion, (ii) TG enrichment, (iii) PS-centered phospholipid rebalancing, and (iv) lysophospholipid remodeling reflected in the LPC/LPE balance (Supplementary~\ref{fig:supp_class_nonfocused}). The ratio, correlation, ontology, reaction-network, and GWAS analyses below further provide complementary biochemical and genetic context for these axes. 
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/main/Figure1_Lipidomics_Landscape.png}
-\caption{\textbf{Lipidomics landscape under CTL and LIN field conditions.}
-(A) Field-to-database workflow illustrating sample collection, lipidomics profiling, and data processing pipeline.
-(B) Class-level centered log-ratio (CLR) contrasts.
-(C) Weighted mean total carbon number and weighted mean double-bond count. Arrows indicates direction of change between conditions.
-(D) LION pathway enrichment analysis for lipids.}
-\label{fig:fig1_lipidomics_landscape}
-\end{figure*}
-
-LION enrichment recovered the same shift and described it biophysically (Fig.~\ref{fig:fig1_lipidomics_landscape}D) \citep{Molenaar2019}. The strongest terms in either direction were a head-group charge contrast, with LIN depleted for \textit{headgroup with positive charge / zwitter-ion} and enriched for \textit{headgroup with neutral charge}, indicating a shift from the zwitterionic phospholipids PC and PE towards uncharged neutral lipids. Class terms mirrored this, with LIN enriched for glycerolipid, triacylglycerol, lipid-storage and lipid-droplet terms and depleted for glycerophospholipid and membrane-component terms. Membrane-property terms indicated thicker, less laterally mobile membranes under LIN, and acyl-chain terms were consistent with the species-level contrasts.
-
-Furthermore, to characterize structural remodeling beyond total class abundance, we summarized each lipid class in a reduced chemical space defined by its abundance-weighted mean total carbon number and double-bond count across constituent molecular species (Fig.~\ref{fig:fig1_lipidomics_landscape}C). TG increased in carbon number under LIN conditions with slight changes in unsaturation, indicating the enrichment of longer-chain species. PE exhibited the highest increase in unsaturation. Additionally, class-level correlations in CLR space revealed shifts in lipid class relationships, with notable sign reversals matching the principal remodeling axes, namely (i) PC--PS shifted from positive in CTL to negative in LIN, (ii) PS--TG from negative to positive, and (iii) LPC--PC from negative to weakly positive (Supplementary~\ref{fig:suppfig_s6_pcor}). With the \(\Delta r\) matrix, these patterns indicate altered PS-centered headgroup balance, TG-associated neutral-lipid balance, and LPC-linked phospholipid coordination between trials. 
-
-When extending the comparison beyond the thirteen focal classes, sterols were the most strongly increased annotated category under LIN, while terpenoids, glycerophospholipids, ether lipids, glycerolipids and fatty acids all declined modestly and sphingolipids were essentially unchanged (Supplementary~\ref{fig:supp_class_nonfocused}A). At the level of individual features, the sterol shift was carried by \textit{$\beta$}-sitosterol, \textit{$\gamma$}-sitosterol, cycloartenol acetate and \textit{$\alpha$}-amyrin, and zeaxanthin showed the largest single decrease of any feature, with antheraxanthin and lutein moving in the opposite direction (Supplementary~\ref{fig:supp_class_nonfocused}B). Two features, phytosphingosine and SM(d18:1/17:0), were excluded from these comparisons because their between-trial differences were incompatible with their biological plausibility and are described in the methods.
-
-Together, the abundance-, composition-, ontology- and chemical-space analyses support the four remodeling signatures above as a coordinated redistribution rather than independent class-level shifts.
-
-\subsection*{CTL recurrent GWAS signals and annotation-based functional enrichment}
-
-We ran separate GWAS for each individual lipid trait, lipid-class sum, and lipid-class ratio under CTL using a univariate linear mixed model with the first three genotype PCs to account for population structure (Fig.~\ref{fig:gwas_ctl_stacked}). SNPs surpassing the Bonferroni genome-wide significance threshold ($p \leq 8.19 \times 10^{-9}$) were mapped to candidate genes using the LD-based cutoff of 0.4. For the individual-lipid GWAS, this identified 1,100 candidate genes (Supplementary Table~S13), while the analysis of class-sum and class-ratio phenotypes identified 115 candidate genes (Supplementary Table~S14). In the CTL individual-lipid layer, the strongest association was \texttt{SORBI\_3001G522600} (CW-type domain-containing protein; $p = 4.50\times10^{-35}$; $r^2_{\max}=1.0$), and the most recurrent locus was \texttt{SORBI\_3006G040500} (phospholipid-transporting ATPase; 27 phenotypes; $p = 1.01\times10^{-26}$). In the CTL sum/ratio layer, the strongest association was \texttt{SORBI\_3010G136200} (SLH domain-containing protein; $p = 4.28\times10^{-23}$; $r^2_{\max}=0.91$), and the most recurrent locus was \texttt{SORBI\_3003G318650} (64 phenotypes; $p = 3.37\times10^{-12}$; $r^2_{\max}=0.90$).
-
-% Since many candidate genes were associated with multiple lipid phenotypes, we defined gene-level recurrence as the number of distinct phenotypes associated with each gene. We then evaluated GO biological-process overrepresentation separately for the CTL individual-lipid and class-sum/class-ratio candidate sets. In the individual-lipid set, two GO biological-process terms passed BH correction. The term \textit{positive regulation of cytoplasmic translation} contained 16 candidate genes. The strongest association was observed for \texttt{SORBI\_3006G048925} (CCHC-type domain-containing protein; $p = 5.87\times10^{-12}$; $r^2_{\max}=0.60$), which was also among the most recurrent genes for this term, being associated with 9 lipid phenotypes. The term \textit{L-tyrosine catabolic process} contained four candidate genes. Its strongest association was \texttt{SORBI\_3005G152200} (aminotransferase class I and class II domain-containing protein; $p = 9.67\times10^{-13}$; $r^2_{\max}=0.42$), which was also the most recurrent gene for this term, with associations across 10 lipid phenotypes.
-
-% In the CTL class-sum and class-ratio set, \textit{DNA replication initiation} was the only GO biological-process term that passed BH correction and contained three candidate genes. The strongest association was observed for \texttt{SORBI\_3003G369200} (DNA polymerase; $p = 1.36\times10^{-9}$; $r^2_{\max}=0.48$). The highest recurrence was observed for both \texttt{SORBI\_3005G110523} (Uncharacterized protein; $p = 1.43\times10^{-9}$; $r^2_{\max}=0.83$) and \texttt{SORBI\_3005G110535} (DNA replication licensing factor MCM2; $p = 1.43\times10^{-9}$; $r^2_{\max}=0.73$), each of which was associated with 12 class-sum or class-ratio phenotypes.
-
-% We also performed a class-stratified GO enrichment. TG-associated genes were enriched for \textit{positive regulation of cytoplasmic translation} and \textit{L-tyrosine catabolic process}; PC-associated genes for \textit{proteolysis}; and PA-associated genes for \textit{hydrogen peroxide catabolic process}, \textit{response to oxidative stress}, and \textit{cellular oxidant detoxification}. The strongest TG association was \texttt{SORBI\_3001G522600} (CW-type domain-containing protein; $p=4.50\times10^{-35}$; $r^2_{\max}=1.0$), while the most recurrent TG-associated gene was \texttt{SORBI\_3006G040500} (phospholipid-transporting ATPase; 27 phenotypes; $p=1.01\times10^{-26}$; $r^2_{\max}=1.0$). For PC, the strongest association was \texttt{SORBI\_3002G332750} (unannotated; $p=3.94\times10^{-23}$; $r^2_{\max}=1.0$) and the most recurrent was \texttt{SORBI\_3005G110120} (uncharacterized protein; 12 phenotypes; $p=8.19\times10^{-15}$; $r^2_{\max}=0.83$). For PA, the strongest association was \texttt{SORBI\_3004G197700} (DUF4283 domain-containing protein; $p=6.00\times10^{-11}$; $r^2_{\max}=1.0$), and the most recurrent was \texttt{SORBI\_3005G184050} (uncharacterized protein; 2 phenotypes; $p=2.34\times10^{-9}$; $r^2_{\max}=0.45$). Together, these class-specific associations link CTL lipid variation to translational and amino acid metabolism via TG loci, and to proteolytic and oxidative-stress pathways via PC and PA loci.
-
-% \subsection*{CTL recurrent GWAS signals highlight basal metabolism and growth}
-
-% We performed GWAS separately for each lipid trait, their class sums, and class ratios measured under CTL. We then assessed whether recurrent gene--lipid associations converged on common biological processes. For the individual-lipid GWAS, we retained gene-level associations passing the Bonferroni genome-wide threshold under CTL and counted how often each gene was associated across traits. This yielded 3,478 candidate genes (Supplementary Table~S13). Applying a recurrence threshold of association with $\geq 11$ phenotypes, chosen to capture the upper tail of the recurrence distribution in the Bonferroni-significant gene set, reduced this to the current recurrent shortlist (Table~\ref{tab:T1_control_recurrent_combined}). We used recurrence across phenotypes as a prioritization filter to identify robust, repeatedly detected associations across related lipid traits. This conservative approach is expected to enrich for pleiotropic regulators or upstream pathway components, while underrepresenting trait-specific candidates with low recurrence. Thus, recurrence-filtered genes should be viewed as a cross-trait priority set, not an exhaustive list of causal genes. Because candidate genes were mapped using a $\pm$25~kb window around significant SNPs, these regions should be viewed as candidate loci in linkage disequilibrium, not confirmed multi-gene causal hotspots. Multiple annotated genes within a window may simply reflect LD around a single causal variant. In the CTL individual-lipid GWAS, the recurrence shortlist (17 genes) mapped to 6 unique lead SNPs and 5 non-overlapping genomic regions after collapsing overlapping $\pm$25~kb windows, indicating that recurrent calls included both multi-gene hotspots and independent loci.
-
-% Functional and GO annotation of these recurrent individual-lipid candidates followed four dominant themes (Table~\ref{tab:T1_control_recurrent_combined}). First, lipid and isoprenoid metabolism was strongly represented, including a lipoxygenase, a lipase-like hydrolase, and an acyltransferase-like gene involved in isoprenoid and farnesyl diphosphate biosynthesis, indicating repeated associations with lipid turnover and lipid-derived signaling. Second, transport-related loci included putative transmembrane and peptide transporter genes. Third, photosynthesis/chloroplast-associated signals included a photosystem II chlorophyll-binding protein and Rubisco-activase-related function. Fourth, carbohydrate metabolism signals included enzymes of glucose- and fructose-phosphate metabolism, such as glucose-6-phosphate 1-epimerase and a phosphofructokinase-related protein \citep{GeneOntologyConsortium2026}. Together, they represent lipid metabolism, chloroplast-associated functions, membrane transport, and central carbon metabolism.
-
-% We extended recurrence analysis to class-sum and class-ratio phenotypes together. Using the same Bonferroni gene-level threshold, the combined CTL sum/ratio analysis identified 4,385 candidate genes (Supplementary Table~S14). Similarly like in the individual level, restricting to genes detected in >= 68 phenotypes retained the current recurrent shortlist(Table~\ref{tab:T1_control_recurrent_combined}).
-
-% At the class sum/ratio level, recurrent CTL-associated loci grouped into two major themes, matching the order shown in Table~\ref{tab:T1_control_recurrent_combined}. The first theme was growth and development, including a \textit{DRO1}/DRL1-like locus (\texttt{SORBI\_3002G373700}) and an \textit{MRPL15}-like mitochondrial ribosomal protein locus (\texttt{SORBI\_3003G141700}). Based on homolog studies, these loci are associated with root system architecture, reproductive organ development, and mitochondrial support of fertility and biomass, respectively \citep{Kitomi2020,Zhang2014,Xie2023}. Although several recurrent CTL-associated loci have homologs linked to root architecture or reproduction in other species, their detection here likely reflects broad developmental regulation or pleiotropic effects on growth physiology rather than a leaf-specific root-development mechanism.
-
-% The second theme was cell-wall remodeling, including \texttt{SORBI\_3003G141800}, \texttt{SORBI\_3005G049600}, and \texttt{SORBI\_3002G373800}, consistent with polygalacturonase- and receptor-kinase-associated functions linked to cell-wall organization, integrity signaling, and growth regulation (Table~\ref{tab:T1_control_recurrent_combined}). Together, these recurrent CTL loci indicate that class sum/ratio-associated signals are linked not only to core lipid metabolism but also to plant architecture, reproductive development, organellar function, and cell-wall-associated developmental processes.
-
-% \begin{lscape}
-% \begin{center}
-% \begin{threeparttable}
-% \captionof{table}{\textbf{Representative recurrent candidate genes from CTL GWAS of individual lipid traits and class-sum/class-ratio traits.} \textit{Representative GO molecular function (MF) and biological process (BP) terms summarize the dominant functional themes of each candidate set; detailed functional support and references are provided in the main text.}}
-% \label{tab:T1_control_recurrent_combined}
-
-% \scriptsize
-% \setlength{\tabcolsep}{4pt}
-% \renewcommand{\arraystretch}{1.12}
-
-% \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.2cm}
-%                               >{\raggedright\arraybackslash}p{3.2cm}
-%                               >{\raggedright\arraybackslash}p{5.0cm}
-%                               >{\centering\arraybackslash}p{1.6cm}
-%                               >{\raggedright\arraybackslash}p{5.5cm}
-%                               >{\raggedright\arraybackslash}X}
-% \toprule
-% Trait layer & Functional theme & Gene(s) & $N_{\mathrm{Phenotypes}}$ & GO MF & GO BP \\
-% \midrule
-
-% \multirow{4}{*}{\makecell{\itshape Individual\\lipids}}
-% & Lipid and isoprenoid metabolism
-% & \makecell[l]{SORBI\_3006G248300;\\ SORBI\_3006G248100;\\ SORBI\_3006G248000}
-% & 18
-% & Lipoxygenase activity; lipase activity; prenyltransferase activity
-% & Lipid oxidation; lipid catabolic process; isoprenoid biosynthetic process \\
-
-% & Transport
-% & \makecell[l]{SORBI\_3001G276300;\\ SORBI\_3001G276400}
-% & 14
-% & Transmembrane transporter activity; peptide transporter activity
-% & Peptide transport; nitrogen compound transport \\
-
-% & Photosynthesis and chloroplast-associated function
-% & \makecell[l]{SORBI\_3001G276500;\\ SORBI\_3006G248700}
-% & 14, 18
-% & Chlorophyll-binding / photosystem II-associated activity; ATPase activator activity
-% & Photosynthesis; regulation of carbon fixation / photosynthetic acclimation \\
-
-% & Carbohydrate metabolism
-% & \makecell[l]{SORBI\_3006G248400;\\ SORBI\_3007G101800}
-% & 18, 13
-% & Carbohydrate metabolic enzyme activity; kinase activity
-% & Glycolytic process; hexose metabolic process; central carbon metabolism \\
-
-% \midrule
-
-% \multirow{2}{*}{\makecell{\itshape Class sums\\/\ ratios}}
-% & Growth and development
-% & \makecell[l]{SORBI\_3002G373700;\\ SORBI\_3005G025400;\\ SORBI\_3003G141700}
-% & 73
-% & Protein kinase activity; ribosomal structural constituent / organellar translation-associated activity
-% & Root development; reproductive development; mitochondrial translation / pollen development \\
-
-% & Cell-wall remodeling
-% & \makecell[l]{SORBI\_3003G141800;\\ SORBI\_3005G049600;\\ SORBI\_3002G373800}
-% & 73--76
-% & Polygalacturonase activity; receptor kinase activity; translation elongation factor activity
-% & Cell wall organization; cell wall integrity signaling; cell growth and developmental regulation \\
-
-% \bottomrule
-% \end{tabularx}
-
-% \begin{tablenotes}\footnotesize
-% \item \textit{Note:} GO MF and GO BP entries are representative theme-level summaries for the grouped candidate genes and are intended to capture the dominant functional signal within each row rather than provide an exhaustive annotation for every gene listed.
-% \end{tablenotes}
-% \end{threeparttable}
-% \end{center}
-% \end{lscape}
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=\textwidth]{fig/main/Figure2_GWAS_CTL.png}
-\caption{
-\textbf{Condition-specific stacked Manhattan plots for CTL lipid GWAS across representative individual-lipid and sum/ratio traits.} Columns denote recurrent loci: A, \textit{SORBI\_3006G248300} (individual); B, \textit{SORBI\_3001G276500} (individual); C, \textit{SORBI\_3002G373700} (sum/ratio); D, \textit{SORBI\_3003G141800} (sum/ratio). The vertical orange dashed line marks the lead SNP per locus, and horizontal dashed lines indicate the suggestive and stringent significance thresholds used in the GWAS plots. Lead SNPs and strongest observed association among the displayed traits were: A, SNP\_58780498 ($p_{\mathrm{Wald,min}}=1.37\times10^{-10}$); B, SNP\_53871418 ($p_{\mathrm{Wald,min}}=6.27\times10^{-12}$); C, SNP\_73174964 ($p_{\mathrm{Wald,min}}=7.77\times10^{-13}$); D, SNP\_14021625 ($p_{\mathrm{Wald,min}}=1.30\times10^{-10}$). Recurrent peaks at the same marker positions across multiple traits support a common locus-level signal.
-}
-\label{fig:gwas_ctl_stacked}
-\end{figure*}
-
-
-\subsection*{LIN recurrent GWAS signals and annotation-based functional enrichment}
-
-Similarly for LIN, we ran separate GWAS for each individual lipid trait, lipid-class sum, and lipid-class ratio under LIN under the same condition (Fig.~\ref{fig:gwas_lin_stacked}). SNPs surpassing the Bonferroni genome-wide significance threshold ($p \leq 8.19 \times 10^{-9}$) were mapped to candidate genes using the LD-based cutoff of 0.4. For the individual-lipid GWAS, this identified 4,323 candidate genes (Supplementary Table~S15), while the analysis of class-sum and class-ratio phenotypes identified 812 candidate genes (Supplementary Table~S16). In the LIN individual-lipid layer, the strongest association was observed for \texttt{SORBI\_3004G130500}, an unannotated candidate gene ($p = 2.44\times10^{-73}$; $r^2_{\max}=1.0$). The most recurrent individual-lipid locus was \texttt{SORBI\_3010G064200} (1,3-beta-glucan synthase; 13 phenotypes; $p = 3.40\times10^{-16}$; $r^2_{\max}=1.0$). In the LIN sum/ratio layer, the strongest association and the most recurrent locus were both \texttt{SORBI\_3004G004800} (soluble acid invertase; 20 phenotypes; $p = 2.61\times10^{-21}$; $r^2_{\max}=0.78$).
-
-% Since many candidate genes were associated with multiple lipid phenotypes, we defined gene-level recurrence as the number of distinct phenotypes associated with each gene. We then evaluated GO biological-process overrepresentation separately for the LIN individual-lipid and class-sum/class-ratio candidate sets. No GO biological-process terms passed BH correction in the individual-lipid set. In contrast, seven GO biological-process terms passed BH correction in the LIN class-sum/class-ratio set. The significant terms included \textit{nucleotide transport}, \textit{purine nucleobase transport}, \textit{purine nucleoside transmembrane transport}, \textit{purine nucleobase transmembrane transport}, \textit{transmembrane transport}, \textit{nitrate assimilation}, and \textit{detection of stimulus}.
-
-% The three purine and nucleotide transport terms were represented by three candidate genes. For \textit{nucleotide transport}, the strongest and most recurrent gene was \texttt{SORBI\_3001G100800} (Folate transporter 1; $p = 7.42\times10^{-14}$; 1 phenotype; $r^2_{\max}=0.98$). For \textit{purine nucleobase transport}, \textit{purine nucleoside transmembrane transport}, and \textit{purine nucleobase transmembrane transport}, the strongest and most recurrent gene was \texttt{SORBI\_3006G195000} (probable purine permease; $p = 2.24\times10^{-17}$; 6 phenotypes; $r^2_{\max}=1.0$).
-
-% The broader \textit{transmembrane transport} term contained 34 candidate genes. Its strongest association was observed for \texttt{SORBI\_3006G184400} (protein detoxification; $p = 3.38\times10^{-18}$; 6 phenotypes; $r^2_{\max}=1.0$), whereas the most recurrent gene was \texttt{SORBI\_3010G151000} (CMP-sialic acid transporter 1; $p = 3.73\times10^{-11}$; 16 phenotypes; $r^2_{\max}=0.90$). For \textit{nitrate assimilation}, the strongest and most recurrent gene was \texttt{SORBI\_3004G009400} (major facilitator superfamily profile domain-containing protein; $p = 4.93\times10^{-15}$; 3 phenotypes; $r^2_{\max}=0.98$). Finally, the \textit{detection of stimulus} term was represented by \texttt{SORBI\_3004G044800} (protein kinase domain-containing protein; $p = 1.60\times10^{-11}$; 1 phenotype; $r^2_{\max}=0.90$), which was both the strongest and most recurrent gene for that term.
-
-% Similarly, we also performed a class-stratified GO enrichment. AEG-associated genes were enriched for \textit{regulation of defense response}, \textit{sphingolipid metabolic process}, \textit{regulation of jasmonic acid mediated signaling pathway}, and \textit{response to wounding}. FA-associated genes were enriched for purine transport, \textit{nitrate assimilation}, and \textit{detection of stimulus}. PC-associated genes were enriched for \textit{sterol metabolic process}, \textit{cell division}, \textit{carbon utilization}, and nucleotide transport. SQDG-associated genes were enriched for \textit{positive regulation of cytoplasmic translation}, \textit{DNA topological change}, \textit{negative regulation of response to salt stress}, \textit{cell surface receptor protein serine/threonine kinase signaling pathway}, and \textit{defense response to oomycetes}. TG-associated genes were enriched for \textit{regulation of salicylic acid biosynthetic process}. 
-
-% The top AEG association was \texttt{SORBI\_3003G169600} (mitochondrial carrier protein; $p=6.98\times10^{-67}$; $r^2_{\max}=1.0$), also the most recurrent AEG-associated gene (12 phenotypes). For FA, the strongest association was \texttt{SORBI\_3008G081400} (major facilitator superfamily protein; $p=4.50\times10^{-33}$; $r^2_{\max}=0.96$), while the most recurrent was \texttt{SORBI\_3004G181800} (uncharacterized protein; 6 phenotypes; $p=2.05\times10^{-10}$; $r^2_{\max}=0.96$). For PC, the strongest association was \texttt{SORBI\_3003G048900} (uncharacterized protein; $p=2.75\times10^{-73}$; $r^2_{\max}=1.0$), and the most recurrent was \texttt{SORBI\_3003G169600} (12 phenotypes; $p=6.98\times10^{-67}$; $r^2_{\max}=1.0$). For SQDG, the strongest association was \texttt{SORBI\_3010G150325} (F-box protein; $p=1.41\times10^{-18}$; $r^2_{\max}=1.0$), and the most recurrent was \texttt{SORBI\_3007G102400} (aminotransferase-like plant mobile domain protein; 9 phenotypes; $p=1.97\times10^{-12}$; $r^2_{\max}=1.0$). For TG, \texttt{SORBI\_3003G169600} was both the strongest association and the most recurrent gene, while \texttt{SORBI\_3010G064200} (1,3-beta-glucan synthase; 13 phenotypes; $p=3.40\times10^{-16}$; $r^2_{\max}=1.0$) was the most recurrent independent TG-associated locus. Overall, LIN class-specific associations were concentrated in stress signaling, defense, membrane and sterol biology, nucleotide transport, and SQDG-related responses, with stronger functional specialization than in CTL.
-
-% \subsection*{LIN recurrent GWAS signals highlight stress and growth regulation}
-
-% For the individual-lipid GWAS, we retained gene-level associations passing the Bonferroni genome-wide threshold under LIN and counted how often each gene was associated across traits. Under LIN conditions, 141 lipid phenotypes had at least one significant gene association, yielding 10,884 unique candidate genes (Supplementary Table~S15). Restricting to genes detected in >= 5 phenotypes, chosen to capture the upper tail of the recurrence distribution in the Bonferroni-significant gene set,  reduced this to the current recurrent shortlist (Table~\ref{tab:T2_lowinput_recurrent_combined}). Thus, only a limited subset of loci showed repeatedly detectable effects across the LIN individual-lipid landscape.
-
-% For recurrent individual-lipid signals, functional themes followed the same order as Table~\ref{tab:T2_lowinput_recurrent_combined}. First, the nutrient-status/remobilization group included two adjacent tryptophan synthase genes (\texttt{SORBI\_3001G056400}, \texttt{SORBI\_3001G056500}), a phosphate-starvation regulator (\texttt{SORBI\_3001G384300}), and additional putative nutrient-responsive loci (\texttt{SORBI\_3001G384500}, \texttt{SORBI\_3002G117000}). This is consistent with evidence that low-N adaptation in sorghum involves tryptophan-related metabolism, IAA-linked signaling, and root-growth acclimation \citep{Liu2024,Fu2022,Wang2025}. Second, the cell-wall-remodeling group included a callose synthase candidate (\texttt{SORBI\_3004G107800}) and three expansin-related loci (\texttt{SORBI\_3007G018000}, \texttt{SORBI\_3001G238100}, \texttt{SORBI\_3001G238000}), consistent with wall loosening and growth adjustment under stress \citep{Gladman2022SorghumBase,CuiLee2016,McQueenMason1992,Cosgrove2024,Wang2024Expansin}. Third, the defense-related group included a thaumatin-like locus (\texttt{SORBI\_3002G117300}) and a lectin receptor kinase (\texttt{SORBI\_3010G170150}), supporting immune/stress signaling involvement \citep{Gladman2022SorghumBase,Wang2015LecRKIX}. Together, recurrent individual-lipid GWAS signals under LIN appear to capture coordinated stress adaptation and whole-plant acclimation rather than effects limited to primary lipid biochemistry.
-
-% Using the same Bonferroni threshold, the combined LIN class-sum/class-ratio analysis identified 6,516 candidate genes (Supplementary Table~S16). Similar to individual lipid, Restricting to genes detected in >= 45 phenotypes retained the current recurrent shortlist (Table~\ref{tab:T2_lowinput_recurrent_combined}). As with individual lipids, only a limited subset of loci showed repeated effects across LIN traits, but these were enriched for higher-order regulation of lipid-class balance rather than specific molecular lipids.
-
-% For recurrent class-sum/class-ratio signals, the dominant themes again follow Table~\ref{tab:T2_lowinput_recurrent_combined}. First, growth/development candidates included \texttt{SORBI\_3001G256400}, \texttt{SORBI\_3001G101700}, and \texttt{SORBI\_3002G153100}, including a pentatricopeptide-repeat ortholog linked to \textit{SLO1}-like growth regulation \citep{Sung2010}. Second, barrier formation/proteostasis candidates included a \textit{CER1}/\textit{WDA1}-like wax locus (\texttt{SORBI\_3001G222700}) and a cullin-like regulatory locus (\texttt{SORBI\_3002G141600}), consistent with cuticle remodeling and stress-responsive protein turnover \citep{Jung2006WDA1,WangXie2024Cullin}. Third, a defense-related candidate (\texttt{SORBI\_3001G101900}) supported hormone-responsive stress signaling. Overall, LIN class sums/ratios report an integrated physiological state shaped by developmental plasticity, stress acclimation, and regulatory control, rather than by direct lipid-metabolic enzymes alone.
-
-
-% \begin{lscape}
-% \begin{center}
-% \begin{threeparttable}
-% \captionof{table}{\textbf{Representative recurrent candidate genes from LIN GWAS of individual lipid traits and class-sum/class-ratio traits.} \textit{Representative GO molecular function (MF) and biological process (BP) terms summarize the dominant functional themes of each candidate set; detailed functional support and references are provided in the main text.}}
-% \label{tab:T2_lowinput_recurrent_combined}
-
-% \scriptsize
-% \setlength{\tabcolsep}{4pt}
-% \renewcommand{\arraystretch}{1.12}
-
-% \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.2cm}
-%                               >{\raggedright\arraybackslash}p{3.2cm}
-%                               >{\raggedright\arraybackslash}p{5.0cm}
-%                               >{\centering\arraybackslash}p{1.6cm}
-%                               >{\raggedright\arraybackslash}p{5.5cm}
-%                               >{\raggedright\arraybackslash}X}
-% \toprule
-% Trait layer & Functional theme & Gene(s) & $N_{\mathrm{Phenotypes}}$ & GO MF & GO BP \\
-% \midrule
-
-% \multirow{3}{*}{\makecell[l]{\itshape Individual\\lipids}}
-% & Nutrient status and remobilization
-% & \makecell[l]{SORBI\_3001G056400;\\ SORBI\_3001G056500;\\ SORBI\_3001G384300;\\ SORBI\_3001G384500;\\ SORBI\_3002G117000}
-% & 7--9
-% & Transferase activity; DNA-binding transcription factor activity; receptor kinase activity; protein binding
-% & Phosphate-starvation response; nitrogen-related signaling; nutrient remobilization; autophagy-associated recycling \\
-
-% & Cell-wall remodeling
-% & \makecell[l]{SORBI\_3004G107800;\\ SORBI\_3007G018000;\\ SORBI\_3001G238100;\\ SORBI\_3001G238000}
-% & 7--9
-% & Callose synthase activity; expansin activity
-% & Cell wall organization; cell wall loosening; growth adjustment under stress \\
-
-% & Defense-related genes
-% & \makecell[l]{SORBI\_3002G117300;\\ SORBI\_3010G170150}
-% & 7--10
-% & Thaumatin-like protein activity; lectin receptor kinase activity
-% & Defense response; response to fungus / oomycete; immune signaling \\
-
-% \midrule
-
-% \multirow{3}{*}{\makecell{\itshape Class sums\\/\ ratios}}
-% & Growth and development
-% & \makecell[l]{SORBI\_3001G256400;\\ SORBI\_3001G101700;\\ SORBI\_3002G153100}
-% & 51--68
-% & RNA-binding / RNA-editing-associated activity; transcription coactivator activity; sequence-specific DNA-binding transcription factor activity
-% & Mitochondrial function; shoot architecture; reproductive development; developmental regulation \\
-
-% & Barrier formation and proteostasis under cold stress
-% & \makecell[l]{SORBI\_3001G222700;\\ SORBI\_3002G141600}
-% & 51--52
-% & Oxidoreductase activity; ubiquitin ligase complex-associated / protein-binding activity
-% & Wax/cuticle biosynthetic process; protein turnover; stress-responsive regulation \\
-
-% & Defense-related genes
-% & \makecell[l]{SORBI\_3001G101900}
-% & 51--54
-% & Pathogenesis-related protein family activity
-% & Defense/stress response; hormone-responsive signaling \\
-
-% \bottomrule
-% \end{tabularx}
-
-% \begin{tablenotes}\footnotesize
-% \item \textit{Note:} GO MF and GO BP entries are representative theme-level summaries for the grouped candidate genes and are intended to capture the dominant functional signal within each row rather than provide an exhaustive annotation for every gene listed.
-% \end{tablenotes}
-% \end{threeparttable}
-% \end{center}
-% \end{lscape}
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=\textwidth]{fig/main/Figure3_GWAS_LIN.png}
-\caption{
-\textbf{Condition-specific stacked Manhattan plots for LIN lipid GWAS across representative individual-lipid and sum/ratio traits.} Columns denote recurrent loci: A, \textit{SORBI\_3001G384300} (individual); B, \textit{SORBI\_3004G107800} (individual); C, \textit{SORBI\_3001G222700} (sum/ratio); D, \textit{SORBI\_3001G256400} (sum/ratio). The vertical orange dashed line marks the lead SNP per locus, and horizontal dashed lines indicate the suggestive and stringent significance thresholds used in the GWAS plots. Lead SNPs and strongest observed association among the displayed traits were: A, SNP\_67183097 ($p_{\mathrm{Wald,min}}=5.72\times10^{-9}$); B, SNP\_10366823 ($p_{\mathrm{Wald,min}}=2.64\times10^{-9}$); C, SNP\_21276112 ($p_{\mathrm{Wald,min}}=1.96\times10^{-13}$); D, SNP\_29811579 ($p_{\mathrm{Wald,min}}=2.08\times10^{-16}$). Recurrent co-localized peaks across multiple traits indicate a common genomic signal per highlighted locus.
-}
-\label{fig:gwas_lin_stacked}
-\end{figure*}
-
-\subsection*{Gene Ontology enrichment of candidate sets rests on a small number of genomic intervals}
-
-To test whether candidate genes converged on shared functions, we ran GO over-representation analysis on four candidate sets per condition, comprising genes associated with individual lipid species, genes associated with class sums and class ratios, and each of those sets split further by the lipid class of the associated trait. Because a single association can tag several neighboring genes, including tandem arrays, every term was also tested against an LD-aware permutation null that counts the number of independent 250~kb genomic intervals supporting a term rather than the number of gene IDs (Methods). Biological-process (GO-BP) and molecular-function (GO-MF) terms were tested and BH-corrected separately to avoid double-counting across overlapping gene sets.
-
-All 48 significant GO-BP terms (26 individual-lipid, 22 class-sum/ratio) and 53 of 55 GO-MF terms survived the LD-aware null, so correction mainly changed enrichment strength and ranking, not membership. However, there were changes in interpretation. Only 13 of 48 GO-BP and 30 of 55 GO-MF terms were supported by at least three independent 250~kb intervals (Figure~\ref{fig:go_bp_main}). The rest likely reflect single loci with informative annotation rather than coordinated pathway signals (Supplementary~\ref{fig:S11_go_bp_all} ; \ref{fig:S12_go_mf_all}; Table~\ref{tab:go_enrichment_all}; Supplementary Tables~S17 and~S18). The candidate genes carrying each enriched term are listed in Supplementary Table~S19.
-
-Two opposite failure modes show why both criteria are required. First, a term can be specific but driven by a single locus. The terms \textit{purine nucleoside transmembrane transport}, \textit{purine nucleobase transport}, and \textit{purine nucleobase transmembrane transport} were enriched in the DG, FA, SM and SQDG class-sum/ratio sets, yet all derive from one purine-permease array on chromosome~6 (\texttt{SORBI\_3006G195000}, \texttt{SORBI\_3006G195100}, \texttt{SORBI\_3006G195200}; $r^2_{\max} \geq 0.99$) that appears once but is counted in four class sets. Second, a term can be well distributed but too general to be informative. \textit{Zinc ion binding} was enriched in seven CTL class-sum/ratio sets and easily passes the interval criterion, but it is annotated to 1{,}015 of the 9{,}422 sorghum genes with any molecular-function term and is enriched only 1.7-fold. Interpretable terms therefore require both distributed support and specific annotation, and either criterion alone is insufficient. A third case, \textit{positive regulation of cytoplasmic translation}, passes both criteria and still fails, because the term is spread widely enough across the genome that resampling matched intervals recovers most of the overlap by chance. Its two molecular-function counterparts were the only terms in either ontology to fail the LD-aware null outright, so both ontologies demoted the signal independently and we do not treat translational regulation as lipid-associated (Supplementary Tables~S17 and~S18). Finally, selecting candidates by recurrence across phenotypes rather than by LD interval returns a largely different set of terms (Supplementary Table~S20), which reinforces that enrichment output depends on how the candidate set is defined.
-
-Seven GO-BP terms met both criteria. These were \textit{proteolysis} in CTL PC, \textit{L-tyrosine catabolic process} in CTL TG, \textit{cell division} and \textit{anaphase-promoting complex-dependent catabolic process} in LIN PC, \textit{sphingolipid metabolic process} in LIN AEG, \textit{DNA topological change} in LIN SQDG, \textit{regulation of salicylic acid biosynthetic process} in LIN TG, and \textit{transmembrane transport} in the LIN FA, CTL AEG and CTL PE sets (Figure~\ref{fig:go_bp_main}). Molecular-function analysis refined several of these by naming the enzymatic activity involved. In CTL TG, \textit{L-tyrosine-2-oxoglutarate transaminase} and \textit{nicotianamine aminotransferase activity} both supported the \textit{L-tyrosine catabolic process} signal. In LIN PC, \textit{phosphoglycerate dehydrogenase activity} and \textit{C-8 sterol isomerase activity} were enriched, the latter specifying a step within \textit{sterol metabolic process}. In LIN TG, \textit{lipid transporter activity} was the only directly lipid-related enrichment recovered in either ontology. The sterol-isomerase and lipid-transporter terms each rely on a single interval and are treated as annotated loci rather than pathway signals.
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/main/Figure5_GO_BP_LDaware.png}
-\caption[GO biological-process terms with distributed interval support]{\textbf{Gene
-Ontology biological-process terms supported by at least three independent genomic
-intervals.} The 13 GO-BP terms that passed the LD-aware permutation null and drew on
-three or more independent 250\,kb intervals, grouped by trait layer and coloured by
-condition, with the associated lipid class shown beside each term. \textbf{(A)}~Fold
-enrichment over chance on a logarithmic axis; point area scales with the number of
-candidate genes carrying the term. \textbf{(B)}~Number of independent 250\,kb
-intervals contributing genes to each term. \textbf{(C)}~Gene-level
-Benjamini--Hochberg $q$ (open circles) against the LD-aware permutation $q$ (filled
-diamonds); the dashed line marks $q = 0.05$. Terms carried by fewer than three
-intervals appear in Supplementary~\ref{fig:S11_go_bp_all}, and the complete
-result set in Table~\ref{tab:go_enrichment_all}.}
-\label{fig:go_bp_main}
-\end{figure*}
-
-\subsection*{CTL and LIN candidate loci overlap no more than expected by chance}
-
-CTL and LIN analyses produced distinct functional enrichments, but differences between enriched term lists are only qualitative. We therefore counted how many candidate genes the two conditions actually share (Fig.~\ref{fig:fig7_ctl_lin_overlap}), and asked whether that number exceeds what would be expected if the two sets had been drawn independently from the 34{,}027 annotated \textit{Sorghum bicolor} v3.1 gene models. Overlap was tested with a hypergeometric test and summarized as fold enrichment over chance and as the Jaccard index, the proportion of all candidate genes appearing in both conditions.
-
-At the gene level the two sets overlapped strongly, with 354 genes shared against 148 expected ($2.39\times$), and the excess held in both trait layers (Table~\ref{tab:overlap}; Supplementary Tables~S21 to~S24). Jaccard indices were nonetheless low (0.020--0.069), so the excess involves few candidates. This mainly reflects LD, because each association tags every gene model in its window and gene-dense regions are tagged repeatedly in both trials. Collapsing to 250~kb loci reduces the CTL individual-lipid set from 1,100 genes to 378 loci and the LIN set from 4,323 genes to 971. Because no window size is objectively correct for collapsing linkage, we repeated the test at three resolutions and read the trend across them as the result. Individual-lipid enrichment decayed monotonically to chance by 250~kb, so loci recovered in the two trials are no more concordant than two independent samples of the same genome. The class-sum/ratio layer decayed more slowly and retained modest enrichment through 250~kb, making composite class-level traits the more reproducible unit across trials.
-sdsss
-The per-class breakdown gives the same picture (Table~\ref{tab:overlap_class}). Only TG and PC were significantly enriched in the individual-lipid layer and both were weak, free fatty acids showed none, and SQDG, DG, AEG and terpenoids shared no candidate genes at all despite SQDG contributing 396 LIN candidates. Sharing a gene also rarely meant sharing a phenotype, since only 90 of the 354 genes recovered in both conditions (25.4\%) were associated with a lipid class in common, falling to 18.0\% in the individual-lipid layer.
-
-What recurrence there is comes from very small regions. The 18 genes shared in the class-sum/ratio layer fall into two contiguous LD blocks, a ten-gene block on chromosome~10 (\texttt{SORBI\_3010G150325}--\texttt{SORBI\_3010G151325}) that contains the CMP-sialic acid transporter \texttt{SORBI\_3010G151000} discussed below, and an eight-gene block on chromosome~1 (\texttt{SORBI\_3001G168800}--\texttt{SORBI\_3001G171600}). The CTL and LIN lipid GWAS therefore recover largely non-overlapping genetic architectures, with candidate counts inflated several-fold by LD and only a few loci, mainly for class-level composite traits, recurring across the two field trials.
-
-\begin{table*}[!ht]
-\centering
-\caption{\textbf{Cross-trial overlap of GWAS candidates at gene and locus resolution.} Overlap between CTL and LIN candidate sets, tested against a background of 34{,}027 annotated gene models (gene level) or of all genome windows containing at least one gene (locus level). Fold, observed/expected shared; $J$, Jaccard index; $P$, hypergeometric (right-tail) test. Bold rows are the resolutions at which LD blocks are effectively collapsed.}
-\label{tab:overlap}
-\scriptsize
-\begin{tabular}{llrrrrrrl}
-\toprule
-\textbf{Resolution} & \textbf{Trait layer} & \textbf{CTL} & \textbf{LIN} & \textbf{Shared} & \textbf{Exp.} & \textbf{Fold} & \textbf{$J$} & \textbf{$P$} \\
-\midrule
-Gene   & All layers          & 1165 & 4323 & 354 & 148.0 & 2.39 & 0.069 & $4.7\times10^{-59}$ \\
-Gene   & Individual lipids   & 1100 & 4323 & 289 & 139.8 & 2.07 & 0.056 & $4.3\times10^{-35}$ \\
-Gene   & Class sums / ratios &  115 &  812 &  18 &   2.7 & 6.56 & 0.020 & $2.9\times10^{-10}$ \\
-\midrule
-100 kb & Individual lipids   &  521 & 1564 & 193 & 168.2 & 1.15 & 0.102 & $8.5\times10^{-3}$ \\
-100 kb & Class sums / ratios &   50 &  247 &   7 &   2.5 & 2.75 & 0.024 & $1.3\times10^{-2}$ \\
-\textbf{250 kb} & \textbf{Individual lipids} & 378 & 971 & 168 & 161.1 & \textbf{1.04} & 0.142 & \textbf{0.23} \\
-250 kb & Class sums / ratios &   36 &  161 &   6 &   2.5 & 2.36 & 0.031 & $3.8\times10^{-2}$ \\
-\textbf{500 kb} & \textbf{Individual lipids} & 297 & 656 & 162 & 157.2 & \textbf{1.03} & 0.205 & \textbf{0.29} \\
-500 kb & Class sums / ratios &   28 &  121 &   5 &   2.7 & 1.83 & 0.035 & 0.13 \\
-\bottomrule
-\end{tabular}
-\end{table*}
-
-% \begin{table*}[!ht]
-% \centering
-% \caption{\textbf{LD inflates candidate-gene counts.} Candidate genes and the corresponding number of independent loci, defined as non-overlapping 250~kb genome windows containing at least one candidate gene.}
-% \label{tab:inflation}
-% \small
-% \begin{tabular}{llrrr}
-% \toprule
-% \textbf{Condition} & \textbf{Trait layer} & \textbf{Genes} & \textbf{Loci} & \textbf{Genes/locus} \\
-% \midrule
-% CTL & Individual lipids   & 1100 & 378 & 2.9 \\
-% CTL & Class sums / ratios &  115 &  36 & 3.2 \\
-% LIN & Individual lipids   & 4323 & 971 & 4.5 \\
-% LIN & Class sums / ratios &  812 & 161 & 5.0 \\
-% \bottomrule
-% \end{tabular}
-% \end{table*}
-
-\begin{table}[!ht]
-\centering
-\caption{\textbf{Per-class cross-trial overlap of individual-lipid GWAS candidates.} Genes were assigned to a lipid class through the phenotypes with which they were associated. $q$, Benjamini--Hochberg-adjusted hypergeometric $P$-value. n.s., not significant.}
-\label{tab:overlap_class}
-\small
-\begin{tabular}{lrrrrl}
-\toprule
-\textbf{Class} & \textbf{CTL} & \textbf{LIN} & \textbf{Shared} & \textbf{Fold} & \textbf{$q$} \\
-\midrule
-TG          & 866 & 890 & 37 & 1.63 & $9.4\times10^{-3}$ \\
-PC          &  58 & 1324 &  8 & 3.55 & $9.4\times10^{-3}$ \\
-Fatty acid  & 109 & 1897 &  7 & 1.15 & 0.95 (n.s.) \\
-Terpenoid   &  37 &  39 &  0 & ---  & 1 (n.s.) \\
-DG          &  13 &  34 &  0 & ---  & 1 (n.s.) \\
-SQDG        &   9 & 396 &  0 & ---  & 1 (n.s.) \\
-AEG         &   7 & 119 &  0 & ---  & 1 (n.s.) \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/main/Figure7_CTL_LIN_Overlap.png}
-\caption{\textbf{CTL and LIN GWAS identify largely non-overlapping candidate loci.}
-(A) Overlap of candidate sets at gene level and after collapsing linkage blocks into 250~kb loci, with fold enrichment over chance and hypergeometric $P$.
-(B) Fold enrichment of the overlap as a function of the resolution at which it is counted, for individual-lipid and class-sum/ratio traits. The dashed line marks chance expectation; *** $P<0.001$, ** $P<0.01$, * $P<0.05$, n.s., not significant.
-(C) Candidate genes per lipid class in the individual-lipid GWAS, partitioned into CTL-only, shared, and LIN-only.
-(D) Candidate-gene counts compared with the number of independent 250~kb loci they occupy (log scale).}
-\label{fig:fig7_ctl_lin_overlap}
-\end{figure*}
-
-\subsection*{LINEX-based reaction mapping, reaction-balance scoring, and GWAS support}
-
-To contextualize lipid associations biochemically, we used LINEX2 \citep{Rose2023LINEX2}, which integrates curated lipid-reaction data with measured lipid abundances to identify biochemical connections among lipids and enzymes, querying RHEA-annotated reactions \citep{Morgat2016Rhea}. As no sorghum reference exists in LINEX2, we used rice. The resulting network (Fig.~\ref{fig:Fig4_linex_rewiring_abc}A) revealed four candidate branches linking DG/MG, TG, and lysophospholipid pools: (i) PC+DG$\leftrightarrow$LPC+TG (LCAT-like transfer), (ii) TG$\leftrightarrow$DG (PNPLA1-labelled lipase branch), (iii) PE+DG$\leftrightarrow$TG+LPE (LRO1/PDAT-like transfer), and (iv) DG+MG$\leftrightarrow$TG (PNPLA3-labelled branch). These annotation-based hypotheses do not establish \emph{in vivo} flux direction, and because CTL and LIN were sampled in different years, all LIN--CTL contrasts are genotype-matched between-trial ratios rather than causal effects of management.
-
-We converted each branch to a branch-aligned reaction-balance score per sample (Methods), where positive LIN--CTL values indicate more product-weighted and negative values more substrate-weighted balances. Effects were positive for PNPLA3 ($+0.327$), LCAT* ($+0.238$), and LRO1 ($+0.232$), and negative for PNPLA1 ($-0.268$), all with BH-adjusted $p<10^{-56}$ (Fig.~\ref{fig:Fig4_linex_rewiring_abc}B). Thus, branches producing TG and their lysophospholipid coproducts shifted in the same direction, whereas the hydrolytic TG$\rightarrow$DG branch shifted oppositely, recapitulating the lipidome overview (Fig.~\ref{fig:fig1_lipidomics_landscape}) at the level of a small set of candidate reactions rather than independent class-level abundance shifts.
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/main/Figure4_LINEX_Enriched_Subnetwork.png}
-\caption{\textbf{LINEX-supported lipid reaction remodeling between LIN and CTL conditions.}
-\textbf{(A)} LINEX-enriched lipid reaction subnetwork connecting candidate reactions to their substrate and product lipid species. Central reaction nodes depict hypothesized LCAT-like acyl editing, PNPLA1-mediated TG$\rightarrow$DG lipolysis, LRO1-mediated acyl transfer between PE/DG and TG/LPE, and PNPLA3-associated DG/MG$\rightarrow$TG re-esterification; arrows show reaction direction, and labeled circles indicate representative lipid species for each reaction.
-\textbf{(B)} LINEX reaction-consistency scores (LIN $-$ CTL; log$_{10}$) comparing product and substrate signals for each reaction. Positive values indicate product enrichment in LIN, negative values indicate substrate enrichment in LIN. Error bars show empirical confidence intervals; asterisks denote significance.
-\textbf{(C)} Manhattan plots show GWAS support for the LINEX-based remodeling model at \textit{DGAT1} (\texttt{SORBI\_3010G170000}), an LCAT-like gene (\texttt{SORBI\_3006G214500}), and \textit{PNPLA} (\texttt{SORBI\_3001G041900}) across associated lipid traits and sums/ratios. Orange dashed vertical lines indicate the lead SNP for each candidate, blue dashed horizontal lines indicate the suggestive threshold ($-\log_{10}(p)=7$), and red dashed horizontal lines indicate the Bonferroni-scale genome-wide significance threshold.}
-\label{fig:Fig4_linex_rewiring_abc}
-\end{figure*}
-
-Cross-referencing branches with the LIN GWAS candidate tables supported three of four (Supplementary Tables~S25 to~S28). Branch (i) was supported by \texttt{SORBI\_3006G214500}, a lecithin--cholesterol acyltransferase-like gene associated with \mbox{DG(18:2\_18:3)} and \mbox{MG(18:2)}, and by \texttt{SORBI\_3004G341900}, a phospholipid--sterol O-acyltransferase from the same superfamily. Branch (ii) was supported by \texttt{SORBI\_3001G041900}, a PNPLA-domain lipase in the SDP1 clade detected in both individual-lipid and class-sum/ratio GWAS. Branch (iv) was supported by \texttt{SORBI\_3010G170000} (\textit{DGAT1}), associated with six triacylglycerol phenotypes. No candidate was found for branch (iii) (Supplementary Table~S15).
-
-
-\subsection*{An interactive SoLD Shiny application enables exploration of lipid and GWAS results}
-
-The SoLD web server provides an integrated environment for exploring lipid phenotypes and their genetic associations across two field environments (Fig.~\ref{fig:Fig5_shiny_app}A). Traits can be examined at three resolutions—individual species, class-level sums, and inter-class ratios \citep{Fahy2009LipidMapsClass}, with hierarchical filtering by class, subclass, and compound, as well as under alternative representations (Raw, \%TIC, CLR) to distinguish changes in absolute abundance from redistribution within the compositional lipidome. Exploratory and multivariate modules (data preview, boxplots, volcano plots, correlation and network views, heatmaps, PCA, t-SNE/UMAP) are paired with two genetic modules: (i) GWAS, which shows trait-specific associations, and (ii) Gene Hits, which aggregates recurrent candidate genes under user-defined dataset, trait-type, lipid-class, and significance settings. A Genotype module supports experimental design by identifying accessions within specified lipid value ranges.
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=0.72\textwidth]{fig/main/Figure5_shiny_triterpenoid_AB.png}
-\caption{\textbf{SoLD Shiny app example workflow for triterpenoid traits.}
-(A) The homepage of the SoLD Shiny app with a list of features. (B) Boxplots module showing the distribution and between-condition contrast for the summed triterpenoid subclass after filtering by Class = Terpenoid and Subclass = Triterpenoid. (C) Gene Hits module showing candidate genes returned under the same lipid-class/subclass filter context, with recurrence and strength-of-association summaries for the selected dataset and trait source.}
-\label{fig:Fig5_shiny_app}
-\end{figure*}
-
-Bringing filtering, plotting, and gene summaries into one interface makes it easy to trace a lipid class to its candidate genes. In the Boxplots module (Fig.~\ref{fig:Fig5_shiny_app}B), setting Class~=~Terpenoid and Subclass~=~Triterpenoid reveals a strong between-condition shift in summed triterpenoids. Passing this phenotype to the Gene Hits module under LIN (Fig.~\ref{fig:Fig5_shiny_app}C) identifies \texttt{SORBI\_3008G142400}, annotated as a terpene cyclase/mutase family member. Biochemical work in sorghum shows this gene encodes an oxidosqualene cyclase with simiarenol-synthase activity that produces most adult-leaf wax triterpenoids, which accumulate in the intracuticular wax beneath the cuticular water barrier and are linked to reduced water loss at high temperature \citep{Busta2021}. The application thus supports interrogation of both individual lipid species and whole lipid classes, from phenotype to annotated candidate.
-
-\section{Discussion}
-
-Lipidome differences between CTL and LIN were population-wide rather than driven by a few outlier genotypes, and the loci associated with lipid traits were almost entirely distinct between trials. We first relate lipidome-level changes to the conditions each trial imposed, then interpret CTL candidate genes, where variation reflects membrane organization and amino-acid metabolism, and LIN candidates, which converge on nitrogen, phosphorus, and sulfur acquisition. We then focus on LIN candidates on reactions flagged as remodeled by the network reconstruction and conclude with what the near-absence of shared loci implies about genetic control of the leaf lipidome across environments.
-
-Two caveats apply. First, gene functions are assigned by orthology to characterized genes in other species, so they indicate what the gene family can do, not necessarily what the sorghum locus does in the field. Second, because candidate genes were drawn from LD blocks, most associated regions contain several genes, so an enrichment supported by fewer than three independent intervals likely reflects a single locus rather than a pathway.
-
-
-\subsection*{Integrated interpretation of lipidome remodeling across contrasting field trials}
-
-The main LIN lipidome change is a decline in SQDG accompanied by a rise in TG. The SQDG change is most informative because it opposes the canonical phosphate-starvation response, where phospholipids are replaced by non-phosphorus glycolipids and SQDG and DGDG typically increase \citep{Essigmann1998,Hartel2000,Jouhet2004,KellyDormann2002,Pfaff2020}. Reduced SQDG, therefore, does not indicate simple phosphate starvation and more likely reflects a mix of nutrient limitation, temperature, developmental state, and plastid-membrane turnover that this design cannot resolve. The candidate explains some of these changes. The LIN set included two SQD2-like sulfoquinovosyltransferase loci (\texttt{SORBI\_3003G076900}, \texttt{SORBI\_3002G000600}) annotated for sulfolipid biosynthesis. Both were identified via fatty-acid rather than SQDG phenotypes, so they are testable candidates for the sulfolipid component, not demonstrated effectors of SQDG abundance.
-
-TG accumulation commonly results from low temperature, drought, oxidative stress, and nutrient-driven carbon reallocation \citep{Tan2018,Yan2025,Pfaff2020}. The LIN signature is consistent with increased storage, but the timing and carbon source for TG remain unclear. The accompanying change in DG–TG coordination is more specific. The ratios involving TG, DG, PE, and MGDG all shifted toward TG. Additionally, the PS–TG correlation switched sign between trials, and LINEX reaction balances were positive for the three TG-producing branches and negative for the hydrolytic TG-to-DG branch. These class-level balances, though not direct measures of enzyme activity, together indicate a reorganization of DG supply and TG synthesis and mobilization, rather than a uniform rise in neutral lipids.
-
-A second change concerns phospholipid headgroup balance and lysophospholipid turnover. PS increased relative to other phospholipids, and its correlation with PC reversed, indicating headgroup redistribution within a reorganized phospholipid network rather than proportional expansion of the membrane pool. PE showed the largest gain in unsaturation among membrane classes, consistent with selective acyl-chain remodeling. Similar headgroup redistribution, membrane unsaturation, and lysophospholipid turnover occur under cold, nutrient, oxidative, and water limitations, where they are linked to membrane fluidity, lipid repair, signaling, and remobilization \citep{Hou2016,Rawat2021,Yan2025,Zhang2020}. However, PS and lysophospholipids each contribute well under 0.1\% of TIC, versus tens of percent for MGDG, so their consistent directional shifts reflect redistribution within small pools rather than bulk membrane change, and compositional transforms exaggerate proportional shifts in low-abundance species. PS is further qualified as the only trait clearly structured by genetic cluster, and only under LIN. We therefore regard the PS and lysophospholipid signatures as directionally robust but modest changes.
-
-The LIN lipidome is best understood as a coordinated redistribution among plastid, phospholipid, lysophospholipid, and neutral-storage pools, consistently supported by composition, ratios, correlations, ontology enrichment, reaction balances, and GWAS. However, the experimental design limits inference, and targeted biochemical validation is needed to test the effects of nutrients, temperature, and developmental timing of the candidate genes.
-
-
-\subsection*{Under CTL, lipid variation tracks membrane organization and amino-acid metabolism}
-
-The CTL candidate sets link lipid composition to cellular processes beyond biosynthesis. The genes listed below were selected for recurring across phenotypes, belonging to an enriched category, or having a direct lipid-related annotation.
-
-The clearest link to membrane lipid biology is \texttt{SORBI\_3006G040500}, a phospholipid-transporting ATPase associated with 27 TG phenotypes. It does not contribute to any enriched ontology term and is discussed for its annotation rather than enrichment. P4-type ATPases are flippases that move lipids between membrane leaflets to maintain phospholipid asymmetry. Biochemical work on the Arabidopsis P4-ATPase ALA2 shows strong specificity for PS, with PS head-group modification sharply reducing substrate recognition \citep{Theorin2019ALA2}. If the sorghum locus has a similar role, variation could alter membrane phospholipid organization or trafficking, shifting lipid intermediates between membrane and storage pools. This association does not show that it directly affects TG synthesis or that its substrate preference matches ALA2.
-
-Enrichment of the \textit{L-tyrosine catabolic process} links lipid variation to primary metabolism and involves four genes on three chromosomes. Three encode class I/II aminotransferases, and the fourth, \texttt{SORBI\_3002G104200}, encodes 4-hydroxyphenylpyruvate dioxygenase, which acts immediately downstream of tyrosine aminotransferase. Identifying two consecutive pathway steps from unlinked loci is the strongest aspect of this result. The aminotransferases are less straightforward. Two adjacent genes on chromosome~2 are assigned to the nicotianamine aminotransferase subfamily, which in grasses supplies mugineic-acid phytosiderophores for Fe uptake. In rice, OsNAAT1 has NAAT activity, is induced by Fe deficiency, and is required for phytosiderophore-mediated Fe uptake, with close homologs in maize and sorghum \citep{Inoue2008NAAT}. The third gene, \texttt{SORBI\_3005G152200} on chromosome~5, is assigned to the tyrosine aminotransferase subfamily and is not ambiguous. Thus the ambiguity lies in annotation of one locus, not in our interpretation, as reflected by molecular-function enrichment for both \textit{L-tyrosine-2-oxoglutarate transaminase activity} and \textit{nicotianamine aminotransferase activity} for the same three genes. Broader \textit{transaminase activity} and \textit{pyridoxal phosphate binding} enrichments add further unlinked loci, indicating aminotransferase involvement beyond the chromosome-2 region carrying the tyrosine-specific term.
-
-Two observations support the degradative tyrosine pathway. First, every phenotype at the lead locus affected triacylglycerol species. Second, although tyrosine aminotransferase channels 4-hydroxyphenylpyruvate into homogentisate-derived prenyllipid synthesis, $\alpha$-tocopherol was measured in SoLD and did not map to this locus, arguing against a tocopherol-biosynthetic cause. Total $\alpha$-tocopherol does differ between the trials (Supplementary~\ref{fig:supp_class_nonfocused}B), but that is a trial-level abundance difference and not evidence that this CTL locus controls it. Homogentisate is also the entry to the degradative route ending in fumarate and acetoacetate, so flux through these steps feeds acetyl-CoA rather than prenyllipid head groups \citep{Schenck2018Tyrosine}. Arabidopsis data agree: \textit{tat1} mutants accumulate tyrosine, lose tocopherols, show reduced flux from tyrosine to fumarate and other TCA intermediates, and are more sensitive to darkness and sucrose depletion, identifying TAT1 as the main tyrosine degradation route \textit{in planta} under carbohydrate limitation \citep{Wang2019TAT}. Thus, a link via amino acid catabolism and carbon partitioning into storage lipid is the most parsimonious explanation, although functional characterization of the sorghum proteins is needed to confirm this.
-
-The remaining CTL enrichments are weaker. \textit{Positive regulation of cytoplasmic translation} is not interpreted, because it failed the LD-aware null in the biological-process analysis and its molecular-function counterparts failed outright, with genes dominated by repeat-associated domains in gene-dense regions of chromosome~10. \textit{DNA replication initiation}, enriched among class-level candidates, includes the replication licensing factor MCM2, whose loss is embryonic-lethal in Arabidopsis and whose overexpression disrupts the root meristem \citep{Ni2009MCM2}. This likely reflects a link between proliferative state and lipid-class composition, since changes in cell division alter membrane demand and shift several classes together, rather than a direct link to lipid metabolism. Finally, the PA-associated oxidative-stress terms all reduce to a single class III peroxidase cluster, described six ways across the two ontologies. Suppression of the related Arabidopsis peroxidase AtPrx52 alters lignin content and redirects phenylpropanoid metabolism \citep{FernandezPerez2015Prx52}, showing that one plant peroxidase can affect both oxidative chemistry and carbon allocation. Thus the result indicates that variation in PA abundance coincides with peroxide-related processes at that locus, not a PA–peroxidase signalling mechanism.
-
-Together, the CTL associations highlight membrane organization and amino-acid metabolism as the main interpretable signals, with growth state and redox processes as weaker, indirect contributors. Natural lipid variation in the panel seems to result from combined effects of membrane biology, metabolic state and growth, rather than a single controlling pathway.
-
-
-
-\subsection*{Under LIN, candidates converge on nitrogen, phosphorus and sulfur acquisition}
-
-The main theme among LIN candidates is acquisition of the three macronutrients likely limiting the low-input trial. Nitrogen is represented by three transporters from two families. \texttt{SORBI\_3004G009400}, an NRT2.1-related high-affinity nitrate transporter, carries the nitrate assimilation and transport enrichments in both FA and SQDG candidate sets and associates with fatty-acid traits and FA/SQDG ratios; in maize, NRT2.1 requires NAR2.1 for high-affinity nitrate influx, and uptake capacity varies along the root axis with plasma-membrane H$^+$-ATPase activity \citep{Lupini2016NAR2,Sorgona2011Nitrate}. \texttt{SORBI\_3008G081400}, an NPF/NRT1-family transporter, shows the strongest LIN individual-lipid association and appears in transport terms under both conditions, while \texttt{SORBI\_3001G133900}, whose rice orthologue OsNPF2.4 is a low-affinity nitrate transporter mediating root-to-shoot transfer \citep{Xia2015NPF24}, carries the same annotation more weakly.
-
-Nitrogen also appears in a storage rather than an uptake role. The chromosome 1 association at 1.0–1.2~Mb overlaps the dhurrin gene cluster, linking seven candidates to FA(22:1), 11,14,17-eicosatrienoic acid, TG(14:0\_18:3\_18:3) and twelve of thirteen PA-to-class ratios. Dhurrin is the cyanogenic glucoside that sorghum makes from L-tyrosine, and genes for its synthesis, vacuolar transport, and cyanide-free recycling co-occur in this cluster \citep{Wang2024Dhurrin}. Four candidates lie within it, annotated as a UDP-glucosyltransferase, a GSTL-type glutathione transferase, a MATE-family transporter, and a CYP71-family monooxygenase carrying the CYP71E1 reaction, matching the cluster’s known biosynthetic, transport, and recycling roles. Its relevance to LIN is that nitrogen transcriptionally induces dhurrin synthesis in older sorghum \citep{Busk2002Dhurrin}, and under reduced nitrogen, less tyrosine-derived carbon and nitrogen are allocated to dhurrin, with allelic variation in the cluster modulating this allocation. The presence of relative-abundance ratios rather than individual species is consistent with an effect on the precursor pool for lipid synthesis. Dhurrin was not measured in SoLD, so this interpretation relies solely on annotation within a single LD block.
-
-Phosphorus and sulfur also enter via two SQDG-associated loci. \texttt{SORBI\_3001G028500} encodes an SPX-domain protein of the phosphate-status signaling family; in rice, OsSPX4 binds the central regulator PHR2 under phosphate sufficiency and is degraded under deficiency to activate the phosphate-starvation response \citep{Lv2014SPX4}. The sorghum locus showed phosphate-starvation enrichment and associated with the FA/SQDG and SQDG/FA ratios. \texttt{SORBI\_3006G244000} encodes a SULTR3-family sulfate transporter; in Arabidopsis, this subfamily resides in the chloroplast envelope and mediates over half of chloroplast sulfate uptake, with the quintuple mutant losing most sulfate import as well as cysteine and ABA \citep{Chen2019SULTR3}. The SQDG pattern makes this locus more informative. SQDG is a plastid lipid whose head group is built from sulfur imported into and reduced within the plastid, placing SULTR3 on the supply route for SQDG sulfur. Phosphate limitation alone should increase SQDG via replacement of phospholipids with non-phosphorous lipids, yet SQDG was depleted under LIN, consistent with restricted plastidic sulfate supply. Both loci remain correlative and untested in sorghum.
-
-The purine-permease candidate \texttt{SORBI\_3006G195000} directly matches enriched purine-transport categories, and in rice the PUP11 permease influences seed setting and development via cytokinin distribution and starch biosynthesis \citep{Rong2024PUP11}. These categories are not independent evidence for a transport program, because they and the nitrate terms each reduce to a single tandem array, one locus recovered twenty-five times across the two ontologies. The broader signal is still distributed, since transmembrane transporter activity was enriched among LIN FA and SQDG candidates across many unlinked intervals, encompassing the nitrate, purine, and sulfate loci. Thus, transport function under LIN is supported at the general category level even though each substrate-specific term collapses to one array.
-
-Two further transport candidates were recovered based on recurrence and annotation alone and did not contribute significantly to either ontology. \texttt{SORBI\_3003G169600}, a mitochondrial NAD$^+$ carrier related to Arabidopsis NDT1 \citep{Chaves2019NDT1}, was associated with AEG, DG, PC and TG lipid phenotypes, a range more consistent with an indirect effect via mitochondrial redox and energy balance than with any single lipid class. \texttt{SORBI\_3010G151000}, a CMP-sialic acid or nucleotide-sugar transporter \citep{Bakker2008CMPSia}, showed the broadest recurrence of any transport candidate, but because this rests on heterologous assays and a complete plant sialylation pathway remains uncertain, we interpret it as evidence for altered intracellular metabolite trafficking rather than a specific sialic-acid route.
-
-
-
-% \subsection*{Cell-wall remodeling candidates under CTL and LIN link pectin turnover, wall sensing, wall biosynthesis, and wall plasticity}
-
-% Both CTL and LIN yielded loci related to cell-wall biology, but they emphasized different wall-associated processes. CTL-associated loci were more consistent with growth-coupled wall organization and maintenance, including \texttt{SORBI\_3003G141800}, \texttt{SORBI\_3005G049600}, and \texttt{SORBI\_3002G373800} (Table~\ref{tab:T1_control_recurrent_combined}). Functional evidence from homologs links these loci to pectin turnover, wall sensing coupled to growth signaling, and wall biosynthetic capacity, respectively. In rice, the homolog of \texttt{SORBI\_3003G141800} (\textit{PSL1}/\textit{OsPG1}) encodes a cell-wall-localized polygalacturonase that modifies pectin and wall architecture \citep{Zhang2021PSL1}. The rice homolog of \texttt{SORBI\_3005G049600} (\textit{OsWAK11}) encodes a wall-associated kinase that senses pectin methylesterification status and connects this information to brassinosteroid-linked growth signaling \citep{Yue2022OsWAK11}. An \textit{Arabidopsis} homolog of \texttt{SORBI\_3002G373800} (\textit{eEF-1B$\beta$1}) has been linked to reduced cellulose and lignin when disrupted, consistent with a role in maintaining wall biosynthetic capacity \citep{Hossain2012EF1Bb1}. Together, these CTL-associated loci point to a wall program centered on pectin remodeling, wall-integrity sensing, and support for growth-associated wall structure.
-
-% In contrast, LIN-associated loci emphasized more dynamic wall adjustment, including a \textit{CALS8}/GSL-type callose synthase candidate (\texttt{SORBI\_3004G107800}) and three expansin-family loci (\texttt{SORBI\_3007G018000}, \texttt{SORBI\_3001G238100}, \texttt{SORBI\_3001G238000}) \citep{Gladman2022SorghumBase} (Table~\ref{tab:T2_lowinput_recurrent_combined}). Callose synthases are known to produce callose, a $\beta$-1,3-glucan polymer that is deposited at plasmodesmata and other wall domains during stress, where it can alter wall reinforcement and intercellular permeability \citep{CuiLee2016}. By contrast, expansins do not hydrolyze wall polymers. Instead, they loosen cell walls by disrupting noncovalent interactions within cellulose-rich wall networks, thereby permitting controlled wall yielding and extension during growth or environmental response \citep{McQueenMason1992,Cosgrove2024}. Thus, the LIN signals are more consistent with a stress-responsive wall state under environmental constraint \citep{Ma2013}. Direct functional validation in sorghum will still be needed to resolve the causal variants and downstream mechanisms.
-
-% \subsection*{Growth and developmental regulation candidates under CTL and LIN indicate shared developmental control but distinct underlying processes}
-
-% Among the CTL-associated loci, the rice ortholog of \texttt{SORBI\_3002G373700} belongs to the \textit{DRO1}/DRL1-like family, which regulates root gravitropism, root growth angle, and root system architecture \citep{Kitomi2020}. A second CTL candidate, \texttt{SORBI\_3005G025400}, is supported by the rice homolog \textit{OsCDPK25}, a calcium-dependent protein kinase whose perturbation alters stamen number and, therefore, reproductive organ development \citep{Zhang2014}. In addition, the homolog of \texttt{SORBI\_3003G141700} in rice shows that the disruption of \textit{OsMRPL15} causes pollen defects and male sterility, linking this locus to mitochondrial support of fertility and reproductive biomass \citep{Xie2023}. Together, these CTL-associated loci suggest a developmental context centered on root architecture, reproductive development, and organellar support for growth.
-
-% The LIN candidate set highlighted a different developmental context. \texttt{SORBI\_3001G256400} is most similar to \textit{SLO1} (\textit{SLOW GROWTH1}) of \textit{Arabidopsis}. Loss of \textit{SLO1} causes slow growth and delayed development \citep{Sung2010}. \texttt{SORBI\_3002G153100} is functionally similar to \textit{TGA10}, a bZIP transcription factor required, together with \textit{TGA9}, for normal tapetal function, pollen maturation, and anther dehiscence in \textit{Arabidopsis} \citep{Murmu2010}. \texttt{SORBI\_3001G101700} and its homolog in maize \textit{GIF1} (\textit{GRF-interacting factor1}) shows that \textit{gif1} mutants show narrow leaves, short internodes, and altered meristem organization \citep{Zhang2018GIF1}. Thus, these LIN-associated loci suggest developmental regulation shaped more by mitochondrial performance, reproductive regulatory pathways, and control of shoot architecture under stress-associated field conditions.
-
-% \subsection*{CTL candidates highlight lipid oxidation, neutral-lipid turnover, and isoprenoid precursor supply}
-
-% Within the CTL condition, recurrent GWAS candidates included loci linked to lipid oxidation, neutral-lipid turnover, and isoprenoid precursor metabolism. \texttt{SORBI\_3006G248300} belongs to a lipoxygenase-related clade implicated in oxylipin metabolism (Table~\ref{tab:T1_control_recurrent_combined}). In maize, the related enzyme \textit{ZmLOX6} is a plastid-localized LOX-like protein that metabolizes 13-LOX-derived fatty acid hydroperoxides, supporting the interpretation of the sorghum LOX6-like association as variation in lipid oxidation with potential consequences for oxylipin production \citep{Gao2008ZmLOX6}.
-
-% A second candidate in the same locus group is \texttt{SORBI\_3006G248100}, orthologous to \textit{AtOBL1}. In \textit{Arabidopsis}, \textit{AtOBL1} localizes to lipid droplets and acts as a lipase on TG, DG, and MG, consistent with a role in mobilizing acyl groups from neutral-lipid pools \citep{Muller2018AtOBL1}. This makes the sorghum OBL1-like candidate a plausible regulator of TG/DG/MG interconversion and acyl remobilization rather than a marker of only one neutral-lipid class.
-
-% Finally, \texttt{SORBI\_3006G248000} encodes an FPS-like trans-prenyltransferase positioned upstream of multiple isoprenoid end products. In rice, FPS-family trans-prenyltransferases are classified as predicted FPP synthases, and plant trans-prenyltransferases more broadly generate prenyl-diphosphate backbones that feed major terpenoid pathways \citep{Suratin2020RicePT}. This places the sorghum FPS-like candidate in the upstream isoprenoid precursor supply rather than in any single terminal metabolite class.
-
-% \subsection*{Nutrient sensing and recycling candidates provide upstream context under LIN}
-
-% Several LIN candidates converge on nutrient-responsive regulation and recycling pathways. Two adjacent loci, \texttt{SORBI\_3001G056400} and \texttt{SORBI\_3001G056500}, encode tryptophan synthase family members, linking this region to tryptophan biosynthesis. This is relevant under LIN because N metabolites, including tryptophan, have been implicated in auxin-regulated growth responses, and sorghum studies under low-N conditions further connect Trp metabolism, IAA-related pathways, root elongation, and carbon/N metabolic responses \citep{Stepanova2008,Zhao2001,Fu2022,Liu2024,Wang2025}. These loci therefore place part of the LIN signal in a nutrient-responsive developmental context rather than in direct lipid enzymatic control.
-
-% Additional candidates point more directly to nutrient sensing and nutrient-stress regulation. \texttt{SORBI\_3001G384500} is supported by a maize ortholog repeatedly associated with N-uptake traits, consistent with an LRR-RLK-like role in nutrient-stress signaling and broader developmental or stress-responsive regulation \citep{Gladman2022SorghumBase,Luo2025,Dufayard2017}. The phosphate-starvation regulator \texttt{SORBI\_3001G384300}, a \textit{PHR1}-like MYB-CC transcription factor, similarly supports a phosphate-homeostasis axis, since \textit{PHR1} is a major upstream regulator of phosphate-starvation programs that include phospholipid remodeling \citep{Pant2015,Rubio2001,Bustos2010,Nilsson2007,Rouached2011}. Together, these loci suggest that recurrent LIN associations capture regulatory variation in nutrient sensing and remobilization rather than only downstream lipid metabolism.
-
-% A final candidate, \texttt{SORBI\_3002G117000}, encodes an ATG8-interacting protein, consistent with starvation-induced recycling pathways. In plants, ATG8-interacting proteins such as ATI1/ATI2 act as selective autophagy cargo receptors during carbon starvation and related stresses, while ATG8 itself is lipidated with PE during autophagosome biogenesis \citep{Honig2012,Wu2021ATI,Michaeli2014}. This makes the ATI-like candidate a plausible indicator of variation in nutrient-stress-induced recycling capacity that could influence membrane and metabolite turnover under LIN conditions.
-
-% Beyond the stricter LIN-focused shortlist, other LIN GWAS candidates were also present for nutrient stress. On the P side, \texttt{SORBI\_3001G259100}, an \textit{SPX} domain protein, was associated with 31 significant sum/ratio phenotypes and 1 individual phenotype, while \texttt{SORBI\_3001G186800}, a purple acid phosphatase 18 homolog, was associated with 5 individual phenotypes. On the N side, \texttt{SORBI\_3001G541900}, an \textit{NRT1/PTR6.3}-like transporter, was associated with 37 significant sum/ratio phenotypes. Although these loci were not in the main recurrent LIN shortlist, their annotations align with phosphate starvation signaling, organic-P scavenging, and nitrate uptake, indicating that LIN lipid associations are embedded in broader nutrient sensing and acquisition programs.
-
-% \subsection*{Cuticle barrier formation and ubiquitin-mediated proteostasis as cold-linked candidates under LIN}
-
-% Two LIN candidates may influence cold and stress performance without directly encoding enzymes that modify the measured lipid species. \texttt{SORBI\_3001G222700}, a \textit{CER1}/\textit{WDA1}-like wax locus, is homologous to rice \textit{Wax-deficient anther1} (\textit{WDA1}), a gene required for very-long-chain fatty acid-derived wax production and cuticle formation \citep{Jung2006WDA1,Gladman2022SorghumBase}. Cuticular waxes are major components of the hydrophobic barrier covering aerial tissues and help limit non-stomatal water loss while also contributing to protection against environmental stress \citep{Jung2006WDA1,LeeSuh2022}. Since wax deposition and composition are environmentally responsive, and low temperature can alter both wax load and wax composition across species, this locus provides a plausible link between barrier formation and cold-related field performance \citep{LeeSuh2022}.
-
-% A second candidate, \texttt{SORBI\_3002G141600}, is similar to a cullin-family protein. Cullins act as scaffold proteins in cullin--RING E3 ubiquitin ligase complexes that mediate selective protein turnover through the ubiquitin--proteasome system and thereby influence hormone signaling, development, and environmental stress responses \citep{WangXie2024Cullin}. In cold-stress contexts, cullin-associated E3 ligase activity has been implicated in regulating key signaling components, including ICE1- and CBF-centered pathways, consistent with a role in tuning the abundance of proteins required for cold acclimation \citep{WangXie2024Cullin}.
-
-% \subsection*{Defense-related candidates under LIN implicate receptor-like immune signaling and pathogenesis-related defense proteins}
-
-% Among the LIN candidates, a smaller subset was linked to defense-related processes, which might be associated with the LIN management regime that did not include pesticides, herbicides, or insecticides. These loci point most clearly to two defense layers: immune perception at the cell surface and downstream pathogenesis-related defense proteins.
-
-% \texttt{SORBI\_3010G170150} is homologous to \textit{At5g10530}, which encodes the lectin receptor kinase \textit{LecRK-IX.1}. \textit{LecRK-IX.1} and its close paralog \textit{LecRK-IX.2} positively regulate resistance to \textit{Phytophthora} species, placing this sorghum candidate within a receptor-like immune signaling framework that links pathogen perception to downstream defense activation \citep{Wang2015LecRKIX}. The additional LIN candidates are more consistent with downstream defense outputs. Thaumatin-like proteins are commonly associated with antifungal activity, whereas PR-1 family proteins are widely linked to pathogen and stress responses and can be induced by multiple defense-related signaling pathways \citep{Gladman2022SorghumBase,Ma2022ZmPR1}. Together, these loci suggest that recurrent LIN-associated signals include both immune perception and pathogenesis-related defense capacity rather than only metabolic responses.
-
-\subsection*{Reaction-supported lipid-remodeling candidates under LIN implicate DG--TG cycling and phospholipid turnover}
-
-Beyond the broader stress- and development-associated loci, the LINEX reaction network highlighted a focused set of lipid-remodelling candidates on branches connecting the DG, TG and lysophospholipid pools. Because LINEX assignments are annotation-guided and rice-referenced, these genes generate hypotheses rather than demonstrate enzymatic flux. The candidates below are ordered by proposed chemistry, from phospholipid input to triacylglycerol.
-
-\texttt{SORBI\_3003G107900}, a non-specific phospholipase~C6, is not assigned to a single reaction but supplies substrate to others, as NPC enzymes convert phosphatidylcholine to diacylglycerol and phosphocholine, feeding the DG node from the phospholipid pool. Under LIN, the sorghum locus was associated with \mbox{PC(18:2\_20:4)}, a substrate of this reaction. In Arabidopsis, NPC2 and NPC6 redundantly support triacylglycerol production during pollen tube growth; their overexpression induces lipid-droplet accumulation \citep{Bose2021NPC}, and knock-down lines have reduced root growth rescued by exogenous phosphocholine \citep{Ngo2019NPC}. That work also defines the nutrient context: nitrogen limitation promotes triacylglycerol accumulation at the expense of phospholipids, and NPC-mediated head-group hydrolysis is a plausible entry point. However, the characterized phenotypes are in roots and pollen rather than leaves, and the phosphate-responsive Arabidopsis isoforms are NPC4 and NPC5, not NPC6, so this locus is unlikely to participate in the phosphate-status response described above.
-
-Branch (i), the hypothesized PC$+$DG$\leftrightarrow$LPC$+$TG transfer, has two candidates from the lecithin--cholesterol acyltransferase superfamily. \texttt{SORBI\_3006G214500} was linked under LIN to \mbox{DG(18:2\_18:3)} and \mbox{MG(18:2)}, the branch's diacylglycerol and monoacylglycerol substrates, while \texttt{SORBI\_3004G341900}, a phospholipid--sterol O-acyltransferase, uses phosphatidylcholine and releases lysophosphatidylcholine, the branch product. Both assignments remain uncertain, since in Arabidopsis a related LCAT-family protein functions not as a lecithin:cholesterol or PDAT-like transferase but as a cytosolic, calcium-independent phospholipase~A specific for phosphatidylcholine at sn-2 \citep{Chen2012}. Thus the association supports phospholipid deacylation and LPC production on this branch without demonstrating that either locus catalyses the depicted transfer.
-
-\textit{DGAT1} is the clearest lipid-genetic link to the TG-enrichment phenotype and the strongest candidate. Five of six phenotypes associated with \texttt{SORBI\_3010G170000} were triacylglycerol species with polyunsaturated acyl chains, including \mbox{TG(18:3\_18:3\_18:3)} and \mbox{TG(18:2\_18:2\_18:4)}. Sorghum mapping has repeatedly identified a chromosome~10 QTL for crude fat and gross energy whose interval contains this gene, the sorghum homolog of maize \textit{DGAT1}, with the TX15 peak falling within its transcript. Because DGAT catalyses the final step of triacylglycerol biosynthesis and these TGs are among the most unsaturated in the panel, this supports increased channelling of DG into TG under LIN \citep{Boyles2017DGAT1,Yen2008DGAT}. Together with the phospholipase~C candidate above, this places two consecutive steps of one route, PC to DG and DG to TG, among the LIN candidates.
-
-The reverse reaction is also shown. \texttt{SORBI\_3001G041900} was associated with three triacylglycerol species and, at class level, with total TG and the TG/SQDG and SQDG/TG ratios, consistent with a lipase acting on the bulk TG pool rather than on individual species. In Arabidopsis, the patatin lipases \textit{SDP1} and \textit{SDP1L} preferentially hydrolyse TG over DG or MG and mediate most TG breakdown during seed reserve mobilization \citep{Kelly2011SDP1L}. A sorghum survey placed this locus in the same clade as \textit{SbSDP1-L} \citep{Sapara2024PLA}, making it a strong candidate for TG--DG turnover under LIN.
-
-A second module lies outside the DG–TG branches. Among lipid-pathway terms, \textit{sphingolipid metabolic process} was the clearest ontology signal combining specific pathway annotation with support from three independent intervals, and its three genes span three consecutive steps on three chromosomes. \texttt{SORBI\_3001G434900} encodes serine C-palmitoyltransferase, the committed first step in sphingoid-base synthesis. \texttt{SORBI\_3007G041500} is a DAGK-domain kinase linked to sphingolipid metabolism. \texttt{SORBI\_3003G394100} encodes a ceramide glucosyltransferase that diverts ceramide into glucosylceramide. All three associate with the same trait, AEG(o-15:2\_15:0), which is the third largest compositional shift between the trials and the only ether-linked species to increase under LIN. The trait carrying the module is therefore one of the clearest between-trial differences in the dataset, although the module itself rests on the genetic evidence rather than on lipid abundance, since the sphingolipid category as a whole barely moves and its measured species are trace components. This is nonetheless the most complete pathway recovered in the study and the most direct target for functional work.
-
-Together these loci implicate phospholipid head-group hydrolysis, DG-pool input, and both arms of DG–TG cycling, though they were detected independently rather than as a single module and each step still requires functional testing in sorghum. Additional LIN candidates share these reaction-family annotations, including two patatin-domain lipases (\texttt{SORBI\_3003G389400}, \texttt{SORBI\_3002G031800}) and a phospholipid/glycerol acyltransferase (\texttt{SORBI\_3001G026100}), but these mainly associate with fatty-acid and PC traits rather than the network’s triacylglycerol species, indicating variation within the enzyme families without pinpointing specific reactions.
-
-
-\subsection*{The genetic architecture of the sorghum leaf lipidome is strongly environment-dependent}
-
-The candidate loci above came from trials differing in nutrient supply, planting date, management and year, and their functional enrichments diverged accordingly. Direct comparison makes this divergence clear. After collapsing linkage blocks, the individual-lipid loci recovered under CTL and LIN overlap no more than expected by chance for two independent genome samples ($1.04\times$ at 250~kb), and among genes recovered in both trials only a quarter were linked to the same lipid class, so even this limited overlap is largely not trait-specific. The much stronger apparent gene-level excess before collapsing reflects mapping rather than biology, with linkage structure inflating candidate counts three- to five-fold. Such cross-study comparisons should therefore be made at the locus, not the gene, level.
-
-Two positive findings emerge. First, class-level composite traits replicated better than individual species, retaining significant cross-trial excess at 100 and 250~kb where individual lipids did not. Aggregating species into class totals reduces measurement noise and averages over acyl-chain heterogeneity, making composites the more suitable unit for cross-environment comparison and the level at which lipidome-wide remodelling signatures were defined. Second, the recurrent loci cluster into two chromosomal regions, one containing the CMP-sialic acid transporter \texttt{SORBI\_3010G151000}, itself among the most recurrent LIN candidates. Loci detected in both trials and across many class-level traits are the strongest starting points for validation.
-
-This pattern indicates that genetic control of leaf lipid composition in the SAP is strongly environment-dependent, matching the contrasting genomic heritabilities in the two trials. It does not mean individual associations are false, since allelic effects can be real and reproducible within a given environment yet fail to generalize beyond it. Because CTL and LIN were sampled in different years and field contexts, genotype-by-nutrient effects cannot be distinguished from genotype-by-year or genotype-by-management effects. Resolving this requires growing the same contrast in a common year under factorial nutrient treatments, so interaction terms can be estimated directly rather than inferred from non-overlapping candidate sets. Until then, the loci recurring in both trials, and the trait classes where they recur, are the most efficient targets for such an experiment.
-
-
-\section*{Conclusion}
-
-SoLD establishes a population-scale lipidomics resource for the sorghum association panel and shows that two contrasting field contexts drive extensive, population-wide lipidome remodelling. Across 244 annotated species, LIN differed from CTL by four signatures: SQDG depletion, TG enrichment, PS-centred phospholipid redistribution and a shifted LPC/LPE balance. These patterns were consistently detected across abundance contrasts, compositional analyses, chemical-space summaries and lipid ontology enrichment, and were independent of botanical race and genome-wide genetic structure, indicating coordinated redistribution among interconnected lipid pools rather than isolated class shifts or artefacts of population stratification.
-
-Genetic analysis nominates candidates for the two strongest signatures. For TG enrichment, the main candidate is \texttt{SORBI\_3010G170000} (\textit{DGAT1}), which catalyses the committed step of triacylglycerol synthesis, associates almost exclusively with polyunsaturated TG species, and lies within a known sorghum crude-fat QTL. The same route includes \texttt{SORBI\_3003G107900}, a non-specific phospholipase~C6 that converts phosphatidylcholine to diacylglycerol and whose Arabidopsis orthologues are required for TG production, and \texttt{SORBI\_3001G041900}, an SDP1-like lipase that performs the reverse reaction and associates with total TG. These jointly implicate phospholipid head-group hydrolysis, TG synthesis and TG turnover among the LIN candidates, the pathway by which nitrogen limitation drives TG accumulation at the expense of phospholipids. For SQDG depletion, \texttt{SORBI\_3006G244000}, a SULTR3-family sulfate transporter supplying most chloroplast sulfate, lies on the route to the sulfoquinovose head group and predicts the observed change, whereas the canonical phosphate-starvation response does not. The phosphate-signalling locus \texttt{SORBI\_3001G028500} and two SQD2-like sulfoquinovosyltransferases also appear among these candidates. A third group affects membrane rather than storage lipids, including a sphingolipid-biosynthetic module spanning three unlinked loci on chromosomes 1, 3 and 7, and a TIFY/JAZ cluster associated specifically with $n$-3 polyunsaturated lipids, the substrate pool for jasmonate synthesis.
-
-These are candidates, not causes. All rely on linkage-based mapping and cross-species annotation, and enrichment analysis showed that once linkage is considered, most functional signals in either condition collapse to single genomic intervals. The candidate sets themselves barely overlap between trials, sharply limiting how far any locus can generalize. Class-level composite traits were the exception, showing modest cross-trial recurrence and making them the more reproducible unit for cross-environment work.
-
-Three lines of work follow. Functional validation should start with loci that combine strong association, a mechanistically matched phenotype, and a testable direction—\textit{DGAT1}, the SULTR3 transporter, and the phospholipase~C locus—using knockouts or allelic contrasts scored for the lipid classes they are predicted to affect. Distinguishing genotype-by-nutrient from genotype-by-year effects requires growing both regimes in a single year under factorial nutrient treatments, so interaction terms can be estimated directly. Finally, the resource, including the interactive interface for exploring lipid traits and associations, is designed to let others test hypotheses about sorghum lipid variation that this panel and these two environments cannot resolve alone.
-
 \section*{Materials and methods}
 
 \subsection*{Plant Material and Growth Conditions}
@@ -815,6 +250,330 @@ We conducted a functional ontology for lipids using LION/web \citep{Molenaar2019
 
 Data processing and statistical analyses were performed in R (version 4.3.3). All the codes, figures, and pipeline are described in the GitHub repository: \url{https://github.com/rr-lab/SAP-Lipidomics-Database}.
 
+\section{Results}
+
+\subsection*{QC and normalization yielded comparable LC-MS performance across conditions}
+
+We profiled early-stage lipids from SAP grown in two field conditions defined earlier. The workflow (Fig.~\ref{fig:fig1_lipidomics_landscape}A) comprised tissue collection and extraction, high-resolution LC-MS lipidomic profiling, GNPS-assisted lipid annotation, post-acquisition data correction with SERRF and SpATS \citep{Fan2019,RodriguezAlvarez2018}, and data dissemination via the SoLD Shiny app (\url{https://nirwan.shinyapps.io/SAP-Lipidomics-Database/}).
+
+Run-order quality control showed stable analytical performance (Supplementary~\ref{fig:suppfig_s1_qc}), with the total ion current (TIC) and the summed signal intensity per sample meeting expected values across system checks, internal standards, and blanks. TIC variability among QC samples was low (7.5\% CV for CTL and 6.0\% CV for LIN). SERRF normalization improved technical precision, reducing median QC-RSD from 3.6\% to 2.0\% in CTL and from 1.6\% to 0.3\% in LIN.
+
+QC-based normalization improved technical reproducibility, increasing the QC-RSD under $<30\%$ from 75.7\% to 94.1\% in CTL and from 77.3\% to 89.3\% in LIN (Supplementary Table~S1). PCA of normalized data showed tighter sample clustering than unprocessed data, while spatial correction largely removed broad row and column effects. Post-correction, lipid signal distributions remained similar across cohorts, and the adjusted trait matrix was used for all subsequent analyses.
+
+\subsection*{Lipid variation across genotypes}
+
+We summarized lipid-trait variability by examining trait distribution across genotypes within each environment. Lipid species were combined into class totals and transformed using centered log-ratio (CLR) due to the compositional nature of the data. TIC was used for sample-wise normalization. To determine whether CTL--LIN lipid differences reflected population-wide remodeling rather than a few outlier genotypes, we assessed effect size, directional stability, and significance (defined in Methods; Supplementary~\ref{fig:supp_class_sums_top_bottom}). At the class-ratio level, the median absolute log$_{10}$ effect size was 0.4743, with 27/33 ratios showing absolute effects $\geq$0.3 and 16/33 $\geq$0.5. All 33 ratios were BH-significant ($p_{\mathrm{adj}}<0.05$) and showed perfect leave-one-out sign stability (1.0).  A total of 244 lipid species were quantified, including 153 shared, 49 CTL-specific, and 42 LIN-specific. Species-level CLR abundances also shifted broadly, with a median absolute CLR effect size of 0.7084, and 91/153 shared species had absolute effects $\geq$0.5 and 61/153 $\geq$1.0. Of the 153 shared species, 151 were BH-significant, and all 153 showed jackknife stability of 1.0.
+
+We next asked whether lipid traits with high genotype-level variance were conserved across environments. Monogalactosyldiacylglycerol species, MGDG(18:3/18:3), showed the highest genotype-level variance in both conditions, based on TIC values. Seven of the ten most variable lipids were shared (Supplementary~\ref{fig:suppfig_s2_topvar}; Supplementary Table~S2), indicating a conserved subset of lipid traits with strong genotype sensitivity across environments. Within this high-variance subset, phosphatidylcholine (PC) species were the most common class (CTL: 7/10; LIN: 6/10). Furthermore, the genomic heritability was low in CTL, with only one terpenoid feature above \(h^2=0.20\) (Supplementary Table~S5). In contrast, LIN had 22 molecular features with \(h^2\geq0.20\), including TG(16:0/18:2/18:3) (\(h^2=0.522\)). These estimates are trial-specific and quantify genotype-associated variation within each field trial, not the heritability of the CTL--LIN difference.
+
+These analyses support three conclusions. First, CTL–LIN contrasts were not driven by outlier genotypes (Supplementary~\ref{fig:supp_upper_ranked}). Second, a subset of lipid traits was consistently genotype-sensitive across environments (Supplementary Tables~S3 and~S4). Third, the genetic tractability of that variability differed sharply between trials, indicating that genotype-associated lipid variation was environment-dependent.
+
+\subsection*{Lipid variation is largely independent of botanical race and population structure}
+
+The SAP is structured by botanical race and geographic origin \citep{Casa2008CommunityResourcesSorghum,Boatwright2022}. We next asked whether the lipid variation reflected that structure. We tested two groupings. The first was botanical race, collapsed into six groups: the five classical races (Bicolor, Caudatum, Durra, Guinea, Kafir) plus a Mixed group containing all intermediate designations (e.g., Durra--Bicolor, Kafir--Caudatum). The second grouping was marker-based genetic cluster ($K=6$), which covered 387 CTL and 355 LIN accessions and provides a more complete genetic description of population structure. We tested 14 traits per condition, which included total lipid signal and the 13 lipid classes (Supplementary Table~S6) using Kruskal--Wallis tests with BH correction, and summarized effect size as $\varepsilon^2$, the proportion of rank variance explained by the grouping.
+
+Botanical race explained none of the lipid variations. No traits were significant in either condition after BH correction (smallest $q=0.468$), and effect sizes were uniformly small ($\varepsilon^2 \le 0.033$ across all traits and conditions; Table~\ref{tab:race_structure}, Fig.~\ref{fig:fig6_race_structure}, per-race distributions in Supplementary~\ref{fig:S8_race_box_ctl} and~\ref{fig:S9_race_box_lin}). Marker-based genetic clusters gave the same result for 13 of 14 traits ($q>0.20$; $\varepsilon^2<0.021$). The only exception was phosphatidylserine (PS) under LIN, where cluster membership was strongly associated with PS abundance ($q=4.23\times10^{-7}$; $\varepsilon^2=0.110$). Under CTL, this trait showed only a weak, non-significant trend ($q=0.206$).
+
+Thus, race and genome-wide clusters each explain negligible variance in any lipid class. The associations we report here are unlikely to be simple artifacts of population stratification, and the genotype PCs in the mixed model are adequate for these traits. The exception, PS, occurs at a very low relative abundance, so it represents redistribution within a minor pool rather than a shift in the bulk lipidome.
+
+\begin{table}[!ht]
+\centering
+\caption{\textbf{Population structure explains little lipid-class variation.} Effect sizes ($\varepsilon^2$, proportion of rank variance explained) from Kruskal--Wallis tests of each trait against botanical race (six groups) and marker-based genetic cluster ($K=6$), computed separately within each field trial. $\varepsilon^2$ was truncated at zero. Significance is after Benjamini--Hochberg correction within condition: *** $q<0.001$; all other entries $q>0.20$.}
+\label{tab:race_structure}
+\small
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{2}{c}{\textbf{Botanical race}} & \multicolumn{2}{c}{\textbf{Genetic cluster ($K=6$)}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\textbf{Trait} & \textbf{CTL} & \textbf{LIN} & \textbf{CTL} & \textbf{LIN} \\
+\midrule
+Total lipid (log$_{10}$ TIC) & 0.000 & 0.020 & 0.000 & 0.000 \\
+MGDG & 0.000 & 0.014 & 0.000 & 0.000 \\
+PC   & 0.000 & 0.006 & 0.002 & 0.000 \\
+DG   & 0.000 & 0.003 & 0.002 & 0.007 \\
+DGDG & 0.000 & 0.014 & 0.000 & 0.000 \\
+TG   & 0.025 & 0.000 & 0.010 & 0.013 \\
+PE   & 0.020 & 0.000 & 0.007 & 0.021 \\
+SQDG & 0.000 & 0.024 & 0.000 & 0.013 \\
+MG   & 0.017 & 0.000 & 0.005 & 0.012 \\
+PG   & 0.009 & 0.033 & 0.000 & 0.004 \\
+PA   & 0.015 & 0.000 & 0.000 & 0.005 \\
+LPC  & 0.008 & 0.000 & 0.003 & 0.004 \\
+PS   & 0.000 & 0.002 & 0.024 & \textbf{0.110}*** \\
+LPE  & 0.000 & 0.000 & 0.001 & 0.000 \\
+\midrule
+\textbf{$n$ accessions} & 222 & 211 & 387 & 355 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure6_Race_Structure.png}
+\caption{\textbf{Botanical race and genetic structure explain almost none of the lipid-class variation.} Variance explained ($\varepsilon^2$) by botanical race (left) and by marker-based genetic cluster ($K=6$, right) for total lipid signal and 13 lipid classes, shown separately for CTL and LIN. No trait is significant by race in either condition after Benjamini--Hochberg correction. PS under LIN is the single trait strongly associated with genetic cluster.}
+\label{fig:fig6_race_structure}
+\end{figure*}
+
+\subsection*{Lipidome overview for CTL and LIN SAP}
+
+Principal component analysis (PCA) was employed to visualize the lipidome structure, concentrating on major glycerolipid and glycerophospholipid pools (Supplementary~\ref{fig:suppfig_s5_pca}). However, the other free fatty acids and minor lipid classes are available in the Shiny app. TG and PC were the most diverse classes in each environment (TG: 71 in CTL, 69 in LIN; PC: 39 in CTL, 38 in LIN; Supplementary~\ref{fig:suppfig_s4_counts}). PCA showed that lipid class strongly structured the dataset, with TGs separating from membrane lipids and galactolipids forming distinct clusters in both conditions (Supplementary~\ref{fig:suppfig_s5_pca}). Class-resolved PCA places neutral storage lipids, plastid galactolipids, and membrane glycerophospholipids in distinct compositional regions that facilitate class-level and reaction-network analyses, although it remains descriptive and does not test condition effects.
+
+At the class level (\%TIC), the lipidome exhibited a predominance of galactolipids and phospholipids. MGDG accounted for 34.5\% under CTL and 32.1\% under LIN, while PC remained relatively stable (25.6\% CTL vs. 24.8\% LIN). TG increased from 2.7\% (CTL) to 5.4\% (LIN), and SQDG decreased from 2.9\% (CTL) to 1.4\% (LIN). Compositional contrast analyses confirmed these trends (Supplementary~\ref{fig:suppfig_s3_comp}) and revealed coordinated headgroup rebalancing within the phospholipid network. CLR contrasts identified PS as one of the strongest positively shifted classes (Fig.~\ref{fig:fig1_lipidomics_landscape}B), and TG-referenced ALR contrasts showed PS increasing relative to multiple phospholipid pools (e.g., PC, phosphatidylethanolamine (PE), phosphatidylglycerol (PG)) despite modest absolute \%TIC shifts. Additionally, lysophospholipid remodeling (LPC/LPE) was observed under LIN, indicating stress-responsive turnover \citep{Hou2016,Rawat2021} rather than uniform scaling of total lyso-lipid abundance. Class-level CLR and ALR contrasts, per-class ratio statistics, and species counts by class and superclass are given in Supplementary Tables~S7 to~S12. 
+
+Together, the abundance and compositional analyses nominate four principal LIN-associated remodeling signatures relative to CTL: (i) SQDG depletion, (ii) TG enrichment, (iii) PS-centered phospholipid rebalancing, and (iv) lysophospholipid remodeling reflected in the LPC/LPE balance (Supplementary~\ref{fig:supp_class_nonfocused}). The ratio, correlation, ontology, reaction-network, and GWAS analyses below further provide complementary biochemical and genetic context for these axes. 
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure1_Lipidomics_Landscape.png}
+\caption{\textbf{Lipidomics landscape under CTL and LIN field conditions.}
+(A) Field-to-database workflow illustrating sample collection, lipidomics profiling, and data processing pipeline.
+(B) Class-level centered log-ratio (CLR) contrasts.
+(C) Weighted mean total carbon number and weighted mean double-bond count. Arrows indicates direction of change between conditions.
+(D) LION pathway enrichment analysis for lipids.}
+\label{fig:fig1_lipidomics_landscape}
+\end{figure*}
+
+LION enrichment recovered the same shift and described it biophysically (Fig.~\ref{fig:fig1_lipidomics_landscape}D) \citep{Molenaar2019}. The strongest terms in either direction were a head-group charge contrast, with LIN depleted for \textit{headgroup with positive charge / zwitter-ion} and enriched for \textit{headgroup with neutral charge}, indicating a shift from the zwitterionic phospholipids PC and PE towards uncharged neutral lipids. Class terms mirrored this, with LIN enriched for glycerolipid, triacylglycerol, lipid-storage and lipid-droplet terms and depleted for glycerophospholipid and membrane-component terms. Membrane-property terms indicated thicker, less laterally mobile membranes under LIN, and acyl-chain terms were consistent with the species-level contrasts.
+
+Furthermore, to characterize structural remodeling beyond total class abundance, we summarized each lipid class in a reduced chemical space defined by its abundance-weighted mean total carbon number and double-bond count across constituent molecular species (Fig.~\ref{fig:fig1_lipidomics_landscape}C). TG increased in carbon number under LIN conditions with slight changes in unsaturation, indicating the enrichment of longer-chain species. PE exhibited the highest increase in unsaturation. Additionally, class-level correlations in CLR space revealed shifts in lipid class relationships, with notable sign reversals matching the principal remodeling axes, namely (i) PC--PS shifted from positive in CTL to negative in LIN, (ii) PS--TG from negative to positive, and (iii) LPC--PC from negative to weakly positive (Supplementary~\ref{fig:suppfig_s6_pcor}). With the \(\Delta r\) matrix, these patterns indicate altered PS-centered headgroup balance, TG-associated neutral-lipid balance, and LPC-linked phospholipid coordination between trials. 
+
+When extending the comparison beyond the thirteen focal classes, sterols were the most strongly increased annotated category under LIN, while terpenoids, glycerophospholipids, ether lipids, glycerolipids and fatty acids all declined modestly and sphingolipids were essentially unchanged (Supplementary~\ref{fig:supp_class_nonfocused}A). At the level of individual features, the sterol shift was carried by \textit{$\beta$}-sitosterol, \textit{$\gamma$}-sitosterol, cycloartenol acetate and \textit{$\alpha$}-amyrin, and zeaxanthin showed the largest single decrease of any feature, with antheraxanthin and lutein moving in the opposite direction (Supplementary~\ref{fig:supp_class_nonfocused}B). Two features, phytosphingosine and SM(d18:1/17:0), were excluded from these comparisons because their between-trial differences were incompatible with their biological plausibility and are described in the methods.
+
+Together, the abundance-, composition-, ontology- and chemical-space analyses support the four remodeling signatures above as a coordinated redistribution rather than independent class-level shifts.
+
+\subsection*{CTL recurrent GWAS signals and annotation-based functional enrichment}
+
+We ran separate GWAS for each individual lipid trait, lipid-class sum, and lipid-class ratio under CTL using a univariate linear mixed model with the first three genotype PCs to account for population structure (Fig.~\ref{fig:gwas_ctl_stacked}). SNPs surpassing the Bonferroni genome-wide significance threshold ($p \leq 8.19 \times 10^{-9}$) were mapped to candidate genes using the LD-based cutoff of 0.4. For the individual-lipid GWAS, this identified 1,100 candidate genes (Supplementary Table~S13), while the analysis of class-sum and class-ratio phenotypes identified 115 candidate genes (Supplementary Table~S14). In the CTL individual-lipid layer, the strongest association was \texttt{SORBI\_3001G522600} (CW-type domain-containing protein; $p = 4.50\times10^{-35}$; $r^2_{\max}=1.0$), and the most recurrent locus was \texttt{SORBI\_3006G040500} (phospholipid-transporting ATPase; 27 phenotypes; $p = 1.01\times10^{-26}$). In the CTL sum/ratio layer, the strongest association was \texttt{SORBI\_3010G136200} (SLH domain-containing protein; $p = 4.28\times10^{-23}$; $r^2_{\max}=0.91$), and the most recurrent locus was \texttt{SORBI\_3003G318650} (64 phenotypes; $p = 3.37\times10^{-12}$; $r^2_{\max}=0.90$).
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure2_GWAS_CTL.png}
+\caption{
+\textbf{Condition-specific stacked Manhattan plots for CTL lipid GWAS across representative individual-lipid and sum/ratio traits.} Columns denote recurrent loci: A, \textit{SORBI\_3006G248300} (individual); B, \textit{SORBI\_3001G276500} (individual); C, \textit{SORBI\_3002G373700} (sum/ratio); D, \textit{SORBI\_3003G141800} (sum/ratio). The vertical orange dashed line marks the lead SNP per locus, and horizontal dashed lines indicate the suggestive and stringent significance thresholds used in the GWAS plots. Lead SNPs and strongest observed association among the displayed traits were: A, SNP\_58780498 ($p_{\mathrm{Wald,min}}=1.37\times10^{-10}$); B, SNP\_53871418 ($p_{\mathrm{Wald,min}}=6.27\times10^{-12}$); C, SNP\_73174964 ($p_{\mathrm{Wald,min}}=7.77\times10^{-13}$); D, SNP\_14021625 ($p_{\mathrm{Wald,min}}=1.30\times10^{-10}$). Recurrent peaks at the same marker positions across multiple traits support a common locus-level signal.
+}
+\label{fig:gwas_ctl_stacked}
+\end{figure*}
+
+
+\subsection*{LIN recurrent GWAS signals and annotation-based functional enrichment}
+
+Similarly for LIN, we ran separate GWAS for each individual lipid trait, lipid-class sum, and lipid-class ratio under LIN under the same condition (Fig.~\ref{fig:gwas_lin_stacked}). SNPs surpassing the Bonferroni genome-wide significance threshold ($p \leq 8.19 \times 10^{-9}$) were mapped to candidate genes using the LD-based cutoff of 0.4. For the individual-lipid GWAS, this identified 4,323 candidate genes (Supplementary Table~S15), while the analysis of class-sum and class-ratio phenotypes identified 812 candidate genes (Supplementary Table~S16). In the LIN individual-lipid layer, the strongest association was observed for \texttt{SORBI\_3004G130500}, an unannotated candidate gene ($p = 2.44\times10^{-73}$; $r^2_{\max}=1.0$). The most recurrent individual-lipid locus was \texttt{SORBI\_3010G064200} (1,3-beta-glucan synthase; 13 phenotypes; $p = 3.40\times10^{-16}$; $r^2_{\max}=1.0$). In the LIN sum/ratio layer, the strongest association and the most recurrent locus were both \texttt{SORBI\_3004G004800} (soluble acid invertase; 20 phenotypes; $p = 2.61\times10^{-21}$; $r^2_{\max}=0.78$).
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure3_GWAS_LIN.png}
+\caption{
+\textbf{Condition-specific stacked Manhattan plots for LIN lipid GWAS across representative individual-lipid and sum/ratio traits.} Columns denote recurrent loci: A, \textit{SORBI\_3001G384300} (individual); B, \textit{SORBI\_3004G107800} (individual); C, \textit{SORBI\_3001G222700} (sum/ratio); D, \textit{SORBI\_3001G256400} (sum/ratio). The vertical orange dashed line marks the lead SNP per locus, and horizontal dashed lines indicate the suggestive and stringent significance thresholds used in the GWAS plots. Lead SNPs and strongest observed association among the displayed traits were: A, SNP\_67183097 ($p_{\mathrm{Wald,min}}=5.72\times10^{-9}$); B, SNP\_10366823 ($p_{\mathrm{Wald,min}}=2.64\times10^{-9}$); C, SNP\_21276112 ($p_{\mathrm{Wald,min}}=1.96\times10^{-13}$); D, SNP\_29811579 ($p_{\mathrm{Wald,min}}=2.08\times10^{-16}$). Recurrent co-localized peaks across multiple traits indicate a common genomic signal per highlighted locus.
+}
+\label{fig:gwas_lin_stacked}
+\end{figure*}
+
+\subsection*{Gene Ontology enrichment of candidate sets rests on a small number of genomic intervals}
+
+To test whether candidate genes converged on shared functions, we ran GO over-representation analysis on four candidate sets per condition, comprising genes associated with individual lipid species, genes associated with class sums and class ratios, and each of those sets split further by the lipid class of the associated trait. Because a single association can tag several neighboring genes, including tandem arrays, every term was also tested against an LD-aware permutation null that counts the number of independent 250~kb genomic intervals supporting a term rather than the number of gene IDs (Methods). Biological-process (GO-BP) and molecular-function (GO-MF) terms were tested and BH-corrected separately to avoid double-counting across overlapping gene sets.
+
+All 48 significant GO-BP terms (26 individual-lipid, 22 class-sum/ratio) and 53 of 55 GO-MF terms survived the LD-aware null, so correction mainly changed enrichment strength and ranking, not membership. However, there were changes in interpretation. Only 13 of 48 GO-BP and 30 of 55 GO-MF terms were supported by at least three independent 250~kb intervals (Figure~\ref{fig:go_bp_main}). The rest likely reflect single loci with informative annotation rather than coordinated pathway signals (Supplementary~\ref{fig:S11_go_bp_all} ; \ref{fig:S12_go_mf_all}; Table~\ref{tab:go_enrichment_all}; Supplementary Tables~S17 and~S18). The candidate genes carrying each enriched term are listed in Supplementary Table~S19.
+
+Two opposite failure modes show why both criteria are required. First, a term can be specific but driven by a single locus. The terms \textit{purine nucleoside transmembrane transport}, \textit{purine nucleobase transport}, and \textit{purine nucleobase transmembrane transport} were enriched in the DG, FA, SM and SQDG class-sum/ratio sets, yet all derive from one purine-permease array on chromosome~6 (\texttt{SORBI\_3006G195000}, \texttt{SORBI\_3006G195100}, \texttt{SORBI\_3006G195200}; $r^2_{\max} \geq 0.99$) that appears once but is counted in four class sets. Second, a term can be well distributed but too general to be informative. \textit{Zinc ion binding} was enriched in seven CTL class-sum/ratio sets and easily passes the interval criterion, but it is annotated to 1{,}015 of the 9{,}422 sorghum genes with any molecular-function term and is enriched only 1.7-fold. Interpretable terms therefore require both distributed support and specific annotation, and either criterion alone is insufficient. A third case, \textit{positive regulation of cytoplasmic translation}, passes both criteria and still fails, because the term is spread widely enough across the genome that resampling matched intervals recovers most of the overlap by chance. Its two molecular-function counterparts were the only terms in either ontology to fail the LD-aware null outright, so both ontologies demoted the signal independently and we do not treat translational regulation as lipid-associated (Supplementary Tables~S17 and~S18). Finally, selecting candidates by recurrence across phenotypes rather than by LD interval returns a largely different set of terms (Supplementary Table~S20), which reinforces that enrichment output depends on how the candidate set is defined.
+
+Seven GO-BP terms met both criteria. These were \textit{proteolysis} in CTL PC, \textit{L-tyrosine catabolic process} in CTL TG, \textit{cell division} and \textit{anaphase-promoting complex-dependent catabolic process} in LIN PC, \textit{sphingolipid metabolic process} in LIN AEG, \textit{DNA topological change} in LIN SQDG, \textit{regulation of salicylic acid biosynthetic process} in LIN TG, and \textit{transmembrane transport} in the LIN FA, CTL AEG and CTL PE sets (Figure~\ref{fig:go_bp_main}). Molecular-function analysis refined several of these by naming the enzymatic activity involved. In CTL TG, \textit{L-tyrosine-2-oxoglutarate transaminase} and \textit{nicotianamine aminotransferase activity} both supported the \textit{L-tyrosine catabolic process} signal. In LIN PC, \textit{phosphoglycerate dehydrogenase activity} and \textit{C-8 sterol isomerase activity} were enriched, the latter specifying a step within \textit{sterol metabolic process}. In LIN TG, \textit{lipid transporter activity} was the only directly lipid-related enrichment recovered in either ontology. The sterol-isomerase and lipid-transporter terms each rely on a single interval and are treated as annotated loci rather than pathway signals.
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure5_GO_BP_LDaware.png}
+\caption[GO biological-process terms with distributed interval support]{\textbf{Gene
+Ontology biological-process terms supported by at least three independent genomic
+intervals.} The 13 GO-BP terms that passed the LD-aware permutation null and drew on
+three or more independent 250\,kb intervals, grouped by trait layer and coloured by
+condition, with the associated lipid class shown beside each term. \textbf{(A)}~Fold
+enrichment over chance on a logarithmic axis; point area scales with the number of
+candidate genes carrying the term. \textbf{(B)}~Number of independent 250\,kb
+intervals contributing genes to each term. \textbf{(C)}~Gene-level
+Benjamini--Hochberg $q$ (open circles) against the LD-aware permutation $q$ (filled
+diamonds); the dashed line marks $q = 0.05$. Terms carried by fewer than three
+intervals appear in Supplementary~\ref{fig:S11_go_bp_all}, and the complete
+result set in Table~\ref{tab:go_enrichment_all}.}
+\label{fig:go_bp_main}
+\end{figure*}
+
+\subsection*{CTL and LIN candidate loci overlap no more than expected by chance}
+
+CTL and LIN analyses produced distinct functional enrichments, but differences between enriched term lists are only qualitative. We therefore counted how many candidate genes the two conditions actually share (Fig.~\ref{fig:fig7_ctl_lin_overlap}), and asked whether that number exceeds what would be expected if the two sets had been drawn independently from the 34{,}027 annotated \textit{Sorghum bicolor} v3.1 gene models. Overlap was tested with a hypergeometric test and summarized as fold enrichment over chance and as the Jaccard index, the proportion of all candidate genes appearing in both conditions.
+
+At the gene level the two sets overlapped strongly, with 354 genes shared against 148 expected ($2.39\times$), and the excess held in both trait layers (Table~\ref{tab:overlap}; Supplementary Tables~S21 to~S24). Jaccard indices were nonetheless low (0.020--0.069), so the excess involves few candidates. This mainly reflects LD, because each association tags every gene model in its window and gene-dense regions are tagged repeatedly in both trials. Collapsing to 250~kb loci reduces the CTL individual-lipid set from 1,100 genes to 378 loci and the LIN set from 4,323 genes to 971. Because no window size is objectively correct for collapsing linkage, we repeated the test at three resolutions and read the trend across them as the result. Individual-lipid enrichment decayed monotonically to chance by 250~kb, so loci recovered in the two trials are no more concordant than two independent samples of the same genome. The class-sum/ratio layer decayed more slowly and retained modest enrichment through 250~kb, making composite class-level traits the more reproducible unit across trials.
+sdsss
+The per-class breakdown gives the same picture (Table~\ref{tab:overlap_class}). Only TG and PC were significantly enriched in the individual-lipid layer and both were weak, free fatty acids showed none, and SQDG, DG, AEG and terpenoids shared no candidate genes at all despite SQDG contributing 396 LIN candidates. Sharing a gene also rarely meant sharing a phenotype, since only 90 of the 354 genes recovered in both conditions (25.4\%) were associated with a lipid class in common, falling to 18.0\% in the individual-lipid layer.
+
+What recurrence there is comes from very small regions. The 18 genes shared in the class-sum/ratio layer fall into two contiguous LD blocks, a ten-gene block on chromosome~10 (\texttt{SORBI\_3010G150325}--\texttt{SORBI\_3010G151325}) that contains the CMP-sialic acid transporter \texttt{SORBI\_3010G151000} discussed below, and an eight-gene block on chromosome~1 (\texttt{SORBI\_3001G168800}--\texttt{SORBI\_3001G171600}). The CTL and LIN lipid GWAS therefore recover largely non-overlapping genetic architectures, with candidate counts inflated several-fold by LD and only a few loci, mainly for class-level composite traits, recurring across the two field trials.
+
+\begin{table*}[!ht]
+\centering
+\caption{\textbf{Cross-trial overlap of GWAS candidates at gene and locus resolution.} Overlap between CTL and LIN candidate sets, tested against a background of 34{,}027 annotated gene models (gene level) or of all genome windows containing at least one gene (locus level). Fold, observed/expected shared; $J$, Jaccard index; $P$, hypergeometric (right-tail) test. Bold rows are the resolutions at which LD blocks are effectively collapsed.}
+\label{tab:overlap}
+\scriptsize
+\begin{tabular}{llrrrrrrl}
+\toprule
+\textbf{Resolution} & \textbf{Trait layer} & \textbf{CTL} & \textbf{LIN} & \textbf{Shared} & \textbf{Exp.} & \textbf{Fold} & \textbf{$J$} & \textbf{$P$} \\
+\midrule
+Gene   & All layers          & 1165 & 4323 & 354 & 148.0 & 2.39 & 0.069 & $4.7\times10^{-59}$ \\
+Gene   & Individual lipids   & 1100 & 4323 & 289 & 139.8 & 2.07 & 0.056 & $4.3\times10^{-35}$ \\
+Gene   & Class sums / ratios &  115 &  812 &  18 &   2.7 & 6.56 & 0.020 & $2.9\times10^{-10}$ \\
+\midrule
+100 kb & Individual lipids   &  521 & 1564 & 193 & 168.2 & 1.15 & 0.102 & $8.5\times10^{-3}$ \\
+100 kb & Class sums / ratios &   50 &  247 &   7 &   2.5 & 2.75 & 0.024 & $1.3\times10^{-2}$ \\
+\textbf{250 kb} & \textbf{Individual lipids} & 378 & 971 & 168 & 161.1 & \textbf{1.04} & 0.142 & \textbf{0.23} \\
+250 kb & Class sums / ratios &   36 &  161 &   6 &   2.5 & 2.36 & 0.031 & $3.8\times10^{-2}$ \\
+\textbf{500 kb} & \textbf{Individual lipids} & 297 & 656 & 162 & 157.2 & \textbf{1.03} & 0.205 & \textbf{0.29} \\
+500 kb & Class sums / ratios &   28 &  121 &   5 &   2.7 & 1.83 & 0.035 & 0.13 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table}[!ht]
+\centering
+\caption{\textbf{Per-class cross-trial overlap of individual-lipid GWAS candidates.} Genes were assigned to a lipid class through the phenotypes with which they were associated. $q$, Benjamini--Hochberg-adjusted hypergeometric $P$-value. n.s., not significant.}
+\label{tab:overlap_class}
+\small
+\begin{tabular}{lrrrrl}
+\toprule
+\textbf{Class} & \textbf{CTL} & \textbf{LIN} & \textbf{Shared} & \textbf{Fold} & \textbf{$q$} \\
+\midrule
+TG          & 866 & 890 & 37 & 1.63 & $9.4\times10^{-3}$ \\
+PC          &  58 & 1324 &  8 & 3.55 & $9.4\times10^{-3}$ \\
+Fatty acid  & 109 & 1897 &  7 & 1.15 & 0.95 (n.s.) \\
+Terpenoid   &  37 &  39 &  0 & ---  & 1 (n.s.) \\
+DG          &  13 &  34 &  0 & ---  & 1 (n.s.) \\
+SQDG        &   9 & 396 &  0 & ---  & 1 (n.s.) \\
+AEG         &   7 & 119 &  0 & ---  & 1 (n.s.) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure7_CTL_LIN_Overlap.png}
+\caption{\textbf{CTL and LIN GWAS identify largely non-overlapping candidate loci.}
+(A) Overlap of candidate sets at gene level and after collapsing linkage blocks into 250~kb loci, with fold enrichment over chance and hypergeometric $P$.
+(B) Fold enrichment of the overlap as a function of the resolution at which it is counted, for individual-lipid and class-sum/ratio traits. The dashed line marks chance expectation; *** $P<0.001$, ** $P<0.01$, * $P<0.05$, n.s., not significant.
+(C) Candidate genes per lipid class in the individual-lipid GWAS, partitioned into CTL-only, shared, and LIN-only.
+(D) Candidate-gene counts compared with the number of independent 250~kb loci they occupy (log scale).}
+\label{fig:fig7_ctl_lin_overlap}
+\end{figure*}
+
+\subsection*{LINEX-based reaction mapping, reaction-balance scoring, and GWAS support}
+
+To contextualize lipid associations biochemically, we used LINEX2 \citep{Rose2023LINEX2}, which integrates curated lipid-reaction data with measured lipid abundances to identify biochemical connections among lipids and enzymes, querying RHEA-annotated reactions \citep{Morgat2016Rhea}. As no sorghum reference exists in LINEX2, we used rice. The resulting network (Fig.~\ref{fig:Fig4_linex_rewiring_abc}A) revealed four candidate branches linking DG/MG, TG, and lysophospholipid pools: (i) PC+DG$\leftrightarrow$LPC+TG (LCAT-like transfer), (ii) TG$\leftrightarrow$DG (PNPLA1-labelled lipase branch), (iii) PE+DG$\leftrightarrow$TG+LPE (LRO1/PDAT-like transfer), and (iv) DG+MG$\leftrightarrow$TG (PNPLA3-labelled branch). These annotation-based hypotheses do not establish \emph{in vivo} flux direction, and because CTL and LIN were sampled in different years, all LIN--CTL contrasts are genotype-matched between-trial ratios rather than causal effects of management.
+
+We converted each branch to a branch-aligned reaction-balance score per sample (Methods), where positive LIN--CTL values indicate more product-weighted and negative values more substrate-weighted balances. Effects were positive for PNPLA3 ($+0.327$), LCAT* ($+0.238$), and LRO1 ($+0.232$), and negative for PNPLA1 ($-0.268$), all with BH-adjusted $p<10^{-56}$ (Fig.~\ref{fig:Fig4_linex_rewiring_abc}B). Thus, branches producing TG and their lysophospholipid coproducts shifted in the same direction, whereas the hydrolytic TG$\rightarrow$DG branch shifted oppositely, recapitulating the lipidome overview (Fig.~\ref{fig:fig1_lipidomics_landscape}) at the level of a small set of candidate reactions rather than independent class-level abundance shifts.
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure4_LINEX_Enriched_Subnetwork.png}
+\caption{\textbf{LINEX-supported lipid reaction remodeling between LIN and CTL conditions.}
+\textbf{(A)} LINEX-enriched lipid reaction subnetwork connecting candidate reactions to their substrate and product lipid species. Central reaction nodes depict hypothesized LCAT-like acyl editing, PNPLA1-mediated TG$\rightarrow$DG lipolysis, LRO1-mediated acyl transfer between PE/DG and TG/LPE, and PNPLA3-associated DG/MG$\rightarrow$TG re-esterification; arrows show reaction direction, and labeled circles indicate representative lipid species for each reaction.
+\textbf{(B)} LINEX reaction-consistency scores (LIN $-$ CTL; log$_{10}$) comparing product and substrate signals for each reaction. Positive values indicate product enrichment in LIN, negative values indicate substrate enrichment in LIN. Error bars show empirical confidence intervals; asterisks denote significance.
+\textbf{(C)} Manhattan plots show GWAS support for the LINEX-based remodeling model at \textit{DGAT1} (\texttt{SORBI\_3010G170000}), an LCAT-like gene (\texttt{SORBI\_3006G214500}), and \textit{PNPLA} (\texttt{SORBI\_3001G041900}) across associated lipid traits and sums/ratios. Orange dashed vertical lines indicate the lead SNP for each candidate, blue dashed horizontal lines indicate the suggestive threshold ($-\log_{10}(p)=7$), and red dashed horizontal lines indicate the Bonferroni-scale genome-wide significance threshold.}
+\label{fig:Fig4_linex_rewiring_abc}
+\end{figure*}
+
+Cross-referencing branches with the LIN GWAS candidate tables supported three of four (Supplementary Tables~S25 to~S28). Branch (i) was supported by \texttt{SORBI\_3006G214500}, a lecithin--cholesterol acyltransferase-like gene associated with \mbox{DG(18:2\_18:3)} and \mbox{MG(18:2)}, and by \texttt{SORBI\_3004G341900}, a phospholipid--sterol O-acyltransferase from the same superfamily. Branch (ii) was supported by \texttt{SORBI\_3001G041900}, a PNPLA-domain lipase in the SDP1 clade detected in both individual-lipid and class-sum/ratio GWAS. Branch (iv) was supported by \texttt{SORBI\_3010G170000} (\textit{DGAT1}), associated with six triacylglycerol phenotypes. No candidate was found for branch (iii) (Supplementary Table~S15).
+
+
+\subsection*{An interactive SoLD Shiny application enables exploration of lipid and GWAS results}
+
+The SoLD web server provides an integrated environment for exploring lipid phenotypes and their genetic associations across two field environments (Fig.~\ref{fig:Fig5_shiny_app}A). Traits can be examined at three resolutions—individual species, class-level sums, and inter-class ratios \citep{Fahy2009LipidMapsClass}, with hierarchical filtering by class, subclass, and compound, as well as under alternative representations (Raw, \%TIC, CLR) to distinguish changes in absolute abundance from redistribution within the compositional lipidome. Exploratory and multivariate modules (data preview, boxplots, volcano plots, correlation and network views, heatmaps, PCA, t-SNE/UMAP) are paired with two genetic modules: (i) GWAS, which shows trait-specific associations, and (ii) Gene Hits, which aggregates recurrent candidate genes under user-defined dataset, trait-type, lipid-class, and significance settings. A Genotype module supports experimental design by identifying accessions within specified lipid value ranges.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.72\textwidth]{fig/main/Figure5_shiny_triterpenoid_AB.png}
+\caption{\textbf{SoLD Shiny app example workflow for triterpenoid traits.}
+(A) The homepage of the SoLD Shiny app with a list of features. (B) Boxplots module showing the distribution and between-condition contrast for the summed triterpenoid subclass after filtering by Class = Terpenoid and Subclass = Triterpenoid. (C) Gene Hits module showing candidate genes returned under the same lipid-class/subclass filter context, with recurrence and strength-of-association summaries for the selected dataset and trait source.}
+\label{fig:Fig5_shiny_app}
+\end{figure*}
+
+Bringing filtering, plotting, and gene summaries into one interface makes it easy to trace a lipid class to its candidate genes. In the Boxplots module (Fig.~\ref{fig:Fig5_shiny_app}B), setting Class~=~Terpenoid and Subclass~=~Triterpenoid reveals a strong between-condition shift in summed triterpenoids. Passing this phenotype to the Gene Hits module under LIN (Fig.~\ref{fig:Fig5_shiny_app}C) identifies \texttt{SORBI\_3008G142400}, annotated as a terpene cyclase/mutase family member. Biochemical work in sorghum shows this gene encodes an oxidosqualene cyclase with simiarenol-synthase activity that produces most adult-leaf wax triterpenoids, which accumulate in the intracuticular wax beneath the cuticular water barrier and are linked to reduced water loss at high temperature \citep{Busta2021}. The application thus supports interrogation of both individual lipid species and whole lipid classes, from phenotype to annotated candidate.
+
+\section{Discussion}
+
+Lipidome differences between CTL and LIN were population-wide rather than driven by a few outlier genotypes, and the loci associated with lipid traits were almost entirely distinct between trials. We first relate lipidome-level changes to the conditions each trial imposed, then interpret CTL candidate genes, where variation reflects membrane organization and amino-acid metabolism, and LIN candidates, which converge on nitrogen, phosphorus, and sulfur acquisition. We then focus on LIN candidates on reactions flagged as remodeled by the network reconstruction and conclude with what the near-absence of shared loci implies about genetic control of the leaf lipidome across environments.
+
+Two caveats apply. First, gene functions are assigned by orthology to characterized genes in other species, so they indicate what the gene family can do, not necessarily what the sorghum locus does in the field. Second, because candidate genes were drawn from LD blocks, most associated regions contain several genes, so an enrichment supported by fewer than three independent intervals likely reflects a single locus rather than a pathway.
+
+
+\subsection*{Integrated interpretation of lipidome remodeling across contrasting field trials}
+
+The main LIN lipidome change is a decline in SQDG accompanied by a rise in TG. The SQDG change is most informative because it opposes the canonical phosphate-starvation response, where phospholipids are replaced by non-phosphorus glycolipids and SQDG and DGDG typically increase \citep{Essigmann1998,Hartel2000,Jouhet2004,KellyDormann2002,Pfaff2020}. Reduced SQDG, therefore, does not indicate simple phosphate starvation and more likely reflects a mix of nutrient limitation, temperature, developmental state, and plastid-membrane turnover that this design cannot resolve. The candidate explains some of these changes. The LIN set included two SQD2-like sulfoquinovosyltransferase loci (\texttt{SORBI\_3003G076900}, \texttt{SORBI\_3002G000600}) annotated for sulfolipid biosynthesis. Both were identified via fatty-acid rather than SQDG phenotypes, so they are testable candidates for the sulfolipid component, not demonstrated effectors of SQDG abundance.
+
+TG accumulation commonly results from low temperature, drought, oxidative stress, and nutrient-driven carbon reallocation \citep{Tan2018,Yan2025,Pfaff2020}. The LIN signature is consistent with increased storage, but the timing and carbon source for TG remain unclear. The accompanying change in DG–TG coordination is more specific. The ratios involving TG, DG, PE, and MGDG all shifted toward TG. Additionally, the PS–TG correlation switched sign between trials, and LINEX reaction balances were positive for the three TG-producing branches and negative for the hydrolytic TG-to-DG branch. These class-level balances, though not direct measures of enzyme activity, together indicate a reorganization of DG supply and TG synthesis and mobilization, rather than a uniform rise in neutral lipids.
+
+A second change concerns phospholipid headgroup balance and lysophospholipid turnover. PS increased relative to other phospholipids, and its correlation with PC reversed, indicating headgroup redistribution within a reorganized phospholipid network rather than proportional expansion of the membrane pool. PE showed the largest gain in unsaturation among membrane classes, consistent with selective acyl-chain remodeling. Similar headgroup redistribution, membrane unsaturation, and lysophospholipid turnover occur under cold, nutrient, oxidative, and water limitations, where they are linked to membrane fluidity, lipid repair, signaling, and remobilization \citep{Hou2016,Rawat2021,Yan2025,Zhang2020}. However, PS and lysophospholipids each contribute well under 0.1\% of TIC, versus tens of percent for MGDG, so their consistent directional shifts reflect redistribution within small pools rather than bulk membrane change, and compositional transforms exaggerate proportional shifts in low-abundance species. PS is further qualified as the only trait clearly structured by genetic cluster, and only under LIN. We therefore regard the PS and lysophospholipid signatures as directionally robust but modest changes.
+
+The LIN lipidome is best understood as a coordinated redistribution among plastid, phospholipid, lysophospholipid, and neutral-storage pools, consistently supported by composition, ratios, correlations, ontology enrichment, reaction balances, and GWAS. However, the experimental design limits inference, and targeted biochemical validation is needed to test the effects of nutrients, temperature, and developmental timing of the candidate genes.
+
+
+\subsection*{Under CTL, lipid variation tracks membrane organization and amino-acid metabolism}
+
+The CTL candidate sets link lipid composition to cellular processes beyond biosynthesis. The genes listed below were selected for recurring across phenotypes, belonging to an enriched category, or having a direct lipid-related annotation.
+
+The clearest link to membrane lipid biology is \texttt{SORBI\_3006G040500}, a phospholipid-transporting ATPase associated with 27 TG phenotypes. It does not contribute to any enriched ontology term and is discussed for its annotation rather than enrichment. P4-type ATPases are flippases that move lipids between membrane leaflets to maintain phospholipid asymmetry. Biochemical work on the Arabidopsis P4-ATPase ALA2 shows strong specificity for PS, with PS head-group modification sharply reducing substrate recognition \citep{Theorin2019ALA2}. If the sorghum locus has a similar role, variation could alter membrane phospholipid organization or trafficking, shifting lipid intermediates between membrane and storage pools. This association does not show that it directly affects TG synthesis or that its substrate preference matches ALA2.
+
+Enrichment of the \textit{L-tyrosine catabolic process} links lipid variation to primary metabolism and involves four genes on three chromosomes. Three encode class I/II aminotransferases, and the fourth, \texttt{SORBI\_3002G104200}, encodes 4-hydroxyphenylpyruvate dioxygenase, which acts immediately downstream of tyrosine aminotransferase. Identifying two consecutive pathway steps from unlinked loci is the strongest aspect of this result. The aminotransferases are less straightforward. Two adjacent genes on chromosome~2 are assigned to the nicotianamine aminotransferase subfamily, which in grasses supplies mugineic-acid phytosiderophores for Fe uptake. In rice, OsNAAT1 has NAAT activity, is induced by Fe deficiency, and is required for phytosiderophore-mediated Fe uptake, with close homologs in maize and sorghum \citep{Inoue2008NAAT}. The third gene, \texttt{SORBI\_3005G152200} on chromosome~5, is assigned to the tyrosine aminotransferase subfamily and is not ambiguous. Thus the ambiguity lies in annotation of one locus, not in our interpretation, as reflected by molecular-function enrichment for both \textit{L-tyrosine-2-oxoglutarate transaminase activity} and \textit{nicotianamine aminotransferase activity} for the same three genes. Broader \textit{transaminase activity} and \textit{pyridoxal phosphate binding} enrichments add further unlinked loci, indicating aminotransferase involvement beyond the chromosome-2 region carrying the tyrosine-specific term.
+
+Two observations support the degradative tyrosine pathway. First, every phenotype at the lead locus affected triacylglycerol species. Second, although tyrosine aminotransferase channels 4-hydroxyphenylpyruvate into homogentisate-derived prenyllipid synthesis, $\alpha$-tocopherol was measured in SoLD and did not map to this locus, arguing against a tocopherol-biosynthetic cause. Total $\alpha$-tocopherol does differ between the trials (Supplementary~\ref{fig:supp_class_nonfocused}B), but that is a trial-level abundance difference and not evidence that this CTL locus controls it. Homogentisate is also the entry to the degradative route ending in fumarate and acetoacetate, so flux through these steps feeds acetyl-CoA rather than prenyllipid head groups \citep{Schenck2018Tyrosine}. Arabidopsis data agree: \textit{tat1} mutants accumulate tyrosine, lose tocopherols, show reduced flux from tyrosine to fumarate and other TCA intermediates, and are more sensitive to darkness and sucrose depletion, identifying TAT1 as the main tyrosine degradation route \textit{in planta} under carbohydrate limitation \citep{Wang2019TAT}. Thus, a link via amino acid catabolism and carbon partitioning into storage lipid is the most parsimonious explanation, although functional characterization of the sorghum proteins is needed to confirm this.
+
+The remaining CTL enrichments are weaker. \textit{Positive regulation of cytoplasmic translation} is not interpreted, because it failed the LD-aware null in the biological-process analysis and its molecular-function counterparts failed outright, with genes dominated by repeat-associated domains in gene-dense regions of chromosome~10. \textit{DNA replication initiation}, enriched among class-level candidates, includes the replication licensing factor MCM2, whose loss is embryonic-lethal in Arabidopsis and whose overexpression disrupts the root meristem \citep{Ni2009MCM2}. This likely reflects a link between proliferative state and lipid-class composition, since changes in cell division alter membrane demand and shift several classes together, rather than a direct link to lipid metabolism. Finally, the PA-associated oxidative-stress terms all reduce to a single class III peroxidase cluster, described six ways across the two ontologies. Suppression of the related Arabidopsis peroxidase AtPrx52 alters lignin content and redirects phenylpropanoid metabolism \citep{FernandezPerez2015Prx52}, showing that one plant peroxidase can affect both oxidative chemistry and carbon allocation. Thus the result indicates that variation in PA abundance coincides with peroxide-related processes at that locus, not a PA–peroxidase signalling mechanism.
+
+Together, the CTL associations highlight membrane organization and amino-acid metabolism as the main interpretable signals, with growth state and redox processes as weaker, indirect contributors. Natural lipid variation in the panel seems to result from combined effects of membrane biology, metabolic state and growth, rather than a single controlling pathway.
+
+
+
+\subsection*{Under LIN, candidates converge on nitrogen, phosphorus and sulfur acquisition}
+
+The main theme among LIN candidates is acquisition of the three macronutrients likely limiting the low-input trial. Nitrogen is represented by three transporters from two families. \texttt{SORBI\_3004G009400}, an NRT2.1-related high-affinity nitrate transporter, carries the nitrate assimilation and transport enrichments in both FA and SQDG candidate sets and associates with fatty-acid traits and FA/SQDG ratios; in maize, NRT2.1 requires NAR2.1 for high-affinity nitrate influx, and uptake capacity varies along the root axis with plasma-membrane H$^+$-ATPase activity \citep{Lupini2016NAR2,Sorgona2011Nitrate}. \texttt{SORBI\_3008G081400}, an NPF/NRT1-family transporter, shows the strongest LIN individual-lipid association and appears in transport terms under both conditions, while \texttt{SORBI\_3001G133900}, whose rice orthologue OsNPF2.4 is a low-affinity nitrate transporter mediating root-to-shoot transfer \citep{Xia2015NPF24}, carries the same annotation more weakly.
+
+Nitrogen also appears in a storage rather than an uptake role. The chromosome 1 association at 1.0–1.2~Mb overlaps the dhurrin gene cluster, linking seven candidates to FA(22:1), 11,14,17-eicosatrienoic acid, TG(14:0\_18:3\_18:3) and twelve of thirteen PA-to-class ratios. Dhurrin is the cyanogenic glucoside that sorghum makes from L-tyrosine, and genes for its synthesis, vacuolar transport, and cyanide-free recycling co-occur in this cluster \citep{Wang2024Dhurrin}. Four candidates lie within it, annotated as a UDP-glucosyltransferase, a GSTL-type glutathione transferase, a MATE-family transporter, and a CYP71-family monooxygenase carrying the CYP71E1 reaction, matching the cluster’s known biosynthetic, transport, and recycling roles. Its relevance to LIN is that nitrogen transcriptionally induces dhurrin synthesis in older sorghum \citep{Busk2002Dhurrin}, and under reduced nitrogen, less tyrosine-derived carbon and nitrogen are allocated to dhurrin, with allelic variation in the cluster modulating this allocation. The presence of relative-abundance ratios rather than individual species is consistent with an effect on the precursor pool for lipid synthesis. Dhurrin was not measured in SoLD, so this interpretation relies solely on annotation within a single LD block.
+
+Phosphorus and sulfur also enter via two SQDG-associated loci. \texttt{SORBI\_3001G028500} encodes an SPX-domain protein of the phosphate-status signaling family; in rice, OsSPX4 binds the central regulator PHR2 under phosphate sufficiency and is degraded under deficiency to activate the phosphate-starvation response \citep{Lv2014SPX4}. The sorghum locus showed phosphate-starvation enrichment and associated with the FA/SQDG and SQDG/FA ratios. \texttt{SORBI\_3006G244000} encodes a SULTR3-family sulfate transporter; in Arabidopsis, this subfamily resides in the chloroplast envelope and mediates over half of chloroplast sulfate uptake, with the quintuple mutant losing most sulfate import as well as cysteine and ABA \citep{Chen2019SULTR3}. The SQDG pattern makes this locus more informative. SQDG is a plastid lipid whose head group is built from sulfur imported into and reduced within the plastid, placing SULTR3 on the supply route for SQDG sulfur. Phosphate limitation alone should increase SQDG via replacement of phospholipids with non-phosphorous lipids, yet SQDG was depleted under LIN, consistent with restricted plastidic sulfate supply. Both loci remain correlative and untested in sorghum.
+
+The purine-permease candidate \texttt{SORBI\_3006G195000} directly matches enriched purine-transport categories, and in rice the PUP11 permease influences seed setting and development via cytokinin distribution and starch biosynthesis \citep{Rong2024PUP11}. These categories are not independent evidence for a transport program, because they and the nitrate terms each reduce to a single tandem array, one locus recovered twenty-five times across the two ontologies. The broader signal is still distributed, since transmembrane transporter activity was enriched among LIN FA and SQDG candidates across many unlinked intervals, encompassing the nitrate, purine, and sulfate loci. Thus, transport function under LIN is supported at the general category level even though each substrate-specific term collapses to one array.
+
+Two further transport candidates were recovered based on recurrence and annotation alone and did not contribute significantly to either ontology. \texttt{SORBI\_3003G169600}, a mitochondrial NAD$^+$ carrier related to Arabidopsis NDT1 \citep{Chaves2019NDT1}, was associated with AEG, DG, PC and TG lipid phenotypes, a range more consistent with an indirect effect via mitochondrial redox and energy balance than with any single lipid class. \texttt{SORBI\_3010G151000}, a CMP-sialic acid or nucleotide-sugar transporter \citep{Bakker2008CMPSia}, showed the broadest recurrence of any transport candidate, but because this rests on heterologous assays and a complete plant sialylation pathway remains uncertain, we interpret it as evidence for altered intracellular metabolite trafficking rather than a specific sialic-acid route.
+
+\subsection*{Reaction-supported lipid-remodeling candidates under LIN implicate DG--TG cycling and phospholipid turnover}
+
+Beyond the broader stress- and development-associated loci, the LINEX reaction network highlighted a focused set of lipid-remodelling candidates on branches connecting the DG, TG and lysophospholipid pools. Because LINEX assignments are annotation-guided and rice-referenced, these genes generate hypotheses rather than demonstrate enzymatic flux. The candidates below are ordered by proposed chemistry, from phospholipid input to triacylglycerol.
+
+\texttt{SORBI\_3003G107900}, a non-specific phospholipase~C6, is not assigned to a single reaction but supplies substrate to others, as NPC enzymes convert phosphatidylcholine to diacylglycerol and phosphocholine, feeding the DG node from the phospholipid pool. Under LIN, the sorghum locus was associated with \mbox{PC(18:2\_20:4)}, a substrate of this reaction. In Arabidopsis, NPC2 and NPC6 redundantly support triacylglycerol production during pollen tube growth; their overexpression induces lipid-droplet accumulation \citep{Bose2021NPC}, and knock-down lines have reduced root growth rescued by exogenous phosphocholine \citep{Ngo2019NPC}. That work also defines the nutrient context: nitrogen limitation promotes triacylglycerol accumulation at the expense of phospholipids, and NPC-mediated head-group hydrolysis is a plausible entry point. However, the characterized phenotypes are in roots and pollen rather than leaves, and the phosphate-responsive Arabidopsis isoforms are NPC4 and NPC5, not NPC6, so this locus is unlikely to participate in the phosphate-status response described above.
+
+Branch (i), the hypothesized PC$+$DG$\leftrightarrow$LPC$+$TG transfer, has two candidates from the lecithin--cholesterol acyltransferase superfamily. \texttt{SORBI\_3006G214500} was linked under LIN to \mbox{DG(18:2\_18:3)} and \mbox{MG(18:2)}, the branch's diacylglycerol and monoacylglycerol substrates, while \texttt{SORBI\_3004G341900}, a phospholipid--sterol O-acyltransferase, uses phosphatidylcholine and releases lysophosphatidylcholine, the branch product. Both assignments remain uncertain, since in Arabidopsis a related LCAT-family protein functions not as a lecithin:cholesterol or PDAT-like transferase but as a cytosolic, calcium-independent phospholipase~A specific for phosphatidylcholine at sn-2 \citep{Chen2012}. Thus the association supports phospholipid deacylation and LPC production on this branch without demonstrating that either locus catalyses the depicted transfer.
+
+\textit{DGAT1} is the clearest lipid-genetic link to the TG-enrichment phenotype and the strongest candidate. Five of six phenotypes associated with \texttt{SORBI\_3010G170000} were triacylglycerol species with polyunsaturated acyl chains, including \mbox{TG(18:3\_18:3\_18:3)} and \mbox{TG(18:2\_18:2\_18:4)}. Sorghum mapping has repeatedly identified a chromosome~10 QTL for crude fat and gross energy whose interval contains this gene, the sorghum homolog of maize \textit{DGAT1}, with the TX15 peak falling within its transcript. Because DGAT catalyses the final step of triacylglycerol biosynthesis and these TGs are among the most unsaturated in the panel, this supports increased channelling of DG into TG under LIN \citep{Boyles2017DGAT1,Yen2008DGAT}. Together with the phospholipase~C candidate above, this places two consecutive steps of one route, PC to DG and DG to TG, among the LIN candidates.
+
+The reverse reaction is also shown. \texttt{SORBI\_3001G041900} was associated with three triacylglycerol species and, at class level, with total TG and the TG/SQDG and SQDG/TG ratios, consistent with a lipase acting on the bulk TG pool rather than on individual species. In Arabidopsis, the patatin lipases \textit{SDP1} and \textit{SDP1L} preferentially hydrolyse TG over DG or MG and mediate most TG breakdown during seed reserve mobilization \citep{Kelly2011SDP1L}. A sorghum survey placed this locus in the same clade as \textit{SbSDP1-L} \citep{Sapara2024PLA}, making it a strong candidate for TG--DG turnover under LIN.
+
+A second module lies outside the DG–TG branches. Among lipid-pathway terms, \textit{sphingolipid metabolic process} was the clearest ontology signal combining specific pathway annotation with support from three independent intervals, and its three genes span three consecutive steps on three chromosomes. \texttt{SORBI\_3001G434900} encodes serine C-palmitoyltransferase, the committed first step in sphingoid-base synthesis. \texttt{SORBI\_3007G041500} is a DAGK-domain kinase linked to sphingolipid metabolism. \texttt{SORBI\_3003G394100} encodes a ceramide glucosyltransferase that diverts ceramide into glucosylceramide. All three associate with the same trait, AEG(o-15:2\_15:0), which is the third largest compositional shift between the trials and the only ether-linked species to increase under LIN. The trait carrying the module is therefore one of the clearest between-trial differences in the dataset, although the module itself rests on the genetic evidence rather than on lipid abundance, since the sphingolipid category as a whole barely moves and its measured species are trace components. This is nonetheless the most complete pathway recovered in the study and the most direct target for functional work.
+
+Together these loci implicate phospholipid head-group hydrolysis, DG-pool input, and both arms of DG–TG cycling, though they were detected independently rather than as a single module and each step still requires functional testing in sorghum. Additional LIN candidates share these reaction-family annotations, including two patatin-domain lipases (\texttt{SORBI\_3003G389400}, \texttt{SORBI\_3002G031800}) and a phospholipid/glycerol acyltransferase (\texttt{SORBI\_3001G026100}), but these mainly associate with fatty-acid and PC traits rather than the network’s triacylglycerol species, indicating variation within the enzyme families without pinpointing specific reactions.
+
+
+\subsection*{The genetic architecture of the sorghum leaf lipidome is strongly environment-dependent}
+
+The candidate loci above came from trials differing in nutrient supply, planting date, management and year, and their functional enrichments diverged accordingly. Direct comparison makes this divergence clear. After collapsing linkage blocks, the individual-lipid loci recovered under CTL and LIN overlap no more than expected by chance for two independent genome samples ($1.04\times$ at 250~kb), and among genes recovered in both trials only a quarter were linked to the same lipid class, so even this limited overlap is largely not trait-specific. The much stronger apparent gene-level excess before collapsing reflects mapping rather than biology, with linkage structure inflating candidate counts three- to five-fold. Such cross-study comparisons should therefore be made at the locus, not the gene, level.
+
+Two positive findings emerge. First, class-level composite traits replicated better than individual species, retaining significant cross-trial excess at 100 and 250~kb where individual lipids did not. Aggregating species into class totals reduces measurement noise and averages over acyl-chain heterogeneity, making composites the more suitable unit for cross-environment comparison and the level at which lipidome-wide remodelling signatures were defined. Second, the recurrent loci cluster into two chromosomal regions, one containing the CMP-sialic acid transporter \texttt{SORBI\_3010G151000}, itself among the most recurrent LIN candidates. Loci detected in both trials and across many class-level traits are the strongest starting points for validation.
+
+This pattern indicates that genetic control of leaf lipid composition in the SAP is strongly environment-dependent, matching the contrasting genomic heritabilities in the two trials. It does not mean individual associations are false, since allelic effects can be real and reproducible within a given environment yet fail to generalize beyond it. Because CTL and LIN were sampled in different years and field contexts, genotype-by-nutrient effects cannot be distinguished from genotype-by-year or genotype-by-management effects. Resolving this requires growing the same contrast in a common year under factorial nutrient treatments, so interaction terms can be estimated directly rather than inferred from non-overlapping candidate sets. Until then, the loci recurring in both trials, and the trait classes where they recur, are the most efficient targets for such an experiment.
+
+
+\section*{Conclusion}
+
+SoLD establishes a population-scale lipidomics resource for the sorghum association panel and shows that two contrasting field contexts drive extensive, population-wide lipidome remodelling. Across 244 annotated species, LIN differed from CTL by four signatures: SQDG depletion, TG enrichment, PS-centred phospholipid redistribution and a shifted LPC/LPE balance. These patterns were consistently detected across abundance contrasts, compositional analyses, chemical-space summaries and lipid ontology enrichment, and were independent of botanical race and genome-wide genetic structure, indicating coordinated redistribution among interconnected lipid pools rather than isolated class shifts or artefacts of population stratification.
+
+Genetic analysis nominates candidates for the two strongest signatures. For TG enrichment, the main candidate is \texttt{SORBI\_3010G170000} (\textit{DGAT1}), which catalyses the committed step of triacylglycerol synthesis, associates almost exclusively with polyunsaturated TG species, and lies within a known sorghum crude-fat QTL. The same route includes \texttt{SORBI\_3003G107900}, a non-specific phospholipase~C6 that converts phosphatidylcholine to diacylglycerol and whose Arabidopsis orthologues are required for TG production, and \texttt{SORBI\_3001G041900}, an SDP1-like lipase that performs the reverse reaction and associates with total TG. These jointly implicate phospholipid head-group hydrolysis, TG synthesis and TG turnover among the LIN candidates, the pathway by which nitrogen limitation drives TG accumulation at the expense of phospholipids. For SQDG depletion, \texttt{SORBI\_3006G244000}, a SULTR3-family sulfate transporter supplying most chloroplast sulfate, lies on the route to the sulfoquinovose head group and predicts the observed change, whereas the canonical phosphate-starvation response does not. The phosphate-signalling locus \texttt{SORBI\_3001G028500} and two SQD2-like sulfoquinovosyltransferases also appear among these candidates. A third group affects membrane rather than storage lipids, including a sphingolipid-biosynthetic module spanning three unlinked loci on chromosomes 1, 3 and 7, and a TIFY/JAZ cluster associated specifically with $n$-3 polyunsaturated lipids, the substrate pool for jasmonate synthesis.
+
+These are candidates, not causes. All rely on linkage-based mapping and cross-species annotation, and enrichment analysis showed that once linkage is considered, most functional signals in either condition collapse to single genomic intervals. The candidate sets themselves barely overlap between trials, sharply limiting how far any locus can generalize. Class-level composite traits were the exception, showing modest cross-trial recurrence and making them the more reproducible unit for cross-environment work.
+
+Three lines of work follow. Functional validation should start with loci that combine strong association, a mechanistically matched phenotype, and a testable direction—\textit{DGAT1}, the SULTR3 transporter, and the phospholipase~C locus—using knockouts or allelic contrasts scored for the lipid classes they are predicted to affect. Distinguishing genotype-by-nutrient from genotype-by-year effects requires growing both regimes in a single year under factorial nutrient treatments, so interaction terms can be estimated directly. Finally, the resource, including the interactive interface for exploring lipid traits and associations, is designed to let others test hypotheses about sorghum lipid variation that this panel and these two environments cannot resolve alone.
 
 \section{Acknowledgments}
 The work on this paper and Nirwan Tandukar was supported by the U.S. Department of Energy, Office of Science, Biological and Environmental Research program, Early Career Award Number DE-SC0021889.
@@ -853,6 +612,19 @@ We thank members of the Rubén Rellán Álvarez labs for their contribution to f
 (C) Scatter plot comparing variance between conditions; lipids appearing in both top-10 lists are highlighted.
 (D) Distribution of lipid classes among high-variance species in each condition.}
 \label{fig:suppfig_s2_topvar}
+\end{figure*}
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_Top_Consistently_Upper_Ranked_Genotypes.png}
+\caption[Accessions consistently ranked in the upper tail]{\textbf{Accessions ranked in the
+upper tail of more than one lipid class.} Left, mean percentile of each accession within each
+lipid class, shown only for the class--accession combinations in which the accession falls in
+the upper tail of the panel; colour gives the mean percentile. Right, the number of lipid
+classes in which each accession is upper-ranked. PI534117 and PI533842 are upper-ranked in
+seven and six classes respectively, and every remaining accession in three or fewer, so no
+single accession drives the panel across lipid classes.}
+\label{fig:supp_upper_ranked}
 \end{figure*}
 
 \begin{figure*}[!ht]
@@ -920,18 +692,6 @@ of extreme accessions.}
 \label{fig:supp_class_sums_top_bottom}
 \end{figure*}
 
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_Top_Consistently_Upper_Ranked_Genotypes.png}
-\caption[Accessions consistently ranked in the upper tail]{\textbf{Accessions ranked in the
-upper tail of more than one lipid class.} Left, mean percentile of each accession within each
-lipid class, shown only for the class--accession combinations in which the accession falls in
-the upper tail of the panel; colour gives the mean percentile. Right, the number of lipid
-classes in which each accession is upper-ranked. PI534117 and PI533842 are upper-ranked in
-seven and six classes respectively, and every remaining accession in three or fewer, so no
-single accession drives the panel across lipid classes.}
-\label{fig:supp_upper_ranked}
-\end{figure*}
 
 \begin{figure*}[!ht]
 \centering
