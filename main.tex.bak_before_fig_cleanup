@@ -156,7 +156,7 @@ These analyses support three conclusions. First, CTL–LIN contrasts were not dr
 
 The SAP is structured by botanical race and geographic origin \citep{Casa2008CommunityResourcesSorghum,Boatwright2022}. We next asked whether the lipid variation reflected that structure. We tested two groupings. The first was botanical race, collapsed into six groups: the five classical races (Bicolor, Caudatum, Durra, Guinea, Kafir) plus a Mixed group containing all intermediate designations (e.g., Durra--Bicolor, Kafir--Caudatum). The second grouping was marker-based genetic cluster ($K=6$), which covered 387 CTL and 355 LIN accessions and provides a more complete genetic description of population structure. We tested 14 traits per condition, which included total lipid signal and the 13 lipid classes (Supplementary Table~S6) using Kruskal--Wallis tests with BH correction, and summarized effect size as $\varepsilon^2$, the proportion of rank variance explained by the grouping.
 
-Botanical race explained none of the lipid variations (Fig.~\ref{fig:fig2_genotypic_variation}C,D). No traits were significant in either condition after BH correction (smallest $q=0.468$), and effect sizes were uniformly small ($\varepsilon^2 \le 0.033$ across all traits and conditions; Table~\ref{tab:race_structure}, Fig.~\ref{fig:fig2_genotypic_variation}C,D, per-race distributions in Supplementary~\ref{fig:S8_race_box_ctl} and~\ref{fig:S9_race_box_lin}). Marker-based genetic clusters gave the same result for 13 of 14 traits ($q>0.20$; $\varepsilon^2<0.021$). The only exception was phosphatidylserine (PS) under LIN, where cluster membership was strongly associated with PS abundance ($q=4.23\times10^{-7}$; $\varepsilon^2=0.110$). Under CTL, this trait showed only a weak, non-significant trend ($q=0.206$).
+Botanical race explained none of the lipid variations (Fig.~\ref{fig:fig2_genotypic_variation}C,D). No traits were significant in either condition after BH correction (smallest $q=0.468$), and effect sizes were uniformly small ($\varepsilon^2 \le 0.033$ across all traits and conditions; Table~\ref{tab:race_structure}, Fig.~\ref{fig:fig6_race_structure}, per-race distributions in Supplementary~\ref{fig:S8_race_box_ctl} and~\ref{fig:S9_race_box_lin}). Marker-based genetic clusters gave the same result for 13 of 14 traits ($q>0.20$; $\varepsilon^2<0.021$). The only exception was phosphatidylserine (PS) under LIN, where cluster membership was strongly associated with PS abundance ($q=4.23\times10^{-7}$; $\varepsilon^2=0.110$). Under CTL, this trait showed only a weak, non-significant trend ($q=0.206$).
 
 Thus, race and genome-wide clusters each explain negligible variance in any lipid class. The associations we report here are unlikely to be simple artifacts of population stratification, and the genotype PCs in the mixed model are adequate for these traits. The exception, PS, occurs at a very low relative abundance, so it represents redistribution within a minor pool rather than a shift in the bulk lipidome.
 
@@ -190,6 +190,13 @@ LPE  & 0.000 & 0.000 & 0.001 & 0.000 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure6_Race_Structure.png}
+\caption{\textbf{Botanical race and genetic structure explain almost none of the lipid-class variation.} Variance explained ($\varepsilon^2$) by botanical race (left) and by marker-based genetic cluster ($K=6$, right) for total lipid signal and 13 lipid classes, shown separately for CTL and LIN. No trait is significant by race in either condition after Benjamini--Hochberg correction. PS under LIN is the single trait strongly associated with genetic cluster.}
+\label{fig:fig6_race_structure}
+\end{figure*}
 
 \begin{figure*}[!t]
 \centering
@@ -536,6 +543,17 @@ AEG         &   7 & 119 &  0 & ---  & 1 (n.s.) \\
 \end{tabular}
 \end{table}
 
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/main/Figure7_CTL_LIN_Overlap.png}
+\caption{\textbf{CTL and LIN GWAS identify largely non-overlapping candidate loci.}
+(A) Overlap of candidate sets at gene level and after collapsing linkage blocks into 250~kb loci, with fold enrichment over chance and hypergeometric $P$.
+(B) Fold enrichment of the overlap as a function of the resolution at which it is counted, for individual-lipid and class-sum/ratio traits. The dashed line marks chance expectation; *** $P<0.001$, ** $P<0.01$, * $P<0.05$, n.s., not significant.
+(C) Candidate genes per lipid class in the individual-lipid GWAS, partitioned into CTL-only, shared, and LIN-only.
+(D) Candidate-gene counts compared with the number of independent 250~kb loci they occupy (log scale).}
+\label{fig:fig7_ctl_lin_overlap}
+\end{figure*}
+
 \subsection*{LINEX-based reaction mapping, reaction-balance scoring, and GWAS support}
 
 To contextualize lipid associations biochemically, we used LINEX2 \citep{Rose2023LINEX2}, which integrates curated lipid-reaction data with measured lipid abundances to identify biochemical connections among lipids and enzymes, querying RHEA-annotated reactions \citep{Morgat2016Rhea}. As no sorghum reference exists in LINEX2, we used rice. The resulting network (Fig.~\ref{fig:Fig4_linex_rewiring_abc}A) revealed four candidate branches linking DG/MG, TG, and lysophospholipid pools: (i) PC+DG$\leftrightarrow$LPC+TG (LCAT-like transfer), (ii) TG$\leftrightarrow$DG (PNPLA1-labelled lipase branch), (iii) PE+DG$\leftrightarrow$TG+LPE (LRO1/PDAT-like transfer), and (iv) DG+MG$\leftrightarrow$TG (PNPLA3-labelled branch). These annotation-based hypotheses do not establish \emph{in vivo} flux direction, and because CTL and LIN were sampled in different years, all LIN--CTL contrasts are genotype-matched between-trial ratios rather than causal effects of management.
@@ -846,18 +864,6 @@ We thank members of the Rubén Rellán Álvarez labs for their contribution to f
 \beginsupplement
 
 % ===== Supplementary figures (converted from thesis Chapter 2) =====
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/supp/Figure7_CTL_LIN_Overlap.png}
-\caption{\textbf{CTL and LIN GWAS identify largely non-overlapping candidate loci.}
-(A) Overlap of candidate sets at gene level and after collapsing linkage blocks into 250~kb loci, with fold enrichment over chance and hypergeometric $P$.
-(B) Fold enrichment of the overlap as a function of the resolution at which it is counted, for individual-lipid and class-sum/ratio traits. The dashed line marks chance expectation; *** $P<0.001$, ** $P<0.01$, * $P<0.05$, n.s., not significant.
-(C) Candidate genes per lipid class in the individual-lipid GWAS, partitioned into CTL-only, shared, and LIN-only.
-(D) Candidate-gene counts compared with the number of independent 250~kb loci they occupy (log scale).}
-\label{fig:fig7_ctl_lin_overlap}
-\end{figure*}
-
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S1_QC_RunOrder_SERRF_PCA_SpATS.png}
