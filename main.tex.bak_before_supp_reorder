@@ -653,6 +653,17 @@ We thank members of the Rubén Rellán Álvarez labs for their contribution to f
 
 \begin{figure*}[!ht]
 \centering
+\includegraphics[width=\textwidth]{fig/supp/Figure7_CTL_LIN_Overlap.png}
+\caption{\textbf{CTL and LIN GWAS identify largely non-overlapping candidate loci.}
+(A) Overlap of candidate sets at gene level and after collapsing linkage blocks into 250~kb loci, with fold enrichment over chance and hypergeometric $P$.
+(B) Fold enrichment of the overlap as a function of the resolution at which it is counted, for individual-lipid and class-sum/ratio traits. The dashed line marks chance expectation; *** $P<0.001$, ** $P<0.01$, * $P<0.05$, n.s., not significant.
+(C) Candidate genes per lipid class in the individual-lipid GWAS, partitioned into CTL-only, shared, and LIN-only.
+(D) Candidate-gene counts compared with the number of independent 250~kb loci they occupy (log scale).}
+\label{fig:fig7_ctl_lin_overlap}
+\end{figure*}
+
+\begin{figure*}[!ht]
+\centering
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S1_QC_RunOrder_SERRF_PCA_SpATS.png}
 \caption{\textbf{Quality control, SERRF normalization, and SpATS spatial adjustment diagnostics.}
 (A,B) Run-order TIC plots for CTL and LIN conditions demonstrating stable analytical performance throughout the acquisition sequence.
@@ -660,19 +671,6 @@ We thank members of the Rubén Rellán Álvarez labs for their contribution to f
 (E,F) PCA score plots comparing sample clustering before and after normalization.
 (G,H) SpATS spatial residual maps indicating successful mitigation of field-position effects in both conditions.}
 \label{fig:suppfig_s1_qc}
-\end{figure*}
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_Lipid_Class_Sums_Top_Bottom_Genotypes.png}
-\caption[Lipid-class sums for the highest- and lowest-ranked genotypes]{\textbf{Lipid-class
-composition of the highest- and lowest-ranked accessions in each field trial.} Fitted
-lipid-class sums for the ten accessions with the largest and the ten with the smallest total
-lipid signal, shown separately for CTL and LIN and stacked by lipid class. Total signal spans
-roughly three-fold between the top and the bottom of each trial, but the relative contribution
-of each class is similar throughout, so the CTL--LIN contrast is not produced by a small number
-of extreme accessions.}
-\label{fig:supp_class_sums_top_bottom}
 \end{figure*}
 
 \begin{figure*}[!ht]
@@ -688,15 +686,40 @@ of extreme accessions.}
 
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_Top_Consistently_Upper_Ranked_Genotypes.png}
-\caption[Accessions consistently ranked in the upper tail]{\textbf{Accessions ranked in the
-upper tail of more than one lipid class.} Left, mean percentile of each accession within each
-lipid class, shown only for the class--accession combinations in which the accession falls in
-the upper tail of the panel; colour gives the mean percentile. Right, the number of lipid
-classes in which each accession is upper-ranked. PI534117 and PI533842 are upper-ranked in
-seven and six classes respectively, and every remaining accession in three or fewer, so no
-single accession drives the panel across lipid classes.}
-\label{fig:supp_upper_ranked}
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_S3_Compositional_Contrasts.png}
+\caption{\textbf{Compositional analysis of lipid classes.}
+(A) Stacked bar plot showing mean percent TIC contribution of each lipid class in CTL and LIN conditions.
+(B) Additive log-ratio (ALR) contrast between conditions using TG as the reference class, with 95\% bootstrap confidence intervals.}
+\label{fig:suppfig_s3_comp}
+\end{figure*}
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_S4_Lipid_Species_Counts.png}
+\caption{\textbf{Lipid species counts and overlap between conditions.}
+(A) Total lipid species detected in each condition, with common and condition-specific counts.
+(B) Species counts stratified by lipid class for CTL and LIN.
+(D) Species counts stratified by lipid superclass (glycerolipids, glycerophospholipids, sphingolipids, etc.).}
+\label{fig:suppfig_s4_counts}
+\end{figure*}
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_S5_PCA_Lipids.png}
+\caption{\textbf{PCA of lipid species in compositional space.}
+(A) PCA score plot of CLR-transformed lipid species in CTL samples, with 95\% confidence ellipses for lipid superclass groups.
+(B) PCA score plot for LIN samples using the same transformation. Points are colored by lipid class.}
+\label{fig:suppfig_s5_pca}
+\end{figure*}
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_S6_CLR_Correlations.png}
+\caption{\textbf{Correlation analysis of lipid class abundances.}
+(A) CTL and (B) LIN Pearson correlation matrices computed on class-level CLR abundances.
+(C) $\Delta$ correlation map ($r_{\mathrm{LIN}}-r_{\mathrm{CTL}}$), where warm colors indicate strengthened positive coupling in LIN and cool colors indicate weakened or more negative coupling.
+Lower triangle shows correlation coefficients; upper triangle shows significance levels (*$p<0.05$, **$p<0.01$, ***$p<0.001$). Pink boxes indicate class pairs with sign reversal between conditions that are significant in both environments.}
+\label{fig:suppfig_s6_pcor}
 \end{figure*}
 
 \begin{figure*}[!ht]
@@ -715,30 +738,28 @@ single accession drives the panel across lipid classes.}
 
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_S5_PCA_Lipids.png}
-\caption{\textbf{PCA of lipid species in compositional space.}
-(A) PCA score plot of CLR-transformed lipid species in CTL samples, with 95\% confidence ellipses for lipid superclass groups.
-(B) PCA score plot for LIN samples using the same transformation. Points are colored by lipid class.}
-\label{fig:suppfig_s5_pca}
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_Lipid_Class_Sums_Top_Bottom_Genotypes.png}
+\caption[Lipid-class sums for the highest- and lowest-ranked genotypes]{\textbf{Lipid-class
+composition of the highest- and lowest-ranked accessions in each field trial.} Fitted
+lipid-class sums for the ten accessions with the largest and the ten with the smallest total
+lipid signal, shown separately for CTL and LIN and stacked by lipid class. Total signal spans
+roughly three-fold between the top and the bottom of each trial, but the relative contribution
+of each class is similar throughout, so the CTL--LIN contrast is not produced by a small number
+of extreme accessions.}
+\label{fig:supp_class_sums_top_bottom}
 \end{figure*}
 
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_S4_Lipid_Species_Counts.png}
-\caption{\textbf{Lipid species counts and overlap between conditions.}
-(A) Total lipid species detected in each condition, with common and condition-specific counts.
-(B) Species counts stratified by lipid class for CTL and LIN.
-(D) Species counts stratified by lipid superclass (glycerolipids, glycerophospholipids, sphingolipids, etc.).}
-\label{fig:suppfig_s4_counts}
-\end{figure*}
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_S3_Compositional_Contrasts.png}
-\caption{\textbf{Compositional analysis of lipid classes.}
-(A) Stacked bar plot showing mean percent TIC contribution of each lipid class in CTL and LIN conditions.
-(B) Additive log-ratio (ALR) contrast between conditions using TG as the reference class, with 95\% bootstrap confidence intervals.}
-\label{fig:suppfig_s3_comp}
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_Top_Consistently_Upper_Ranked_Genotypes.png}
+\caption[Accessions consistently ranked in the upper tail]{\textbf{Accessions ranked in the
+upper tail of more than one lipid class.} Left, mean percentile of each accession within each
+lipid class, shown only for the class--accession combinations in which the accession falls in
+the upper tail of the panel; colour gives the mean percentile. Right, the number of lipid
+classes in which each accession is upper-ranked. PI534117 and PI533842 are upper-ranked in
+seven and six classes respectively, and every remaining accession in three or fewer, so no
+single accession drives the panel across lipid classes.}
+\label{fig:supp_upper_ranked}
 \end{figure*}
 
 \begin{figure*}[!ht]
@@ -758,16 +779,6 @@ is the third largest shift overall and moves opposite in sign to every other eth
 Phytosphingosine and SM(d18:1/17:0) were excluded before this analysis as described in the
 methods.}
 \label{fig:supp_class_nonfocused}
-\end{figure*}
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_S6_CLR_Correlations.png}
-\caption{\textbf{Correlation analysis of lipid class abundances.}
-(A) CTL and (B) LIN Pearson correlation matrices computed on class-level CLR abundances.
-(C) $\Delta$ correlation map ($r_{\mathrm{LIN}}-r_{\mathrm{CTL}}$), where warm colors indicate strengthened positive coupling in LIN and cool colors indicate weakened or more negative coupling.
-Lower triangle shows correlation coefficients; upper triangle shows significance levels (*$p<0.05$, **$p<0.01$, ***$p<0.001$). Pink boxes indicate class pairs with sign reversal between conditions that are significant in both environments.}
-\label{fig:suppfig_s6_pcor}
 \end{figure*}
 
 \begin{figure*}[htbp]
@@ -801,17 +812,6 @@ regulation of cytoplasmic translation} term that the biological-process analysis
 demoted. Thirty of the 55 terms are supported by at least three independent 250\,kb
 intervals.}
 \label{fig:S12_go_mf_all}
-\end{figure*}
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/supp/Figure7_CTL_LIN_Overlap.png}
-\caption{\textbf{CTL and LIN GWAS identify largely non-overlapping candidate loci.}
-(A) Overlap of candidate sets at gene level and after collapsing linkage blocks into 250~kb loci, with fold enrichment over chance and hypergeometric $P$.
-(B) Fold enrichment of the overlap as a function of the resolution at which it is counted, for individual-lipid and class-sum/ratio traits. The dashed line marks chance expectation; *** $P<0.001$, ** $P<0.01$, * $P<0.05$, n.s., not significant.
-(C) Candidate genes per lipid class in the individual-lipid GWAS, partitioned into CTL-only, shared, and LIN-only.
-(D) Candidate-gene counts compared with the number of independent 250~kb loci they occupy (log scale).}
-\label{fig:fig7_ctl_lin_overlap}
 \end{figure*}
 
 \clearpage
