@@ -158,7 +158,7 @@ The SAP is structured by botanical race and geographic origin \citep{Casa2008Com
 
 Botanical race explained none of the lipid variations (Fig.~\ref{fig:fig2_genotypic_variation}C,D). No traits were significant in either condition after BH correction (smallest $q=0.468$), and effect sizes were uniformly small ($\varepsilon^2 \le 0.033$ across all traits and conditions; Table~\ref{tab:race_structure}, Fig.~\ref{fig:fig2_genotypic_variation}C,D, per-race distributions in Supplementary~\ref{fig:S8_race_box_ctl} and~\ref{fig:S9_race_box_lin}). Marker-based genetic clusters gave the same result for 13 of 14 traits ($q>0.20$; $\varepsilon^2<0.021$). The only exception was phosphatidylserine (PS) under LIN, where cluster membership was strongly associated with PS abundance ($q=4.23\times10^{-7}$; $\varepsilon^2=0.110$). Under CTL, this trait showed only a weak, non-significant trend ($q=0.206$).
 
-Thus, race and genome-wide clusters each explain negligible variance in any lipid class. The associations we report here are unlikely to be simple artifacts of population stratification, and the genotype PCs in the mixed model are adequate for these traits. The exception, PS, occurs at a very low relative abundance, so it represents redistribution within a minor pool rather than a shift in the bulk lipidome.
+Thus, race and genome-wide clusters each explain negligible variance in any lipid class. The associations we report here are unlikely to be simple artifacts of population stratification, and the genotype PCs in the mixed model are adequate for these traits. The exception, PS, occurs at a very low relative abundance, so it represents redistribution within a minor pool rather than a shift in the bulk lipidome. 
 
 \begin{table}[!ht]
 \centering
@@ -242,184 +242,6 @@ In the CTL individual-lipid layer, the strongest association was \texttt{SORBI\_
 
 In the LIN individual-lipid layer, the strongest association was observed for \texttt{SORBI\_3004G130500}, an unannotated candidate gene ($p = 2.44\times10^{-73}$; $r^2_{\max}=1.0$). The most recurrent individual-lipid locus was \texttt{SORBI\_3010G064200} (1,3-beta-glucan synthase; 13 phenotypes; $p = 3.40\times10^{-16}$; $r^2_{\max}=1.0$). In the LIN sum/ratio layer, the strongest association and the most recurrent locus were both \texttt{SORBI\_3004G004800} (soluble acid invertase; 20 phenotypes; $p = 2.61\times10^{-21}$; $r^2_{\max}=0.78$).
 
-% Since many candidate genes were associated with multiple lipid phenotypes, we defined gene-level recurrence as the number of distinct phenotypes associated with each gene. We then evaluated GO biological-process overrepresentation separately for the CTL individual-lipid and class-sum/class-ratio candidate sets. In the individual-lipid set, two GO biological-process terms passed BH correction. The term \textit{positive regulation of cytoplasmic translation} contained 16 candidate genes. The strongest association was observed for \texttt{SORBI\_3006G048925} (CCHC-type domain-containing protein; $p = 5.87\times10^{-12}$; $r^2_{\max}=0.60$), which was also among the most recurrent genes for this term, being associated with 9 lipid phenotypes. The term \textit{L-tyrosine catabolic process} contained four candidate genes. Its strongest association was \texttt{SORBI\_3005G152200} (aminotransferase class I and class II domain-containing protein; $p = 9.67\times10^{-13}$; $r^2_{\max}=0.42$), which was also the most recurrent gene for this term, with associations across 10 lipid phenotypes.
-
-% In the CTL class-sum and class-ratio set, \textit{DNA replication initiation} was the only GO biological-process term that passed BH correction and contained three candidate genes. The strongest association was observed for \texttt{SORBI\_3003G369200} (DNA polymerase; $p = 1.36\times10^{-9}$; $r^2_{\max}=0.48$). The highest recurrence was observed for both \texttt{SORBI\_3005G110523} (Uncharacterized protein; $p = 1.43\times10^{-9}$; $r^2_{\max}=0.83$) and \texttt{SORBI\_3005G110535} (DNA replication licensing factor MCM2; $p = 1.43\times10^{-9}$; $r^2_{\max}=0.73$), each of which was associated with 12 class-sum or class-ratio phenotypes.
-
-% We also performed a class-stratified GO enrichment. TG-associated genes were enriched for \textit{positive regulation of cytoplasmic translation} and \textit{L-tyrosine catabolic process}; PC-associated genes for \textit{proteolysis}; and PA-associated genes for \textit{hydrogen peroxide catabolic process}, \textit{response to oxidative stress}, and \textit{cellular oxidant detoxification}. The strongest TG association was \texttt{SORBI\_3001G522600} (CW-type domain-containing protein; $p=4.50\times10^{-35}$; $r^2_{\max}=1.0$), while the most recurrent TG-associated gene was \texttt{SORBI\_3006G040500} (phospholipid-transporting ATPase; 27 phenotypes; $p=1.01\times10^{-26}$; $r^2_{\max}=1.0$). For PC, the strongest association was \texttt{SORBI\_3002G332750} (unannotated; $p=3.94\times10^{-23}$; $r^2_{\max}=1.0$) and the most recurrent was \texttt{SORBI\_3005G110120} (uncharacterized protein; 12 phenotypes; $p=8.19\times10^{-15}$; $r^2_{\max}=0.83$). For PA, the strongest association was \texttt{SORBI\_3004G197700} (DUF4283 domain-containing protein; $p=6.00\times10^{-11}$; $r^2_{\max}=1.0$), and the most recurrent was \texttt{SORBI\_3005G184050} (uncharacterized protein; 2 phenotypes; $p=2.34\times10^{-9}$; $r^2_{\max}=0.45$). Together, these class-specific associations link CTL lipid variation to translational and amino acid metabolism via TG loci, and to proteolytic and oxidative-stress pathways via PC and PA loci.
-
-% \subsection*{CTL recurrent GWAS signals highlight basal metabolism and growth}
-
-% We performed GWAS separately for each lipid trait, their class sums, and class ratios measured under CTL. We then assessed whether recurrent gene--lipid associations converged on common biological processes. For the individual-lipid GWAS, we retained gene-level associations passing the Bonferroni genome-wide threshold under CTL and counted how often each gene was associated across traits. This yielded 3,478 candidate genes (Supplementary Table~S13). Applying a recurrence threshold of association with $\geq 11$ phenotypes, chosen to capture the upper tail of the recurrence distribution in the Bonferroni-significant gene set, reduced this to the current recurrent shortlist (Table~\ref{tab:T1_control_recurrent_combined}). We used recurrence across phenotypes as a prioritization filter to identify robust, repeatedly detected associations across related lipid traits. This conservative approach is expected to enrich for pleiotropic regulators or upstream pathway components, while underrepresenting trait-specific candidates with low recurrence. Thus, recurrence-filtered genes should be viewed as a cross-trait priority set, not an exhaustive list of causal genes. Because candidate genes were mapped using a $\pm$25~kb window around significant SNPs, these regions should be viewed as candidate loci in linkage disequilibrium, not confirmed multi-gene causal hotspots. Multiple annotated genes within a window may simply reflect LD around a single causal variant. In the CTL individual-lipid GWAS, the recurrence shortlist (17 genes) mapped to 6 unique lead SNPs and 5 non-overlapping genomic regions after collapsing overlapping $\pm$25~kb windows, indicating that recurrent calls included both multi-gene hotspots and independent loci.
-
-% Functional and GO annotation of these recurrent individual-lipid candidates followed four dominant themes (Table~\ref{tab:T1_control_recurrent_combined}). First, lipid and isoprenoid metabolism was strongly represented, including a lipoxygenase, a lipase-like hydrolase, and an acyltransferase-like gene involved in isoprenoid and farnesyl diphosphate biosynthesis, indicating repeated associations with lipid turnover and lipid-derived signaling. Second, transport-related loci included putative transmembrane and peptide transporter genes. Third, photosynthesis/chloroplast-associated signals included a photosystem II chlorophyll-binding protein and Rubisco-activase-related function. Fourth, carbohydrate metabolism signals included enzymes of glucose- and fructose-phosphate metabolism, such as glucose-6-phosphate 1-epimerase and a phosphofructokinase-related protein \citep{GeneOntologyConsortium2026}. Together, they represent lipid metabolism, chloroplast-associated functions, membrane transport, and central carbon metabolism.
-
-% We extended recurrence analysis to class-sum and class-ratio phenotypes together. Using the same Bonferroni gene-level threshold, the combined CTL sum/ratio analysis identified 4,385 candidate genes (Supplementary Table~S14). Similarly like in the individual level, restricting to genes detected in >= 68 phenotypes retained the current recurrent shortlist(Table~\ref{tab:T1_control_recurrent_combined}).
-
-% At the class sum/ratio level, recurrent CTL-associated loci grouped into two major themes, matching the order shown in Table~\ref{tab:T1_control_recurrent_combined}. The first theme was growth and development, including a \textit{DRO1}/DRL1-like locus (\texttt{SORBI\_3002G373700}) and an \textit{MRPL15}-like mitochondrial ribosomal protein locus (\texttt{SORBI\_3003G141700}). Based on homolog studies, these loci are associated with root system architecture, reproductive organ development, and mitochondrial support of fertility and biomass, respectively \citep{Kitomi2020,Zhang2014,Xie2023}. Although several recurrent CTL-associated loci have homologs linked to root architecture or reproduction in other species, their detection here likely reflects broad developmental regulation or pleiotropic effects on growth physiology rather than a leaf-specific root-development mechanism.
-
-% The second theme was cell-wall remodeling, including \texttt{SORBI\_3003G141800}, \texttt{SORBI\_3005G049600}, and \texttt{SORBI\_3002G373800}, consistent with polygalacturonase- and receptor-kinase-associated functions linked to cell-wall organization, integrity signaling, and growth regulation (Table~\ref{tab:T1_control_recurrent_combined}). Together, these recurrent CTL loci indicate that class sum/ratio-associated signals are linked not only to core lipid metabolism but also to plant architecture, reproductive development, organellar function, and cell-wall-associated developmental processes.
-
-% \begin{lscape}
-% \begin{center}
-% \begin{threeparttable}
-% \captionof{table}{\textbf{Representative recurrent candidate genes from CTL GWAS of individual lipid traits and class-sum/class-ratio traits.} \textit{Representative GO molecular function (MF) and biological process (BP) terms summarize the dominant functional themes of each candidate set; detailed functional support and references are provided in the main text.}}
-% \label{tab:T1_control_recurrent_combined}
-
-% \scriptsize
-% \setlength{\tabcolsep}{4pt}
-% \renewcommand{\arraystretch}{1.12}
-
-% \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.2cm}
-%                               >{\raggedright\arraybackslash}p{3.2cm}
-%                               >{\raggedright\arraybackslash}p{5.0cm}
-%                               >{\centering\arraybackslash}p{1.6cm}
-%                               >{\raggedright\arraybackslash}p{5.5cm}
-%                               >{\raggedright\arraybackslash}X}
-% \toprule
-% Trait layer & Functional theme & Gene(s) & $N_{\mathrm{Phenotypes}}$ & GO MF & GO BP \\
-% \midrule
-
-% \multirow{4}{*}{\makecell{\itshape Individual\\lipids}}
-% & Lipid and isoprenoid metabolism
-% & \makecell[l]{SORBI\_3006G248300;\\ SORBI\_3006G248100;\\ SORBI\_3006G248000}
-% & 18
-% & Lipoxygenase activity; lipase activity; prenyltransferase activity
-% & Lipid oxidation; lipid catabolic process; isoprenoid biosynthetic process \\
-
-% & Transport
-% & \makecell[l]{SORBI\_3001G276300;\\ SORBI\_3001G276400}
-% & 14
-% & Transmembrane transporter activity; peptide transporter activity
-% & Peptide transport; nitrogen compound transport \\
-
-% & Photosynthesis and chloroplast-associated function
-% & \makecell[l]{SORBI\_3001G276500;\\ SORBI\_3006G248700}
-% & 14, 18
-% & Chlorophyll-binding / photosystem II-associated activity; ATPase activator activity
-% & Photosynthesis; regulation of carbon fixation / photosynthetic acclimation \\
-
-% & Carbohydrate metabolism
-% & \makecell[l]{SORBI\_3006G248400;\\ SORBI\_3007G101800}
-% & 18, 13
-% & Carbohydrate metabolic enzyme activity; kinase activity
-% & Glycolytic process; hexose metabolic process; central carbon metabolism \\
-
-% \midrule
-
-% \multirow{2}{*}{\makecell{\itshape Class sums\\/\ ratios}}
-% & Growth and development
-% & \makecell[l]{SORBI\_3002G373700;\\ SORBI\_3005G025400;\\ SORBI\_3003G141700}
-% & 73
-% & Protein kinase activity; ribosomal structural constituent / organellar translation-associated activity
-% & Root development; reproductive development; mitochondrial translation / pollen development \\
-
-% & Cell-wall remodeling
-% & \makecell[l]{SORBI\_3003G141800;\\ SORBI\_3005G049600;\\ SORBI\_3002G373800}
-% & 73--76
-% & Polygalacturonase activity; receptor kinase activity; translation elongation factor activity
-% & Cell wall organization; cell wall integrity signaling; cell growth and developmental regulation \\
-
-% \bottomrule
-% \end{tabularx}
-
-% \begin{tablenotes}\footnotesize
-% \item \textit{Note:} GO MF and GO BP entries are representative theme-level summaries for the grouped candidate genes and are intended to capture the dominant functional signal within each row rather than provide an exhaustive annotation for every gene listed.
-% \end{tablenotes}
-% \end{threeparttable}
-% \end{center}
-% \end{lscape}
-
-% Since many candidate genes were associated with multiple lipid phenotypes, we defined gene-level recurrence as the number of distinct phenotypes associated with each gene. We then evaluated GO biological-process overrepresentation separately for the LIN individual-lipid and class-sum/class-ratio candidate sets. No GO biological-process terms passed BH correction in the individual-lipid set. In contrast, seven GO biological-process terms passed BH correction in the LIN class-sum/class-ratio set. The significant terms included \textit{nucleotide transport}, \textit{purine nucleobase transport}, \textit{purine nucleoside transmembrane transport}, \textit{purine nucleobase transmembrane transport}, \textit{transmembrane transport}, \textit{nitrate assimilation}, and \textit{detection of stimulus}.
-
-% The three purine and nucleotide transport terms were represented by three candidate genes. For \textit{nucleotide transport}, the strongest and most recurrent gene was \texttt{SORBI\_3001G100800} (Folate transporter 1; $p = 7.42\times10^{-14}$; 1 phenotype; $r^2_{\max}=0.98$). For \textit{purine nucleobase transport}, \textit{purine nucleoside transmembrane transport}, and \textit{purine nucleobase transmembrane transport}, the strongest and most recurrent gene was \texttt{SORBI\_3006G195000} (probable purine permease; $p = 2.24\times10^{-17}$; 6 phenotypes; $r^2_{\max}=1.0$).
-
-% The broader \textit{transmembrane transport} term contained 34 candidate genes. Its strongest association was observed for \texttt{SORBI\_3006G184400} (protein detoxification; $p = 3.38\times10^{-18}$; 6 phenotypes; $r^2_{\max}=1.0$), whereas the most recurrent gene was \texttt{SORBI\_3010G151000} (CMP-sialic acid transporter 1; $p = 3.73\times10^{-11}$; 16 phenotypes; $r^2_{\max}=0.90$). For \textit{nitrate assimilation}, the strongest and most recurrent gene was \texttt{SORBI\_3004G009400} (major facilitator superfamily profile domain-containing protein; $p = 4.93\times10^{-15}$; 3 phenotypes; $r^2_{\max}=0.98$). Finally, the \textit{detection of stimulus} term was represented by \texttt{SORBI\_3004G044800} (protein kinase domain-containing protein; $p = 1.60\times10^{-11}$; 1 phenotype; $r^2_{\max}=0.90$), which was both the strongest and most recurrent gene for that term.
-
-% Similarly, we also performed a class-stratified GO enrichment. AEG-associated genes were enriched for \textit{regulation of defense response}, \textit{sphingolipid metabolic process}, \textit{regulation of jasmonic acid mediated signaling pathway}, and \textit{response to wounding}. FA-associated genes were enriched for purine transport, \textit{nitrate assimilation}, and \textit{detection of stimulus}. PC-associated genes were enriched for \textit{sterol metabolic process}, \textit{cell division}, \textit{carbon utilization}, and nucleotide transport. SQDG-associated genes were enriched for \textit{positive regulation of cytoplasmic translation}, \textit{DNA topological change}, \textit{negative regulation of response to salt stress}, \textit{cell surface receptor protein serine/threonine kinase signaling pathway}, and \textit{defense response to oomycetes}. TG-associated genes were enriched for \textit{regulation of salicylic acid biosynthetic process}. 
-
-% The top AEG association was \texttt{SORBI\_3003G169600} (mitochondrial carrier protein; $p=6.98\times10^{-67}$; $r^2_{\max}=1.0$), also the most recurrent AEG-associated gene (12 phenotypes). For FA, the strongest association was \texttt{SORBI\_3008G081400} (major facilitator superfamily protein; $p=4.50\times10^{-33}$; $r^2_{\max}=0.96$), while the most recurrent was \texttt{SORBI\_3004G181800} (uncharacterized protein; 6 phenotypes; $p=2.05\times10^{-10}$; $r^2_{\max}=0.96$). For PC, the strongest association was \texttt{SORBI\_3003G048900} (uncharacterized protein; $p=2.75\times10^{-73}$; $r^2_{\max}=1.0$), and the most recurrent was \texttt{SORBI\_3003G169600} (12 phenotypes; $p=6.98\times10^{-67}$; $r^2_{\max}=1.0$). For SQDG, the strongest association was \texttt{SORBI\_3010G150325} (F-box protein; $p=1.41\times10^{-18}$; $r^2_{\max}=1.0$), and the most recurrent was \texttt{SORBI\_3007G102400} (aminotransferase-like plant mobile domain protein; 9 phenotypes; $p=1.97\times10^{-12}$; $r^2_{\max}=1.0$). For TG, \texttt{SORBI\_3003G169600} was both the strongest association and the most recurrent gene, while \texttt{SORBI\_3010G064200} (1,3-beta-glucan synthase; 13 phenotypes; $p=3.40\times10^{-16}$; $r^2_{\max}=1.0$) was the most recurrent independent TG-associated locus. Overall, LIN class-specific associations were concentrated in stress signaling, defense, membrane and sterol biology, nucleotide transport, and SQDG-related responses, with stronger functional specialization than in CTL.
-
-% \subsection*{LIN recurrent GWAS signals highlight stress and growth regulation}
-
-% For the individual-lipid GWAS, we retained gene-level associations passing the Bonferroni genome-wide threshold under LIN and counted how often each gene was associated across traits. Under LIN conditions, 141 lipid phenotypes had at least one significant gene association, yielding 10,884 unique candidate genes (Supplementary Table~S15). Restricting to genes detected in >= 5 phenotypes, chosen to capture the upper tail of the recurrence distribution in the Bonferroni-significant gene set,  reduced this to the current recurrent shortlist (Table~\ref{tab:T2_lowinput_recurrent_combined}). Thus, only a limited subset of loci showed repeatedly detectable effects across the LIN individual-lipid landscape.
-
-% For recurrent individual-lipid signals, functional themes followed the same order as Table~\ref{tab:T2_lowinput_recurrent_combined}. First, the nutrient-status/remobilization group included two adjacent tryptophan synthase genes (\texttt{SORBI\_3001G056400}, \texttt{SORBI\_3001G056500}), a phosphate-starvation regulator (\texttt{SORBI\_3001G384300}), and additional putative nutrient-responsive loci (\texttt{SORBI\_3001G384500}, \texttt{SORBI\_3002G117000}). This is consistent with evidence that low-N adaptation in sorghum involves tryptophan-related metabolism, IAA-linked signaling, and root-growth acclimation \citep{Liu2024,Fu2022,Wang2025}. Second, the cell-wall-remodeling group included a callose synthase candidate (\texttt{SORBI\_3004G107800}) and three expansin-related loci (\texttt{SORBI\_3007G018000}, \texttt{SORBI\_3001G238100}, \texttt{SORBI\_3001G238000}), consistent with wall loosening and growth adjustment under stress \citep{Gladman2022SorghumBase,CuiLee2016,McQueenMason1992,Cosgrove2024,Wang2024Expansin}. Third, the defense-related group included a thaumatin-like locus (\texttt{SORBI\_3002G117300}) and a lectin receptor kinase (\texttt{SORBI\_3010G170150}), supporting immune/stress signaling involvement \citep{Gladman2022SorghumBase,Wang2015LecRKIX}. Together, recurrent individual-lipid GWAS signals under LIN appear to capture coordinated stress adaptation and whole-plant acclimation rather than effects limited to primary lipid biochemistry.
-
-% Using the same Bonferroni threshold, the combined LIN class-sum/class-ratio analysis identified 6,516 candidate genes (Supplementary Table~S16). Similar to individual lipid, Restricting to genes detected in >= 45 phenotypes retained the current recurrent shortlist (Table~\ref{tab:T2_lowinput_recurrent_combined}). As with individual lipids, only a limited subset of loci showed repeated effects across LIN traits, but these were enriched for higher-order regulation of lipid-class balance rather than specific molecular lipids.
-
-% For recurrent class-sum/class-ratio signals, the dominant themes again follow Table~\ref{tab:T2_lowinput_recurrent_combined}. First, growth/development candidates included \texttt{SORBI\_3001G256400}, \texttt{SORBI\_3001G101700}, and \texttt{SORBI\_3002G153100}, including a pentatricopeptide-repeat ortholog linked to \textit{SLO1}-like growth regulation \citep{Sung2010}. Second, barrier formation/proteostasis candidates included a \textit{CER1}/\textit{WDA1}-like wax locus (\texttt{SORBI\_3001G222700}) and a cullin-like regulatory locus (\texttt{SORBI\_3002G141600}), consistent with cuticle remodeling and stress-responsive protein turnover \citep{Jung2006WDA1,WangXie2024Cullin}. Third, a defense-related candidate (\texttt{SORBI\_3001G101900}) supported hormone-responsive stress signaling. Overall, LIN class sums/ratios report an integrated physiological state shaped by developmental plasticity, stress acclimation, and regulatory control, rather than by direct lipid-metabolic enzymes alone.
-
-
-% \begin{lscape}
-% \begin{center}
-% \begin{threeparttable}
-% \captionof{table}{\textbf{Representative recurrent candidate genes from LIN GWAS of individual lipid traits and class-sum/class-ratio traits.} \textit{Representative GO molecular function (MF) and biological process (BP) terms summarize the dominant functional themes of each candidate set; detailed functional support and references are provided in the main text.}}
-% \label{tab:T2_lowinput_recurrent_combined}
-
-% \scriptsize
-% \setlength{\tabcolsep}{4pt}
-% \renewcommand{\arraystretch}{1.12}
-
-% \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.2cm}
-%                               >{\raggedright\arraybackslash}p{3.2cm}
-%                               >{\raggedright\arraybackslash}p{5.0cm}
-%                               >{\centering\arraybackslash}p{1.6cm}
-%                               >{\raggedright\arraybackslash}p{5.5cm}
-%                               >{\raggedright\arraybackslash}X}
-% \toprule
-% Trait layer & Functional theme & Gene(s) & $N_{\mathrm{Phenotypes}}$ & GO MF & GO BP \\
-% \midrule
-
-% \multirow{3}{*}{\makecell[l]{\itshape Individual\\lipids}}
-% & Nutrient status and remobilization
-% & \makecell[l]{SORBI\_3001G056400;\\ SORBI\_3001G056500;\\ SORBI\_3001G384300;\\ SORBI\_3001G384500;\\ SORBI\_3002G117000}
-% & 7--9
-% & Transferase activity; DNA-binding transcription factor activity; receptor kinase activity; protein binding
-% & Phosphate-starvation response; nitrogen-related signaling; nutrient remobilization; autophagy-associated recycling \\
-
-% & Cell-wall remodeling
-% & \makecell[l]{SORBI\_3004G107800;\\ SORBI\_3007G018000;\\ SORBI\_3001G238100;\\ SORBI\_3001G238000}
-% & 7--9
-% & Callose synthase activity; expansin activity
-% & Cell wall organization; cell wall loosening; growth adjustment under stress \\
-
-% & Defense-related genes
-% & \makecell[l]{SORBI\_3002G117300;\\ SORBI\_3010G170150}
-% & 7--10
-% & Thaumatin-like protein activity; lectin receptor kinase activity
-% & Defense response; response to fungus / oomycete; immune signaling \\
-
-% \midrule
-
-% \multirow{3}{*}{\makecell{\itshape Class sums\\/\ ratios}}
-% & Growth and development
-% & \makecell[l]{SORBI\_3001G256400;\\ SORBI\_3001G101700;\\ SORBI\_3002G153100}
-% & 51--68
-% & RNA-binding / RNA-editing-associated activity; transcription coactivator activity; sequence-specific DNA-binding transcription factor activity
-% & Mitochondrial function; shoot architecture; reproductive development; developmental regulation \\
-
-% & Barrier formation and proteostasis under cold stress
-% & \makecell[l]{SORBI\_3001G222700;\\ SORBI\_3002G141600}
-% & 51--52
-% & Oxidoreductase activity; ubiquitin ligase complex-associated / protein-binding activity
-% & Wax/cuticle biosynthetic process; protein turnover; stress-responsive regulation \\
-
-% & Defense-related genes
-% & \makecell[l]{SORBI\_3001G101900}
-% & 51--54
-% & Pathogenesis-related protein family activity
-% & Defense/stress response; hormone-responsive signaling \\
-
-% \bottomrule
-% \end{tabularx}
-
-% \begin{tablenotes}\footnotesize
-% \item \textit{Note:} GO MF and GO BP entries are representative theme-level summaries for the grouped candidate genes and are intended to capture the dominant functional signal within each row rather than provide an exhaustive annotation for every gene listed.
-% \end{tablenotes}
-% \end{threeparttable}
-% \end{center}
-% \end{lscape}
 
 \begin{figure*}[!t]
 \centering
@@ -497,23 +319,6 @@ Gene   & Class sums / ratios &  115 &  812 &  18 &   2.7 & 6.56 & 0.020 & $2.9\t
 \bottomrule
 \end{tabular}
 \end{table*}
-
-% \begin{table*}[!ht]
-% \centering
-% \caption{\textbf{LD inflates candidate-gene counts.} Candidate genes and the corresponding number of independent loci, defined as non-overlapping 250~kb genome windows containing at least one candidate gene.}
-% \label{tab:inflation}
-% \small
-% \begin{tabular}{llrrr}
-% \toprule
-% \textbf{Condition} & \textbf{Trait layer} & \textbf{Genes} & \textbf{Loci} & \textbf{Genes/locus} \\
-% \midrule
-% CTL & Individual lipids   & 1100 & 378 & 2.9 \\
-% CTL & Class sums / ratios &  115 &  36 & 3.2 \\
-% LIN & Individual lipids   & 4323 & 971 & 4.5 \\
-% LIN & Class sums / ratios &  812 & 161 & 5.0 \\
-% \bottomrule
-% \end{tabular}
-% \end{table*}
 
 \begin{table}[!ht]
 \centering
