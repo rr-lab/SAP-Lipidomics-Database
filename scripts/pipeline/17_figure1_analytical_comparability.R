@@ -93,11 +93,33 @@ pC <- ggplot(det, aes(Set, n, fill = Set)) +
   labs(x = NULL, y = "Lipid species") +
   plot_theme + theme(panel.grid.major.x = element_blank())
 
-fig <- (pA | pB) / (pC | plot_spacer()) +
-  plot_layout(heights = c(1.35, 1), widths = c(1, 1)) +
+# Panel A: field-to-database workflow schematic. This is a hand-made asset
+# (FigureLabs.ai), not a scripted panel, so it is loaded from disk. It used to
+# sit in Figure 3, but the Results cite the workflow in their first paragraph,
+# before Figure 1 is cited at all -- so it belongs here.
+schematic_path <- Sys.getenv("FIG1A_SCHEMATIC",
+  "fig/main/individual_figs/Fig1A_working_pipeline.png")
+p_schematic <- NULL
+if (file.exists(schematic_path) && requireNamespace("png", quietly = TRUE)) {
+  raster <- tryCatch(png::readPNG(schematic_path), error = function(e) NULL)
+  if (!is.null(raster)) {
+    p_schematic <- ggplot() +
+      annotation_custom(grid::rasterGrob(raster, interpolate = TRUE),
+                        xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
+      coord_cartesian(expand = FALSE) + theme_void()
+  }
+}
+if (is.null(p_schematic)) {
+  stop("Workflow schematic not found at: ", schematic_path,
+       "\n  Export it from FigureLabs.ai and save it there, or set FIG1A_SCHEMATIC.",
+       "\n  (Refusing to emit a placeholder panel into a manuscript figure.)")
+}
+
+fig <- p_schematic / (pA | pB) / (pC | plot_spacer()) +
+  plot_layout(heights = c(0.85, 1.35, 1), widths = c(1, 1)) +
   plot_annotation(tag_levels = "A")
 
-ggsave(out_file, fig, width = 13.5, height = 8.4, dpi = 300, bg = "white")
+ggsave(out_file, fig, width = 13.5, height = 12.6, dpi = 300, bg = "white")
 
 cat(sprintf("species: union %d, shared %d, CTL-only %d, LIN-only %d\n",
             length(union(ctl, lin)), length(intersect(ctl, lin)),

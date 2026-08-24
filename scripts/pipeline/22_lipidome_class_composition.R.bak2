@@ -433,20 +433,30 @@ if (file.exists(lion_file)) {
 # ─────────────────────────────────────────────────────────────────────────────
 # Assemble Figure 1
 # ─────────────────────────────────────────────────────────────────────────────
-# The workflow schematic that used to be panel A here has moved to Figure 1
-# (17_figure1_analytical_comparability.R). The Results cite the workflow in
-# their opening paragraph, before Figure 1, so keeping it here created a
-# forward reference -- and when the file was missing this script silently
-# emitted a "Fig 1A (placeholder)" box into the compiled manuscript.
-fig1_row1 <- fig1b + fig1c + plot_layout(widths = c(1.05, 1))
-fig1_row2 <- fig1d
+fig1a_path <- "fig/main/individual_figs/Fig1A_working_pipeline.png"
+if (file.exists(fig1a_path) && requireNamespace("png", quietly = TRUE)) {
+  fig1a_raster <- tryCatch(png::readPNG(fig1a_path), error = function(e) NULL)
+  if (!is.null(fig1a_raster)) {
+    fig1a_panel <- ggplot() + annotation_custom(grid::rasterGrob(fig1a_raster, interpolate = TRUE),
+                                                 xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
+      coord_cartesian(expand = FALSE) + theme_void()
+  } else {
+    fig1a_panel <- ggplot() + annotate("text", x = 0.5, y = 0.5, label = "Fig 1A\n(placeholder)", size = 5) + theme_void()
+  }
+} else {
+  fig1a_panel <- ggplot() + annotate("text", x = 0.5, y = 0.5, label = "Fig 1A\n(placeholder)", size = 5) + theme_void()
+}
 
-figure1 <- (fig1_row1 / fig1_row2) +
-  plot_layout(heights = c(1, 1.15)) +
+fig1_row1 <- fig1a_panel
+fig1_row2 <- fig1b + fig1c + plot_layout(widths = c(1.05, 1))
+fig1_row3 <- fig1d
+
+figure1 <- (fig1_row1 / fig1_row2 / fig1_row3) +
+  plot_layout(heights = c(0.85, 1, 1.15)) +
   plot_annotation(tag_levels = "A") & theme(plot.tag = element_text(size = 16, face = "bold"))
 
-save_fig(figure1, "Figure1_Lipidomics_Landscape.png", w = 14, h = 13)
-save_fig(figure1, "Figure1_Lipidomics_Landscape.pdf", w = 14, h = 13)
+save_fig(figure1, "Figure1_Lipidomics_Landscape.png", w = 14, h = 16)
+save_fig(figure1, "Figure1_Lipidomics_Landscape.pdf", w = 14, h = 16)
 message("\n Figure 1 complete!")
 
 # ═══════════════════════════════════════════════════════════════════════════════
