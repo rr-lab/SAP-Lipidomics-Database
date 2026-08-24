@@ -115,11 +115,19 @@ if (is.null(p_schematic)) {
        "\n  (Refusing to emit a placeholder panel into a manuscript figure.)")
 }
 
-fig <- p_schematic / (pA | pB) / (pC | plot_spacer()) +
-  plot_layout(heights = c(0.85, 1.35, 1), widths = c(1, 1)) +
+# Heights are in inches and must be given explicitly. The schematic is
+# 1376 x 768 px (aspect 1.79), so at 13.5 in wide it needs ~7.5 in of height;
+# giving it less makes rasterGrob preserve the aspect ratio and shrink the
+# image inside an over-wide panel, which is what left it unreadably small.
+# Panel D is centred with equal spacers rather than left-aligned.
+row_D <- wrap_plots(plot_spacer(), pC, plot_spacer(),
+                    nrow = 1, widths = c(0.55, 1, 0.55))
+
+fig <- p_schematic / (pA | pB) / row_D +
+  plot_layout(heights = c(7.5, 4.4, 3.3)) +
   plot_annotation(tag_levels = "A")
 
-ggsave(out_file, fig, width = 13.5, height = 12.6, dpi = 300, bg = "white")
+ggsave(out_file, fig, width = 13.5, height = 15.2, dpi = 300, bg = "white")
 
 cat(sprintf("species: union %d, shared %d, CTL-only %d, LIN-only %d\n",
             length(union(ctl, lin)), length(intersect(ctl, lin)),
