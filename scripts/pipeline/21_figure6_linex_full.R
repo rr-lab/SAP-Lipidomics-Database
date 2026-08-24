@@ -122,10 +122,17 @@ sc <- merge(melt(scores(C), id.vars = "Line", variable.name = "rxn", value.name 
             melt(scores(L), id.vars = "Line", variable.name = "rxn", value.name = "LIN"),
             by = c("Line", "rxn"))
 sc <- sc[is.finite(CTL) & is.finite(LIN)]
+# Report the MEDIAN paired difference with empirical 2.5/97.5 percentile bounds,
+# matching SuppTable_S12_ReactionBalance and the values quoted in the Results.
+# (Plotting mean(d) here previously put slightly different numbers on the bars
+#  than the text beside them.)
 res <- sc[, {
   w <- wilcox.test(LIN, CTL, paired = TRUE)
   d <- LIN - CTL
-  .(delta = mean(d), se = sd(d)/sqrt(.N), p = w$p.value, n = .N)
+  q <- quantile(d, c(0.025, 0.975), names = FALSE, na.rm = TRUE)
+  .(delta = median(d), lo = q[1], hi = q[2],
+    med_CTL = median(CTL), med_LIN = median(LIN),
+    p = w$p.value, n = .N)
 }, by = rxn]
 res[, q := p.adjust(p, "BH")]
 res[, stars := fifelse(q < .001, "***", fifelse(q < .01, "**", fifelse(q < .05, "*", "")))]
@@ -135,13 +142,13 @@ res[, rxn := factor(rxn, levels = rev(c("LCAT*","PNPLA1","LRO1","PNPLA3")))]
 pB <- ggplot(res, aes(rxn, delta, fill = dir)) +
   geom_hline(yintercept = 0, linetype = "dashed", colour = "grey45", linewidth = .45) +
   geom_col(width = .62, colour = "black", linewidth = .3) +
-  geom_errorbar(aes(ymin = delta - se, ymax = delta + se), width = .18, linewidth = .5) +
-  geom_text(aes(label = stars, y = delta + sign(delta) * (abs(se) + .02)),
+  geom_errorbar(aes(ymin = lo, ymax = hi), width = .18, linewidth = .5) +
+  geom_text(aes(label = stars, y = fifelse(delta > 0, hi + .03, lo - .03)),
             size = 4, fontface = "bold") +
   coord_flip() +
   scale_fill_manual(values = c("products enriched in LIN" = prod_col,
                                "substrates enriched in LIN" = subs_col)) +
-  labs(x = NULL, y = "LIN - CTL reaction score (log10)") +
+  labs(x = NULL, y = "LIN - CTL reaction score (median, log10)") +
   plot_theme + theme(legend.position = "bottom", panel.grid.major.y = element_blank())
 
 # ---------------- C: GWAS support --------------------------------------------
@@ -208,5 +215,12 @@ pC <- wrap_plots(cols_built, nrow = 1)
 fig <- (pA | pB) / pC + plot_layout(heights = c(1, 1.35)) + plot_annotation(tag_levels = "A")
 dir.create(dirname(out_file), recursive = TRUE, showWarnings = FALSE)
 ggsave(out_file, fig, width = 15, height = 12, dpi = 300, bg = "white", limitsize = FALSE)
+# NOTE: an S12 writer was drafted here and deliberately disabled. This script
+# assigns lipids to classes by name pattern (^CLASS\(), whereas the archived
+# SuppTable_S12 was evidently built using data/lipid_class/final_lipid_classes.csv.
+# The two disagree for any species named in IUPAC form rather than CLASS(chains)
+# notation, which shifts the LCAT* and LRO1 branches (both use LPC/LPE) while
+# leaving PNPLA1 and PNPLA3 unchanged. Resolve the class-assignment question
+# before regenerating S12 from this script.
 message("Saved: ", out_file)
 print(res[, .(rxn, delta = round(delta,4), q = signif(q,3), stars, n)])

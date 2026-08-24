@@ -1,3 +1,29 @@
 .Rproj.user
 .Rhistory
 .RData
+
+# --- added during the Aug 2026 figure/table regeneration ---
+
+# Symlinks into the sibling SoLD_paper repo so the pipeline scripts resolve
+# their relative input paths. These are machine-local and break on a fresh
+# clone, so they must not be committed.
+data/SPATS_fitted
+data/lipid_class
+data/SEERF_normalized_intensities
+data/fieldmap
+data/phenotypes
+data/raw_lipid_intensities
+data/summed_lipid_intensities
+table/Linex2
+table/PCA_SAP.csv
+
+# Quarantine folders holding superseded output. Safe to delete locally.
+fig/_unused/
+fig/_stray_from_21/
+table/_stray_from_21/
+fig/new_figures/
+_dangling/
+
+# Editing backups
+*.bak
+main.tex.bak_*

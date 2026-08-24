@@ -384,7 +384,10 @@ fig2c <- ggplot(perm_plot_df, aes(x = value, fill = metric_key)) +
     values = c("R2Y" = "#440154FF", "Q2" = "#FDE725FF"),
     labels = c("R2Y" = "R\u00b2Y", "Q2" = "Q\u00b2")
   ) +
-  scale_x_break(c(break_start, break_end), scales = 0.5) +
+  # scale_x_break() disabled: ggbreak 0.1.2 is incompatible with the S7 object
+  # model in ggplot2 4.x (as.grob has no method for ScaleContinuousPosition).
+  # The axis break is cosmetic and Figure2_OPLS_DA is not used in main.tex.
+  # scale_x_break(c(break_start, break_end), scales = 0.5) +
   scale_x_continuous(expand = expansion(mult = c(0.02, 0.05))) +
   labs(x = "Metric Value", y = "Frequency", title = "C) Permutation Test (n=200)") +
   theme_minimal(base_size = 12) +
@@ -440,17 +443,26 @@ if (!requireNamespace("aplot", quietly = TRUE)) {
 }
 library(aplot)
 
-fig2_bottom <- aplot::plot_list(fig2c, fig2d, widths = c(1.2, 1))
-
-fig2_combined <- fig2_top / fig2_bottom +
-  plot_layout(heights = c(1, 0.8))
-
-save_fig(fig2_combined, "Figure2_OPLS_DA.png", w = 14, h = 12)
-save_fig(fig2_combined, "Figure2_OPLS_DA.pdf", w = 14, h = 12)
-
-# Save VIP table (Table S7)
+# The VIP table does not depend on the figure, so write it first. This keeps
+# the table reproducible even if the ggbreak/aplot composition fails.
 write.csv(vip_df, "table/supp/SuppTable_S7_OPLS_VIP_ratios.csv", row.names = FALSE)
 message("Saved: table/supp/SuppTable_S7_OPLS_VIP_ratios.csv")
+
+# ggbreak's scale_x_break is incompatible with the S7-based ggplot2 4.x object
+# model (as.grob has no method for ScaleContinuousPosition). Figure2_OPLS_DA is
+# not used in main.tex, so a failure here must not stop the script before the
+# supplementary figures below are written.
+tryCatch({
+  fig2_bottom <- fig2c + fig2d + plot_layout(widths = c(1.2, 1))
+  fig2_combined <- fig2_top / fig2_bottom +
+    plot_layout(heights = c(1, 0.8))
+  save_fig(fig2_combined, "Figure2_OPLS_DA.png", w = 14, h = 12)
+  save_fig(fig2_combined, "Figure2_OPLS_DA.pdf", w = 14, h = 12)
+}, error = function(e) {
+  message("SKIPPED Figure2_OPLS_DA (ggbreak/ggplot2 incompatibility): ",
+          conditionMessage(e))
+  message("  -> not used in main.tex; continuing to the supplementary figures.")
+})
 
 message("\n\u2713 Figure 2 (OPLS-DA) complete!\n")
 
