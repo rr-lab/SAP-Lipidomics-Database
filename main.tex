@@ -255,10 +255,11 @@ ATPase, chromosome~6). \textbf{(E--H)}~CTL class sums and ratios, sharing
 \textbf{(I--L)}~LIN individual lipids, sharing \texttt{SORBI\_3010G170000}
 (\textit{DGAT1}, chromosome~10). \textbf{(M--P)}~LIN class sums and ratios,
 sharing the chromosome~6 purine-permease array (\texttt{SORBI\_3006G195200}).
-Dashed horizontal lines mark the Bonferroni genome-wide threshold
-($p \leq 8.19 \times 10^{-9}$) and dotted lines the suggestive threshold
-($p \leq 1 \times 10^{-5}$). Point colour alternates by chromosome, with CTL in
-purple and LIN in yellow.}
+Orange dashed vertical lines mark the lead SNP for each candidate. Red dashed
+horizontal lines mark the Bonferroni genome-wide threshold
+($p \leq 8.19 \times 10^{-9}$). Point shading alternates by chromosome.
+All Manhattan and QQ plots for the full phenotype set are browsable in the SoLD
+Shiny application.}
 \label{fig:gwas_manhattan}
 \end{figure*}
 
@@ -348,11 +349,11 @@ We converted each branch to a branch-aligned reaction-balance score per sample (
 
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width=\textwidth]{fig/main/Figure4_LINEX_Enriched_Subnetwork.png}
+\includegraphics[width=\textwidth]{fig/main/Figure6_LINEX_Full.png}
 \caption{\textbf{LINEX-supported lipid reaction remodeling between LIN and CTL conditions.}
 \textbf{(A)} LINEX-enriched lipid reaction subnetwork connecting candidate reactions to their substrate and product lipid species. Central reaction nodes depict hypothesized LCAT-like acyl editing, PNPLA1-mediated TG$\rightarrow$DG lipolysis, LRO1-mediated acyl transfer between PE/DG and TG/LPE, and PNPLA3-associated DG/MG$\rightarrow$TG re-esterification; arrows show reaction direction, and labeled circles indicate representative lipid species for each reaction.
 \textbf{(B)} LINEX reaction-consistency scores (LIN $-$ CTL; log$_{10}$) comparing product and substrate signals for each reaction. Positive values indicate product enrichment in LIN, negative values indicate substrate enrichment in LIN. Error bars show empirical confidence intervals; asterisks denote significance.
-\textbf{(C)} Manhattan plots show GWAS support for the LINEX-based remodeling model at \textit{DGAT1} (\texttt{SORBI\_3010G170000}), an LCAT-like gene (\texttt{SORBI\_3006G214500}), and \textit{PNPLA} (\texttt{SORBI\_3001G041900}) across associated lipid traits and sums/ratios. Orange dashed vertical lines indicate the lead SNP for each candidate, blue dashed horizontal lines indicate the suggestive threshold ($-\log_{10}(p)=7$), and red dashed horizontal lines indicate the Bonferroni-scale genome-wide significance threshold.}
+\textbf{(C)} Manhattan plots show GWAS support for the LINEX-based remodeling model at \textit{DGAT1} (\texttt{SORBI\_3010G170000}), an LCAT-like gene (\texttt{SORBI\_3006G214500}), and \textit{PNPLA} (\texttt{SORBI\_3001G041900}) across associated lipid traits and sums/ratios. Orange dashed vertical lines indicate the lead SNP for each candidate and red dashed horizontal lines indicate the Bonferroni-scale genome-wide significance threshold.}
 \label{fig:Fig4_linex_rewiring_abc}
 \end{figure*}
 

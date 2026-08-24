@@ -30,22 +30,15 @@ check each one's input paths before running.
 | 20 | `20_variance_species_overview.R` | FIGURE Supp S2 top-variance | `SoLD/scripts/numbered_pipeline/03_qc_variance_and_species_overview.R` |
 | 21 | `21_high_variance_lipids.R` | High-variance lipid species | `SAP/scripts/new_script/16_high_variance_lipids.R` |
 | 22 | `22_lipidome_class_composition.R` | FIGURE 1, Supp S3 S4 S5 S8 | `SoLD/scripts/numbered_pipeline/04_lipidome_class_composition.R` |
-| 23 | `23_class_composition_ALR.R` | Class composition, ALR | `SAP/scripts/new_script/17_class_composition_ALR.R` |
-| 24 | `24_lipid_species_counts.R` | Species counts per class | `SAP/scripts/new_script/18_lipid_species_counts.R` |
-| 25 | `25_lipid_PCA.R` | PCA of lipid matrices | `SAP/scripts/new_script/19_lipid_PCA.R` |
-| 26 | `26_noncore_class_CLR.R` | Non-core class CLR composition | `SAP/scripts/new_script/20_noncore_lipid_class_composition_CLR.R` |
-| 27 | `27_class_CLR_correlations.R` | Class-level CLR correlations | `SAP/scripts/new_script/21_class_CLR_correlations.R` |
 | 28 | `28_class_logratio_stats.R` | FIGURE Supp S6 CLR correlations | `SoLD/scripts/numbered_pipeline/05_class_logratio_oplsda_and_statistics.R` |
 | 29 | `29_top_bottom_genotypes.R` | FIGURE class sums top/bottom, upper-ranked | `SoLD/scripts/33_top_bottom_lipid_genotypes.R` |
 | 30 | `30_genomic_heritability.R` | Genomic heritability (Supp Table S5) | `SAP/scripts/new_script/22_genomic_heritability_SERRF_individual_class_sums.R` |
-| 31 | `31_plot_genomic_heritability.R` | Heritability plots | `SAP/scripts/new_script/23_plot_genomic_heritability.R` |
 | 32 | `32_LION_enrichment.R` | LION ontology enrichment (Fig 1D) | `SoLD/scripts/16_LION_enrichment.R` |
 | | **Botanical race and population structure** | | |
 | 33 | `33_race_structure_tests.py` | FIGURE 6 + race boxplots, Supp Table S6 | `SAP/scripts/chapter2_addons/race_analysis.py` |
 | 34 | `34_stats_lite_helpers.py` | Helper stats functions | `SAP/scripts/chapter2_addons/stats_lite.py` |
 | | **GWAS** | | |
 | 35 | `35_run_GWAS.R` | GWAS driver | `SoLD/scripts/run_section5_gwas.R` |
-| 36 | `36_figure_GWAS_stacked.R` | FIGURE 2 and 3 stacked Manhattan | `SoLD/scripts/34_stacked_gwas_condition_plot.R` |
 | 37 | `37_gwas_tables_bonferroni.py` | Bonferroni candidate tables | `SoLD/scripts/rebuild_chapter2_gwas_tables_bonf.py` |
 | | **LD candidate mapping and CTL/LIN overlap** | | |
 | 38 | `38_extract_LD_candidates.py` | LD-based candidate gene extraction | `SAP/scripts/chapter2_addons/extract.py` |
@@ -53,35 +46,32 @@ check each one's input paths before running.
 | 40 | `40_gwas_overlap_locus_level.py` | Locus-collapsed overlap | `SAP/scripts/chapter2_addons/locus_overlap.py` |
 | 41 | `41_figure_overlap.py` | FIGURE 7 CTL/LIN overlap | `SAP/scripts/chapter2_addons/fig_overlap.py` |
 | | **GO enrichment (BP and MF, LD-aware null)** | | |
-| 42 | `42_plot_GO_by_trait_layer.R` | GO by trait layer | `SAP/scripts/new_script/24_plot_GO_enrichment_by_trait_layer.R` |
 | 43 | `43_GO_BP_sumratio_by_class.py` | GO-BP sum/ratio by class | `SAP/scripts/new_script/25_GO_enrichment_sumratio_by_lipid_class.py` |
-| 44 | `44_plot_GO_sumratio.R` | Plot sum/ratio GO | `SAP/scripts/new_script/26_plot_sumratio_GO_by_lipid_class.R` |
-| 45 | `45_plot_GO_combined.R` | Combined GO plot | `SAP/scripts/new_script/27_plot_combined_sumratio_GO.R` |
-| 46 | `46_GO_locus_collapsed.py` | Locus-collapsed GO | `SAP/scripts/new_script/29_GO_enrichment_locus_collapsed.py` |
 | 47 | `47_GO_BP_LDaware_permutation.py` | GO-BP LD-aware null | `SAP/scripts/new_script/29_GO_enrichment_LDaware_permutation.py` |
 | 48 | `48_GO_MF_individual_by_class.py` | GO-MF individual lipids | `SAP/scripts/new_script/31_GO_MF_enrichment_individual_by_lipid_class.py` |
 | 49 | `49_GO_MF_sumratio_by_class.py` | GO-MF sum/ratio | `SAP/scripts/new_script/32_GO_MF_enrichment_sumratio_by_lipid_class.py` |
 | 50 | `50_GO_MF_LDaware_permutation.py` | GO-MF LD-aware null | `SAP/scripts/new_script/33_GO_MF_LDaware_permutation.py` |
 | 51 | `51_combine_MF_LDaware_batches.py` | Combine permutation batches | `SAP/scripts/new_script/34_combine_MF_LDaware_batches.py` |
-| 52 | `52_plot_GO_LDaware_layers.R` | Per-layer LD-aware GO figures | `SAP/scripts/new_script/35_plot_GO_LDaware.R` |
 | 53 | `53_figure_GO_main_and_table.R` | FIGURE 5, Supp GO BP/MF, GO table | `SAP/scripts/new_script/36_GO_figures_and_table.R` |
 | | **LINEX reaction network** | | |
-| 54 | `54_linex_reaction_network.R` | FIGURE 4 LINEX network | `SoLD/scripts/numbered_pipeline/13_linex_reaction_network.R` |
+| 54 | `54_linex_reaction_network.R` | LINEX reaction table (Supp Table S11) | `SoLD/scripts/numbered_pipeline/13_linex_reaction_network.R` |
 | 55 | `55_linex_gwas_support.R` | LINEX-GWAS candidate support | `SoLD/scripts/numbered_pipeline/14_linex_GWAS_candidate_support.R` |
 | | **Shiny application** | | |
 | 56 | `56_shiny_app.R` | SoLD Shiny application (Figure 8 source) | `SAP/app.R` |
 
 ## Figure and table provenance
 
+Figure numbers below are the compiled numbers in `main.tex`.
+
 | Output in the manuscript | Produced by |
 |---|---|
-| Figure 1 lipidomics landscape | `22_lipidome_class_composition.R` (panel D from `32_LION_enrichment.R`) |
-| Figure 2, 3 GWAS Manhattan | `36_figure_GWAS_stacked.R` |
-| Figure 4 LINEX subnetwork | `54_linex_reaction_network.R` |
+| Figure 1 analytical comparability | `17_figure1_analytical_comparability.R` |
+| Figure 2 genotypic variation | `18_figure2_genotypic_variation.R` |
+| Figure 3 lipidomics landscape (`Figure1_Lipidomics_Landscape.png`) | `22_lipidome_class_composition.R` (panel D from `32_LION_enrichment.R`) |
+| Figure 4 GWAS Manhattan | `19_figure4_gwas_manhattan.R` |
 | Figure 5 GO-BP LD-aware | `53_figure_GO_main_and_table.R` (writes `Fig_GO_BP_main.png`, renamed) |
-| Figure 6 race and structure | `33_race_structure_tests.py` (writes `FigRace_C_variance_explained.png`, renamed) |
-| Figure 7 CTL/LIN overlap | `41_figure_overlap.py` (writes `FigOverlap_CTL_vs_LIN.png`, renamed) |
-| Figure 8 Shiny workflow | screenshots from `56_shiny_app.R`, assembled by hand |
+| Figure 6 LINEX, all three panels | `21_figure6_linex_full.R` |
+| Figure 7 Shiny workflow (`Figure5_shiny_triterpenoid_AB.png`) | screenshots from `56_shiny_app.R`, assembled by hand |
 | Supp S1 QC | `16_figure_SuppS1_QC.R` |
 | Supp S2 top-variance | `20_variance_species_overview.R` |
 | Supp S3, S4, S5 | `22_lipidome_class_composition.R` |
@@ -89,19 +79,55 @@ check each one's input paths before running.
 | Supp non-focused class context | `22_lipidome_class_composition.R` |
 | Supp race boxplots CTL/LIN | `33_race_structure_tests.py` |
 | Supp class sums top/bottom, upper-ranked | `29_top_bottom_genotypes.R` |
+| Supp CTL/LIN overlap | `41_figure_overlap.py` (writes `FigOverlap_CTL_vs_LIN.png`, renamed) |
 | Supp GO-BP all, GO-MF all, GO table | `53_figure_GO_main_and_table.R` |
-| Supp Table S1 SERRF audit | `08_audit_SERRF_traceability.R` |
+| Supp Table S1-S4 ratio stats, jackknife, stability, top-variance | `21_high_variance_lipids.R` (S4 also from `20_variance_species_overview.R`) |
+| SERRF traceability audit | `08_audit_SERRF_traceability.R` |
+| Supp Table S11 LINEX reactions | `54_linex_reaction_network.R` |
+| Supp Tables S13, S14 LINEX GWAS support | `55_linex_gwas_support.R` |
 | Supp Table S5 heritability | `30_genomic_heritability.R` |
 | Supp Table S6 race tests | `33_race_structure_tests.py` |
 | Supp Tables S21-S24 overlap | `39_gwas_overlap_gene_level.py`, `40_gwas_overlap_locus_level.py` |
+
+## Superseded scripts
+
+Moved to `scripts/superseded/`. Each was traced to its outputs; none of those
+outputs appear in `main.tex` or feed a script that is still in the pipeline.
+Kept only for provenance.
+
+| Script | Wrote | Superseded by |
+|---|---|---|
+| `20_figure6C_linex_gwas.R` | Figure 6 panel C alone | `21_figure6_linex_full.R` |
+| `22_linex_network_clean.R` | standalone LINEX network | `21_figure6_linex_full.R` (panel A palette and edge rules) |
+| `23_class_composition_ALR.R` | `fig/new_figures/SuppFig_Class_Composition_ALR.png` | `22_lipidome_class_composition.R` (Supp S3) |
+| `24_lipid_species_counts.R` | `fig/new_figures/SuppFig_Lipid_Species_Counts.png` | `22_lipidome_class_composition.R` (Supp S4) |
+| `25_lipid_PCA.R` | `fig/new_figures/SuppFig_Lipid_PCA.png` | `22_lipidome_class_composition.R` (Supp S5) |
+| `26_noncore_class_CLR.R` | `fig/new_figures/SuppFig_Noncore_Lipid_Class_Composition_CLR.png` | `22_lipidome_class_composition.R` (Supp non-focused context) |
+| `27_class_CLR_correlations.R` | `fig/new_figures/SuppFig_Class_CLR_Correlations.png` | `28_class_logratio_stats.R` (Supp S6) |
+| `31_plot_genomic_heritability.R` | `fig/new_figures/SuppFig_Lipid_Heritability.png` | nothing; no heritability figure in the manuscript (the Supp table comes from `30_genomic_heritability.R`) |
+| `36_figure_GWAS_stacked.R` | old stacked Manhattan | `19_figure4_gwas_manhattan.R` |
+| `42_plot_GO_by_trait_layer.R` | `fig/new_figures/SuppFig_GO_Enrichment_Individual_Lipids.png` | `53_figure_GO_main_and_table.R` |
+| `44_plot_GO_sumratio.R` | `fig/new_figures/SuppFig_GO_Enrichment_Class_Sums_Ratios_By_Lipid.png` | `53_figure_GO_main_and_table.R` |
+| `45_plot_GO_combined.R` | `fig/new_figures/SuppFig_GO_Enrichment_Class_Sums_Ratios.png` | `53_figure_GO_main_and_table.R` |
+| `46_GO_locus_collapsed.py` | `data/LD_mapped/go_enrichment/*_LOCUS.tsv`, read by nothing | `47_GO_BP_LDaware_permutation.py`, the LD-aware null described in Methods |
+| `52_plot_GO_LDaware_layers.R` | `fig/go_ldaware/SuppFig_GO{BP,MF}_LDaware_*.png` | `53_figure_GO_main_and_table.R` |
+
+Two scripts were checked and **kept** despite producing no figure:
+`21_high_variance_lipids.R` is the only source of Supp Tables S1--S4
+(`SuppTable_S1_Ratio_Statistics.csv`, `S2_Species_Jackknife.csv`,
+`S3_Species_Stability_by_Class.csv`, `S4_TopVariance_Lipids.csv`), and
+`55_linex_gwas_support.R` is the only source of the LINEX GWAS support tables
+(S13, S14).
 
 ## Known gaps
 
 - **`Genes_in_enriched_GO_terms.xlsx` / `.tsv` (Supp Table S19)** has no script in either
   repository. It was generated ad hoc from the GO enrichment output and should be
   rewritten as a script before submission.
-- **Figure 8** panels are screenshots of the running Shiny app, not a scripted figure.
+- **Figure 7** panels are screenshots of the running Shiny app, not a scripted figure.
 - Several scripts share a number in the original folders (two `22_`, two `29_` in
   `new_script/`). Both were kept and renumbered here.
 - `35_run_GWAS.R` is the driver; the GEMMA calls themselves were run outside the repo.
-
+- **`SuppTable_S12_ReactionBalance.csv`** has no producing script. The reaction-balance
+  scores are recomputed inside `21_figure6_linex_full.R` for panel B, but that script
+  does not write the table; it should be given a write step before submission.
