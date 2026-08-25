@@ -804,50 +804,6 @@ suppfig_clr_cor <- suppfig_clr_ctrl + suppfig_clr_low + suppfig_clr_delta +
 save_fig(suppfig_clr_cor, "SuppFig_S6_CLR_Correlations.png", w = 18, h = 7, subdir = "supp")
 save_fig(suppfig_clr_cor, "SuppFig_S6_CLR_Correlations.pdf", w = 18, h = 7, subdir = "supp")
 
-# ---------------------------------------------------------------------------
-# Class-level CLR correlations and the CTL->LIN change, as a table.
-# The sign reversals quoted in the Results (PC-PS, PS-TG, LPC-PC) are otherwise
-# only readable off the heatmap, with no numbers a reader can check.
-# ---------------------------------------------------------------------------
-if (!is.null(clr_control) && !is.null(clr_lowinput)) {
-  shared <- intersect(rownames(clr_control$cor_mat), rownames(clr_lowinput$cor_mat))
-  pairs  <- t(combn(shared, 2))
-
-  delta_r <- data.frame(
-    Class_A = pairs[, 1],
-    Class_B = pairs[, 2],
-    r_CTL   = clr_control$cor_mat[pairs],
-    r_LIN   = clr_lowinput$cor_mat[pairs],
-    p_CTL   = clr_control$pval_mat[pairs],
-    p_LIN   = clr_lowinput$pval_mat[pairs],
-    stringsAsFactors = FALSE
-  )
-  delta_r$delta_r       <- delta_r$r_LIN - delta_r$r_CTL
-  delta_r$sign_reversal <- sign(delta_r$r_CTL) != sign(delta_r$r_LIN)
-  delta_r$q_CTL <- p.adjust(delta_r$p_CTL, "BH")
-  delta_r$q_LIN <- p.adjust(delta_r$p_LIN, "BH")
-  delta_r <- delta_r[order(-abs(delta_r$delta_r)), ]
-
-  write.csv(delta_r, "table/supp/SuppTable_S5C_Class_CLR_Correlation_Delta.csv",
-            row.names = FALSE)
-  message("Saved: table/supp/SuppTable_S5C_Class_CLR_Correlation_Delta.csv  (",
-          nrow(delta_r), " class pairs, ",
-          sum(delta_r$sign_reversal), " sign reversals)")
-  message("  n samples: CTL ", clr_control$n_samples, ", LIN ", clr_lowinput$n_samples)
-
-  key <- subset(delta_r, (Class_A == "PC"  & Class_B == "PS") |
-                         (Class_A == "PS"  & Class_B == "PC") |
-                         (Class_A == "PS"  & Class_B == "TG") |
-                         (Class_A == "TG"  & Class_B == "PS") |
-                         (Class_A == "LPC" & Class_B == "PC") |
-                         (Class_A == "PC"  & Class_B == "LPC"))
-  if (nrow(key)) {
-    message("\n-- the three reversals quoted in the Results --")
-    print(key[, c("Class_A","Class_B","r_CTL","r_LIN","delta_r",
-                  "q_CTL","q_LIN","sign_reversal")], row.names = FALSE)
-  }
-}
-
 message("\n\u2713 Supplementary Figure S6 (CLR Correlations) complete!\n")
 
 
