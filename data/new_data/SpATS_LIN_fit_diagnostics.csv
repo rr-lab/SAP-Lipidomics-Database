@@ -1,0 +1,167 @@
+condition,Compound_Name,status,n_plots,message
+LIN,"(2R,6R)-2-methyl-6-tridecylpiperidine",ok,380,NA
+LIN,"(6E,10E,14E,18E)-2,6,10,15,19,23-hexamethyltetracosa-6,10,14,18-tetraene-1,2,3,22,23-pentol",ok,380,NA
+LIN,.beta.-Amyrin acetate,ok,380,NA
+LIN,.beta.-Cryptoxanthin,ok,380,NA
+LIN,"13,14-Dihydro-15-ketoprostaglandin F2.alpha. isopropyl ester",ok,380,NA
+LIN,"16,16-Dimethylprostaglandin A1",ok,380,NA
+LIN,"17.alpha.-Methyl-5.beta.-androstan-3.alpha.,17.beta.-diol",ok,380,NA
+LIN,24S-Hydroxycholesterol,ok,380,NA
+LIN,3-Epilupeol,ok,380,NA
+LIN,3-Methoxylimaprost,ok,380,NA
+LIN,3.10S-Hydroxypheophorbide a,ok,380,NA
+LIN,7-Oxocholesterol,ok,380,NA
+LIN,"8(9)-Epoxy-5Z,11Z,14Z-eicosatrienoic acid, methyl ester",ok,380,NA
+LIN,AEG(o-15:2/15:0),ok,380,NA
+LIN,AEG(o-16:3/16:0),ok,380,NA
+LIN,AEG(o-18:4/16:1),ok,380,NA
+LIN,Alloxanthin,ok,380,NA
+LIN,Antheraxanthin,ok,380,NA
+LIN,Boldenone cypionate,ok,380,NA
+LIN,Caryophyllene oxide,ok,380,NA
+LIN,Celaxanthin,ok,380,NA
+LIN,Chlorophyll a,ok,380,NA
+LIN,Clionasterol,ok,380,NA
+LIN,CoQ9,ok,380,NA
+LIN,Cryptoxanthin,ok,380,NA
+LIN,Cycloartenol acetate,ok,380,NA
+LIN,DG(12:0/0:0/12:0),ok,380,NA
+LIN,DG(12:0/12:0),ok,380,NA
+LIN,DG(16:0/18:1),ok,380,NA
+LIN,DG(16:0/18:1/0:0),ok,380,NA
+LIN,DG(16:0/18:2),ok,380,NA
+LIN,DG(16:0/18:3),ok,380,NA
+LIN,DG(16:1/18:2/0:0),ok,380,NA
+LIN,DG(16:1/18:3/0:0),ok,380,NA
+LIN,DG(18:0/18:2/0:0),ok,380,NA
+LIN,DG(18:1/18:2/0:0),ok,380,NA
+LIN,DG(18:1/2:0/0:0),ok,380,NA
+LIN,DG(18:2/18:3/0:0),ok,380,NA
+LIN,DG(18:3/18:3/0:0),ok,380,NA
+LIN,DG(8:0/8:0/0:0),ok,380,NA
+LIN,DGDG(16:0/18:1),ok,380,NA
+LIN,DGDG(16:0/18:2),ok,380,NA
+LIN,DGDG(16:0/18:3),ok,380,NA
+LIN,DGDG(18:0/18:2),ok,380,NA
+LIN,DGDG(18:0/18:3),ok,380,NA
+LIN,DGDG(18:2/18:3),ok,380,NA
+LIN,DGDG(18:2/18:4),ok,380,NA
+LIN,Diadinochrome,ok,380,NA
+LIN,"Didodecyl 3,3'-thiodipropionate",ok,380,NA
+LIN,Dimethyldioctadecylammonium cation,ok,380,NA
+LIN,FA(18:4),ok,380,NA
+LIN,Fucosterol,ok,380,NA
+LIN,GalCer(d18:2/18:1),ok,380,NA
+LIN,GalCer(d18:2/20:1),ok,380,NA
+LIN,Ginsenoside F1,ok,380,NA
+LIN,Iloprost,ok,380,NA
+LIN,LPC(16:0/0:0),ok,380,NA
+LIN,Lanosterol,ok,380,NA
+LIN,Lupenone,ok,380,NA
+LIN,Lupeol,ok,380,NA
+LIN,Lutein,ok,380,NA
+LIN,MGDG(16:0/18:1),ok,380,NA
+LIN,MGDG(16:0/18:3),ok,380,NA
+LIN,MGDG(18:2/18:2),ok,380,NA
+LIN,MGDG(18:2/18:3),ok,380,NA
+LIN,MGDG(18:3/18:3),ok,380,NA
+LIN,Medroxyprogesterone,ok,380,NA
+LIN,N-gamma-Linolenoylethanolamine,ok,380,NA
+LIN,"NCGC00385123-01/C22H30O6/7b,9-Dihydroxy-3-(hydroxymethyl)-1,1,6,8-tetramethyl-5-oxo-1,1a,1b,4,4a,5,7a,7b,8,9-decahydro-9aH-cyclopropa[3,4]benzo[1,2-e]azulen-9a-yl acetate",ok,380,NA
+LIN,Nostoxanthin,ok,380,NA
+LIN,Ophiobolin A,ok,380,NA
+LIN,PC(16:0/16:0),ok,380,NA
+LIN,PC(16:0/18:0),ok,380,NA
+LIN,PC(16:0/18:1),ok,380,NA
+LIN,PC(16:0/18:3),ok,380,NA
+LIN,PC(16:0/20:3),ok,380,NA
+LIN,PC(16:0/20:4),ok,380,NA
+LIN,PC(16:0/20:5),ok,380,NA
+LIN,PC(16:1/16:1),ok,380,NA
+LIN,PC(16:1/20:4),ok,380,NA
+LIN,PC(16:2/16:1),ok,380,NA
+LIN,PC(18:0/18:1),ok,380,NA
+LIN,PC(18:0/20:2),ok,380,NA
+LIN,PC(18:1/18:1),ok,380,NA
+LIN,PC(18:1/20:1),ok,380,NA
+LIN,PC(18:1/20:4),ok,380,NA
+LIN,PC(18:1/24:1),ok,380,NA
+LIN,PC(18:2/0:0),ok,380,NA
+LIN,PC(18:2/18:2),ok,380,NA
+LIN,PC(18:2/20:4),ok,380,NA
+LIN,PC(18:3/0:0),ok,380,NA
+LIN,PC(18:3/18:3),ok,380,NA
+LIN,PE(16:0/18:0),ok,380,NA
+LIN,PE(16:0/18:1),ok,380,NA
+LIN,PE(16:0/18:3),ok,380,NA
+LIN,PE(18:0/18:3),ok,380,NA
+LIN,PE(18:1/18:1),ok,380,NA
+LIN,PE(18:1/18:2),ok,380,NA
+LIN,PE(18:2/18:2),ok,380,NA
+LIN,PE(18:2/18:3),ok,380,NA
+LIN,PG(16:0/18:1),ok,380,NA
+LIN,PS(18:0/18:2),ok,380,NA
+LIN,Pheophorbide a,ok,380,NA
+LIN,Pheophytin a,ok,380,NA
+LIN,Phytosphingosine,ok,380,NA
+LIN,Protopanaxadiol,ok,380,NA
+LIN,SM(d18:1/17:0),ok,380,NA
+LIN,SQDG(16:0/14:0),ok,380,NA
+LIN,SQDG(16:0/16:0),ok,380,NA
+LIN,SQDG(16:0/18:1),ok,380,NA
+LIN,SQDG(16:0/18:2),ok,380,NA
+LIN,SQDG(16:0/18:3),ok,380,NA
+LIN,SQDG(16:1/18:3),ok,380,NA
+LIN,SQDG(18:0/18:3),ok,380,NA
+LIN,SQDG(18:2/18:3),ok,380,NA
+LIN,SQDG(18:3/18:3),ok,380,NA
+LIN,Schaftoside,ok,380,NA
+LIN,Scutellarein tetramethyl ether,ok,380,NA
+LIN,Sebacic acid,ok,380,NA
+LIN,Sitosterol,ok,380,NA
+LIN,Sumaresinolic acid,ok,380,NA
+LIN,TG(10:0/10:0/10:0),ok,380,NA
+LIN,TG(12:0/12:0/12:0),ok,380,NA
+LIN,TG(12:0/12:0/14:0),ok,380,NA
+LIN,TG(12:0/12:0/18:1),ok,380,NA
+LIN,TG(12:0/14:0/16:0),ok,380,NA
+LIN,TG(12:0/16:0/18:3),ok,380,NA
+LIN,TG(12:0/18:2/18:3),ok,380,NA
+LIN,TG(14:0/14:0/16:0),ok,380,NA
+LIN,TG(14:0/14:0/16:1),ok,380,NA
+LIN,TG(14:0/16:0/16:0),ok,380,NA
+LIN,TG(14:0/18:2/18:3),ok,380,NA
+LIN,TG(14:0/18:3/18:3),ok,380,NA
+LIN,TG(16:0/16:0/16:0),ok,380,NA
+LIN,TG(16:0/16:0/18:1),ok,380,NA
+LIN,TG(16:0/16:0/18:2),ok,380,NA
+LIN,TG(16:0/18:1/18:1),ok,380,NA
+LIN,TG(16:0/18:1/18:2),ok,380,NA
+LIN,TG(16:0/18:1/18:3),ok,380,NA
+LIN,TG(16:0/18:1/22:0),ok,380,NA
+LIN,TG(16:0/18:2/18:3),ok,380,NA
+LIN,TG(16:0/18:3/18:3),ok,380,NA
+LIN,TG(18:0/18:1/22:0),ok,380,NA
+LIN,TG(18:0/18:2/18:2),ok,380,NA
+LIN,TG(18:0/18:2/22:0),ok,380,NA
+LIN,TG(18:1/18:1/18:1),ok,380,NA
+LIN,TG(18:1/18:1/18:2),ok,380,NA
+LIN,TG(18:1/18:2/18:2),ok,380,NA
+LIN,TG(18:1/18:2/22:0),ok,380,NA
+LIN,TG(18:1/18:3/22:0),ok,380,NA
+LIN,TG(18:1/20:3/22:0),ok,380,NA
+LIN,TG(18:2/18:2/18:4),ok,380,NA
+LIN,TG(18:2/18:3/20:1),ok,380,NA
+LIN,TG(18:2/18:3/20:3),ok,380,NA
+LIN,TG(18:2/20:2/22:2),ok,380,NA
+LIN,TG(18:2/20:3/21:0),ok,380,NA
+LIN,TG(18:2/20:3/22:0),ok,380,NA
+LIN,TG(18:3/18:3/18:3),ok,380,NA
+LIN,TG(18:3/18:3/20:3),ok,380,NA
+LIN,TG(8:0/10:0/10:0),ok,380,NA
+LIN,Ubidecarenone,ok,380,NA
+LIN,Vitamin K1,ok,380,NA
+LIN,Zeaxanthin,ok,380,NA
+LIN,beta-Carotene,ok,380,NA
+LIN,gibberellic acid,ok,380,NA
+LIN,sebacic acid,ok,380,NA

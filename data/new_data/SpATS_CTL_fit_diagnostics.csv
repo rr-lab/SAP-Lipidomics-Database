@@ -1,0 +1,176 @@
+condition,Compound_Name,status,n_plots,message
+CTL,"(2E,4E,12Z)-N-(2-methylpropyl)octadeca-2,4,12-trienamide",ok,425,NA
+CTL,"(4R)-4-((5S,7R,9S,10S,13R,14S,17R)-7-hydroxy-10,13-dimethyl-3-oxohexadecahydro-1H-cyclopenta[a]phenanthren-17-yl)pentanoic acid",ok,425,NA
+CTL,.alpha.-Ionone,ok,425,NA
+CTL,.beta.-Amyrin,ok,425,NA
+CTL,.beta.-Amyrin acetate,ok,425,NA
+CTL,.beta.-Cryptoxanthin,ok,425,NA
+CTL,"1H-Indole-3-carboxamide, 1-(5-fluoropentyl)-N-tricyclo[3.3.1.1(3,7)]dec-1-yl-",ok,425,NA
+CTL,"3-Cyclopentene-1-octanoic acid, 2-(3-hydroxy-1-penten-1-yl)-5-oxo-",ok,425,NA
+CTL,3-Hydroxyechinenone,ok,425,NA
+CTL,"4-amino-5-(5-hydroxy-2',6-dimethyl-5'-prop-1-en-2-ylspiro[7-oxabicyclo[4.1.0]heptane-3,1'-cyclopentane]-2-yl)oxy-5-oxopentanoic acid",ok,425,NA
+CTL,"5-Androstene-3.beta.,17.beta.-diol",ok,425,NA
+CTL,AEG(o-15:2/15:0),ok,425,NA
+CTL,AEG(o-16:3/16:0),ok,425,NA
+CTL,AEG(o-18:4/16:1),ok,425,NA
+CTL,Alloxanthin,ok,425,NA
+CTL,Antheraxanthin,ok,425,NA
+CTL,Boldenone cypionate,ok,425,NA
+CTL,Caryophyllene oxide,ok,425,NA
+CTL,Celaxanthin,ok,425,NA
+CTL,Cer(d18:2/20:1),ok,425,NA
+CTL,Chlorophyll a,ok,425,NA
+CTL,Clionasterol,ok,425,NA
+CTL,CoQ9,ok,425,NA
+CTL,Cryptoxanthin,ok,425,NA
+CTL,Cycloartenol acetate,ok,425,NA
+CTL,DAG(18:0/18:0),ok,425,NA
+CTL,DG(12:0/0:0/12:0),ok,425,NA
+CTL,DG(12:0/12:0),ok,425,NA
+CTL,DG(16:0/16:0),ok,425,NA
+CTL,DG(16:0/18:0/0:0),ok,425,NA
+CTL,DG(16:0/18:1),ok,425,NA
+CTL,DG(16:0/18:1/0:0),ok,425,NA
+CTL,DG(16:0/18:2),ok,425,NA
+CTL,DG(16:0/18:3),ok,425,NA
+CTL,DG(16:1/18:3/0:0),ok,425,NA
+CTL,DG(18:0/18:2/0:0),ok,425,NA
+CTL,DG(18:1/18:2/0:0),ok,425,NA
+CTL,DG(18:1/2:0/0:0),ok,425,NA
+CTL,DG(18:2/18:3/0:0),ok,425,NA
+CTL,DG(18:3/18:3/0:0),ok,425,NA
+CTL,DGDG(16:0/18:1),ok,425,NA
+CTL,DGDG(16:0/18:2),ok,425,NA
+CTL,DGDG(16:0/18:3),ok,425,NA
+CTL,DGDG(18:0/18:2),ok,425,NA
+CTL,DGDG(18:0/18:3),ok,425,NA
+CTL,DGDG(18:2/18:3),ok,425,NA
+CTL,DGDG(18:2/18:4),ok,425,NA
+CTL,Diadinochrome,ok,425,NA
+CTL,Dimethyldioctadecylammonium cation,ok,425,NA
+CTL,FA(18:4),ok,425,NA
+CTL,GalCer(d18:2/18:1),ok,425,NA
+CTL,GalCer(d18:2/20:1),ok,425,NA
+CTL,GalCer(d18:2/22:1),ok,425,NA
+CTL,Ginsenoside F1,ok,425,NA
+CTL,Glyceryl monolinoleate,ok,425,NA
+CTL,Iloprost,ok,425,NA
+CTL,LPC(16:0/0:0),ok,425,NA
+CTL,Lanosterol,ok,425,NA
+CTL,Lupenone,ok,425,NA
+CTL,Lupeol,ok,425,NA
+CTL,Luteolin-4'-O-glucoside,ok,425,NA
+CTL,MG(16:1),ok,425,NA
+CTL,MG(18:0),ok,425,NA
+CTL,MGDG(16:0/18:1),ok,425,NA
+CTL,MGDG(16:0/18:3),ok,425,NA
+CTL,MGDG(18:2/18:2),ok,425,NA
+CTL,MGDG(18:2/18:3),ok,425,NA
+CTL,MGDG(18:3/18:3),ok,425,NA
+CTL,Medroxyprogesterone,ok,425,NA
+CTL,N-gamma-Linolenoylethanolamine,ok,425,NA
+CTL,"NCGC00385123-01/C22H30O6/7b,9-Dihydroxy-3-(hydroxymethyl)-1,1,6,8-tetramethyl-5-oxo-1,1a,1b,4,4a,5,7a,7b,8,9-decahydro-9aH-cyclopropa[3,4]benzo[1,2-e]azulen-9a-yl acetate",ok,425,NA
+CTL,Nostoxanthin,ok,425,NA
+CTL,Oxandrolone,ok,425,NA
+CTL,PC(16:0/16:0),ok,425,NA
+CTL,PC(16:0/18:0),ok,425,NA
+CTL,PC(16:0/18:1),ok,425,NA
+CTL,PC(16:0/18:3),ok,425,NA
+CTL,PC(16:0/20:3),ok,425,NA
+CTL,PC(16:0/20:4),ok,425,NA
+CTL,PC(16:0/20:5),ok,425,NA
+CTL,PC(16:1/16:1),ok,425,NA
+CTL,PC(16:1/18:2),ok,425,NA
+CTL,PC(16:1/20:4),ok,425,NA
+CTL,PC(18:0/18:2),ok,425,NA
+CTL,PC(18:0/20:2),ok,425,NA
+CTL,PC(18:1/14:0),ok,425,NA
+CTL,PC(18:1/18:1),ok,425,NA
+CTL,PC(18:1/18:2),ok,425,NA
+CTL,PC(18:1/20:1),ok,425,NA
+CTL,PC(18:1/20:4),ok,425,NA
+CTL,PC(18:1/22:1),ok,425,NA
+CTL,PC(18:1/24:0),ok,425,NA
+CTL,PC(18:1/24:1),ok,425,NA
+CTL,PC(18:2/0:0),ok,425,NA
+CTL,PC(18:2/18:2),ok,425,NA
+CTL,PC(18:2/20:4),ok,425,NA
+CTL,PC(18:3/0:0),ok,425,NA
+CTL,PC(18:3/18:3),ok,425,NA
+CTL,PC(22:1/22:1),ok,425,NA
+CTL,PE(16:0/18:0),ok,425,NA
+CTL,PE(16:0/18:1),ok,425,NA
+CTL,PE(16:0/18:3),ok,425,NA
+CTL,PE(18:0/18:2),ok,425,NA
+CTL,PE(18:2/18:2),ok,425,NA
+CTL,PE(18:2/18:3),ok,425,NA
+CTL,PG(16:0/18:1),ok,425,NA
+CTL,PS(18:0/18:2),ok,425,NA
+CTL,PS(18:0/20:4),ok,425,NA
+CTL,Palmitoylserinol,ok,425,NA
+CTL,Pheophorbide a,ok,425,NA
+CTL,Pheophytin a,ok,425,NA
+CTL,Phytosphingosine,ok,425,NA
+CTL,Protopanaxadiol,ok,425,NA
+CTL,Radiclonic acid,ok,425,NA
+CTL,SM(d18:1/17:0),ok,425,NA
+CTL,SQDG(16:0/14:0),ok,425,NA
+CTL,SQDG(16:0/16:0),ok,425,NA
+CTL,SQDG(16:0/18:0),ok,425,NA
+CTL,SQDG(16:0/18:1),ok,425,NA
+CTL,SQDG(16:0/18:2),ok,425,NA
+CTL,SQDG(16:0/18:3),ok,425,NA
+CTL,SQDG(16:1/18:3),ok,425,NA
+CTL,SQDG(18:0/18:3),ok,425,NA
+CTL,SQDG(18:1/18:3),ok,425,NA
+CTL,SQDG(18:2/18:3),ok,425,NA
+CTL,SQDG(18:3/18:3),ok,425,NA
+CTL,Sitosterol,ok,425,NA
+CTL,TG(10:0/10:0/10:0),ok,425,NA
+CTL,TG(12:0/12:0/12:0),ok,425,NA
+CTL,TG(12:0/12:0/14:0),ok,425,NA
+CTL,TG(12:0/12:0/16:1),ok,425,NA
+CTL,TG(12:0/12:0/18:1),ok,425,NA
+CTL,TG(12:0/12:0/18:2),ok,425,NA
+CTL,TG(12:0/14:0/16:0),ok,425,NA
+CTL,TG(12:0/16:0/16:0),ok,425,NA
+CTL,TG(12:0/16:0/18:1),ok,425,NA
+CTL,TG(12:0/16:0/18:3),ok,425,NA
+CTL,TG(12:0/18:1/18:1),ok,425,NA
+CTL,TG(12:0/18:1/18:2),ok,425,NA
+CTL,TG(12:0/18:2/18:3),ok,425,NA
+CTL,TG(14:0/14:0/16:1),ok,425,NA
+CTL,TG(14:0/14:0/18:0),ok,425,NA
+CTL,TG(14:0/16:0/16:0),ok,425,NA
+CTL,TG(14:0/16:0/18:1),ok,425,NA
+CTL,TG(14:0/18:2/18:3),ok,425,NA
+CTL,TG(14:0/18:3/18:3),ok,425,NA
+CTL,TG(16:0/16:0/16:0),ok,425,NA
+CTL,TG(16:0/16:0/18:1),ok,425,NA
+CTL,TG(16:0/16:0/18:2),ok,425,NA
+CTL,TG(16:0/18:0/18:2),ok,425,NA
+CTL,TG(16:0/18:1/18:1),ok,425,NA
+CTL,TG(16:0/18:1/18:2),ok,425,NA
+CTL,TG(16:0/18:1/20:0),ok,425,NA
+CTL,TG(16:0/18:1/22:0),ok,425,NA
+CTL,TG(16:0/18:2/18:3),ok,425,NA
+CTL,TG(16:0/18:3/18:3),ok,425,NA
+CTL,TG(18:0/18:2/22:0),ok,425,NA
+CTL,TG(18:1/18:1/18:1),ok,425,NA
+CTL,TG(18:1/18:1/18:2),ok,425,NA
+CTL,TG(18:1/18:2/18:2),ok,425,NA
+CTL,TG(18:1/18:2/18:3),ok,425,NA
+CTL,TG(18:1/20:0/22:1),ok,425,NA
+CTL,TG(18:1/20:3/22:0),ok,425,NA
+CTL,TG(18:2/18:3/20:1),ok,425,NA
+CTL,TG(18:2/18:3/20:3),ok,425,NA
+CTL,TG(18:2/20:2/22:2),ok,425,NA
+CTL,TG(18:2/20:3/21:0),ok,425,NA
+CTL,TG(18:2/20:3/22:0),ok,425,NA
+CTL,TG(18:2/22:0/22:3),ok,425,NA
+CTL,TG(18:3/18:3/18:3),ok,425,NA
+CTL,Ubidecarenone,ok,425,NA
+CTL,Vitamin K1,ok,425,NA
+CTL,Zeaxanthin,ok,425,NA
+CTL,beta-Carotene,ok,425,NA
+CTL,gibberellic acid,ok,425,NA
