@@ -68,7 +68,6 @@
 \affil[$4$]{Carolina Seed Systems, Darlington, South Carolina}
 \affil[$5$]{Joint Genome Institute, Department of Energy, California, USA}
 
-
 \keywords{Sorghum Association Panel, Lipidomics, Genome-wide Association Studies, Triglycerides, Phospholipids, Cold stress, Nutrient stress}
 
 \runningtitle{Sorghum Lipid Database (SoLD): a database curation
@@ -81,7 +80,6 @@ for lipid information for Sorghum Association Panel} % For use in the footer
 % \runningauthor{FirstAuthorLastname and SecondAuthorLastname}
 %% last name of the first author followed by et al, if more than two authors.
 \runningauthor{Tandukar \textit{et al.}}
-
 
 %%% Abstract %%%%%%%%%%%%%%%%%%
 \begin{abstract}
@@ -128,23 +126,17 @@ Run-order quality control showed stable analytical performance (Supplementary~\r
 
 QC-based normalization improved technical reproducibility, increasing the QC-RSD under $<30\%$ from 75.7\% to 94.1\% in CTL and from 77.3\% to 89.3\% in LIN (Supplementary~\ref{fig:suppfig_s2_qc}C,D). PCA of normalized data showed tighter sample clustering than unprocessed data, while spatial correction largely removed broad row and column effects. Post-correction, lipid signal distributions remained similar across cohorts, and the adjusted trait matrix was used for all subsequent analyses.
 
-
-
 \subsection*{Genotypic lipid variation is largely independent of botanical race and population structure except for PS}
-
-We summarized lipid-trait variability by examining trait distribution across genotypes within each environment. Lipid species were combined into class totals and transformed using centered log-ratio (CLR) due to the compositional nature of the data. TIC was used for sample-wise normalization. To determine whether CTL--LIN lipid differences reflected population-wide remodeling rather than a few outlier genotypes, we assessed effect size, directional stability, and significance (defined in Methods; Supplementary~\ref{fig:supp_class_sums_top_bottom}). At the class-ratio level, the median absolute log$_{10}$ effect size was 0.4743, with 27/33 ratios showing absolute effects $\geq$0.3 and 16/33 $\geq$0.5. All 33 ratios were Benjamini-Hochberg (BH) significant ($p_{\mathrm{adj}}<0.05$) and showed perfect leave-one-out sign stability (1.0).  A total of 243 lipid species were quantified, including 152 shared, 49 CTL-specific, and 42 LIN-specific, where condition-specific denotes detection above the applied threshold in only one trial rather than confirmed absence (Supplementary~\ref{fig:suppfig_s4_counts}). Species-level CLR abundances also shifted broadly, with a median absolute CLR effect size of 0.7045. Among the 152 shared species, 90 had absolute CLR effects $\geq$0.5 and 60 had effects $\geq$1.0. Of these shared species, 150 were BH-significant, and all 152 showed jackknife stability of 1.0 (Supplementary Tables S1-S3).
-
-We next asked whether lipid traits with high genotype-level variance were conserved across environments. Monogalactosyldiacylglycerol MGDG(18:3/18:3) showed the highest genotype-level variance in both conditions based on TIC values. Seven of the ten most variable lipids were shared (Fig.~\ref{fig:fig2_genotypic_variation}A,B; Supplementary~\ref{fig:suppfig_s2_topvar}; Supplementary Table~S4), indicating a conserved subset of lipid traits with strong genotype sensitivity across environments. Within this high-variance subset, phosphatidylcholine (PC) species were the most common class (CTL: 7/10; LIN: 7/10). Furthermore, the genomic heritability was low in CTL, with only one terpenoid feature above \(h^2=0.20\) (Supplementary Table~S16). In contrast, LIN had 22 molecular features with \(h^2\geq0.20\), including TG(16:0/18:2/18:3) (\(h^2=0.522\)). These trial-specific estimates quantify genotype-associated variation within each field trial and should not be interpreted as heritability of the CTL--LIN difference, especially since \(h^2\) depends on environmental variance and the trials differed in year, planting date, and management.
 
 The SAP is structured by botanical race and geographic origin \citep{Casa2008CommunityResourcesSorghum, Boatwright2022}. We next asked whether the lipid variation reflected that structure. We tested two groupings. The first was botanical race, collapsed into six groups: the five classical races (Bicolor, Caudatum, Durra, Guinea, Kafir) plus a Mixed group containing all intermediate designations (e.g., Durra--Bicolor, Kafir--Caudatum). The second grouping was marker-based genetic cluster ($K=6$), which covered 387 CTL and 355 LIN accessions and provides a more complete genetic description of population structure. We tested 14 traits per condition, which included total lipid signal and the 13 lipid classes (Supplementary Table~S25) using Kruskal--Wallis tests with BH correction and summarized effect size as $\varepsilon^2$, the proportion of rank variance explained by the grouping.
 
-Botanical race explained little to no lipid variations (Fig.~\ref{fig:fig2_genotypic_variation}C,D). No traits were significant in either condition after BH correction (smallest $q=0.468$), and effect sizes were uniformly small ($\varepsilon^2 \le 0.033$ across all traits and conditions; Table~\ref{tab:race_structure}, Fig.~\ref{fig:fig2_genotypic_variation}C,D, per-race distributions in Supplementary~\ref{fig:S8_race_box_ctl} and~\ref{fig:S9_race_box_lin}). Marker-based genetic clusters gave the same result for 27 of 28 traits (14 traits in each trial; $q>0.21$; $\varepsilon^2<0.024$). The only exception was phosphatidylserine (PS) under LIN, where cluster membership was strongly associated with PS abundance ($q=4.23\times10^{-7}$; $\varepsilon^2=0.110$). Under CTL, this trait showed only a weak, non-significant trend ($q=0.206$).
+Botanical race explained little to no lipid variation (Fig.~\ref{fig:fig1_population_structure}A). No trait was significant in either trial after BH correction (smallest $q=0.468$), and effect sizes were uniformly small ($\varepsilon^2 \le 0.027$ across all traits and trials; Table~\ref{tab:race_structure}, per-race distributions in Supplementary~\ref{fig:S8_race_box_ctl} and~\ref{fig:S9_race_box_lin}). Marker-based genetic clusters gave the same result for 27 of the 28 tests (14 traits in each trial; $q>0.14$; $\varepsilon^2<0.023$; Fig.~\ref{fig:fig1_population_structure}B). The only exception was phosphatidylserine (PS) under LIN, where cluster membership was associated with PS abundance ($q=1.11\times10^{-6}$; $\varepsilon^2=0.104$; Fig.~\ref{fig:fig1_population_structure}D). Under CTL the same trait showed only a weak, non-significant trend ($\varepsilon^2=0.020$; $q=0.358$; Fig.~\ref{fig:fig1_population_structure}C). The absence of structure is also visible in the ordination itself. Principal component analysis of the class composition within each trial placed accessions of every race and of every genetic cluster in a single overlapping cloud, and neither grouping explained the leading axes (all $\varepsilon^2\le0.016$, no test significant; Supplementary~\ref{fig:suppfig_s3_class_pca}).
 
-Together, these analyses support three conclusions. First, CTL--LIN contrasts were not driven by a few outlier genotypes (Supplementary~\ref{fig:supp_upper_ranked}). Second, a subset of lipid traits was consistently genotype-sensitive across environments, though the genetic tractability of this variation differed sharply between trials (Supplementary Tables~S3 and~S4). Third, botanical race and genome-wide genetic clusters explained negligible lipid-class variation, so the reported lipid associations are unlikely to be simple artifacts of population stratification. The only clear population-structure effect was PS under LIN, but PS occurs at very low relative abundance, indicating redistribution within a minor phospholipid pool rather than a shift in the bulk lipidome.
+Taken together, botanical race and genome-wide genetic clusters explained negligible lipid-class variation, so the lipid associations reported below are unlikely to be simple artifacts of population stratification. The only clear population-structure effect was PS under LIN, and PS occurs at very low relative abundance, indicating redistribution within a minor phospholipid pool rather than a shift in the bulk lipidome.
 
 \begin{table}[!ht]
 \centering
-\caption{\textbf{Population structure explains little lipid-class variation.} Effect sizes ($\varepsilon^2$, proportion of rank variance explained) from Kruskal--Wallis tests of each trait against botanical race (six groups) and marker-based genetic cluster ($K=6$), computed separately within each field trial. $\varepsilon^2$ was truncated at zero. Significance is after Benjamini--Hochberg correction within condition: *** $q<0.001$; all other entries $q>0.20$.}
+\caption{\textbf{Population structure explains little lipid-class variation.} Effect sizes ($\varepsilon^2$, proportion of rank variance explained) from Kruskal--Wallis tests of each trait against botanical race (six groups) and marker-based genetic cluster ($K=6$), computed separately within each field trial. $\varepsilon^2$ was truncated at zero. Significance is after Benjamini--Hochberg correction within condition: *** $q<0.001$; all other entries $q>0.14$.}
 \label{tab:race_structure}
 \small
 \begin{tabular}{lcccc}
@@ -153,20 +145,20 @@ Together, these analyses support three conclusions. First, CTL--LIN contrasts we
 \cmidrule(lr){2-3}\cmidrule(lr){4-5}
 \textbf{Trait} & \textbf{CTL} & \textbf{LIN} & \textbf{CTL} & \textbf{LIN} \\
 \midrule
-Total lipid (log$_{10}$ TIC) & 0.000 & 0.020 & 0.000 & 0.000 \\
-MGDG & 0.000 & 0.014 & 0.000 & 0.000 \\
-PC   & 0.000 & 0.006 & 0.002 & 0.000 \\
-DG   & 0.000 & 0.003 & 0.002 & 0.007 \\
-DGDG & 0.000 & 0.014 & 0.000 & 0.000 \\
-TG   & 0.025 & 0.000 & 0.010 & 0.013 \\
-PE   & 0.020 & 0.000 & 0.007 & 0.021 \\
-SQDG & 0.000 & 0.024 & 0.000 & 0.013 \\
-MG   & 0.017 & 0.000 & 0.005 & 0.012 \\
-PG   & 0.009 & 0.033 & 0.000 & 0.004 \\
-PA   & 0.015 & 0.000 & 0.000 & 0.005 \\
-LPC  & 0.008 & 0.000 & 0.003 & 0.004 \\
-PS   & 0.000 & 0.002 & 0.024 & \textbf{0.110}*** \\
-LPE  & 0.000 & 0.000 & 0.001 & 0.000 \\
+Total lipid (log$_{10}$ TIC) & 0.000 & 0.027 & 0.000 & 0.000 \\
+MGDG & 0.000 & 0.017 & 0.000 & 0.009 \\
+PC   & 0.000 & 0.001 & 0.002 & 0.000 \\
+DG   & 0.000 & 0.012 & 0.002 & 0.013 \\
+DGDG & 0.000 & 0.005 & 0.000 & 0.008 \\
+TG   & 0.025 & 0.000 & 0.010 & 0.009 \\
+PE   & 0.020 & 0.000 & 0.007 & 0.023 \\
+SQDG & 0.000 & 0.015 & 0.000 & 0.021 \\
+MG   & 0.017 & 0.005 & 0.005 & 0.018 \\
+PG   & 0.009 & 0.013 & 0.000 & 0.008 \\
+PA   & 0.016 & 0.000 & 0.000 & 0.007 \\
+LPC  & 0.009 & 0.000 & 0.000 & 0.006 \\
+PS   & 0.000 & 0.001 & 0.020 & \textbf{0.104}*** \\
+LPE  & 0.000 & 0.000 & 0.000 & 0.000 \\
 \midrule
 \textbf{$n$ accessions} & 222 & 211 & 387 & 355 \\
 \bottomrule
@@ -175,43 +167,47 @@ LPE  & 0.000 & 0.000 & 0.001 & 0.000 \\
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=0.95\textwidth]{fig/main/Figure2_Genotypic_Variation.png}
-\caption{\textbf{Genotypic lipid variation is not explained by botanical race or
-population structure.} \textbf{(A,B)}~The ten lipid species with the highest
-variance across genotypes under CTL and LIN, coloured by lipid class. Seven
-species appear in both lists. \textbf{(C,D)}~Variance explained ($\varepsilon^2$)
-by botanical race (six groups) and by marker-based genetic cluster ($K=6$), for
-total lipid signal and the 13 lipid classes, shown separately for each trial.
-No trait is significant by race in either condition after Benjamini--Hochberg
-correction; PS under LIN is the single trait associated with genetic cluster.}
-\label{fig:fig2_genotypic_variation}
+\includegraphics[width=0.95\textwidth]{fig/main/Figure1_Population_Structure.png}
+\caption{\textbf{Lipid-class variation is largely independent of botanical race
+and of population structure, except for PS.} \textbf{(A,B)}~Variance explained
+($\varepsilon^2$) by botanical race (six groups) and by marker-based genetic
+cluster ($K=6$), for total lipid signal and the 13 lipid classes, computed
+within each field trial. Stars mark tests significant after Benjamini--Hochberg
+correction. \textbf{(C,D)}~PS abundance (\% TIC) by genetic cluster in each
+trial. Each panel keeps its own scale, since the comparison is between clusters
+within a trial. PS under LIN is the only trait of the 28 tested that is
+associated with cluster membership.}
+\label{fig:fig1_population_structure}
 \end{figure*}
 
 \subsection*{Lipidome overview for CTL and LIN SAP}
 
-Principal component analysis (PCA) was employed to visualize the lipidome structure, concentrating on major glycerolipid and glycerophospholipid pools (Supplementary~\ref{fig:suppfig_s5_pca}). However, the other free fatty acids and minor lipid classes are available in the Shiny app. TG and PC were the most diverse classes in each environment (TG: 71 in CTL, 69 in LIN; PC: 39 in CTL, 38 in LIN; Supplementary~\ref{fig:suppfig_s4_counts}). PCA showed that lipid class strongly structured lipid-species variation in both trials (Supplementary~\ref{fig:suppfig_s5_pca}). TG species formed a distinct cluster, separate from most membrane lipids in CTL and LIN, though along different axes in the two trial-specific ordinations. Galactolipids and glycerophospholipids occupied partially overlapping but class-enriched regions, supporting class-level summaries for compositional and reaction-network analyses. Because PCA was run separately for each condition, the orientations of the principal components are descriptive rather than a direct CTL–LIN trajectory.
+Principal component analysis (PCA) was employed to visualize the lipidome structure, concentrating on major glycerolipid and glycerophospholipid pools (Supplementary~\ref{fig:suppfig_s5_pca}). However, the other free fatty acids and minor lipid classes are available in the Shiny app. A total of 243 lipid species were quantified, 152 of them detected in both trials, 49 in CTL only and 42 in LIN only, where trial-specific denotes detection above the applied threshold in one trial rather than confirmed absence (Supplementary~\ref{fig:suppfig_s4_counts}). TG and PC were the most diverse classes in each environment (TG: 71 in CTL, 69 in LIN; PC: 39 in CTL, 38 in LIN; Supplementary~\ref{fig:suppfig_s4_counts}). PCA showed that lipid class strongly structured lipid-species variation in both trials (Supplementary~\ref{fig:suppfig_s5_pca}). TG species formed a distinct cluster, separate from most membrane lipids in CTL and LIN, though along different axes in the two trial-specific ordinations. Galactolipids and glycerophospholipids occupied partially overlapping but class-enriched regions, supporting class-level summaries for compositional and reaction-network analyses. Because PCA was run separately for each condition, the orientations of the principal components are descriptive rather than a direct CTL–LIN trajectory.
 
-At the class level, we summarized lipid abundance as \%TIC for each retained annotated class, reflecting the relative signal rather than the absolute concentration. The lipidome was dominated by galactolipids and phospholipids. MGDG accounted for 34.5\% of mean class-level TIC under CTL and 32.1\% under LIN, while PC remained similar between trials (25.6\% in CTL vs. 24.8\% in LIN). In contrast, TG represented a larger fraction under LIN than CTL (5.4\% vs. 2.7\%), whereas SQDG represented a smaller fraction under LIN than CTL (1.4\% vs. 2.9\%). Compositional contrast analyses confirmed these trends (Supplementary~\ref{fig:suppfig_s3_comp}) and revealed coordinated headgroup rebalancing within the phospholipid network. 
+At the class level, we summarized lipid abundance as \%TIC for each retained annotated class, reflecting the relative signal rather than the absolute concentration. The lipidome was dominated by galactolipids and phospholipids. MGDG accounted for 32.3\% of the mean annotated signal under CTL and 29.8\% under LIN, while PC was similar in the two trials (24.0\% in CTL and 23.1\% in LIN). The remaining galactolipids and the diacylglycerols followed, with DGDG at 12.0\% and 12.1\% and DG at 12.9\% and 13.8\%. TG made up a larger share under LIN than under CTL (5.0\% and 2.6\%), whereas SQDG made up a smaller share (1.3\% and 2.7\%). The 13 focal classes together account for roughly 93\% of the annotated signal in each trial, the balance being sterols, terpenoids, prenols, fatty acids and the other minor categories (Fig.~\ref{fig:fig2_class_composition}A,B; Supplementary Table~S5D). 
 
-CLR contrasts identified PS as one of the strongest positively shifted classes (Fig.~\ref{fig:fig1_lipidomics_landscape}A; Supplementary Table~S5A), and TG-referenced ALR contrasts showed PS increasing relative to multiple phospholipid pools (e.g., PC, phosphatidylethanolamine (PE), phosphatidylglycerol (PG)) despite modest absolute \%TIC shifts (Supplementary Table~S5B). PS was also the only class-level trait whose LIN values tracked genome-wide genetic clustering (Supplementary Table~S25), indicating that this redistribution is genotype-dependent rather than uniform across the panel. Additionally, lysophospholipid remodeling (LPC/LPE) was observed under LIN, indicating stress-responsive turnover \citep{Hou2016, Rawat2021} rather than uniform scaling of total lyso-lipid abundance (Supplementary Table~S1). Species counts by class and superclass are given in Supplementary Tables~S6a to~S6c.
+PS is the smallest of the focal classes in both trials, at 0.01\% and 0.04\% of the annotated signal, and it is the only class-level trait whose LIN values track genome-wide genetic clustering (Fig.~\ref{fig:fig1_population_structure}D), so variation in this minor pool is genotype-dependent rather than uniform across the panel. Within each trial the class-level abundances are strongly coupled, and the correlation structure among classes is given for CTL and LIN separately in Supplementary~\ref{fig:suppfig_s6_pcor}. The lysophospholipids LPC and LPE are likewise minor, at 0.16\% and 0.01\% under CTL and 0.15\% and 0.01\% under LIN, consistent with stress-responsive turnover of a small pool rather than uniform scaling of lyso-lipid abundance \citep{Hou2016, Rawat2021}. Species counts by class and superclass are given in Supplementary Tables~S6a to~S6c.
 
-Together, the abundance and compositional analyses nominate four principal LIN-associated remodeling signatures relative to CTL, (i) SQDG depletion, (ii) TG enrichment, (iii) PS-centered phospholipid rebalancing, and (iv) lysophospholipid remodeling reflected in the LPC/LPE balance (Supplementary~\ref{fig:supp_class_nonfocused}). The ratio, correlation, ontology, reaction-network, and GWAS analyses below further provide complementary biochemical and genetic context for these axes. 
+Together, the abundance and compositional analyses nominate four principal LIN-associated remodeling signatures relative to CTL, (i) SQDG depletion, (ii) TG enrichment, (iii) PS-centered phospholipid rebalancing, and (iv) lysophospholipid remodeling reflected in the LPC/LPE balance. The ontology, reaction-network, and GWAS analyses below further provide complementary biochemical and genetic context for these axes. 
 
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width=\textwidth]{fig/main/Figure1_Lipidomics_Landscape.png}
-\caption{\textbf{Lipidomics landscape under CTL and LIN field conditions.}
-(A) Class-level centered log-ratio (CLR) contrasts.
-(B) Weighted mean total carbon number and weighted mean double-bond count. Arrows indicate direction of change between conditions.
-(C) LION pathway enrichment analysis for lipids.}
-\label{fig:fig1_lipidomics_landscape}
+\includegraphics[width=\textwidth]{fig/main/Figure2_Class_Composition.png}
+\caption{\textbf{Lipid-class composition of the SAP leaf lipidome in each field
+trial.} Composition is \%TIC, the share of total annotated signal, taken per
+sample and then averaged. \textbf{(A)}~Every annotated superclass on a log
+scale, so categories below 1\% remain legible. \textbf{(B)}~The 13 focal lipid
+classes, stacked; the bars stop near 93\% because the remaining signal belongs
+to the minor categories in (A). \textbf{(C)}~LION ontology terms significant at
+FDR $q<0.05$, the ten strongest in each direction, sized by the number of
+annotated lipids. Unlike (A) and (B), this panel is a direct CTL--LIN contrast,
+and the two trials differ in year, field and acquisition batch.}
+\label{fig:fig2_class_composition}
 \end{figure*}
 
-LION enrichment recovered the same shift and described it biophysically (Fig.~\ref{fig:fig1_lipidomics_landscape}C) \citep{Molenaar2019}. The strongest terms in either direction were a head-group charge contrast, with LIN depleted for \textit{headgroup with positive charge / zwitter-ion} and enriched for \textit{headgroup with neutral charge}. This reflects the concurrent decline in PC and PE and rise in TG rather than a uniform change in zwitterionic lipids, since the zwitterionic lysophospholipids LPC and LPE increased under LIN. Class terms mirrored this, with LIN enriched for glycerolipid, triacylglycerol, lipid-storage and lipid-droplet terms and depleted for glycerophospholipid and membrane-component terms. Membrane-property terms indicated thicker, less laterally mobile membranes under LIN, and acyl-chain terms were consistent with the species-level contrasts.
+LION enrichment recovered the same shift and described it biophysically (Fig.~\ref{fig:fig2_class_composition}C; Supplementary Table~S5E) \citep{Molenaar2019}. The strongest terms in either direction were a head-group charge contrast, with LIN depleted for \textit{headgroup with positive charge / zwitter-ion} and enriched for \textit{headgroup with neutral charge}. This reflects the concurrent decline in PC and PE and rise in TG rather than a uniform change in zwitterionic lipids, since the zwitterionic lysophospholipids LPC and LPE increased under LIN. Class terms mirrored this, with LIN enriched for glycerolipid, triacylglycerol, lipid-storage and lipid-droplet terms and depleted for glycerophospholipid and membrane-component terms. Membrane-property terms indicated thicker, less laterally mobile membranes under LIN, and acyl-chain terms were consistent with the species-level contrasts.
 
-Furthermore, to characterize structural remodeling beyond total class abundance, we summarized each lipid class in a reduced chemical space defined by its abundance-weighted mean total carbon number and double-bond count across constituent molecular species (Fig.~\ref{fig:fig1_lipidomics_landscape}B). TG increased in carbon number under LIN conditions with slight changes in unsaturation, indicating the enrichment of longer-chain species. PE exhibited the highest increase in unsaturation. Additionally, class-level correlations in CLR space revealed shifts in lipid class relationships. Of 78 class pairs, 16 changed the sign of their correlation between trials, but only three were significant in both trials, and these were also the three largest changes in magnitude, namely PC--PS (\(\Delta r = -0.790\)), PS--TG (\(+0.691\)) and LPC--PC (\(+0.592\)) (Supplementary~\ref{fig:suppfig_s6_pcor}; Supplementary Table~S5C). With the \(\Delta r\) matrix, these patterns indicate altered PS-centered headgroup balance, TG-associated neutral-lipid balance, and LPC-linked phospholipid coordination between trials. Because PS abundance under LIN is associated with genome-wide cluster membership, the two PS-involving reversals may be reinforced by population structure in addition to within-genotype coupling. Because PS abundance under LIN is associated with genome-wide cluster membership, the two PS-involving reversals may partly reflect population structure rather than within-genotype coupling.
-
-When extending the comparison beyond the thirteen focal classes, sterols were the most strongly increased annotated category under LIN, while terpenoids, glycerophospholipids, ether lipids, glycerolipids, and fatty acids all declined modestly, and sphingolipids were essentially unchanged (Supplementary~\ref{fig:supp_class_nonfocused}A). At the level of individual features, the sterol shift was carried by \textit{$\beta$}-sitosterol, \textit{$\gamma$}-sitosterol, cycloartenol acetate and \textit{$\alpha$}-amyrin, and zeaxanthin showed the largest single decrease of any feature, with antheraxanthin and lutein moving in the opposite direction (Supplementary~\ref{fig:supp_class_nonfocused}B). Two features, phytosphingosine and SM(d18:1/17:0), were excluded from these comparisons because their between-trial differences were incompatible with their biological plausibility and are described in the methods.
+Furthermore, to characterize structural remodeling beyond total class abundance, we summarized each lipid class in a reduced chemical space defined by its abundance-weighted mean total carbon number and double-bond count across constituent molecular species, described once for each trial (Supplementary~\ref{fig:suppfig_s6_chem}; Supplementary Table~S5F). The classes separate cleanly on carbon number, with the lysophospholipids and monoacylglycerols near 17 carbons, the diacyl membrane classes clustered between 33 and 37, and TG far to the right at 50.9 carbons under CTL and 54.6 under LIN. Unsaturation orders the diacyl classes, from PG at 0.6 double bonds through PC at 2.1 to MGDG at 5.7. PE carries the largest change in unsaturation between the trials, from 2.7 to 3.4.
 
 Together, the abundance-, composition-, ontology- and chemical-space analyses support the four remodeling signatures above as a coordinated redistribution rather than independent class-level shifts.
 
@@ -224,7 +220,6 @@ Because LD assigns several genes to each association, we also counted the indepe
 In the CTL individual-lipid layer, the strongest association was \texttt{SORBI\_3001G522600} (CW-type domain-containing protein; $p = 4.50\times10^{-35}$; $r^2_{\max}=1.0$), and the most recurrent locus was \texttt{SORBI\_3006G040500} (phospholipid-transporting ATPase; 27 phenotypes; $p = 1.01\times10^{-26}$). In the CTL sum/ratio layer, the strongest association was \texttt{SORBI\_3010G136200} (SLH domain-containing protein; $p = 4.28\times10^{-23}$; $r^2_{\max}=0.91$), and the most recurrent locus was \texttt{SORBI\_3003G318650} (64 phenotypes; $p = 3.37\times10^{-12}$; $r^2_{\max}=0.90$).
 
 In the LIN individual-lipid layer, the strongest association was observed for \texttt{SORBI\_3004G130500}, an unannotated candidate gene ($p = 2.44\times10^{-73}$; $r^2_{\max}=1.0$). The most recurrent individual-lipid locus was \texttt{SORBI\_3010G064200} (1,3-beta-glucan synthase; 13 phenotypes; $p = 3.40\times10^{-16}$; $r^2_{\max}=1.0$). In the LIN sum/ratio layer, the strongest association and the most recurrent locus were both \texttt{SORBI\_3004G004800} (soluble acid invertase; 20 phenotypes; $p = 2.61\times10^{-21}$; $r^2_{\max}=0.78$).
-
 
 \begin{figure*}[!t]
 \centering
@@ -328,7 +323,7 @@ AEG         &   7 & 119 &  0 & ---  & 1 (n.s.) \\
 
 To contextualize lipid associations biochemically, we used LINEX2 \citep{Rose2023LINEX2}, which integrates curated lipid-reaction data with measured lipid abundances to identify biochemical connections among lipids and enzymes, querying RHEA-annotated reactions \citep{Morgat2016Rhea}. As no sorghum reference exists in LINEX2, we used rice. The transfer of reaction annotations from rice to sorghum is unvalidated, so the resulting network is treated as a source of testable hypotheses rather than a sorghum-specific reaction set. The resulting network (Fig.~\ref{fig:Fig4_linex_rewiring_abc}A) revealed four candidate branches linking DG/MG, TG, and lysophospholipid pools, (i) PC+DG$\leftrightarrow$LPC+TG (LCAT-like transfer), (ii) TG$\leftrightarrow$DG (PNPLA1-labelled lipase branch), (iii) PE+DG$\leftrightarrow$TG+LPE (LRO1/PDAT-like transfer), and (iv) DG+MG$\leftrightarrow$TG (PNPLA3-labelled branch). These annotation-based hypotheses do not establish \emph{in vivo} flux direction, and because CTL and LIN were sampled in different years, all LIN--CTL contrasts are genotype-matched between-trial ratios rather than causal effects of management.
 
-We converted each branch to a branch-aligned reaction-balance score per sample (Methods), where positive LIN--CTL values indicate more product-weighted and negative values more substrate-weighted balances. All four branches shifted strongly and consistently in the expected direction, positive for PNPLA3 ($+0.327$), LCAT* ($+0.238$), and LRO1 ($+0.232$), and negative for PNPLA1 ($-0.268$), with paired genotype-matched Wilcoxon BH-adjusted $p<10^{-56}$ (Fig.~\ref{fig:Fig4_linex_rewiring_abc}B). Thus, branches producing TG and their lysophospholipid coproducts shifted in the same direction, whereas the hydrolytic TG$\rightarrow$DG branch shifted oppositely, recapitulating the lipidome overview (Fig.~\ref{fig:fig1_lipidomics_landscape}) at the level of a small set of candidate reactions rather than independent class-level abundance shifts.
+We converted each branch to a branch-aligned reaction-balance score per sample (Methods), where positive LIN--CTL values indicate more product-weighted and negative values more substrate-weighted balances. All four branches shifted strongly and consistently in the expected direction, positive for PNPLA3 ($+0.327$), LCAT* ($+0.238$), and LRO1 ($+0.232$), and negative for PNPLA1 ($-0.268$), with paired genotype-matched Wilcoxon BH-adjusted $p<10^{-56}$ (Fig.~\ref{fig:Fig4_linex_rewiring_abc}B). Thus, branches producing TG and their lysophospholipid coproducts shifted in the same direction, whereas the hydrolytic TG$\rightarrow$DG branch shifted oppositely, recapitulating the lipidome overview (Fig.~\ref{fig:fig2_class_composition}) at the level of a small set of candidate reactions rather than independent class-level abundance shifts.
 
 \begin{figure*}[!ht]
 \centering
@@ -341,7 +336,6 @@ We converted each branch to a branch-aligned reaction-balance score per sample (
 \end{figure*}
 
 Cross-referencing branches with the LIN GWAS candidate tables supported three of four (Supplementary Tables~S9 and~S10). Branch (i) was supported by \texttt{SORBI\_3006G214500}, a lecithin--cholesterol acyltransferase-like gene associated with \mbox{DG(18:2\_18:3)} and \mbox{MG(18:2)}, and by \texttt{SORBI\_3004G341900}, a phospholipid--sterol O-acyltransferase from the same superfamily. Branch (ii) was supported by \texttt{SORBI\_3001G041900}, a PNPLA-domain lipase in the SDP1 clade detected in both individual-lipid and class-sum/ratio GWAS. Branch (iv) was supported by \texttt{SORBI\_3010G170000} (\textit{DGAT1}), associated with six triacylglycerol phenotypes. No candidate was found for branch (iii) (Supplementary Table~S14).
-
 
 \subsection*{An interactive SoLD Shiny application enables exploration of lipid and GWAS results}
 
@@ -363,7 +357,6 @@ Lipidome differences between CTL and LIN were population-wide rather than driven
 
 Two caveats apply. First, gene functions are assigned by orthology to characterized genes in other species, so they indicate what the gene family can do, not necessarily what the sorghum locus does in the field. Second, because candidate genes were drawn from LD blocks, most associated regions contain several genes, so an enrichment supported by fewer than three independent intervals likely reflects a single locus rather than a pathway.
 
-
 \subsection*{Integrated interpretation of lipidome remodeling across contrasting field trials}
 
 The main LIN lipidome change is a decline in SQDG accompanied by a rise in TG. The SQDG change is most informative because it opposes the canonical phosphate-starvation response, where phospholipids are replaced by non-phosphorus glycolipids and SQDG and DGDG typically increase \citep{Essigmann1998, Hartel2000, Jouhet2004, KellyDormann2002, Pfaff2020}. Reduced SQDG, therefore, does not indicate simple phosphate starvation and more likely reflects a mix of nutrient limitation, temperature, developmental state, and plastid-membrane turnover that this design cannot resolve. The candidate explains some of these changes. The LIN set included two SQD2-like sulfoquinovosyltransferase loci (\texttt{SORBI\_3003G076900}, \texttt{SORBI\_3002G000600}) annotated for sulfolipid biosynthesis. Both were identified via fatty-acid rather than SQDG phenotypes, so they are testable candidates for the sulfolipid component, not demonstrated effectors of SQDG abundance.
@@ -374,7 +367,6 @@ A second change concerns phospholipid headgroup balance and lysophospholipid tur
 
 The LIN lipidome is best understood as a coordinated redistribution among plastid, phospholipid, lysophospholipid, and neutral-storage pools, consistently supported by composition, ratios, correlations, ontology enrichment, reaction balances, and GWAS. However, the experimental design limits inference, and targeted biochemical validation is needed to test the effects of nutrients, temperature, and developmental timing of the candidate genes.
 
-
 \subsection*{Under CTL, lipid variation tracks membrane organization and amino-acid metabolism}
 
 The CTL candidate sets link lipid composition to cellular processes beyond biosynthesis. The genes listed below were selected for recurring across phenotypes, belonging to an enriched category, or having a direct lipid-related annotation.
@@ -383,13 +375,11 @@ The clearest link to membrane lipid biology is \texttt{SORBI\_3006G040500}, a ph
 
 Enrichment of the \textit{L-tyrosine catabolic process} links lipid variation to primary metabolism and involves four genes on three chromosomes. Three encode class I/II aminotransferases, and the fourth, \texttt{SORBI\_3002G104200}, encodes 4-hydroxyphenylpyruvate dioxygenase, which acts immediately downstream of tyrosine aminotransferase. Identifying two consecutive pathway steps from unlinked loci is the strongest aspect of this result. The aminotransferases are less straightforward. Two adjacent genes on chromosome~2 are assigned to the nicotianamine aminotransferase subfamily, which in grasses supplies mugineic-acid phytosiderophores for Fe uptake. In rice, OsNAAT1 has NAAT activity, is induced by Fe deficiency, and is required for phytosiderophore-mediated Fe uptake, with close homologs in maize and sorghum \citep{Inoue2008NAAT}. The third gene, \texttt{SORBI\_3005G152200} on chromosome~5, is assigned to the tyrosine aminotransferase subfamily and is not ambiguous. Thus the ambiguity lies in annotation of one locus, not in our interpretation, as reflected by molecular-function enrichment for both \textit{L-tyrosine-2-oxoglutarate transaminase activity} and \textit{nicotianamine aminotransferase activity} for the same three genes. Broader \textit{transaminase activity} and \textit{pyridoxal phosphate binding} enrichments add further unlinked loci, indicating aminotransferase involvement beyond the chromosome-2 region carrying the tyrosine-specific term.
 
-Two observations support the degradative tyrosine pathway. First, every phenotype at the lead locus affected triacylglycerol species. Second, although tyrosine aminotransferase channels 4-hydroxyphenylpyruvate into homogentisate-derived prenyllipid synthesis, $\alpha$-tocopherol was measured in SoLD and did not map to this locus, arguing against a tocopherol-biosynthetic cause. Total $\alpha$-tocopherol does differ between the trials (Supplementary~\ref{fig:supp_class_nonfocused}B), but that is a trial-level abundance difference and not evidence that this CTL locus controls it. Homogentisate is also the entry to the degradative route ending in fumarate and acetoacetate, so flux through these steps feeds acetyl-CoA rather than prenyllipid head groups \citep{Schenck2018Tyrosine}. Arabidopsis data agree: \textit{tat1} mutants accumulate tyrosine, lose tocopherols, show reduced flux from tyrosine to fumarate and other TCA intermediates, and are more sensitive to darkness and sucrose depletion, identifying TAT1 as the main tyrosine degradation route \textit{in planta} under carbohydrate limitation \citep{Wang2019TAT}. Thus, a link via amino acid catabolism and carbon partitioning into storage lipid is the most parsimonious explanation, although functional characterization of the sorghum proteins is needed to confirm this.
+Two observations support the degradative tyrosine pathway. First, every phenotype at the lead locus affected triacylglycerol species. Second, although tyrosine aminotransferase channels 4-hydroxyphenylpyruvate into homogentisate-derived prenyllipid synthesis, $\alpha$-tocopherol was measured in SoLD and did not map to this locus, arguing against a tocopherol-biosynthetic cause. Homogentisate is also the entry to the degradative route ending in fumarate and acetoacetate, so flux through these steps feeds acetyl-CoA rather than prenyllipid head groups \citep{Schenck2018Tyrosine}. Arabidopsis data agree: \textit{tat1} mutants accumulate tyrosine, lose tocopherols, show reduced flux from tyrosine to fumarate and other TCA intermediates, and are more sensitive to darkness and sucrose depletion, identifying TAT1 as the main tyrosine degradation route \textit{in planta} under carbohydrate limitation \citep{Wang2019TAT}. Thus, a link via amino acid catabolism and carbon partitioning into storage lipid is the most parsimonious explanation, although functional characterization of the sorghum proteins is needed to confirm this.
 
 The remaining CTL enrichments are weaker. \textit{Positive regulation of cytoplasmic translation} is not interpreted, because it failed the LD-aware null in the biological-process analysis and its molecular-function counterparts failed outright, with genes dominated by repeat-associated domains in gene-dense regions of chromosome~10. \textit{DNA replication initiation}, enriched among class-level candidates, includes the replication licensing factor MCM2, whose loss is embryonic-lethal in Arabidopsis and whose overexpression disrupts the root meristem \citep{Ni2009MCM2}. This likely reflects a link between proliferative state and lipid-class composition, since changes in cell division alter membrane demand and shift several classes together, rather than a direct link to lipid metabolism. Finally, the PA-associated oxidative-stress terms all reduce to a single class III peroxidase cluster, described six ways across the two ontologies. Suppression of the related Arabidopsis peroxidase AtPrx52 alters lignin content and redirects phenylpropanoid metabolism \citep{FernandezPerez2015Prx52}, showing that one plant peroxidase can affect both oxidative chemistry and carbon allocation. Thus the result indicates that variation in PA abundance coincides with peroxide-related processes at that locus, not a PA–peroxidase signalling mechanism.
 
 Together, the CTL associations highlight membrane organization and amino-acid metabolism as the main interpretable signals, with growth state and redox processes as weaker, indirect contributors. Natural lipid variation in the panel seems to result from combined effects of membrane biology, metabolic state and growth, rather than a single controlling pathway.
-
-
 
 \subsection*{Under LIN, candidates implicate nitrate transport, phosphate signaling and plastid sulfur supply}
 
@@ -402,8 +392,6 @@ Phosphorus and sulfur also enter via two SQDG-associated loci. \texttt{SORBI\_30
 The purine-permease candidate \texttt{SORBI\_3006G195000} directly matches enriched purine-transport categories, and in rice the PUP11 permease influences seed setting and development via cytokinin distribution and starch biosynthesis \citep{Rong2024PUP11}. These categories are not independent evidence for a transport program, because they and the nitrate terms each reduce to a single tandem array, one locus recovered twenty-five times across the two ontologies. The broader signal is still distributed, since transmembrane transporter activity was enriched among LIN FA and SQDG candidates across many unlinked intervals, encompassing the nitrate, purine, and sulfate loci. Thus, transport function under LIN is supported at the general category level even though each substrate-specific term collapses to one array.
 
 Two further transport candidates were recovered based on recurrence and annotation alone and did not contribute significantly to either ontology. \texttt{SORBI\_3003G169600}, a mitochondrial NAD$^+$ carrier related to Arabidopsis NDT1 \citep{Chaves2019NDT1}, was associated with AEG, DG, PC and TG lipid phenotypes, a range more consistent with an indirect effect via mitochondrial redox and energy balance than with any single lipid class. \texttt{SORBI\_3010G151000}, a CMP-sialic acid or nucleotide-sugar transporter \citep{Bakker2008CMPSia}, showed the broadest recurrence of any transport candidate, but because this rests on heterologous assays and a complete plant sialylation pathway remains uncertain, we interpret it as evidence for altered intracellular metabolite trafficking rather than a specific sialic-acid route.
-
-
 
 % \subsection*{Cell-wall remodeling candidates under CTL and LIN link pectin turnover, wall sensing, wall biosynthesis, and wall plasticity}
 
@@ -463,7 +451,6 @@ A second module lies outside the DG–TG branches. Among lipid-pathway terms, \t
 
 Together these loci implicate phospholipid head-group hydrolysis, DG-pool input, and both arms of DG–TG cycling, though they were detected independently rather than as a single module and each step still requires functional testing in sorghum. Additional LIN candidates share these reaction-family annotations, including two patatin-domain lipases (\texttt{SORBI\_3003G389400}, \texttt{SORBI\_3002G031800}) and a phospholipid/glycerol acyltransferase (\texttt{SORBI\_3001G026100}), but these mainly associate with fatty-acid and PC traits rather than the network’s triacylglycerol species, indicating variation within the enzyme families without pinpointing specific reactions.
 
-
 \subsection*{The genetic architecture of the sorghum leaf lipidome is strongly environment-dependent}
 
 The candidate loci above came from trials differing in nutrient supply, planting date, management and year, and their functional enrichments diverged accordingly. Direct comparison makes this divergence clear. After collapsing linkage blocks, the individual-lipid loci recovered under CTL and LIN overlap no more than expected by chance for two independent genome samples ($1.04\times$ at 250~kb), and among genes recovered in both trials only a quarter were linked to the same lipid class, so even this limited overlap is largely not trait-specific. The much stronger apparent gene-level excess before collapsing reflects mapping rather than biology, with linkage structure inflating candidate counts three- to five-fold. Such cross-study comparisons should therefore be made at the locus, not the gene, level.
@@ -471,7 +458,6 @@ The candidate loci above came from trials differing in nutrient supply, planting
 Two positive findings emerge. First, class-level composite traits replicated better than individual species, retaining significant cross-trial excess at 100 and 250~kb where individual lipids did not. Aggregating species into class totals reduces measurement noise and averages over acyl-chain heterogeneity, making composites the more suitable unit for cross-environment comparison and the level at which lipidome-wide remodelling signatures were defined. Second, the recurrent loci cluster into two chromosomal regions, one containing the CMP-sialic acid transporter \texttt{SORBI\_3010G151000}, itself among the most recurrent LIN candidates. Loci detected in both trials and across many class-level traits are the strongest starting points for validation.
 
 This pattern indicates that genetic control of leaf lipid composition in the SAP is strongly environment-dependent, matching the contrasting genomic heritabilities in the two trials. It does not mean individual associations are false, since allelic effects can be real and reproducible within a given environment yet fail to generalize beyond it. Because CTL and LIN were sampled in different years and field contexts, genotype-by-nutrient effects cannot be distinguished from genotype-by-year or genotype-by-management effects. Resolving this requires growing the same contrast in a common year under factorial nutrient treatments, so interaction terms can be estimated directly rather than inferred from non-overlapping candidate sets. Until then, the loci recurring in both trials, and the trait classes where they recur, are the most efficient targets for such an experiment.
-
 
 \section*{Conclusion}
 
@@ -587,7 +573,6 @@ For the per-class analysis, each candidate gene was assigned the lipid classes r
 
 SNPs were aligned with the \textit{Sorghum bicolor} reference genome v3.1 (BTx623). Linkage disequilibrium in the sorghum association panel extends over appreciable physical distances \citep{Boatwright2022}, so a Bonferroni-significant SNP typically tags several linked genes rather than one. Significant SNPs were therefore grouped into association regions at a linkage-disequilibrium threshold of $r^2 \geq 0.4$. This is a moderate cutoff, retaining variants that carry at least approximately 40\% of the effective sample size for tagging a causal site, and it trades the narrow regions obtained at stringent thresholds, which discard genes tagged by imperfect proxies, against the inflated gene counts obtained at permissive ones. Because candidate-gene counts are considerably more sensitive to this cutoff than interval counts are, all interval-level analyses, including GO enrichment and the cross-trial overlap, were carried out on 250~kb intervals rather than on gene identifiers. Candidate genes were defined as the annotated gene models falling within these LD-defined association regions. Functional annotations and homology were obtained from Phytozome (\url{https://phytozome.jgi.doe.gov}), SorghumBase (\url{https://sorghumbase.com}), and TAIR for corresponding \textit{Arabidopsis thaliana} orthologs. Genes with known roles in N, P, cold tolerance, or lipid metabolism were specifically noted. We aggregated the frequency of each candidate gene within all lipid GWAS findings and marked those with the highest recurrence among Bonferroni-significant associations.
 
-
 \subsubsection*{Gene Ontology Enrichment}
 GO biological-process and molecular-function terms were taken from the same PANTHER-derived annotation. The two ontologies were analyzed separately, each against a background restricted to sorghum genes carrying at least one annotation in that ontology, and $p$-values were BH-corrected within each ontology and analysis. Over-representation was tested with a right-tailed hypergeometric test, retaining terms with ≥3 candidate genes and ≥5 background genes, and BH-correcting $p$-values across all GO terms per analysis. To account for LD among candidate genes, each term was also tested against a permutation null that preserved the candidate block structure. We used 8,000 draws, which bounds the smallest attainable permutation $p$-value at $1.25\times10^{-4}$, well below the resolution needed after BH correction. The genome was divided into consecutive, non-overlapping 250~kb intervals, assigning each candidate gene to the interval containing its start. Thus, the number of intervals carrying a term reflects the number of distinct genomic regions supporting that term, not the number of gene IDs. Each permutation redrew the same number of intervals, each contributing the same number of genes, from background intervals matched on gene density. Permutation $p$-values were BH-corrected and reported as $q_{\mathrm{perm}}$.
 
@@ -616,7 +601,6 @@ We conducted a functional ontology for lipids using LION/web \citep{Molenaar2019
 
 Data processing and statistical analyses were performed in R (version 4.3.3). All the codes, figures, and pipeline are described in the GitHub repository: \url{https://github.com/rr-lab/SAP-Lipidomics-Database}.
 
-
 \section{Acknowledgments}
 The work on this paper and Nirwan Tandukar was supported by the U.S. Department of Energy, Office of Science, Biological and Environmental Research program, Early Career Award Number DE-SC0021889.
 The work (proposal:https://doi.org/10.46936/10.25585/60008134) conducted by the U.S. Department of Energy Joint Genome Institute (https://ror.org/04xm1d337), a DOE Office of Science User Facility, is supported by the Office of Science of the U.S. Department of Energy operated under Contract No. DE-AC02-05CH11231. This work was supported by the Research Capacity Fund (HATCH), project award no. 7005660, from the U.S. Department of Agriculture’s National Institute of Food and Agriculture.  
@@ -624,7 +608,6 @@ This work was supported in part by the Science and Technologies for Phosphorus S
 We thank members of the Rubén Rellán Álvarez labs for their contribution to field work and sampling that made possible the research in this manuscript.
 
 \bibliography{SoLD}
-
 
 \pagebreak
 
@@ -660,39 +643,17 @@ application.}
 
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_Lipid_Class_Sums_Top_Bottom_Genotypes.png}
-\caption[Lipid-class sums for the highest- and lowest-ranked genotypes]{\textbf{Lipid-class
-composition of the highest- and lowest-ranked accessions in each field trial.} Fitted
-lipid-class sums for the ten accessions with the largest and the ten with the smallest total
-lipid signal, shown separately for CTL and LIN and stacked by lipid class. Total signal spans
-roughly three-fold between the top and the bottom of each trial, but the relative contribution
-of each class is similar throughout, so the CTL--LIN contrast is not produced by a small number
-of extreme accessions.}
-\label{fig:supp_class_sums_top_bottom}
-\end{figure*}
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_S2_TopVariance_Lipids.png}
-\caption{\textbf{High-variance lipid species across conditions.}
-(A) Top 10 lipid species ranked by variance in CTL samples, colored by lipid class.
-(B) Top 10 lipid species ranked by variance in LIN samples.
-(C) Scatter plot comparing variance between conditions; lipids appearing in both top-10 lists are highlighted.
-(D) Distribution of lipid classes among high-variance species in each condition.}
-\label{fig:suppfig_s2_topvar}
-\end{figure*}
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_Top_Consistently_Upper_Ranked_Genotypes.png}
-\caption[Accessions consistently ranked in the upper tail]{\textbf{Accessions ranked in the
-upper tail of more than one lipid class.} Left, mean percentile of each accession within each
-lipid class, shown only for the class--accession combinations in which the accession falls in
-the upper tail of the panel; colour gives the mean percentile. Right, the number of lipid
-classes in which each accession is upper-ranked. PI534117 and PI533842 are upper-ranked in
-seven and six classes respectively, and every remaining accession in three or fewer, so no
-single accession drives the panel across lipid classes.}
-\label{fig:supp_upper_ranked}
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_S3_Class_PCA_Structure.png}
+\caption{\textbf{Lipid-class composition does not separate accessions by botanical
+race or by genetic cluster.} Principal component analysis of the 13 lipid-class
+percentages, run separately within each field trial on log$_{10}$ values scaled to
+unit variance so that no single dominant class sets the axes.
+\textbf{(A,B)}~Accessions coloured by botanical race in CTL and LIN.
+\textbf{(C,D)}~The same two ordinations coloured by marker-based genetic cluster
+($K=6$). Each panel gives the variance in PC1 and PC2 explained by that grouping
+($\varepsilon^2$, Kruskal--Wallis). No grouping explains either leading axis in
+either trial.}
+\label{fig:suppfig_s3_class_pca}
 \end{figure*}
 
 \begin{figure*}[!ht]
@@ -707,6 +668,18 @@ single accession drives the panel across lipid classes.}
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S9_Race_Boxplots_LIN.png}
 \caption{\textbf{Lipid class composition by botanical race under LIN.} As in Supplementary~\ref{fig:S8_race_box_ctl}, for the low-input trial.}
 \label{fig:S9_race_box_lin}
+\end{figure*}
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=0.9\textwidth]{fig/supp/SuppFig_S6_Chemical_Space.png}
+\caption{\textbf{Lipid classes in a reduced chemical space, described once per
+trial.} Each point is one lipid class, placed at its abundance-weighted mean
+total carbon number and its abundance-weighted mean double-bond count across the
+species it contains, with the weights taken from the \%TIC composition. The two
+trials are drawn as separate panels and no difference between them is computed,
+so nothing here is a CTL--LIN contrast.}
+\label{fig:suppfig_s6_chem}
 \end{figure*}
 
 \begin{figure*}[!ht]
@@ -730,39 +703,13 @@ single accession drives the panel across lipid classes.}
 
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_S3_Compositional_Contrasts.png}
-\caption{\textbf{Compositional analysis of lipid classes.}
-(A) Stacked bar plot showing mean percent TIC contribution of each lipid class in CTL and LIN conditions.
-(B) Additive log-ratio (ALR) contrast between conditions using TG as the reference class, with 95\% bootstrap confidence intervals.}
-\label{fig:suppfig_s3_comp}
-\end{figure*}
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_S8_NonFocused_Lipid_Class_Context.png}
-\caption[Lipid categories and features outside the main class analysis]{\textbf{Global CLR
-contrasts for lipid categories and individual features not covered by the main class analysis.}
-\textbf{(A)}~Centered log-ratio contrast (LIN minus CTL) for each annotated lipid category; bars
-give the mean and error bars the bootstrap 95\% interval. Sterols increase most under LIN, while
-terpenoids, glycerophospholipids, ether lipids, glycerolipids and fatty acids decrease and
-sphingolipids are essentially unchanged. \textbf{(B)}~The twenty individual features with the
-largest global CLR contrast, coloured by annotated category. Zeaxanthin shows the largest single
-decrease while antheraxanthin and lutein increase, and the sterol signal in (A) resolves into
-\textit{$\beta$}- and \textit{$\gamma$}-sitosterol, cycloartenol acetate and
-\textit{$\alpha$}-amyrin. AEG(o-15:2/15:0), the trait carrying the sphingolipid candidate module,
-is the third largest shift overall and moves opposite in sign to every other ether-linked species.
-Phytosphingosine and SM(d18:1/17:0) were excluded before this analysis as described in the
-methods.}
-\label{fig:supp_class_nonfocused}
-\end{figure*}
-
-\begin{figure*}[!ht]
-\centering
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S6_CLR_Correlations.png}
-\caption{\textbf{Correlation analysis of lipid class abundances.}
-(A) CTL and (B) LIN Pearson correlation matrices computed on class-level CLR abundances.
-(C) $\Delta$ correlation map ($r_{\mathrm{LIN}}-r_{\mathrm{CTL}}$), where warm colors indicate strengthened positive coupling in LIN and cool colors indicate weakened or more negative coupling.
-Lower triangle shows correlation coefficients; upper triangle shows significance levels (*$p<0.05$, **$p<0.01$, ***$p<0.001$). Pink boxes indicate class pairs with sign reversal between conditions that are significant in both environments.}
+\caption{\textbf{Correlation structure among lipid classes within each field
+trial.} Pearson correlation matrices computed on class-level centered log-ratio
+abundances for \textbf{(A)}~CTL and \textbf{(B)}~LIN. The lower triangle gives
+the correlation coefficient and the upper triangle its significance
+(*$p<0.05$, **$p<0.01$, ***$p<0.001$). Each matrix is computed within one trial
+and the two are not differenced.}
 \label{fig:suppfig_s6_pcor}
 \end{figure*}
 

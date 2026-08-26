@@ -1,0 +1,3 @@
+condition,serrf_normalized_features,library_annotated_features,retained_non_other_features,retained_reaggregated_lipids,excluded_no_library_annotation,excluded_unclassified_annotation,excluded_other_compound
+CTL,3244,448,262,175,2796,186,0
+LIN,3328,471,272,166,2857,199,0
