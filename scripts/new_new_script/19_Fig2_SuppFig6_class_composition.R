@@ -13,6 +13,11 @@
 # B use the same denominator (all annotated features), which is why the 13
 # classes in B stop near 93% rather than reaching 100%.
 #
+# plot_theme is used unmodified except where its inside-panel legend would land
+# on the data. Panel A moves the legend to the empty bottom-right corner, and
+# panels B and C put theirs outside on the right because a 13-row class table
+# and a size key do not fit inside a panel.
+#
 # Panel C is the one CTL-LIN contrast in this figure and it is labelled as such.
 # The chemical-space panels are deliberately drawn without arrows between the
 # trials: each point describes one class in one trial and nothing is subtracted.
@@ -74,11 +79,11 @@ supers <- comp %>%
 
 pA <- ggplot(supers, aes(pct, SuperClass)) +
   geom_line(aes(group = SuperClass), colour = "grey65", linewidth = .5) +
-  geom_point(aes(fill = Condition), shape = 21, size = 3.4,
-             colour = "black", stroke = .4) +
+  geom_point(aes(fill = Condition), shape = 21, size = 4.5,
+             colour = "black", stroke = .5) +
   geom_text(aes(label = ifelse(pct >= 0.01, sprintf("%.2f", pct), "<0.01"),
                 vjust = ifelse(Condition == "CTL", -1.25, 2.15)),
-            size = 2.5, colour = "grey25") +
+            size = 4.2, colour = "grey25") +
   scale_fill_manual(values = condition_colors) +
   scale_x_log10(breaks = c(0.001, 0.1, 10), labels = c("0.001", "0.1", "10"),
                 expand = expansion(mult = c(.12, .12))) +
@@ -86,10 +91,9 @@ pA <- ggplot(supers, aes(pct, SuperClass)) +
                       short = unit(.05, "cm"), mid = unit(.1, "cm"), long = unit(.15, "cm")) +
   coord_cartesian(clip = "off") +
   labs(x = "Mean %TIC (log scale)", y = NULL) +
-  plot_theme + theme(legend.position = "right",
-                     panel.grid.major.y = element_line(colour = "grey92"),
-                     panel.grid.major.x = element_line(colour = "grey92"),
-                     plot.margin = margin(6, 10, 14, 6))
+  plot_theme + theme(plot.margin = margin(15, 15, 26, 15),
+                     legend.position = c(0.98, 0.04),
+                     legend.justification = c("right", "bottom"))
 
 # ---- B: the 13 focal classes -------------------------------------------------
 zoom <- comp %>%
@@ -107,18 +111,18 @@ zoom_labels <- setNames(zoom_lab$lab, as.character(zoom_lab$FocusClass))
 pB <- ggplot(zoom, aes(Condition, pct, fill = FocusClass)) +
   geom_col(width = .62, colour = "black", linewidth = .25) +
   geom_text(data = subset(zoom, pct >= 2.5), aes(label = sprintf("%.1f", pct)),
-            position = position_stack(vjust = .5), size = 3, colour = "white") +
+            position = position_stack(vjust = .5), size = 4.8, colour = "white") +
   scale_fill_manual(values = class_colors, labels = zoom_labels,
                     name = sprintf("%-5s %5s %5s", "", "CTL", "LIN")) +
   scale_y_continuous(expand = expansion(mult = c(0, .03))) +
   guides(fill = guide_legend(ncol = 1)) +
   labs(x = NULL, y = "Mean %TIC") +
   plot_theme +
-  theme(legend.position    = "right",
-        legend.title       = element_text(family = "mono", size = 9, face = "bold"),
-        legend.text        = element_text(family = "mono", size = 8.5),
-        legend.key.height  = unit(12, "pt"),
-        panel.grid.major.x = element_blank())
+  theme(legend.position   = "right",
+        legend.background = element_blank(),
+        legend.title      = element_text(family = "mono", size = 14, face = "bold"),
+        legend.text       = element_text(family = "mono", size = 13),
+        legend.key.height = unit(20, "pt"))
 
 # ---- C: LION enrichment ------------------------------------------------------
 # LION compares the two trials directly, so DOWN means depleted in LIN relative
@@ -143,24 +147,23 @@ pC <- ggplot(lion_top, aes(logQ, Description)) +
   geom_segment(aes(x = 0, xend = logQ, yend = Description),
                colour = "grey80", linewidth = .4) +
   geom_point(aes(size = Annotated, fill = Direction), shape = 21,
-             colour = "black", stroke = .35) +
+             colour = "black", stroke = .45) +
   scale_fill_manual(values = c("Higher in LIN" = "#FDE725FF", "Lower in LIN" = "#440154FF")) +
-  scale_size_continuous(name = "Annotated lipids", range = c(2, 7)) +
+  scale_size_continuous(name = "Annotated lipids", range = c(3, 10)) +
   facet_grid(Direction ~ ., scales = "free_y", space = "free_y") +
   labs(x = expression(bold(-log[10]~(FDR~italic(q)))), y = NULL) +
   guides(fill = "none") +
   plot_theme +
-  theme(legend.position    = "right",
-        legend.title       = element_text(size = 9, face = "bold"),
-        axis.text.y        = element_text(size = 8),
-        strip.text.y       = element_text(face = "bold", size = 9),
-        panel.grid.major.y = element_line(colour = "grey94"),
-        panel.grid.major.x = element_line(colour = "grey92"))
+  theme(legend.position   = "right",
+        legend.background = element_blank(),
+        legend.title      = element_text(size = 14, face = "bold"),
+        axis.text.y       = element_text(size = 14),
+        strip.text.y      = element_text(face = "bold", size = 15))
 
 fig2 <- ((pA | pB) + plot_layout(widths = c(1.15, 1))) / pC +
   plot_layout(heights = c(1, 1.15)) +
-  plot_annotation(tag_levels = "A")
-save_fig(fig2, "Figure2_Class_Composition.png", width = 15, height = 13)
+  plot_annotation(tag_levels = "A", theme = TAG_THEME)
+save_fig(fig2, "Figure2_Class_Composition.png", width = 19, height = 17)
 
 # ---- composition table -------------------------------------------------------
 class_tab <- comp %>% group_by(Condition, FocusClass) %>%
@@ -195,18 +198,17 @@ chem <- comp %>%
 save_table(chem, "SuppTable_S5F_Chemical_Space.csv")
 
 figs6 <- ggplot(chem, aes(WeightedC, WeightedDB, fill = FocusClass)) +
-  geom_point(shape = 21, size = 4, colour = "black", stroke = .4, alpha = .95) +
-  ggrepel::geom_text_repel(aes(label = FocusClass), size = 2.9, colour = "grey20",
+  geom_point(shape = 21, size = 5.5, colour = "black", stroke = .5, alpha = .95) +
+  ggrepel::geom_text_repel(aes(label = FocusClass), size = 4.8, colour = "grey20",
                            min.segment.length = 0, segment.colour = "grey70",
                            max.overlaps = 30, seed = 1) +
   scale_fill_manual(values = class_colors, guide = "none") +
   facet_wrap(~ Condition, nrow = 1) +
   labs(x = "Abundance-weighted mean total carbons",
        y = "Abundance-weighted mean double bonds") +
-  plot_theme + theme(panel.grid.major.x = element_line(colour = "grey92"),
-                     strip.text = element_text(face = "bold", size = 11))
+  plot_theme + theme(strip.text = element_text(face = "bold", size = 16))
 
-save_fig(figs6, "SuppFig_S6_Chemical_Space.png", width = 11, height = 5.5, subdir = "supp")
+save_fig(figs6, "SuppFig_S6_Chemical_Space.png", width = 15, height = 7.5, subdir = "supp")
 
 # ---- console summary ---------------------------------------------------------
 cat("\n-- lipid classes, mean %TIC --\n")

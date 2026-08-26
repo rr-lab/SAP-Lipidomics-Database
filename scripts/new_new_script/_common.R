@@ -38,17 +38,51 @@ class_colors <- c(PC = "#00441B", PA = "#1B7837", PE = "#41AB5D", LPC = "#66C2A4
 marker_col <- "#D55E00"
 bonf_col   <- "#B2182B"
 
-# ---- theme -------------------------------------------------------------------
-# No titles or subtitles anywhere. Panel identity comes from the tag letter and
-# the caption, which is how journals expect it.
-plot_theme <- theme_minimal(base_size = 13) +
-  theme(axis.text        = element_text(colour = "black", size = 9),
-        axis.title       = element_text(face = "bold", size = 11),
-        axis.line        = element_line(colour = "black", linewidth = .5),
-        panel.grid.minor = element_blank(),
-        panel.grid.major.x = element_blank(),
-        legend.title     = element_blank(),
-        plot.tag         = element_text(face = "bold", size = 16))
+# ---- theme ---------------------------------------------------------------
+# plot_theme, exactly as Nirwan defines it. Do not edit this block. Anything a
+# figure needs to change is overridden in that figure's own script and listed
+# in its header, so this stays the single source of truth.
+plot_theme <- theme_minimal(base_size = 24) +
+  theme(
+    plot.title     = element_text(
+      size   = 14,
+      face   = "bold",
+      hjust  = 0.5,
+      margin = margin(b = 10)
+    ),
+    axis.title.x   = element_text(
+      size = 16,      # X-axis title size
+      face = "bold"
+    ),
+    axis.title.y   = element_text(
+      size = 16,      # Y-axis title size
+      face = "bold"
+    ),
+    axis.text.x    = element_text(
+      size = 16,      # X-axis tick label size
+      color = "black"
+    ),
+    axis.text.y    = element_text(
+      size = 16,      # Y-axis tick label size
+      color = "black"
+    ),
+    axis.line      = element_line(color = "black"),
+    panel.grid     = element_blank(),
+
+    legend.position      = c(0.95, 0.95),
+    legend.justification = c("right","top"),
+    legend.background    = element_rect(fill="white", color="grey70", size=0.4),
+    legend.direction     = "vertical",
+    legend.spacing.y     = unit(0.2,"cm"),
+    legend.title         = element_blank(),
+    legend.text          = element_text(size=16),
+
+    plot.margin    = margin(15, 15, 15, 15)
+  )
+
+# Panel letters are patchwork tags, since the paper puts no titles inside
+# panels. Styled per figure via plot_annotation(), never by editing plot_theme.
+TAG_THEME <- theme(plot.tag = element_text(face = "bold", size = 20))
 
 # ---- helpers -----------------------------------------------------------------
 read_trial <- function(path) {

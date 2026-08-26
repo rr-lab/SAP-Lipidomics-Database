@@ -11,6 +11,11 @@
 # Everything here is computed WITHIN a trial. There is no CTL-LIN contrast and
 # no compositional (CLR/ALR) transform anywhere in this script.
 #
+# plot_theme is used unmodified. The only deviations, both to stop a legend
+# landing on top of the data, are that the repeated legend is switched off in
+# the second panel of each pair, and that the PCA panels keep the legend in the
+# theme's own inside-panel position only where there is empty space for it.
+#
 # The published test table was produced by a Python script that read a temporary
 # join file which no longer exists, so the tests are rebuilt here from repository
 # data. Numbers printed at the end should be checked against the manuscript.
@@ -133,25 +138,24 @@ ord <- tests %>% group_by(Trait) %>%
   arrange(desc(m)) %>% pull(Trait)
 tests <- tests %>% mutate(Trait = factor(Trait, levels = rev(ord)))
 
-eps2_panel <- function(grouping) {
+eps2_panel <- function(grouping, show_legend = TRUE) {
   d <- tests %>% filter(Grouping == grouping)
   nsig <- sum(d$sig, na.rm = TRUE)
   ggplot(d, aes(Trait, epsilon2, fill = Condition)) +
     geom_col(position = position_dodge(.78), width = .7,
              colour = "black", linewidth = .25) +
     geom_text(data = subset(d, sig), aes(label = "***"),
-              position = position_dodge(.78), hjust = -.2, size = 3.2) +
+              position = position_dodge(.78), hjust = -.2, size = 5) +
     coord_flip() +
     scale_fill_manual(values = condition_colors) +
     scale_y_continuous(expand = expansion(mult = c(0, .12))) +
     annotate("text", x = 1, y = max(d$epsilon2, na.rm = TRUE),
              label = sprintf("%d of %d tests significant after BH correction",
                              nsig, nrow(d)),
-             hjust = 1, vjust = -.2, size = 2.9, fontface = "italic",
+             hjust = 1, vjust = -.2, size = 4.6, fontface = "italic",
              colour = "grey25") +
     labs(x = NULL, y = expression(bold(paste("Variance explained (", epsilon^2, ")")))) +
-    plot_theme + theme(panel.grid.major.y = element_blank(),
-                       legend.position = "right")
+    plot_theme + (if (show_legend) NULL else guides(fill = "none"))
 }
 
 # PS is the single trait associated with genetic cluster, and only under LIN.
@@ -169,17 +173,19 @@ ps_panel <- function(cond) {
     scale_fill_manual(values = k_colors, guide = "none") +
     coord_cartesian(ylim = c(ps_lim[1], ps_lim[2] * 1.18)) +
     annotate("text", x = 6.4, y = ps_lim[2] * 1.14, label = lab, parse = TRUE,
-             hjust = 1, size = 2.9, colour = "grey25") +
+             hjust = 1, size = 4.6, colour = "grey25") +
     labs(x = sprintf("Genetic cluster, %s", cond), y = "PS (% TIC)") +
-    plot_theme + theme(panel.grid.major.x = element_blank())
+    plot_theme
 }
 
-fig1 <- (eps2_panel("RaceGroup") | eps2_panel("K.Cluster")) /
+# The Condition legend sits inside panel A, where the theme puts it; panel B
+# would only repeat it.
+fig1 <- (eps2_panel("RaceGroup", TRUE) | eps2_panel("K.Cluster", FALSE)) /
         (ps_panel("CTL") | ps_panel("LIN")) +
-  plot_layout(heights = c(1.25, 1), guides = "collect") +
-  plot_annotation(tag_levels = "A") & theme(legend.position = "right")
+  plot_layout(heights = c(1.25, 1)) +
+  plot_annotation(tag_levels = "A", theme = TAG_THEME)
 
-save_fig(fig1, "Figure1_Population_Structure.png", width = 14, height = 10)
+save_fig(fig1, "Figure1_Population_Structure.png", width = 18, height = 14)
 
 # ---- Supplementary Figure S3 -------------------------------------------------
 # PCA of the 13 class percentages within each trial, on log10 values, scaled so
@@ -213,7 +219,7 @@ pc_tests <- bind_rows(lapply(names(pca), function(cond) {
 
 save_table(pc_tests, "SuppTable_S25b_Population_Structure_PC_Tests.csv")
 
-pca_panel <- function(cond, group_col, palette) {
+pca_panel <- function(cond, group_col, palette, show_legend = TRUE) {
   s <- pca[[cond]]$scores %>% filter(!is.na(.data[[group_col]]))
   ve <- pca[[cond]]$ve
   grouping_label <- if (group_col == "KCluster") "K.Cluster" else group_col
@@ -223,23 +229,24 @@ pca_panel <- function(cond, group_col, palette) {
   lab <- sprintf('list("PC1" ~ epsilon^2 == %.3f, "PC2" ~ epsilon^2 == %.3f)',
                  e$epsilon2[e$Axis == "PC1"], e$epsilon2[e$Axis == "PC2"])
   ggplot(s, aes(PC1, PC2, colour = .data[[group_col]])) +
-    geom_point(size = 1.5, alpha = .8) +
+    geom_point(size = 2.6, alpha = .8) +
     scale_colour_manual(values = palette, drop = FALSE) +
-    annotate("text", x = max(s$PC1), y = max(s$PC2), label = lab, parse = TRUE,
-             hjust = 1, vjust = 1, size = 2.9, colour = "grey25") +
+    annotate("text", x = max(s$PC1), y = min(s$PC2), label = lab, parse = TRUE,
+             hjust = 1, vjust = 0, size = 4.6, colour = "grey25") +
     labs(x = sprintf("PC1 (%.1f%%), %s", 100 * ve[1], cond),
          y = sprintf("PC2 (%.1f%%)", 100 * ve[2])) +
-    plot_theme + theme(panel.grid.major.x = element_line(colour = "grey92")) +
-    guides(colour = guide_legend(override.aes = list(size = 3, alpha = 1)))
+    plot_theme +
+    (if (show_legend) guides(colour = guide_legend(override.aes = list(size = 4, alpha = 1)))
+     else guides(colour = "none"))
 }
 
-figs3 <- (pca_panel("CTL", "RaceGroup", race_colors) |
-          pca_panel("LIN", "RaceGroup", race_colors)) /
-         (pca_panel("CTL", "KCluster", k_colors) |
-          pca_panel("LIN", "KCluster", k_colors)) +
-  plot_annotation(tag_levels = "A")
+figs3 <- (pca_panel("CTL", "RaceGroup", race_colors, TRUE) |
+          pca_panel("LIN", "RaceGroup", race_colors, FALSE)) /
+         (pca_panel("CTL", "KCluster", k_colors, TRUE) |
+          pca_panel("LIN", "KCluster", k_colors, FALSE)) +
+  plot_annotation(tag_levels = "A", theme = TAG_THEME)
 
-save_fig(figs3, "SuppFig_S3_Class_PCA_Structure.png", width = 13, height = 10, subdir = "supp")
+save_fig(figs3, "SuppFig_S3_Class_PCA_Structure.png", width = 17, height = 14, subdir = "supp")
 
 # ---- console summary for the manuscript --------------------------------------
 cat("\n-- Kruskal-Wallis on class composition ------------------------------\n")

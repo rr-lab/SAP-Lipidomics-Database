@@ -14,6 +14,9 @@
 # PC(18:2/0:0) counts as LPC here and everywhere else in the paper rather than
 # as PC in this one figure.
 #
+# plot_theme is used unmodified except for the legend, which sits outside on the
+# right: a colour bar inside a coord_fixed correlation matrix covers cells.
+#
 # Inputs
 #   data/SPATS_fitted/non_normalized_intensities/Final_subset_{control,lowinput}_*.csv
 #
@@ -80,23 +83,24 @@ plot_cor <- function(cs) {
   ggplot(d, aes(X, Y, fill = R)) +
     geom_tile(colour = "white", linewidth = .45) +
     geom_tile(data = filter(d, diag), fill = "black", colour = "white", linewidth = .45) +
-    geom_text(aes(label = label, colour = ifelse(diag, "white", "black")), size = 2.7) +
+    geom_text(aes(label = label, colour = ifelse(diag, "white", "black")), size = 4.1) +
     scale_colour_identity() +
     scale_fill_gradient2(low = "#0072B2", mid = "white", high = "#D55E00",
                          midpoint = 0, limits = c(-1, 1), name = "CLR r") +
     coord_fixed() + labs(x = NULL, y = NULL) +
     plot_theme +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1, colour = "black", size = 9),
-          axis.text.y = element_text(colour = "black", size = 9),
-          panel.grid = element_blank(),
-          legend.title = element_text(size = 9, face = "bold"),
+    theme(axis.text.x  = element_text(angle = 45, hjust = 1, colour = "black", size = 14),
+          axis.text.y  = element_text(colour = "black", size = 14),
+          legend.title = element_text(size = 14, face = "bold"),
+          legend.background = element_blank(),
           legend.position = "right")
 }
 
 fig <- (plot_cor(ctl) | plot_cor(lin)) +
-  plot_layout(guides = "collect") + plot_annotation(tag_levels = "A")
+  plot_layout(guides = "collect") +
+  plot_annotation(tag_levels = "A", theme = TAG_THEME)
 
-save_fig(fig, "SuppFig_S6_CLR_Correlations.png", width = 13, height = 6.5, subdir = "supp")
+save_fig(fig, "SuppFig_S6_CLR_Correlations.png", width = 17, height = 8.5, subdir = "supp")
 
 # ---- console summary ---------------------------------------------------------
 up <- upper.tri(ctl$r)

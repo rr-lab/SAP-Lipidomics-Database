@@ -23,14 +23,18 @@ repo_root <- Sys.getenv("SOLD_REPO", ".")
 out_file  <- file.path(repo_root, "fig/supp/SuppFig_S2_QC_RunOrder_SERRF_PCA_SpATS.png")
 dir.create(dirname(out_file), recursive = TRUE, showWarnings = FALSE)
 
-# House styling. plot_theme comes from _common.R so this figure matches every
-# other one in the paper; only the sizes are tightened for eight panels.
+# House styling. plot_theme comes from _common.R and is used unmodified except
+# for the legend: eight panels each carrying an inside-panel legend box would
+# cover the data, so legends sit under their panel here.
 source("scripts/new_script/_common.R")
 
 theme_qc <- plot_theme + theme(
-  legend.position = "bottom", legend.text = element_text(size = 8),
-  plot.margin = margin(5, 7, 5, 7),
-  plot.tag = element_text(face = "bold", size = 14),
+  legend.position   = "bottom",
+  legend.background = element_blank(),
+  legend.direction  = "horizontal",
+  legend.text       = element_text(size = 13),
+  plot.margin       = margin(10, 12, 10, 12),
+  plot.tag          = element_text(face = "bold", size = 20),
   plot.tag.position = c(0.01, 0.99)
 )
 
@@ -61,8 +65,8 @@ create_run_order_plot <- function(raw_file, panel_title) {
   message("Panel ", panel_title, " QC TIC CV: ",
           ifelse(is.finite(qc_cv), sprintf("%.1f%%", qc_cv), "not available"))
   ggplot(dat, aes(Run, TIC, colour = Type)) +
-    geom_line(data = filter(dat, Type == "Sample"), aes(group = 1), linewidth = 0.25, alpha = 0.35) +
-    geom_point(size = 1.1, alpha = 0.8) +
+    geom_line(data = filter(dat, Type == "Sample"), aes(group = 1), linewidth = 0.3, alpha = 0.35) +
+    geom_point(size = 1.6, alpha = 0.8) +
     scale_colour_manual(values = c(Sample = "#440154", Check = "#FDE725", QC = "#E64B35", Blank = "#777777", ISTD = "#00A087")) +
     scale_y_continuous(labels = scientific) +
     labs(tag = panel_title, x = "Run order", y = "TIC") + theme_qc
@@ -124,8 +128,8 @@ create_rsd_plot <- function(path, panel_title) {
               Pct = c(mean(x$QC_none < .30, na.rm = TRUE) * 100, mean(x$QC_SERRF < .30, na.rm = TRUE) * 100))
   message("Panel ", panel_title, " QC-RSD <30%: ", sprintf("%.1f%% to %.1f%%", d$Pct[1], d$Pct[2]))
   ggplot(d, aes(Stage, RSD, fill = Stage)) +
-    geom_col(width = .62, colour = "black", linewidth = .25) +
-    geom_text(aes(label = sprintf("%.1f%%", RSD)), vjust = -.35, size = 3.1, fontface = "bold") +
+    geom_col(width = .62, colour = "black", linewidth = .35) +
+    geom_text(aes(label = sprintf("%.1f%%", RSD)), vjust = -.35, size = 4.6, fontface = "bold") +
     scale_fill_manual(values = c("Before SERRF" = "#9E9E9E", "After SERRF" = "#009E73")) +
     labs(tag = panel_title, x = NULL, y = "Median QC-RSD (%)") +
     expand_limits(y = max(d$RSD) * 1.15) + theme_qc + theme(legend.position = "none")
@@ -150,7 +154,7 @@ create_pca_plot <- function(raw_file, normalized_path, panel_title) {
   d <- tibble(Stage = rep(c("Raw", "SERRF"), each = n), Type = rep(raw_meta$Type, 2), PC1 = pca$x[, 1], PC2 = pca$x[, 2])
   message("Panel ", panel_title, " matched injections: ", n, "; matched features: ", length(ids))
   ggplot(d, aes(PC1, PC2, colour = Stage, shape = Type)) +
-    geom_point(size = 1.25, alpha = .75) +
+    geom_point(size = 1.8, alpha = .75) +
     scale_colour_manual(values = c(Raw = "#7A7A7A", SERRF = "#009E73")) +
     scale_shape_manual(values = c(Sample = 16, Check = 17, QC = 15, ISTD = 18)) +
     labs(tag = panel_title, x = sprintf("PC1 (%.1f%%)", 100 * ve[1]),
@@ -179,7 +183,8 @@ create_residual_plot <- function(condition, panel_title) {
     scale_y_reverse() + coord_fixed(ratio = .55) +
     labs(tag = panel_title, x = xlab, y = ylab, fill = "Residual") +
     theme_qc + theme(legend.position = "right",
-                     legend.title = element_text(size = 8, face = "bold"))
+                     legend.direction = "vertical",
+                     legend.title = element_text(size = 12, face = "bold"))
 }
 
 # Panel A remains sourced from the same original CTL raw-acquisition file.
@@ -193,5 +198,5 @@ p_g <- create_residual_plot("CTL", "G")
 p_h <- create_residual_plot("LIN", "H")
 
 figure <- (p_a + p_b) / (p_c + p_d) / (p_e + p_f) / (p_g + p_h) + plot_layout(heights = c(1.05, .9, 1.05, 1.05))
-ggsave(out_file, figure, width = 16, height = 20, units = "in", dpi = 300, bg = "white")
+ggsave(out_file, figure, width = 20, height = 26, units = "in", dpi = 300, bg = "white")
 message("Saved: ", out_file)
