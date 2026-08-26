@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-# Updated S1 QC figure from the rebuilt pre-SERRF, SERRF, and SpATS pipeline.
+# Updated S2 QC figure from the rebuilt pre-SERRF, SERRF, and SpATS pipeline.
 # Panels G/H use the same horizontal display convention: the longer field axis
 # is always plotted horizontally, avoiding a compressed vertical LIN map.
 
@@ -17,7 +17,7 @@ suppressPackageStartupMessages({
 
 project_root <- "/Users/nirwantandukar/Documents/Github/SoLD_paper"
 new_data_dir <- "/Users/nirwantandukar/Documents/Github/SAP-Lipidomics-Database/data/new_data"
-out_file <- file.path(project_root, "fig/supp/SuppFig_S1_QC_RunOrder_SERRF_PCA_SpATS.png")
+out_file <- file.path(project_root, "fig/supp/SuppFig_S2_QC_RunOrder_SERRF_PCA_SpATS.png")
 dir.create(dirname(out_file), recursive = TRUE, showWarnings = FALSE)
 
 # Shared project styling, with compact adjustments for the eight-panel layout.
