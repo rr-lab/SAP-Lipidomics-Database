@@ -1,0 +1,46 @@
+"Level","Group","Condition","pct_TIC"
+"Lipid class","DG","CTL",12.9403742494216
+"Lipid class","DG","LIN",13.7618376720396
+"Lipid class","DGDG","CTL",11.9510644401389
+"Lipid class","DGDG","LIN",12.0931879496054
+"Lipid class","LPC","CTL",0.157666148549021
+"Lipid class","LPC","LIN",0.153060335533574
+"Lipid class","LPE","CTL",0.00959416383719608
+"Lipid class","LPE","LIN",0.0137928159515847
+"Lipid class","MG","CTL",1.28764989284338
+"Lipid class","MG","LIN",1.04143962313958
+"Lipid class","MGDG","CTL",32.3243620394694
+"Lipid class","MGDG","LIN",29.7862994090298
+"Lipid class","Other","CTL",6.19866599076218
+"Lipid class","Other","LIN",7.14153255799302
+"Lipid class","PA","CTL",0.0166040852280924
+"Lipid class","PA","LIN",0.0253613893568237
+"Lipid class","PC","CTL",23.9577096595715
+"Lipid class","PC","LIN",23.0681176074986
+"Lipid class","PE","CTL",5.48252675475289
+"Lipid class","PE","LIN",6.15451178632011
+"Lipid class","PG","CTL",0.376367098513108
+"Lipid class","PG","LIN",0.440914251795045
+"Lipid class","PS","CTL",0.0140050174934287
+"Lipid class","PS","LIN",0.0445293523498758
+"Lipid class","SQDG","CTL",2.72118808684048
+"Lipid class","SQDG","LIN",1.26423142338123
+"Lipid class","TG","CTL",2.56222237257876
+"Lipid class","TG","LIN",5.01118382600572
+"Superclass","Betaine lipid","LIN",0.000601935846219395
+"Superclass","Ether lipid","CTL",0.992045031522358
+"Superclass","Ether lipid","LIN",0.944373324954116
+"Superclass","Fatty acid","CTL",0.653234419511386
+"Superclass","Fatty acid","LIN",0.416601980441475
+"Superclass","Glycerolipid","CTL",63.8293368666504
+"Superclass","Glycerolipid","LIN",63.056512748251
+"Superclass","Glycerophospholipid","CTL",30.0165393114267
+"Superclass","Glycerophospholipid","LIN",30.4110120830092
+"Superclass","Prenol","CTL",0.136772163354774
+"Superclass","Prenol","LIN",0.191568540243488
+"Superclass","Sphingolipid","CTL",0.133024749809889
+"Superclass","Sphingolipid","LIN",0.160393472021347
+"Superclass","Sterol","CTL",0.0416459285796956
+"Superclass","Sterol","LIN",0.214614939847348
+"Superclass","Terpenoid","CTL",4.19740152914486
+"Superclass","Terpenoid","LIN",4.60432097538581

@@ -1,0 +1,31 @@
+"Term","Description","Direction","Annotated","ES","p_value","q_value"
+"LION:0080977","low lateral diffusion","Higher in LIN",11,0.612215909090909,0.00038,0.00312
+"LION:0012009","lipid-mediated signalling","Higher in LIN",22,0.435897435897436,0.00106,0.00603
+"LION:0000002","glycerolipids [GL]","Higher in LIN",67,0.319444444444444,0.00115,0.00608
+"LION:0000195","PC(38:2)","Higher in LIN",3,0.911764705882353,0.00208,0.0103
+"LION:0000094","headgroup with neutral charge","Higher in LIN",62,0.298701298701299,0.00314,0.0137
+"LION:0002926","C20:1","Higher in LIN",4,0.785185185185185,0.0055,0.0198
+"LION:0080971","high bilayer thickness","Higher in LIN",8,0.548664122137405,0.0119,0.0367
+"LION:0000607","diacylglycerols [GL0201]","Higher in LIN",13,0.436507936507937,0.01457,0.0431
+"LION:0080981","below average lateral diffusion","Higher in LIN",14,0.410285714285714,0.01964,0.0484
+"LION:0000003","glycerophospholipids [GP]","Lower in LIN",50,-0.46,1.2e-06,5.18e-05
+"LION:0000095","headgroup with positive charge / zwitter-ion","Lower in LIN",46,-0.467508181393174,1.4e-06,5.18e-05
+"LION:0000030","diacylglycerophosphocholines [GP0101]","Lower in LIN",31,-0.45131421744325,5.3e-05,0.00131
+"LION:0000465","neutral intrinsic curvature","Lower in LIN",32,-0.434579439252336,1e-04,0.00185
+"LION:0012010","membrane component","Lower in LIN",63,-0.365079365079365,0.00013,0.00192
+"LION:0000010","glycerophosphocholines [GP01]","Lower in LIN",33,-0.418810748999428,0.00017,0.0021
+"LION:0080976","very low lateral diffusion","Lower in LIN",3,-0.963235294117647,0.00026,0.00275
+"LION:0080970","average bilayer thickness","Lower in LIN",16,-0.527439024390244,0.00036,0.00312
+"LION:0002929","C20:4","Lower in LIN",4,-0.888888888888889,0.00052,0.00333
+"LION:0001741","below average transition temperature","Lower in LIN",25,-0.432280701754386,0.00054,0.00333
+"LION:0080982","above average lateral diffusion","Lower in LIN",25,-0.432280701754386,0.00054,0.00333
+"LION:0080979","high lateral diffusion","Lower in LIN",19,-0.434649122807018,0.00243,0.0112
+"LION:0012081","mitochondrion","Lower in LIN",15,-0.466666666666667,0.00347,0.0143
+"LION:0001736","low transition temperature","Lower in LIN",17,-0.439247830279653,0.00391,0.0152
+"LION:0000038","diacylglycerophosphoethanolamines [GP0201]","Lower in LIN",12,-0.492125984251969,0.00562,0.0198
+"LION:0000011","glycerophosphoethanolamines [GP02]","Lower in LIN",13,-0.453601953601954,0.00991,0.0333
+"LION:0002882","C16:0","Lower in LIN",55,-0.272943722943723,0.01093,0.0352
+"LION:0002936","C22:5","Lower in LIN",3,-0.808823529411765,0.01669,0.0465
+"LION:0002945","fatty acid with more than 18 carbons","Lower in LIN",32,-0.300525700934579,0.01816,0.0465
+"LION:0080973","below average bilayer thickness","Lower in LIN",22,-0.343434343434344,0.01823,0.0465
+"LION:0080969","low bilayer thickness","Lower in LIN",13,-0.427350427350427,0.01824,0.0465

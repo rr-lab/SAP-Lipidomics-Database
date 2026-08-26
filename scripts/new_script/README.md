@@ -27,13 +27,14 @@ in the manuscript.
 | `08_assign_nonfocused_compound_classes.R` | non-focused class assignment |
 | `09_remove_nonlipid_annotations.R` | drops non-lipid annotations |
 | `10_prepare_SERRF_inputs.R` | SERRF upload matrices |
-| `11_SuppTable_SERRF_traceability_audit.R` | **Supp table** scan-to-lipid mapping audit |
+| `11_audit_SERRF_feature_traceability.R` | scan-to-lipid mapping audit. Its table is **not cited** in the manuscript, so it carries no SuppTable label |
 | `12_build_preSERRF_filtered_inputs.R` | filtered pre-SERRF inputs |
 | `13_postSERRF_annotate_reaggregate.R` | re-annotation after SERRF |
 | `14_run_postSERRF_SpATS.R` | runs SpATS on post-SERRF data |
 | `15_SuppFig1_QC_SERRF_SpATS_diagnostics.R` | **Supp Fig 1** QC, SERRF and SpATS diagnostics |
 | `16_high_variance_lipids.R` | analysis only; its figures were removed (see below) |
-| `22_SuppTable_genomic_heritability.R` | **Supp table** genomic heritability |
+| `20_SuppTable1to3_ratio_species_stats.R` | **Supp Tables S1-S3** ratio statistics, species jackknife, per-class stability |
+| `22_SuppTable16_genomic_heritability.R` | **Supp Table S16** genomic heritability (cited at main.tex line 158) |
 | `25`, `29`, `31`, `32`, `33`, `34` | GO enrichment computation, no numbered output |
 | `36_Fig4_GO_enrichment_and_table.R` | **Fig 4** GO-BP LD-aware, plus the all-terms supplementary figures |
 
