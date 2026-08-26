@@ -89,7 +89,9 @@ plot_cor <- function(cs) {
                          midpoint = 0, limits = c(-1, 1), name = "CLR r") +
     coord_fixed() + labs(x = NULL, y = NULL) +
     plot_theme +
-    theme(axis.text.x  = element_text(angle = 45, hjust = 1, colour = "black", size = 14),
+    theme(panel.grid = element_blank(),   # tiles fill the panel; a grid only shows
+                                          # in the whitespace coord_fixed leaves
+          axis.text.x  = element_text(angle = 45, hjust = 1, colour = "black", size = 14),
           axis.text.y  = element_text(colour = "black", size = 14),
           legend.title = element_text(size = 14, face = "bold"),
           legend.background = element_blank(),

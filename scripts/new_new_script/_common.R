@@ -39,9 +39,16 @@ marker_col <- "#D55E00"
 bonf_col   <- "#B2182B"
 
 # ---- theme ---------------------------------------------------------------
-# plot_theme, exactly as Nirwan defines it. Do not edit this block. Anything a
-# figure needs to change is overridden in that figure's own script and listed
-# in its header, so this stays the single source of truth.
+# plot_theme, as Nirwan defines it. Do not edit this block without being asked.
+# Anything a figure needs to change is overridden in that figure's own script
+# and listed in its header, so this stays the single source of truth.
+#
+# One change from the original, requested 2026-08-26: panel.grid was
+# element_blank(); it is now a very light grey major grid on both axes with the
+# minor grid still off. Change GRID_COLOUR / GRID_WIDTH below to tune it.
+GRID_COLOUR <- "grey92"   # very light grey; "grey88" is a touch stronger
+GRID_WIDTH  <- 0.35
+
 plot_theme <- theme_minimal(base_size = 24) +
   theme(
     plot.title     = element_text(
@@ -67,7 +74,8 @@ plot_theme <- theme_minimal(base_size = 24) +
       color = "black"
     ),
     axis.line      = element_line(color = "black"),
-    panel.grid     = element_blank(),
+    panel.grid.major = element_line(color = GRID_COLOUR, linewidth = GRID_WIDTH),
+    panel.grid.minor = element_blank(),
 
     legend.position      = c(0.95, 0.95),
     legend.justification = c("right","top"),
