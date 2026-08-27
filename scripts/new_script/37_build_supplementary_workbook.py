@@ -55,6 +55,8 @@ SHEETS = [
      "Branch-level summary of GWAS support"),
     ("S15_final_lipid_classes",    "table/supp/SuppTable_S15_final_lipid_classes.csv",
      "Annotation table mapping every feature to class, subclass and superclass"),
+    ("S16_GO_loci_collapsed",     "table/go_enrichment/Table_GO_enrichment_loci.tsv",
+     "GO enrichment collapsed to distinct loci: GO synonyms and shared gene sets merged across class, layer and ontology"),
     ("S17_GO_BP_all_terms",        "table/go_enrichment/Table_GO_enrichment_all.tsv",
      "GO biological-process enrichment, all terms, with gene-level and LD-aware q",
      ("Ontology", "BP")),

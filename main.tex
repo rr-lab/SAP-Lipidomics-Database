@@ -249,7 +249,7 @@ are browsable in the SoLD Shiny application.}
 
 To test whether candidate genes converged on shared functions, we ran GO over-representation analysis on four candidate sets per condition, comprising genes associated with individual lipid species, genes associated with class sums and class ratios, and each of those sets split further by the lipid class of the associated trait. Because a single association can tag several neighboring genes, including tandem arrays, every term was also tested against an LD-aware permutation null that counts the number of independent 250~kb genomic intervals supporting a term rather than the number of gene IDs (Methods). Biological-process (GO-BP) and molecular-function (GO-MF) terms were tested and BH-corrected separately to avoid double-counting across overlapping gene sets.
 
-All 48 significant GO-BP terms (26 individual-lipid, 22 class-sum/ratio) and 53 of 55 GO-MF terms survived the LD-aware null, so correction mainly changed enrichment strength and ranking, not membership. However, there were changes in interpretation. Only 13 of 48 GO-BP and 30 of 55 GO-MF terms were supported by at least three independent 250~kb intervals (Figure~\ref{fig:go_bp_main}). The rest likely reflect single loci with informative annotation rather than coordinated pathway signals (Supplementary~\ref{fig:S11_go_bp_all} ; \ref{fig:S12_go_mf_all}; Table~\ref{tab:go_enrichment_all}; Supplementary Tables~S17 and~S18). The candidate genes carrying each enriched term are listed in Supplementary Table~S19.
+All 48 significant GO-BP terms (26 individual-lipid, 22 class-sum/ratio) and 53 of 55 GO-MF terms survived the LD-aware null, so correction mainly changed enrichment strength and ranking, not membership. However, there were changes in interpretation. Only 13 of 48 GO-BP and 30 of 55 GO-MF terms were supported by at least three independent 250~kb intervals (Figure~\ref{fig:go_bp_main}). The rest likely reflect single loci with informative annotation rather than coordinated pathway signals (Supplementary Table~S16; Table~\ref{tab:go_enrichment_all}; Supplementary Tables~S17 and~S18). The candidate genes carrying each enriched term are listed in Supplementary Table~S19.
 
 Two opposite failure modes show why both criteria are required. First, a term can be specific but driven by a single locus. The terms \textit{purine nucleoside transmembrane transport}, \textit{purine nucleobase transport}, and \textit{purine nucleobase transmembrane transport} were enriched in the DG, FA, SM and SQDG class-sum/ratio sets, yet all derive from one purine-permease array on chromosome~6 (\texttt{SORBI\_3006G195000}, \texttt{SORBI\_3006G195100}, \texttt{SORBI\_3006G195200}; $r^2_{\max} \geq 0.99$) that appears once but is counted in four class sets. Second, a term can be well distributed but too general to be informative. \textit{Zinc ion binding} was enriched in seven CTL class-sum/ratio sets and easily passes the interval criterion, but it is annotated to 1{,}015 of the 9{,}422 sorghum genes with any molecular-function term and is enriched only 1.7-fold. Interpretable terms therefore require both distributed support and specific annotation, and either criterion alone is insufficient. A third case, \textit{positive regulation of cytoplasmic translation}, passes both criteria and still fails, because the term is spread widely enough across the genome that resampling matched intervals recovers most of the overlap by chance. Its two molecular-function counterparts were the only terms in either ontology to fail the LD-aware null outright, so both ontologies demoted the signal independently and we do not treat translational regulation as lipid-associated (Supplementary Tables~S17 and~S18).
 
@@ -258,18 +258,23 @@ Seven unique GO-BP terms met both criteria, represented by nine condition/class-
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=\textwidth]{fig/main/Figure5_GO_BP_LDaware.png}
-\caption[GO biological-process terms with distributed interval support]{\textbf{Gene
-Ontology biological-process terms supported by at least three independent genomic
-intervals.} The 13 GO-BP terms that passed the LD-aware permutation null and drew on
-three or more independent 250\,kb intervals, grouped by trait layer and coloured by
-condition, with the associated lipid class shown beside each term. \textbf{(A)}~Fold
-enrichment over chance on a logarithmic axis; point area scales with the number of
-candidate genes carrying the term. \textbf{(B)}~Number of independent 250\,kb
-intervals contributing genes to each term. \textbf{(C)}~Gene-level
-Benjamini--Hochberg $q$ (open circles) against the LD-aware permutation $q$ (filled
-diamonds); the dashed line marks $q = 0.05$. Terms carried by fewer than three
-intervals appear in Supplementary~\ref{fig:S11_go_bp_all}, and the complete
-result set in Table~\ref{tab:go_enrichment_all}.}
+\caption[GO terms enriched among GWAS candidate genes, by lipid class]{\textbf{Gene
+Ontology terms enriched among LD-mapped GWAS candidate genes, grouped by the lipid
+class whose traits produced them.} Nineteen loci are shown. Each began as an
+enrichment passing the LD-aware permutation null ($q_{\mathrm{perm}}<0.05$); terms
+sharing an identical candidate-gene set were then merged, first within a stratum,
+where the Gene Ontology's nested parent and child terms describe one locus several
+times, and then across lipid class, trait layer and ontology, where class sums and
+ratios share candidate genes by construction. Of the 50 loci remaining after those
+merges, the figure shows those whose GO term draws on at most 30 background genes,
+a criterion of interpretability rather than of significance: terms such as
+\textit{zinc ion binding} (1{,}015 background genes) or \textit{transmembrane
+transport} (526) pass the permutation null without naming a lipid-related process.
+Points give fold enrichment over chance on a logarithmic axis and are coloured by
+trial. Left-hand strips name the lipid class; the two strips marked shared are gene
+sets recurring across several classes, which are correspondingly less specific. The
+complete set of 50 loci, with the number of independent 250\,kb intervals supporting
+each, is given in Supplementary Table~S16.}
 \label{fig:go_bp_main}
 \end{figure*}
 
@@ -571,6 +576,12 @@ SNPs were aligned with the \textit{Sorghum bicolor} reference genome v3.1 (BTx62
 \subsubsection*{Gene Ontology Enrichment}
 GO biological-process and molecular-function terms were taken from the same PANTHER-derived annotation. The two ontologies were analyzed separately, each against a background restricted to sorghum genes carrying at least one annotation in that ontology, and $p$-values were BH-corrected within each ontology and analysis. Over-representation was tested with a right-tailed hypergeometric test, retaining terms with ≥3 candidate genes and ≥5 background genes, and BH-correcting $p$-values across all GO terms per analysis. To account for LD among candidate genes, each term was also tested against a permutation null that preserved the candidate block structure. We used 8,000 draws, which bounds the smallest attainable permutation $p$-value at $1.25\times10^{-4}$, well below the resolution needed after BH correction. The genome was divided into consecutive, non-overlapping 250~kb intervals, assigning each candidate gene to the interval containing its start. Thus, the number of intervals carrying a term reflects the number of distinct genomic regions supporting that term, not the number of gene IDs. Each permutation redrew the same number of intervals, each contributing the same number of genes, from background intervals matched on gene density. Permutation $p$-values were BH-corrected and reported as $q_{\mathrm{perm}}$.
 
+Enrichment was computed separately within each lipid class, so that a term is attributed to the traits of one class rather than to the candidate set as a whole. Crossed with the two trait layers, the two ontologies and the two trials, this gives one test per class per layer per ontology per trial.
+
+Because the Gene Ontology nests parent and child terms, a single candidate gene set can surface as several terms. Terms whose candidate gene sets were identical were therefore merged into one finding, keeping the most specific term as the label and retaining every merged term name and GO identifier in the supplementary table. The same gene set also recurs between strata, since class sums and ratios share candidate genes by construction: one purine permease array on chromosome~6 appeared ten times, across four lipid classes, both trait layers and both ontologies, described once as a process and once as an activity. Gene sets identical across strata were merged in the same way, and the lipid classes in which each appeared were retained, because a locus surfacing in a single class is class-specific whereas one surfacing across many is generic. After both merges, the 101 terms passing the LD-aware null reduced to 50 distinct loci.
+
+For the main figure we retained loci whose GO term draws on at most 30 background genes. This is a criterion of specificity rather than of significance, applied because a term drawn from a background of hundreds or thousands of genes cannot be interpreted whatever its enrichment: zinc ion binding (1{,}015 background genes), transmembrane transport (526), nucleic acid binding (522) and mRNA binding (432) all pass the permutation null, and none of them names a lipid-related process. Two further terms, \textit{detection of stimulus} and \textit{DNA topological change}, were removed by name as uninterpretable in this context. Nineteen loci remain and are shown in Fig.~\ref{fig:go_bp_main}; all 50 are listed in Supplementary Table~S16 together with the number of independent 250~kb intervals supporting each, and the uncollapsed per-term results in Supplementary Tables~S17 and~S18. Interval count is reported but was not used to select or to rank terms. It scales with the size of the GO term, so a threshold on it discriminates against precisely the small, specific terms of interest: terms supported by three or more intervals averaged 175 background genes at 10-fold enrichment, while those below that threshold averaged 24 background genes at 23-fold.
+
 \subsubsection*{Lipid Metabolic Network Analysis (LINEX2)}
 
 We used the Lipid Network Explorer (LINEX2; \url{https://exbio.wzw.tum.de/linex/}) to reconstruct annotation-guided lipid reaction networks and identify plausible biochemical connections among lipid classes and candidate enzymes. Lipid names were standardized to align with species notation (class plus acyl composition). LINEX2 constructs a global species network based on curated reaction rules, including headgroup interconversions, (de)acylation/editing, elongation, and desaturation, and maps these relationships onto the observed lipid abundance data. Since \textit{Sorghum bicolor} is not implemented as a default organism in LINEX2, we selected \textit{Oryza sativa} (OSA) as the reference species for network construction.
@@ -693,39 +704,6 @@ the correlation coefficient and the upper triangle its significance
 (*$p<0.05$, **$p<0.01$, ***$p<0.001$). Each matrix is computed within one trial
 and the two are not differenced.}
 \label{fig:suppfig_s6_pcor}
-\end{figure*}
-
-\begin{figure*}[htbp]
-\centering
-\includegraphics[width=\textwidth,height=0.88\textheight,keepaspectratio]{fig/supp/SuppFig_GO_BP_all.png}
-\caption[All significant GO biological-process enrichments]{\textbf{All significant
-Gene Ontology biological-process enrichments among LD-mapped GWAS candidate sets.}
-All 48 GO-BP terms reaching $q_{\mathrm{perm}} \le 0.05$ are shown, split by trait
-layer and coloured by condition, with the associated lipid class given beside each
-term. \textbf{(A)}~Fold enrichment over chance on a logarithmic axis; point area
-scales with the number of candidate genes carrying the term. Hollow markers denote
-terms supported by fewer than three independent 250\,kb intervals.
-\textbf{(B)}~Number of independent 250\,kb intervals contributing genes to each term;
-the dashed line marks three intervals. \textbf{(C)}~Gene-level Benjamini--Hochberg
-$q$ (open circles) against the LD-aware permutation $q$ (filled diamonds); the dashed
-line marks $q = 0.05$. Only 13 of the 48 terms are supported by at least three
-independent intervals; the remainder are single loci with informative annotation.}
-\label{fig:S11_go_bp_all}
-\end{figure*}
-
-\begin{figure*}[htbp]
-\centering
-\includegraphics[width=\textwidth,height=0.88\textheight,keepaspectratio]{fig/supp/SuppFig_GO_MF_all.png}
-\caption[All significant GO molecular-function enrichments]{\textbf{All significant
-Gene Ontology molecular-function enrichments among LD-mapped GWAS candidate sets.}
-Panels as in Supplementary~\ref{fig:S11_go_bp_all}, for the 55 GO-MF terms
-reaching significance. Fifty-three survived the LD-aware permutation null; the two
-exceptions, \textit{translation regulator activity} and \textit{single-stranded RNA
-binding} in CTL TG, are the molecular-function counterparts of the \textit{positive
-regulation of cytoplasmic translation} term that the biological-process analysis also
-demoted. Thirty of the 55 terms are supported by at least three independent 250\,kb
-intervals.}
-\label{fig:S12_go_mf_all}
 \end{figure*}
 
 \begin{figure*}[!ht]
