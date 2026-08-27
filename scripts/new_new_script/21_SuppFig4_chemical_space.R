@@ -1,5 +1,5 @@
 # ==============================================================================
-# Supplementary Figure S6 -- Lipid classes in a reduced chemical space.
+# Supplementary Figure S4 -- Lipid classes in a reduced chemical space.
 #
 # Each class sits at its abundance-weighted mean total carbon number and its
 # abundance-weighted mean double-bond count, with an arrow running from its CTL
@@ -18,7 +18,8 @@
 #   data/SPATS_fitted/non_normalized_intensities/Final_subset_{control,lowinput}_*.csv
 #
 # Outputs
-#   fig/supp/SuppFig_S6_Chemical_Space.png
+#   fig/supp/SuppFig_S6_Chemical_Space.png   (prints as S4; filename kept
+#                                             so the tex include path does not move)
 #   table/supp/SuppTable_S5F_Chemical_Space.csv
 # ==============================================================================
 source("scripts/new_new_script/_common.R")

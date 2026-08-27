@@ -1,5 +1,5 @@
 # ==============================================================================
-# Supp Figure S9 -- Correlation structure among lipid classes, within each trial.
+# Supp Figure S7 -- Correlation structure among lipid classes, within each trial.
 #
 # Two panels, CTL and LIN. The former panel C, a delta-r map of
 # r_LIN - r_CTL with sign-reversal boxes, has been removed: it is a CTL-LIN
@@ -23,7 +23,7 @@
 # Output
 #   fig/supp/SuppFig_S6_CLR_Correlations.png
 #     (filename kept so the manuscript's \includegraphics path does not move;
-#      the printed number is S9)
+#      the printed number is S7)
 # ==============================================================================
 source("scripts/new_new_script/_common.R")
 suppressPackageStartupMessages({ library(tidyr); library(purrr); library(tibble) })

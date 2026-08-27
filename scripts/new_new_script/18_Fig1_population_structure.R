@@ -20,6 +20,8 @@
 # Outputs
 #   fig/main/Figure1_Population_Structure.png
 #   table/supp/SuppTable_S25_Population_Structure_Lipid_Tests.csv
+#     -- one row per trait x grouping x trial, carrying n, H, p, epsilon^2, the
+#        BH q, which group is highest and lowest, and the median for every group
 # ==============================================================================
 source("scripts/new_new_script/_common.R")
 suppressPackageStartupMessages({ library(tibble); library(tidyr) })
@@ -28,15 +30,33 @@ dat    <- population_table()
 TRAITS <- c("TotalLipid", CLASS_ORDER)
 trait_column <- function(tr) if (tr == "TotalLipid") "TotalLipid_log10" else tr
 
+# The per-group medians travel with the test, so the table alone shows which
+# group is high and which is low. That is what makes the per-race boxplot grids
+# unnecessary: the same numbers, without 28 panels of nothing.
+group_medians <- function(values, groups, min_per_group = 5) {
+  ok <- !is.na(values) & !is.na(groups)
+  values <- values[ok]; groups <- droplevels(factor(groups[ok]))
+  big <- names(which(table(groups) >= min_per_group))
+  ok <- groups %in% big
+  values <- values[ok]; groups <- droplevels(factor(groups[ok]))
+  tapply(values, groups, median)
+}
+
 run_tests <- function(df, group_col, traits, label = group_col) {
   rows <- list()
   for (cond in levels(df$Condition)) {
     sub <- df %>% filter(Condition == cond, !is.na(.data[[group_col]]))
     for (tr in traits) {
-      r <- kw_eps2(sub[[trait_column(tr)]], sub[[group_col]])
+      v <- sub[[trait_column(tr)]]
+      g <- sub[[group_col]]
+      r <- kw_eps2(v, g)
       if (is.null(r)) next
-      rows[[length(rows) + 1L]] <- bind_cols(
-        tibble(Condition = cond, Grouping = label, Trait = tr), r)
+      med <- group_medians(v, g)
+      row <- bind_cols(tibble(Condition = cond, Grouping = label, Trait = tr), r) %>%
+        mutate(highest = names(med)[which.max(med)],
+               lowest  = names(med)[which.min(med)])
+      for (nm in names(med)) row[[paste0("median_", nm)]] <- unname(med[[nm]])
+      rows[[length(rows) + 1L]] <- row
     }
   }
   bind_rows(rows) %>% group_by(Condition, Grouping) %>%
@@ -49,7 +69,10 @@ tests <- bind_rows(run_tests(dat, "RaceGroup", TRAITS, "RaceGroup"),
   mutate(Condition = factor(Condition, c("CTL", "LIN")),
          sig = !is.na(q_BH) & q_BH < 0.05)
 
-save_table(tests, "SuppTable_S25_Population_Structure_Lipid_Tests.csv")
+save_table(tests %>% dplyr::select(Condition, Grouping, Trait, n, k_groups, H, p,
+                                   epsilon2, q_BH, highest, lowest,
+                                   dplyr::starts_with("median_")),
+           "SuppTable_S25_Population_Structure_Lipid_Tests.csv")
 
 ord <- tests %>% group_by(Trait) %>%
   summarise(m = max(epsilon2, na.rm = TRUE), .groups = "drop") %>%
