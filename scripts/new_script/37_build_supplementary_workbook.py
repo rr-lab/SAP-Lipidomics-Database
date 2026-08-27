@@ -29,6 +29,8 @@ SHEETS = [
      "LION ontology terms significant at FDR q < 0.05, CTL vs LIN"),
     ("S5F_Chemical_Space",         "table/supp/SuppTable_S5F_Chemical_Space.csv",
      "Abundance-weighted mean carbon number and double-bond count per class, per trial"),
+    ("S5G_Composition_Stability", "table/supp/SuppTable_S5G_Composition_Stability.csv",
+     "Within-trial robustness of class composition: 80% subsample intervals and leave-one-race-out range"),
     ("S6a_Species_Summary",        "table/supp/SuppTable_S6a_Species_Summary.csv",
      "Species counts per trial, shared and trial-specific"),
     ("S6b_Species_by_Class",       "table/supp/SuppTable_S6b_Species_by_Class.csv",
