@@ -128,3 +128,101 @@ save_table <- function(df, filename) {
   message("Saved: ", path, "  (", nrow(df), " rows)")
   invisible(path)
 }
+
+# ---- shared data builders ----------------------------------------------------
+# These are here, not in a figure script, because more than one figure needs
+# them and they must agree exactly between figures. Each figure still owns its
+# own plotting code in its own file.
+
+CLASS_ORDER <- names(class_colors)
+PURE        <- c("Bicolor", "Caudatum", "Durra", "Guinea", "Kafir")
+RACE_ORDER  <- c(PURE, "Mixed")
+
+race_colors <- c(Bicolor = "#E69F00", Caudatum = "#0072B2", Durra = "#009E73",
+                 Guinea = "#CC79A7", Kafir = "#D55E00", Mixed = "#999999")
+k_colors    <- c("1" = "#E69F00", "2" = "#56B4E9", "3" = "#009E73",
+                 "4" = "#F0E442", "5" = "#0072B2", "6" = "#CC79A7")
+
+# The five classical races, with every intermediate designation collapsed into
+# Mixed. S. verticilliflorum is a wild relative and is dropped.
+race_group <- function(x) {
+  x <- as.character(x)
+  x[is.na(x) | x %in% c("", "NA")] <- NA_character_
+  x[grepl("verticilliflorum", x, ignore.case = TRUE)] <- NA_character_
+  ifelse(is.na(x), NA_character_, ifelse(x %in% PURE, x, "Mixed"))
+}
+
+# Per-feature share of total annotated signal, taken per sample then averaged,
+# so a few high-signal samples cannot dominate the mean composition.
+pct_tic <- function(path, label) {
+  d <- read_trial(path)
+  feats <- names(d)[-1]
+  m <- as.matrix(d[, feats]); storage.mode(m) <- "numeric"
+  m[!is.finite(m)] <- 0
+  share <- sweep(m, 1, pmax(rowSums(m), 1e-12), "/") * 100
+  tibble::tibble(Feature = feats, pct = colMeans(share, na.rm = TRUE), Condition = label)
+}
+
+# Per-accession class composition. TotalLipid is the summed signal over every
+# annotated feature, so the 13 focal classes do not add up to 100%; the
+# remainder is sterols, carotenoids and the other non-focal categories.
+class_percent_tic <- function(path, condition) {
+  x <- read_trial(path)
+  geno <- x[[1]]
+  m <- as.matrix(x[, -1, drop = FALSE]); storage.mode(m) <- "numeric"
+  m[!is.finite(m)] <- 0
+  cls <- lipid_class(colnames(m))
+  total <- rowSums(m)
+  out <- tibble::tibble(LineRaw = geno, Condition = condition, TotalLipid = total)
+  for (cl in CLASS_ORDER) {
+    j <- which(cls == cl)
+    out[[cl]] <- if (length(j)) 100 * rowSums(m[, j, drop = FALSE]) / total else 0
+  }
+  out
+}
+
+# Class composition for both trials, joined to botanical race and marker-based
+# genetic cluster. Used by the population-structure figure and its PCA.
+population_table <- function() {
+  geoloc_csv <- Sys.getenv("SAP_GEOLOC", file.path(DATA_ROOT, "SAP_geoloc.csv"))
+  stopifnot(file.exists(CTL_CSV), file.exists(LIN_CSV), file.exists(geoloc_csv))
+  geo <- vroom(geoloc_csv, show_col_types = FALSE)
+  names(geo)[1] <- "Taxa"                      # the file carries a UTF-8 BOM
+  geo <- geo %>% dplyr::select(Taxa, K.Cluster, Original_Race) %>%
+    distinct(Taxa, .keep_all = TRUE)
+  bind_rows(class_percent_tic(CTL_CSV, "CTL"), class_percent_tic(LIN_CSV, "LIN")) %>%
+    left_join(geo, by = c("LineRaw" = "Taxa")) %>%
+    mutate(Condition        = factor(Condition, c("CTL", "LIN")),
+           RaceGroup        = factor(race_group(Original_Race), RACE_ORDER),
+           KCluster         = factor(K.Cluster, levels = 1:6),
+           TotalLipid_log10 = log10(TotalLipid))
+}
+
+# Kruskal-Wallis with epsilon^2 = (H - k + 1) / (n - k), the proportion of rank
+# variance explained, truncated at zero. Groups smaller than min_per_group are
+# dropped before testing.
+kw_eps2 <- function(values, groups, min_per_group = 5) {
+  ok <- !is.na(values) & !is.na(groups)
+  values <- values[ok]; groups <- droplevels(factor(groups[ok]))
+  big <- names(which(table(groups) >= min_per_group))
+  ok <- groups %in% big
+  values <- values[ok]; groups <- droplevels(factor(groups[ok]))
+  k <- nlevels(groups); n <- length(values)
+  if (k < 3L) return(NULL)
+  kt <- kruskal.test(values, groups)
+  H <- unname(kt$statistic)
+  tibble::tibble(n = n, k_groups = k, H = H, p = kt$p.value,
+                 epsilon2 = max(0, (H - k + 1) / (n - k)))
+}
+
+# PCA of the 13 class percentages within one trial, on log10 values scaled to
+# unit variance so no single dominant class sets the axes.
+trial_class_pca <- function(dat, cond) {
+  sub <- dat %>% filter(Condition == cond)
+  m <- as.matrix(sub[, CLASS_ORDER, drop = FALSE])
+  m <- log10(pmax(m, 0) + 1e-4)
+  keep <- apply(m, 2, sd, na.rm = TRUE) > 0
+  p <- prcomp(m[, keep, drop = FALSE], center = TRUE, scale. = TRUE)
+  list(scores = sub %>% mutate(PC1 = p$x[, 1], PC2 = p$x[, 2]),
+       ve = p$sdev^2 / sum(p$sdev^2))
+}

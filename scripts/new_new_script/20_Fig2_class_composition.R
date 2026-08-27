@@ -1,26 +1,22 @@
 # ==============================================================================
-# Figure 2        -- Lipid class composition of the SAP leaf lipidome, and the
-#                    LION ontology terms that separate the two trials.
-#                      A  every annotated superclass, on a log scale
-#                      B  the 13 focal lipid classes, stacked
-#                      C  LION enrichment
-# Supp Figure S6  -- Each class in a reduced chemical space defined by its
-#                    abundance-weighted mean carbon number and double-bond
-#                    count, drawn once per trial.
+# Figure 2 -- Lipid class composition of the SAP leaf lipidome, and the LION
+#             ontology terms that separate the two trials.
+#
+#   A  every annotated superclass, on a log scale
+#   B  the 13 focal lipid classes, stacked
+#   C  LION enrichment
 #
 # Composition is %TIC, the share of total annotated signal, computed per sample
-# and then averaged, so a few high-signal samples cannot dominate. Panels A and
-# B use the same denominator (all annotated features), which is why the 13
-# classes in B stop near 93% rather than reaching 100%.
+# and then averaged. Panels A and B use the same denominator (all annotated
+# features), which is why the 13 classes in B stop near 93% rather than 100%.
+#
+# Panel C is the one CTL-LIN contrast in this figure and it is labelled as such
+# in the caption.
 #
 # plot_theme is used unmodified except where its inside-panel legend would land
 # on the data. Panel A moves the legend to the empty bottom-right corner, and
-# panels B and C put theirs outside on the right because a 13-row class table
+# panels B and C put theirs outside on the right, because a 13-row class table
 # and a size key do not fit inside a panel.
-#
-# Panel C is the one CTL-LIN contrast in this figure and it is labelled as such.
-# The chemical-space panels are deliberately drawn without arrows between the
-# trials: each point describes one class in one trial and nothing is subtracted.
 #
 # Inputs
 #   data/SPATS_fitted/non_normalized_intensities/Final_subset_{control,lowinput}_*.csv
@@ -29,10 +25,8 @@
 #
 # Outputs
 #   fig/main/Figure2_Class_Composition.png
-#   fig/supp/SuppFig_S6_Chemical_Space.png
 #   table/supp/SuppTable_S5D_Class_Composition_pctTIC.csv
 #   table/supp/SuppTable_S5E_LION_Enrichment.csv
-#   table/supp/SuppTable_S5F_Chemical_Space.csv
 # ==============================================================================
 source("scripts/new_new_script/_common.R")
 suppressPackageStartupMessages({ library(tidyr); library(forcats); library(tibble) })
@@ -42,24 +36,13 @@ class_csv <- Sys.getenv("LIPID_CLASS_CSV",
 lion_csv  <- Sys.getenv("LION_CSV", file.path(REPO, "table/Linex2/LION-enrichment.csv"))
 stopifnot(file.exists(class_csv), file.exists(lion_csv))
 
-CLASS_ORDER <- c("MGDG", "DGDG", "SQDG",                        # galactolipids
+STACK_ORDER <- c("MGDG", "DGDG", "SQDG",                        # galactolipids
                  "PC", "PE", "PG", "PA", "PS", "LPC", "LPE",    # glycerophospholipids
                  "TG", "DG", "MG")                              # neutral glycerolipids
 
-# ---- annotation --------------------------------------------------------------
 ann <- vroom(class_csv, show_col_types = FALSE) %>%
   transmute(key = tolower(normalize_lipid_name(Lipids)), SuperClass = Class) %>%
   distinct(key, .keep_all = TRUE)
-
-# ---- %TIC per trial ----------------------------------------------------------
-pct_tic <- function(path, label) {
-  d <- read_trial(path)
-  feats <- names(d)[-1]
-  m <- as.matrix(d[, feats]); storage.mode(m) <- "numeric"
-  m[!is.finite(m)] <- 0
-  share <- sweep(m, 1, pmax(rowSums(m), 1e-12), "/") * 100
-  tibble(Feature = feats, pct = colMeans(share, na.rm = TRUE), Condition = label)
-}
 
 comp <- bind_rows(pct_tic(CTL_CSV, "CTL"), pct_tic(LIN_CSV, "LIN")) %>%
   mutate(FocusClass = lipid_class(Feature),
@@ -97,15 +80,15 @@ pA <- ggplot(supers, aes(pct, SuperClass)) +
 
 # ---- B: the 13 focal classes -------------------------------------------------
 zoom <- comp %>%
-  filter(FocusClass %in% CLASS_ORDER) %>%
+  filter(FocusClass %in% STACK_ORDER) %>%
   group_by(Condition, FocusClass) %>%
   summarise(pct = sum(pct), .groups = "drop") %>%
-  mutate(FocusClass = factor(FocusClass, levels = CLASS_ORDER))
+  mutate(FocusClass = factor(FocusClass, levels = STACK_ORDER))
 
 zoom_lab <- zoom %>%
   pivot_wider(names_from = Condition, values_from = pct, values_fill = 0) %>%
   mutate(lab = sprintf("%-5s %5.2f %5.2f", FocusClass, CTL, LIN)) %>%
-  arrange(factor(FocusClass, levels = CLASS_ORDER))
+  arrange(factor(FocusClass, levels = STACK_ORDER))
 zoom_labels <- setNames(zoom_lab$lab, as.character(zoom_lab$FocusClass))
 
 pB <- ggplot(zoom, aes(Condition, pct, fill = FocusClass)) +
@@ -127,7 +110,7 @@ pB <- ggplot(zoom, aes(Condition, pct, fill = FocusClass)) +
 # ---- C: LION enrichment ------------------------------------------------------
 # LION compares the two trials directly, so DOWN means depleted in LIN relative
 # to CTL. The ten strongest terms in each direction are shown; the full list of
-# significant terms is written to the supplementary table.
+# significant terms goes to the supplementary table.
 lion <- vroom(lion_csv, show_col_types = FALSE) %>%
   rename(Term = `Term ID`, Description = Discription,
          p_value = `p-value`, q_value = `FDR q-value`) %>%
@@ -173,44 +156,6 @@ save_table(bind_rows(
   class_tab %>% transmute(Level = "Lipid class", Group = as.character(FocusClass), Condition, pct_TIC = pct)
 ) %>% arrange(Level, Group, Condition), "SuppTable_S5D_Class_Composition_pctTIC.csv")
 
-# ---- Supp Figure S6: reduced chemical space ----------------------------------
-# Every n:m pair in a species name is summed, so MGDG(18:3/18:3) contributes 36
-# carbons and 6 double bonds. Class means are weighted by %TIC, so the abundant
-# species inside a class set its position.
-sum_pairs <- function(x, part) {
-  x <- normalize_lipid_name(x)
-  vapply(regmatches(x, gregexpr("[0-9]+:[0-9]+", x)), function(v) {
-    if (!length(v)) return(NA_real_)
-    sum(as.numeric(if (part == "C") sub(":.*", "", v) else sub(".*:", "", v)))
-  }, numeric(1))
-}
-
-chem <- comp %>%
-  filter(FocusClass %in% CLASS_ORDER) %>%
-  mutate(total_c = sum_pairs(Feature, "C"), total_db = sum_pairs(Feature, "DB")) %>%
-  filter(!is.na(total_c), pct > 0) %>%
-  group_by(Condition, FocusClass) %>%
-  summarise(n_species = dplyr::n(),
-            WeightedC  = weighted.mean(total_c, pct),
-            WeightedDB = weighted.mean(total_db, pct), .groups = "drop") %>%
-  mutate(FocusClass = factor(FocusClass, levels = CLASS_ORDER))
-
-save_table(chem, "SuppTable_S5F_Chemical_Space.csv")
-
-figs6 <- ggplot(chem, aes(WeightedC, WeightedDB, fill = FocusClass)) +
-  geom_point(shape = 21, size = 5.5, colour = "black", stroke = .5, alpha = .95) +
-  ggrepel::geom_text_repel(aes(label = FocusClass), size = 4.8, colour = "grey20",
-                           min.segment.length = 0, segment.colour = "grey70",
-                           max.overlaps = 30, seed = 1) +
-  scale_fill_manual(values = class_colors, guide = "none") +
-  facet_wrap(~ Condition, nrow = 1) +
-  labs(x = "Abundance-weighted mean total carbons",
-       y = "Abundance-weighted mean double bonds") +
-  plot_theme + theme(strip.text = element_text(face = "bold", size = 16))
-
-save_fig(figs6, "SuppFig_S6_Chemical_Space.png", width = 15, height = 7.5, subdir = "supp")
-
-# ---- console summary ---------------------------------------------------------
 cat("\n-- lipid classes, mean %TIC --\n")
 print(as.data.frame(class_tab %>% pivot_wider(names_from = Condition, values_from = pct) %>%
                     arrange(desc(CTL)) %>% mutate(across(where(is.numeric), ~round(.x, 2)))))
@@ -219,5 +164,3 @@ print(as.data.frame(supers %>% pivot_wider(names_from = Condition, values_from =
                     arrange(desc(CTL)) %>% mutate(across(where(is.numeric), ~round(.x, 3)))))
 cat("\n-- LION terms at q < 0.05 --\n")
 print(as.data.frame(lion %>% count(Direction)))
-cat("\n-- chemical space --\n")
-print(as.data.frame(chem %>% mutate(across(where(is.numeric), ~round(.x, 2)))))
