@@ -16,7 +16,7 @@ suppressPackageStartupMessages({
 })
 
 project_root <- "/Users/nirwantandukar/Documents/Github/SoLD_paper"
-# Panels G and H read the SpATS fitted matrices written by 14_run_postSERRF_SpATS.R.
+# Panels G and H read the SpATS fitted matrices written by the preprocessing pipeline (14_run_postSERRF_SpATS.R, now in _preprocessing_moved/).
 # Run that script first; this one only reads its output.
 new_data_dir <- Sys.getenv("NEW_DATA_DIR", "data/new_data")
 repo_root <- Sys.getenv("SOLD_REPO", ".")

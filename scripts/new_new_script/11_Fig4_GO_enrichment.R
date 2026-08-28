@@ -1,7 +1,7 @@
 # ==============================================================================
 # Figure 4 -- GO terms enriched among GWAS candidate genes, by lipid class.
 #
-# Built from the locus table written by 25_GO_collapse_and_rank.R, which has
+# Built from the locus table written by 10_SuppTableS16_GO_collapse_and_rank.R, which has
 # already done three things: kept only terms passing the LD-aware permutation
 # (q_LD < 0.05), merged GO parent/child terms sharing an identical candidate
 # gene set, and merged those gene sets across lipid class, trait layer and

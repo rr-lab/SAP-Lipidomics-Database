@@ -49,8 +49,6 @@ SHEETS = [
      "Candidate reaction branches, substrates, products and RHEA identifiers"),
     ("S12_ReactionBalance",        "table/supp/SuppTable_S12_ReactionBalance.csv",
      "Reaction-balance scores, LIN - CTL, paired genotype-matched Wilcoxon"),
-    ("S13_LINEX_GWAS_GeneSupport", "table/supp/SuppTable_S13_LINEX_GWAS_GeneSupport.csv",
-     "GWAS candidate support for each reaction branch"),
     ("S14_LINEX_GWAS_BranchSummary","table/supp/SuppTable_S14_LINEX_GWAS_BranchSummary.csv",
      "Branch-level summary of GWAS support"),
     ("S15_final_lipid_classes",    "table/supp/SuppTable_S15_final_lipid_classes.csv",
@@ -80,10 +78,6 @@ SHEETS = [
      "Genes shared between trials, class-sum/ratio layer"),
     ("S25_Race_Structure_Tests",   "table/supp/SuppTable_S25_Population_Structure_Lipid_Tests.csv",
      "Kruskal-Wallis tests of class sums by botanical race and by genome-wide cluster"),
-    ("S26_OPLS_VIP_ratios",        "table/supp/SuppTable_S7_OPLS_VIP_ratios.csv",
-     "OPLS-DA VIP scores for class ratios (filename still says S7; renumbered here)"),
-    ("S27_SERRF_Traceability",     "table/new_table/SuppTable_SERRF_Scan_to_Lipid_Mapping_Audit.csv",
-     "SERRF scan-to-lipid mapping audit"),
 ]
 
 def main(root):

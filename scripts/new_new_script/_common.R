@@ -1,7 +1,7 @@
 # ==============================================================================
 # Shared setup for every figure and table script in scripts/figures/.
 #
-#   source("scripts/figures/_common.R")
+#   source("scripts/new_new_script/_common.R")
 #
 # Everything each script needs in common lives here -- paths, palettes, the
 # house plot theme and the save helper -- so a change to any of them happens
