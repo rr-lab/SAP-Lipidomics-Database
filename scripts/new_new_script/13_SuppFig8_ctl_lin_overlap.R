@@ -156,9 +156,14 @@ pD <- ggplot(infl_long, aes(grp, n, fill = what)) +
   scale_y_log10(expand = expansion(mult = c(0, .22))) +
   labs(x = NULL, y = "Count (log scale)") +
   plot_theme +
+  # legend below the panel, as in C: inside the panel it covered the LIN
+  # individual-lipid bar labels
   theme(panel.grid.major.x = element_blank(),
-        axis.text.x = element_text(angle = 25, hjust = 1, vjust = 1),
-        plot.margin = margin(15, 15, 22, 15))
+        axis.text.x        = element_text(angle = 25, hjust = 1, vjust = 1),
+        legend.position    = "bottom",
+        legend.direction   = "horizontal",
+        legend.background  = element_blank(),
+        plot.margin        = margin(15, 15, 22, 15))
 
 fig <- (pA | pB) / (pC | pD) +
   plot_annotation(tag_levels = "A", theme = TAG_THEME)
