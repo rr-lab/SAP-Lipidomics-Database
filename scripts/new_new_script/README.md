@@ -19,6 +19,7 @@ from the repository root.
 | 10 | `10_SuppTableS16_GO_collapse_and_rank.R` | Supp Table S16 + `tables/chapter2_go_enrichment.tex` | GO enrichment |
 | 11 | `11_Fig4_GO_enrichment.R` | **Figure 4** — GO terms by lipid class | GO enrichment |
 | 12 | `12_Fig5_linex.R` | **Figure 5** — LINEX subnetwork and GWAS support | LINEX |
+| 13 | `13_SuppFig8_ctl_lin_overlap.R` | Supp Fig S8 — CTL/LIN candidate overlap | GWAS overlap |
 |  | `_common.R` | Paths, palettes, `plot_theme`, shared data builders. Sourced by all of the above. | |
 
 Figure 6 is a Shiny application screenshot
