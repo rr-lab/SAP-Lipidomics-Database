@@ -127,7 +127,12 @@ pC <- ggplot(cls_long, aes(n, Class, fill = part)) +
   scale_fill_manual(values = c("CTL only" = ctl_col, "Shared" = shared_col, "LIN only" = lin_col)) +
   scale_x_continuous(expand = expansion(mult = c(0, .34))) +
   labs(x = "LD-mapped candidate genes (individual-lipid GWAS)", y = NULL) +
-  plot_theme + theme(panel.grid.major.y = element_blank())
+  plot_theme +
+  # legend below the panel: inside the panel it sat on top of the TG annotation
+  theme(panel.grid.major.y = element_blank(),
+        legend.position    = "bottom",
+        legend.direction   = "horizontal",
+        legend.background  = element_blank())
 
 # ---- D: genes against the independent loci they occupy -----------------------
 infl <- vroom(file.path(ov_dir, "gwas_gene_to_locus_inflation.csv"), show_col_types = FALSE) %>%
@@ -150,7 +155,10 @@ pD <- ggplot(infl_long, aes(grp, n, fill = what)) +
                                "Independent 250 kb loci" = "#1B9E77")) +
   scale_y_log10(expand = expansion(mult = c(0, .22))) +
   labs(x = NULL, y = "Count (log scale)") +
-  plot_theme + theme(panel.grid.major.x = element_blank())
+  plot_theme +
+  theme(panel.grid.major.x = element_blank(),
+        axis.text.x = element_text(angle = 25, hjust = 1, vjust = 1),
+        plot.margin = margin(15, 15, 22, 15))
 
 fig <- (pA | pB) / (pC | pD) +
   plot_annotation(tag_levels = "A", theme = TAG_THEME)
