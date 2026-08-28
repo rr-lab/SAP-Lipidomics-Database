@@ -84,9 +84,9 @@ fig <- ggplot(sel, aes(Fold_max, Label, colour = Condition)) +
                 expand = expansion(mult = c(0.02, 0.16))) +
   labs(x = "Fold enrichment among GWAS candidate genes (log scale)", y = NULL) +
   plot_theme +
-  theme(legend.position    = c(0.98, 0.02),
-        legend.justification = c("right", "bottom"),
-        axis.text.y        = element_text(size = 12),
+  # The legend keeps plot_theme's inside top-right position. Bottom-right sits
+  # exactly where the 63-fold purine row lands and hides its point.
+  theme(axis.text.y        = element_text(size = 12),
         panel.grid.major.y = element_blank(),
         strip.placement    = "outside",
         strip.text.y.left  = element_text(angle = 0, face = "bold", size = 13,
