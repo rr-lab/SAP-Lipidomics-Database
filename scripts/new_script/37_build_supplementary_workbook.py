@@ -76,6 +76,8 @@ SHEETS = [
      "Genes shared between trials, individual-lipid layer"),
     ("S24_Shared_genes_sumratio",  "table/overlap/shared_genes_sumratio.csv",
      "Genes shared between trials, class-sum/ratio layer"),
+    ("S25a_Group_Composition",     "table/supp/SuppTable_S25a_Group_Composition.csv",
+     "Accessions per botanical race group and per genetic cluster, in each trial, with the passport labels folded into each race group"),
     ("S25_Race_Structure_Tests",   "table/supp/SuppTable_S25_Population_Structure_Lipid_Tests.csv",
      "Kruskal-Wallis tests of class sums by botanical race and by genome-wide cluster"),
 ]

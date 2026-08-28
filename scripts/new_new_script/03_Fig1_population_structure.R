@@ -19,6 +19,8 @@
 #
 # Outputs
 #   fig/main/Figure1_Population_Structure.png
+#   table/supp/SuppTable_S25a_Group_Composition.csv
+#     -- accessions per race group and per genetic cluster, per trial
 #   table/supp/SuppTable_S25_Population_Structure_Lipid_Tests.csv
 #     -- one row per trait x grouping x trial, carrying n, H, p, epsilon^2, the
 #        BH q, which group is highest and lowest, and the median for every group
@@ -26,6 +28,7 @@
 source("scripts/new_new_script/_common.R")
 suppressPackageStartupMessages({ library(tibble); library(tidyr) })
 
+MIN_PER_GROUP <- 5          # the threshold kw_eps2() applies
 dat    <- population_table()
 TRAITS <- c("TotalLipid", CLASS_ORDER)
 trait_column <- function(tr) if (tr == "TotalLipid") "TotalLipid_log10" else tr
@@ -68,6 +71,43 @@ tests <- bind_rows(run_tests(dat, "RaceGroup", TRAITS, "RaceGroup"),
                    run_tests(dat, "KCluster",  TRAITS, "K.Cluster")) %>%
   mutate(Condition = factor(Condition, c("CTL", "LIN")),
          sig = !is.na(q_BH) & q_BH < 0.05)
+
+# ---- group composition -------------------------------------------------------
+# How many accessions sit in each group, per trial. Needed to read everything
+# else here: Kafir has only seven accessions in the whole passport table, so a
+# race-level result rests on very different sample sizes from group to group.
+# The raw passport designations folded into each race group are listed too,
+# since "Mixed" is eleven different hyphenated labels rather than a category.
+race_map <- dat %>%
+  filter(!is.na(RaceGroup)) %>%
+  distinct(LineRaw, Original_Race, RaceGroup) %>%
+  group_by(RaceGroup) %>%
+  summarise(Folded_labels = paste(sort(unique(Original_Race)), collapse = "; "),
+            .groups = "drop")
+
+composition <- bind_rows(
+  dat %>% filter(!is.na(RaceGroup)) %>%
+    count(Condition, Group = as.character(RaceGroup)) %>%
+    mutate(Grouping = "RaceGroup"),
+  dat %>% filter(!is.na(KCluster)) %>%
+    count(Condition, Group = as.character(KCluster)) %>%
+    mutate(Grouping = "K.Cluster")) %>%
+  pivot_wider(names_from = Condition, values_from = n, names_prefix = "n_",
+              values_fill = 0) %>%
+  left_join(race_map, by = c("Group" = "RaceGroup")) %>%
+  mutate(Folded_labels = ifelse(is.na(Folded_labels), Group, Folded_labels),
+         tested_CTL = n_CTL >= MIN_PER_GROUP,
+         tested_LIN = n_LIN >= MIN_PER_GROUP) %>%
+  dplyr::select(Grouping, Group, n_CTL, n_LIN, tested_CTL, tested_LIN, Folded_labels) %>%
+  arrange(Grouping, Group)
+
+save_table(composition, "SuppTable_S25a_Group_Composition.csv")
+
+cat("\n-- group composition -------------------------------------------------\n")
+print(as.data.frame(composition %>% dplyr::select(-Folded_labels)))
+cat(sprintf("\n  accessions with no usable race assignment: CTL %d, LIN %d\n",
+            sum(dat$Condition == "CTL" & is.na(dat$RaceGroup)),
+            sum(dat$Condition == "LIN" & is.na(dat$RaceGroup))))
 
 save_table(tests %>% dplyr::select(Condition, Grouping, Trait, n, k_groups, H, p,
                                    epsilon2, q_BH, highest, lowest,
