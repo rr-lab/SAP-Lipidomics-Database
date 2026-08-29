@@ -184,13 +184,13 @@ associated with cluster membership.}
 
 \subsection*{Lipidome overview for CTL and LIN SAP}
 
-Our experiment quantified 243 lipid species: 152 detected in both trials, 49 only in CTL, and 42 only in LIN, where “trial-specific” indicates detection above threshold in one trial rather than confirmed absence in the other (Supplementary~\ref{fig:suppfig_s4_counts}). Triacylglycerols (TG) and phosphatidylcholines (PC) were the most diverse classes in both environments (TG: 71 in CTL, 69 in LIN; PC: 39 in CTL, 38 in LIN; Supplementary~\ref{fig:suppfig_s4_counts}).
+Our experiment quantified 243 lipid species: 152 detected in both trials, 49 only in CTL, and 42 only in LIN, where “trial-specific” indicates detection above threshold in one trial rather than confirmed absence in the other (Supplementary~\ref{fig:suppfig_s4_counts}). Triacylglycerols (TG) and phosphatidylcholines (PC) were the most diverse classes in both environments (TG: 71 in CTL, 69 in LIN; PC: 36 in CTL, 38 in LIN; Supplementary~\ref{fig:suppfig_s4_counts}).
 
 Furthermore, we summarized lipid abundance as \%TIC (mean share of total annotated signal per sample), so values represent relative signal, not absolute concentration. In both trials, glycerolipids and glycerophospholipids dominated the annotated signal (CTL: 63.8\% and 30.0\%; LIN: 63.1\% and 30.4\%); terpenoids were the only other superclass >1\% (4.2\% and 4.6\%). All other superclasses remained <1\%, motivating the log scale in Fig.~\ref{fig:fig2_class_composition}A. 
 
 Within the 13 focal classes, galactolipids and phospholipids prevailed: MGDG contributed 32.3\% (CTL) and 29.8\% (LIN), and PC 24.0\% and 23.1\%. DGDG (12.0\%, 12.1\%) and DG (12.9\%, 13.8\%) followed. TG increased from 2.6\% (CTL) to 5.0\% (LIN), while SQDG decreased from 2.7\% to 1.3\%. Overall, the 13 focal classes comprised ~93\% of annotated signal in each trial, with the remainder from sterols, terpenoids, prenols, fatty acids, and other minor categories (Fig.~\ref{fig:fig2_class_composition}B; Supplementary Table~S5D). 
 
-PS is the smallest focal class in both trials (0.01\% and 0.04\% of annotated signal) and the only class-level trait whose LIN values mirror genome-wide genetic clustering (Fig.~\ref{fig:fig1_population_structure}D), indicating genotype-dependent variation. Within each trial, class abundances are strongly coupled; CTL and LIN class correlations are shown in Supplementary~\ref{fig:suppfig_s6_pcor}. Lysophospholipids (LPC, LPE) are also minor (CTL: 0.16\%, 0.01\%; LIN: 0.15\%, 0.01\%), consistent with stress-responsive turnover of a small pool rather than uniform scaling \citep{Hou2016, Rawat2021}. Species counts by class and superclass are in Supplementary Tables~S6a--S6c.
+PS is the smallest focal class in both trials (0.01\% and 0.04\% of annotated signal) and the only class-level trait whose LIN values mirror genome-wide genetic clustering (Fig.~\ref{fig:fig1_population_structure}D), indicating genotype-dependent variation. Within each trial, class abundances are strongly coupled; CTL and LIN class correlations are shown in Supplementary~\ref{fig:suppfig_s6_pcor}. Lysophospholipids are also minor, and the two move differently. LPC is essentially unchanged between trials (0.158\% and 0.153\%), whereas LPE rises from 0.010\% to 0.014\%, a 1.4-fold increase, so the LPC/LPE ratio falls from 17.0 to 11.3. This is consistent with stress-responsive turnover of a small pool rather than uniform scaling \citep{Hou2016, Rawat2021}. Species counts by class and superclass are in Supplementary Tables~S6a--S6c.
 
 After using PCA to assess how genotype and botanical race structure the diversity panel, we performed a similar analysis on the lipidomic data. Within each trial, PCA of major glycerolipid and glycerophospholipid pools showed that lipid class was the main driver of species-level variation (Supplementary~\ref{fig:suppfig_s5_pca}); free fatty acids and minor classes are available in the Shiny app. TG species formed a distinct cluster separated from most membrane lipids in both CTL and LIN, though along different principal axes. Galactolipids and glycerophospholipids partly overlapped but occupied class-enriched regions, supporting class-level aggregation for downstream compositional and reaction-network analyses.
 
@@ -209,13 +209,13 @@ and the two trials differ in year, field and acquisition batch.}
 \label{fig:fig2_class_composition}
 \end{figure*}
 
-Abundance and compositional analyses identify four features of the LIN lipidome: (i) low SQDG, (ii) high TG, (iii) a PS-centred phospholipid balance, and (iv) a shifted LPC/LPE balance. We use these as descriptive axes for subsequent analyses, not as treatment effects. Because the trials differed in season (2019 vs 2022), planting date, nitrogen and phosphorus supply, and analytical batch, these features describe the low-input trial as conducted and cannot be attributed to any single factor; effects of year, site, and batch also cannot be excluded. The ontology, reaction-network, and GWAS analyses below add complementary biochemical and genetic context for these axes.
+Abundance and compositional analyses identify four features of the LIN lipidome: (i) low SQDG, (ii) high TG, (iii) a PS-centred phospholipid balance, and (iv) an LPC/LPE balance shifted toward LPE. We use these as descriptive axes for subsequent analyses, not as treatment effects. Because the trials differed in season (2019 vs 2022), planting date, nitrogen and phosphorus supply, and analytical batch, these features describe the low-input trial as conducted and cannot be attributed to any single factor; effects of year, site, and batch also cannot be excluded.
 
-LION enrichment recovered the same shift and described it biophysically (Fig.~\ref{fig:fig2_class_composition}C; Supplementary Table~S5E) \citep{Molenaar2019}. The strongest contrast was head-group charge: LIN was depleted for \textit{headgroup with positive charge / zwitter-ion} and enriched for \textit{headgroup with neutral charge}. This likely reflects declining PC and PE and rising TG, not a uniform reduction in zwitterionic lipids, since LPC and LPE increased under LIN. Class terms matched this pattern, with LIN enriched for glycerolipid/triacylglycerol, lipid-storage and lipid-droplet terms, and depleted for glycerophospholipid and membrane-component terms. Membrane-property terms suggested thicker, less laterally mobile membranes under LIN, and acyl-chain terms agreed with species-level contrasts. Two caveats: this is the only direct CTL--LIN contrast, so year/field/batch confounding applies to all terms; and enrichment uses annotated lipids only, so sparsely annotated terms rely on few species and should be treated as descriptive.
+LION enrichment described the phospholipid and neutral-lipid part of this shift biophysically (Fig.~\ref{fig:fig2_class_composition}C; Supplementary Table~S5E) \citep{Molenaar2019}. The strongest contrast was head-group charge: LIN was depleted for \textit{headgroup with positive charge / zwitter-ion} and enriched for \textit{headgroup with neutral charge}. This is not a uniform loss of zwitterionic lipids. The summed zwitterionic pool is nearly identical in the two trials (29.6\% and 29.4\% of annotated signal), and within it PC falls while PE rises, so the term reflects where zwitterionic species sit in the ranked comparison rather than a depletion of the pool. Class terms matched this pattern, with LIN enriched for glycerolipid/triacylglycerol, lipid-storage and lipid-droplet terms, and depleted for glycerophospholipid and membrane-component terms. Membrane-property terms suggested thicker, less laterally mobile membranes under LIN, and acyl-chain terms agreed with the species-level contrasts in six of seven cases, the exception being chain length above 18 carbons, which LION ranks down while the abundance-weighted long-chain content rises with TG. Two caveats apply. This is the only direct CTL--LIN contrast in the figure, so the trial confounding noted above applies to every term shown. And LION's ontology is built on LIPID MAPS, which has no terms for the plant galactolipids or the sulfolipid, so MGDG, DGDG and SQDG (22 of the 171 species tested) map to nothing and appear in no LION result, as does LPE; the classes carrying the strongest compositional signal lie outside the enrichment universe.
 
-To capture structural remodeling beyond class abundance, we summarized each lipid class in a reduced chemical space using the abundance-weighted mean total carbon number and double-bond count across its molecular species, calculated per trial (Supplementary~\ref{fig:suppfig_s6_chem}; Supplementary Table~S5F). Classes separate by carbon number: lysophospholipids and monoacylglycerols near 17 carbons, diacyl membrane classes at 33–37, and TG at 50.9 carbons (CTL) and 54.6 (LIN). Unsaturation further orders diacyl classes, from PG (0.6 double bonds) to PC (2.1) to MGDG (5.7). PE shifts from 2.7 double bonds (CTL) to 3.4 (LIN), the largest separation on this axis.
+To capture structural remodeling beyond class abundance, we summarized each lipid class in a reduced chemical space using the abundance-weighted mean total carbon number and double-bond count across its molecular species, calculated per trial (Supplementary~\ref{fig:suppfig_s6_chem}; Supplementary Table~S5F). Classes separate by carbon number: lysophospholipids and monoacylglycerols near 17 carbons, diacyl membrane classes at 33–37, and TG at 50.9 carbons (CTL) and 54.6 (LIN). Unsaturation further orders diacyl classes, from PG (0.6 double bonds) to PC (2.1) to MGDG (5.7). PE shifts from 2.7 double bonds (CTL) to 3.4 (LIN), the largest shift among the well-populated classes.
 
-Abundance, composition, ontology, and chemical-space analyses indicate the four axes reflect coordinated redistribution within the LIN lipidome, not independent class-level shifts.
+Abundance, composition, ontology, and chemical-space analyses indicate the four axes reflect coordinated redistribution within the LIN lipidome, not independent class-level shifts. The reaction-network and GWAS analyses below add biochemical and genetic context.
 
 \subsection*{GWAS signal is concentrated under CTL and diffuse under LIN}
 
@@ -474,7 +474,7 @@ This pattern indicates that genetic control of leaf lipid composition in the SAP
 
 \section*{Conclusion}
 
-SoLD establishes a population-scale lipidomics resource for the sorghum association panel and shows that two contrasting field contexts drive extensive, population-wide lipidome remodelling. Across 243 annotated species, LIN differed from CTL by four signatures: SQDG depletion, TG enrichment, PS-centered phospholipid redistribution and a shifted LPC/LPE balance. These patterns were consistently detected across abundance contrasts, compositional analyses, chemical-space summaries and lipid ontology enrichment, and were independent of botanical race and genome-wide genetic structure, indicating coordinated redistribution among interconnected lipid pools rather than isolated class shifts or artefacts of population stratification.
+SoLD establishes a population-scale lipidomics resource for the sorghum association panel and shows that two contrasting field contexts drive extensive, population-wide lipidome remodelling. Across 243 annotated species, LIN differed from CTL by four signatures: SQDG depletion, TG enrichment, PS-centered phospholipid redistribution and an LPC/LPE balance shifted toward LPE. These patterns were consistently detected across abundance contrasts, compositional analyses, chemical-space summaries and lipid ontology enrichment, and were independent of botanical race and genome-wide genetic structure, indicating coordinated redistribution among interconnected lipid pools rather than isolated class shifts or artefacts of population stratification.
 
 Genetic analysis nominates candidates for the two strongest signatures. For TG enrichment, the main candidate is \texttt{SORBI\_3010G170000} (\textit{DGAT1}), which catalyzes the committed step of triacylglycerol synthesis, associates almost exclusively with polyunsaturated TG species, and lies within a known sorghum crude-fat QTL. The same route includes \texttt{SORBI\_3003G107900}, a non-specific phospholipase~C6 that converts phosphatidylcholine to diacylglycerol and whose Arabidopsis orthologues are required for TG production, and \texttt{SORBI\_3001G041900}, an SDP1-like lipase that performs the reverse reaction and associates with total TG. These jointly implicate phospholipid head-group hydrolysis, TG synthesis and TG turnover among the LIN candidates, a plausible route for TG accumulation at the expense of phospholipids under the combined LIN field context. For SQDG depletion, \texttt{SORBI\_3006G244000}, a SULTR3-family sulfate transporter supplying most chloroplast sulfate, lies on the route to the sulfoquinovose head group and predicts the observed change, whereas the canonical phosphate-starvation response does not. The phosphate-signalling locus \texttt{SORBI\_3001G028500} and two SQD2-like sulfoquinovosyltransferases also appear among these candidates. A third group affects membrane rather than storage lipids, including a sphingolipid-biosynthetic module spanning three unlinked loci on chromosomes 1, 3 and 7, and a TIFY/JAZ cluster associated specifically with $n$-3 polyunsaturated lipids, the substrate pool for jasmonate synthesis.
 
@@ -552,6 +552,10 @@ Class totals and the pairwise class log-ratios defined above are the traits carr
 \mathrm{CLR}(x_i)=\ln\!\left(\frac{x_i}{g(\mathbf{x})}\right),
 \]
 where $g(\mathbf{x})$ is the geometric mean of species-level abundances in a sample.
+
+\subsection*{Lipid species inventory}
+
+Species counts report annotated features carried under lipid shorthand notation, the convention that names a species by its class and its acyl composition. Features annotated only under a trivial chemical name, which in this data set are the carotenoids, sterols, tocopherols, quinones and free sphingoid bases, are excluded from the counts (23 in CTL and 28 in LIN) but retained in every composition analysis, so the \%TIC superclass values include them. Class labels follow the lyso normalisation used throughout, so a species written with an empty second chain is counted as the lysolipid rather than as its diacyl parent. The frozen species set is given in Supplementary Tables~S6a to~S6c.
 
 \subsection*{Principal Component Analysis (PCA)}
 
@@ -675,7 +679,10 @@ abundance-weighted mean double-bond count across the species it contains, with
 the weights taken from the \%TIC composition. Colour gives the class and shape
 the trial, and the arrow runs from a class's CTL position to its LIN position.
 The two trials differ in year, field and acquisition batch, so these shifts are
-descriptive.}
+descriptive. Classes represented by one to three species (PS, PA, LPE, PG) have
+unstable positions, because the species detected in the two trials are not the
+same; the PS shift, for example, follows the loss of PS(18:0/20:4) from the
+detected set rather than remodelling of a PS pool.}
 \label{fig:suppfig_s6_chem}
 \end{figure*}
 
@@ -692,9 +699,11 @@ descriptive.}
 \centering
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S4_Lipid_Species_Counts.png}
 \caption{\textbf{Lipid species counts and overlap between conditions.}
-(A) Total lipid species detected in each condition, with common and condition-specific counts.
-(B) Species counts stratified by lipid class for CTL and LIN.
-(D) Species counts stratified by lipid superclass (glycerolipids, glycerophospholipids, sphingolipids, etc.).}
+\textbf{(A)}~Species detected in each trial, with the common and trial-specific counts.
+\textbf{(B)}~Counts by lipid class. \textbf{(C)}~Counts by lipid superclass. Counts
+cover features annotated in lipid shorthand notation; the carotenoids, sterols,
+tocopherols, quinones and free sphingoid bases carried under trivial names are
+excluded here but retained in the composition analyses.}
 \label{fig:suppfig_s4_counts}
 \end{figure*}
 
