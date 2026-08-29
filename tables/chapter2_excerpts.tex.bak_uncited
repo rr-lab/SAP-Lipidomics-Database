@@ -6,6 +6,257 @@
 \setlength{\LTright}{0pt}
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.08}
+\noindent\textbf{Supplementary Table S1. Class ratio statistics with jackknife stability.}
+\par\medskip
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}}
+\toprule
+\textbf{Ratio} & \textbf{n\_C} & \textbf{n\_LI} & \textbf{median\_C} & \textbf{median\_LI} & \textbf{effect\_log10} & \textbf{effect\_fc} & \textbf{direction} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Ratio} & \textbf{n\_C} & \textbf{n\_LI} & \textbf{median\_C} & \textbf{median\_LI} & \textbf{effect\_log10} & \textbf{effect\_fc} & \textbf{direction} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Continued on next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+MG/SQDG & 394.0 & 363.0 & -0.121 & 0.5761 & 0.697 & 4.98 & LI > C \\
+MG/MGDG & 394.0 & 363.0 & -1.341 & -0.7751 & 0.5659 & 3.68 & LI > C \\
+PS/SQDG & 394.0 & 363.0 & -0.9917 & 0.1126 & 1.104 & 12.71 & LI > C \\
+DGDG/MG & 394.0 & 363.0 & 0.9894 & 0.5746 & -0.4148 & 0.38 & LI < C \\
+PG/SQDG & 394.0 & 363.0 & 0.1939 & 0.6139 & 0.42 & 2.63 & LI > C \\
+DG/MG & 394.0 & 363.0 & 0.3912 & -0.0831 & -0.4743 & 0.34 & LI < C \\
+PE/SQDG & 394.0 & 363.0 & 0.1853 & 0.6258 & 0.4406 & 2.76 & LI > C \\
+DG/PS & 394.0 & 363.0 & 1.273 & 0.3728 & -0.9001 & 0.13 & LI < C \\
+LPC/MG & 394.0 & 363.0 & -0.0209 & -0.5475 & -0.5266 & 0.3 & LI < C \\
+PS/MGDG & 394.0 & 363.0 & -2.212 & -1.241 & 0.9705 & 9.34 & LI > C \\
+PS/DG & 394.0 & 363.0 & -1.273 & -0.3728 & 0.9001 & 7.95 & LI > C \\
+LPC/PS & 394.0 & 363.0 & 0.8547 & -0.0941 & -0.9488 & 0.11 & LI < C \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup
+\scriptsize
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent\textbf{Supplementary Table S2. Species-level CLR jackknife stability analysis.}
+\par\medskip
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}}
+\toprule
+\textbf{Lipid} & \textbf{Class} & \textbf{n\_C} & \textbf{n\_LI} & \textbf{median\_CLR\_C} & \textbf{median\_CLR\_LI} & \textbf{effect\_CLR} & \textbf{effect\_fc} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Lipid} & \textbf{Class} & \textbf{n\_C} & \textbf{n\_LI} & \textbf{median\_CLR\_C} & \textbf{median\_CLR\_LI} & \textbf{effect\_CLR} & \textbf{effect\_fc} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Continued on next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+DG(18:1/2:0) & DG & 394.0 & 363.0 & 0.0839 & 2.893 & 2.809 & 16.59 \\
+SQDG(16:0/16:0) & SQDG & 394.0 & 363.0 & 2.239 & -2.526 & -4.765 & 0.01 \\
+SQDG(16:0/18:1) & SQDG & 394.0 & 363.0 & -0.9121 & 1.869 & 2.781 & 16.13 \\
+SQDG(16:0/18:2) & SQDG & 394.0 & 363.0 & 0.1566 & -1.849 & -2.006 & 0.13 \\
+SQDG(16:0/18:3) & SQDG & 394.0 & 363.0 & 3.383 & -0.1495 & -3.532 & 0.03 \\
+SQDG(16:1/18:3) & SQDG & 394.0 & 363.0 & -1.513 & 2.763 & 4.276 & 71.95 \\
+SQDG(18:0/18:3) & SQDG & 394.0 & 363.0 & 0.3098 & -1.503 & -1.813 & 0.16 \\
+SQDG(18:3/18:3) & SQDG & 394.0 & 363.0 & 2.776 & 0.1568 & -2.619 & 0.07 \\
+TG(14:0/18:1/18:3) & TG & 394.0 & 363.0 & -2.693 & -0.5546 & 2.138 & 8.48 \\
+TG(16:0/18:0/18:2) & TG & 394.0 & 363.0 & 0.0035 & -3.063 & -3.067 & 0.05 \\
+TG(16:0/18:1/18:2) & TG & 394.0 & 363.0 & 0.605 & -3.759 & -4.364 & 0.01 \\
+TG(16:0/18:1/18:3) & TG & 394.0 & 363.0 & 0.9967 & -0.5123 & -1.509 & 0.22 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup
+\scriptsize
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent\textbf{Supplementary Table S3. Species stability summary by lipid class.}
+\par\medskip
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.134\linewidth}>{\raggedright\arraybackslash}p{0.134\linewidth}>{\raggedright\arraybackslash}p{0.134\linewidth}>{\raggedright\arraybackslash}p{0.134\linewidth}>{\raggedright\arraybackslash}p{0.134\linewidth}>{\raggedright\arraybackslash}p{0.134\linewidth}>{\raggedright\arraybackslash}p{0.134\linewidth}}
+\toprule
+\textbf{Class} & \textbf{n\_species} & \textbf{n\_significant} & \textbf{n\_stable\_1.0} & \textbf{n\_stable\_0.95} & \textbf{mean\_stability} & \textbf{min\_stability} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Class} & \textbf{n\_species} & \textbf{n\_significant} & \textbf{n\_stable\_1.0} & \textbf{n\_stable\_0.95} & \textbf{mean\_stability} & \textbf{min\_stability} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r}{Continued on next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+TG & 49 & 48 & 49 & 49 & 1 & 1 \\
+PC & 31 & 30 & 31 & 31 & 1 & 1 \\
+DG & 13 & 13 & 13 & 13 & 1 & 1 \\
+PE & 12 & 12 & 12 & 12 & 1 & 1 \\
+SQDG & 10 & 10 & 10 & 10 & 1 & 1 \\
+AEG & 7 & 7 & 7 & 7 & 1 & 1 \\
+DGDG & 7 & 7 & 7 & 7 & 1 & 1 \\
+MG & 5 & 5 & 5 & 5 & 1 & 1 \\
+MGDG & 5 & 5 & 5 & 5 & 1 & 1 \\
+GalCer & 2 & 2 & 2 & 2 & 1 & 1 \\
+LPC & 2 & 2 & 2 & 2 & 1 & 1 \\
+PG & 2 & 2 & 2 & 2 & 1 & 1 \\
+Cer & 1 & 1 & 1 & 1 & 1 & 1 \\
+FA & 1 & 1 & 1 & 1 & 1 & 1 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup
+\scriptsize
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent\textbf{Supplementary Table S4. Top variance lipid species.}
+\par\medskip
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.188\linewidth}>{\raggedright\arraybackslash}p{0.188\linewidth}>{\raggedright\arraybackslash}p{0.188\linewidth}>{\raggedright\arraybackslash}p{0.188\linewidth}>{\raggedright\arraybackslash}p{0.188\linewidth}}
+\toprule
+\textbf{Condition} & \textbf{Rank} & \textbf{Lipid} & \textbf{Class} & \textbf{Variance} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Condition} & \textbf{Rank} & \textbf{Lipid} & \textbf{Class} & \textbf{Variance} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{Continued on next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+Control & 1 & MGDG(18:3/18:3) & MGDG & 7.186 \\
+Control & 2 & PC(16:0/18:2) & PC & 2.62 \\
+Control & 3 & DG(18:3/18:3) & DG & 0.839 \\
+Control & 4 & PC(16:0/18:1) & PC & 0.8132 \\
+Control & 5 & PC(16:0/18:0) & PC & 0.3312 \\
+Control & 6 & PC(16:0/18:3) & PC & 0.2787 \\
+Control & 7 & DGDG(18:2/18:4) & DGDG & 0.2733 \\
+Control & 8 & PC(18:1/16:0) & PC & 0.211 \\
+Control & 9 & PC(16:0/20:5) & PC & 0.1992 \\
+Control & 10 & PC(16:0/20:4) & PC & 0.1479 \\
+LowInput & 1 & MGDG(18:3/18:3) & MGDG & 2.378 \\
+LowInput & 2 & PC(16:0/18:2) & PC & 1.35 \\
+LowInput & 3 & PC(16:0/18:0) & PC & 0.6709 \\
+LowInput & 4 & DG(18:3/18:3) & DG & 0.339 \\
+LowInput & 5 & DGDG(18:2/18:4) & DGDG & 0.2141 \\
+LowInput & 6 & PC(16:1/18:2) & PC & 0.2071 \\
+LowInput & 7 & PC(16:0/18:3) & PC & 0.1721 \\
+LowInput & 8 & PC(16:0/20:5) & PC & 0.1419 \\
+LowInput & 9 & PC(16:1/20:4) & PC & 0.1241 \\
+LowInput & 10 & PC(18:0/18:1) & PC & 0.0948 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup
+\scriptsize
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent\textbf{Supplementary Table S5A. Class-level CLR contrast.}
+\par\medskip
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.188\linewidth}>{\raggedright\arraybackslash}p{0.188\linewidth}>{\raggedright\arraybackslash}p{0.188\linewidth}>{\raggedright\arraybackslash}p{0.188\linewidth}>{\raggedright\arraybackslash}p{0.188\linewidth}}
+\toprule
+\textbf{Class} & \textbf{Effect} & \textbf{CI\_Low} & \textbf{CI\_High} & \textbf{AbsEffect} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Class} & \textbf{Effect} & \textbf{CI\_Low} & \textbf{CI\_High} & \textbf{AbsEffect} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{Continued on next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+DG & -0.15 & -0.1652 & -0.1348 & 0.15 \\
+DGDG & -0.2 & -0.2123 & -0.1861 & 0.2 \\
+LPC & 0.2641 & 0.2323 & 0.2972 & 0.2641 \\
+LPE & 0.5716 & 0.5426 & 0.6016 & 0.5716 \\
+MG & -0.4229 & -0.437 & -0.4092 & 0.4229 \\
+MGDG & -0.2926 & -0.3094 & -0.2746 & 0.2926 \\
+PA & 0.1614 & 0.0803 & 0.2342 & 0.1614 \\
+PC & -0.2551 & -0.2801 & -0.2289 & 0.2551 \\
+PE & -0.0995 & -0.1205 & -0.0772 & 0.0995 \\
+PG & -0.0469 & -0.0627 & -0.03 & 0.0469 \\
+PS & 0.9816 & 0.9307 & 1.029 & 0.9816 \\
+SQDG & -0.9773 & -0.9953 & -0.9587 & 0.9773 \\
+TG & 0.4654 & 0.43 & 0.5004 & 0.4654 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup
+\scriptsize
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent\textbf{Supplementary Table S5B. Class-level ALR contrast.}
+\par\medskip
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.157\linewidth}>{\raggedright\arraybackslash}p{0.157\linewidth}>{\raggedright\arraybackslash}p{0.157\linewidth}>{\raggedright\arraybackslash}p{0.157\linewidth}>{\raggedright\arraybackslash}p{0.157\linewidth}>{\raggedright\arraybackslash}p{0.157\linewidth}}
+\toprule
+\textbf{Feature} & \textbf{Effect} & \textbf{CI\_Low} & \textbf{CI\_High} & \textbf{Class} & \textbf{AbsEffect} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Feature} & \textbf{Effect} & \textbf{CI\_Low} & \textbf{CI\_High} & \textbf{Class} & \textbf{AbsEffect} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r}{Continued on next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+DG & -0.6155 & -0.6531 & -0.5813 & DG & 0.6155 \\
+DGDG & -0.6655 & -0.7009 & -0.63 & DGDG & 0.6655 \\
+LPC & -0.2013 & -0.2537 & -0.1541 & LPC & 0.2013 \\
+LPE & 0.1062 & 0.0577 & 0.1565 & LPE & 0.1062 \\
+MG & -0.8883 & -0.9252 & -0.8536 & MG & 0.8883 \\
+MGDG & -0.758 & -0.796 & -0.7215 & MGDG & 0.758 \\
+PA & -0.3041 & -0.3914 & -0.2233 & PA & 0.3041 \\
+PC & -0.7205 & -0.7645 & -0.6778 & PC & 0.7205 \\
+PE & -0.5649 & -0.6043 & -0.5277 & PE & 0.5649 \\
+PG & -0.5123 & -0.552 & -0.4786 & PG & 0.5123 \\
+PS & 0.5162 & 0.454 & 0.5735 & PS & 0.5162 \\
+SQDG & -1.443 & -1.484 & -1.402 & SQDG & 1.443 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup
+\scriptsize
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
 \noindent\textbf{Supplementary Table S6a. Lipid species summary.}
 \par\medskip
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.470\linewidth}>{\raggedright\arraybackslash}p{0.470\linewidth}}
@@ -313,6 +564,42 @@ LCAT* & mean(log10(LPC),log10(TG)) - mean(log10(PC),log10(DG)) & 355.0 & -1.562 
 PNPLA1 & log10(DG) - log10(TG) & 355.0 & 0.7379 & 0.4697 & -0.2682 & paired Wilcoxon signed-rank & 1.61e-57 \\
 LRO1 & mean(log10(TG),log10(LPE)) - mean(log10(PE),log10(DG)) & 355.0 & -1.746 & -1.514 & 0.2322 & paired Wilcoxon signed-rank & 9.63e-60 \\
 PNPLA3 & log10(TG) - mean(log10(DG),log10(MG)) & 355.0 & -0.233 & 0.0935 & 0.3265 & paired Wilcoxon signed-rank & 7.39e-59 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup
+\scriptsize
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\noindent\textbf{Supplementary Table S13. GWAS support for LINEX reaction-branch candidate genes.}
+\par\medskip
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}>{\raggedright\arraybackslash}p{0.117\linewidth}}
+\toprule
+\textbf{Reaction\_branch} & \textbf{GeneID} & \textbf{Role\_label} & \textbf{annotation} & \textbf{Condition} & \textbf{GWAS\_type} & \textbf{Source} & \textbf{Best\_SNP} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Reaction\_branch} & \textbf{GeneID} & \textbf{Role\_label} & \textbf{annotation} & \textbf{Condition} & \textbf{GWAS\_type} & \textbf{Source} & \textbf{Best\_SNP} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Continued on next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+LCAT* (PC+DG <-> LPC+TG) & SORBI\_3001G103800 & LCAT-like 1 & Lecithin-cholesterol acyltransferase-like 1;SORBI\_3001G103800;PTN00... & LIN & Individual & S8\_lowinput & SNP\_7987166 \\
+LCAT* (PC+DG <-> LPC+TG) & SORBI\_3001G103800 & LCAT-like 1 & Lecithin-cholesterol acyltransferase-like 1;SORBI\_3001G103800;PTN00... & LIN & SumRatio & S9\_lowinput & SNP\_7987166 \\
+LCAT* (PC+DG <-> LPC+TG) & SORBI\_3001G448800 & LCAT-like 1 paralog & Lecithin-cholesterol acyltransferase-like 1;SORBI\_3001G448800;PTN00... & LIN & Individual & S8\_lowinput & SNP\_72626995 \\
+LCAT* (PC+DG <-> LPC+TG) & SORBI\_3006G214500 & LCAT-like 4 & Lecithin-cholesterol acyltransferase-like 4;SORBI\_3006G214500;PTN00... & LIN & Individual & S8\_lowinput & SNP\_56290997 \\
+LCAT* (PC+DG <-> LPC+TG) & SORBI\_3006G214500 & LCAT-like 4 & Lecithin-cholesterol acyltransferase-like 4;SORBI\_3006G214500;PTN00... & LIN & SumRatio & S9\_lowinput & SNP\_56307749 \\
+LCAT* (PC+DG <-> LPC+TG) & SORBI\_3001G103800 & LCAT-like 1 & Lecithin-cholesterol acyltransferase-like 1;SORBI\_3001G103800;PTN00... & CTL & SumRatio & S9\_control & SNP\_7972773 \\
+LCAT* (PC+DG <-> LPC+TG) & SORBI\_3001G448800 & LCAT-like 1 paralog & Lecithin-cholesterol acyltransferase-like 1;SORBI\_3001G448800;PTN00... & CTL & SumRatio & S9\_control & SNP\_72605500 \\
+PNPLA1 branch (TG <-> DG) & SORBI\_3001G041900 & PNPLA-domain TAG lipase-like & PNPLA domain-containing protein;SORBI\_3001G041900;PTN004457248;orth... & LIN & Individual & S8\_lowinput & SNP\_3152951 \\
 \end{longtable}
 \endgroup
 \end{landscape}
