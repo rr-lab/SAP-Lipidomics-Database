@@ -2301,24 +2301,3 @@
   doi     = {10.1111/tpj.12804}
 
 }
-
-@article{Bourdenx2011CER1,
-  author  = {Bourdenx, Brice and Bernard, Am{\'e}lie and Domergue, Fr{\'e}d{\'e}ric and Pascal, St{\'e}phanie and L{\'e}ger, Amandine and Roby, Dominique and Pervent, Marjorie and Vile, Denis and Haslam, Richard P. and Napier, Johnathan A. and Lessire, Ren{\'e} and Joub{\`e}s, J{\'e}r{\^o}me},
-  title   = {Overexpression of Arabidopsis {ECERIFERUM1} promotes wax very-long-chain alkane biosynthesis and influences plant response to biotic and abiotic stresses},
-  journal = {Plant Physiology},
-  volume  = {156},
-  number  = {1},
-  pages   = {29--45},
-  year    = {2011},
-  doi     = {10.1104/pp.111.172320}
-}
-
-@article{Noshi2016TGA10,
-  author  = {Noshi, Masahiro and Mori, Daisuke and Tanabe, Noriaki and Maruta, Takanori and Shigeoka, Shigeru},
-  title   = {Arabidopsis clade {IV} {TGA} transcription factors, {TGA10} and {TGA9}, are involved in {ROS}-mediated responses to bacterial {PAMP} flg22},
-  journal = {Plant Science},
-  volume  = {252},
-  pages   = {12--21},
-  year    = {2016},
-  doi     = {10.1016/j.plantsci.2016.06.019}
-}
