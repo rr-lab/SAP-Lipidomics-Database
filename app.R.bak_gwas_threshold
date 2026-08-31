@@ -332,7 +332,6 @@ dataset_list <- list(
 )
 
 lipid_class_info <- read_lipid_class_info(resolved_paths$lipid_class)
-
 subsubclass_col <- dplyr::case_when(
   "Sub-subclass" %in% names(lipid_class_info) ~ "Sub-subclass",
   "Sub_subclass" %in% names(lipid_class_info) ~ "Sub_subclass",
@@ -346,31 +345,6 @@ gwas_lipid_class_map <- list(
   control = read_gwas_lipid_map(file.path("data", "metadata", "lipid_with_classes_control.csv")),
   lowinput = read_gwas_lipid_map(file.path("data", "metadata", "lipid_with_classes_lowinput.csv"))
 )
-
-# Subclasses that actually belong to a given lipid class. Composite sum/ratio
-# traits carry members from several classes, so a class-filtered trait list still
-# pools every subclass those traits touch. This restricts the dropdown to the
-# subclasses of the selected class. NULL means "do not restrict".
-subclasses_for_class <- function(cls, dataset_name = NULL) {
-  if (is.null(cls) || length(cls) == 0) return(NULL)
-  cls <- as.character(cls)[[1]]
-  if (is.na(cls) || cls == "" || cls == "All") return(NULL)
-  maps <- if (is.null(dataset_name) || !dataset_name %in% names(gwas_lipid_class_map)) {
-    gwas_lipid_class_map
-  } else {
-    gwas_lipid_class_map[dataset_name]
-  }
-  out <- character(0)
-  for (m in maps) {
-    if (is.null(m) || nrow(m) == 0) next
-    if (!all(c("Class", "Subclass") %in% names(m))) next
-    keep <- !is.na(m$Class) & trimws(as.character(m$Class)) == cls
-    out <- c(out, as.character(m$Subclass[keep]))
-  }
-  out <- unique(trimws(out))
-  out <- out[!is.na(out) & out != "" & out != "NA"]
-  if (length(out) == 0) NULL else out
-}
 
 #---------------------------
 # TIC Normalization Function (%TIC per sample)
@@ -1732,7 +1706,7 @@ ui <- fluidPage(
             content_card(
               title = "GWAS Controls",
               selectInput("gwas_dataset", "Select Dataset:", choices = annotation_dataset_choices, selected = default_annotation_dataset),
-              selectInput("gwas_threshold", "Select -log10(p) threshold:", choices = c("8.09  (genome-wide, Bonferroni)" = "8.09", "7  (p <= 1e-7)" = "7", "6  (p <= 1e-6)" = "6", "5  (p <= 1e-5)" = "5"), selected = "8.09"),
+              selectInput("gwas_threshold", "Select -log10(p) threshold:", choices = c("7", "6", "5"), selected = "7"),
               selectInput("gwas_trait_source", "Trait Source:", choices = c("All" = "all", "Individual" = "individual", "Sum/Ratio" = "sum_ratio"), selected = "all"),
               uiOutput("gwas_class_filter"),
               uiOutput("gwas_subclass_filter"),
@@ -2427,24 +2401,6 @@ server <- function(input, output, session) {
     p_chr
   }
 
-  plog_cutoff <- function(p_threshold) {
-    if (is.null(p_threshold) || length(p_threshold) == 0) return(7)
-    v <- suppressWarnings(as.numeric(p_threshold[[1]]))
-    if (is.na(v)) 7 else v
-  }
-
-  filter_plog <- function(df, p_threshold) {
-    if (is.null(df) || nrow(df) == 0) return(df)
-    if (!"log(p)" %in% colnames(df)) return(df)
-    df[!is.na(df$`log(p)`) & df$`log(p)` >= plog_cutoff(p_threshold), , drop = FALSE]
-  }
-
-  tidy_annotation_names <- function(df) {
-    if (is.null(df)) return(df)
-    names(df)[names(df) == "Family_Sufamily"] <- "Family_Subfamily"
-    df
-  }
-
   get_annotation_data_list <- function(dataset_name, p_threshold = "7") {
     p_key <- normalize_threshold_choice(p_threshold)
     data_pool <- annotation_data_by_threshold[[p_key]]
@@ -2685,16 +2641,7 @@ server <- function(input, output, session) {
       meta_tbl <- meta_tbl %>% filter(Trait == lipid_choice)
     }
 
-    traits_out <- unique(meta_tbl$Trait)
-    if (length(traits_out) == 0) {
-      return(character(0))
-    }
-    data_list <- get_annotation_data_list(dataset_name, p_threshold = p_threshold)
-    keep <- vapply(traits_out, function(tr) {
-      d <- filter_plog(data_list[[tr]], p_threshold)
-      !is.null(d) && nrow(d) > 0
-    }, logical(1))
-    traits_out[keep]
+    unique(meta_tbl$Trait)
   }
 
   ##======================================================================
@@ -2759,7 +2706,7 @@ server <- function(input, output, session) {
           p_threshold = input$gwas_threshold
         )
         rows <- lapply(traits, function(trait) {
-          df <- filter_plog(data_list[[trait]], input$gwas_threshold)
+          df <- data_list[[trait]]
           if (is.null(df) || nrow(df) == 0) {
             return(NULL)
           }
@@ -2781,18 +2728,18 @@ server <- function(input, output, session) {
           write.csv(data.frame(), file, row.names = FALSE)
           return()
         }
-        df_annotated <- bind_rows(rows) %>% left_join(gene_annotation, by = "GeneID") %>% tidy_annotation_names()
+        df_annotated <- bind_rows(rows) %>% left_join(gene_annotation, by = "GeneID")
         write.csv(df_annotated, file, row.names = FALSE)
         return()
       }
 
-      df <- filter_plog(data_list[[input$selected_lipid]], input$gwas_threshold)
+      df <- data_list[[input$selected_lipid]]
       if (is.null(df)) {
         write.csv(data.frame(), file, row.names = FALSE)
         return()
       }
 
-      df_annotated <- df %>% left_join(gene_annotation, by = "GeneID") %>% tidy_annotation_names()
+      df_annotated <- df %>% left_join(gene_annotation, by = "GeneID")
       meta <- get_gwas_trait_meta_table(
         input$gwas_dataset,
         trait_names = input$selected_lipid,
@@ -3462,8 +3409,6 @@ server <- function(input, output, session) {
       meta <- meta[keep, , drop = FALSE]
     }
     subclasses <- sort(unique(unlist(meta$SubclassMembers, use.names = FALSE)))
-    allowed <- subclasses_for_class(input$data_viz_class_choice)
-    if (!is.null(allowed)) subclasses <- intersect(subclasses, allowed)
     subclasses <- subclasses[!is.na(subclasses) & subclasses != ""]
     selectInput("data_viz_subclass_choice", "Filter by Subclass:", choices = c("All", subclasses), selected = "All")
   })
@@ -3559,10 +3504,7 @@ server <- function(input, output, session) {
       rows <- lapply(seq_len(nrow(meta)), function(i) {
         ds <- meta$Dataset[[i]]
         tr <- meta$Trait[[i]]
-        ann_tbl <- filter_plog(
-          get_annotation_data_list(ds, p_threshold = input$data_viz_gwas_threshold)[[tr]],
-          input$data_viz_gwas_threshold
-        )
+        ann_tbl <- get_annotation_data_list(ds, p_threshold = input$data_viz_gwas_threshold)[[tr]]
         hit_count <- if (is.null(ann_tbl)) 0 else nrow(ann_tbl)
 
         if (level == "Lipid") {
@@ -4834,8 +4776,6 @@ server <- function(input, output, session) {
       trait_meta <- trait_meta[vapply(trait_meta$ClassMembers, function(x) input$gwas_class_choice %in% x, logical(1)), , drop = FALSE]
     }
     subclasses <- sort(unique(unlist(trait_meta$SubclassMembers, use.names = FALSE)))
-    allowed <- subclasses_for_class(input$gwas_class_choice, input$gwas_dataset)
-    if (!is.null(allowed)) subclasses <- intersect(subclasses, allowed)
     choices <- subclasses[subclasses != ""]
     selectInput("gwas_subclass_choice", "Filter by Subclass:", choices = c("All", choices), selected = "All")
   })
@@ -4970,7 +4910,7 @@ server <- function(input, output, session) {
         p_threshold = input$gwas_threshold
       )
       rows <- lapply(traits, function(trait) {
-        df <- filter_plog(data_list[[trait]], input$gwas_threshold)
+        df <- data_list[[trait]]
         if (is.null(df) || nrow(df) == 0) {
           return(NULL)
         }
@@ -4990,18 +4930,16 @@ server <- function(input, output, session) {
       rows <- rows[!vapply(rows, is.null, logical(1))]
       validate(need(length(rows) > 0, "No genes available for the selected class/subclass filter."))
       df_annotated <- bind_rows(rows) %>%
-        left_join(gene_annotation, by = "GeneID") %>%
-        tidy_annotation_names()
+        left_join(gene_annotation, by = "GeneID")
       return(datatable(df_annotated, options = list(scrollX = TRUE, pageLength = 10)))
     }
 
-    df <- filter_plog(data_list[[input$selected_lipid]], input$gwas_threshold)
+    df <- data_list[[input$selected_lipid]]
     validate(need(!is.null(df), "No annotation table found for this lipid."))
     validate(need(nrow(df) > 0, "No genes passed the GWAS cutoff for this lipid in the loaded RDS."))
 
     df_annotated <- df %>%
-      left_join(gene_annotation, by = "GeneID") %>%
-      tidy_annotation_names()
+      left_join(gene_annotation, by = "GeneID")
 
     meta <- selected_gwas_trait_meta()
     if (!is.null(meta)) {
@@ -5044,8 +4982,6 @@ server <- function(input, output, session) {
       trait_meta <- trait_meta[vapply(trait_meta$ClassMembers, function(x) input$hit_class_choice %in% x, logical(1)), , drop = FALSE]
     }
     subclasses <- sort(unique(unlist(trait_meta$SubclassMembers, use.names = FALSE)))
-    allowed <- subclasses_for_class(input$hit_class_choice, input$hit_dataset)
-    if (!is.null(allowed)) subclasses <- intersect(subclasses, allowed)
     subclasses <- subclasses[subclasses != ""]
     selectInput("hit_subclass_choice", "Filter by Subclass:", choices = c("All", subclasses), selected = "All")
   })

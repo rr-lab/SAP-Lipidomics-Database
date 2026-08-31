@@ -332,7 +332,6 @@ dataset_list <- list(
 )
 
 lipid_class_info <- read_lipid_class_info(resolved_paths$lipid_class)
-
 subsubclass_col <- dplyr::case_when(
   "Sub-subclass" %in% names(lipid_class_info) ~ "Sub-subclass",
   "Sub_subclass" %in% names(lipid_class_info) ~ "Sub_subclass",
@@ -346,31 +345,6 @@ gwas_lipid_class_map <- list(
   control = read_gwas_lipid_map(file.path("data", "metadata", "lipid_with_classes_control.csv")),
   lowinput = read_gwas_lipid_map(file.path("data", "metadata", "lipid_with_classes_lowinput.csv"))
 )
-
-# Subclasses that actually belong to a given lipid class. Composite sum/ratio
-# traits carry members from several classes, so a class-filtered trait list still
-# pools every subclass those traits touch. This restricts the dropdown to the
-# subclasses of the selected class. NULL means "do not restrict".
-subclasses_for_class <- function(cls, dataset_name = NULL) {
-  if (is.null(cls) || length(cls) == 0) return(NULL)
-  cls <- as.character(cls)[[1]]
-  if (is.na(cls) || cls == "" || cls == "All") return(NULL)
-  maps <- if (is.null(dataset_name) || !dataset_name %in% names(gwas_lipid_class_map)) {
-    gwas_lipid_class_map
-  } else {
-    gwas_lipid_class_map[dataset_name]
-  }
-  out <- character(0)
-  for (m in maps) {
-    if (is.null(m) || nrow(m) == 0) next
-    if (!all(c("Class", "Subclass") %in% names(m))) next
-    keep <- !is.na(m$Class) & trimws(as.character(m$Class)) == cls
-    out <- c(out, as.character(m$Subclass[keep]))
-  }
-  out <- unique(trimws(out))
-  out <- out[!is.na(out) & out != "" & out != "NA"]
-  if (length(out) == 0) NULL else out
-}
 
 #---------------------------
 # TIC Normalization Function (%TIC per sample)
@@ -3462,8 +3436,6 @@ server <- function(input, output, session) {
       meta <- meta[keep, , drop = FALSE]
     }
     subclasses <- sort(unique(unlist(meta$SubclassMembers, use.names = FALSE)))
-    allowed <- subclasses_for_class(input$data_viz_class_choice)
-    if (!is.null(allowed)) subclasses <- intersect(subclasses, allowed)
     subclasses <- subclasses[!is.na(subclasses) & subclasses != ""]
     selectInput("data_viz_subclass_choice", "Filter by Subclass:", choices = c("All", subclasses), selected = "All")
   })
@@ -4834,8 +4806,6 @@ server <- function(input, output, session) {
       trait_meta <- trait_meta[vapply(trait_meta$ClassMembers, function(x) input$gwas_class_choice %in% x, logical(1)), , drop = FALSE]
     }
     subclasses <- sort(unique(unlist(trait_meta$SubclassMembers, use.names = FALSE)))
-    allowed <- subclasses_for_class(input$gwas_class_choice, input$gwas_dataset)
-    if (!is.null(allowed)) subclasses <- intersect(subclasses, allowed)
     choices <- subclasses[subclasses != ""]
     selectInput("gwas_subclass_choice", "Filter by Subclass:", choices = c("All", choices), selected = "All")
   })
@@ -5044,8 +5014,6 @@ server <- function(input, output, session) {
       trait_meta <- trait_meta[vapply(trait_meta$ClassMembers, function(x) input$hit_class_choice %in% x, logical(1)), , drop = FALSE]
     }
     subclasses <- sort(unique(unlist(trait_meta$SubclassMembers, use.names = FALSE)))
-    allowed <- subclasses_for_class(input$hit_class_choice, input$hit_dataset)
-    if (!is.null(allowed)) subclasses <- intersect(subclasses, allowed)
     subclasses <- subclasses[subclasses != ""]
     selectInput("hit_subclass_choice", "Filter by Subclass:", choices = c("All", subclasses), selected = "All")
   })

@@ -227,6 +227,46 @@ In the CTL individual-lipid layer, the strongest association was \texttt{SORBI\_
 
 In the LIN individual-lipid layer, the strongest association was observed for \texttt{SORBI\_3004G130500}, an unannotated candidate gene ($p = 2.44\times10^{-73}$; $r^2_{\max}=1.0$). The most recurrent individual-lipid locus was \texttt{SORBI\_3010G064200} (1,3-beta-glucan synthase; 13 phenotypes; $p = 3.40\times10^{-16}$; $r^2_{\max}=1.0$). In the LIN sum/ratio layer, the strongest association and the most recurrent locus were both \texttt{SORBI\_3004G004800} (soluble acid invertase; 20 phenotypes; $p = 2.61\times10^{-21}$; $r^2_{\max}=0.78$).
 
+Table~\ref{tab:top_loci} lists the five most recurrent loci in each trial and trait layer. Because a single lead SNP tags every gene inside its LD window, recurrence is counted per signal rather than per gene, and the number of genes each signal tags is reported alongside it. That number separates the two trials as clearly as the recurrence counts do. The five leading CTL loci tag between one and seven genes each, whereas the leading LIN sum/ratio loci tag up to 33, so the larger LIN candidate list reflects wider LD windows as much as a greater number of distinct signals. The gene named on each row is the first annotated gene in its interval and serves as a label for the locus, not as a causal assignment.
+
+\begin{table*}[!ht]
+\centering
+\caption{\textbf{The most recurrent GWAS loci under CTL and LIN.} The five loci associated with the largest number of phenotypes in each trial and trait layer. A locus is one signal, defined as all candidate genes sharing a trial, trait layer, chromosome and best $p$-value, so the genes tagged by one lead SNP occupy a single row. Interval, the span of the tagged genes in Mb; Genes, the number of candidate genes the signal tags; Gene, the first annotated gene in that interval, given as a label for the locus rather than as a causal assignment; Traits, the number of lipid phenotypes associated with the locus. Recurrence counts are descriptive summaries of the candidate tables and not a test against a null expectation, since lipid phenotypes are correlated by construction.}
+\label{tab:top_loci}
+\scriptsize
+\begin{tabular}{llrllrl}
+\toprule
+\textbf{Trait layer} & \textbf{Interval (Mb)} & \textbf{Genes} & \textbf{Gene} & \textbf{Putative function} & \textbf{Traits} & \textbf{$P$} \\
+\midrule
+\multicolumn{7}{l}{\textbf{CTL}} \\
+Individual lipids & 6:25.52--25.57 & 1 & \texttt{SORBI\_3006G040500} & Phospholipid-transporting ATPase & 27 & $1.01\times10^{-26}$ \\
+ & 5:61.66--61.75 & 2 & \texttt{SORBI\_3005G148500} & FBD domain-containing protein & 13 & $1.55\times10^{-16}$ \\
+ & 10:32.68--32.68 & 1 & \texttt{SORBI\_3010G140800} & Uncharacterized protein & 13 & $1.24\times10^{-14}$ \\
+ & 9:20.91--20.93 & 1 & \texttt{SORBI\_3009G092100} & Uncharacterized protein & 12 & $1.34\times10^{-17}$ \\
+ & 5:24.10--24.13 & 2 & \texttt{SORBI\_3005G110120} & Uncharacterized protein & 12 & $8.19\times10^{-15}$ \\
+\addlinespace
+Sums / ratios & 3:64.63--64.63 & 1 & \texttt{SORBI\_3003G318650} & Uncharacterized protein & 64 & $3.37\times10^{-12}$ \\
+ & 2:73.01--73.28 & 6 & \texttt{SORBI\_3002G371500} & RRM domain-containing protein & 56 & $1.59\times10^{-11}$ \\
+ & 9:50.91--50.98 & 3 & \texttt{SORBI\_3009G152800} & MFS transporter domain protein & 53 & $1.95\times10^{-10}$ \\
+ & 10:20.53--20.94 & 7 & \texttt{SORBI\_3010G136200} & SLH domain-containing protein & 34 & $4.28\times10^{-23}$ \\
+ & 10:39.42--39.42 & 1 & \texttt{SORBI\_3010G144500} & Uncharacterized protein & 34 & $1.31\times10^{-21}$ \\
+\midrule
+\multicolumn{7}{l}{\textbf{LIN}} \\
+Individual lipids & 10:5.08--5.09 & 1 & \texttt{SORBI\_3010G064200} & 1,3-beta-glucan synthase & 13 & $3.40\times10^{-16}$ \\
+ & 3:29.13--29.18 & 1 & \texttt{SORBI\_3003G169600} & Mitochondrial carrier protein & 12 & $6.98\times10^{-67}$ \\
+ & 7:28.03--28.04 & 1 & \texttt{SORBI\_3007G102400} & Aminotransferase-like domain protein & 9 & $1.97\times10^{-12}$ \\
+ & 10:43.19--43.39 & 9 & \texttt{SORBI\_3010G150325} & F-box domain-containing protein & 8 & $1.41\times10^{-18}$ \\
+ & 10:43.59--43.63 & 3 & \texttt{SORBI\_3010G150800} & tRNA 2-thiolation protein 1 & 8 & $5.94\times10^{-12}$ \\
+\addlinespace
+Sums / ratios & 4:0.42--0.78 & 27 & \texttt{SORBI\_3004G004800} & Soluble acid invertase & 20 & $2.61\times10^{-21}$ \\
+ & 3:7.54--7.78 & 15 & \texttt{SORBI\_3003G087100} & Protein MAO HUZI 4, chloroplastic & 19 & $4.46\times10^{-20}$ \\
+ & 10:43.37--43.77 & 10 & \texttt{SORBI\_3010G150325} & F-box domain-containing protein & 16 & $3.73\times10^{-11}$ \\
+ & 1:7.56--8.03 & 33 & \texttt{SORBI\_3001G101700} & SS18 N-terminal domain protein & 15 & $7.42\times10^{-14}$ \\
+ & 1:8.02--8.03 & 2 & \texttt{SORBI\_3001G104800} & Uncharacterized protein & 15 & $1.38\times10^{-13}$ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=\textwidth]{fig/main/Figure3_GWAS_Manhattan.png}
