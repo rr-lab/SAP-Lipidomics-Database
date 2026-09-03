@@ -229,6 +229,8 @@ In the LIN individual-lipid layer, the strongest association was observed for \t
 
 Table~\ref{tab:top_loci} lists the five most recurrent loci in each trial and trait layer. Because a single lead SNP tags every gene inside its LD window, recurrence is counted per signal rather than per gene, and the number of genes each signal tags is reported alongside it. That number separates the two trials as clearly as the recurrence counts do. The five leading CTL loci tag between one and seven genes each, whereas the leading LIN sum/ratio loci tag up to 33, so the larger LIN candidate list reflects wider LD windows as much as a greater number of distinct signals. The gene named on each row is the first annotated gene in its interval and serves as a label for the locus, not as a causal assignment.
 
+Recurrence counts and candidate lists summarize mapping output. To test whether CTL and LIN differed in additive genetic variance in the lipidome, we estimated genomic heritability (\(h^2\)) for each lipid using a GRM from LD-pruned markers. The same 146 species and 351 genotypes were analyzed in both trials, enabling paired comparisons (Supplementary Table~S26). Under CTL, median \(h^2=0\) and 11/146 species had 95\% profile-likelihood intervals excluding zero. Under LIN, median \(h^2=0.171\) and 48/146 species excluded zero. Differences were strongly directional: 118 species had higher \(h^2\) under LIN, 19 higher under CTL, and 9 ties (sign test \(p=1.2\times10^{-18}\)). Class sums showed the same pattern (Supplementary Table~S27; Supplementary~\ref{fig:suppfig_s8_heritability}A). All classes except TG and PA had higher point estimates under LIN, and PS was the only class excluding zero under LIN alone (\(h^2=0.38\), 95\% CI 0.17--0.66). Because both trials used the same markers, GRM, and genotypes, the contrast is not due to marker coverage or panel composition. Given wide intervals at this sample size, results are most informative in aggregate.
+
 \begin{table*}[!ht]
 \centering
 \caption{\textbf{The most recurrent GWAS loci under CTL and LIN.} The five loci associated with the largest number of phenotypes in each trial and trait layer. A locus is one signal, defined as all candidate genes sharing a trial, trait layer, chromosome and best $p$-value, so the genes tagged by one lead SNP occupy a single row. Interval, the span of the tagged genes in Mb; Genes, the number of candidate genes the signal tags; Gene, the first annotated gene in that interval, given as a label for the locus rather than as a causal assignment; Traits, the number of lipid phenotypes associated with the locus. Recurrence counts are descriptive summaries of the candidate tables and not a test against a null expectation, since lipid phenotypes are correlated by construction.}
@@ -266,9 +268,6 @@ Sums / ratios & 4:0.42--0.78 & 27 & \texttt{SORBI\_3004G004800} & Soluble acid i
 \bottomrule
 \end{tabular}
 \end{table*}
-
-Recurrence counts and candidate lists are descriptive summaries of the mapping output. To ask directly whether the two trials differ in how much additive genetic variance the lipidome carries, we estimated genomic heritability for each lipid species from a genomic relationship matrix built on LD-pruned markers, fitting the same 146 species and the same 351 genotypes in both trials so that the comparison is paired (Supplementary Table~S26). Under CTL the median $h^2$ across species was 0, and 11 of 146 species had a 95\% profile-likelihood interval excluding zero; under LIN the median was 0.171 and 48 of 146 excluded zero. The paired difference runs almost entirely one way, with 118 species higher under LIN, 19 higher under CTL and 9 tied (sign test $p = 1.2\times10^{-18}$). Class sums behave the same way (Supplementary Table~S27; Supplementary~\ref{fig:suppfig_s8_heritability}A): every class except TG and PA has a higher point estimate under LIN, and PS is the only class whose interval excludes zero under LIN alone ($h^2 = 0.38$, 95\% CI 0.17--0.66). Because both trials are fitted on one marker set, one relationship matrix and one set of genotypes, the contrast cannot be attributed to marker coverage or panel composition. Individual intervals are wide at this sample size, so the per-species estimates are informative in aggregate rather than singly.
-
 
 \begin{figure*}[!t]
 \centering
@@ -593,10 +592,6 @@ Cross-trial overlap was computed from the LD-mapped candidate tables, separately
 
 For the per-class analysis, each candidate gene was assigned the lipid classes represented among the phenotypes with which it was significantly associated. Class labels were parsed from the lipid species name for individual-lipid traits and from the numerator and denominator of the trait name for class sums and ratios; species lacking an abbreviated class prefix were mapped via the curated lipid class table. Because a single gene in the class-ratio layer can be associated with ratios spanning many classes, per-class overlap tests were stratified by trait layer. Class concordance was the proportion of genes recovered in both conditions that shared at least one lipid class between their CTL and LIN class sets. All tests were implemented in Python (pandas, NumPy), with hypergeometric and Benjamini--Hochberg procedures implemented directly.
 
-\subsection*{Genomic heritability}
-
-Genomic heritability was estimated as $h^2 = V_g/(V_g+V_e)$ from the model $y = \mathbf{1}\mu + u + e$, with $u \sim N(0, K\sigma^2_g)$ and $K$ a genomic relationship matrix. $K$ was built with PLINK~2 (\texttt{--make-rel square}) from the SAP genotype set used for GWAS after LD pruning (\texttt{--indep-pairwise 50 5 0.2}), covering 400 genotypes. Variance components were obtained by REML on the eigendecomposition of $K$. Intervals are 95\% profile-likelihood intervals, taken as the set of $h^2$ values on a grid whose restricted log-likelihood falls within $\chi^2_1/2$ of the maximum; a trait is called non-zero when that interval excludes zero. Bootstrap resampling was not used, because resampling genotypes with replacement creates pairs with relationship 1 and identical phenotypes, which forces the estimate to 1 in every replicate. CTL and LIN were fitted on the same 351 genotypes and the same 146 species present in both trials, so the two trials differ only in the phenotype.
-
 \subsection*{Gene Annotation}
 
 SNPs were aligned with the \textit{Sorghum bicolor} reference genome v3.1 (BTx623). Linkage disequilibrium in the sorghum association panel extends over appreciable physical distances \citep{Boatwright2022}, so a Bonferroni-significant SNP typically tags several linked genes rather than one. Significant SNPs were therefore grouped into association regions at a linkage-disequilibrium threshold of $r^2 \geq 0.4$. This is a moderate cutoff, retaining variants that carry at least approximately 40\% of the effective sample size for tagging a causal site, and it trades the narrow regions obtained at stringent thresholds, which discard genes tagged by imperfect proxies, against the inflated gene counts obtained at permissive ones. Because candidate-gene counts are considerably more sensitive to this cutoff than interval counts are, all interval-level analyses, including GO enrichment and the cross-trial overlap, were carried out on 250~kb intervals rather than on gene identifiers. Candidate genes were defined as the annotated gene models falling within these LD-defined association regions. Functional annotations and homology were obtained from Phytozome (\url{https://phytozome.jgi.doe.gov}), SorghumBase (\url{https://sorghumbase.com}), and TAIR for corresponding \textit{Arabidopsis thaliana} orthologs. Genes with known roles in N, P, cold tolerance, or lipid metabolism were specifically noted. We aggregated the frequency of each candidate gene within all lipid GWAS findings and marked those with the highest recurrence among Bonferroni-significant associations.
@@ -609,6 +604,24 @@ Enrichment was computed separately within each lipid class, so that a term is at
 Because the Gene Ontology nests parent and child terms, a single candidate gene set can surface as several terms. Terms whose candidate gene sets were identical were therefore merged into one finding, keeping the most specific term as the label and retaining every merged term name and GO identifier in the supplementary table. The same gene set also recurs between strata, since class sums and ratios share candidate genes by construction: one purine permease array on chromosome~6 appeared ten times, across four lipid classes, both trait layers and both ontologies, described once as a process and once as an activity. Gene sets identical across strata were merged in the same way, and the lipid classes in which each appeared were retained, because a locus surfacing in a single class is class-specific whereas one surfacing across many is generic. After both merges, the 101 terms passing the LD-aware null reduced to 50 distinct loci.
 
 For the main figure we retained loci whose GO term draws on at most 30 background genes. This is a criterion of specificity rather than of significance, applied because a term drawn from a background of hundreds or thousands of genes cannot be interpreted whatever its enrichment: zinc ion binding (1{,}015 background genes), transmembrane transport (526), nucleic acid binding (522) and mRNA binding (432) all pass the permutation null, and none of them names a lipid-related process. Two further terms, \textit{detection of stimulus} and \textit{DNA topological change}, were removed by name as uninterpretable in this context. Nineteen loci remain and are shown in Fig.~\ref{fig:go_bp_main}; all 50 are listed in Supplementary Table~S16 together with the number of independent 250~kb intervals supporting each, and the uncollapsed per-term results in Supplementary Tables~S17 and~S18. Interval count is reported but was not used to select or to rank terms. It scales with the size of the GO term, so a threshold on it discriminates against precisely the small, specific terms of interest: terms supported by three or more intervals averaged 175 background genes at 10-fold enrichment, while those below that threshold averaged 24 background genes at 23-fold.
+
+\subsection*{Genomic heritability}
+Genomic heritability was estimated as
+\[
+h^2 = \frac{V_g}{V_g + V_e}
+\]
+from the model
+\[
+y = \mathbf{1}\mu + u + e,
+\]
+where
+\[
+u \sim N(0, K\sigma_g^2)
+\]
+and \(K\) is a genomic relationship matrix. The matrix \(K\) was built with PLINK~2 using \texttt{--make-rel square} from the SAP genotype set used for GWAS after LD pruning with \texttt{--indep-pairwise 50 5 0.2}, covering 400 genotypes. Variance components were estimated by REML using the eigendecomposition of \(K\).
+
+Intervals are 95\% profile-likelihood intervals, defined as the set of \(h^2\) values on a grid whose restricted log-likelihood falls within \(\chi^2_1/2\) of the maximum. A trait was called non-zero when this interval excluded zero. Bootstrap resampling was not used, as resampling genotypes with replacement creates pairs with relationship 1 and identical phenotypes, which forces the estimate to 1 in every replicate. CTL and LIN were fitted using the same 351 genotypes and the same 146 species present in both trials, so the trials differed only in the phenotype.
+
 
 \subsection*{Lipid Metabolic Network Analysis (LINEX2)}
 
@@ -739,6 +752,21 @@ and the two are not differenced.}
 \label{fig:suppfig_s6_pcor}
 \end{figure*}
 
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width=\textwidth]{fig/supp/SuppFig_S8_Heritability.png}
+\caption{\textbf{Genomic heritability of lipid traits in the two field trials.}
+\textbf{(A)}~Genomic heritability of each lipid-class sum, point estimate with
+its 95\% profile-likelihood interval. \textbf{(B)}~Paired per-species
+heritability, one point per lipid species, CTL on the horizontal axis and LIN
+on the vertical; the dashed line is equality. Both panels use the same genomic
+relationship matrix, the same 351 genotypes and the same 146 species detected
+in both trials, so the two trials differ only in the phenotype measured.}
+\label{fig:suppfig_s8_heritability}
+\end{figure*}
+
+
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=\textwidth]{fig/supp/Figure7_CTL_LIN_Overlap.png}
@@ -750,18 +778,6 @@ and the two are not differenced.}
 \label{fig:fig7_ctl_lin_overlap}
 \end{figure*}
 
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width=\textwidth]{fig/supp/SuppFig_S8_Heritability.png}
-\caption{\textbf{Genomic heritability of lipid traits in the two field trials.}
-\textbf{(A)}~Genomic heritability of each lipid-class sum, point estimate with
-its 95\% profile-likelihood interval. \textbf{(B)}~Paired per-species
-heritability, one point per lipid species, CTL on the horizontal axis and LIN on
-the vertical; the dashed line is equality. Both panels use the same genomic
-relationship matrix, the same 351 genotypes and the same 146 species detected in
-both trials, so the two trials differ only in the phenotype measured.}
-\label{fig:suppfig_s8_heritability}
-\end{figure*}
 
 % Supplementary tables are supplied as separate supporting-information files
 % (table/supp/ in the repository), not typeset here. Cited in the text as
