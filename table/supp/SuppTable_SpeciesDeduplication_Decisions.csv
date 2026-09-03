@@ -1,0 +1,33 @@
+family,trial,kept,dropped,r,merged_total_from,factor_applied,reason
+spats,CTL,MG(18:1),DG(18:1/18:1),1,MG(18:1),1,one feature at m/z 339.289 is a monoacylglycerol; the DG call is the ambiguous one and lists Monoolein among its candidates
+spats,CTL,LPC(18:3),PC(18:3/0:0),1,LPC(18:3),1,same compound; PC(18:3/0:0) is lyso-PC written in full-position notation
+spats,CTL,LPE(16:0),PE(16:0/0:0),1,LPE(16:0),1,same compound; PE(16:0/0:0) is lyso-PE written in full-position notation
+spats,CTL,SPB 18:0;2OH,SPHINGANINE,1,SPB 18:0;2OH,1,same compound; a dihydroxy C18:0 sphingoid base is sphinganine
+spats,CTL,beta-Carotene,alpha-Carotene,0.999933,beta-Carotene,1,beta-Carotene has a real scan and a non-ambiguous match; the alpha call has neither
+spats,CTL,Lutein,Zeaxanthin,1,Zeaxanthin,1.6667,"unresolved isomers of one C40H56O2 feature under CTL, where the two correlate at r = 1; the LIN run resolves them (r = 0.48) and both are kept there"
+spats,CTL,TG(12:0/12:0/14:0),TG(10:0/12:0/16:0),1,TG(12:0/12:0/14:0),1,"isobaric TG 38:0; the retained call is non-ambiguous, the dropped one has three candidates"
+spats,CTL,TG(14:0/14:0/16:1),TG(12:0/14:0/18:1),1,TG(14:0/14:0/16:1),1,isobaric TG 44:1; the retained call is non-ambiguous
+spats,CTL,TG(12:0/12:0/18:2),TG(8:0/16:1/18:1),1,TG(12:0/12:0/18:2),1,isobaric TG 42:2; an 8:0 acyl chain is implausible in sorghum leaf
+spats,CTL,TG(12:0/16:0/16:0),TG(14:0/14:0/16:0),1,TG(14:0/14:0/16:0),2,isobaric TG 44:0; retained call also survives deduplication in LIN
+spats,LIN,MG(18:1),DG(18:1/18:1),1,MG(18:1),1,one feature at m/z 339.289 is a monoacylglycerol; the DG call is the ambiguous one and lists Monoolein among its candidates
+spats,LIN,beta-Carotene,Alpha-Carotene,1,beta-Carotene,1,"as above, LIN spelling of the same redundant call"
+spats,LIN,13S-HOTrE,"13-Keto-9Z,11E-octadecadienoic acid",1,"13-Keto-9Z,11E-octadecadienoic acid",2,"same scan, same m/z, same formula; HOTrE has the higher MQScore"
+spats,LIN,TG(10:0/14:0/16:0),TG(12:0/12:0/18:1),1,TG(12:0/12:0/18:1),2,one feature carried under two acyl assignments; the retained call has fewer candidates
+spats,LIN,TG(12:0/16:0/16:0),TG(14:0/14:0/18:0),1,TG(14:0/14:0/18:0),2,one feature carried under two acyl assignments; retained call matches the CTL decision
+spats,LIN,TG(18:1/18:2/18:3),TG(18:0/18:2/20:1),1,TG(18:1/18:2/18:3),1,one feature carried under two acyl assignments; TG 54:6 is far more plausible in sorghum leaf than TG 56:3
+blup,CTL,MG(18:1),DG(18:1/18:1),1,MG(18:1),1,one feature at m/z 339.289 is a monoacylglycerol; the DG call is the ambiguous one and lists Monoolein among its candidates
+blup,CTL,LPC(18:3),PC(18:3/0:0),1,LPC(18:3),1,same compound; PC(18:3/0:0) is lyso-PC written in full-position notation
+blup,CTL,LPE(16:0),PE(16:0/0:0),1,LPE(16:0),1,same compound; PE(16:0/0:0) is lyso-PE written in full-position notation
+blup,CTL,SPB 18:0;2OH,SPHINGANINE,1,SPB 18:0;2OH,1,same compound; a dihydroxy C18:0 sphingoid base is sphinganine
+blup,CTL,beta-Carotene,alpha-Carotene,0.99993,beta-Carotene,1,beta-Carotene has a real scan and a non-ambiguous match; the alpha call has neither
+blup,CTL,Lutein,Zeaxanthin,1,Zeaxanthin,1.6667,"unresolved isomers of one C40H56O2 feature under CTL, where the two correlate at r = 1; the LIN run resolves them (r = 0.48) and both are kept there"
+blup,CTL,TG(12:0/12:0/14:0),TG(10:0/12:0/16:0),1,TG(12:0/12:0/14:0),1,"isobaric TG 38:0; the retained call is non-ambiguous, the dropped one has three candidates"
+blup,CTL,TG(14:0/14:0/16:1),TG(12:0/14:0/18:1),1,TG(14:0/14:0/16:1),1,isobaric TG 44:1; the retained call is non-ambiguous
+blup,CTL,TG(12:0/12:0/18:2),TG(8:0/16:1/18:1),1,TG(12:0/12:0/18:2),1,isobaric TG 42:2; an 8:0 acyl chain is implausible in sorghum leaf
+blup,CTL,TG(12:0/16:0/16:0),TG(14:0/14:0/16:0),1,TG(14:0/14:0/16:0),2,isobaric TG 44:0; retained call also survives deduplication in LIN
+blup,LIN,MG(18:1),DG(18:1/18:1),1,MG(18:1),1,one feature at m/z 339.289 is a monoacylglycerol; the DG call is the ambiguous one and lists Monoolein among its candidates
+blup,LIN,beta-Carotene,Alpha-Carotene,1,beta-Carotene,1,"as above, LIN spelling of the same redundant call"
+blup,LIN,13S-HOTrE,"13-Keto-9Z,11E-octadecadienoic acid",1,"13-Keto-9Z,11E-octadecadienoic acid",2,"same scan, same m/z, same formula; HOTrE has the higher MQScore"
+blup,LIN,TG(10:0/14:0/16:0),TG(12:0/12:0/18:1),1,TG(12:0/12:0/18:1),2,one feature carried under two acyl assignments; the retained call has fewer candidates
+blup,LIN,TG(12:0/16:0/16:0),TG(14:0/14:0/18:0),1,TG(14:0/14:0/18:0),2,one feature carried under two acyl assignments; retained call matches the CTL decision
+blup,LIN,TG(18:1/18:2/18:3),TG(18:0/18:2/20:1),1,TG(18:1/18:2/18:3),1,one feature carried under two acyl assignments; TG 54:6 is far more plausible in sorghum leaf than TG 56:3

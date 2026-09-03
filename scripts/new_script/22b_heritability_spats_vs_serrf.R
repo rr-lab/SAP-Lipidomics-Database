@@ -76,7 +76,7 @@ fit_h2 <- function(y, ids, grm) {
 ## ---- SpATS-adjusted phenotypes --------------------------------------------
 # Layout: LineRaw, PlotID, row, col, <lipid columns>
 read_spats <- function(cond) {
-  f <- file.path(out, 'data', 'raw',
+  f <- file.path(out, 'data','SPATS_fitted','non_normalized_intensities',
                  sprintf('Final_subset_%s_all_lipids_fitted_phenotype_non_normalized.csv',
                          if (cond == 'CTL') 'control' else 'lowinput'))
   x <- fread(f, data.table = FALSE, check.names = FALSE)

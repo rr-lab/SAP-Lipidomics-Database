@@ -1,0 +1,15 @@
+Class,CTL_before,CTL_after,LIN_before,LIN_after
+DG,17,16,16,15
+DGDG,7,7,7,7
+LPC,5,4,3,3
+LPE,2,1,1,1
+MG,8,8,5,5
+MGDG,5,5,5,5
+Other,19,19,19,19
+PA,1,1,2,2
+PC,36,36,38,38
+PE,14,14,15,15
+PG,3,3,3,3
+PS,2,2,1,1
+SQDG,11,11,10,10
+TG,71,67,69,66

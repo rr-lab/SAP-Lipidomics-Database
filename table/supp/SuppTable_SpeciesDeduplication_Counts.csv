@@ -1,0 +1,5 @@
+family,trial,file,species_before,species_after,removed
+spats,CTL,Final_subset_control_all_lipids_fitted_phenotype_non_normalized.csv,224,214,10
+spats,LIN,Final_subset_lowinput_all_lipids_fitted_phenotype_non_normalized.csv,222,216,6
+blup,CTL,Final_control_all_lipids_BLUPs.csv,226,216,10
+blup,LIN,Final_lowinput_all_lipids_BLUPs.csv,224,218,6

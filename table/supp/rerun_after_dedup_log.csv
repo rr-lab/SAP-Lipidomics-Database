@@ -1,0 +1,17 @@
+"step","script","produces","status","seconds"
+1,"scripts/new_script/40b_relabel_candidate_phenotypes.R","master candidate table, phenotype names relabelled","ok",0.4
+2,"scripts/new_script/38_export_supp_tables_S7toS10.R","Supp Tables S7-S10 rebuilt from it","ok",0.4
+3,"scripts/new_new_script/06e_MainTable_top_recurrent_loci.R","main table of most recurrent loci","ok",0.5
+4,"scripts/new_new_script/06b_SuppTableS6_species_inventory.R","species inventory + Supp Tables S6a-c   (run first, others use the frozen set)","ok",0.9
+5,"scripts/new_new_script/03_Fig1_population_structure.R","Figure 1 + Supp Table S25","ok",2.5
+6,"scripts/new_new_script/04_SuppFig3_class_pca.R","Supp Fig S3 + Supp Table S25b","ok",2.2
+7,"scripts/new_new_script/05_SuppTableS5G_composition_stability.R","Supp Table S5G","ok",1.3
+8,"scripts/new_new_script/06_Fig2_class_composition.R","Figure 2 + Supp Tables S5D, S5E","ok",2.3
+9,"scripts/new_new_script/06a_Fig2C_LION_input.R","Figure 2C LION input","ok",0.9
+10,"scripts/new_new_script/06c_SuppFig6_species_counts.R","Supp Fig S6 species counts","ok",1.6
+11,"scripts/new_new_script/07_SuppFig4_chemical_space.R","Supp Fig S4 + Supp Table S5F","ok",1.4
+12,"scripts/new_new_script/08_SuppFig7_class_correlations.R","Supp Fig S7","ok",1.8
+13,"scripts/new_new_script/12_Fig5_linex.R","Figure 5, LINEX and reaction balance","ok",37
+14,"scripts/new_script/22e_heritability_profile_ci.R","class-sum heritability with profile-likelihood CIs","ok",3.5
+15,"scripts/new_script/22f_heritability_species_paired.R","per-species paired heritability, CTL vs LIN","ok",21.9
+16,"scripts/new_script/22g_Fig_heritability.R","heritability figure   (needs 22e and 22f)","ok",1.6

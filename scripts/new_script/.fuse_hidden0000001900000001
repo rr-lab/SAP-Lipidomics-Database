@@ -1,0 +1,111 @@
+# ==============================================================================
+# 39_audit_trait_quality_for_GWAS.R
+#
+# Two checks on the SpATS-fitted phenotype matrices that go into GWAS.
+#
+#   1. Duplicate intensity profiles. Pairs of "different" species whose values
+#      correlate at r > 0.9999 with a constant ratio are the same measurement
+#      written twice, not two lipids. They inflate the species count and give
+#      every GWAS hit on one of them a free replicate on the other.
+#
+#   2. Outlier-driven traits. A trait whose signal sits in a handful of
+#      accessions behaves like a binary trait in a mixed model. Any SNP that
+#      segregates with those few lines returns a very small p-value and drags a
+#      wide LD window of genes into the candidate table. Flagged here as
+#      <= 20 accessions above five times the median AND the four highest
+#      accessions carrying >= 10 per cent of the trait total.
+#
+# Input   data/SPATS_fitted/non_normalized_intensities/Final_subset_{control,lowinput}_*.csv
+#         data/LD_mapped/candidate_tables/ALL_LD_candidate_genes_master.tsv
+# Output  table/supp/SuppTable_TraitQuality_DuplicateProfiles.csv
+#         table/supp/SuppTable_TraitQuality_OutlierDrivenTraits.csv
+#         table/supp/SuppTable_TraitQuality_CandidateGeneAttribution.csv
+#
+# Run from the repository root.
+# ==============================================================================
+suppressPackageStartupMessages({ library(data.table) })
+
+REPO   <- Sys.getenv("SOLD_DB_REPO", ".")
+SPATS  <- file.path(REPO, "data/SPATS_fitted/non_normalized_intensities")
+MASTER <- file.path(REPO, "data/LD_mapped/candidate_tables/ALL_LD_candidate_genes_master.tsv")
+OUT    <- file.path(REPO, "table/supp")
+dir.create(OUT, recursive = TRUE, showWarnings = FALSE)
+
+META      <- c("LineRaw", "PlotID", "row", "col")
+R_DUP     <- 0.9999   # correlation above which two species are the same measurement
+MAX_LINES <- 20       # at most this many accessions above 5x the median
+MIN_TOP4  <- 10       # top four accessions carry at least this per cent of the total
+
+trials <- list(
+  CTL = file.path(SPATS, "Final_subset_control_all_lipids_fitted_phenotype_non_normalized.csv"),
+  LIN = file.path(SPATS, "Final_subset_lowinput_all_lipids_fitted_phenotype_non_normalized.csv")
+)
+
+numeric_matrix <- function(d) {
+  num <- setdiff(names(d), META)
+  num <- num[vapply(d[, ..num], is.numeric, logical(1))]
+  as.matrix(d[, ..num])
+}
+
+dups <- list(); flags <- list()
+
+for (tr in names(trials)) {
+  d <- fread(trials[[tr]])
+  M <- numeric_matrix(d)
+
+  # ---- 1. duplicate profiles -------------------------------------------------
+  C <- cor(M); C[lower.tri(C, diag = TRUE)] <- NA
+  ij <- which(C > R_DUP, arr.ind = TRUE)
+  if (nrow(ij)) dups[[tr]] <- data.table(
+    trial   = tr,
+    species_A = colnames(M)[ij[, 1]],
+    species_B = colnames(M)[ij[, 2]],
+    r       = round(C[ij], 6),
+    ratio_B_over_A = round(apply(ij, 1, function(k) median(M[, k[2]] / M[, k[1]])), 4))
+
+  # ---- 2. outlier-driven traits ---------------------------------------------
+  tot <- sum(M, na.rm = TRUE)
+  flags[[tr]] <- rbindlist(lapply(colnames(M), function(v) {
+    x <- M[, v]; x <- x[!is.na(x)]
+    data.table(trial = tr, species = v,
+               cv          = sd(x) / mean(x),
+               n_above_5x_median = sum(x > 5 * median(x)),
+               top4_share_pct    = 100 * sum(sort(x, decreasing = TRUE)[1:4]) / sum(x),
+               pct_TIC           = 100 * sum(x) / tot)
+  }))
+}
+
+dups  <- rbindlist(dups)
+flags <- rbindlist(flags)
+flags[, outlier_driven := n_above_5x_median <= MAX_LINES & top4_share_pct >= MIN_TOP4]
+
+fwrite(dups,  file.path(OUT, "SuppTable_TraitQuality_DuplicateProfiles.csv"))
+fwrite(flags[order(trial, -top4_share_pct)],
+       file.path(OUT, "SuppTable_TraitQuality_OutlierDrivenTraits.csv"))
+
+# ---- 3. how much of each candidate list rests on flagged traits ---------------
+mas  <- fread(MASTER, sep = "\t", quote = "")
+ind  <- mas[layer == "individual"]
+long <- ind[, .(phen = trimws(unlist(strsplit(Phenotypes, ";", fixed = TRUE)))),
+            by = .(condition, GeneID)][nzchar(phen)]
+
+# phenotype names use "_" where the species table uses "/"
+norm <- function(x) gsub("[_/]", "|", x)
+key_flagged <- flags[outlier_driven == TRUE, paste(trial, norm(species))]
+long[, flagged := paste(condition, norm(phen)) %in% key_flagged]
+
+attrib <- long[, .(
+  genes_total          = uniqueN(GeneID),
+  genes_touching_flagged = uniqueN(GeneID[flagged]),
+  genes_lost_if_dropped  = uniqueN(GeneID) - uniqueN(GeneID[!flagged])
+), by = condition]
+attrib[, pct_lost := round(100 * genes_lost_if_dropped / genes_total, 1)]
+
+fwrite(attrib, file.path(OUT, "SuppTable_TraitQuality_CandidateGeneAttribution.csv"))
+
+cat("\n-- duplicate intensity profiles --\n");  print(dups)
+cat("\n-- outlier-driven traits --\n")
+print(flags[outlier_driven == TRUE][order(trial, -top4_share_pct),
+     .(trial, species, cv = round(cv, 2), n_above_5x_median,
+       top4_share_pct = round(top4_share_pct, 1), pct_TIC = round(pct_TIC, 4))])
+cat("\n-- candidate genes resting on flagged traits --\n"); print(attrib)

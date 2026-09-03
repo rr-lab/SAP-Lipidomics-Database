@@ -1,0 +1,3 @@
+condition,genes_total,genes_touching_flagged,genes_lost_if_dropped,pct_lost
+CTL,1100,647,304,27.6
+LIN,4323,2582,1707,39.5

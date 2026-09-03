@@ -1,46 +1,46 @@
 "Level","Group","Condition","pct_TIC"
-"Lipid class","DG","CTL",12.9403742494216
-"Lipid class","DG","LIN",13.7618376720396
-"Lipid class","DGDG","CTL",11.9510644401389
-"Lipid class","DGDG","LIN",12.0931879496054
-"Lipid class","LPC","CTL",0.157666148549021
-"Lipid class","LPC","LIN",0.153060335533574
-"Lipid class","LPE","CTL",0.00959416383719608
-"Lipid class","LPE","LIN",0.0137928159515847
-"Lipid class","MG","CTL",1.28764989284338
-"Lipid class","MG","LIN",1.04143962313958
-"Lipid class","MGDG","CTL",32.3243620394694
-"Lipid class","MGDG","LIN",29.7862994090298
-"Lipid class","Other","CTL",6.19866599076218
-"Lipid class","Other","LIN",7.14153255799302
-"Lipid class","PA","CTL",0.0166040852280924
-"Lipid class","PA","LIN",0.0253613893568237
-"Lipid class","PC","CTL",23.9577096595715
-"Lipid class","PC","LIN",23.0681176074986
-"Lipid class","PE","CTL",5.48252675475289
-"Lipid class","PE","LIN",6.15451178632011
-"Lipid class","PG","CTL",0.376367098513108
-"Lipid class","PG","LIN",0.440914251795045
-"Lipid class","PS","CTL",0.0140050174934287
-"Lipid class","PS","LIN",0.0445293523498758
-"Lipid class","SQDG","CTL",2.72118808684048
-"Lipid class","SQDG","LIN",1.26423142338123
-"Lipid class","TG","CTL",2.56222237257876
-"Lipid class","TG","LIN",5.01118382600572
-"Superclass","Betaine lipid","LIN",0.000601935846219395
-"Superclass","Ether lipid","CTL",0.992045031522358
-"Superclass","Ether lipid","LIN",0.944373324954116
-"Superclass","Fatty acid","CTL",0.653234419511386
-"Superclass","Fatty acid","LIN",0.416601980441475
-"Superclass","Glycerolipid","CTL",63.8293368666504
-"Superclass","Glycerolipid","LIN",63.056512748251
-"Superclass","Glycerophospholipid","CTL",30.0165393114267
-"Superclass","Glycerophospholipid","LIN",30.4110120830092
-"Superclass","Prenol","CTL",0.136772163354774
-"Superclass","Prenol","LIN",0.191568540243488
-"Superclass","Sphingolipid","CTL",0.133024749809889
-"Superclass","Sphingolipid","LIN",0.160393472021347
-"Superclass","Sterol","CTL",0.0416459285796956
-"Superclass","Sterol","LIN",0.214614939847348
-"Superclass","Terpenoid","CTL",4.19740152914486
-"Superclass","Terpenoid","LIN",4.60432097538581
+"Lipid class","DG","CTL",12.9792403228336
+"Lipid class","DG","LIN",13.7943332910046
+"Lipid class","DGDG","CTL",12.083589996121
+"Lipid class","DGDG","LIN",12.2068464193104
+"Lipid class","LPC","CTL",0.150325521955846
+"Lipid class","LPC","LIN",0.154492987229385
+"Lipid class","LPE","CTL",0.00646658279399933
+"Lipid class","LPE","LIN",0.0139218279850754
+"Lipid class","MG","CTL",1.30194400394028
+"Lipid class","MG","LIN",1.0512407127772
+"Lipid class","MGDG","CTL",32.6840505592754
+"Lipid class","MGDG","LIN",30.0658825707473
+"Lipid class","Other","CTL",5.30140026426419
+"Lipid class","Other","LIN",6.53194597906461
+"Lipid class","PA","CTL",0.016789256062105
+"Lipid class","PA","LIN",0.0256000619625351
+"Lipid class","PC","CTL",24.2211743677781
+"Lipid class","PC","LIN",23.2824609907854
+"Lipid class","PE","CTL",5.54303664167746
+"Lipid class","PE","LIN",6.21172084286869
+"Lipid class","PG","CTL",0.380524053808567
+"Lipid class","PG","LIN",0.44504631643678
+"Lipid class","PS","CTL",0.0141575519437136
+"Lipid class","PS","LIN",0.0449518354297121
+"Lipid class","SQDG","CTL",2.75130568404306
+"Lipid class","SQDG","LIN",1.27610717010143
+"Lipid class","TG","CTL",2.56599519350257
+"Lipid class","TG","LIN",4.8954489942969
+"Superclass","Betaine lipid","LIN",0.000607925933378689
+"Superclass","Ether lipid","CTL",1.00303807751483
+"Superclass","Ether lipid","LIN",0.953217540176834
+"Superclass","Fatty acid","CTL",0.660503349072863
+"Superclass","Fatty acid","LIN",0.416201956551322
+"Superclass","Glycerolipid","CTL",64.409069746446
+"Superclass","Glycerolipid","LIN",63.3891403674944
+"Superclass","Glycerophospholipid","CTL",30.3345635718485
+"Superclass","Glycerophospholipid","LIN",30.6937496433726
+"Superclass","Prenol","CTL",0.138296356020255
+"Superclass","Prenol","LIN",0.193367727843116
+"Superclass","Sphingolipid","CTL",0.130712572828313
+"Superclass","Sphingolipid","LIN",0.161903219018698
+"Superclass","Sterol","CTL",0.0421060412569126
+"Superclass","Sterol","LIN",0.216651686037459
+"Superclass","Terpenoid","CTL",3.28171028501242
+"Superclass","Terpenoid","LIN",3.97515993357213
