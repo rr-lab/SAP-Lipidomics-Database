@@ -126,7 +126,7 @@ Run-order quality control showed stable analytical performance (Supplementary~\r
 
 PCA of normalized data showed tighter sample clustering than unprocessed data (Supplementary~\ref{fig:suppfig_s2_qc}E--F). After spatial correction, the leftover variation in MGDG(18:3/18:3) is scattered randomly across the field rather than forming rows, columns or patches, indicating that position in the field no longer drives the signal (Supplementary~\ref{fig:suppfig_s2_qc}G--H). Post-correction, lipid signal distributions remained similar across cohorts, and the adjusted trait matrix was used for all subsequent analyses.
 
-\subsection*{Genotypic lipid variation is largely independent of botanical race and population structure except for PS}
+\subsection*{Genotypic lipid variation is largely independent of botanical race, and heritable variation is confined to LIN}
 
 The SAP is structured by botanical race and geographic origin \citep{Casa2008CommunityResourcesSorghum, Boatwright2022}. We next asked whether the lipid variation reflected that structure. We tested two groupings. The first was botanical race, collapsed into six groups: the five classical races (Bicolor, Caudatum, Durra, Guinea, Kafir) plus a Mixed group containing all intermediate designations (e.g., Durra--Bicolor, Kafir--Caudatum) (Supplementary Table~S25a). The second grouping was marker-based genetic cluster ($K=6$), which covered 387 CTL and 355 LIN accessions and provided a more complete genetic description of population structure. We tested 14 traits per condition, which included total lipid signal and the 13 lipid classes (Supplementary Table~S25) using Kruskal--Wallis tests with BH correction and summarized effect size ($\varepsilon^2$) described as the proportion of rank variance explained by the grouping.
 
@@ -135,6 +135,12 @@ Botanical race explained little to no lipid variation (Fig.~\ref{fig:fig1_popula
 Excluding whole ancestry groups produced results similar to explicit modeling. In each trial, we removed all accessions from one botanical race group and recomputed each lipid class’s share of the total annotated signal from the remaining accessions. Across six leave-one-group-out runs and 13 lipid classes, no class changed by more than 0.10 percentage points under CTL or 0.18 under LIN. The largest deviation in both trials was for phosphatidylcholine (PC; ~25\% of total signal). To test sensitivity to unstructured sampling, we generated 1,000 random 80\% subsamples and for every class, the 95\% interval stayed within 0.21 percentage points of the full-panel estimate (Supplementary Table~S5G). Overall, removing any single ancestry group or 20\% of the panel did not measurably alter trial-level lipid class composition.
 
 Overall, botanical race and genome-wide genetic clusters explained little lipid-class variation, so the associations explained are unlikely to be artifacts of population stratification. The only clear structural effect was PS under LIN because PS is very low in relative abundance. This likely reflects redistribution within a minor phospholipid pool rather than a bulk lipidome shift.
+
+Because population structure and additive genetic variance are not independent quantities, we next asked how much genetic variance the lipidome carries and whether it is separable from ancestry. Genomic heritability was estimated per lipid species from a genomic relationship matrix built on LD-pruned markers, fitting the same 146 species detected in both trials and the same 351 genotypes, so the two trials differ only in the phenotype (Supplementary Table~S26). Under CTL the median $h^2$ across species was 0 and 11 of 146 species had a 95\% profile-likelihood interval excluding zero; under LIN the median was 0.171 and 45 of 146 excluded zero. The paired difference runs almost entirely one way, with 118 species higher under LIN, 19 higher under CTL and 9 tied (sign test $p = 1.2\times10^{-18}$; Supplementary~\ref{fig:suppfig_s8_heritability}).
+
+Heritability and ancestry are not independent by construction, because a genomic relationship matrix encodes relatedness and population structure is relatedness, so a trait differing between clusters will show a raised $h^2$ whether or not variance segregates within them. To separate the two we refitted every species with the three leading eigenvectors of the relationship matrix as fixed effects, which removes the between-cluster component (Supplementary Table~S28). Of the 45 species heritable under LIN, 43 still exclude zero under this conditioning, so the signal is additive variance segregating within clusters rather than a between-group difference. Consistent with that, only three species were associated with genetic cluster after correction, PS(18:0/18:2) ($\varepsilon^2 = 0.088$, $q = 1.6\times10^{-4}$), AEG(o-15:2/15:0) and PC(18:0/20:2), and no species was associated with botanical race in either trial.
+
+Heritable species are unevenly distributed across classes (Table~\ref{tab:species_heritability}; Supplementary Table~S29). Under CTL only triacylglycerols contribute, with 10 of 44 species. Under LIN the count rises in most classes, and the highest proportions fall on the plastid membrane lipids, with 4 of 5 MGDG species, 6 of 10 SQDG and 4 of 7 DGDG carrying non-zero heritability, alongside 18 of 44 TG. These are the same classes that change most in composition between trials, so the abundance shifts and the genetic signal implicate the same part of the lipidome. Five classes are represented by a single species, PS among them, and their entries describe that species rather than a class-level property.
 
 \begin{table}[!ht]
 \centering
@@ -163,6 +169,40 @@ PS   & 0.000 & 0.001 & 0.020 & \textbf{0.104}*** \\
 LPE  & 0.000 & 0.000 & 0.000 & 0.000 \\
 \midrule
 \textbf{$n$ accessions} & 222 & 211 & 387 & 355 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!ht]
+\centering
+\caption{\textbf{Heritable lipid species are concentrated under LIN and are not explained by population structure.} Genomic heritability was estimated per lipid species for the 146 species detected in both trials, on the same 351 genotypes and one genomic relationship matrix. Species, the number of species in the class; median $h^2$, the class median across those species; $h^2>0$, the number whose 95\% profile-likelihood interval excludes zero; conditioned, the number still excluding zero after the three leading eigenvectors of the relationship matrix are fitted as fixed effects, which removes variance between genetic clusters. The two counts are not nested, because removing structure can sharpen a borderline signal as well as remove one. Two species carrying no class assignment are omitted. $^{\dagger}$Classes represented by a single species, whose entries describe that species rather than a class.}
+\label{tab:species_heritability}
+\small
+\begin{tabular}{lrccccc}
+\toprule
+& & \multicolumn{2}{c}{\textbf{CTL}} & \multicolumn{3}{c}{\textbf{LIN}} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-7}
+\textbf{Class} & \textbf{Species} & median $h^2$ & $h^2>0$ & median $h^2$ & $h^2>0$ & conditioned \\
+\midrule
+TG & 44 & 0.041 & 10 & 0.208 & 18 & 21 \\
+PC & 31 & 0.000 & 0 & 0.114 & 6 & 7 \\
+PE & 12 & 0.000 & 0 & 0.134 & 2 & 0 \\
+DG & 12 & 0.000 & 0 & 0.066 & 0 & 2 \\
+SQDG & 10 & 0.000 & 0 & 0.341 & 6 & 5 \\
+DGDG & 7 & 0.000 & 0 & 0.202 & 4 & 2 \\
+AEG & 7 & 0.000 & 0 & 0.114 & 2 & 0 \\
+MGDG & 5 & 0.000 & 0 & 0.456 & 4 & 4 \\
+MG & 5 & 0.000 & 0 & 0.098 & 0 & 0 \\
+PG & 2 & 0.000 & 0 & 0.148 & 1 & 0 \\
+GalCer & 2 & 0.000 & 0 & 0.065 & 0 & 0 \\
+LPC & 2 & 0.000 & 0 & 0.113 & 0 & 0 \\
+FA$^{\dagger}$ & 1 & 0.112 & 0 & 0.404 & 1 & 1 \\
+PS$^{\dagger}$ & 1 & 0.000 & 0 & 0.382 & 1 & 1 \\
+Cer$^{\dagger}$ & 1 & 0.000 & 0 & 0.016 & 0 & 0 \\
+LPE$^{\dagger}$ & 1 & 0.000 & 0 & 0.020 & 0 & 0 \\
+PA$^{\dagger}$ & 1 & 0.554 & 1 & 0.000 & 0 & 0 \\
+\midrule
+\textbf{Total} & \textbf{144} & & \textbf{11} & & \textbf{45} & \textbf{43} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -217,7 +257,7 @@ To capture structural remodeling beyond class abundance, we summarized each lipi
 
 Abundance, composition, ontology, and chemical-space analyses indicate the four axes reflect coordinated redistribution within the LIN lipidome, not independent class-level shifts. The reaction-network and GWAS analyses below add biochemical and genetic context.
 
-\subsection*{Lipid traits are more heritable and map to more loci under LIN}
+\subsection*{More independent GWAS loci under LIN than under CTL}
 
 We ran separate GWAS for each individual lipid trait, lipid-class sum, and lipid-class ratio in both trials, using a univariate linear mixed model with the first three genotype PCs to account for population structure (Fig.~\ref{fig:gwas_manhattan}). SNPs surpassing the Bonferroni genome-wide significance threshold ($p \leq 8.19 \times 10^{-9}$) were mapped to candidate genes using the LD-based cutoff of 0.4. Under CTL this identified 1,100 candidate genes for individual lipids and 115 for class sums and ratios (Supplementary Tables~S7 and~S8). Under LIN the same procedure identified 4,323 and 812 candidate genes (Supplementary Tables~S9 and~S10). Manhattan and quantile--quantile plots for every lipid phenotype in both trials are available in the SoLD Shiny application.
 
@@ -229,7 +269,7 @@ In the LIN individual-lipid layer, the strongest association was observed for \t
 
 Table~\ref{tab:top_loci} lists the five most recurrent loci in each trial and trait layer. Because a single lead SNP tags every gene inside its LD window, recurrence is counted per signal rather than per gene, and the number of genes each signal tags is reported alongside it. That number separates the two trials as clearly as the recurrence counts do. The five leading CTL loci tag between one and seven genes each, whereas the leading LIN sum/ratio loci tag up to 33, so the larger LIN candidate list reflects wider LD windows as much as a greater number of distinct signals. The gene named on each row is the first annotated gene in its interval and serves as a label for the locus, not as a causal assignment.
 
-Recurrence counts and candidate lists summarize mapping output. To test whether CTL and LIN differed in additive genetic variance in the lipidome, we estimated genomic heritability (\(h^2\)) for each lipid using a GRM from LD-pruned markers. The same 146 species and 351 genotypes were analyzed in both trials, enabling paired comparisons (Supplementary Table~S26). Under CTL, median \(h^2=0\) and 11/146 species had 95\% profile-likelihood intervals excluding zero. Under LIN, median \(h^2=0.171\) and 48/146 species excluded zero. Differences were strongly directional: 118 species had higher \(h^2\) under LIN, 19 higher under CTL, and 9 ties (sign test \(p=1.2\times10^{-18}\)). Class sums showed the same pattern (Supplementary Table~S27; Supplementary~\ref{fig:suppfig_s8_heritability}A). All classes except TG and PA had higher point estimates under LIN, and PS was the only class excluding zero under LIN alone (\(h^2=0.38\), 95\% CI 0.17--0.66). Because both trials used the same markers, GRM, and genotypes, the contrast is not due to marker coverage or panel composition. Given wide intervals at this sample size, results are most informative in aggregate.
+This asymmetry in mapping output parallels the heritability contrast reported above: the same 146 species and 351 genotypes carry more additive genetic variance under LIN than under CTL, so the larger LIN candidate list is not only a consequence of how the candidate tables are counted.
 
 \begin{table*}[!ht]
 \centering
