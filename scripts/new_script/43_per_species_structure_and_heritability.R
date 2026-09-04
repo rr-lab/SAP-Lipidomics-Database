@@ -9,8 +9,13 @@
 # drops to the species level and runs both analyses there, so every claim is
 # made on a stated number of species rather than on a class label.
 #
-# For each lipid species detected in both trials, and separately within each
-# trial:
+# The structure test runs on every species detected in a trial, because that
+# question does not require the trials to be paired. The heritability columns
+# are reported for the same species, and an in_both flag marks the 146 species
+# shared by the two trials, which are the ones the paired CTL/LIN comparison in
+# 22f is built on.
+#
+# For each lipid species, separately within each trial:
 #
 #   * variance explained by botanical race and by marker-based genetic cluster
 #     (Kruskal-Wallis epsilon^2, BH-corrected within trial x grouping), the
@@ -102,12 +107,13 @@ geo[, RaceGroup := fifelse(is.na(Original_Race) | Original_Race %in% c('','NA') 
 
 CTLd <- read_spats('CTL'); LINd <- read_spats('LIN'); KIN <- load_k()
 shared <- intersect(CTLd$lipids, LINd$lipids)
-message(sprintf('shared species: %d', length(shared)))
+message(sprintf('species: CTL %d, LIN %d, shared %d',
+                length(CTLd$lipids), length(LINd$lipids), length(shared)))
 cls <- function(v) str_match(v, '^([A-Za-z]+)\\(')[, 2]
 
 run_trial <- function(d, cond) {
   keep <- d$line %in% KIN$ids
-  line <- d$line[keep]; M <- d$mat[keep, shared, drop = FALSE]
+  line <- d$line[keep]; M <- d$mat[keep, d$lipids, drop = FALSE]
   i <- match(line, KIN$ids); Ksub <- KIN$K[i, i, drop = FALSE]
   e  <- eigen(Ksub, symmetric = TRUE); dd <- pmax(e$values, 0); V <- e$vectors
   X0 <- crossprod(V, matrix(1, nrow(M), 1))
@@ -115,7 +121,7 @@ run_trial <- function(d, cond) {
   g  <- geo[match(line, Taxa)]
   message(sprintf('  %s: %d genotypes with a GRM entry', cond, nrow(M)))
 
-  rbindlist(lapply(shared, function(sp) {
+  rbindlist(lapply(d$lipids, function(sp) {
     y <- M[, sp]; ok <- is.finite(y)
     if (sum(ok) < 30) return(NULL)
     yl <- log10(y + 1)
@@ -124,7 +130,8 @@ run_trial <- function(d, cond) {
     yt <- crossprod(V, yl)
     a  <- prof_h2(yt, X0, dd, 1)
     b  <- prof_h2(yt, X1, dd, 1 + N_PC)
-    data.table(trial = cond, Species = sp, Class = cls(sp), n = sum(ok),
+    data.table(trial = cond, Species = sp, Class = cls(sp),
+               in_both = sp %in% shared, n = sum(ok),
                eps2_race = r[['eps2']], p_race = r[['p']],
                eps2_cluster = kc[['eps2']], p_cluster = kc[['p']],
                h2 = a[1], lo = a[2], hi = a[3],
