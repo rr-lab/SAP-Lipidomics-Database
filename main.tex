@@ -136,7 +136,7 @@ The species-level tests gave the same answer. Across 194 species under CTL and 1
 
 Ancestry explains almost none of the lipid variation, so we next asked how much genetic variance the lipidome carries at all. Genomic heritability was estimated per lipid species from a genomic relationship matrix built on LD-pruned markers, fitting the same 146 species detected in both trials and the same 351 genotypes, so the two trials differ only in the phenotype (Supplementary Table~S26). Under CTL the median $h^2$ across species was indistinguishable from zero and 11 of 146 species had a 95\% profile-likelihood interval excluding zero; under LIN the median was 0.171 and 45 of 146 excluded zero. Because every species was fitted in both trials on the same genotypes and the same relationship matrix, the two estimates can be compared species by species: $h^2$ was higher under LIN for 118 species, higher under CTL for 19, and tied for 9 (sign test $p = 1.2\times10^{-18}$; Supplementary~\ref{fig:suppfig_s8_heritability}). Class sums, summed over the species in each class before fitting, behave the same way (Supplementary Table~S27).
 
-Heritability is concentrated in particular classes rather than spread evenly (Table~\ref{tab:species_heritability}; Supplementary Table~S29). Under CTL only triacylglycerols carry any, 10 of 44 species. Under LIN the largest proportions fall on the plastid membrane lipids, with 4 of 5 MGDG species and 6 of 10 SQDG heritable, the two highest of any class. These are also the classes whose abundance changes most between trials, so the compositional shift and the genetic signal fall on the same part of the lipidome, the photosynthetic membrane. TG is the exception that is heritable in both trials, which fits storage lipid being a sink rather than a pool held at a set point. Five classes contain a single species, PS among them, and their entries describe that species rather than a class.
+Heritability is concentrated in particular classes rather than spread evenly (Table~\ref{tab:species_heritability}; Supplementary Table~S29). Under CTL essentially only triacylglycerols carry any, 19 of 67 species, with one further species elsewhere. Under LIN the largest proportions fall on the plastid membrane lipids, 4 of 5 MGDG species and 6 of 10 SQDG, the two highest of any class. These are also the classes whose abundance changes most between trials, so the compositional shift and the genetic signal fall on the same part of the lipidome, the photosynthetic membrane. TG is the exception that is heritable in both trials, which fits storage lipid being a sink rather than a pool held at a set point. PS and LPE contain a single species each, so their entries describe that species rather than a class.
 
 Heritability and ancestry are not independent by construction, since a relationship matrix encodes relatedness and population structure is relatedness. Refitting every species with the three leading eigenvectors of that matrix as fixed effects removes the between-cluster component (Supplementary Table~S28), and 43 of the 45 species heritable under LIN still exclude zero, so the signal segregates within clusters rather than between them.
 
@@ -147,34 +147,31 @@ Because the same genotypes were grown in both trials, the two can be analysed jo
 
 \begin{table}[!ht]
 \centering
-\caption{\textbf{Heritable lipid species are concentrated under LIN and are not explained by population structure.} Genomic heritability was estimated per lipid species for the 146 species detected in both trials, on the same 351 genotypes and one genomic relationship matrix. Species, the number of species in the class; median $h^2$, the class median across those species; $h^2>0$, the number whose 95\% profile-likelihood interval excludes zero; conditioned, the number still excluding zero after the three leading eigenvectors of the relationship matrix are fitted as fixed effects, which removes variance between genetic clusters. The two counts are not nested, because removing structure can sharpen a borderline signal as well as remove one. Two species carrying no class assignment are omitted. $^{\dagger}$Classes represented by a single species, whose entries describe that species rather than a class.}
+\caption{\textbf{Heritable lipid species are concentrated under LIN and fall mainly on the plastid membrane classes.} Genomic heritability was estimated for every lipid species detected in a trial, on one genomic relationship matrix. Species, the number of species of that class in each trial; median $h^2$, the class median; $h^2>0$, the number whose 95\% profile-likelihood interval excludes zero; conditioned, the number still excluding zero under LIN once the three leading eigenvectors of the relationship matrix are fitted as fixed effects, which removes variance between genetic clusters. The two counts are not nested, because removing structure can sharpen a borderline signal as well as remove one. Classes follow the frozen species set (Supplementary Tables~S6a--S6c), so the 13 focal classes are named and everything else is Other. The paired CTL--LIN comparison in the text uses only the 146 species detected in both trials; this table describes each trial as measured. $^{\dagger}$Represented by a single species, whose entry describes that species rather than a class. $^{\S}$Fatty acids, ether lipids, sphingolipids and other minor categories.}
 \label{tab:species_heritability}
 \small
-\begin{tabular}{lrccccc}
+\begin{tabular}{lrrccccc}
 \toprule
-& & \multicolumn{2}{c}{\textbf{CTL}} & \multicolumn{3}{c}{\textbf{LIN}} \\
-\cmidrule(lr){3-4}\cmidrule(lr){5-7}
-\textbf{Class} & \textbf{Species} & median $h^2$ & $h^2>0$ & median $h^2$ & $h^2>0$ & conditioned \\
+& \multicolumn{2}{c}{\textbf{Species}} & \multicolumn{2}{c}{\textbf{CTL}} & \multicolumn{3}{c}{\textbf{LIN}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-8}
+\textbf{Class} & CTL & LIN & median $h^2$ & $h^2>0$ & median $h^2$ & $h^2>0$ & conditioned \\
 \midrule
-TG & 44 & 0.041 & 10 & 0.208 & 18 & 21 \\
-PC & 31 & 0.000 & 0 & 0.114 & 6 & 7 \\
-PE & 12 & 0.000 & 0 & 0.134 & 2 & 0 \\
-DG & 12 & 0.000 & 0 & 0.066 & 0 & 2 \\
-SQDG & 10 & 0.000 & 0 & 0.341 & 6 & 5 \\
-DGDG & 7 & 0.000 & 0 & 0.202 & 4 & 2 \\
-AEG & 7 & 0.000 & 0 & 0.114 & 2 & 0 \\
-MGDG & 5 & 0.000 & 0 & 0.456 & 4 & 4 \\
-MG & 5 & 0.000 & 0 & 0.098 & 0 & 0 \\
-PG & 2 & 0.000 & 0 & 0.148 & 1 & 0 \\
-GalCer & 2 & 0.000 & 0 & 0.065 & 0 & 0 \\
-LPC & 2 & 0.000 & 0 & 0.113 & 0 & 0 \\
-FA$^{\dagger}$ & 1 & 0.112 & 0 & 0.404 & 1 & 1 \\
-PS$^{\dagger}$ & 1 & 0.000 & 0 & 0.382 & 1 & 1 \\
-Cer$^{\dagger}$ & 1 & 0.000 & 0 & 0.016 & 0 & 0 \\
-LPE$^{\dagger}$ & 1 & 0.000 & 0 & 0.020 & 0 & 0 \\
-PA$^{\dagger}$ & 1 & 0.554 & 1 & 0.000 & 0 & 0 \\
+TG & 67 & 66 & 0.084 & 19 & 0.190 & 25 & 28 \\
+PC & 36 & 38 & 0.000 & 0 & 0.095 & 7 & 7 \\
+Other$^{\S}$ & 19 & 19 & 0.000 & 0 & 0.128 & 4 & 4 \\
+PE & 14 & 15 & 0.000 & 0 & 0.174 & 4 & 2 \\
+DG & 16 & 15 & 0.000 & 0 & 0.066 & 0 & 2 \\
+SQDG & 11 & 10 & 0.000 & 0 & 0.341 & 6 & 5 \\
+DGDG & 7 & 7 & 0.000 & 0 & 0.202 & 4 & 2 \\
+MGDG & 5 & 5 & 0.000 & 0 & 0.456 & 4 & 4 \\
+MG & 8 & 5 & 0.000 & 0 & 0.098 & 0 & 0 \\
+LPC & 4 & 3 & 0.000 & 0 & 0.164 & 1 & 1 \\
+PG & 3 & 3 & 0.000 & 0 & 0.158 & 1 & 0 \\
+PA & 1 & 2 & 0.554 & 1 & 0.000 & 0 & 0 \\
+PS$^{\dagger}$ & 2 & 1 & 0.000 & 0 & 0.382 & 1 & 1 \\
+LPE$^{\dagger}$ & 1 & 1 & 0.000 & 0 & 0.020 & 0 & 0 \\
 \midrule
-\textbf{Total} & \textbf{144} & & \textbf{11} & & \textbf{45} & \textbf{43} \\
+\textbf{Total} & \textbf{194} & \textbf{190} & & \textbf{20} & & \textbf{57} & \textbf{56} \\
 \bottomrule
 \end{tabular}
 \end{table}

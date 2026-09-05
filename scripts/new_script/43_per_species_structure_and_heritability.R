@@ -30,9 +30,16 @@
 # class carry non-zero heritability, how many survive conditioning on structure,
 # and how many show a significant ancestry effect.
 #
+# Class labels come from data/final_species_set/species_inventory.csv, the frozen
+# species set that 06b builds, so they match the 13 focal classes the rest of the
+# paper uses and everything else is Other. Deriving a class from the species name
+# instead would invent categories the paper does not have, splitting Other into
+# FA, AEG, GalCer and Cer and leaving trivially named species unassigned.
+#
 # Input   data/SPATS_fitted/non_normalized_intensities/Final_subset_{control,lowinput}_*.csv
 #         data/kinship/sap_grm.rel, sap_grm.rel.id
 #         data/SAP_geoloc.csv
+#         data/final_species_set/species_inventory.csv
 # Output  table/new_table/SuppTable_PerSpecies_Structure_and_Heritability.csv
 #         table/new_table/SuppTable_PerSpecies_Summary_byClass.csv
 #
@@ -109,7 +116,9 @@ CTLd <- read_spats('CTL'); LINd <- read_spats('LIN'); KIN <- load_k()
 shared <- intersect(CTLd$lipids, LINd$lipids)
 message(sprintf('species: CTL %d, LIN %d, shared %d',
                 length(CTLd$lipids), length(LINd$lipids), length(shared)))
-cls <- function(v) str_match(v, '^([A-Za-z]+)\\(')[, 2]
+inv <- fread(file.path(root,'data','final_species_set','species_inventory.csv'))
+classmap <- setNames(as.character(inv$Class), as.character(inv$Species))
+cls <- function(v) { k <- unname(classmap[v]); k[is.na(k)] <- 'Other'; k }
 
 run_trial <- function(d, cond) {
   keep <- d$line %in% KIN$ids
