@@ -1,4 +1,9 @@
 # ==============================================================================
+# NOT PART OF THE MANUSCRIPT.
+# This analysis is sound but is not reported in the paper and its output table
+# is not in the supplement; see table/new_table/_not_in_manuscript/README.md
+# for why. The script is kept so the result can be reproduced on request.
+# ==============================================================================
 # 45_two_environment_heritability.R
 #
 #   Rscript scripts/new_script/45_two_environment_heritability.R
