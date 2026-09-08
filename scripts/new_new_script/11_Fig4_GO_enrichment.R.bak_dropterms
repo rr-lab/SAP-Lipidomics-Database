@@ -15,16 +15,9 @@
 # lipids. Requiring a background of at most MAX_BACKGROUND genes removes them
 # and keeps the terms that name a process.
 #
-# Nothing is dropped by name. Two terms were previously removed by hand,
-# detection of stimulus and DNA topological change, and both are back. DNA
-# topological change is three genuine topoisomerases in three separate intervals
-# (33.4-fold, q = 0.006, 3 of the 5 sorghum genes carrying the term), so it meets
-# every stated criterion and deleting it for want of a story was not defensible.
-# Detection of stimulus is a tandem LRR receptor-kinase array in one interval,
-# but single-interval support is not grounds for removal here, since the genes
-# annotated to a small GO term can genuinely sit in one locus, and the same rule
-# would delete the nitrate and purine-transport results. Interval counts are
-# reported in Supplementary Table S16 and are not used to select terms.
+# Two further terms are dropped by name. Detection of stimulus is vague despite
+# a small background, and DNA topological change is topoisomerase activity with
+# no defensible link to lipid biology.
 #
 # Rows are grouped by the lipid class whose GWAS candidates produced them. That
 # grouping is the point of the figure: SQDG carries both nutrient terms, nitrate
@@ -45,11 +38,12 @@ out_name  <- "Figure5_GO_BP_LDaware.png"
 stopifnot(file.exists(loci_file))
 
 MAX_BACKGROUND <- 30
+DROP_TERMS <- c("detection of stimulus", "DNA topological change")
 
 go <- vroom(loci_file, delim = "\t", show_col_types = FALSE)
 
 sel <- go %>%
-  filter(Background <= MAX_BACKGROUND) %>%
+  filter(Background <= MAX_BACKGROUND, !Term %in% DROP_TERMS) %>%
   mutate(
     Condition = factor(Condition, c("CTL", "LIN")),
     # tidy the merged labels for display
@@ -105,5 +99,5 @@ cat("\n-- terms shown ------------------------------------------------------\n")
 print(as.data.frame(sel %>% arrange(Group, desc(Fold_max)) %>%
         mutate(Term = substr(Term, 1, 52)) %>%
         dplyr::select(Group, Condition, Term, Genes, Background, Fold_max, q_LD)))
-cat(sprintf("\n  %d gene sets shown of %d in the table (background <= %d genes)\n",
+cat(sprintf("\n  %d loci shown of %d in the table (background <= %d genes, 2 dropped by name)\n",
             nrow(sel), nrow(go), MAX_BACKGROUND))
