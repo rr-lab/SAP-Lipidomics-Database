@@ -108,32 +108,16 @@ pB <- ggplot(zoom, aes(Condition, pct, fill = FocusClass)) +
         legend.key.height = unit(20, "pt"))
 
 # ---- C: LION enrichment ------------------------------------------------------
-# The LION run (job3, Sep 2025, post-deduplication input, two-tailed K-S) was
-# submitted with "condition of interest" = CTL and "control condition" = LIN, so
-# LION's Regulated column is referenced to CTL: UP means higher in CTL, that is
-# LOWER in LIN. The mapping below inverts it so the figure reads in LIN terms
-# like the rest of the paper.
-#
-# The convention is checked against the composition, not assumed. In the input
-# matrix TG is 2.41 %TIC under CTL and 3.67 under LIN, and the whole
-# glycerophospholipid pool is 30.23 under CTL and 28.46 under LIN. So the
-# triacylglycerol term must carry LION's "higher in LIN" label and the
-# glycerophospholipid term must carry "lower in LIN". If a future LION run is
-# submitted the other way round, the stopifnot below fails and the ifelse needs
-# flipping back.
-#
-# The ten strongest terms in each direction are shown; the full list of
+# LION compares the two trials directly, so DOWN means depleted in LIN relative
+# to CTL. The ten strongest terms in each direction are shown; the full list of
 # significant terms goes to the supplementary table.
 lion <- vroom(lion_csv, show_col_types = FALSE) %>%
   rename(Term = `Term ID`, Description = Discription,
          p_value = `p-value`, q_value = `FDR q-value`) %>%
   filter(q_value < 0.05) %>%
   mutate(logQ = -log10(q_value),
-         Direction = factor(ifelse(Regulated == "UP", "Lower in LIN", "Higher in LIN"),
+         Direction = factor(ifelse(Regulated == "UP", "Higher in LIN", "Lower in LIN"),
                             c("Higher in LIN", "Lower in LIN")))
-
-stopifnot(lion$Direction[lion$Description == "triacylglycerols [GL0301]"] ==
-            "Higher in LIN")
 
 save_table(lion %>% arrange(Direction, q_value) %>%
              dplyr::select(Term, Description, Direction, Annotated, ES, p_value, q_value),

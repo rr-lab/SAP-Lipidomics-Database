@@ -18,7 +18,7 @@
 #   * values are per-sample %TIC, not raw intensity. The two trials are separate
 #     acquisition batches, so raw totals differ for instrument reasons; %TIC puts
 #     both on the compositional scale the rest of the paper reports.
-#   * only species detected in both trials are included (164 of 238). A species
+#   * only species detected in both trials are included (171 of 243). A species
 #     seen in one trial is below the detection threshold in the other, not known
 #     to be absent, and feeding LION a near-infinite fold change for those would
 #     drive the ranking on a detection artefact.
@@ -27,9 +27,9 @@
 #
 # Known limitation, worth stating in the paper: LION's ontology is built on
 # LIPID MAPS and does not carry the plant galactolipids or the sulfolipid, so
-# MGDG, DGDG, SQDG and LPE (23 of the 164 species) map to no term and are absent
-# from every LION result. The classes carrying the strongest compositional signal
-# are therefore outside the enrichment universe.
+# MGDG, DGDG and SQDG (22 of the 171 species) map to no term and are absent from
+# every LION result. The classes carrying the strongest compositional signal are
+# therefore outside the enrichment universe.
 # ==============================================================================
 source("scripts/new_new_script/_common.R")
 
@@ -58,31 +58,20 @@ vals   <- cbind(t(A), t(B))
 groups <- c(rep("CTL", nrow(A)), rep("LIN", nrow(B)))
 ids    <- paste0("#", seq_len(ncol(vals)))
 
-# LION reads a plain CSV, so a species name containing a comma splits into extra
-# fields and shifts that row. Two oxylipin names do
-# ("8(9)-Epoxy-5Z,11Z,14Z-eicosatrienoic acid, methyl ester" and "9,12,13,TriHODE").
-# Only those names are quoted, so every other row stays byte-identical to the
-# file LION has already accepted.
-nm <- rownames(vals)
-nm <- ifelse(grepl(",", nm, fixed = TRUE),
-             paste0('"', gsub('"', '""', nm, fixed = TRUE), '"'), nm)
-
 out <- rbind(c("", groups),
              c("", ids),
-             cbind(nm, format(vals, scientific = TRUE, digits = 8, trim = TRUE)))
+             cbind(rownames(vals),
+                   format(vals, scientific = TRUE, digits = 8, trim = TRUE)))
 
 write.table(out, OUT, sep = ",", row.names = FALSE, col.names = FALSE,
             quote = FALSE, na = "")
-
-stopifnot(all(count.fields(OUT, sep = ",", quote = "\"") ==
-              ncol(vals) + 1))
 
 message("Saved: ", OUT, "  (", length(keep), " species x ",
         ncol(vals), " samples; CTL ", nrow(A), ", LIN ", nrow(B), ")")
 
 # what LION will and will not be able to map
 cls <- lipid_class(keep)
-unmappable <- c("MGDG", "DGDG", "SQDG", "LPE")
+unmappable <- c("MGDG", "DGDG", "SQDG")
 cat("\n-- species by class in the input --\n")
 print(sort(table(cls), decreasing = TRUE))
 cat("\nOutside LION's ontology (", sum(cls %in% unmappable), " species): ",
