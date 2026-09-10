@@ -668,7 +668,7 @@ default_annotation_dataset <- if ("lowinput" %in% annotation_dataset_choices) {
 # the second. The second view is what the manuscript reports.
 # ---------------------------------------------------------------------------
 ld_candidate_path <- file.path("data", "LD_mapped", "candidate_tables",
-                               "gene_trait_LD.csv")
+                               "ALL_LD_candidate_genes_master.tsv")
 
 ld_candidates <- local({
   cached <- NULL
@@ -678,14 +678,14 @@ ld_candidates <- local({
     loaded <<- TRUE
     if (!file.exists(ld_candidate_path)) { cached <<- NULL; return(NULL) }
     df <- tryCatch(
-      vroom::vroom(ld_candidate_path, delim = ",",
+      vroom::vroom(ld_candidate_path, delim = "\t",
                    col_types = vroom::cols(.default = "c"), progress = FALSE),
       error = function(e) NULL
     )
     if (is.null(df)) { cached <<- NULL; return(NULL) }
     df <- as.data.frame(df, stringsAsFactors = FALSE)
-    df$max_r2 <- suppressWarnings(as.numeric(df$max_r2))
-    df$best_p <- suppressWarnings(as.numeric(df$best_p))
+    df$Best_P_Value <- suppressWarnings(as.numeric(df$Best_P_Value))
+    df$Max_r2       <- suppressWarnings(as.numeric(df$Max_r2))
     cached <<- df
     cached
   }
@@ -714,24 +714,27 @@ LD_PHENO_SEP <- "; "
 # no-op for them.
 ld_normalise_trait <- function(x) sub("_mod_sub_.*$", "", as.character(x))
 
-build_ld_gene_summary <- function(dataset_name, source_choice, trait_subset, r2_min = 0.4) {
+build_ld_gene_summary <- function(dataset_name, source_choice, trait_subset) {
   ld <- ld_candidates()
   if (is.null(ld)) return(NULL)
   d <- ld[ld$condition == ld_condition_for(dataset_name) &
-            ld$layer %in% ld_layers_for(source_choice) &
-            !is.na(ld$max_r2) & ld$max_r2 >= as.numeric(r2_min), , drop = FALSE]
-  if (nrow(d) == 0) return(d)
+            ld$layer %in% ld_layers_for(source_choice), , drop = FALSE]
+  if (nrow(d) == 0) return(d[0, , drop = FALSE])
 
-  trait_keys <- unique(ld_normalise_trait(trait_subset))
-  d <- d[d$trait %in% trait_keys, , drop = FALSE]
+  trait_keys  <- unique(ld_normalise_trait(trait_subset))
+  pheno_lists <- strsplit(as.character(d$Phenotypes), LD_PHENO_SEP, fixed = TRUE)
+  n_selected  <- vapply(pheno_lists, function(x) sum(x %in% trait_keys), integer(1))
+  keep <- n_selected > 0
+  d <- d[keep, , drop = FALSE]
   if (nrow(d) == 0) return(d)
+  d$N_Selected <- n_selected[keep]
 
   out <- d %>%
     dplyr::group_by(GeneID) %>%
     dplyr::summarise(
-      Phenotypes   = dplyr::n_distinct(trait),
-      Highest_logp = round(-log10(min(best_p, na.rm = TRUE)), 2),
-      Max_r2       = round(max(max_r2, na.rm = TRUE), 3),
+      Phenotypes   = sum(N_Selected),
+      Highest_logp = round(-log10(min(Best_P_Value, na.rm = TRUE)), 2),
+      Max_r2       = round(max(Max_r2, na.rm = TRUE), 3),
       .groups = "drop"
     ) %>%
     dplyr::arrange(dplyr::desc(Phenotypes), dplyr::desc(Highest_logp)) %>%
@@ -1876,14 +1879,19 @@ ui <- fluidPage(
               title = "Gene Hit Filters",
               selectInput("hit_dataset", "Select Dataset:", choices = annotation_dataset_choices, selected = default_annotation_dataset),
               selectInput("hit_trait_source", "Trait Source:", choices = c("All" = "all", "Individual" = "individual", "Sum/Ratio" = "sum_ratio"), selected = "all"),
-              selectInput("hit_r2", "Minimum LD with the lead SNP (r2):",
-                          choices = c("0.4  (as reported in Supplementary Tables S7-S10)" = "0.4",
-                                      "0.5" = "0.5", "0.6" = "0.6", "0.7" = "0.7",
-                                      "0.8" = "0.8", "0.9  (strictest)" = "0.9"),
-                          selected = "0.4"),
-              selectInput("hit_threshold", "Select -log10(p) threshold:", choices = c("8.09  (genome-wide, Bonferroni)" = "8.09", "7  (p <= 1e-7)" = "7", "6  (p <= 1e-6)" = "6", "5  (p <= 1e-5)" = "5"), selected = "8.09"),
-              tags$p(class = "text-muted", style = "font-size:0.85em;",
-                     "Candidate genes are assigned by linkage disequilibrium, not by physical distance. A gene is listed when a variant inside it reaches the selected r2 with the trait's lead SNP. Counts are distinct phenotypes. The p-value selector applies to the Phenotypes tab."),
+              selectInput("hit_source_mode", "Gene assignment:",
+                          choices = c("All significant SNP records" = "records",
+                                      "LD-mapped candidates (r2 >= 0.4)" = "ld"),
+                          selected = "records"),
+              conditionalPanel(
+                condition = "input.hit_source_mode == 'records'",
+                selectInput("hit_threshold", "Select -log10(p) threshold:", choices = c("8.09  (genome-wide, Bonferroni)" = "8.09", "7  (p <= 1e-7)" = "7", "6  (p <= 1e-6)" = "6", "5  (p <= 1e-5)" = "5"), selected = "8.09")
+              ),
+              conditionalPanel(
+                condition = "input.hit_source_mode == 'ld'",
+                tags$p(class = "text-muted", style = "font-size:0.85em;",
+                       "LD-mapped candidates are already genome-wide significant, so the p-value selector does not apply. Counts are distinct phenotypes, as reported in Supplementary Tables S7-S10, and are smaller than the record counts in the other view.")
+              ),
               uiOutput("hit_class_filter"),
               uiOutput("hit_subclass_filter"),
               uiOutput("hit_lipid_filter")
@@ -2924,7 +2932,11 @@ server <- function(input, output, session) {
       class_suffix <- if (!is.null(input$hit_class_choice) && input$hit_class_choice != "All") {
         paste0("_", input$hit_class_choice)
       } else { "" }
-      paste0("gene_hits_", input$hit_dataset, "_LDr2_", input$hit_r2, class_suffix, ".csv")
+      if (identical(input$hit_source_mode, "ld")) {
+        paste0("gene_hits_", input$hit_dataset, "_LDmapped", class_suffix, ".csv")
+      } else {
+        paste0("gene_hits_", input$hit_dataset, "_plog10", input$hit_threshold, class_suffix, ".csv")
+      }
     },
     content = function(file) {
       data_list <- get_annotation_data_list(input$hit_dataset, p_threshold = input$hit_threshold)
@@ -2941,10 +2953,12 @@ server <- function(input, output, session) {
         lipid_choice = input$hit_lipid_choice,
         p_threshold = input$hit_threshold
       )
-      ld_summary <- build_ld_gene_summary(input$hit_dataset, input$hit_trait_source,
-                                          trait_subset, input$hit_r2)
-      write.csv(if (is.null(ld_summary)) data.frame() else ld_summary, file, row.names = FALSE)
-      return()
+      # Download whichever view is on screen, so the CSV never disagrees with it.
+      if (identical(input$hit_source_mode, "ld")) {
+        ld_summary <- build_ld_gene_summary(input$hit_dataset, input$hit_trait_source, trait_subset)
+        write.csv(if (is.null(ld_summary)) data.frame() else ld_summary, file, row.names = FALSE)
+        return()
+      }
       hit_rows <- lapply(trait_subset, function(trait) {
         df <- data_list[[trait]]
         if (!is.null(df) && all(c("GeneID", "log(p)") %in% colnames(df))) {
@@ -5208,18 +5222,18 @@ server <- function(input, output, session) {
       p_threshold = input$hit_threshold
     )
 
-    # Candidate genes are LD-assigned. Physical proximity is not used, so a gene
-    # is listed only where a variant inside it reaches the selected r2 with the
-    # trait's lead SNP.
-    ld_summary <- build_ld_gene_summary(input$hit_dataset, input$hit_trait_source,
-                                        trait_subset, input$hit_r2)
-    validate(need(!is.null(ld_summary),
-                  "LD table not found (data/LD_mapped/candidate_tables/gene_trait_LD.csv)."))
-    validate(need(nrow(ld_summary) > 0,
-                  "No candidate genes reach the selected r2 for these filters."))
-    return(datatable(ld_summary, options = list(scrollX = TRUE, pageLength = 10),
-                     caption = paste0("LD-assigned candidate genes at r2 >= ", input$hit_r2,
-                                      ", counted as distinct phenotypes. At r2 >= 0.4 these are the genes and counts reported in Supplementary Tables S7-S10.")))
+    # LD-mapped view: read the candidate table the manuscript reports, rather
+    # than counting raw SNP records. The p-value selector is ignored here
+    # because that table is already Bonferroni-filtered.
+    if (identical(input$hit_source_mode, "ld")) {
+      ld_summary <- build_ld_gene_summary(input$hit_dataset, input$hit_trait_source, trait_subset)
+      validate(need(!is.null(ld_summary),
+                    "LD-mapped candidate table not found (data/LD_mapped/candidate_tables/ALL_LD_candidate_genes_master.tsv)."))
+      validate(need(nrow(ld_summary) > 0,
+                    "No LD-mapped candidate genes for the selected filters."))
+      return(datatable(ld_summary, options = list(scrollX = TRUE, pageLength = 10),
+                       caption = "LD-mapped candidates (r2 >= 0.4), counted as distinct phenotypes. These are the genes and counts reported in Supplementary Tables S7-S10."))
+    }
 
     # Combine hits for selected trait subset
     hit_rows <- lapply(trait_subset, function(trait) {
