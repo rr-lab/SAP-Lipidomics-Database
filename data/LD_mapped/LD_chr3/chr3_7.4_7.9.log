@@ -1,0 +1,29 @@
+PLINK v1.90b7.2 64-bit (11 Dec 2023)
+Options in effect:
+  --bfile /rsstu/users/r/rrellan/DOE_CAREER/SorghumGEA/data/SAP/bed_files/SAP_ldpanel
+  --chr 3
+  --from-bp 7400000
+  --out chr3_7.4_7.9
+  --r2 square
+  --to-bp 7900000
+  --write-snplist
+
+Hostname: c019n02
+Working directory: /gpfs_common/share01/maize/ntanduk/SoLD
+Start time: Thu Sep 10 13:29:13 2026
+
+Random number seed: 1789061353
+192585 MB RAM detected; reserving 96292 MB for main workspace.
+8347 out of 9017014 variants loaded from .bim file.
+357 people (0 males, 0 females, 357 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to chr3_7.4_7.9.nosex .
+Using 1 thread.
+Before main variant filters, 357 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.943898.
+8347 variants and 357 people pass filters and QC.
+Note: No phenotypes present.
+List of variant IDs written to chr3_7.4_7.9.snplist .
+--r2 square to chr3_7.4_7.9.ld ... done.
+
+End time: Thu Sep 10 13:29:19 2026

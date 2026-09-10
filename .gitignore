@@ -27,3 +27,18 @@ _dangling/
 # Editing backups
 *.bak
 main.tex.bak_*
+
+# --- added Sep 2026, chromosome 3 LD panel -------------------------------
+# PLINK square r2 matrices. The full one is 681 MB and the thinned one 75 MB,
+# both over what GitHub will take. scripts/new_new_script/50_Fig_regional_chr3_locus.R
+# carries the plink/awk commands that rebuild them from SAP_ldpanel, and the
+# small files they are derived from (the snplist and the lead-SNP r2 column)
+# stay tracked so panels A and B of that figure remain reproducible here.
+data/LD_mapped/LD_chr3/*.ld
+data/LD_mapped/LD_chr3/thinned/*.ld
+data/LD_mapped/LD_chr3/*.nosex
+
+# Quarantine folder for superseded scratch output. Delete it locally.
+_to_delete/
+
+.DS_Store
