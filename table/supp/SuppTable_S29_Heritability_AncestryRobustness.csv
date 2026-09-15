@@ -1,0 +1,55 @@
+trial,analysis,dropped,n_genotypes,n_species,n_h2_nonzero
+CTL,full panel,NA,389,194,20
+CTL,leave-one-race-out,Bicolor,372,194,20
+CTL,leave-one-race-out,Caudatum,313,194,26
+CTL,leave-one-race-out,Durra,367,194,20
+CTL,leave-one-race-out,Guinea,370,194,22
+CTL,leave-one-race-out,Kafir,382,194,22
+CTL,leave-one-race-out,Mixed,308,194,23
+CTL,80% subsample,rep01,311,194,25
+CTL,80% subsample,rep02,311,194,20
+CTL,80% subsample,rep03,311,194,21
+CTL,80% subsample,rep04,311,194,19
+CTL,80% subsample,rep05,311,194,16
+CTL,80% subsample,rep06,311,194,20
+CTL,80% subsample,rep07,311,194,20
+CTL,80% subsample,rep08,311,194,21
+CTL,80% subsample,rep09,311,194,22
+CTL,80% subsample,rep10,311,194,23
+CTL,80% subsample,rep11,311,194,21
+CTL,80% subsample,rep12,311,194,18
+CTL,80% subsample,rep13,311,194,21
+CTL,80% subsample,rep14,311,194,20
+CTL,80% subsample,rep15,311,194,21
+CTL,80% subsample,rep16,311,194,25
+CTL,80% subsample,rep17,311,194,18
+CTL,80% subsample,rep18,311,194,22
+CTL,80% subsample,rep19,311,194,17
+CTL,80% subsample,rep20,311,194,14
+LIN,full panel,NA,357,190,57
+LIN,leave-one-race-out,Bicolor,341,190,54
+LIN,leave-one-race-out,Caudatum,286,190,40
+LIN,leave-one-race-out,Durra,334,190,56
+LIN,leave-one-race-out,Guinea,340,190,63
+LIN,leave-one-race-out,Kafir,350,190,52
+LIN,leave-one-race-out,Mixed,280,190,37
+LIN,80% subsample,rep01,285,190,44
+LIN,80% subsample,rep02,285,190,57
+LIN,80% subsample,rep03,285,190,47
+LIN,80% subsample,rep04,285,190,43
+LIN,80% subsample,rep05,285,190,47
+LIN,80% subsample,rep06,285,190,45
+LIN,80% subsample,rep07,285,190,70
+LIN,80% subsample,rep08,285,190,79
+LIN,80% subsample,rep09,285,190,39
+LIN,80% subsample,rep10,285,190,55
+LIN,80% subsample,rep11,285,190,39
+LIN,80% subsample,rep12,285,190,41
+LIN,80% subsample,rep13,285,190,46
+LIN,80% subsample,rep14,285,190,64
+LIN,80% subsample,rep15,285,190,46
+LIN,80% subsample,rep16,285,190,42
+LIN,80% subsample,rep17,285,190,54
+LIN,80% subsample,rep18,285,190,65
+LIN,80% subsample,rep19,285,190,36
+LIN,80% subsample,rep20,285,190,71
