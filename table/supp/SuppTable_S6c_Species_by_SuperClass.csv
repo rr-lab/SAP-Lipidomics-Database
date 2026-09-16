@@ -1,8 +1,11 @@
 "SuperClass","Control","LowInput"
-"Glycerolipid",114,108
-"Glycerophospholipid",62,64
+"Glycerolipid",115,110
+"Glycerophospholipid",60,64
+"Terpenoid",11,13
+"Fatty acid",7,10
 "Ether lipid",7,7
-"Fatty acid",5,7
-"Sphingolipid",5,3
+"Sphingolipid",6,3
+"Prenol",4,4
+"Sterol",2,3
+"Unclassified",2,1
 "Betaine lipid",0,1
-"Terpenoid",1,0

@@ -66,14 +66,26 @@ load_k <- function() {
   list(K = K, ids = ids)
 }
 
+normalize_lipid_name <- function(x) {
+  x <- sub("^(PC|PE|PG|PS|PA)\\(([^/()]+)/0:0\\)$", "L\\1(\\2)", x)
+  x <- sub("^(LPC|LPE)\\(([^/()]+)/0:0\\)$", "\\1(\\2)", x)
+  x
+}
+
 read_spats <- function(cond) {
   f <- file.path(root,'data','SPATS_fitted','non_normalized_intensities',
         sprintf('Final_subset_%s_all_lipids_fitted_phenotype_non_normalized.csv',
                 if (cond == 'CTL') 'control' else 'lowinput'))
   x   <- fread(f, data.table = FALSE, check.names = FALSE)
-  lip <- setdiff(names(x), c('LineRaw','PlotID','row','col')); lip <- lip[grepl('\\(', lip)]
+  lip <- setdiff(names(x), c('LineRaw','PlotID','row','col'))
+  # Every annotated feature counts as a species, and names are normalised before
+  # anything is compared, so a lyso written CLASS(x:y/0:0) under CTL and LCLASS(x:y)
+  # under LIN is one species. See 06b_SuppTableS6_species_inventory.R, 2026-09-16.
+  nm  <- normalize_lipid_name(lip)
+  lip <- lip[!duplicated(nm)]; nm <- nm[!duplicated(nm)]
   m <- as.matrix(x[, lip, drop = FALSE]); m[!is.finite(m)] <- NA_real_
-  list(line = as.character(x$LineRaw), mat = m, lipids = lip)
+  colnames(m) <- nm
+  list(line = as.character(x$LineRaw), mat = m, lipids = nm)
 }
 
 # epsilon^2 from Kruskal-Wallis: (H - k + 1) / (n - k)
