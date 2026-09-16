@@ -18,7 +18,7 @@ suppressPackageStartupMessages({
   library(stringr); library(ggplot2)
 })
 
-root   <- '/Users/nirwantandukar/Documents/Github/SAP-Lipidomics-Database'
+root   <- Sys.getenv('SOLD_DB_REPO', '.')
 kdir   <- file.path(root, 'data', 'kinship')
 tabdir <- file.path(root, 'table', 'new_table')
 figdir <- file.path(root, 'fig', 'new_figures')
@@ -73,15 +73,27 @@ prof_h2 <- function(y, K) {
     ll_flat = as.numeric(ll[i] - ll[1]))       # gain over h2 = 0
 }
 
+# Lyso species are written CLASS(x:y/0:0) under CTL and LCLASS(x:y) under LIN.
+# Normalise before classifying or intersecting, or the same species lands in the
+# PC sum for one trial and the LPC sum for the other. Fixed 2026-09-16; see
+# 06b_SuppTableS6_species_inventory.R for the same fix in the inventory.
+normalize_lipid_name <- function(x) {
+  x <- sub("^(PC|PE|PG|PS|PA)\\(([^/()]+)/0:0\\)$", "L\\1(\\2)", x)
+  x <- sub("^(LPC|LPE)\\(([^/()]+)/0:0\\)$", "\\1(\\2)", x)
+  x
+}
+
 read_spats <- function(cond) {
   f <- file.path(root, 'data','SPATS_fitted','non_normalized_intensities',
         sprintf('Final_subset_%s_all_lipids_fitted_phenotype_non_normalized.csv',
                 if (cond == 'CTL') 'control' else 'lowinput'))
   x   <- fread(f, data.table = FALSE, check.names = FALSE)
   lip <- setdiff(names(x), c('LineRaw','PlotID','row','col'))
-  lip <- lip[grepl('\\(', lip)]
+  nm  <- normalize_lipid_name(lip)
+  lip <- lip[!duplicated(nm)]; nm <- nm[!duplicated(nm)]
   m <- as.matrix(x[, lip, drop = FALSE]); m[!is.finite(m)] <- NA_real_
-  list(line = as.character(x$LineRaw), mat = m, lipids = lip)
+  colnames(m) <- nm
+  list(line = as.character(x$LineRaw), mat = m, lipids = nm)
 }
 
 CTLd <- read_spats('CTL'); LINd <- read_spats('LIN'); KIN <- load_k()

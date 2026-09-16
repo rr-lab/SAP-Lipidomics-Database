@@ -24,7 +24,7 @@
 #   data/final_species_set/species_inventory.csv
 #
 # Outputs
-#   fig/supp/SuppFig_S4_Lipid_Species_Counts.png  (prints as S6; filename kept
+#   fig/supp/SuppFig_S5_Lipid_Species_Counts.png  (prints as Supp Fig S5; renamed
 #                                                  so the tex include path holds)
 # ==============================================================================
 source("scripts/new_new_script/_common.R")
@@ -81,7 +81,7 @@ fig <- (pA / (pB | pC)) +
   plot_layout(heights = c(0.8, 1.4)) +
   plot_annotation(tag_levels = "A") & TAG_THEME
 
-save_fig(fig, "SuppFig_S4_Lipid_Species_Counts.png",
+save_fig(fig, "SuppFig_S5_Lipid_Species_Counts.png",
          width = 14, height = 12, subdir = "supp")
 
 cat("\n-- totals --\n");     print(as.data.frame(tot[, c("Category", "Count")]))
