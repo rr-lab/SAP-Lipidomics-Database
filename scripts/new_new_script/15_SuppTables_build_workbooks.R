@@ -48,9 +48,7 @@ GROUPS <- list(
     "Species summary"              = "S6a",
     "By class"                     = "S6b",
     "By superclass"                = "S6c",
-    "Composition stability"        = "S5G",
-    "Jackknife"                    = "S2",
-    "Stability by class"           = "S3")),
+    "Composition stability"        = "S5G")),
   list(n = 4, title = "Class_composition_and_contrasts", sheets = c(
     "Composition pctTIC"           = "S5D",
     "CLR contrast"                 = "S5A",
@@ -94,10 +92,26 @@ key   <- sub("^SuppTable_(S[0-9]+[a-zA-Z]?)_.*$", "\\1", avail)
 stopifnot(!anyDuplicated(key))
 path_of <- setNames(file.path(SRC, avail), key)
 
+# DROPPED FROM THE SUPPLEMENT, 2026-09-16.
+#
+# S2 and S3 were the per-species CTL/LIN Wilcoxon contrast and its per-class
+# summary, each carrying a leave-one-genotype-out jackknife stability column.
+# They are out for three reasons. The manuscript reports no per-species
+# between-trial test -- every trial contrast it makes is at class level -- so
+# they backed a claim the paper does not make. The sentence that cited them
+# described them as a per-species DETECTION result, which is not what they
+# measure. And they predate the species deduplication, testing 152 species on
+# 394 CTL and 363 LIN genotypes against the current 146 on 389 and 357.
+#
+# The files move to table/archive/ rather than being deleted, so the analysis
+# can be recovered if a reviewer asks for it. Listing them here keeps the
+# unassigned-file guard below honest instead of silently widening it.
+DROPPED <- c("S2", "S3")
+
 wanted <- unlist(lapply(GROUPS, function(g) unname(g$sheets)))
 stopifnot(length(wanted) == length(unique(wanted)))
 missing <- setdiff(wanted, names(path_of))
-orphan  <- setdiff(names(path_of), wanted)
+orphan  <- setdiff(names(path_of), c(wanted, DROPPED))
 if (length(missing)) stop("no file for old table(s) ", paste(missing, collapse = ", "))
 if (length(orphan))  stop("file(s) not assigned to any group ", paste(orphan, collapse = ", "))
 message(sprintf("%d source files, all assigned", length(wanted)))
