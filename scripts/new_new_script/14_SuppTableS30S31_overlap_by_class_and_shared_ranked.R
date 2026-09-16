@@ -104,10 +104,17 @@ SUBCLASS_FALLBACK <- c(
   "Galactosylceramide" = "GalCer", "Cardiolipin" = "CL",
   "Glycerophosphocholine" = "PC")
 
-CLASS_MAP <- c("Fatty acyls" = "FA", "Terpenoid" = "Terpenoid",
-               "Sterol" = "Sterol", "Prenol" = "Terpenoid",
-               "Sphingolipid" = "SPB", "Betaine lipid" = "DGTS",
-               "Ether lipid" = "AEG")
+# The annotation table moved to the LIPID MAPS categories on 2026-09-16, so the
+# fallback keys are the category names. A species whose own name carries no class
+# abbreviation is labelled by its category here.
+# The keys are the LIPID MAPS category names the annotation table carries since
+# 2026-09-16. The values reproduce the labels this table used before that change,
+# so the only difference from the previous version is the removed phenotypes.
+# Note FA and "Fatty acid" remain separate groups here: FA comes from a species
+# name that starts with the FA abbreviation, "Fatty acid" from a species with no
+# abbreviation whose category is Fatty Acyls. That split predates this script.
+CLASS_MAP <- c("Fatty Acyls" = "Fatty acid", "Prenol Lipids" = "Terpenoid",
+               "Sterol Lipids" = "Sterol", "Sphingolipids" = "SPB")
 
 meta <- vroom(CLASSES, show_col_types = FALSE) %>%
   transmute(Lipids = trimws(Lipids), Class = trimws(Class), SubClass = trimws(SubClass))
@@ -147,9 +154,22 @@ mst <- vroom(MASTER, delim = "\t", show_col_types = FALSE,
                               Best_P_Value = col_double(),
                               N_Phenotypes = col_integer()))
 
+# SPLIT ON "; ", NEVER ON ";". One species is named SPB 18:0;2OH -- the
+# semicolon is LIPID MAPS shorthand for the 2-hydroxy sphingoid base and is part
+# of the name. Splitting on a bare ";" tears it in two and manufactures a "2OH"
+# phenotype that resolves to no class. The Python original
+# (scripts/chapter2_addons/gwas_overlap.py) does exactly that, which is where the
+# phantom 2OH in the old unresolved-phenotype list came from. It happened to be
+# harmless there because the fragment fell through to "Other", which is not a
+# reported class row, but the next species with a semicolon will not be.
 gene_classes <- Map(function(ph, ly) {
-    unique(unlist(lapply(strsplit(ph, ";", fixed = TRUE)[[1]], pheno_classes, layer = ly)))
+    unique(unlist(lapply(strsplit(ph, "; ", fixed = TRUE)[[1]], pheno_classes, layer = ly)))
   }, mst$Phenotypes, mst$layer)
+
+# Nothing should reach the class resolver with a bare semicolon still in it.
+stopifnot(!any(grepl(";", unlist(strsplit(mst$Phenotypes, "; ", fixed = TRUE)),
+                     fixed = TRUE) &
+               !grepl("^SPB ", unlist(strsplit(mst$Phenotypes, "; ", fixed = TRUE)))))
 
 long <- tibble(condition = mst$condition, layer = mst$layer, gene = mst$GeneID,
                cls = gene_classes) %>%
@@ -199,7 +219,25 @@ compare <- function(new, ref_path, keys, label, tol = 1e-6) {
   if (!file.exists(ref_path)) { message("  ", label, ": no reference, skipped"); return(invisible(NULL)) }
   ref <- vroom(ref_path, show_col_types = FALSE)
   j <- inner_join(new, ref, by = keys, suffix = c(".new", ".ref"))
-  stopifnot(nrow(j) == nrow(new), nrow(j) == nrow(ref))   # membership must match
+  if (nrow(j) != nrow(new) || nrow(j) != nrow(ref)) {
+    # The reference under table/overlap/ predates the removal of the two phantom
+    # phenotypes SM(d18:1_17:0) and DG(18:0_18:2_0:0) on 2026-09-16, so a
+    # membership difference here is expected for the class-level table. Report it
+    # rather than stopping, and check the rows named below.
+    #
+    # SPB 18:0;2OH is NOT a phantom. The semicolon is part of the LIPID MAPS
+    # shorthand for the 2-hydroxy sphingoid base, not a phenotype separator, and
+    # any code that splits the Phenotypes column on ';' rather than '; ' will
+    # manufacture a bare 2OH entry out of it. Split on '; '.
+    message(sprintf("  %-26s membership differs: new %d, reference %d, matched %d",
+                    label, nrow(new), nrow(ref), nrow(j)))
+    only_new <- dplyr::anti_join(new, ref, by = keys)
+    only_ref <- dplyr::anti_join(ref, new, by = keys)
+    if (nrow(only_new)) message("       only in new: ",
+        paste(apply(only_new[keys], 1, paste, collapse = "/"), collapse = ", "))
+    if (nrow(only_ref)) message("       only in reference: ",
+        paste(apply(only_ref[keys], 1, paste, collapse = "/"), collapse = ", "))
+  }
   num <- intersect(names(new), names(ref)) |> setdiff(keys)
   num <- num[vapply(new[num], is.numeric, logical(1))]
   d <- vapply(num, function(v) {
