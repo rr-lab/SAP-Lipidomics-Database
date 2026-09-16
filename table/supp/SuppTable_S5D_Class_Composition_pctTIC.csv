@@ -11,7 +11,7 @@
 "Lipid class","MG","LIN",1.0512407127772
 "Lipid class","MGDG","CTL",32.6840505592754
 "Lipid class","MGDG","LIN",30.0658825707473
-"Lipid class","Other","CTL",5.30140026426419
+"Lipid class","Other","CTL",5.3014002642642
 "Lipid class","Other","LIN",6.53194597906461
 "Lipid class","PA","CTL",0.016789256062105
 "Lipid class","PA","LIN",0.0256000619625351
@@ -20,27 +20,22 @@
 "Lipid class","PE","CTL",5.54303664167746
 "Lipid class","PE","LIN",6.21172084286869
 "Lipid class","PG","CTL",0.380524053808567
-"Lipid class","PG","LIN",0.44504631643678
+"Lipid class","PG","LIN",0.445046316436781
 "Lipid class","PS","CTL",0.0141575519437136
 "Lipid class","PS","LIN",0.0449518354297121
 "Lipid class","SQDG","CTL",2.75130568404306
 "Lipid class","SQDG","LIN",1.27610717010143
 "Lipid class","TG","CTL",2.56599519350257
 "Lipid class","TG","LIN",4.8954489942969
-"Superclass","Betaine lipid","LIN",0.000607925933378689
-"Superclass","Ether lipid","CTL",1.00303807751483
-"Superclass","Ether lipid","LIN",0.953217540176834
-"Superclass","Fatty acid","CTL",0.660503349072863
-"Superclass","Fatty acid","LIN",0.416201956551322
-"Superclass","Glycerolipid","CTL",64.409069746446
-"Superclass","Glycerolipid","LIN",63.3891403674944
-"Superclass","Glycerophospholipid","CTL",30.3345635718485
-"Superclass","Glycerophospholipid","LIN",30.6937496433726
-"Superclass","Prenol","CTL",0.138296356020255
-"Superclass","Prenol","LIN",0.193367727843116
-"Superclass","Sphingolipid","CTL",0.130712572828313
-"Superclass","Sphingolipid","LIN",0.161903219018698
-"Superclass","Sterol","CTL",0.0421060412569126
-"Superclass","Sterol","LIN",0.216651686037459
-"Superclass","Terpenoid","CTL",3.28171028501242
-"Superclass","Terpenoid","LIN",3.97515993357213
+"Superclass","Fatty Acyls","CTL",0.660503349072862
+"Superclass","Fatty Acyls","LIN",0.416201956551322
+"Superclass","Glycerolipids","CTL",65.4121078239608
+"Superclass","Glycerolipids","LIN",64.3429658336047
+"Superclass","Glycerophospholipids","CTL",30.3345635718484
+"Superclass","Glycerophospholipids","LIN",30.6937496433726
+"Superclass","Prenol Lipids","CTL",3.42000664103267
+"Superclass","Prenol Lipids","LIN",4.16852766141525
+"Superclass","Sphingolipids","CTL",0.130712572828313
+"Superclass","Sphingolipids","LIN",0.161903219018698
+"Superclass","Sterol Lipids","CTL",0.0421060412569125
+"Superclass","Sterol Lipids","LIN",0.216651686037459

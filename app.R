@@ -542,10 +542,16 @@ group_colors <- c(
 #---------------------------
 class_to_group <- function(cls) {
   dplyr::case_when(
-    cls %in% c("PC", "PA", "PE", "PG", "PS", "Glycerophospholipid", "Sphingolipid", "Ether lipid") ~ "Phospholipids",
+    # Category names follow the LIPID MAPS categories carried in
+    # final_lipid_classes.csv; the bare abbreviations are the lipid-class labels
+    # parsed from species names. Updated 2026-09-16 when the class table moved to
+    # the LIPID MAPS vocabulary.
+    cls %in% c("PC", "PA", "PE", "PG", "PS", "LPC", "LPE",
+               "Glycerophospholipids", "Sphingolipids") ~ "Phospholipids",
     cls %in% c("MGDG", "DGDG", "SQDG") ~ "Glycolipids",
-    cls %in% c("DG", "MG", "Fatty acid", "Fatty acyl", "Prenol") ~ "Neutral",
-    cls %in% c("TG", "Glycerolipid") ~ "Storage",
+    cls %in% c("DG", "MG", "AEG", "Fatty Acyls", "Prenol Lipids",
+               "Sterol Lipids", "Polyketides") ~ "Neutral",
+    cls %in% c("TG", "Glycerolipids") ~ "Storage",
     TRUE ~ NA_character_
   )
 }
