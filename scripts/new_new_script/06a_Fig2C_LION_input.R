@@ -74,7 +74,11 @@ out <- rbind(c("", groups),
 write.table(out, OUT, sep = ",", row.names = FALSE, col.names = FALSE,
             quote = FALSE, na = "")
 
-stopifnot(all(count.fields(OUT, sep = ",", quote = "\"") ==
+# comment.char MUST be "" here. count.fields() defaults to comment.char = "#",
+# and the sample id row is ",#1,#2,#3,...", so with the default everything from
+# the first # on is discarded and the row reports 2 fields instead of 758. The
+# assertion then fails on a file that is perfectly well formed. Found 2026-09-17.
+stopifnot(all(count.fields(OUT, sep = ",", quote = "\"", comment.char = "") ==
               ncol(vals) + 1))
 
 message("Saved: ", OUT, "  (", length(keep), " species x ",
