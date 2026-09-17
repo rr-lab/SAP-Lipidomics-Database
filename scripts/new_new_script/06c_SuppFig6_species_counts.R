@@ -24,8 +24,12 @@
 #   data/final_species_set/species_inventory.csv
 #
 # Outputs
-#   fig/supp/SuppFig_S5_Lipid_Species_Counts.png  (prints as Supp Fig S5; renamed
+#   fig/supp/SuppFig_S5_Lipid_Species_Counts.png  (prints as S6; filename kept
 #                                                  so the tex include path holds)
+# FILENAME CORRECTED 2026-09-17. This script wrote SuppFig_S4_Lipid_Species_Counts.png, but
+# the species-count figure prints as S5 and main.tex includes SuppFig_S5_Lipid_Species_Counts.png.
+# The two numbering schemes had drifted apart, so a rebuild left the manuscript
+# pointing at whichever stale copy happened to be on disk.
 # ==============================================================================
 source("scripts/new_new_script/_common.R")
 suppressPackageStartupMessages({ library(tidyr); library(forcats) })

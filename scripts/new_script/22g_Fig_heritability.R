@@ -12,9 +12,17 @@ suppressPackageStartupMessages({
   library(stringr); library(ggplot2); library(patchwork)
 })
 
-root   <- '/Users/nirwantandukar/Documents/Github/SAP-Lipidomics-Database'
+# root was a hard-coded absolute path into one person's home directory, so this
+# script ran on exactly one machine. It now resolves inside the repo like the
+# rest of the pipeline. Fixed 2026-09-17.
+root   <- Sys.getenv("SOLD_REPO", ".")
 tabdir <- file.path(root, 'table', 'new_table')
-figdir <- file.path(root, 'fig', 'new_figures')
+# This figure prints as Supplementary Figure S4 and main.tex includes
+# fig/supp/SuppFig_S4_Heritability.png, but the script wrote
+# fig/new_figures/Fig_Heritability_CTL_LIN.png, so the copy the manuscript
+# compiled against was whatever had last been moved across by hand. It now
+# writes the path the manuscript reads. Fixed 2026-09-17.
+figdir <- file.path(root, 'fig', 'supp')
 dir.create(figdir, recursive = TRUE, showWarnings = FALSE)
 
 plot_theme <- theme_minimal(base_size = 13) +
@@ -74,9 +82,9 @@ fig <- (pA | pB) +
   plot_annotation(tag_levels = 'A',
                   theme = theme(plot.tag = element_text(face = 'bold', size = 15)))
 
-ggsave(file.path(figdir, 'Fig_Heritability_CTL_LIN.png'), fig,
+ggsave(file.path(figdir, 'SuppFig_S4_Heritability.png'), fig,
        width = 12, height = 5.6, dpi = 350, bg = 'white')
-ggsave(file.path(figdir, 'Fig_Heritability_CTL_LIN.pdf'), fig,
+ggsave(file.path(figdir, 'SuppFig_S4_Heritability.pdf'), fig,
        width = 12, height = 5.6, bg = 'white')
 cat('species plotted:', nrow(sp), ' LIN higher:', n_up, ' CTL higher:', n_dn, '\n')
-message('wrote fig/new_figures/Fig_Heritability_CTL_LIN.{png,pdf}')
+message('wrote fig/supp/SuppFig_S4_Heritability.{png,pdf}')
