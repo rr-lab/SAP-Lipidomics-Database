@@ -1,0 +1,41 @@
+"Level","Group","Condition","pct_TIC"
+"Lipid class","DG","CTL",12.9792403228336
+"Lipid class","DG","LIN",13.7943332910046
+"Lipid class","DGDG","CTL",12.083589996121
+"Lipid class","DGDG","LIN",12.2068464193104
+"Lipid class","LPC","CTL",0.150325521955846
+"Lipid class","LPC","LIN",0.154492987229385
+"Lipid class","LPE","CTL",0.00646658279399933
+"Lipid class","LPE","LIN",0.0139218279850754
+"Lipid class","MG","CTL",1.30194400394028
+"Lipid class","MG","LIN",1.0512407127772
+"Lipid class","MGDG","CTL",32.6840505592754
+"Lipid class","MGDG","LIN",30.0658825707473
+"Lipid class","Other","CTL",5.3014002642642
+"Lipid class","Other","LIN",6.53194597906461
+"Lipid class","PA","CTL",0.016789256062105
+"Lipid class","PA","LIN",0.0256000619625351
+"Lipid class","PC","CTL",24.2211743677781
+"Lipid class","PC","LIN",23.2824609907854
+"Lipid class","PE","CTL",5.54303664167746
+"Lipid class","PE","LIN",6.21172084286869
+"Lipid class","PG","CTL",0.380524053808567
+"Lipid class","PG","LIN",0.445046316436781
+"Lipid class","PS","CTL",0.0141575519437136
+"Lipid class","PS","LIN",0.0449518354297121
+"Lipid class","SQDG","CTL",2.75130568404306
+"Lipid class","SQDG","LIN",1.27610717010143
+"Lipid class","TG","CTL",2.56599519350257
+"Lipid class","TG","LIN",4.8954489942969
+"Superclass","Fatty Acyls","CTL",0.660503349072862
+"Superclass","Fatty Acyls","LIN",0.416201956551322
+"Superclass","Glycerolipids","CTL",65.4121078239608
+"Superclass","Glycerolipids","LIN",64.3429658336047
+"Superclass","Glycerophospholipids","CTL",30.3345635718484
+"Superclass","Glycerophospholipids","LIN",30.6937496433726
+"Superclass","Prenol Lipids","CTL",3.42000664103267
+"Superclass","Prenol Lipids","LIN",4.16852766141525
+"Superclass","Sphingolipids","CTL",0.130712572828313
+"Superclass","Sphingolipids","LIN",0.161903219018698
+"Superclass","Sterol Lipids","CTL",0.0421060412569125
+"Superclass","Sterol Lipids","LIN",0.216651686037459
