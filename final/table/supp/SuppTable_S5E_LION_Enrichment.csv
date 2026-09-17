@@ -1,0 +1,11 @@
+"Term","Description","Direction","Annotated","ES","p_value","q_value"
+"LION:0000622","triacylglycerols [GL0301]","Higher in LIN",44,-0.431818181818182,1.1e-05,0.000286
+"LION:0012011","lipid storage","Higher in LIN",44,-0.431818181818182,1.1e-05,0.000286
+"LION:0012084","lipid droplet","Higher in LIN",44,-0.431818181818182,1.1e-05,0.000286
+"LION:0000094","headgroup with neutral charge","Higher in LIN",58,-0.327586206896552,0.00074,0.0117
+"LION:0000002","glycerolipids [GL]","Higher in LIN",61,-0.311475409836066,0.00146,0.014723
+"LION:0080977","low lateral diffusion","Lower in LIN",11,0.588552188552189,0.00075,0.0117
+"LION:0012009","lipid-mediated signalling","Lower in LIN",23,0.422764227642276,0.00116,0.014723
+"LION:0012010","membrane component","Lower in LIN",65,0.308641975308642,0.00151,0.014723
+"LION:0000195","PC(38:2)","Lower in LIN",3,0.916083916083916,0.00179,0.015513
+"LION:0002926","C20:1","Lower in LIN",4,0.78169014084507,0.00577,0.045006

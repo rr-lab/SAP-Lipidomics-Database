@@ -23,7 +23,7 @@
 #
 # Outputs
 #   fig/supp/SuppFig_S3_Class_PCA_Structure.png
-#   table/supp/SuppTable_S25b_Population_Structure_PC_Tests.csv
+#   table/supp/SuppTable_S24b_Population_Structure_PC_Tests.csv
 # ==============================================================================
 source("scripts/new_new_script/_common.R")
 suppressPackageStartupMessages({ library(tibble); library(tidyr) })
@@ -47,7 +47,13 @@ pc_tests <- bind_rows(lapply(names(pca), function(cond) {
   group_by(Condition, Grouping) %>%
   mutate(q_BH = p.adjust(p, method = "BH")) %>% ungroup()
 
-save_table(pc_tests, "SuppTable_S25b_Population_Structure_PC_Tests.csv")
+# RENUMBERED 2026-09-17. This script still wrote the population-structure
+# tables under their pre-consolidation numbers (S25, S25a, S25b). The supplement
+# renumbered them to S24, S24a and S24b when the 41 tables were grouped into ten
+# workbooks, and S25 was reassigned to the per-species heritability table. Every
+# run of this script therefore dropped a second, differently-numbered S25 into
+# table/supp and broke the workbook builder's duplicate-key guard.
+save_table(pc_tests, "SuppTable_S24b_Population_Structure_PC_Tests.csv")
 
 # ---- panels ------------------------------------------------------------------
 pca_panel <- function(cond, group_col, palette, show_legend = TRUE) {

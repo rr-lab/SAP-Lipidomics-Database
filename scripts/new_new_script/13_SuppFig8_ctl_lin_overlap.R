@@ -16,11 +16,20 @@
 # The circles are fixed-size and are not area-proportional; the counts are
 # printed, which is what the panel is for.
 #
-# Inputs (all under table/overlap/)
-#   gwas_overlap_overall.csv          gene-level overlap per trait layer
-#   gwas_overlap_locus_level.csv      the same after collapsing to 100/250/500 kb
-#   gwas_overlap_by_class.csv         per lipid class, individual-lipid layer
-#   gwas_gene_to_locus_inflation.csv  genes and loci per condition and layer
+# Inputs
+#   table/supp/SuppTable_S20_Overlap_gene_level.csv   gene-level overlap per layer
+#   table/supp/SuppTable_S21_Overlap_locus_level.csv  the same at 100/250/500 kb
+#   table/supp/SuppTable_S30_Overlap_by_lipid_class.csv  per lipid class
+#   table/overlap/gwas_gene_to_locus_inflation.csv    genes and loci per layer
+#
+# REPOINTED 2026-09-17. Panels A, B and C used to read the first-pass Python
+# output under table/overlap/ (gwas_overlap_overall.csv, _locus_level.csv,
+# _by_class.csv). Those files were last written in May 2026 and were never
+# refreshed through the September species deduplication or the removal of the
+# phantom GWAS phenotypes, so this figure was drawing a LIN individual-lipid set
+# of 4,323 genes and 971 loci while the supplementary tables said 4,319 and 970.
+# It now reads the supplementary tables themselves, which are rebuilt from the
+# candidate master by 13a and 14, so the figure cannot drift from them again.
 #
 # Output
 #   fig/supp/Figure7_CTL_LIN_Overlap.png   (prints as Supp Fig S8)
@@ -29,8 +38,9 @@ source("scripts/new_new_script/_common.R")
 suppressPackageStartupMessages({ library(tidyr); library(forcats); library(tibble) })
 
 ov_dir   <- Sys.getenv("OVERLAP_DIR", file.path(REPO, "table/overlap"))
+supp_dir <- Sys.getenv("SUPP_DIR", file.path(REPO, "table/supp"))
 out_name <- "Figure7_CTL_LIN_Overlap.png"
-stopifnot(dir.exists(ov_dir))
+stopifnot(dir.exists(ov_dir), dir.exists(supp_dir))
 
 ctl_col <- unname(condition_colors["CTL"])
 lin_col <- unname(condition_colors["LIN"])
@@ -40,8 +50,8 @@ stars <- function(p) ifelse(p < .001, "***", ifelse(p < .01, "**",
                      ifelse(p < .05, "*", "n.s.")))
 
 # ---- A: overlap at two resolutions -------------------------------------------
-overall <- vroom(file.path(ov_dir, "gwas_overlap_overall.csv"), show_col_types = FALSE)
-locus   <- vroom(file.path(ov_dir, "gwas_overlap_locus_level.csv"), show_col_types = FALSE)
+overall <- vroom(file.path(supp_dir, "SuppTable_S20_Overlap_gene_level.csv"), show_col_types = FALSE)
+locus   <- vroom(file.path(supp_dir, "SuppTable_S21_Overlap_locus_level.csv"), show_col_types = FALSE)
 
 g <- overall %>% filter(Layer == "All layers")
 l <- locus   %>% filter(Layer == "All layers", window_kb == 250)
@@ -107,7 +117,7 @@ pB <- ggplot(res, aes(res, fold, fill = Layer)) +
   plot_theme + theme(panel.grid.major.x = element_blank())
 
 # ---- C: candidate genes per lipid class --------------------------------------
-by_class <- vroom(file.path(ov_dir, "gwas_overlap_by_class.csv"), show_col_types = FALSE) %>%
+by_class <- vroom(file.path(supp_dir, "SuppTable_S30_Overlap_by_lipid_class.csv"), show_col_types = FALSE) %>%
   filter(Layer == "individual") %>%
   mutate(Class = fct_reorder(Class, n_CTL + n_LIN))
 
