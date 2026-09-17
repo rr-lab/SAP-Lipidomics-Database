@@ -1,8 +1,7 @@
 # ==============================================================================
-# Supplementary Tables S1-S3 -- class-ratio statistics, species-level jackknife,
-# and per-class stability summary.
+# Supplementary Table S1 -- class-ratio statistics.
 #
-# These three tables are produced by make_suppfig_s9_lipid_ratios() inside
+# This table is produced by make_suppfig_s9_lipid_ratios() inside
 # 21_high_variance_lipids.R. That script is a 6,000-line monolith that also
 # rebuilds Figure 1, the S1 QC panel, OPLS and several supplementary figures
 # under an OLDER numbering scheme (its S3 is the species counts, its S4 the
@@ -12,10 +11,17 @@
 # writes commented out (that figure is written by 28_class_logratio_stats.R).
 # The statistics are unchanged from the original.
 #
+# JACKKNIFING REMOVED 2026-09-16. The leave-one-out sign-stability resampling
+# was dropped from the manuscript, so this script no longer computes it, no
+# longer carries a jackknife_stability column in S1, and no longer writes the
+# two tables that existed only to report it --
+# SuppTable_S2_Species_Jackknife.csv and
+# SuppTable_S3_Species_Stability_by_Class.csv. Those two files are deleted from
+# table/supp and are not in any supplementary workbook. Every other statistic
+# in S1 is untouched.
+#
 # Run from the repository root.
 # Output: table/supp/SuppTable_S1_Ratio_Statistics.csv
-#         table/supp/SuppTable_S2_Species_Jackknife.csv
-#         table/supp/SuppTable_S3_Species_Stability_by_Class.csv
 # ==============================================================================
 
 # ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -61,52 +67,29 @@
 # 0) SETUP: PACKAGES, THEME, PALETTES
 # ══════════════════════════════════════════════════════════════════════════════
 
-if (identical(Sys.getenv("ONLY_FIG3_GWAS", ""), "1") ||
-    identical(Sys.getenv("ONLY_SUPPFIG_S8_GWAS", ""), "1")) {
-  # Minimal library set to avoid OpenMP-heavy packages when only GWAS is needed
-  # and pin threads to avoid OpenMP SHM issues in this environment.
-  Sys.setenv(OMP_NUM_THREADS = "1", KMP_USE_SHM = "0")
-  suppressPackageStartupMessages({
-    library(vroom)
-    library(dplyr)
-    library(tidyr)
-    library(stringr)
-    library(ggplot2)
-    library(patchwork)
-    library(viridis)
-    library(grid)
-    library(scales)
-  })
-} else {
-  suppressPackageStartupMessages({
-    library(vroom)
-    library(dplyr)
-    library(tidyr)
-    library(stringr)
-    library(purrr)
-    library(forcats)
-    library(tibble)
-    library(ggplot2)
-    library(ggrepel)
-    library(cowplot)
-    library(patchwork)
-    library(viridis)
-    library(grid)
-    library(scales)
-    library(ppcor)        # For partial correlation analysis
-    library(Hmisc)
-    library(corrplot)
-    library(uwot)
-    library(ropls)
-    library(igraph)
-    library(ranger)
-    library(treeshap)
-    library(shapviz)
-    library(caret)
-    library(mlr)
-    library(tuneRanger)
-  })
-}
+# LIBRARIES TRIMMED TO WHAT THIS FUNCTION ACTUALLY USES, 2026-09-17.
+# The preamble came across from the 6,000-line monolith and loaded Hmisc,
+# corrplot, uwot, ropls, igraph, ranger, treeshap, shapviz, caret, mlr,
+# tuneRanger and ppcor -- the machine-learning and ordination stack for parts of
+# that script which are not in this one. None of them is called anywhere below,
+# and every one of them was a hard failure on a machine that did not happen to
+# have it installed. The set below is what the ratio statistics and the ratio
+# panels need.
+Sys.setenv(OMP_NUM_THREADS = "1", KMP_USE_SHM = "0")
+suppressPackageStartupMessages({
+  library(vroom)
+  library(dplyr)
+  library(tidyr)
+  library(stringr)
+  library(purrr)
+  library(forcats)
+  library(tibble)
+  library(ggplot2)
+  library(ggrepel)
+  library(patchwork)
+  library(grid)
+  library(scales)
+})
 
 # Create output directories
 dir.create("fig/main", recursive = TRUE, showWarnings = FALSE)
@@ -328,6 +311,18 @@ make_suppfig_s9_lipid_ratios <- function() {
   colnames(control)[1] <- "Compound_Name"
   colnames(lowinput)[1] <- "Compound_Name"
 
+  # LYSO NAMES ARE NORMALISED HERE, BEFORE ANY CLASS IS READ OFF A NAME.
+  # CTL writes a lyso species as PC(18:2/0:0); LIN writes the same thing as
+  # LPC(18:2). class_pat below reads the class off the front of the name, so
+  # without this the CTL spelling matches \bPC\b and the species is summed into
+  # the diacyl PC pool while its LIN counterpart is summed into LPC. That is
+  # what made the shipped S1 disagree with the CLR contrast in S5A on the sign
+  # of LPC/MG, and it understated CTL's LPC pool by two species. Added
+  # 2026-09-17; every ratio involving LPC changes as a result.
+  normalize_lipid_name <- function(x) sub("^([A-Z]+)\\(([^/]+)/0:0\\)$", "L\\1(\\2)", x)
+  colnames(control)[-1]  <- normalize_lipid_name(colnames(control)[-1])
+  colnames(lowinput)[-1] <- normalize_lipid_name(colnames(lowinput)[-1])
+
   # Valid classes for class extraction (avoid DG matching DGDG, etc via word-boundary).
   ratio_classes <- c("TG", "DG", "MG", "PC", "PE", "DGDG", "MGDG", "SQDG", "LPC", "LPE", "PG", "PA", "PS")
   class_pat <- paste0("\\b(", paste(ratio_classes, collapse = "|"), ")\\b")
@@ -495,16 +490,15 @@ make_suppfig_s9_lipid_ratios <- function() {
   message("✓ Supplementary Figure S9 (ratio plots) complete!")
 
   # ─────────────────────────────────────────────────────────────────────────────
-  # SUPPLEMENTARY TABLE S1: Lipid Ratio Statistics (Wilcoxon + Jackknife)
+  # SUPPLEMENTARY TABLE S1: Lipid Ratio Statistics (Wilcoxon)
   # ─────────────────────────────────────────────────────────────────────────────
   # Robust statistics for each lipid class ratio comparing LowInput vs Control.
-  # Uses Wilcoxon rank-sum test with Hodges-Lehmann estimator for median shift
-  # and jackknife leave-one-out stability to confirm population-wide effects.
+  # Uses Wilcoxon rank-sum test with Hodges-Lehmann estimator for median shift.
   # ─────────────────────────────────────────────────────────────────────────────
 
-  message("\n── Computing ratio statistics (Wilcoxon + Jackknife) ──")
+  message("\n── Computing ratio statistics (Wilcoxon) ──")
 
-  # Helper function: Wilcoxon test + jackknife stability
+  # Helper function: Wilcoxon test
   one_ratio_tests <- function(df, ratio_id_val) {
     xi <- df %>% filter(Condition == "LowInput", ratio_id == ratio_id_val) %>% pull(Value)
     x0 <- df %>% filter(Condition == "Control",  ratio_id == ratio_id_val) %>% pull(Value)
@@ -522,24 +516,12 @@ make_suppfig_s9_lipid_ratios <- function() {
         n_C = length(x0), n_LI = length(xi),
         median_C = NA_real_, median_LI = NA_real_,
         effect_log10 = NA_real_,
-        p_wilcox = NA_real_,
-        jackknife_stability = NA_real_
+        p_wilcox = NA_real_
       ))
     }
 
     # Wilcoxon rank-sum test
     wt <- wilcox.test(xi, x0, alternative = "two.sided", exact = FALSE)
-
-    # Jackknife sign stability: does direction hold when removing any single sample?
-    d_full <- sign(median(xi) - median(x0))
-    N <- length(xi) + length(x0)
-    keep <- logical(N)
-    for (i in seq_len(N)) {
-      xi2 <- xi; x0_2 <- x0
-      if (i <= length(xi)) xi2 <- xi2[-i] else x0_2 <- x0_2[-(i - length(xi))]
-      keep[i] <- sign(median(xi2) - median(x0_2)) == d_full
-    }
-    stab <- mean(keep)
 
     tibble(
       Ratio = ratio_lab,
@@ -548,8 +530,7 @@ make_suppfig_s9_lipid_ratios <- function() {
       median_C = round(median(x0), 4),
       median_LI = round(median(xi), 4),
       effect_log10 = round(median(xi) - median(x0), 4),
-      p_wilcox = wt$p.value,
-      jackknife_stability = round(stab, 3)
+      p_wilcox = wt$p.value
     )
   }
 
@@ -585,8 +566,7 @@ make_suppfig_s9_lipid_ratios <- function() {
     dplyr::select(
       Ratio, n_C, n_LI, median_C, median_LI,
       effect_log10, effect_fc, direction,
-      p_wilcox, p_adj_BH, significance,
-      jackknife_stability
+      p_wilcox, p_adj_BH, significance
     )
 
   # Save supplementary table
@@ -595,213 +575,14 @@ make_suppfig_s9_lipid_ratios <- function() {
 
   # Print summary
   n_sig <- sum(ratio_stats$p_adj_BH < 0.05, na.rm = TRUE)
-  n_stable <- sum(ratio_stats$jackknife_stability == 1, na.rm = TRUE)
   message(sprintf("  → %d/%d ratios significant (BH-adj p < 0.05)", n_sig, nrow(ratio_stats)))
-  message(sprintf("  → %d/%d ratios with perfect jackknife stability (1.0)", n_stable, nrow(ratio_stats)))
-
-  # ─────────────────────────────────────────────────────────────────────────────
-  # SUPPLEMENTARY TABLE S2: Individual Species Jackknife Stability
-  # ─────────────────────────────────────────────────────────────────────────────
-  # Jackknife stability on individual lipid species (not class aggregates)
-  # to confirm species-level changes are also population-wide.
-  # ─────────────────────────────────────────────────────────────────────────────
-
-  message("\n── Computing SPECIES-level jackknife stability (CLR-transformed) ──")
-
-  # Find COMMON species between Control and LowInput
-  control_species <- colnames(control)[-1]  # exclude Compound_Name
-  lowinput_species <- colnames(lowinput)[-1]
-  common_species <- intersect(control_species, lowinput_species)
-  # Keep only true lipid species columns (e.g., "PC(16:0/18:1)"),
-  # matching the species universe used in SuppTable_S6 summaries.
-  common_species <- common_species[stringr::str_detect(common_species, "\\(")]
-  message(sprintf("  Found %d common lipid species between Control and LowInput", length(common_species)))
-
-  # Prepare species-level data with CLR transformation
-  # CLR removes compositional constraint: CLR(x_i) = log(x_i / geometric_mean(all_species))
-  species_long <- dplyr::bind_rows(
-    control %>% dplyr::mutate(Condition = "Control"),
-    lowinput %>% dplyr::mutate(Condition = "LowInput")
-  ) %>%
-    tidyr::pivot_longer(-c(Compound_Name, Condition),
-                        names_to = "Lipid", values_to = "Intensity") %>%
-    dplyr::rename(Sample = Compound_Name) %>%
-    dplyr::filter(Lipid %in% common_species) %>%
-    # Handle zeros: replace with half the minimum positive value per sample
-    dplyr::group_by(Sample) %>%
-    dplyr::mutate(
-      minpos = min(Intensity[Intensity > 0], na.rm = TRUE),
-      Intensity_nozero = dplyr::if_else(
-        is.na(Intensity) | Intensity <= 0,
-        minpos * 0.5,
-        Intensity
-      )
-    ) %>%
-    dplyr::ungroup() %>%
-    # CLR transformation per sample
-    dplyr::group_by(Sample) %>%
-    dplyr::mutate(
-      log_intensity = log(Intensity_nozero),
-      geom_mean_log = mean(log_intensity, na.rm = TRUE),
-      CLR = log_intensity - geom_mean_log  # CLR = log(x_i / geom_mean)
-    ) %>%
-    dplyr::ungroup() %>%
-    dplyr::mutate(
-      # Extract class - try multiple patterns for different lipid naming conventions
-      Class = dplyr::case_when(
-        stringr::str_detect(Lipid, "^TG\\(") ~ "TG",
-        stringr::str_detect(Lipid, "^DG\\(") ~ "DG",
-        stringr::str_detect(Lipid, "^MG\\(") ~ "MG",
-        stringr::str_detect(Lipid, "^PC\\(") ~ "PC",
-        stringr::str_detect(Lipid, "^PE\\(") ~ "PE",
-        stringr::str_detect(Lipid, "^PG\\(") ~ "PG",
-        stringr::str_detect(Lipid, "^PA\\(") ~ "PA",
-        stringr::str_detect(Lipid, "^PS\\(") ~ "PS",
-        stringr::str_detect(Lipid, "^DGDG\\(") ~ "DGDG",
-        stringr::str_detect(Lipid, "^MGDG\\(") ~ "MGDG",
-        stringr::str_detect(Lipid, "^SQDG\\(") ~ "SQDG",
-        stringr::str_detect(Lipid, "^LPC\\(") ~ "LPC",
-        stringr::str_detect(Lipid, "^LPE\\(") ~ "LPE",
-        stringr::str_detect(Lipid, "^FA\\(") ~ "FA",
-        stringr::str_detect(Lipid, "^Cer\\(") ~ "Cer",
-        stringr::str_detect(Lipid, "^GalCer\\(") ~ "GalCer",
-        stringr::str_detect(Lipid, "^SM\\(") ~ "SM",
-        stringr::str_detect(Lipid, "^CL\\(") ~ "CL",
-        stringr::str_detect(Lipid, "^AEG\\(") ~ "AEG",
-        TRUE ~ stringr::str_extract(Lipid, "^[A-Za-z]+")
-      )
-    ) %>%
-    dplyr::filter(!is.na(CLR), is.finite(CLR))
-
-  # Helper function for species-level tests (using CLR values)
-  one_species_tests <- function(df, lipid_name) {
-    xi <- df %>% dplyr::filter(Condition == "LowInput", Lipid == lipid_name) %>% dplyr::pull(CLR)
-    x0 <- df %>% dplyr::filter(Condition == "Control",  Lipid == lipid_name) %>% dplyr::pull(CLR)
-
-    # Get class for output
-    lipid_class <- df %>%
-      dplyr::filter(Lipid == lipid_name) %>%
-      dplyr::pull(Class) %>%
-      unique() %>%
-      first()
-
-    if (length(xi) < 3 || length(x0) < 3) {
-      return(tibble::tibble(
-        Lipid = lipid_name,
-        Class = lipid_class,
-        n_C = length(x0), n_LI = length(xi),
-        median_CLR_C = NA_real_, median_CLR_LI = NA_real_,
-        effect_CLR = NA_real_,
-        p_wilcox = NA_real_,
-        jackknife_stability = NA_real_
-      ))
-    }
-
-    # Wilcoxon rank-sum test on CLR values
-    wt <- tryCatch(
-      wilcox.test(xi, x0, alternative = "two.sided", exact = FALSE),
-      error = function(e) list(p.value = NA_real_)
-    )
-
-    # Jackknife sign stability
-    d_full <- sign(median(xi) - median(x0))
-    N <- length(xi) + length(x0)
-    keep <- logical(N)
-    for (i in seq_len(N)) {
-      xi2 <- xi; x0_2 <- x0
-      if (i <= length(xi)) xi2 <- xi2[-i] else x0_2 <- x0_2[-(i - length(xi))]
-      keep[i] <- sign(median(xi2) - median(x0_2)) == d_full
-    }
-    stab <- mean(keep)
-
-    tibble::tibble(
-      Lipid = lipid_name,
-      Class = lipid_class,
-      n_C = length(x0),
-      n_LI = length(xi),
-      median_CLR_C = round(median(x0), 4),
-      median_CLR_LI = round(median(xi), 4),
-      effect_CLR = round(median(xi) - median(x0), 4),  # CLR difference (ln scale)
-      p_wilcox = wt$p.value,
-      jackknife_stability = round(stab, 3)
-    )
-  }
-
-  # Run tests for all species
-  all_species <- unique(species_long$Lipid)
-  message(sprintf("  Testing %d individual species...", length(all_species)))
-
-  species_stats <- purrr::map_dfr(all_species, function(sp) {
-    one_species_tests(species_long, sp)
-  }, .progress = FALSE) %>%
-    dplyr::mutate(
-      p_adj_BH = p.adjust(p_wilcox, method = "BH"),
-      # CLR is in natural log, so fold-change = exp(effect_CLR)
-      effect_fc = round(exp(effect_CLR), 2),
-      direction = dplyr::case_when(
-        effect_CLR > 0 ~ "LI > C",
-        effect_CLR < 0 ~ "LI < C",
-        TRUE ~ "No change"
-      ),
-      significance = dplyr::case_when(
-        p_adj_BH < 0.001 ~ "***",
-        p_adj_BH < 0.01 ~ "**",
-        p_adj_BH < 0.05 ~ "*",
-        TRUE ~ "ns"
-      )
-    ) %>%
-    dplyr::arrange(p_adj_BH)
-
-  # Format and save
-  species_stats_out <- species_stats %>%
-    dplyr::mutate(
-      p_wilcox = format(p_wilcox, digits = 3, scientific = TRUE),
-      p_adj_BH = format(p_adj_BH, digits = 3, scientific = TRUE)
-    ) %>%
-    dplyr::select(
-      Lipid, Class, n_C, n_LI, median_CLR_C, median_CLR_LI,
-      effect_CLR, effect_fc, direction,
-      p_wilcox, p_adj_BH, significance,
-      jackknife_stability
-    )
-
-  write.csv(species_stats_out, "table/supp/SuppTable_S2_Species_Jackknife.csv", row.names = FALSE)
-  message("✓ Saved: table/supp/SuppTable_S2_Species_Jackknife.csv")
-
-  # Summary statistics
-  n_species_sig <- sum(species_stats$p_adj_BH < 0.05, na.rm = TRUE)
-  n_species_stable <- sum(species_stats$jackknife_stability == 1, na.rm = TRUE)
-  n_species_high_stable <- sum(species_stats$jackknife_stability >= 0.95, na.rm = TRUE)
-  message(sprintf("  → %d/%d species significant (BH-adj p < 0.05)", n_species_sig, nrow(species_stats)))
-  message(sprintf("  → %d/%d species with perfect jackknife stability (1.0)", n_species_stable, nrow(species_stats)))
-  message(sprintf("  → %d/%d species with high jackknife stability (≥0.95)", n_species_high_stable, nrow(species_stats)))
-
-  # Summary by class
-  class_stability_summary <- species_stats %>%
-    dplyr::group_by(Class) %>%
-    dplyr::summarise(
-      n_species = dplyr::n(),
-      n_significant = sum(p_adj_BH < 0.05, na.rm = TRUE),
-      n_stable_1.0 = sum(jackknife_stability == 1, na.rm = TRUE),
-      n_stable_0.95 = sum(jackknife_stability >= 0.95, na.rm = TRUE),
-      mean_stability = round(mean(jackknife_stability, na.rm = TRUE), 3),
-      min_stability = round(min(jackknife_stability, na.rm = TRUE), 3),
-      .groups = "drop"
-    ) %>%
-    dplyr::arrange(dplyr::desc(n_species))
-
-  write.csv(class_stability_summary, "table/supp/SuppTable_S3_Species_Stability_by_Class.csv", row.names = FALSE)
-  message("✓ Saved: table/supp/SuppTable_S3_Species_Stability_by_Class.csv")
-  print(class_stability_summary)
 }
 
 # ---------------------------------------------------------------------------
 make_suppfig_s9_lipid_ratios()
 
-message("\n== Supplementary Tables S1-S3 written ==")
-for (f in c("table/supp/SuppTable_S1_Ratio_Statistics.csv",
-            "table/supp/SuppTable_S2_Species_Jackknife.csv",
-            "table/supp/SuppTable_S3_Species_Stability_by_Class.csv")) {
+message("\n== Supplementary Table S1 written ==")
+for (f in c("table/supp/SuppTable_S1_Ratio_Statistics.csv")) {
   n <- nrow(read.csv(f))
   message(sprintf("  %-56s %4d rows", f, n))
 }

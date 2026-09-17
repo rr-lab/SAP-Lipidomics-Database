@@ -47,7 +47,7 @@ GROUPS <- list(
   list(n = 3, title = "Species_inventory_and_stability", sheets = c(
     "Species summary"              = "S6a",
     "By class"                     = "S6b",
-    "By superclass"                = "S6c",
+    "By category"                  = "S6c",
     "Composition stability"        = "S5G")),
   list(n = 4, title = "Class_composition_and_contrasts", sheets = c(
     "Composition pctTIC"           = "S5D",
