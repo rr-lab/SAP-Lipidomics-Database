@@ -15,7 +15,13 @@ suppressPackageStartupMessages({
   library(scales)
 })
 
-project_root <- "/Users/nirwantandukar/Documents/Github/SoLD_paper"
+# RAW_DIR was a hard-coded absolute path into one person's home directory
+# ("/Users/nirwantandukar/Documents/Github/SoLD_paper"), which meant this script
+# ran on exactly one machine and nowhere else. It now resolves inside the repo
+# like every other path in this pipeline, and can still be pointed elsewhere.
+# Fixed 2026-09-17.
+RAW_DIR <- Sys.getenv("RAW_LIPID_DIR",
+                      file.path(Sys.getenv("SOLD_DATA", "data"), "raw_lipid_intensities"))
 # Panels G and H read the SpATS fitted matrices written by the preprocessing pipeline (14_run_postSERRF_SpATS.R, now in _preprocessing_moved/).
 # Run that script first; this one only reads its output.
 new_data_dir <- Sys.getenv("NEW_DATA_DIR", "data/new_data")
@@ -188,12 +194,12 @@ create_residual_plot <- function(condition, panel_title) {
 }
 
 # Panel A remains sourced from the same original CTL raw-acquisition file.
-p_a <- create_run_order_plot(file.path(project_root, "data/raw_lipid_intensities/SetA_lipid_FLO2019Control.csv"), "A")
-p_b <- create_run_order_plot(file.path(project_root, "data/raw_lipid_intensities/SetB_lipid_FLO2022_lowP.csv"), "B")
+p_a <- create_run_order_plot(file.path(RAW_DIR, "SetA_lipid_FLO2019Control.csv"), "A")
+p_b <- create_run_order_plot(file.path(RAW_DIR, "SetB_lipid_FLO2022_lowP.csv"), "B")
 p_c <- create_rsd_plot(file.path(new_data_dir, "SERRF Result_CTL/QC-RSDs.csv"), "C")
 p_d <- create_rsd_plot(file.path(new_data_dir, "SERRF Result_LIN/QC-RSDs.csv"), "D")
-p_e <- create_pca_plot(file.path(project_root, "data/raw_lipid_intensities/SetA_lipid_FLO2019Control.csv"), file.path(new_data_dir, "SERRF Result_CTL/normalized by - SERRF.csv"), "E")
-p_f <- create_pca_plot(file.path(project_root, "data/raw_lipid_intensities/SetB_lipid_FLO2022_lowP.csv"), file.path(new_data_dir, "SERRF Result_LIN/normalized by - SERRF.csv"), "F")
+p_e <- create_pca_plot(file.path(RAW_DIR, "SetA_lipid_FLO2019Control.csv"), file.path(new_data_dir, "SERRF Result_CTL/normalized by - SERRF.csv"), "E")
+p_f <- create_pca_plot(file.path(RAW_DIR, "SetB_lipid_FLO2022_lowP.csv"), file.path(new_data_dir, "SERRF Result_LIN/normalized by - SERRF.csv"), "F")
 p_g <- create_residual_plot("CTL", "G")
 p_h <- create_residual_plot("LIN", "H")
 
