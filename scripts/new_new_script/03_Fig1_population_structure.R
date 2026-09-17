@@ -19,9 +19,9 @@
 #
 # Outputs
 #   fig/main/Figure1_Population_Structure.png
-#   table/supp/SuppTable_S25a_Group_Composition.csv
+#   table/supp/SuppTable_S24a_Group_Composition.csv
 #     -- accessions per race group and per genetic cluster, per trial
-#   table/supp/SuppTable_S25_Population_Structure_Lipid_Tests.csv
+#   table/supp/SuppTable_S24_Population_Structure_Lipid_Tests.csv
 #     -- one row per trait x grouping x trial, carrying n, H, p, epsilon^2, the
 #        BH q, which group is highest and lowest, and the median for every group
 # ==============================================================================
@@ -101,7 +101,13 @@ composition <- bind_rows(
   dplyr::select(Grouping, Group, n_CTL, n_LIN, tested_CTL, tested_LIN, Folded_labels) %>%
   arrange(Grouping, Group)
 
-save_table(composition, "SuppTable_S25a_Group_Composition.csv")
+# RENUMBERED 2026-09-17. This script still wrote the population-structure
+# tables under their pre-consolidation numbers (S25, S25a, S25b). The supplement
+# renumbered them to S24, S24a and S24b when the 41 tables were grouped into ten
+# workbooks, and S25 was reassigned to the per-species heritability table. Every
+# run of this script therefore dropped a second, differently-numbered S25 into
+# table/supp and broke the workbook builder's duplicate-key guard.
+save_table(composition, "SuppTable_S24a_Group_Composition.csv")
 
 cat("\n-- group composition -------------------------------------------------\n")
 print(as.data.frame(composition %>% dplyr::select(-Folded_labels)))
@@ -112,7 +118,7 @@ cat(sprintf("\n  accessions with no usable race assignment: CTL %d, LIN %d\n",
 save_table(tests %>% dplyr::select(Condition, Grouping, Trait, n, k_groups, H, p,
                                    epsilon2, q_BH, highest, lowest,
                                    dplyr::starts_with("median_")),
-           "SuppTable_S25_Population_Structure_Lipid_Tests.csv")
+           "SuppTable_S24_Population_Structure_Lipid_Tests.csv")
 
 ord <- tests %>% group_by(Trait) %>%
   summarise(m = max(epsilon2, na.rm = TRUE), .groups = "drop") %>%

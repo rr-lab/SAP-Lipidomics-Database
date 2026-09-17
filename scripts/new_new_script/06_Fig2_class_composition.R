@@ -20,19 +20,33 @@
 #
 # Inputs
 #   data/SPATS_fitted/non_normalized_intensities/Final_subset_{control,lowinput}_*.csv
-#   data/lipid_class/final_lipid_classes.csv
+#   data/metadata/final_lipid_classes.csv
+#
+#   NOT data/lipid_class/final_lipid_classes.csv. Those two files are different.
+#   data/lipid_class/ is the pre-2026-09-16 annotation, 325 rows, with the old
+#   home-grown class vocabulary (Ether lipid, Betaine lipid, Terpenoid, Prenol).
+#   data/metadata/ is the current one, 316 rows, carrying the eight LIPID MAPS
+#   categories and a Category_Code column. This script defaulted to the old file
+#   until 2026-09-17, so running it without LIPID_CLASS_CSV set silently
+#   reproduced the superseded grouping while the manuscript quoted the new one.
 #   table/Linex2/LION-enrichment.csv
 #
 # Outputs
 #   fig/main/Figure2_Class_Composition.png
 #   table/supp/SuppTable_S5D_Class_Composition_pctTIC.csv
 #   table/supp/SuppTable_S5E_LION_Enrichment.csv
+# SuperClass RENAMED TO Category, 2026-09-17. The values in this column have
+# been the eight LIPID MAPS categories since the annotation moved over on
+# 2026-09-16, and the manuscript calls them categories throughout -- it contains
+# no occurrence of the word superclass, because LIPID MAPS has no such tier. The
+# column, the sheet and the file kept the old name, so the supplement shipped a
+# heading the paper never uses and implied a hierarchy that does not exist.
 # ==============================================================================
 source("scripts/new_new_script/_common.R")
 suppressPackageStartupMessages({ library(tidyr); library(forcats); library(tibble) })
 
 class_csv <- Sys.getenv("LIPID_CLASS_CSV",
-  file.path(DATA_ROOT, "lipid_class/final_lipid_classes.csv"))
+  file.path(DATA_ROOT, "metadata/final_lipid_classes.csv"))
 lion_csv  <- Sys.getenv("LION_CSV", file.path(REPO, "table/Linex2/LION-enrichment.csv"))
 stopifnot(file.exists(class_csv), file.exists(lion_csv))
 
@@ -41,27 +55,27 @@ STACK_ORDER <- c("MGDG", "DGDG", "SQDG",                        # galactolipids
                  "TG", "DG", "MG")                              # neutral glycerolipids
 
 ann <- vroom(class_csv, show_col_types = FALSE) %>%
-  transmute(key = tolower(normalize_lipid_name(Lipids)), SuperClass = Class) %>%
+  transmute(key = tolower(normalize_lipid_name(Lipids)), Category = Class) %>%
   distinct(key, .keep_all = TRUE)
 
 comp <- bind_rows(pct_tic(CTL_CSV, "CTL"), pct_tic(LIN_CSV, "LIN")) %>%
   mutate(FocusClass = lipid_class(Feature),
          key = tolower(normalize_lipid_name(Feature))) %>%
   left_join(ann, by = "key") %>%
-  mutate(SuperClass = ifelse(is.na(SuperClass), "Unclassified", SuperClass),
+  mutate(Category = ifelse(is.na(Category), "Unclassified", Category),
          Condition  = factor(Condition, c("CTL", "LIN")))
 
 # ---- A: every annotated superclass -------------------------------------------
 # Values span four orders of magnitude, so a log axis is needed, and on a log
 # axis a bar's length is no longer proportional to its value. Hence points.
 supers <- comp %>%
-  group_by(Condition, SuperClass) %>%
+  group_by(Condition, Category) %>%
   summarise(pct = sum(pct), .groups = "drop") %>%
   filter(pct > 0, !is.na(pct)) %>%
-  mutate(SuperClass = fct_reorder(SuperClass, pct, .fun = max, .desc = FALSE))
+  mutate(Category = fct_reorder(Category, pct, .fun = max, .desc = FALSE))
 
-pA <- ggplot(supers, aes(pct, SuperClass)) +
-  geom_line(aes(group = SuperClass), colour = "grey65", linewidth = .5) +
+pA <- ggplot(supers, aes(pct, Category)) +
+  geom_line(aes(group = Category), colour = "grey65", linewidth = .5) +
   geom_point(aes(fill = Condition), shape = 21, size = 4.5,
              colour = "black", stroke = .5) +
   geom_text(aes(label = ifelse(pct >= 0.01, sprintf("%.2f", pct), "<0.01"),
@@ -168,14 +182,14 @@ save_fig(fig2, "Figure2_Class_Composition.png", width = 19, height = 17)
 class_tab <- comp %>% group_by(Condition, FocusClass) %>%
   summarise(pct = sum(pct), .groups = "drop")
 save_table(bind_rows(
-  supers    %>% transmute(Level = "Superclass",  Group = as.character(SuperClass), Condition, pct_TIC = pct),
+  supers    %>% transmute(Level = "Category",  Group = as.character(Category), Condition, pct_TIC = pct),
   class_tab %>% transmute(Level = "Lipid class", Group = as.character(FocusClass), Condition, pct_TIC = pct)
 ) %>% arrange(Level, Group, Condition), "SuppTable_S5D_Class_Composition_pctTIC.csv")
 
 cat("\n-- lipid classes, mean %TIC --\n")
 print(as.data.frame(class_tab %>% pivot_wider(names_from = Condition, values_from = pct) %>%
                     arrange(desc(CTL)) %>% mutate(across(where(is.numeric), ~round(.x, 2)))))
-cat("\n-- superclasses, mean %TIC --\n")
+cat("\n-- LIPID MAPS categories, mean %TIC --\n")
 print(as.data.frame(supers %>% pivot_wider(names_from = Condition, values_from = pct) %>%
                     arrange(desc(CTL)) %>% mutate(across(where(is.numeric), ~round(.x, 3)))))
 cat("\n-- LION terms at q < 0.05 --\n")

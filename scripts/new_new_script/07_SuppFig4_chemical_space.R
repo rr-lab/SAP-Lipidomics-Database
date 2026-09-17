@@ -18,9 +18,13 @@
 #   data/SPATS_fitted/non_normalized_intensities/Final_subset_{control,lowinput}_*.csv
 #
 # Outputs
-#   fig/supp/SuppFig_S6_Chemical_Space.png   (prints as S4; filename kept
+#   fig/supp/SuppFig_S8_Chemical_Space.png   (prints as S4; filename kept
 #                                             so the tex include path does not move)
 #   table/supp/SuppTable_S5F_Chemical_Space.csv
+# FILENAME CORRECTED 2026-09-17. This script wrote SuppFig_S6_Chemical_Space.png, but
+# the chemical-space figure prints as S8 and main.tex includes SuppFig_S8_Chemical_Space.png.
+# The two numbering schemes had drifted apart, so a rebuild left the manuscript
+# pointing at whichever stale copy happened to be on disk.
 # ==============================================================================
 source("scripts/new_new_script/_common.R")
 suppressPackageStartupMessages({ library(tibble) })
@@ -64,7 +68,7 @@ figs6 <- ggplot(chem, aes(WeightedC, WeightedDB, colour = FocusClass, shape = Co
         legend.background = element_blank(),
         legend.title      = element_text(size = 14, face = "bold"))
 
-save_fig(figs6, "SuppFig_S6_Chemical_Space.png", width = 12, height = 8, subdir = "supp")
+save_fig(figs6, "SuppFig_S8_Chemical_Space.png", width = 12, height = 8, subdir = "supp")
 
 cat("\n-- chemical space --\n")
 print(as.data.frame(chem %>% mutate(across(where(is.numeric), ~round(.x, 2)))))
