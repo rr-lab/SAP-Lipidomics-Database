@@ -42,3 +42,18 @@ data/LD_mapped/LD_chr3/*.nosex
 _to_delete/
 
 .DS_Store
+
+# Large inputs and build artifacts, untracked Sep 2026. Still on disk.
+data/new_data/SERRF Result_CTL/
+data/new_data/SERRF Result_LIN/
+data/LD_mapped/per_phenotype/
+data/LD_mapped/per_phenotype_LD_0.6/
+figures_old/
+overleaf/
+summary.pdf
+summary.aux
+summary.log
+summary.out
+main.log
+fig/supp/*.html
+data/metadata/gene_annotation.txt
