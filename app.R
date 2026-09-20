@@ -1579,7 +1579,7 @@ ui <- fluidPage(
                 condition = "input.pca_mode == 'Lipids'",
                 selectInput(
                   inputId = "pca_class_filter",
-                  label = "Filter by Lipid Class:",
+                  label = "Filter by LIPID MAPS Category:",
                   choices = c("All", pca_class_choices),
                   selected = "All"
                 ),
@@ -3408,7 +3408,7 @@ server <- function(input, output, session) {
     classes <- sort(unique(meta$Class))
     selectInput(
       inputId = "class_choice",
-      label = "Filter by Lipid Class:",
+      label = "Filter by LIPID MAPS Category:",
       choices = c("All", classes),
       selected = "All"
     )
@@ -3423,7 +3423,7 @@ server <- function(input, output, session) {
     subclasses <- sort(unique(meta$Subclass))
     selectInput(
       inputId = "subclass_choice_data",
-      label = "Filter by Subclass:",
+      label = "Filter by Main Class:",
       choices = c("All", subclasses),
       selected = "All"
     )
@@ -3829,7 +3829,7 @@ server <- function(input, output, session) {
     classes <- sort(unique(na.omit(lipid_class_info$Class)))
     selectInput(
       inputId = "class_filter_plot",
-      label = "Filter by Lipid Class:",
+      label = "Filter by LIPID MAPS Category:",
       choices = c("All", classes),
       selected = "All"
     )
@@ -3852,7 +3852,7 @@ server <- function(input, output, session) {
     
     selectInput(
       inputId = "compound_choice",
-      label = "Choose a Lipid Compound:",
+      label = "Choose a Lipid Species:",
       choices = choices,
       selected = available_lipids[1]
     )
