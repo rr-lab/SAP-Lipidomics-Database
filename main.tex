@@ -545,18 +545,15 @@ For each sample $i$ and lipid class $c$, species intensities were aggregated to 
 \[
 C_{i,c}=\sum_{k \in c} I_{i,k}.
 \]
-Two annotated features were excluded from all class- and category-level comparisons. Phytosphingosine rose from 0.04\% of total signal under CTL to 16.9\% under LIN, which would make a free sphingoid long-chain base the second most abundant feature of the LIN lipidome and is not biologically plausible for a leaf. SM(d18:1/17:0) was the only member of its class, and plants do not synthesize sphingomyelin, so an odd-chain C17 species of this type is most consistent with an internal standard or misannotation. Both differences track the separate 2019 and 2022 analytical runs rather than genotype. Neither feature yielded a GWAS candidate, so no genetic result depends on this exclusion. Because log-ratios are scale-invariant, TIC normalization is not required for ratio computation. To handle zero class totals, we used a sample-specific pseudo-count,
+Two annotated features were excluded from all class- and category-level comparisons. Phytosphingosine rose from 0.04\% of total signal under CTL to 16.9\% under LIN, which would make a free sphingoid long-chain base the second most abundant feature of the LIN lipidome and is not biologically plausible for a leaf. SM(d18:1/17:0) was the only member of its class, and plants do not synthesize sphingomyelin, so an odd-chain C17 species of this type is most consistent with an internal standard or misannotation. Both differences track the separate 2019 and 2022 analytical runs rather than genotype. Neither feature yielded a GWAS candidate, so no genetic result depends on this exclusion. Because log-ratios are scale-invariant, TIC normalization was unnecessary. For genetic analyses, class totals were computed from SpATS genotype BLUPs (not plot-level intensities) to retain spatial field correction. Since BLUPs are deviations from the panel mean and are negative for ~60% of genotype-by-class combinations, we added the class-level intercept before log transformation.
 \[
-\varepsilon_i=0.5 \cdot \min\{C_{i,c} : C_{i,c}>0\},
+A_{g,c}=\mathrm{BLUP}_{g,c}+\bar{C}_{c},
 \]
-and computed
+where $\bar{C}_{c}$ is the panel mean total for class $c$ on the input intensity scale. This returns each genotype to the original, strictly positive intensity scale in both trials (verified), so no pseudo-count, shift, or denominator floor was applied. Pairwise class log-ratios were then
 \[
-\ell_{i,c}=\log_{10}(C_{i,c}+\varepsilon_i).
+r_{g,c_1/c_2}=\log_{10}A_{g,c_1}-\log_{10}A_{g,c_2}.
 \]
-Pairwise class log-ratios were then
-\[
-r_{i,c_1/c_2}=\ell_{i,c_1}-\ell_{i,c_2}.
-\]
+Because $r_{g,c_1/c_2}=-r_{g,c_2/c_1}$, each class pair yields the same trait up to sign and identical association statistics, so we kept only one ordering per pair. With 17 classes, this gives 17 class sums and $\binom{17}{2}=136$ ratios, for 153 traits per trial.
 
 \paragraph{Compositional transforms.}
 Class totals and the pairwise class log-ratios defined above are the traits carried forward to GWAS. For species-resolved analyses we used the centered log-ratio (CLR) transformation, which rescales each species by the geometric mean of all species in the same sample and so removes the constant-sum constraint of compositional data:
