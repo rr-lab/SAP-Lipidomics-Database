@@ -45,15 +45,37 @@ out_name  <- "Figure5_GO_BP_LDaware.png"
 stopifnot(file.exists(loci_file))
 
 MAX_BACKGROUND <- 30
+# Minimum number of independent 250 kb loci a gene set must span, and how many
+# gene sets to show per lipid class.
+#
+# The interval threshold was dropped when the LD-aware permutation came in, on
+# the reasoning that the permutation already answers "is this one LD block".
+# That held for the old null, which reshuffled among the observed loci. The
+# current null draws density-matched intervals from the genome, so a single
+# locus can clear it on its own and still be a single locus rather than a
+# process. Seventeen such gene sets sit at 230-324x fold and would otherwise
+# take the whole top of the panel.
+#
+# Two loci is the floor rather than three, because three drops nitrate
+# transport, which spans two loci at 25x and is a result worth showing. The
+# panel is then kept readable by taking the strongest TOP_PER_CLASS gene sets
+# within each class instead of by raising the threshold, so the cut is on
+# ranking rather than on evidence. Nothing is lost: every tested term, its
+# interval count included, is in Supplementary Tables S16-S18.
+MIN_INTERVALS <- as.integer(Sys.getenv("GO_MIN_INTERVALS", "2"))
+TOP_PER_CLASS <- as.integer(Sys.getenv("GO_TOP_PER_CLASS", "4"))
 
 go <- vroom(loci_file, delim = "\t", show_col_types = FALSE)
 
 sel <- go %>%
-  filter(Background <= MAX_BACKGROUND) %>%
+  filter(Background <= MAX_BACKGROUND, Intervals >= MIN_INTERVALS) %>%
+  group_by(Condition, Classes) %>%
+  slice_max(Fold_max, n = TOP_PER_CLASS, with_ties = FALSE) %>%
+  ungroup() %>%
   mutate(
     Condition = factor(Condition, c("CTL", "LIN")),
     # tidy the merged labels for display
-    Label = Term %>%
+    Label = paste0(Term, "  [", Intervals, " loci]") %>%
       str_replace(" \\(\\+\\d+ related terms\\)$", "") %>%
       str_replace("nicotianamine aminotransferase activity and L-tyrosine-2-oxoglutarate transaminase activity",
                   "nicotianamine aminotransferase / L-tyrosine transaminase") %>%
@@ -107,3 +129,5 @@ print(as.data.frame(sel %>% arrange(Group, desc(Fold_max)) %>%
         dplyr::select(Group, Condition, Term, Genes, Background, Fold_max, q_LD)))
 cat(sprintf("\n  %d gene sets shown of %d in the table (background <= %d genes)\n",
             nrow(sel), nrow(go), MAX_BACKGROUND))
+message(sprintf("  minimum independent loci: %d   top per class: %d", MIN_INTERVALS, TOP_PER_CLASS))
+message(sprintf("  nitrate present: %s", any(grepl("nitrate", sel$Term, ignore.case = TRUE))))
