@@ -1,0 +1,21 @@
+Condition,Layer,Interval,n_genes,label,Function,n_traits,best_p
+CTL,individual_lipids_final,5:61.66--61.75,2,SORBI_3005G148500,FBD domain-containing protein,13,1.551627e-16
+CTL,individual_lipids_final,10:32.68--32.68,1,SORBI_3010G140800,Uncharacterized protein,13,1.235556e-14
+CTL,individual_lipids_final,5:24.10--24.13,2,SORBI_3005G110120,Uncharacterized protein,12,8.186128e-15
+CTL,individual_lipids_final,1:60.64--60.65,2,SORBI_3001G318000,glutathione transferase,11,3.053225e-16
+CTL,individual_lipids_final,6:35.88--36.24,3,SORBI_3006G049600,Methyltransferase type 11 domain-containing protein,11,1.18068e-14
+CTL,sum_ratio_lipids_final,1:30.37--30.84,9,SORBI_3001G257300,F-box domain-containing protein,6,3.16758e-09
+CTL,sum_ratio_lipids_final,6:1.45--1.57,6,SORBI_3006G010100,Terpene synthase,3,2.017612e-10
+CTL,sum_ratio_lipids_final,1:30.70--31.02,5,SORBI_3001G258600,GDSL esterase_lipase,3,5.79518e-09
+CTL,sum_ratio_lipids_final,5:1.12--1.52,13,SORBI_3005G012200,non-specific serine_threonine protein kinase,2,9.632672e-10
+CTL,sum_ratio_lipids_final,1:50.79--50.89,4,SORBI_3001G266600,Bifunctional inhibitor_plant lipid transfer protein_seed storage helical domain-containing protein,2,5.416222e-09
+LIN,individual_lipids_final,10:43.19--43.39,9,SORBI_3010G149700,Peroxidase,8,1.414455e-18
+LIN,individual_lipids_final,10:43.62--43.63,2,SORBI_3010G151000,CMP-sialic acid transporter 1,8,5.936528e-12
+LIN,individual_lipids_final,2:14.37--14.49,12,SORBI_3002G116200,Adenylate kinase isoenzyme 6 homolog,7,3.761098e-13
+LIN,individual_lipids_final,1:16.45--16.68,3,SORBI_3001G187300,Molybdate transporter 1,7,1.156826e-11
+LIN,individual_lipids_final,10:50.10--50.18,4,SORBI_3010G170000,O-acyltransferase,6,3.159062e-15
+LIN,sum_ratio_lipids_final,4:0.42--0.78,27,SORBI_3004G004800,Soluble acid invertase,13,7.073687e-16
+LIN,sum_ratio_lipids_final,3:7.54--7.78,15,SORBI_3003G087100,"Protein MAO HUZI 4, chloroplastic",10,1.407619e-15
+LIN,sum_ratio_lipids_final,3:7.48--7.48,1,SORBI_3003G086600,LOB domain-containing protein,10,3.61598e-15
+LIN,sum_ratio_lipids_final,4:0.18--0.43,3,SORBI_3004G005000,RING-type domain-containing protein,10,1.475917e-14
+LIN,sum_ratio_lipids_final,3:71.32--71.66,8,SORBI_3003G406600,SBP-type domain-containing protein,9,9.965034e-15
