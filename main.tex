@@ -133,11 +133,11 @@ PCA of normalized data showed tighter sample clustering than unprocessed data (S
 
 SAP is structured by botanical race and geographic origin \citep{Casa2008CommunityResourcesSorghum, Boatwright2022}. Next, we tested whether lipid variation is affected by race or marker-based genetic clusters ($K=6$). Using Kruskal–Wallis with BH correction within trials (Supplementary Table~S1), we found little association. No lipid-class sum was significant for race in either trial. The genetic cluster was significant only for PS under LIN ($q=1.16\times10^{-6}$, $\varepsilon^2=0.104$; Fig.~\ref{fig:fig1_population_structure}). PS is carried by a single species under LIN, PS(18:0/18:2), so the class sum and that species are the same measurement. The same class-level test under CTL, where PS is carried by two species, was not significant ($\varepsilon^2=0.020$, $q=0.358$). Furthermore, none of the species-level tests were significant under CTL, and nine were significant under LIN, eight of them by genetic cluster alone and one, 11,14,17-eicosatrienoic acid, by both genetic cluster and botanical race (Table~\ref{tab:species_ancestry}; Supplementary Table~S2 (per-species structure and $h^2$)). PCA of class composition likewise showed minimal structure, with groupings explaining $\le$1.6\% of variation (Supplementary~\ref{fig:suppfig_s3_class_pca}). Thus, ancestry is not a confounder.
 
-Subsequently, we quantified genetic variance in the lipidome by estimating genomic heritability ($h^2$) for every species detected in each trial (214 under CTL, 216 under LIN) and compared the trials on the 163 species detected in both and measured across the same 351 genotypes (Supplementary Table~S2, per-species paired). Under CTL, the median $h^2$ was near zero, and only 11 of those species had heritability that we could distinguish from zero. Under LIN, the median was 0.170, and 53 species did. The same direction held for species by species comparison, with $h^2$ higher under LIN for 131 species, higher under CTL for 21, and equal for 11 (Supplementary~\ref{fig:suppfig_s4_heritability}), and for class by class comparison where every class was higher under LIN except TG and PA (Supplementary Table~S2, structure-conditioned). Two checks indicate that this is not an artifact of ancestry or of which genotypes were sampled. Fitting the three leading eigenvectors of the relationship matrix as fixed effects, which removes variation between genetic clusters, left 51 of the 66 LIN-heritable species still heritable (Supplementary Table~S2, structure-conditioned). Re-estimating after dropping each botanical race in turn and after twenty random 80\% subsamples of the panel gave 14 to 26 heritable species under CTL and 43 to 87 under LIN on the full per-trial sets. The two ranges never overlap, so LIN exceeded CTL in every run (Supplementary Table~S2, ancestry robustness). 
+Subsequently, we quantified genetic variance in the lipidome by estimating genomic heritability ($h^2$) for every species detected in each trial (214 under CTL, 216 under LIN) and compared the trials on the 163 species detected in both and measured across the same 351 genotypes (Supplementary Table~S2, per-species paired). Under CTL, the median $h^2$ was near zero, and only 11 of those species had heritability that we could distinguish from zero. Under LIN, the median was 0.170, and 53 species did. The same direction held for species by species comparison, with $h^2$ higher under LIN for 131 species, higher under CTL for 21, and equal for 11 (Supplementary~\ref{fig:suppfig_s4_heritability}), and for class by class comparison where every class was higher under LIN except TG and PA (Supplementary Table~S2, structure-conditioned). Estimating $h^2$ directly on the 17 class sums, using every accession and every species of each trial (389 accessions under CTL, 357 under LIN), gives the same picture. The median was 0 under CTL and 0.117 under LIN, 15 of the 17 classes were higher under LIN (paired Wilcoxon $p=0.007$), and the two exceptions were again TG and PA. Four classes had an interval excluding zero in one trial or the other (Table~\ref{tab:classsum_h2}; Supplementary Table~S26), so most class sums carry no heritability that can be distinguished from zero, and the trial difference is a shift in the whole distribution rather than a handful of strongly heritable classes. Two checks indicate that this is not an artifact of ancestry or of which genotypes were sampled. Fitting the three leading eigenvectors of the relationship matrix as fixed effects, which removes variation between genetic clusters, left 51 of the 66 LIN-heritable species still heritable (Supplementary Table~S2, structure-conditioned). Re-estimating after dropping each botanical race in turn and after twenty random 80\% subsamples of the panel gave 14 to 26 heritable species under CTL and 43 to 87 under LIN on the full per-trial sets. The two ranges never overlap, so LIN exceeded CTL in every run (Supplementary Table~S2, ancestry robustness). 
 
 Moreover, heritability increases unevenly across classes (Table~\ref{tab:species_heritability}). Under CTL, it is largely confined to TGs, which account for 19 of the 67 TG species and for 19 of the 20 heritable species in that trial. Under LIN, it concentrates in the plastid membrane lipids, with 4/5 MGDG, 6/10 SQDG and 4/7 DGDG, the highest proportions of any class with more than one species. MGDG and SQDG also carry the largest absolute shifts in \%TIC of any class apart from TG, falling by 2.6 and 1.5 percentage points while TG rises by 2.3, indicating that both compositional and genetic changes are centered on the photosynthetic membrane lipidome. TG is the exception, being heritable in both trials (19/67 under CTL, 25/66 under LIN). PS, PA, and LPE each include a single species, so they reflect that species rather than the class.
 
-The near-absence of heritable species under CTL reflects low genetic variance rather than high measurement noise. Median residual variance was almost identical between trials (0.045 under CTL, 0.044 under LIN), and total variance was essentially unchanged, while median genetic variance rose from effectively zero to $9.0\times10^{-4}$ and was higher under LIN for 25 of 26 class sums (Supplementary Table~S2, class sums). Aggregating species into class sums did not recover heritability in either trial. In each trial, only two of the 13 class sums had intervals excluding zero, and in each trial, one of those two classes contained a single species, so the class-level test is less powerful than the species-level one rather than more. Genotype, therefore, accounts for far more of the leaf lipidome under LIN than under CTL, which is the asymmetry that the GWAS results below follow.
+The near-absence of heritable species under CTL reflects low genetic variance rather than high measurement noise. Median residual variance was almost identical between trials (0.045 under CTL, 0.044 under LIN), and total variance was essentially unchanged, while median genetic variance rose from effectively zero to $9.0\times10^{-4}$ and was higher under LIN for 25 of 26 class sums (Supplementary Table~S2, class sums). Aggregating species into class sums did not recover heritability in either trial. One of the 17 class sums had an interval excluding zero under CTL and three under LIN, and all of them except TG are carried by one or two species, so the class-level test is less powerful than the species-level one rather than more. Genotype, therefore, accounts for far more of the leaf lipidome under LIN than under CTL, which is the asymmetry that the GWAS results below follow.
 
 
 \begin{table}[!ht]
@@ -209,6 +209,33 @@ within a trial. PS under LIN is the only trait of the 28 tested that is
 associated with cluster membership.}
 \label{fig:fig1_population_structure}
 \end{figure*}
+
+
+\begin{table}[!ht]
+\centering
+\caption{\textbf{Genomic heritability of lipid-class sums, for the classes distinguishable from zero.}
+Estimated by profile likelihood against the marker-based relationship matrix, using every accession of each
+trial that is in the relationship matrix (389 under CTL, 357 under LIN) and every species of that class
+detected in that trial. The phenotype is the summed spatially corrected intensity of the class on the
+$\log_{10}$ scale, the same construction used for the per-species estimates above. Values are $h^2$ with
+the 95\% profile-likelihood interval in brackets; $^{*}$ marks an interval excluding zero, the criterion
+used throughout for calling a trait heritable. Four of the 17 classes meet it in one trial or the other.
+All 17 are in Supplementary Table~S26. $N$ is the number of species summed into the class in that trial.}
+\label{tab:classsum_h2}
+\small
+\begin{tabular}{lrlrl}
+\toprule
+ & \multicolumn{2}{c}{\textbf{CTL}} & \multicolumn{2}{c}{\textbf{LIN}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\textbf{Class} & \textbf{$N$} & \textbf{$h^2$} & \textbf{$N$} & \textbf{$h^2$} \\
+\midrule
+FA & 1 & 0.111 [0.000, 0.401] & 1 & 0.404 [0.153, 0.708]$^{*}$ \\
+PS & 2 & 0.017 [0.000, 0.243] & 1 & 0.382 [0.167, 0.657]$^{*}$ \\
+TG & 67 & 0.217 [0.000, 0.564] & 66 & 0.208 [0.017, 0.525]$^{*}$ \\
+PA & 1 & 0.555 [0.252, 0.893]$^{*}$ & 2 & 0.000 [0.000, 0.123] \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection*{Lipidome overview for CTL and LIN SAP}
 
@@ -353,13 +380,15 @@ In total, 433 of 1{,}623 tested terms passed the LD-aware null ($q_{\mathrm{LD}}
 
 Those 23 gene sets are unevenly split between trials, with 19 under LIN and 4 under CTL, the same asymmetry that the candidate counts show. All four CTL gene sets come from TG traits. The LIN gene sets centre on nutrient transport and signaling. \textit{Cellular response to phosphate starvation} is the strongest of them, at $51\times$ enrichment across three independent intervals, and is the only gene set drawn from two lipid classes at once, fatty acids and SQDG. \textit{Nitrate transmembrane transporter activity} follows from fatty-acid traits at $25\times$ across two intervals, and \textit{sphingolipid metabolic process} from AEG at $35\times$. Fatty acids, PC, SQDG and TG each contribute four gene sets. Enrichment therefore narrows five thousand candidate genes to a short list which could be used for functional validation.
 
-\subsection*{Only class-level traits share loci between trials more often than chance}
+\subsection*{Candidate genes overlap between trials only for individual species, and the overlap does not survive collapsing linkage}
 
 The two trials recovered largely different candidate lists, but different GO terms cannot indicate whether the underlying genetics differ. We therefore counted how many candidate genes the two conditions share and compared that count with the chance expectation from the 34{,}027 \textit{Sorghum bicolor} v3.1 gene models, both at gene resolution and after collapsing linked genes into 100, 250, and 500 kb windows (Fig.~\ref{fig:fig7_ctl_lin_overlap}). Overlap was tested with a hypergeometric test and summarized as fold enrichment over chance and as the Jaccard index, the proportion of all candidate genes appearing in both conditions.
 
-At the gene level, the two candidate sets overlapped far more than chance, with 354 genes shared against 148 expected ($2.39\times$, $p = 4.7\times10^{-59}$), and each trait layer showed the excess on its own ($2.07\times$ for individual lipids, $6.56\times$ for class sums and ratios; Table~\ref{tab:overlap}; Supplementary Table~S8). The shared genes were nonetheless a small fraction of the total, with the Jaccard index between the CTL and LIN sets, ranging from 0.020 to 0.069. Within the individual-lipid layer, the excess is carried by TG and PC ($1.63\times$ and $3.54\times$, $q<0.01$), while fatty acids overlap no more than chance, and the remaining four classes tested share no genes at all (Supplementary Table~S8, by lipid class). This mainly reflects LD because each association maps every gene in its window, and gene-dense regions are mapped repeatedly in both trials. Because no window size is objectively correct for collapsing linkage, we repeated the test at 100, 250, and 500 kb and read the trend across them as the result. For individual lipids, the excess fell at every step, from $2.07\times$ at gene level to $1.15\times$ at 100 kb and $1.04\times$ at 250 kb, where it was no longer significant ($p = 0.23$), so loci recovered in the two trials are no more concordant than two independent samples of the same genome. The class-sum/ratio layer fell more slowly and was still enriched at 250 kb ($2.36\times$, $p = 0.037$), so class-level traits reproduce across trials where individual species do not. Broken down by lipid class, the overlap is concentrated in TG and PC ($1.63\times$ and $3.54\times$, $q = 0.009$). Faarry acids overlap no more than chance and four classes share no genes at all, including SQDG despite its 396 LIN candidates. (Table~\ref{tab:overlap_class}). Recovering the same gene rarely meant recovering it for the same lipid, at 90 of 354 shared genes (25.4%).
+At the gene level, the two candidate sets overlapped more than chance, with 291 genes shared against 140 expected ($2.07\times$, $p = 1.2\times10^{-35}$), but the excess comes entirely from the individual-lipid layer ($2.07\times$, $p = 2.7\times10^{-34}$; Table~\ref{tab:overlap}; Supplementary Table~S20). The class-sum and ratio layer shares no gene at all between trials, against 0.6 expected by chance, so it is neither enriched nor depleted, only empty. The shared genes are in any case a small fraction of the total, with a Jaccard index of 0.056. Within the individual-lipid layer the excess is carried by TG and PC ($1.74\times$ and $3.47\times$, $q<0.02$), while fatty acids overlap no more than chance and four further classes share no genes at all, including SQDG despite its 400 LIN candidates (Table~\ref{tab:overlap_class}).
 
-What recurrence exists is confined to the individual-species layer. No candidate gene is recovered in both trials for class sums or ratios. The 282 genes shared between trials are all from individual species and include the CMP-sialic acid transporter \texttt{SORBI\_3010G151000} discussed below, together with its chromosome~10 neighbours \texttt{SORBI\_3010G150325} and \texttt{SORBI\_3010G151325}. The CTL and LIN lipid GWAS therefore recover non-overlapping genetic architectures for the class-level traits and largely non-overlapping ones for individual species, where the two trials share no more loci than chance. Candidate gene counts are inflated several-fold by LD in both layers.
+This mainly reflects LD, because each association maps every gene in its window and gene-dense regions are mapped repeatedly in both trials. Because no window size is objectively correct for collapsing linkage, we repeated the test at 100, 250 and 500 kb and read the trend across them as the result. For individual lipids the excess fell at every step, from $2.07\times$ at gene level to $1.17\times$ at 100 kb and $1.05\times$ at 250 kb, where it was no longer significant ($p = 0.22$), so loci recovered in the two trials are no more concordant than two independent samples of the same genome. The class-sum and ratio layer shares no window at any of the three sizes.
+
+Recovering the same gene never meant recovering it for the same lipid. Of the 291 shared genes, none is a candidate for the same trait in both trials, although 13 traits have significant associations in both. Candidate gene counts are inflated several-fold by LD in both layers.
 
 \begin{table*}[!ht]
 \centering
@@ -370,16 +399,16 @@ What recurrence exists is confined to the individual-species layer. No candidate
 \toprule
 \textbf{Resolution} & \textbf{Trait layer} & \textbf{CTL} & \textbf{LIN} & \textbf{Shared} & \textbf{Exp.} & \textbf{Fold} & \textbf{$J$} & \textbf{$P$} \\
 \midrule
-Gene   & All layers          & 1165 & 4323 & 354 & 148.0 & 2.39 & 0.069 & $4.7\times10^{-59}$ \\
-Gene   & Individual lipids   & 1100 & 4319 & 289 & 139.6 & 2.07 & 0.056 & $3.6\times10^{-35}$ \\
-Gene   & Class sums / ratios &  115 &  812 &  18 &   2.7 & 6.56 & 0.020 & $2.9\times10^{-10}$ \\
+Gene   & All layers          & 1091 & 4376 & 291 & 140.3 & 2.07 & 0.056 & $1.2\times10^{-35}$ \\
+Gene   & Individual lipids   & 1062 & 4370 & 282 & 136.4 & 2.07 & 0.055 & $2.7\times10^{-34}$ \\
+Gene   & Class sums / ratios &   54 &  385 &   0 &   0.6 & --- & 0.000 & 1 (n.s.) \\
 \midrule
-100 kb & Individual lipids   &  521 & 1562 & 193 & 168.0 & 1.15 & 0.102 & $8.0\times10^{-3}$ \\
-100 kb & Class sums / ratios &   50 &  247 &   7 &   2.5 & 2.75 & 0.024 & $1.3\times10^{-2}$ \\
-\textbf{250 kb} & \textbf{Individual lipids} & 378 & 970 & 168 & 160.9 & \textbf{1.04} & 0.142 & \textbf{0.23} \\
-250 kb & Class sums / ratios &   36 &  161 &   6 &   2.5 & 2.36 & 0.031 & $3.8\times10^{-2}$ \\
-\textbf{500 kb} & \textbf{Individual lipids} & 297 & 656 & 162 & 157.2 & \textbf{1.03} & 0.205 & \textbf{0.29} \\
-500 kb & Class sums / ratios &   28 &  121 &   5 &   2.7 & 1.83 & 0.035 & 0.13 \\
+100 kb & Individual lipids   &  494 & 1556 & 185 & 158.7 & 1.17 & 0.099 & $4.7\times10^{-3}$ \\
+100 kb & Class sums / ratios &   23 &  118 &   0 &   0.6 & --- & 0.000 & 1 (n.s.) \\
+\textbf{250 kb} & \textbf{Individual lipids} & 351 & 948 & 153 & 146.0 & \textbf{1.05} & 0.133 & \textbf{0.22} \\
+250 kb & Class sums / ratios &   17 &   72 &   0 &   0.5 & --- & 0.000 & 1 (n.s.) \\
+\textbf{500 kb} & \textbf{Individual lipids} & 275 & 634 & 146 & 140.7 & \textbf{1.04} & 0.191 & \textbf{0.26} \\
+500 kb & Class sums / ratios &   13 &   50 &   0 &   0.5 & --- & 0.000 & 1 (n.s.) \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -393,13 +422,13 @@ Gene   & Class sums / ratios &  115 &  812 &  18 &   2.7 & 6.56 & 0.020 & $2.9\t
 \toprule
 \textbf{Class} & \textbf{CTL} & \textbf{LIN} & \textbf{Shared} & \textbf{Fold} & \textbf{$q$} \\
 \midrule
-TG          & 866 & 890 & 37 & 1.63 & $9.4\times10^{-3}$ \\
-PC          &  58 & 1324 &  8 & 3.55 & $9.4\times10^{-3}$ \\
-Fatty acid  & 109 & 1897 &  7 & 1.15 & 0.95 (n.s.) \\
-Terpenoid   &  37 &  39 &  0 & ---  & 1 (n.s.) \\
-DG          &  13 &  34 &  0 & ---  & 1 (n.s.) \\
-SQDG        &   9 & 396 &  0 & ---  & 1 (n.s.) \\
-AEG         &   7 & 119 &  0 & ---  & 1 (n.s.) \\
+TG          & 832 &  892 & 38 & 1.74 & $5.3\times10^{-3}$ \\
+PC          &  52 & 1319 &  7 & 3.47 & $1.3\times10^{-2}$ \\
+Fatty acid  & 105 & 2417 &  6 & 0.80 & 1 (n.s.) \\
+Terpenoid   &  45 &   49 &  0 & ---  & 1 (n.s.) \\
+DG          &  11 &   31 &  0 & ---  & 1 (n.s.) \\
+SQDG        &   8 &  400 &  0 & ---  & 1 (n.s.) \\
+AEG         &   3 &  122 &  0 & ---  & 1 (n.s.) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -451,7 +480,7 @@ These changes do not indicate phosphate conservation, nor a headgroup swap. Unde
 
 These compositional changes coincide with a shift in how strongly lipid variation reflects genotype. Under CTL, the median $h^2$ was near zero (11/163 species excluded zero), while under LIN the median $h^2$ was 0.170 (53/163 excluded zero), with $h^2$ higher under LIN for 131 species versus 21 under CTL. This difference persisted after conditioning on population structure and after removing any race group or 20\% of accessions. Low heritability for individual leaf metabolites in a single field environment is usual rather than exceptional. Mean broad-sense heritability across 76 leaf metabolites in a 135-line wheat panel was 0.25, with genotype-by-location variance twice the genetic variance \citep{Matros2017}, and 25 to 40\% of leaf mass features in a 282-line maize panel fell below $H^2=0.2$ \citep{Zhou2019}. Our values are genomic heritabilities from a marker-based relationship matrix, so they capture only the additive variance tagged by markers and are expected to sit below broad-sense estimates from replicated designs. CTL is therefore better read as a low-genetic-variance environment. A similar one-sided pattern holds for ancestry, though effects are small. No lipid-class sum was associated with botanical race in either trial (smallest $q=0.479$, $\varepsilon^2 \leq 0.027$). No species was significant under CTL, whereas nine were under LIN, eight by marker-based genetic cluster alone and one by cluster and by race, led by $\beta$-sitosterol ($\varepsilon^2=0.095$, $q=7.7\times10^{-5}$) and PS(18:0/18:2) ($\varepsilon^2=0.088$, $q=1.2\times10^{-4}$). Thus, ancestry explains little in either trial, and a detectable signal appears only under LIN. Moreover, the GWAS mapping results show the same asymmetry, with traits that have higher heritability being simpler to map, so the longer LIN candidate list likely indicates higher $h^2$ rather than a greater number of genes.
 
-Candidate loci were largely trial-specific. The two candidate sets overlapped more than chance ($2.39\times$), but a single association tags every gene in its linkage block, so one shared region is counted once for each gene it contains. Counting shared 250 kb regions instead of shared genes removes the excess for individual lipids, from 289 shared genes ($2.07\times$) to 168 shared regions ($1.04\times$, $p=0.23$). Class sums and ratios are the exception, still enriched at $2.36\times$ ($p=0.037$) when counted as regions, which makes class-level composites the most reproducible unit across trials. Sharing a region is also not the same as sharing a trait. For each of the 354 genes recovered in both trials, we compared the lipid classes with which it was associated in each, and only 90 (25.4\%) had any class in common, while the remaining 264 were candidates in both trials but for different lipids (Supplementary Table~S8, shared ranked). Because the trials differ by year, field, and batch, as well as nutrients, these results do not isolate a genotype-by-nutrient effect, and testing that would require repeating the nutrient contrast within a single year.
+Candidate loci were largely trial-specific. The two candidate sets overlapped more than chance ($2.07\times$), but a single association tags every gene in its linkage block, so one shared region is counted once for each gene it contains. Counting shared 250 kb regions instead of shared genes removes the excess for individual lipids, from 282 shared genes ($2.07\times$) to 153 shared regions ($1.05\times$, $p=0.22$). Class sums and ratios share no gene and no region between trials at all, so the excess is confined to individual species and does not survive the collapse of linkage in either layer. Sharing a region is also not the same as sharing a trait. Of the 291 genes recovered in both trials, none is a candidate for the same trait in both, even though 13 traits are significantly associated in both (Supplementary Table~S23, shared ranked). Because the trials differ by year, field, and batch, as well as nutrients, these results do not isolate a genotype-by-nutrient effect, and testing that would require repeating the nutrient contrast within a single year.
 
 \subsection*{A cold-induced MADS regulator is associated with fatty-acid traits under LIN}
 
@@ -485,7 +514,7 @@ Under LIN, the term cellular response to phosphate starvation is enriched in the
 
 The two chromosome 3 genes sit in the strongest signal recovered under LIN, across 52 significant SNPs, associated with FA(22:1), the free fatty acid class sum, and nine class-ratio traits. \texttt{SORBI\_3003G088800} and \texttt{SORBI\_3003G088900} are separated by 1.8 kb and are closest to the rice \textit{OsLPR2} and \textit{OsLPR1}, the multicopper oxidases of the LOW PHOSPHATE ROOT family, which control the root meristem response to phosphate deficiency. In rice, the family has expanded to five genes, \textit{OsLPR1--5}, within 65 kb of chromosome 1, of which \textit{OsLPR3} and \textit{OsLPR5} are induced by Pi deficiency \citep{Cao2016OsLPR}, so the sorghum pair is closest to the non-induced members. The same block carries a PHO2-family ubiquitin-conjugating E2, \texttt{SORBI\_3003G089000}. PHO2/UBC24 is a negative regulator that limits phosphate uptake and root-to-shoot transport. The gene \textit{pho2} overaccumulates Pi through a nonsense mutation in \textit{UBC24}, and \textit{PHO2} is miR399-cleaved under phosphate deficiency \citep{Aung2006PHO2}. PHT1 transporters and PHOSPHATE TRANSPORTER TRAFFIC FACILITATOR1 act downstream of PHO2 \citep{Huang2013PHO2}, and in Arabidopsis the RING-type E3 ligase NITROGEN LIMITATION ADAPTATION partners with UBC24 to ubiquitinate PT2 \citep{Park2014NLA}, a link that matches our design because LIN reduced both N and P. The block holds five genes in all, the remaining two being a WD40-repeat protein (\texttt{SORBI\_3003G089100}) and a glutamyl-tRNA amidotransferase subunit (\texttt{SORBI\_3003G089200}), neither of which belongs to an enriched term. Because every gene in the block is tagged by the same signal, the association identifies the region rather than any one gene within it.
 
-Two transporters are included via the candidate list rather than by enrichment, and both map only to the general term transmembrane transporter activity (not shown in Fig.~\ref{fig:go_bp_main}). \texttt{SORBI\_3006G244000}, a STAS-domain protein placed in the SULTR3 family by homology, is associated with 45 significant SNPs with PC(18:2\_20:4) and two TG species. In Arabidopsis, SULTR3 proteins localize to the chloroplast envelope and mediate chloroplast sulfate uptake \citep{Chen2019SULTR3}. Because SQDG is a plastid lipid whose sulfur-containing head group depends on plastid sulfate import and reduction, SULTR3 sits on the sulfur-supply route to SQDG. Phosphate limitation typically raises SQDG by replacing phospholipids, yet SQDG was depleted under LIN, which makes constrained plastid sulfate supply a hypothesis worth exploring. \texttt{SORBI\_3002G116100} encodes a PHT1-family H$^+$/Pi cotransporter whose closest characterized rice relative is OsPT4 (\textit{OsPht1;4}), affecting phosphate accumulation and embryo phosphate mobilization \citep{Ye2015OsPT4,Zhang2015OsPht14}. Its five traits are four TGs and one PC rather than phospholipids, which does not fit a simple phospholipid-to-glycolipid replacement under phosphate limitation. Thus, these loci are prioritized for functional validation for LIN associated phenotypes.
+Two transporters are included via the candidate list rather than by enrichment, and both map only to the general term transmembrane transporter activity (not shown in Fig.~\ref{fig:go_bp_main}). \texttt{SORBI\_3006G244000}, a STAS-domain protein placed in the SULTR3 family by homology, is associated with three species, TG(14:0\_18:3\_18:3) across 40 significant SNPs, TG(12:0\_18:2\_18:3) across 11, and PC(18:2\_20:4) across four. In Arabidopsis, SULTR3 proteins localize to the chloroplast envelope and mediate chloroplast sulfate uptake \citep{Chen2019SULTR3}. Because SQDG is a plastid lipid whose sulfur-containing head group depends on plastid sulfate import and reduction, SULTR3 sits on the sulfur-supply route to SQDG. Phosphate limitation typically raises SQDG by replacing phospholipids, yet SQDG was depleted under LIN, which makes constrained plastid sulfate supply a hypothesis worth exploring. \texttt{SORBI\_3002G116100} encodes a PHT1-family H$^+$/Pi cotransporter whose closest characterized rice relative is OsPT4 (\textit{OsPht1;4}), affecting phosphate accumulation and embryo phosphate mobilization \citep{Ye2015OsPT4,Zhang2015OsPht14}. Its five traits are four TGs and one PC rather than phospholipids, which does not fit a simple phospholipid-to-glycolipid replacement under phosphate limitation. Thus, these loci are prioritized for functional validation for LIN associated phenotypes.
 
 \subsection*{A TIFY/JAZ region enriched under LIN is also recovered under CTL for different lipids}
 
@@ -619,9 +648,9 @@ where
 \[
 u \sim N(0, K\sigma_g^2)
 \]
-and \(K\) is a genomic relationship matrix. The matrix \(K\) was built with PLINK~2 using \texttt{--make-rel square} from the SAP genotype set used for GWAS after LD pruning with \texttt{--indep-pairwise 50 5 0.2}, covering 400 genotypes. Variance components were estimated by REML using the eigendecomposition of \(K\).
+and \(K\) is a genomic relationship matrix. The matrix \(K\) was built with PLINK~2 using \texttt{--make-rel square} from the SAP genotype set used for GWAS after LD pruning with \texttt{--indep-pairwise 50 5 0.2}, covering 400 genotypes. Variance components were estimated by REML using the eigendecomposition of \(K\), with the model reparameterised as \(V = \sigma^2\!\left(h^2 K + (1-h^2) I\right)\) so that \(h^2\) is profiled directly. The estimator was verified against \texttt{lme4} \citep{Bates2015lme4}, refitting the same model with \(K\) replaced by its symmetric square root so that the random coefficients are independent, which is the construction used internally when a relationship matrix is supplied to a mixed-model solver. Across the 34 class-sum traits the two agreed to within 0.0005 in \(h^2\) and 0.0011 in either interval bound, which is the resolution of the profile grid.
 
-Intervals are 95\% profile-likelihood intervals, defined as the set of \(h^2\) values on a grid whose restricted log-likelihood falls within \(\chi^2_1/2\) of the maximum. A trait was called non-zero when this interval excluded zero. Bootstrap resampling was not used, as resampling genotypes with replacement creates pairs with relationship 1 and identical phenotypes, which forces the estimate to 1 in every replicate. CTL and LIN were fitted using the same 351 genotypes and the same 163 species present in both trials, so the trials differed only in the phenotype. Both trials were also analysed jointly. Values were standardised within trial, and each genotype's mean across trials and difference between trials were fitted with the same model and the same interval, so that the heritability of the mean estimates the genotype main effect and the heritability of the difference estimates genotype-by-environment variance. Because the trials differ in year, field, planting date and analytical batch and neither is replicated, the environment term is the whole trial contrast rather than the nutrient treatment.
+Intervals are 95\% profile-likelihood intervals, defined as the set of \(h^2\) values on a grid whose restricted log-likelihood falls within \(\chi^2_1/2\) of the maximum. A trait was called non-zero when this interval excluded zero. Bootstrap resampling was not used, as resampling genotypes with replacement creates pairs with relationship 1 and identical phenotypes, which forces the estimate to 1 in every replicate. For the per-species comparison, CTL and LIN were fitted using the same 351 genotypes and the same 163 species present in both trials, so the trials differed only in the phenotype. The class sums were instead fitted on every accession and every species of each trial, on the summed spatially corrected intensity of the class transformed as \(\log_{10}(x+1)\), the same construction used for the per-species estimates and the usual scale for mass-spectrometry abundances. Both trials were also analysed jointly. Values were standardised within trial, and each genotype's mean across trials and difference between trials were fitted with the same model and the same interval, so that the heritability of the mean estimates the genotype main effect and the heritability of the difference estimates genotype-by-environment variance. Because the trials differ in year, field, planting date and analytical batch and neither is replicated, the environment term is the whole trial contrast rather than the nutrient treatment.
 
 
 \subsection*{Lipid Metabolic Network Analysis (LINEX2)}
@@ -708,12 +737,15 @@ either trial.}
 \centering
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S4_Heritability.png}
 \caption{\textbf{Genomic heritability of lipid traits in the two field trials.}
-\textbf{(A)}~Genomic heritability of each lipid-class sum, point estimate with
-its 95\% profile-likelihood interval. \textbf{(B)}~Paired per-species
-heritability, one point per lipid species, CTL on the horizontal axis and LIN
-on the vertical; the dashed line is equality. Both panels use the same genomic
-relationship matrix, the same 351 genotypes and the same 163 species detected
-in both trials, so the two trials differ only in the phenotype measured.}
+\textbf{(A)}~Genomic heritability of each of the 17 lipid-class sums, point
+estimate with its 95\% profile-likelihood interval, on every accession of the
+trial that is in the relationship matrix (389 under CTL, 357 under LIN) and
+every species of that class detected in that trial. \textbf{(B)}~Paired
+per-species heritability, one point per species, CTL on the horizontal axis and
+LIN on the vertical; the dashed line is equality. Panel~B is restricted to the
+same 351 genotypes and the same 163 species detected in both trials, so there
+the two trials differ only in the phenotype measured. Both panels use the same
+genomic relationship matrix and the same $\log_{10}$ scale.}
 \label{fig:suppfig_s4_heritability}
 \end{figure*}
 

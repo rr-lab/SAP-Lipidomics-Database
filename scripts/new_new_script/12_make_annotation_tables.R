@@ -51,7 +51,8 @@ x <- merge(x, genes, by = "GeneID", all.x = TRUE)
 
 # ---- annotation, one row per condition x layer x trait x gene ---------------
 ann <- x[, .(
-  N_sig_SNPs = uniqueN(SNP),
+  N_sig_SNPs = uniqueN(SNP),          # distinct markers for this trait x gene
+  N_intervals = uniqueN(paste(Chr, BP %/% 250000)),
   Best_P     = min(P),
   Lead_SNP   = SNP[which.min(P)],
   Lead_Chr   = Chr[which.min(P)],
@@ -61,13 +62,19 @@ ann <- x[, .(
 setorder(ann, Condition, Layer, Best_P, Trait, GeneID)
 
 # ---- counts, one row per condition x gene ------------------------------------
-cnt <- ann[, .(
+# Built from x, the row-level join, NOT from ann. Rolling ann up would have to
+# sum its per-trait N_sig_SNPs, and the same SNP is significant for many traits,
+# so that sum counts one marker once per trait it hits. For the chromosome 3
+# block that turns 2 markers into 313. uniqueN over the SNP column is the
+# number the text means when it says "across N significant SNPs".
+cnt <- x[, .(
   N_Traits         = uniqueN(Trait),
   N_Traits_indiv   = uniqueN(Trait[grepl("individual", Layer)]),
   N_Traits_sumrat  = uniqueN(Trait[grepl("sum_ratio",  Layer)]),
-  N_sig_SNPs       = sum(N_sig_SNPs),
-  Best_P           = min(Best_P),
-  Max_r2           = max(Max_r2),
+  N_sig_SNPs       = uniqueN(SNP),
+  N_intervals      = uniqueN(paste(Chr, BP %/% 250000)),
+  Best_P           = min(P),
+  Max_r2           = max(R2),
   Traits           = paste(sort(unique(Trait)), collapse = " | ")
 ), by = .(Condition, GeneID, Gene_Chr, Gene_Start, Gene_End)]
 setorder(cnt, Condition, -N_Traits, Best_P)
@@ -92,6 +99,9 @@ print(cnt[, .(genes = .N,
               genes_in_1_trait  = sum(N_Traits == 1),
               genes_in_5plus    = sum(N_Traits >= 5),
               max_traits_1_gene = max(N_Traits)), by = Condition])
+
+cat("\n-- distinct significant markers per gene, sanity --\n")
+print(head(cnt[order(-N_sig_SNPs), .(Condition, GeneID, N_Traits, N_sig_SNPs, N_intervals, Best_P)], 8), row.names = FALSE)
 
 cat("\n-- top recurrent genes --\n")
 for (cond in c("CTL","LIN")) {
