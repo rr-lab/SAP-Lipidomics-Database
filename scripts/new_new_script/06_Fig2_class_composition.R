@@ -153,7 +153,18 @@ save_table(lion %>% arrange(Direction, q_value) %>%
              dplyr::select(Term, Description, Direction, Annotated, ES, p_value, q_value),
            "SuppTable_S5E_LION_Enrichment.csv")
 
-lion_top <- lion %>% group_by(Direction) %>% slice_min(q_value, n = 10) %>% ungroup() %>%
+# Two of the ten significant terms are structural bins rather than functional or
+# biophysical categories. PC(38:2) is a single lipid species defined at the total
+# carbon and double bond level, and C20:1 is one acyl chain. LION carries
+# hundreds of such bins, so a handful clearing q < 0.05 carries little
+# information, and on 3 and 4 annotated lipids neither adds anything the class
+# composition in panels A and B does not already show. Both stay in
+# SuppTable_S5E, which is written above from the unfiltered table; they are kept
+# out of the figure. Panel C therefore shows eight terms.
+BIN_TERMS <- c("PC(38:2)", "C20:1")
+
+lion_top <- lion %>% filter(!Description %in% BIN_TERMS) %>%
+  group_by(Direction) %>% slice_min(q_value, n = 10) %>% ungroup() %>%
   mutate(Description = fct_reorder(Description, logQ))
 
 pC <- ggplot(lion_top, aes(logQ, Description)) +
