@@ -1,5 +1,5 @@
-Table	Trial	Layer	Genes	Phenotypes_tested	Max_phenotypes_per_gene	Min_P	Rows_above_Bonferroni	Genes_with_relabelled_phenotypes
-S7	CTL	individual	1100	67	25	4.5016e-35	0	0
-S8	CTL	sumratio	115	111	64	4.284987e-23	0	0
-S9	LIN	individual	4323	89	12	2.43741e-73	9	0
-S10	LIN	sumratio	812	76	20	2.605726e-21	0	0
+Trial	Table	Layer	Candidate_genes	Phenotypes_with_candidates	Genes_multi_phenotype	Median_phenotypes_per_gene	Max_phenotypes_per_gene	Min_P	LD_cutoff_r2	Loci_250kb	Genes_without_functional_annotation	Loci_250kb_both_layers	Candidate_genes_both_layers
+CTL	S7	individual	1062	47	586	2	13	1.551627e-16	0.4	351	27	358	1091
+CTL	S8	sum_ratio	54	11	27	1.5	6	2.017612e-10	0.4	17	0	358	1091
+LIN	S10	sum_ratio	385	18	84	1	13	7.073687e-16	0.4	72	3	949	4376
+LIN	S9	individual	4370	74	1474	1	8	4.496153e-33	0.4	948	71	949	4376

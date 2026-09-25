@@ -89,20 +89,20 @@ dependency_specs <- list(
     )
   ),
   ann_lowinput = list(
-    label = "GWAS annotations for lowinput lipids (-log10(p) >= 7)",
+    label = "GWAS annotations for lowinput lipids (LD r2 >= 0.4)",
     required = FALSE,
     candidates = c(
-      file.path("data", "GWAS_RDS", "individual", "all_annotations_lowinput_individual_plog107.rds"),
+      file.path("data", "GWAS_RDS", "individual", "all_annotations_lowinput_individual_LD04.rds"),
       file.path("data", "all_annotations_lowinput.rds"),
       file.path("data", "gwas", "all_annotations_lowinput.rds"),
       file.path("data", "GWAS_RDS", "individual", "all_annotations_lowinput_individual.rds")
     )
   ),
   ann_control = list(
-    label = "GWAS annotations for control lipids (-log10(p) >= 7)",
+    label = "GWAS annotations for control lipids (LD r2 >= 0.4)",
     required = FALSE,
     candidates = c(
-      file.path("data", "GWAS_RDS", "individual", "all_annotations_control_individual_plog107.rds"),
+      file.path("data", "GWAS_RDS", "individual", "all_annotations_control_individual_LD04.rds"),
       file.path("data", "all_annotations_control.rds"),
       file.path("data", "gwas", "all_annotations_control.rds"),
       file.path("data", "GWAS_RDS", "individual", "all_annotations_control_individual.rds")
@@ -112,7 +112,7 @@ dependency_specs <- list(
     label = "GWAS annotations for lowinput sum-ratio traits (-log10(p) >= 7)",
     required = FALSE,
     candidates = c(
-      file.path("data", "GWAS_RDS", "sum_ratio", "all_annotations_lowinput_sum_ratio_plog107.rds"),
+      file.path("data", "GWAS_RDS", "sum_ratio", "all_annotations_lowinput_sum_ratio_LD04.rds"),
       file.path("data", "GWAS_RDS", "sum_ratio", "all_annotations_lowinput_sum_ratio.rds")
     )
   ),
@@ -120,7 +120,7 @@ dependency_specs <- list(
     label = "GWAS annotations for control sum-ratio traits (-log10(p) >= 7)",
     required = FALSE,
     candidates = c(
-      file.path("data", "GWAS_RDS", "sum_ratio", "all_annotations_control_sum_ratio_plog107.rds"),
+      file.path("data", "GWAS_RDS", "sum_ratio", "all_annotations_control_sum_ratio_LD04.rds"),
       file.path("data", "GWAS_RDS", "sum_ratio", "all_annotations_control_sum_ratio.rds")
     )
   ),
@@ -580,9 +580,12 @@ infer_lipid_class <- function(x) {
 # Load gene annotation
 gene_annotation <- read_gene_annotation(resolved_paths$gene_annotation)
 
-# Load threshold-specific annotation RDS files (plog107/plog106/plog105)
-annotation_threshold_choices <- c("7", "6", "5")
-threshold_to_suffix <- c("7" = "107", "6" = "106", "5" = "105")
+# Load the LD-thresholded annotation RDS files (LD04 .. LD09). A gene is listed
+# for a trait when a variant inside it reaches the selected r2 with that trait's
+# lead SNP. Physical distance is not used anywhere.
+annotation_threshold_choices <- c("0.4", "0.5", "0.6", "0.7", "0.8", "0.9")
+threshold_to_suffix <- c("0.4" = "LD04", "0.5" = "LD05", "0.6" = "LD06",
+                         "0.7" = "LD07", "0.8" = "LD08", "0.9" = "LD09")
 
 resolve_threshold_annotation_path <- function(dataset_name, trait_type, threshold) {
   suffix <- threshold_to_suffix[[as.character(threshold)]]
@@ -592,12 +595,12 @@ resolve_threshold_annotation_path <- function(dataset_name, trait_type, threshol
 
   candidates <- if (trait_type == "individual") {
     c(
-      file.path("data", "GWAS_RDS", "individual", paste0("all_annotations_", dataset_name, "_individual_plog", suffix, ".rds")),
+      file.path("data", "GWAS_RDS", "individual", paste0("all_annotations_", dataset_name, "_individual_", suffix, ".rds")),
       file.path("data", "GWAS_RDS", "individual", paste0("all_annotations_", dataset_name, "_individual.rds"))
     )
   } else {
     c(
-      file.path("data", "GWAS_RDS", "sum_ratio", paste0("all_annotations_", dataset_name, "_sum_ratio_plog", suffix, ".rds")),
+      file.path("data", "GWAS_RDS", "sum_ratio", paste0("all_annotations_", dataset_name, "_sum_ratio_", suffix, ".rds")),
       file.path("data", "GWAS_RDS", "sum_ratio", paste0("all_annotations_", dataset_name, "_sum_ratio.rds"))
     )
   }
@@ -642,7 +645,7 @@ annotation_store_by_threshold <- setNames(
 annotation_data_by_threshold <- lapply(annotation_store_by_threshold, function(x) x$data)
 annotation_data_source_by_threshold <- lapply(annotation_store_by_threshold, function(x) x$source)
 
-annotation_data_default <- annotation_data_by_threshold[["7"]]
+annotation_data_default <- annotation_data_by_threshold[["0.4"]]
 if (is.null(annotation_data_default)) {
   annotation_data_default <- annotation_data_by_threshold[[annotation_threshold_choices[[1]]]]
 }
@@ -1440,8 +1443,8 @@ ui <- fluidPage(
                   ),
                   conditionalPanel(
                     condition = "input.data_viz_domain == 'gwas'",
-                    selectInput("data_viz_gwas_threshold", "GWAS -log10(p) threshold:",
-                                choices = c("8.09  (genome-wide, Bonferroni)" = "8.09", "7  (p <= 1e-7)" = "7", "6  (p <= 1e-6)" = "6", "5  (p <= 1e-5)" = "5"), selected = "8.09"),
+                    selectInput("data_viz_gwas_threshold", "Minimum LD with the lead SNP (r2):",
+                                choices = c("0.4  (as reported in Supplementary Tables S7-S10)" = "0.4", "0.5" = "0.5", "0.6" = "0.6", "0.7" = "0.7", "0.8" = "0.8", "0.9  (strictest)" = "0.9"), selected = "0.4"),
                     selectInput("data_viz_trait_source", "Trait Source:",
                                 choices = c("All" = "all", "Individual" = "individual", "Sum/Ratio" = "sum_ratio"),
                                 selected = "all")
@@ -1838,7 +1841,7 @@ ui <- fluidPage(
             content_card(
               title = "GWAS Controls",
               selectInput("gwas_dataset", "Select Dataset:", choices = annotation_dataset_choices, selected = default_annotation_dataset),
-              selectInput("gwas_threshold", "Select -log10(p) threshold:", choices = c("8.09  (genome-wide, Bonferroni)" = "8.09", "7  (p <= 1e-7)" = "7", "6  (p <= 1e-6)" = "6", "5  (p <= 1e-5)" = "5"), selected = "8.09"),
+              selectInput("gwas_threshold", "Minimum LD with the lead SNP (r2):", choices = c("0.4  (as reported in Supplementary Tables S7-S10)" = "0.4", "0.5" = "0.5", "0.6" = "0.6", "0.7" = "0.7", "0.8" = "0.8", "0.9  (strictest)" = "0.9"), selected = "0.4"),
               selectInput("gwas_trait_source", "Trait Source:", choices = c("All" = "all", "Individual" = "individual", "Sum/Ratio" = "sum_ratio"), selected = "all"),
               uiOutput("gwas_class_filter"),
               uiOutput("gwas_subclass_filter"),
@@ -1887,9 +1890,9 @@ ui <- fluidPage(
                                       "0.5" = "0.5", "0.6" = "0.6", "0.7" = "0.7",
                                       "0.8" = "0.8", "0.9  (strictest)" = "0.9"),
                           selected = "0.4"),
-              selectInput("hit_threshold", "Select -log10(p) threshold:", choices = c("8.09  (genome-wide, Bonferroni)" = "8.09", "7  (p <= 1e-7)" = "7", "6  (p <= 1e-6)" = "6", "5  (p <= 1e-5)" = "5"), selected = "8.09"),
+              selectInput("hit_threshold", "Minimum LD for the Phenotypes tab (r2):", choices = c("0.4  (as reported in Supplementary Tables S7-S10)" = "0.4", "0.5" = "0.5", "0.6" = "0.6", "0.7" = "0.7", "0.8" = "0.8", "0.9  (strictest)" = "0.9"), selected = "0.4"),
               tags$p(class = "text-muted", style = "font-size:0.85em;",
-                     "Candidate genes are assigned by linkage disequilibrium, not by physical distance. A gene is listed when a variant inside it reaches the selected r2 with the trait's lead SNP. Counts are distinct phenotypes. The p-value selector applies to the Phenotypes tab."),
+                     "Candidate genes are assigned by linkage disequilibrium, not by physical distance. A gene is listed when a variant inside it reaches the selected r2 with the trait's lead SNP. Counts are distinct phenotypes. Every candidate shown is genome-wide significant; the second selector sets the r2 used by the Phenotypes tab."),
               uiOutput("hit_class_filter"),
               uiOutput("hit_subclass_filter"),
               uiOutput("hit_lipid_filter")
@@ -2527,12 +2530,12 @@ server <- function(input, output, session) {
 
   normalize_threshold_choice <- function(p_threshold) {
     if (is.null(p_threshold) || length(p_threshold) == 0 || is.na(p_threshold[[1]])) {
-      p_chr <- "7"
+      p_chr <- "0.4"
     } else {
       p_chr <- as.character(p_threshold[[1]])
     }
     if (!p_chr %in% names(annotation_data_by_threshold)) {
-      p_chr <- "7"
+      p_chr <- "0.4"
     }
     if (!p_chr %in% names(annotation_data_by_threshold)) {
       p_chr <- names(annotation_data_by_threshold)[[1]]
@@ -2546,8 +2549,13 @@ server <- function(input, output, session) {
     if (is.na(v)) 7 else v
   }
 
+  # The LD objects are already filtered to the selected r2, and every row in
+  # them is genome-wide significant, so there is nothing left to cut on p. The
+  # old p-value filter is kept only for annotation objects that predate the LD
+  # rebuild, which are recognised by having no r2 column.
   filter_plog <- function(df, p_threshold) {
     if (is.null(df) || nrow(df) == 0) return(df)
+    if ("r2" %in% colnames(df)) return(df)
     if (!"log(p)" %in% colnames(df)) return(df)
     df[!is.na(df$`log(p)`) & df$`log(p)` >= plog_cutoff(p_threshold), , drop = FALSE]
   }
@@ -2859,7 +2867,7 @@ server <- function(input, output, session) {
   # GWAS - Download Table
   output$download_gwas_table <- downloadHandler(
     filename = function() {
-      paste0("GWAS_", input$gwas_dataset, "_plog10", input$gwas_threshold, "_", input$selected_lipid, ".csv")
+      paste0("GWAS_", input$gwas_dataset, "_LDr2_", input$gwas_threshold, "_", input$selected_lipid, ".csv")
     },
     content = function(file) {
       data_list <- get_annotation_data_list(input$gwas_dataset, p_threshold = input$gwas_threshold)
@@ -2984,7 +2992,7 @@ server <- function(input, output, session) {
       class_suffix <- if (!is.null(input$hit_class_choice) && input$hit_class_choice != "All") {
         paste0("_", input$hit_class_choice)
       } else { "" }
-      paste0("phenotype_hits_", input$hit_dataset, "_plog10", input$hit_threshold, class_suffix, ".csv")
+      paste0("phenotype_hits_", input$hit_dataset, "_LDr2_", input$hit_threshold, class_suffix, ".csv")
     },
     content = function(file) {
       data_list <- get_annotation_data_list(input$hit_dataset, p_threshold = input$hit_threshold)

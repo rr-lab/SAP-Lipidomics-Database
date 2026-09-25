@@ -75,7 +75,7 @@ circles <- bind_rows(
 
 lab_a <- venn_counts %>%
   transmute(panel,
-            lab = sprintf("%.2f%s chance,  %s", fold, "×", stars(p)))
+            lab = sprintf("%.2fx chance,  %s", fold, stars(p)))
 
 pA <- ggplot() +
   geom_polygon(data = circles, aes(x, y, group = interaction(panel, set), fill = set),
@@ -128,7 +128,7 @@ cls_long <- by_class %>%
 
 cls_lab <- by_class %>%
   transmute(Class, tot = CTL_only + n_shared + LIN_only,
-            lab = sprintf("%d shared, %.1f%s %s", n_shared, fold_enrichment, "×", stars(q_BH)))
+            lab = sprintf("%d shared, %.1fx %s", n_shared, fold_enrichment, stars(q_BH)))
 
 pC <- ggplot(cls_long, aes(n, Class, fill = part)) +
   geom_col(width = .68, colour = "black", linewidth = .25) +

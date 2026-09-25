@@ -1,0 +1,5 @@
+Table	Trial	Layer	Genes	Phenotypes_tested	Max_phenotypes_per_gene	Min_P	Rows_above_Bonferroni	Genes_with_relabelled_phenotypes
+S7	CTL	individual	1100	67	25	4.5016e-35	0	0
+S8	CTL	sumratio	115	111	64	4.284987e-23	0	0
+S9	LIN	individual	4323	89	12	2.43741e-73	9	0
+S10	LIN	sumratio	812	76	20	2.605726e-21	0	0

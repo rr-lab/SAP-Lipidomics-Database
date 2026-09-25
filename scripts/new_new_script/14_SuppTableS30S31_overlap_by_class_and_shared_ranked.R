@@ -131,9 +131,14 @@ pheno_classes <- function(p, layer) {
   if (!nzchar(p)) return(character(0))
   if (layer == "sumratio") {
     if (p %in% ABBR) return(p)
-    m <- regmatches(p, regexec("^Sum_(.+?)_over_(.+?)_log10safe$", p))[[1]]
-    if (length(m) == 3) return(c(m[2], m[3]))
-    m <- regmatches(p, regexec("^Sum_(.+?)(_log10safe)?$", p))[[1]]
+    # The ratio suffix is _log10ratio since the phenotype rebuild; it was
+    # _log10safe before. Both are matched, because a name that fails here does
+    # not error, it silently becomes its own class: until 2026-09-24 every ratio
+    # produced a row labelled MGDG_over_PS_log10ratio and the like instead of
+    # being counted under its numerator and denominator.
+    m <- regmatches(p, regexec("^Sum_(.+?)_over_(.+?)_log10(safe|ratio)$", p))[[1]]
+    if (length(m) >= 3) return(c(m[2], m[3]))
+    m <- regmatches(p, regexec("^Sum_(.+?)(_log10(safe|ratio))?$", p))[[1]]
     if (length(m) >= 2) return(m[2])
     return(character(0))
   }

@@ -27,9 +27,16 @@
 #
 # Known limitation, worth stating in the paper: LION's ontology is built on
 # LIPID MAPS and does not carry the plant galactolipids or the sulfolipid, so
-# MGDG, DGDG, SQDG and LPE (23 of the 164 species) map to no term and are absent
+# MGDG, DGDG and SQDG (22 of the 164 species) map to no term and are absent
 # from every LION result. The classes carrying the strongest compositional signal
 # are therefore outside the enrichment universe.
+#
+# LPE does map, contrary to what this header said until 2026-09-24. LION's own
+# counts settle it. glycerophosphocholines [GP01] = 34 = 31 PC + 3 LPC, and
+# glycerophospholipids [GP] = 51 only closes with the single LPE species; the
+# zwitterionic-headgroup term = 47 = 31 PC + 3 LPC + 12 PE + 1 LPE likewise.
+# glycerolipids [GL] = 61 = 44 TG + 12 DG + 5 MG, which is what leaves exactly
+# the 22 galactolipid and sulfolipid species unmapped.
 # ==============================================================================
 source("scripts/new_new_script/_common.R")
 

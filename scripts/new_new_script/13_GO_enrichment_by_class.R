@@ -70,16 +70,38 @@ parse_go <- function(dt, col, onto) {
   y <- y[grepl("^GO:[0-9]+$", GO)]
   unique(y[, .(GeneID, GO, Term, Ontology = onto)])
 }
-gmap <- rbindlist(list(parse_go(go, "GO_BP", "BP"),
-                       parse_go(go, "GO_MF", "MF"),
-                       parse_go(go, "GO_CC", "CC")), use.names = TRUE)
+# Which ontologies to test. BP and MF only, by default and by design.
+#
+# CELLULAR COMPONENT WAS DROPPED, 2026-09-24. It had been tested silently while
+# the manuscript said throughout that two ontologies were analysed, and it
+# carried 331 of the 1,623 tests. Of the 89 CC terms that passed, none named
+# anything to do with lipids -- cohesin complex, kinetochore, ribosome, nucleus,
+# chromosome, the translation initiation complexes, nuclear speck -- and the few
+# naming a membrane were the generic compartments the figure already excludes on
+# background size (endoplasmic reticulum 393 genes at 1.1x, plasma membrane 1,174
+# at 1.2x, membrane 3,661 at 1.5x). The two that were lipid-plausible, endosome
+# membrane at 52 background genes and endoplasmic reticulum membrane at 414, fail
+# the figure's 30-gene background cut regardless. CC contributed two rows to
+# Figure 4, nuclear speck and transcription initiation at RNA polymerase III
+# promoter, and nothing else.
+#
+# Dropping it does not disturb what remains. Both BH corrections below are taken
+# by (Condition, Layer, Ontology), so an ontology's q-values depend only on that
+# ontology's own tests. Every BP and MF q_gene and q_LD is identical with and
+# without CC in the run.
+ONTOLOGIES <- strsplit(Sys.getenv("GO_ONTOLOGIES", "BP,MF"), ",")[[1]]
+message("ontologies tested: ", paste(ONTOLOGIES, collapse = ", "))
+
+go_col <- c(BP = "GO_BP", MF = "GO_MF", CC = "GO_CC")
+stopifnot(all(ONTOLOGIES %in% names(go_col)))
+gmap <- rbindlist(lapply(ONTOLOGIES, function(o) parse_go(go, go_col[[o]], o)),
+                  use.names = TRUE)
 
 # genome-wide annotation for the background, when supplied
 if (nzchar(UNIVERSE)) {
   u <- fread(UNIVERSE, quote = "")
-  umap <- rbindlist(list(parse_go(u, "GO_BP", "BP"),
-                         parse_go(u, "GO_MF", "MF"),
-                         parse_go(u, "GO_CC", "CC")), use.names = TRUE)
+  umap <- rbindlist(lapply(ONTOLOGIES, function(o) parse_go(u, go_col[[o]], o)),
+                    use.names = TRUE)
   message("genome universe: ", uniqueN(umap$GeneID), " genes, ", uniqueN(umap$GO), " terms")
   if (uniqueN(umap$GeneID) < 10000)
     warning("the universe has fewer than 10,000 genes, is it really genome-wide?")
