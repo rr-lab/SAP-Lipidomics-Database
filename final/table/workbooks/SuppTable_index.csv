@@ -2,7 +2,7 @@
 "S1","Population_structure_and_ancestry","Lipid tests","S24",56,23,"SuppTable_S24_Population_Structure_Lipid_Tests.csv"
 "S1","Population_structure_and_ancestry","Group composition","S24a",12,7,"SuppTable_S24a_Group_Composition.csv"
 "S1","Population_structure_and_ancestry","PC tests","S24b",8,9,"SuppTable_S24b_Population_Structure_PC_Tests.csv"
-"S2","Genomic_heritability","Per-species paired","S25",326,8,"SuppTable_S25_Heritability_PerSpecies_Paired.csv"
+"S2","Genomic_heritability","Per-species paired","S25",328,8,"SuppTable_S25_Heritability_PerSpecies_Paired.csv"
 "S2","Genomic_heritability","Class sums","S26",34,8,"SuppTable_S26_Heritability_Class_Sums.csv"
 "S2","Genomic_heritability","Structure-conditioned","S27",26,14,"SuppTable_S27_Heritability_StructureConditioned.csv"
 "S2","Genomic_heritability","Per-species structure and h2","S28",430,21,"SuppTable_S28_PerSpecies_Structure_and_Heritability.csv"

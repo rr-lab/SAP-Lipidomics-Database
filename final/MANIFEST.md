@@ -325,3 +325,24 @@ consolidated numbering, because they still used the old per-file numbers.
 
 Every Supplementary Table citation in the manuscript now resolves to a workbook
 that exists, and where it names a sheet, to that sheet.
+
+**The paired heritability moved from 163 to 164 species, 2026-09-26.** The old
+S25 built the shared set with intersect() on raw feature names, so CTL's
+PC(18:2/0:0) and LIN's LPC(18:2) were treated as different species. They are the
+same lipid, and normalize_lipid_name resolves them. 164 is the number the
+species inventory (S6a) already reported as Common, the number that makes
+164 + 50 + 52 = 266 add up, and the number the LION input already used.
+
+Only LPC(18:2) is added, and it turns out to be heritable under LIN
+(h2 = 0.551, CI 0.13 to 0.999) and not under CTL, which is why three counts move.
+
+    species                     163 -> 164
+    median h2 LIN             0.170 -> 0.171
+    CI excludes zero, LIN        53 -> 54
+    higher under LIN            131 -> 132
+
+Median h2 under CTL stays 0.000, CI excludes zero under CTL stays 11, higher
+under CTL stays 21, tied stays 11. Written by
+`scripts/new_new_script/77_paired_heritability_164.R`; the 163-species file is at
+`table/supp/_superseded_h2_163species/`. main.tex updated in seven places, so no
+occurrence of 163 remains.
