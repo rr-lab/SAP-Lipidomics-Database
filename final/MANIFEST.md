@@ -283,3 +283,45 @@ LPC 0.87x. Ratios that move
 PC/SQDG stays at 2.07x and every PS ratio keeps its direction, so the two claims
 the Discussion rests on are unaffected. Superseded files are at
 `table/supp/_superseded_composition_preLyso/`.
+
+**Workbooks S9 and S10 rebuilt, and the last five stale citations fixed,
+2026-09-26.** These were the only supplementary tables still carrying pre-2026
+numbers.
+
+S12 (reaction balance) was written 2026-05-04 and disagreed with the manuscript
+after the lyso rename moved PC(18:2/0:0) and PC(22:0/0:0) into LPC, which
+changes the LPC and PC pools and therefore the LCAT* and LRO1 scores.
+
+    branch    S12 (old)   now
+    PNPLA3      +0.327    +0.314
+    LRO1        +0.232    +0.261
+    LCAT*       +0.238    +0.139
+    PNPLA1      -0.268    -0.256
+
+S13 and S14 named SORBI_3001G103800 and SORBI_3001G448800 for the LCAT* branch,
+neither a candidate at Max_r2 >= 0.4 any more, and did not contain
+SORBI_3004G341900 (PSAT), which the manuscript names. Six rows still used
+_log10safe trait names. S13 went from 14 rows to 15 and now carries all four
+genes the Discussion names.
+
+S15 (frozen species set) was from 2025-07-25 with 319 rows. It held five
+chlorophyll and pheophytin features the annotation has since dropped, lacked
+LPC(18:2) and LPC(22:0), and had no Category_Code column. It is now a copy of
+data/metadata/final_lipid_classes.csv, 316 species.
+
+S11, the four reactions and their RHEA identifiers, is hand-curated with no data
+dependency and was left alone. All of it is written by
+`scripts/new_new_script/76_rebuild_linex_tables.R`; superseded files are at
+`table/supp/_superseded_linex_preRebuild/`.
+
+Five citations in main.tex pointed at workbooks that do not exist under the
+consolidated numbering, because they still used the old per-file numbers.
+
+    S16 -> S7, loci collapsed        (3 places)
+    S17 -> S7, BP all terms
+    S20 -> S8, gene level
+    S26 -> S2, class sums            (2 places, already cited that way elsewhere)
+    S31 -> S8, shared ranked
+
+Every Supplementary Table citation in the manuscript now resolves to a workbook
+that exists, and where it names a sheet, to that sheet.
