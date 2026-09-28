@@ -6,15 +6,6 @@
 # Panel A  the Shiny homepage, fig/main/individual_figs/Fig7A.png
 # Panel B  the Gene Hits module at r2 >= 0.9 under LIN,
 #          fig/main/individual_figs/Fig7B.png
-#
-#          Both are screenshots of the deployed app, replaced 2026-09-28 so the
-#          figure matches the version the paper describes. The homepage now
-#          carries fourteen modules, Network and Contact Us among them, and the
-#          Gene Hits sidebar now carries two LD selectors, r2 >= 0.9 for the
-#          gene table and r2 >= 0.4 for the Phenotypes tab, in place of the old
-#          -log10(p) selector; every candidate listed is genome-wide
-#          significant either way. The six-pixel browser strip at the top of the
-#          Gene Hits capture was cropped, nothing else was touched.
 # Panel C  the chr3 locus that the top of that Gene Hits table points to,
 #          drawn here as a regional association plot in three tiers that share
 #          one x axis and one r2 scale
@@ -38,8 +29,6 @@
 # the whole of panel C.
 #
 # plot_theme overrides for this figure, all local, _common.R is untouched
-#   the top row gives panel B 1.4 times the width of panel A, since its table
-#   has to be read and panel A only has to be recognised as a list of modules
 #   legend.position moved from the inside top-right to the bottom of the figure
 #   and the legend box dropped, since one colour bar is shared by three tiers
 #   axis text on the two stacked tiers that carry no x axis is switched off
@@ -208,14 +197,10 @@ img_panel <- function(path) {
 }
 
 ## ---- assemble --------------------------------------------------------------
-# Panel B is given the wider slot of the two, since its table has to be read
-# and panel A only has to be recognised as a list of modules.
-toprow <- (img_panel(file.path(IND,"Fig7A.png")) + labs(tag = "A") |
-           img_panel(file.path(IND,"Fig7B.png")) + labs(tag = "B")) +
-  plot_layout(widths = c(1, 1.4))
-
-fig <- toprow / (panelC & labs(tag = NULL)) +
-  plot_layout(heights = c(0.88, 1.12), guides = "collect")
+fig <- (img_panel(file.path(IND,"Fig7A.png")) + labs(tag = "A") |
+        img_panel(file.path(IND,"Fig7B.png")) + labs(tag = "B")) /
+       (panelC & labs(tag = NULL)) +
+  plot_layout(heights = c(1, 1.12), guides = "collect")
 
 # the tag for panel C rides on its first tier, which is where it belongs
 fig[[2]][[1]] <- fig[[2]][[1]] + labs(tag = "C")
@@ -227,7 +212,7 @@ fig <- fig & TAG_THEME &
         legend.title      = element_text(size = 18, face = "bold"),
         legend.text       = element_text(size = 15))
 
-save_fig(fig, "Figure7_Shiny_App.png", width = 16, height = 16, subdir = "main")
+save_fig(fig, "Figure7_Shiny_App.png", width = 16, height = 16.8, subdir = "main")
 
 cat("GWAS SNPs matched to LD panel:", sum(!is.na(gw$r2lead)), "of", nrow(gw),
     "| genes:", nrow(genes), "| candidates:", sum(genes$candidate),
