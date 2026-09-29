@@ -1,11 +1,8 @@
 # final/ -- the figures and tables the manuscript compiles against
 
-Built 2026-09-17, re-synced 2026-09-28. Everything `main.tex` includes or cites
-is in here, and nothing else. As of the 09-28 re-sync every file here is a
-byte-exact copy of the file `main.tex` actually compiles against, so the bundle
-and the PDF cannot disagree. The rest of `fig/` and `table/supp/` at the
-repository root still holds intermediate outputs that are not all current, so
-take figures and workbooks from here.
+Built 2026-09-17. Everything `main.tex` includes or cites is in here, and nothing
+else. Use this folder, not `fig/` or `table/supp/` at the repository root --
+those keep intermediate outputs that are not all current.
 
     final/fig/main/          6 main figures
     final/fig/supp/          9 supplementary figures
@@ -50,9 +47,8 @@ rebuilt here; two have no generating script at all.
 - `fig/main/Figure5_LINEX.png`  <-  `scripts/new_new_script/12_Fig5_linex.R`
   Same reason. Panel B reads LIN_ind GWAS result files directly.
 
-- `fig/main/Figure7_Shiny_App.png`  <-  no script at the time of this pass
-  Two screenshots of the Shiny application. Superseded by the 09-28 rebuild
-  below, which added `scripts/new_new_script/50_Fig_regional_chr3_locus.R`.
+- `fig/main/Figure7_Shiny_App.png`  <-  no script
+  A screenshot of the Shiny application. No generating script exists and none is needed.
 
 - `fig/supp/SuppFig_S7_PCA_Lipids.png`  <-  no script
   No generating script exists anywhere in the repository. Carried over from the earlier pipeline, as scripts/new_new_script/README.md records.
@@ -350,71 +346,3 @@ under CTL stays 21, tied stays 11. Written by
 `scripts/new_new_script/77_paired_heritability_164.R`; the 163-species file is at
 `table/supp/_superseded_h2_163species/`. main.tex updated in seven places, so no
 occurrence of 163 remains.
-
-
-## Update, 2026-09-28
-
-**Figure 6 (`Figure7_Shiny_App.png`) was rebuilt.** Panels A and B were
-screenshots of an older build of the app and both showed numbers the manuscript
-no longer uses. The old panel B was taken with the `-log10(p)` selector the app
-no longer has, and its phenotype counts were 21 / 20 / 20 / 20 / 20 / 19 against
-the 14 / 11 / 11 / 11 / 11 / 11 the Results paragraph quotes. The old panel A
-showed twelve modules in three columns, with no Network card, while the text
-already described network views.
-
-Both panels were replaced with captures of the deployed app and the figure was
-rebuilt by `scripts/new_new_script/50_Fig_regional_chr3_locus.R`, which now
-assembles all three panels rather than two. Panel C is unchanged and reproduced
-exactly, 49 genes in the window, 23 candidates, lead SNP 3:7,732,730 at
--log10(p) 19.35, two tied leads. The top row now gives panel B 1.4 times the
-width of panel A, because the new captures are wider and shorter than the old
-ones and at equal widths the Gene Hits table was too small to read. The figure
-is 16 x 16 inches rather than 16 x 16.8.
-
-Every number in the Results paragraph was checked against
-`data/LD_mapped/candidate_tables/gene_trait_LD.csv` before the figure was
-committed. LIN at r2 >= 0.9 gives 1,291 candidate genes; `SORBI_3004G006400`
-recurs in 14 phenotypes; the five chromosome 3 block genes each recur in the
-same 11 and share -log10(p) 19.35; `SORBI_3003G406600` matches the count at 11
-but not the p-value, at 16.57.
-
-Three wordings in `main.tex` were corrected at the same time, because the app
-no longer carries a significance selector. The figure caption and the Results
-sentence both listed "the genome-wide threshold" among the settings shown, and
-the app description called them "significance settings". Every gene the module
-lists is still genome-wide significant, which is what the text now says.
-
-**`final/` was re-synced to the tree `main.tex` compiles against.** Eight of the
-26 files differed from their counterparts under `fig/`. `main.tex` includes
-`fig/main/...` and `fig/supp/...`, not `final/fig/...`, so for eleven days the
-bundle held figures the PDF did not show. All 26 are now byte-identical to
-their sources and the copy is verified by md5.
-
-One of the eight was wrong, not merely different.
-
-`SuppFig_S5_Lipid_Species_Counts.png` as built on 09-17 reported 194 CTL, 190
-LIN, 146 common, 48 CTL-only and 44 LIN-only, and its category panel dropped
-Sterol Lipids entirely and put Prenol Lipids at 1 species per trial. Workbook S3
-(Species summary) reports 214 / 216 / 164 / 50 / 52 and 266 unique, its By
-category sheet puts Prenol Lipids at 15 and 17 and Sterol Lipids at 2 and 3, and
-`main.tex` quotes the workbook's numbers in three places. The copy under `fig/`
-is the correct one. It was written 2026-09-16 19:53, the same minute as
-`data/final_species_set/species_inventory.csv`, which is what
-`06c_SuppFig6_species_counts.R` reads; whatever the 09-17 cloud rebuild read, it
-was not that file.
-
-The other seven were re-renders of identical content on a different graphics
-device. Figure 1, S2, S3, S6 and S8 read only the SPATS matrices and
-`SAP_geoloc.csv`, unchanged since 2026-09-03 and 2026-05-04, so neither render
-could differ in content; a pixel difference map of Figure 1 shows every axis
-line, tick label and mark edge differing, which is font and anti-aliasing, not
-data. S4 was checked directly and both versions place the same points and print
-the same "131 species" annotation.
-
-The ten workbooks and the index were already identical in both trees and were
-left as they were.
-
-The pre-sync state of `final/` is kept at
-`recovery_backups/final_before_20260928_192457/`, and the pre-rebuild figure,
-its two old panels and the old script are at
-`recovery_backups/fig7_old_20260928_191235/`.
