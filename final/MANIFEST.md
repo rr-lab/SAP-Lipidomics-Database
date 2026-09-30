@@ -1,26 +1,26 @@
 # final/ -- the figures and tables the manuscript compiles against
 
-Built 2026-09-17, re-synced 2026-09-28. Everything `main.tex` includes or cites
+Built 2026-09-17, re-synced 2026-09-28, tables renumbered 2026-09-30. Everything `main.tex` includes or cites
 is in here, and nothing else. As of the 09-28 re-sync every file here is a
 byte-exact copy of the file `main.tex` actually compiles against, so the bundle
 and the PDF cannot disagree. The rest of `fig/` and `table/supp/` at the
 repository root still holds intermediate outputs that are not all current, so
-take figures and workbooks from here.
+take figures and tables from here.
 
-    final/fig/main/          6 main figures
-    final/fig/supp/          9 supplementary figures
-    final/table/workbooks/  10 numbered workbooks plus the index
+    final/fig/main/       6 main figures
+    final/fig/supp/       9 supplementary figures
+    final/table/tables/  31 numbered tables plus the index
 
-26 files. There is no `final/table/supp/`. The manuscript cites Supplementary
-Tables S1 to S10 and names a sheet inside them -- it never cites a source file --
-so only the workbooks belong here. The thirty-nine CSV and TSV files they are
-packed from live at `table/supp/` in the repository root and still carry the
+47 files. There is no `final/table/supp/`. The manuscript cites Supplementary
+Tables S1 to S31 and nothing else -- it never cites a source file -- so only the
+built tables belong here. The thirty-nine CSV and TSV files they are built from
+live at `table/supp/` in the repository root and still carry the
 pre-consolidation numbers (S5A, S6c, S24b, S31), which is exactly the second
 numbering scheme this folder exists to keep out of your way.
 
-All 28 distinct Supplementary Table citations in main.tex were checked against
-the workbooks on 2026-09-17. Every one resolves to a workbook and, where the text
-names a sheet, to that sheet.
+All 52 Supplementary Table citations in main.tex were checked against the built
+tables on 2026-09-30. Every one resolves to a table, and every one of the 31
+tables is cited at least once.
 
 ## Figures rebuilt in this pass
 
@@ -69,9 +69,10 @@ afterwards.
 
 ## Tables
 
-The ten workbooks are packed from the 39 source files by
-`scripts/new_new_script/15_SuppTables_build_workbooks.R`, which asserts that
-every source file lands in exactly one sheet.
+The 31 tables are built from 35 of the 39 source files by
+`scripts/new_new_script/15_SuppTables_build_flat.R`, which asserts that every
+source file lands in exactly one table. Four sources were dropped and four pairs
+merged on 2026-09-30; see the entry at the end of this file.
 
 Four were stale and were rebuilt in this pass. They dated from 24-25 August and
 so predated both the 3 September species deduplication and the 16 September
@@ -418,3 +419,75 @@ The pre-sync state of `final/` is kept at
 `recovery_backups/final_before_20260928_192457/`, and the pre-rebuild figure,
 its two old panels and the old script are at
 `recovery_backups/fig7_old_20260928_191235/`.
+
+
+## Supplementary tables flattened to S1 to S31, 2026-09-30
+
+The ten multi-sheet workbooks are gone. Each table now has its own number and its
+own file, so a citation names a table rather than a workbook and a tab inside it.
+A tab with its own header row and its own subject was already a table; calling
+four of them "Table S6" was packaging, not description.
+
+39 sheets became 31 tables. Four were dropped.
+
+| was | rows | why |
+|---|---|---|
+| S23 Shared sum-ratio | 0 | A header with nothing under it. The finding is already the sentence "shares no gene at all between trials, against 0.6 expected". |
+| S6a Species summary | 6 | The counts 214 / 216 / 164 / 50 / 52 / 266, all six of which are in the Results text and in Supplementary Figure S5A. |
+| S20 Overlap gene level | 3 | Identical to rows 1 to 3 of main-text Table 3. |
+| S21 Overlap locus level | 9 | Six of the nine are Table 3's lower block. The three All-layers window rows are the only unique content, and the text reports the layers separately. |
+
+Four pairs were merged.
+
+| new | from | how |
+|---|---|---|
+| S12 | S5A + S5B | Stacked. A `Scale` column holds CLR or ALR. The text already cited them together as "CLR and ALR contrasts". |
+| S15 | S6b + S6c | Stacked. A `Tier` column holds Class or Category. |
+| S28 | S31 + S22 | Joined on GeneID. The 282 individual-layer genes are a strict subset of the 291 shared, verified, so the four per-trial columns are empty for the 9 cross-layer genes. |
+| S29 | S11 + S12 | Joined on reaction branch, one row per branch, chemistry and test statistics side by side. |
+
+Numbers follow first mention in main.tex, with tables that belonged to the same
+workbook kept together as a contiguous run because they are read together. Four
+exceptions, where a table is cited only in the Discussion or Methods and was kept
+with its block rather than moved to the back: S3 trails S4 by one sentence, and
+S14, S16, S24 and S26 are cited later than their block-mates.
+
+### main.tex
+
+53 citation strings rewritten. Five tables that had only ever been covered by a
+workbook-level citation were given a home in the text: S1 group sizes at the
+`K=6` clause, S3 PC tests at the class-composition PCA sentence, S15 species
+counts at the TG and PC diversity sentence where those numbers appear, S27
+overlap by class beside Table 4, and S28 shared genes at the "Of the 291 shared
+genes" sentence.
+
+Two long-standing errors were fixed on the way. Both citations of the frozen
+species set, in the Table 2 caption and in the Methods, pointed at workbook S3,
+the species inventory, when the frozen set was workbook S10; both now point at
+S9. And the overlap paragraph listed three window sizes but reported two; the
+500 kb value, 1.04-fold at p = 0.26, is now in the sentence.
+
+### Elsewhere
+
+`app.R` cited "Supplementary Tables S7-S10" for the GWAS candidate tables in six
+places, a label from the numbering that preceded the workbooks. Now S19 to S22.
+
+`SUPP_TABLE_NUMBERING.md` in the repository root documented a 22-sheet scheme
+from 2026-08-25 and was two generations out of date. It now holds the S1 to S31
+map with row counts, first-mention line numbers and the drop and merge reasons.
+
+`tables/chapter2_excerpts.tex` still uses the pre-workbook numbering. main.tex
+does not input it, so it was left alone.
+
+### Figures in final_submission
+
+`final_submission/figures/` and `supplementary_figures/` were still at the
+2026-09-21 build and so predated the LIPID MAPS category rebuild of Figure 2 and
+Supplementary Figure S5. All 15 were refreshed from `final/fig/` and verified
+byte-for-byte after renaming. `final_submission/SoLD_manuscript.pdf` is still the
+09-21 compile and needs regenerating.
+
+The ten workbooks, the old builder, the previous `final_submission` figures and
+tables, and the pre-change `main.tex` and `app.R` are at
+`_to_delete/supp_ten_workbooks_20260930_024928/` and
+`recovery_backups/flatten_supp_20260930_024413/`.

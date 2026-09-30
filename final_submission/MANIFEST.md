@@ -3,17 +3,28 @@
 Everything the manuscript needs for submission, named by the number each item
 carries in the compiled PDF rather than by its build filename.
 
-    SoLD_manuscript.pdf        31 pages, compiled from main.tex
-
+    SoLD_manuscript.pdf        compiled from main.tex
     figures/                   the six main figures
     supplementary_figures/     the nine supplementary figures
-    supplementary_tables/      the ten supplementary workbooks
+    supplementary_tables/      the thirty-one supplementary tables
 
-## Renaming
+## The PDF is stale
 
-Three main figures and one supplementary figure had build filenames that did not
-match the number they render as. The mapping used here is the one in main.aux,
-so every file is named for the number the text actually cites.
+`SoLD_manuscript.pdf` was compiled on 2026-09-21. `main.tex` has changed
+substantially since, most recently the supplementary-table renumbering on
+2026-09-30. Recompile before submitting. Everything else in this folder is
+current as of 2026-09-30.
+
+## Figures
+
+Refreshed 2026-09-30 from `final/fig/`, which is itself byte-identical to the
+files `main.tex` compiles against. The copies here had been sitting at the
+2026-09-21 build and so predated the LIPID MAPS category rebuild of Figure 2 and
+Supplementary Figure S5. Every copy was verified byte-for-byte after renaming.
+
+Three main figures and one supplementary figure have build filenames that do not
+match the number they render as. The mapping is the one in main.aux, so every
+file is named for the number the text actually cites.
 
     Figure1.png   <- fig/main/Figure1_Population_Structure.png
     Figure2.png   <- fig/main/Figure2_Class_Composition.png
@@ -32,30 +43,45 @@ so every file is named for the number the text actually cites.
     S8_Fig.png    <- fig/supp/SuppFig_S8_Chemical_Space.png
     S9_Fig.png    <- fig/supp/Figure7_CTL_LIN_Overlap.png      renamed
 
-Every rename was checked by md5, so the bytes are unchanged.
-
 ## Supplementary tables
 
-    S1_Table.xlsx   Population structure and ancestry          3 sheets
-    S2_Table.xlsx   Genomic heritability                       5 sheets
-    S3_Table.xlsx   Species inventory and stability            4 sheets
-    S4_Table.xlsx   Class composition and contrasts            6 sheets
-    S5_Table.xlsx   Lipid ontology and chemical space          2 sheets
-    S6_Table.xlsx   GWAS candidate genes                       4 sheets
-    S7_Table.xlsx   GO enrichment                              4 sheets
-    S8_Table.xlsx   CTL/LIN candidate overlap                  6 sheets
-    S9_Table.xlsx   LINEX reaction mapping                     4 sheets
-    S10_Table.xlsx  Frozen lipid species set                   1 sheet
+Thirty-one tables, one per file, renumbered from ten multi-sheet workbooks on
+2026-09-30. Each file holds a single sheet, so a citation names a table and
+nothing else. Built by `scripts/new_new_script/15_SuppTables_build_flat.R`.
 
-S_Table_index.csv maps every sheet back to the source file it was packed from.
+    S1_Table.xlsx   Population structure, group sizes                 12 rows
+    S2_Table.xlsx   Population structure, lipid tests                 56 rows
+    S3_Table.xlsx   Population structure, PC tests                     8 rows
+    S4_Table.xlsx   Heritability, per species structure              430 rows
+    S5_Table.xlsx   Heritability, per species paired                 328 rows
+    S6_Table.xlsx   Heritability, structure conditioned               26 rows
+    S7_Table.xlsx   Heritability, class sums                          34 rows
+    S8_Table.xlsx   Heritability, ancestry robustness                 54 rows
+    S9_Table.xlsx   Frozen lipid species set                         316 rows
+    S10_Table.xlsx  Top variance lipids                               20 rows
+    S11_Table.xlsx  Class composition %TIC                            40 rows
+    S12_Table.xlsx  Class contrasts CLR and ALR                       25 rows
+    S13_Table.xlsx  Class CLR correlation delta                       78 rows
+    S14_Table.xlsx  Lipid ratio statistics                            33 rows
+    S15_Table.xlsx  Species counts by class and category              25 rows
+    S16_Table.xlsx  Composition stability                             26 rows
+    S17_Table.xlsx  LION enrichment                                   10 rows
+    S18_Table.xlsx  Chemical space                                    26 rows
+    S19_Table.xlsx  GWAS candidate genes, CTL individual            1062 rows
+    S20_Table.xlsx  GWAS candidate genes, CTL sum ratio               54 rows
+    S21_Table.xlsx  GWAS candidate genes, LIN individual            4370 rows
+    S22_Table.xlsx  GWAS candidate genes, LIN sum ratio              385 rows
+    S23_Table.xlsx  GO enrichment, loci collapsed                    217 rows
+    S24_Table.xlsx  GO enrichment, BP all terms                      164 rows
+    S25_Table.xlsx  GO enrichment, MF all terms                      180 rows
+    S26_Table.xlsx  GO enrichment, genes in enriched terms           919 rows
+    S27_Table.xlsx  Overlap by lipid class                            17 rows
+    S28_Table.xlsx  Shared candidate genes                           291 rows
+    S29_Table.xlsx  LINEX reactions and balance                        4 rows
+    S30_Table.xlsx  LINEX GWAS gene support                           15 rows
+    S31_Table.xlsx  LINEX branch summary                               5 rows
 
-## Before you submit
-
-Six citation keys are used in main.tex but are not in SoLD.bib, so they render
-as undefined on pages 14 and 15 of this PDF.
-
-    Matros2017      Zhou2019        Cao2016OsLPR
-    Aung2006PHO2    Huang2013PHO2   Park2014NLA
-
-Add them and recompile. Nothing else in the build is broken -- no missing
-figures, no undefined labels, two overfull boxes.
+`S_Table_index.csv` maps each table back to the source CSV or TSV it was built
+from, and to the number it carried in the earlier schemes. The full map, with
+first-mention line numbers and the reasons four sheets were dropped and four
+pairs merged, is `SUPP_TABLE_NUMBERING.md` in the repository root.
