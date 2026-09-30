@@ -665,7 +665,7 @@ default_annotation_dataset <- if ("lowinput" %in% annotation_dataset_choices) {
 }
 
 # ---------------------------------------------------------------------------
-# LD-mapped candidate genes: the table behind Supplementary Tables S7-S10.
+# LD-mapped candidate genes: the table behind Supplementary Tables S19-S22.
 #
 # Gene Hits can show two different things and they do not agree, by design.
 #   "All significant SNP records" counts one row per significant gene-SNP-trait
@@ -1444,7 +1444,7 @@ ui <- fluidPage(
                   conditionalPanel(
                     condition = "input.data_viz_domain == 'gwas'",
                     selectInput("data_viz_gwas_threshold", "Minimum LD with the lead SNP (r2):",
-                                choices = c("0.4  (as reported in Supplementary Tables S7-S10)" = "0.4", "0.5" = "0.5", "0.6" = "0.6", "0.7" = "0.7", "0.8" = "0.8", "0.9  (strictest)" = "0.9"), selected = "0.4"),
+                                choices = c("0.4  (as reported in Supplementary Tables S19-S22)" = "0.4", "0.5" = "0.5", "0.6" = "0.6", "0.7" = "0.7", "0.8" = "0.8", "0.9  (strictest)" = "0.9"), selected = "0.4"),
                     selectInput("data_viz_trait_source", "Trait Source:",
                                 choices = c("All" = "all", "Individual" = "individual", "Sum/Ratio" = "sum_ratio"),
                                 selected = "all")
@@ -1841,7 +1841,7 @@ ui <- fluidPage(
             content_card(
               title = "GWAS Controls",
               selectInput("gwas_dataset", "Select Dataset:", choices = annotation_dataset_choices, selected = default_annotation_dataset),
-              selectInput("gwas_threshold", "Minimum LD with the lead SNP (r2):", choices = c("0.4  (as reported in Supplementary Tables S7-S10)" = "0.4", "0.5" = "0.5", "0.6" = "0.6", "0.7" = "0.7", "0.8" = "0.8", "0.9  (strictest)" = "0.9"), selected = "0.4"),
+              selectInput("gwas_threshold", "Minimum LD with the lead SNP (r2):", choices = c("0.4  (as reported in Supplementary Tables S19-S22)" = "0.4", "0.5" = "0.5", "0.6" = "0.6", "0.7" = "0.7", "0.8" = "0.8", "0.9  (strictest)" = "0.9"), selected = "0.4"),
               selectInput("gwas_trait_source", "Trait Source:", choices = c("All" = "all", "Individual" = "individual", "Sum/Ratio" = "sum_ratio"), selected = "all"),
               uiOutput("gwas_class_filter"),
               uiOutput("gwas_subclass_filter"),
@@ -1886,11 +1886,11 @@ ui <- fluidPage(
               selectInput("hit_dataset", "Select Dataset:", choices = annotation_dataset_choices, selected = default_annotation_dataset),
               selectInput("hit_trait_source", "Trait Source:", choices = c("All" = "all", "Individual" = "individual", "Sum/Ratio" = "sum_ratio"), selected = "all"),
               selectInput("hit_r2", "Minimum LD with the lead SNP (r2):",
-                          choices = c("0.4  (as reported in Supplementary Tables S7-S10)" = "0.4",
+                          choices = c("0.4  (as reported in Supplementary Tables S19-S22)" = "0.4",
                                       "0.5" = "0.5", "0.6" = "0.6", "0.7" = "0.7",
                                       "0.8" = "0.8", "0.9  (strictest)" = "0.9"),
                           selected = "0.4"),
-              selectInput("hit_threshold", "Minimum LD for the Phenotypes tab (r2):", choices = c("0.4  (as reported in Supplementary Tables S7-S10)" = "0.4", "0.5" = "0.5", "0.6" = "0.6", "0.7" = "0.7", "0.8" = "0.8", "0.9  (strictest)" = "0.9"), selected = "0.4"),
+              selectInput("hit_threshold", "Minimum LD for the Phenotypes tab (r2):", choices = c("0.4  (as reported in Supplementary Tables S19-S22)" = "0.4", "0.5" = "0.5", "0.6" = "0.6", "0.7" = "0.7", "0.8" = "0.8", "0.9  (strictest)" = "0.9"), selected = "0.4"),
               tags$p(class = "text-muted", style = "font-size:0.85em;",
                      "Candidate genes are assigned by linkage disequilibrium, not by physical distance. A gene is listed when a variant inside it reaches the selected r2 with the trait's lead SNP. Counts are distinct phenotypes. Every candidate shown is genome-wide significant; the second selector sets the r2 used by the Phenotypes tab."),
               uiOutput("hit_class_filter"),
@@ -5233,7 +5233,7 @@ server <- function(input, output, session) {
                   "No candidate genes reach the selected r2 for these filters."))
     return(datatable(ld_summary, options = list(scrollX = TRUE, pageLength = 10),
                      caption = paste0("LD-assigned candidate genes at r2 >= ", input$hit_r2,
-                                      ", counted as distinct phenotypes. At r2 >= 0.4 these are the genes and counts reported in Supplementary Tables S7-S10.")))
+                                      ", counted as distinct phenotypes. At r2 >= 0.4 these are the genes and counts reported in Supplementary Tables S19-S22.")))
 
     # Combine hits for selected trait subset
     hit_rows <- lapply(trait_subset, function(trait) {
