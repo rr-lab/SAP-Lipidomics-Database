@@ -24,8 +24,11 @@ table/_stray_from_21/
 fig/new_figures/
 _dangling/
 
-# Editing backups
+# Editing backups. The suffixed forms (.bak_something, .bak2) need the
+# trailing wildcard or they slip through and get committed.
 *.bak
+*.bak*
+*.bak_*
 main.tex.bak_*
 
 # --- added Sep 2026, chromosome 3 LD panel -------------------------------
@@ -57,3 +60,16 @@ summary.out
 main.log
 fig/supp/*.html
 data/metadata/gene_annotation.txt
+
+# --- added 2026-09-30, Overleaf GitHub sync ------------------------------
+# Overleaf imports the whole repository, so anything here that is not part of
+# the manuscript has to stay out of git or the import is refused. These stay on
+# disk; they are just no longer tracked.
+recovery_backups/
+
+# Pre-rendered Shiny Manhattan PNGs. 293 files, 80 MB, and 279 of the paths are
+# over the ~150-character limit Overleaf's GitHub import enforces, which is what
+# kept breaking the sync. Nothing references them: main.tex takes only fig/main/
+# and fig/supp/, and app.R serves www/manhattans/. They stay on disk and remain
+# in git history, so any earlier commit still has them.
+fig/shiny/
