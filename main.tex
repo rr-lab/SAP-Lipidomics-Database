@@ -245,7 +245,7 @@ We quantified a total of 266 lipid species, with 164 detected in both trials, 50
 
 Furthermore, we summarized lipid abundance as \%TIC, so the values represent the relative signal in each condition. In both trials, the glycerolipids and glycerophospholipids dominated the annotated signal (CTL: 65.4\% and 30.3\%; LIN: 64.3\% and 30.7\%), while the prenol lipids were the only other category above 1\% (3.4\% and 4.2\%) (Fig.~\ref{fig:fig2_class_composition}A). The sterol lipids show the largest proportional change of any category, rising 5.1-fold from 0.04\% to 0.22\% of the annotated signal, almost all of it \textit{$\beta$}-sitosterol.
 
-Within the galactolipids and phospholipids, MGDG contributed the most with 32.7\% (CTL) and 30.1\% (LIN), while PC contributed 24.2\% and 23.3\%. DGDG (12.1\%, 12.2\%) and DG (13.0\%, 13.8\%) followed. TG increased from 2.6\% (CTL) to 4.9\% (LIN), while SQDG decreased from 2.8\% to 1.3\%. Overall, these lipids comprised 94.7\% (CTL) and 93.5\% (LIN) of annotated signals, with the remainder from sterols, terpenoids, prenols, fatty acids, and other minor categories (Fig.~\ref{fig:fig2_class_composition}B; Supplementary Table~S4, composition \%TIC). Class-level contrasts between trials on the centered and additive log-ratio scales are given in Supplementary Table~S4 (CLR and ALR contrasts). These class shares do not depend on panel composition, the largest class moving by at most 0.21 percentage points under race-dropping and repeated 20\% subsampling (Supplementary Table~S3, composition stability).
+Within the galactolipids and phospholipids, MGDG contributed the most with 32.7\% (CTL) and 30.1\% (LIN), while PC contributed 24.2\% and 23.3\%. DGDG (12.1\%, 12.2\%) and DG (13.0\%, 13.8\%) followed. TG increased from 2.6\% (CTL) to 4.9\% (LIN), while SQDG decreased from 2.8\% to 1.3\%. Overall, these thirteen classes comprised 94.7\% (CTL) and 93.5\% (LIN) of annotated signal. The remainder is carried by species with no shorthand class name, chiefly prenol lipids (3.4\% and 4.2\%) and fatty acyls, which Fig.~\ref{fig:fig2_class_composition}B shows under their LIPID MAPS category (Supplementary Table~S4, composition \%TIC). Class-level contrasts between trials on the centered and additive log-ratio scales are given in Supplementary Table~S4 (CLR and ALR contrasts). These class shares do not depend on panel composition, the largest class moving by at most 0.21 percentage points under race-dropping and repeated 20\% subsampling (Supplementary Table~S3, composition stability).
 
 Additionally, two minor pools show large changes masked in the bulk profile. PS increases from 0.014\% to 0.045\% of annotated signal, and its correlation with PC flips between trials ($r=0.45$ in CTL vs. $r=-0.34$ in LIN; Supplementary Table~S4, CLR correlation delta; Supplementary~\ref{fig:suppfig_s6_pcor}). Among lysophospholipids, the two classes move in opposite directions. LPE rises from 0.006\% to 0.014\% of annotated signal while LPC falls on both log-ratio scales (CLR $-0.14$, ALR $-0.62$; Supplementary Table~S4, CLR and ALR contrasts), so the LPC/LPE ratio halves from 23.2 to 11.1. Both pools stay below 0.2\% in both trials.
 
@@ -257,9 +257,10 @@ Within each trial, PCA of the major glycerolipid and glycerophospholipid pools s
 \caption{\textbf{Lipid-class composition of the SAP leaf lipidome in each field
 trial.} Composition is \%TIC, the share of total annotated signal, taken per
 sample and then averaged. \textbf{(A)}~Every annotated LIPID MAPS category on a log
-scale, so categories below 1\% remain legible. \textbf{(B)}~The 13 focal lipid
-classes, stacked; the bars stop between 93\% and 95\% because the remaining signal belongs
-to the minor categories in (A). \textbf{(C)}~LION ontology terms significant at
+scale, so categories below 1\% remain legible. \textbf{(B)}~Every annotated
+species, stacked. A species appears under its lipid class where it carries a shorthand
+name and under its LIPID MAPS category otherwise, so the bars account for the whole
+annotated signal. \textbf{(C)}~LION ontology terms significant at
 FDR $q<0.05$, sized by the number of annotated lipids. Eight of the ten
 significant terms are shown; the two that are structural bins rather than
 functional or biophysical categories, \textit{PC(38:2)} and \textit{C20:1}, are
@@ -731,10 +732,10 @@ genomic relationship matrix and the same $\log_{10}$ scale.}
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S5_Lipid_Species_Counts.png}
 \caption{\textbf{Lipid species counts and overlap between conditions.}
 \textbf{(A)}~Species detected in each trial, with the common and trial-specific counts.
-\textbf{(B)}~Counts by lipid class. \textbf{(C)}~Counts by LIPID MAPS category. Counts
-cover features annotated in lipid shorthand notation; the carotenoids, sterols,
-tocopherols, quinones and free sphingoid bases carried under trivial names are
-excluded here but retained in the composition analyses.}
+\textbf{(B)}~Counts by lipid class, with species carrying no shorthand name, among them
+the carotenoids, sterols, tocopherols, quinones and free sphingoid bases, shown under
+their LIPID MAPS category. \textbf{(C)}~Counts by LIPID MAPS category. Both panels cover
+every annotated species, so each sums to the trial totals in (A).}
 \label{fig:suppfig_s5_counts}
 \end{figure*}
 
