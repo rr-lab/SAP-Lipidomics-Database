@@ -245,6 +245,24 @@
   year    = {2019}
 }
 
+@article{Zhou2012,
+  author  = {Zhou, Xiang and Stephens, Matthew},
+  title   = {Genome-wide efficient mixed-model analysis for association studies},
+  journal = {Nature Genetics},
+  volume  = {44},
+  number  = {7},
+  pages   = {821--824},
+  year    = {2012}
+}
+
+@inproceedings{Chen2016,
+  author    = {Chen, Tianqi and Guestrin, Carlos},
+  title     = {XGBoost: A scalable tree boosting system},
+  booktitle = {Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages     = {785--794},
+  year      = {2016}
+}
+
 @inproceedings{Lundberg2017,
   author    = {Lundberg, Scott M. and Lee, Su-In},
   title     = {A unified approach to interpreting model predictions},
@@ -550,6 +568,26 @@
   doi       = {10.1145/2939672.2939785}
 }
 
+@article{Rubio2001,
+  author  = {Rubio, Vicente and Linhares, Francisco and Solano, Roberto and Mart{\'\i}n, Ana C. and Iglesias, Joaqu{\'\i}n and Leyva, Antonio and Paz-Ares, Javier},
+  title   = {A conserved MYB transcription factor involved in phosphate starvation signaling both in vascular plants and in unicellular algae},
+  journal = {Genes \& Development},
+  volume  = {15},
+  number  = {16},
+  pages   = {2122--2133},
+  year    = {2001}
+}
+
+@article{Bustos2010,
+  author  = {Bustos, Regla and Castrillo, Gabriel and Linhares, Francisco and Puga, Mar{\'\i}a Isabel and Rubio, Vicente and P{\'e}rez-P{\'e}rez, Juli{\'a}n and Solano, Roberto and Leyva, Antonio and Paz-Ares, Javier},
+  title   = {A central regulatory system largely controls transcriptional activation and repression responses to phosphate starvation in Arabidopsis},
+  journal = {PLoS Genetics},
+  volume  = {6},
+  number  = {9},
+  pages   = {e1001102},
+  year    = {2010}
+}
+
 @article{Nilsson2007,
   author  = {Nilsson, Lars and Muller, Rikke and Nielsen, T. H.},
   title   = {Increased expression of the MYB-related transcription factor, PHR1, leads to enhanced phosphate uptake in Arabidopsis thaliana},
@@ -610,6 +648,16 @@
 }
 
 
+@article{Pant2015,
+  author  = {Pant, Bikram Datt and Burgos, Asdrubal and Pant, Pooja and Cuadros-Inostroza, Alvaro and Willmitzer, Lothar and Scheible, Wolf-R{\"u}diger},
+  title   = {The transcription factor PHR1 regulates lipid remodeling and triacylglycerol accumulation in Arabidopsis thaliana during phosphorus starvation},
+  journal = {Journal of Experimental Botany},
+  volume  = {66},
+  number  = {7},
+  pages   = {1907--1918},
+  year    = {2015}
+}
+
 @article{Zhu2020PAP,
   author  = {Zhu, Shengnan and Chen, Minhui and Liang, Cuiyue and Xue, Yingbin and Lin, Shuling and Tian, Jiang},
   title   = {Characterization of purple acid phosphatase family and functional analysis of GmPAP7a/7b involved in extracellular ATP utilization in soybean},
@@ -627,6 +675,28 @@
   number  = {8},
   pages   = {1054--1067},
   year    = {2017}
+}
+
+@article{Yang2011,
+  author  = {Yang, Yang and Yu, Xiangchun and Song, Lianfen and An, Chengcai},
+  title   = {ABI4 activates DGAT1 expression in Arabidopsis seedlings during nitrogen deficiency},
+  journal = {Plant Physiology},
+  volume  = {156},
+  number  = {2},
+  pages   = {873--883},
+  year    = {2011},
+  doi     = {10.1104/pp.111.175950}
+}
+
+@article{Tan2018,
+  author  = {Tan, Wei-Juan and Yang, Yi-Cong and Zhou, Ying and Huang, Li-Ping and Xu, Le and Chen, Qin-Fang and Yu, Lu-Jun and Xiao, Shi},
+  title   = {DIACYLGLYCEROL ACYLTRANSFERASE and DIACYLGLYCEROL KINASE Modulate Triacylglycerol and Phosphatidic Acid Production in the Plant Response to Freezing Stress},
+  journal = {Plant Physiology},
+  volume  = {177},
+  number  = {3},
+  pages   = {1303--1318},
+  year    = {2018},
+  doi     = {10.1104/pp.18.00402}
 }
 
 @article{Yang2011,
@@ -969,6 +1039,15 @@
   doi     = {10.3389/fpls.2016.01884}
 }
 
+@article{Ding2019,
+  author  = {Ding, Yanglin and Shi, Yiting and Yang, Shuhua},
+  title   = {Advances and challenges in uncovering cold tolerance regulatory mechanisms in plants},
+  journal = {New Phytologist},
+  volume  = {222},
+  number  = {4},
+  pages   = {1690--1704},
+  year    = {2019}
+}
 @article{Dubouzet2003,
   author  = {Dubouzet, Jean G. and Sakuma, Yamaguchi and Ito, Y. and Kasuga, M. and Dubouzet, Elizabeth G. and Miura, S. and Seki, M. and Shinozaki, K. and Yamaguchi-Shinozaki, K.},
   title   = {OsDREB genes in rice, Oryza sativa L., encode transcription activators that function in drought-, high-salt- and cold-responsive gene expression},
@@ -1119,6 +1198,16 @@
   doi     = {10.1105/tpc.114.129999}
 }
 
+@article{Jung2006WDA1,
+  title   = {Wax-deficient anther1 Is Involved in Cuticle and Wax Production in Rice Anther Walls and Is Required for Pollen Development},
+  author  = {Jung, Ki-Hong and Han, Min-Jung and Lee, Dong-yeun and Lee, Yang-Seok and Schreiber, Lukas and Franke, Rochus and Faust, Andrea and Yephremov, Alexander and Saedler, Heinz and Kim, Yong-Woo and Hwang, Inhwan and An, Gynheung},
+  journal = {The Plant Cell},
+  year    = {2006},
+  volume  = {18},
+  pages   = {3015--3032},
+  doi     = {10.1105/tpc.106.042044}
+}
+
 @article{LeeSuh2022,
   title   = {Regulatory mechanisms underlying cuticular wax biosynthesis},
   author  = {Lee, Saet Buyl and Suh, Mi Chung},
@@ -1138,6 +1227,16 @@
   volume  = {13},
   pages   = {2997},
   doi     = {10.3390/plants13212997}
+}
+
+@article{Gao2008ZmLOX6,
+  title   = {A novel plastidial lipoxygenase of maize ({Zea} mays) {ZmLOX6} encodes for a fatty acid hydroperoxide lyase and is uniquely regulated by phytohormones and pathogen infection},
+  author  = {Gao, Xiquan and Stumpe, Michael and Feussner, Ivo and Kolomiets, Michael},
+  journal = {Planta},
+  year    = {2008},
+  volume  = {227},
+  pages   = {491--503},
+  doi     = {10.1007/s00425-007-0634-8}
 }
 
 @article{MullerIschebeck2018AtOBL1,
@@ -1344,6 +1443,17 @@
   doi = {10.1105/tpc.106.042044}
 }
 
+@article{LeeSuh2022,
+  author = {Lee, Saet Buyl and Suh, Mi Chung},
+  title = {Regulatory mechanisms underlying cuticular wax biosynthesis},
+  journal = {Journal of Experimental Botany},
+  year = {2022},
+  volume = {73},
+  number = {9},
+  pages = {2799--2816},
+  doi = {10.1093/jxb/erab509}
+}
+
 @article{WangXie2024Cullin,
   author = {Wang, Hongtao and Xie, Zhiming},
   title = {Cullin-Conciliated Regulation of Plant Immune Responses: Implications for Sustainable Crop Protection},
@@ -1364,6 +1474,16 @@
   volume  = {1865},
   pages   = {158763},
   doi     = {10.1016/j.bbalip.2020.158763}
+}
+
+@article{Tan2018,
+  title   = {Diacylglycerol Acyltransferase and Diacylglycerol Kinase Modulate Triacylglycerol and Phosphatidic Acid Production in the Plant Response to Freezing Stress},
+  author  = {Tan, Wei-Juan and Yang, Yi-Cong and Zhou, Ying and Huang, Li-Ping and Xu, Le and Chen, Qin-Fang and Yu, Lu-Jun and Xiao, Shi},
+  journal = {Plant Physiology},
+  year    = {2018},
+  volume  = {177},
+  pages   = {1303--1318},
+  doi     = {10.1104/pp.18.00402}
 }
 
 @article{Yan2025,
@@ -1542,6 +1662,17 @@
   number = {6},
   pages = {1089--1092},
   doi = {10.1007/s00425-004-1355-x}
+}
+
+@article{Wang2015LecRKIX,
+  author = {Wang, Yan and Cordewener, Jan H. G. and America, Antoine H. P. and Shan, Weixing and Bouwmeester, Klaas and Govers, Francine},
+  title = {Arabidopsis Lectin Receptor Kinases LecRK-IX.1 and LecRK-IX.2 Are Functional Analogs in Regulating Phytophthora Resistance and Plant Cell Death},
+  journal = {Molecular Plant-Microbe Interactions},
+  year = {2015},
+  volume = {28},
+  number = {9},
+  pages = {1032--1048},
+  doi = {10.1094/MPMI-02-15-0025-R}
 }
 
 @article{Ma2022ZmPR1,
@@ -2494,73 +2625,4 @@
   volume  = {16},
   pages   = {1665967},
   doi     = {10.3389/fpls.2025.1665967}
-}
-
-
-@article{Petit2016GPAT6,
-  author  = {Petit, Johann and Bres, C{\'e}cile and Mauxion, Jean-Philippe and Wong Jun Tai, Fabienne and Martin, Laetitia B. B. and Fich, Eric A. and Joub{\`e}s, J{\'e}r{\^o}me and Rose, Jocelyn K. C. and Domergue, Fr{\'e}d{\'e}ric and Rothan, Christophe},
-  title   = {The Glycerol-3-Phosphate Acyltransferase {GPAT6} from Tomato Plays a Central Role in Fruit Cutin Biosynthesis},
-  journal = {Plant Physiology},
-  year    = {2016},
-  volume  = {171},
-  number  = {2},
-  pages   = {894--913},
-  doi     = {10.1104/pp.16.00409}
-}
-
-@article{Katagiri2005LPP2,
-  author  = {Katagiri, Takeshi and Ishiyama, Kanako and Kato, Tomohiko and Tabata, Satoshi and Kobayashi, Masatomo and Shinozaki, Kazuo},
-  title   = {An important role of phosphatidic acid in {ABA} signaling during germination in {Arabidopsis thaliana}},
-  journal = {The Plant Journal},
-  year    = {2005},
-  volume  = {43},
-  number  = {1},
-  pages   = {107--117},
-  doi     = {10.1111/j.1365-313X.2005.02431.x}
-}
-
-@article{Fontanet2025SorghumDrought,
-  author  = {Fontanet-Manzaneque, Juan B. and Hern{\'a}ndez, Daniela M. and Giordano, Andrea and Ca{\~n}o-Delgado, Ana I.},
-  title   = {Sorghum as a monocot model for drought research},
-  journal = {Frontiers in Plant Science},
-  year    = {2025},
-  volume  = {16},
-  pages   = {1665967},
-  doi     = {10.3389/fpls.2025.1665967}
-}
-
-@article{Jin2023ZmSPL6,
-
-  author  = {Jin, Minliang and Liu, Haijun and Liu, Xiangguo and Guo, Tingting and Guo, Jia and Yin, Yuejia and Ji, Yan and Li, Zhenxian and Zhang, Jinhong and Wang, Xiaqing and Qiao, Feng and Xiao, Yingjie and Zan, Yanjun and Yan, Jianbing},
-
-  title   = {Complex genetic architecture underlying the plasticity of maize agronomic traits},
-
-  journal = {Plant Communications},
-
-  year    = {2023},
-
-  volume  = {4},
-
-  pages   = {100473},
-
-  doi     = {10.1016/j.xplc.2022.100473}
-}
-
-@article{Doherty2009CAMTA,
-
-  author  = {Doherty, Colleen J. and Van Buskirk, Heather A. and Myers, Susan J. and Thomashow, Michael F.},
-
-  title   = {Roles for {Arabidopsis} {CAMTA} transcription factors in cold-regulated gene expression and freezing tolerance},
-
-  journal = {The Plant Cell},
-
-  year    = {2009},
-
-  volume  = {21},
-
-  number  = {3},
-
-  pages   = {972--984},
-
-  doi     = {10.1105/tpc.108.063958}
 }

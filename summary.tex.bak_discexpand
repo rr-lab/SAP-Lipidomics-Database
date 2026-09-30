@@ -1,0 +1,419 @@
+% ============================================================================
+%  SoLD -- one-page-per-section summary of Results and Discussion
+%  Standalone document. Compile on its own; it reuses the figures already in
+%  fig/main and fig/supp, so keep it in the same Overleaf project root as
+%  main.tex. No other new files are needed.
+% ============================================================================
+\documentclass[11pt]{article}
+
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{caption}
+\usepackage{float}
+
+\definecolor{accent}{HTML}{2C5F7C}
+\titleformat{\section}{\Large\bfseries\color{accent}}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=3pt, parsep=0pt}
+\captionsetup{font=small, labelfont=bf, labelformat=empty}
+\newcommand{\lead}[1]{\textbf{#1}}
+\setcounter{secnumdepth}{2}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries The Sorghum Lipid Database (SoLD)}\\[2pt]
+{\large Summary of Results and Discussion}\\[6pt]
+\end{center}
+
+\noindent\textbf{Design.} The Sorghum Association Panel grown in two field
+trials. \textbf{CTL} is 2019, nutrient-sufficient, standard planting date.
+\textbf{LIN} is 2022, reduced nitrogen and phosphorus, earlier planting to
+impose cold at establishment, and no insecticide, herbicide or pesticide.
+394 accessions in CTL and 363 in LIN; 243 lipid species quantified by
+high-resolution LC--MS.
+
+\vspace{4pt}
+\hrule
+\vspace{6pt}
+
+\section{Results}
+
+\subsection{QC and normalization}
+\begin{itemize}
+  \item \lead{Method.} SERRF normalization on the vendor peak tables, then
+        SpATS spatial correction for field position, with model residuals added
+        back to the fitted mean so genotype signal is preserved. QC-RSD compared
+        before and after SERRF, plus run-order drift, injection-level PCA, and
+        maps of SpATS residuals across the field.
+  \item \lead{Found.} Analytical performance is comparable between trials, so
+        CTL--LIN differences downstream are not instrument drift. Spatial
+        correction removes plot-to-plot field variation that would otherwise
+        look like genotype effects.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.86\textwidth]{fig/supp/SuppFig_S2_QC_RunOrder_SERRF_PCA_SpATS.png}
+\caption{Supp.\ Fig.\ S2. QC diagnostics -- run order, SERRF normalization,
+injection PCA, and SpATS spatial correction.}
+\end{figure}
+
+\subsection{Race and population structure explain almost nothing}
+\begin{itemize}
+  \item \lead{Method.} Kruskal--Wallis with
+        $\varepsilon^2 = (H-k+1)/(n-k)$ as effect size, truncated at zero and
+        BH-corrected. Two groupings tested -- the five classical botanical races
+        plus a Mixed group, and six marker-based genetic clusters. Plus a PCA of
+        the 13-class composition per trial on log$_{10}$ values scaled to unit
+        variance.
+  \item \lead{Race explains nothing.} No trait significant in either trial after
+        BH correction (smallest $q=0.468$; effects $\varepsilon^2 \leq 0.027$).
+  \item \lead{Genetic cluster explains one thing.} PS under LIN
+        ($q=1.11\times10^{-6}$, $\varepsilon^2=0.104$). Under CTL the same trait
+        gives only a weak, non-significant trend.
+  \item \lead{Ordination agrees.} Accessions of one race or cluster are dispersed
+        rather than grouped; race or cluster explains at most 1.6\% of variance.
+  \item \lead{Why it matters.} The lipidome is not a readout of population
+        history, so lipid GWAS in this panel is not re-discovering structure.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{fig/main/Figure1_Population_Structure.png}
+\caption{Figure 1. Botanical race and marker-based cluster explain little
+lipid-class variation; PS under LIN is the single exception.}
+\end{figure}
+
+\clearpage
+\subsection{Lipidome overview and the four compositional axes}
+\begin{itemize}
+  \item \lead{Method.} Species inventory; composition as \%TIC taken per sample
+        and then averaged, so a few high-signal samples cannot dominate;
+        species-level PCA within each trial; LION ontology enrichment as the one
+        direct CTL--LIN contrast.
+  \item \lead{Inventory.} 243 species -- 152 in both trials, 49 CTL-only, 42
+        LIN-only, where trial-specific means below detection threshold rather
+        than confirmed absent.
+  \item \lead{Composition.} MGDG 32.3 $\rightarrow$ 29.8\%, PC 24.0 $\rightarrow$
+        23.1\%, DGDG 12.0 $\rightarrow$ 12.1\%, DG 12.9 $\rightarrow$ 13.8\%,
+        \textbf{TG 2.6 $\rightarrow$ 5.0\%}, \textbf{SQDG 2.7 $\rightarrow$
+        1.3\%}. The 13 focal classes are $\approx$93\% of annotated signal.
+  \item \lead{Minor pools.} Sterols show the largest \emph{proportional} change of
+        any superclass, 0.042 $\rightarrow$ 0.215\%, almost all
+        $\beta$-sitosterol at 4.6-fold.
+  \item \lead{Structure.} Lipid class strongly structures species-level variation;
+        TG forms a distinct cluster away from membrane lipids in both trials.
+  \item \lead{LION.} A head-group charge contrast, with storage and lipid-droplet
+        terms up under LIN and glycerophospholipid and membrane-component terms
+        down.
+  \item \lead{The four axes, defined here.} (i)~low SQDG, (ii)~high TG,
+        (iii)~a PS-centred phospholipid shift, (iv)~an LPC/LPE balance shifted
+        toward LPE (LPC flat, LPE up 1.4-fold, ratio 17.0 $\rightarrow$ 11.3).
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{fig/main/Figure2_Class_Composition.png}
+\caption{Figure 2. Lipid-class composition. (A)~every annotated superclass on a
+log scale; (B)~the 13 focal classes; (C)~LION ontology terms, the only direct
+CTL--LIN contrast in the figure.}
+\end{figure}
+
+\clearpage
+\subsection{GWAS}
+\begin{itemize}
+  \item \lead{Method.} GEMMA univariate mixed linear model, centered kinship from
+        SNP genotypes, first three genotype PCs as covariates, MAF 0.05 and
+        heterozygosity 0.8 filters, Bonferroni threshold
+        $p \leq 8.19\times10^{-9}$. Run for every individual species, every class
+        sum and every class ratio, in both trials.
+  \item \lead{Found.} Association signal is concentrated under CTL and diffuse
+        under LIN -- fewer, sharper peaks in the control trial against a broader,
+        more distributed architecture in low-input.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{fig/main/Figure3_GWAS_Manhattan.png}
+\caption{Figure 3. Manhattan plots for representative traits in each trial and
+trait layer. Arrows mark the candidate loci discussed in the text.}
+\end{figure}
+
+\subsection{GO enrichment -- the principal methods contribution}
+
+\noindent This is the part worth reading in full. Four steps:
+
+\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
+  \item \lead{Stratified testing.} GO over-representation is run \emph{separately}
+        within each lipid class $\times$ trial $\times$ trait layer $\times$
+        ontology. Stratifying by class is what makes a term interpretable, since
+        it attributes an enrichment to the traits of one class rather than to the
+        candidate set as a whole.
+  \item \lead{LD-aware permutation null.} In sorghum a significant SNP tags every
+        gene in its LD window rather than one gene, so a naive GO test counts the
+        same association repeatedly and inflates significance. Every term was
+        therefore tested against a null built from 8{,}000 random draws of
+        \textbf{gene-density-matched 250~kb intervals}. Density matching matters
+        because gene-dense regions contribute more genes and would otherwise
+        appear enriched for everything. This yields $q_{\mathrm{LD}}$, corrected
+        for mapping structure rather than only for multiple testing.
+  \item \lead{Two-pass collapse.} Two things inflate the term list. The Gene
+        Ontology nests parent and child terms, so one gene set surfaces as several
+        terms; and class sums and ratios share candidate genes by construction, so
+        one gene set recurs across classes, layers and both ontologies. Terms with
+        \emph{identical} candidate-gene sets were merged, first within a stratum
+        and then across strata.
+  \item \lead{Interpretability filter.} For the main figure, only loci whose GO
+        term draws on at most 30 background genes. This is a criterion of
+        specificity, not of significance -- \emph{zinc ion binding}
+        (1{,}015 background genes) passes the permutation null while naming no
+        biological process. Interval count was deliberately \emph{not} used to
+        select terms, because it scales with GO term size and would discriminate
+        against precisely the small, specific terms of interest (terms in three or
+        more intervals average 175 background genes at 10-fold enrichment; those
+        below average 24 genes at 23-fold).
+\end{enumerate}
+
+\begin{itemize}
+  \item \lead{Numbers.} 103 enrichments $\rightarrow$ 101 pass the LD-aware null
+        $\rightarrow$ collapse to \textbf{50 distinct loci} (17 CTL, 33 LIN)
+        $\rightarrow$ 19 shown in Figure 4.
+  \item \lead{The asymmetry is real, not a filter artefact.} 17 CTL loci against
+        33 LIN, from roughly half as many candidate genes, and all but one CTL
+        survivor is a broad category.
+  \item \lead{LIN names processes.} Nitrate assimilation and transport 31-fold,
+        cellular response to phosphate starvation 17.4-fold, sphingolipid
+        metabolic process 32.5-fold, jasmonate signalling / defense / wounding
+        34.5-fold.
+  \item \lead{CTL does not.} Zinc ion binding, proteolysis, peptidase activity,
+        transmembrane transport.
+  \item \lead{Two failure modes illustrated.} The purine permeases are specific but
+        reduce to one tandem array recovered 25 times; zinc ion binding is spread
+        over six to eight intervals but names nothing.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{fig/main/Figure5_GO_BP_LDaware.png}
+\caption{Figure 4. GO terms enriched among LD-mapped candidate genes, grouped by
+the lipid class whose traits produced them. Nineteen loci shown after collapse
+and the 30-background-gene filter.}
+\end{figure}
+
+\clearpage
+\subsection{Cross-trial overlap collapses to chance at locus level}
+\begin{itemize}
+  \item \lead{Method.} One-sided hypergeometric (Fisher right-tail) test at two
+        resolutions. At \textbf{gene level} the background is the 34{,}027
+        annotated \textit{S.~bicolor} v3.1 gene models. At \textbf{locus level}
+        the genome is partitioned into non-overlapping 100, 250 and 500~kb
+        windows, with background the windows containing at least one annotated
+        gene (4{,}844 / 2{,}279 / 1{,}239 respectively). Reported as fold
+        enrichment over the expected $|A||B|/N$ plus the Jaccard index, which is
+        insensitive to the large size difference between the CTL and LIN sets.
+  \item \lead{Gene level looks impressive.} 354 genes shared against 148 expected,
+        $2.39\times$, significant in both trait layers.
+  \item \lead{It decays to chance once linkage is collapsed.} $1.04\times$ at
+        250~kb for individual lipids. Loci recovered in the two trials are no more
+        concordant than two independent samples of the same genome.
+  \item \lead{Sharing a gene rarely means sharing a phenotype.} Only 25.4\% of the
+        354 shared genes were associated with a lipid class in common, falling to
+        18.0\% in the individual-lipid layer.
+  \item \lead{LD inflates counts three- to five-fold.} CTL 1{,}100 genes
+        $\rightarrow$ 378 loci; LIN 4{,}323 $\rightarrow$ 971.
+  \item \lead{Class composites are the exception.} They retain a significant
+        cross-trial excess at 100 and 250~kb where individual species do not,
+        because aggregation averages over acyl-chain heterogeneity and
+        measurement noise.
+  \item \lead{Take-home.} Cross-environment comparisons must be made at the locus
+        level, not the gene level.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{fig/supp/Figure7_CTL_LIN_Overlap.png}
+\caption{Supp.\ Fig.\ S8. Cross-trial candidate overlap at gene and locus
+resolution, and its decay with window size.}
+\end{figure}
+
+\clearpage
+\subsection{LINEX reaction mapping and reaction-balance scoring}
+\begin{itemize}
+  \item \lead{Method.} LINEX2 reconstructs annotation-guided lipid reaction
+        networks from curated rules (head-group interconversion,
+        acylation/deacylation, elongation, desaturation). Sorghum is not a
+        supported organism, so \textit{Oryza sativa} was the reference -- these
+        are therefore hypotheses, not demonstrated flux. Four branches connecting
+        the DG/MG, TG and lysophospholipid pools; three from LINEX2, the fourth
+        (LCAT*) defined manually from reaction specificity and marked with an
+        asterisk throughout.
+  \item \lead{Reaction-balance score.} Within one sample,
+        $S_i = \mathrm{mean}(\ell_{\mathrm{products}}) -
+        \mathrm{mean}(\ell_{\mathrm{substrates}})$ on log$_{10}$ class sums.
+        Because it is a within-sample log-ratio it is scale-invariant, so any
+        uniform multiplicative difference between the trials cancels exactly.
+        Compared with paired, genotype-matched Wilcoxon tests.
+  \item \lead{Found.} All four branches shift strongly and consistently --
+        positive for the three TG-producing branches (PNPLA3 $+0.327$,
+        LCAT* $+0.238$, LRO1 $+0.232$) and negative for the hydrolytic
+        TG$\rightarrow$DG branch (PNPLA1 $-0.268$), BH-adjusted
+        $p<10^{-56}$ across 355 genotype pairs. This recapitulates the
+        lipidome-wide picture at the level of a small set of candidate reactions
+        rather than as independent class shifts.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{fig/main/Figure5_LINEX.png}
+\caption{Figure 5. LINEX reaction network, branch-level reaction balances, and
+GWAS support for the branch-supporting candidate genes.}
+\end{figure}
+
+\clearpage
+\subsection{Interactive SoLD application}
+\begin{itemize}
+  \item Fourteen modules -- data preview, boxplots, correlation, PCA,
+        t-SNE/UMAP, heatmap, GWAS, gene hits, genotype, Venn, volcano and
+        network -- each with dataset and data-type (raw, \%TIC, CLR) selectors.
+  \item Worked example moves from a terpenoid class view to lupeol to a terpene
+        cyclase annotated for triterpenoid biosynthesis and localised to the lipid
+        droplet, demonstrating that classes outside the 13 focal ones remain
+        reachable.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{fig/main/Figure5_shiny_triterpenoid_AB.png}
+\caption{Figure 6. The SoLD Shiny application, showing the class-level boxplot
+view and the gene-hit table for the same phenotype.}
+\end{figure}
+
+\clearpage
+\section{Discussion}
+
+\subsection{Integrated interpretation across the two trials}
+\begin{itemize}
+  \item \lead{SQDG falling is the most informative result, because it contradicts
+        the canonical phosphate-starvation response}, in which phospholipids are
+        replaced by non-phosphorus glycolipids and SQDG should \emph{rise}. So
+        this is not simple phosphate starvation, but some mix of nutrient
+        limitation, temperature, developmental state and plastid-membrane
+        turnover that this design cannot separate.
+  \item TG accumulation comes with reorganised DG--TG coordination rather than a
+        uniform rise in neutral lipids -- ratios involving TG, DG, PE and MGDG all
+        shift toward TG, the PS--TG correlation changes sign, and the LINEX
+        balances split by branch direction.
+  \item PS and lysophospholipid shifts are directionally robust but confined to
+        pools under 0.2\% of TIC, so they represent redistribution within small
+        pools rather than bulk membrane change.
+  \item Genetic architecture is strongly environment-dependent, and
+        genotype-by-nutrient effects cannot be separated from genotype-by-year or
+        genotype-by-management effects.
+\end{itemize}
+
+\subsection{A TIFY/JAZ cluster recovered in both trials}
+\begin{itemize}
+  \item Four TIFY paralogues in a 290~kb stretch on chromosome~1, \lead{recovered
+        under both regimes but reporting different lipids} -- nine 16:0-containing
+        storage triacylglycerols under CTL, versus an ether lipid, an
+        18:3-containing phosphatidylcholine and a free C20:3 fatty acid under LIN.
+  \item Mechanistically tight rather than coincidental, since jasmonate is
+        synthesised from $\alpha$-linolenic acid released from plastid
+        galactolipids and JAZ proteins are the repressors of jasmonate signalling.
+  \item Cold support in three systems -- rice (cold-induced, ABA-independent),
+        pepper (silencing confers cold sensitivity, overexpression improves
+        tolerance) and sweet orange.
+  \item Unlike the other tandem loci, this enrichment rests on two independent
+        250~kb intervals rather than one.
+\end{itemize}
+
+\subsection{Under CTL, membrane organization and amino-acid metabolism}
+\begin{itemize}
+  \item A phospholipid-transporting ATPase provides the clearest membrane-lipid
+        link.
+  \item The tyrosine locus is the more interesting half. Tyrosine degradation runs
+        through tyrosine aminotransferase and 4-hydroxyphenylpyruvate dioxygenase
+        to homogentisate and then to fumarate and \lead{acetoacetate, which feeds
+        acetyl-CoA} -- the substrate for fatty-acid synthesis. Every phenotype at
+        that locus is a triacylglycerol.
+  \item The same amino acid is committed to dhurrin under LIN, so tyrosine is a
+        branch point the two trials resolve differently.
+\end{itemize}
+
+\subsection{Under LIN, nitrogen candidates}
+\begin{itemize}
+  \item Three nitrate transporters from two families -- an NRT2.1-like
+        high-affinity transporter, an NPF/NRT1 transporter carrying the strongest
+        LIN single-lipid association, and an OsNPF2.4 orthologue.
+  \item Nitrogen also appears in a \emph{storage} rather than uptake role. A
+        chromosome~1 locus overlapping the dhurrin cluster links seven candidates
+        to fatty-acid and PA-ratio traits, and four of the seven carry annotations
+        covering the pathway in turn -- a CYP71E1-reaction monooxygenase
+        ($r^2=1.00$), a glycosyltransferase, a MATE-family transporter and a
+        glutathione transferase.
+\end{itemize}
+
+\subsection{Under LIN, phosphorus and sulfur converge on SQDG}
+\begin{itemize}
+  \item An SPX-domain phosphate-status signalling protein, a SULTR3-family plastid
+        sulfate transporter, and a PHT1-family phosphate transporter.
+  \item \lead{The argument.} SQDG is a sulfolipid whose head group is built from
+        sulfur imported into the plastid. Phosphate limitation alone should
+        \emph{increase} SQDG through phospholipid replacement, yet SQDG was
+        depleted -- which makes restricted plastidic sulfate supply a plausible
+        alternative hypothesis.
+  \item The PHT1 transporter associates with neutral storage lipids rather than
+        phospholipids, again the opposite of what simple
+        phospholipid-to-glycolipid replacement predicts.
+\end{itemize}
+
+\subsection{Under LIN, a cold-induced MADS regulator}
+\begin{itemize}
+  \item \texttt{SORBI\_3003G406800}, a MADS-box transcription factor and the
+        \lead{strongest LIN fatty-acid association in the panel}
+        ($p=2.7\times10^{-17}$), with the lead SNP inside the gene ($r^2=1$) and
+        the signal recurring across 13 phenotypes.
+  \item Cold-induced in sorghum within six hours and a hub of the early
+        shock-phase co-expression module.
+  \item Its closest annotated maize homologue at 84\% identity is
+        \textit{ZmMADS69}, the flowering-time QTL acting upstream of ZmRap2.7 to
+        relieve repression of the florigen \textit{ZCN8}.
+  \item LIN was planted early specifically to impose cold, and cold acclimation
+        proceeds partly through acyl-chain remodelling, which makes fatty-acid
+        traits the expected point of contact. The association may reflect direct
+        regulation of lipid metabolism or a shift in developmental stage at
+        sampling; this design cannot separate them.
+\end{itemize}
+
+\subsection{Reaction-supported remodeling candidates under LIN}
+\begin{itemize}
+  \item A non-specific phospholipase~C6 feeding the DG node from the phospholipid
+        pool -- \lead{but linkage cannot separate it from five sterol C-8
+        isomerase genes in the same 137~kb window}, which opens an alternative
+        chemistry for branch~(i) through sterol esterification rather than a
+        PDAT-like transfer.
+  \item \textit{DGAT1} is the clearest genetic link to the TG phenotype, sitting
+        under a repeatedly mapped chromosome~10 QTL for crude fat, with five of
+        six associated phenotypes polyunsaturated triacylglycerols.
+  \item An \textit{SDP1}-like patatin lipase covers the reverse arm, associating
+        with total TG and the TG/SQDG ratios rather than with individual species.
+  \item A sphingolipid module -- three genes spanning three consecutive pathway
+        steps on three chromosomes, all associated with the same ether lipid.
+\end{itemize}
+
+\vspace{8pt}
+\hrule
+\vspace{6pt}
+
+\noindent\textbf{What is novel methodologically.} The LD-aware permutation null
+and the two-pass gene-set collapse for GO enrichment, and the demonstration that
+gene-level GWAS overlap between environments is largely a linkage artefact that
+disappears at locus level.
+
+\end{document}
