@@ -108,32 +108,6 @@ normalize_lipid_name <- function(x) {
   x
 }
 
-# Display grouping for the composition figures and the inventory table. A species
-# keeps its shorthand class where it carries one (PC, TG, SQDG, ...); a species
-# named by trivial name, as the carotenoids, sterols, terpenoids, oxylipins and
-# free sphingoid bases are, falls back to its LIPID MAPS category instead of
-# being pooled into "Other". Two tiers therefore share one axis, which the figure
-# captions state. lipid_class() itself is unchanged, so the 17 GWAS class sums
-# and everything built on them are untouched.
-category_colors <- c("Fatty Acyls"          = "#6BAED6",
-                     "Prenol Lipids"        = "#2171B5",
-                     "Sterol Lipids"        = "#8C6D31",
-                     "Sphingolipids"        = "#BDBDBD",
-                     "Glycerolipids"        = "#737373",
-                     "Glycerophospholipids" = "#525252",
-                     "Polyketides"          = "#C7C7C7",
-                     "Saccharolipids"       = "#E0E0E0",
-                     "Unclassified"         = "#F0F0F0")
-
-lipid_group <- function(x, category) {
-  cls <- lipid_class(x)
-  cat <- as.character(category)
-  cat[is.na(cat) | cat == ""] <- "Unclassified"
-  ifelse(cls == "Other", cat, cls)
-}
-
-group_colors <- c(class_colors, category_colors)
-
 lipid_class <- function(x) {
   cls <- sub("\\(.*$", "", normalize_lipid_name(x))
   ifelse(cls %in% names(class_colors), cls, "Other")

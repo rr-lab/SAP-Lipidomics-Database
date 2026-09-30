@@ -50,26 +50,19 @@ class_csv <- Sys.getenv("LIPID_CLASS_CSV",
 lion_csv  <- Sys.getenv("LION_CSV", file.path(REPO, "table/Linex2/LION-enrichment.csv"))
 stopifnot(file.exists(class_csv), file.exists(lion_csv))
 
-# The 13 shorthand classes, then the LIPID MAPS categories that carry the species
-# with no shorthand name. Nothing is pooled into "Other" any more, so panel B now
-# sums to 100% rather than stopping at 93-95%.
-CLASS_ORDER_B <- c("MGDG", "DGDG", "SQDG",                        # galactolipids
-                   "PC", "PE", "PG", "PA", "PS", "LPC", "LPE",    # glycerophospholipids
-                   "TG", "DG", "MG")                              # neutral glycerolipids
-CAT_ORDER_B   <- c("Glycerolipids", "Glycerophospholipids", "Sphingolipids",
-                   "Fatty Acyls", "Prenol Lipids", "Sterol Lipids",
-                   "Polyketides", "Saccharolipids", "Unclassified")
-STACK_ORDER   <- c(CLASS_ORDER_B, CAT_ORDER_B)
+STACK_ORDER <- c("MGDG", "DGDG", "SQDG",                        # galactolipids
+                 "PC", "PE", "PG", "PA", "PS", "LPC", "LPE",    # glycerophospholipids
+                 "TG", "DG", "MG")                              # neutral glycerolipids
 
 ann <- vroom(class_csv, show_col_types = FALSE) %>%
   transmute(key = tolower(normalize_lipid_name(Lipids)), Category = Class) %>%
   distinct(key, .keep_all = TRUE)
 
 comp <- bind_rows(pct_tic(CTL_CSV, "CTL"), pct_tic(LIN_CSV, "LIN")) %>%
-  mutate(key = tolower(normalize_lipid_name(Feature))) %>%
+  mutate(FocusClass = lipid_class(Feature),
+         key = tolower(normalize_lipid_name(Feature))) %>%
   left_join(ann, by = "key") %>%
-  mutate(Category   = ifelse(is.na(Category), "Unclassified", Category),
-         FocusClass = lipid_group(Feature, Category),
+  mutate(Category = ifelse(is.na(Category), "Unclassified", Category),
          Condition  = factor(Condition, c("CTL", "LIN")))
 
 # ---- A: every annotated superclass -------------------------------------------
@@ -104,12 +97,11 @@ zoom <- comp %>%
   filter(FocusClass %in% STACK_ORDER) %>%
   group_by(Condition, FocusClass) %>%
   summarise(pct = sum(pct), .groups = "drop") %>%
-  mutate(FocusClass = factor(FocusClass, levels = STACK_ORDER)) %>%
-  filter(!is.na(FocusClass))
+  mutate(FocusClass = factor(FocusClass, levels = STACK_ORDER))
 
 zoom_lab <- zoom %>%
   pivot_wider(names_from = Condition, values_from = pct, values_fill = 0) %>%
-  mutate(lab = sprintf("%-20s %5.2f %5.2f", FocusClass, CTL, LIN)) %>%
+  mutate(lab = sprintf("%-5s %5.2f %5.2f", FocusClass, CTL, LIN)) %>%
   arrange(factor(FocusClass, levels = STACK_ORDER))
 zoom_labels <- setNames(zoom_lab$lab, as.character(zoom_lab$FocusClass))
 
@@ -117,8 +109,8 @@ pB <- ggplot(zoom, aes(Condition, pct, fill = FocusClass)) +
   geom_col(width = .62, colour = "black", linewidth = .25) +
   geom_text(data = subset(zoom, pct >= 2.5), aes(label = sprintf("%.1f", pct)),
             position = position_stack(vjust = .5), size = 4.8, colour = "white") +
-  scale_fill_manual(values = group_colors, labels = zoom_labels,
-                    name = sprintf("%-20s %5s %5s", "", "CTL", "LIN")) +
+  scale_fill_manual(values = class_colors, labels = zoom_labels,
+                    name = sprintf("%-5s %5s %5s", "", "CTL", "LIN")) +
   scale_y_continuous(expand = expansion(mult = c(0, .03))) +
   guides(fill = guide_legend(ncol = 1)) +
   labs(x = NULL, y = "Mean %TIC") +

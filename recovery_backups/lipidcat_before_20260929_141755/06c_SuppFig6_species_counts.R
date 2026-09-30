@@ -78,10 +78,7 @@ bar_panel <- function(d) {
           legend.background = element_blank())
 }
 
-# Species with no shorthand class are shown under their LIPID MAPS category
-# rather than pooled into "Other", so panel B accounts for every species.
-inv <- inv %>% mutate(Group_class = lipid_group(Species, SuperClass))
-pB <- bar_panel(counts_by("Group_class"))
+pB <- bar_panel(counts_by("Class"))
 pC <- bar_panel(counts_by("SuperClass"))
 
 fig <- (pA / (pB | pC)) +
