@@ -249,6 +249,67 @@ Moreover, heritability increases unevenly across classes (Table~\ref{tab:species
 
 The near-absence of heritable species under CTL is consistent with either less genetic variance or a larger residual share, and because neither trial was replicated, we have no independent estimate of plot error to separate the two. Genotype, therefore, accounts for far more of the leaf lipidome under LIN than under CTL, which is the asymmetry that the GWAS results below follow.
 
+\begin{table*}[!ht]
+\centering
+\caption{\textbf{The individual lipid species associated with ancestry, all of them
+under LIN.} Every species detected in a trial was tested against botanical race and
+against marker-based genetic cluster (Kruskal--Wallis, Benjamini--Hochberg corrected
+within trial and grouping). No species reached $q<0.05$ under CTL for either
+grouping; the nine below are the complete LIN set. $\varepsilon^2$, effect size;
+$h^2$ cond., heritability with the three leading eigenvectors of the relationship
+matrix fitted as fixed effects; cond.\ $>0$, whether the 95\% interval still excludes
+zero. $^{\ddagger}$Most of this feature's signal sits in a few accessions near the
+detection limit, so it is reported for completeness and not interpreted.}
+\label{tab:species_ancestry}
+\small
+\begin{tabular}{llcccccccc}
+\toprule
+& & \multicolumn{2}{c}{\textbf{Genetic cluster}} & \multicolumn{2}{c}{\textbf{Botanical race}} & \multicolumn{3}{c}{\textbf{Heritability}} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-9}
+\textbf{Species} & \textbf{Class} & $\varepsilon^2$ & $q$ & $\varepsilon^2$ & $q$ & $h^2$ & $h^2$ cond. & cond. $>0$ \\
+\midrule
+$\beta$-Sitosterol & Sterol Lipids & 0.095 & $7.7\times10^{-5}$ & 0.011 & 0.625 & 0.676 & 0.644 & yes \\
+PS(18:0/18:2) & PS & 0.088 & $1.2\times10^{-4}$ & 0.018 & 0.625 & 0.382 & 0.294 & yes \\
+11,14,17-Eicosatrienoic acid,(Z,Z,Z)-$^{\ddagger}$ & Fatty Acyls & 0.074 & $6.5\times10^{-4}$ & \textbf{0.113} & \textbf{0.007} & 0.816 & 0.782 & yes \\
+Fucosterol & Sterol Lipids & 0.073 & $6.5\times10^{-4}$ & 0.013 & 0.625 & 0.404 & 0.322 & yes \\
+Cycloartenol acetate & Prenol Lipids & 0.060 & $4.0\times10^{-3}$ & 0.031 & 0.597 & 0.688 & 0.662 & yes \\
+PC(18:0/20:2) & PC & 0.048 & 0.021 & 0.000 & 0.643 & 0.102 & 0.028 & no \\
+PE(18:0/18:3) & PE & 0.047 & 0.021 & 0.000 & 0.671 & 0.358 & 0.350 & yes \\
+AEG(o-15:2/15:0) & AEG & 0.046 & 0.023 & 0.043 & 0.433 & 0.392 & 0.290 & no \\
+SQDG(16:0/16:0) & SQDG & 0.041 & 0.043 & 0.049 & 0.428 & 0.486 & 0.454 & yes \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+\begin{table}[!ht]
+\centering
+\caption{\textbf{Genomic heritability of lipid-class sums, for the classes
+distinguishable from zero.} Estimated by profile likelihood against the
+marker-based relationship matrix, on the summed spatially corrected intensity of
+the class ($\log_{10}$ scale), using the accessions of each trial present in the
+matrix. Values are $h^2$ with the 95\% profile-likelihood
+interval; $^{*}$ marks an interval excluding zero, the criterion used throughout.
+Four of the 17 classes meet it in one trial or the other; all 17 are in
+Supplementary Table~S12. $N$, species summed into the class in that trial.}
+\label{tab:classsum_h2}
+\small
+\begin{tabular}{lrlrl}
+\toprule
+ & \multicolumn{2}{c}{\textbf{CTL}} & \multicolumn{2}{c}{\textbf{LIN}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\textbf{Class} & \textbf{$N$} & \textbf{$h^2$} & \textbf{$N$} & \textbf{$h^2$} \\
+\midrule
+FA & 1 & 0.111 [0.000, 0.401] & 1 & 0.404 [0.153, 0.708]$^{*}$ \\
+PS & 2 & 0.017 [0.000, 0.243] & 1 & 0.382 [0.167, 0.657]$^{*}$ \\
+TG & 67 & 0.217 [0.000, 0.564] & 66 & 0.208 [0.017, 0.525]$^{*}$ \\
+PA & 1 & 0.555 [0.252, 0.893]$^{*}$ & 2 & 0.000 [0.000, 0.123] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
 \begin{table}[!ht]
 \centering
 \caption{\textbf{Heritable lipid species are concentrated under LIN and fall mainly
@@ -292,80 +353,18 @@ LPE$^{\dagger}$ & 1 & 1 & 0.000 & 0 & 0.020 & 0 & 0 \\
 
 
 
-\begin{table*}[!ht]
-\centering
-\caption{\textbf{The individual lipid species associated with ancestry, all of them
-under LIN.} Every species detected in a trial was tested against botanical race and
-against marker-based genetic cluster (Kruskal--Wallis, Benjamini--Hochberg corrected
-within trial and grouping). No species reached $q<0.05$ under CTL for either
-grouping; the nine below are the complete LIN set. $\varepsilon^2$, effect size;
-$h^2$ cond., heritability with the three leading eigenvectors of the relationship
-matrix fitted as fixed effects; cond.\ $>0$, whether the 95\% interval still excludes
-zero. $^{\ddagger}$Most of this feature's signal sits in a few accessions near the
-detection limit, so it is reported for completeness and not interpreted.}
-\label{tab:species_ancestry}
-\small
-\begin{tabular}{llcccccccc}
-\toprule
-& & \multicolumn{2}{c}{\textbf{Genetic cluster}} & \multicolumn{2}{c}{\textbf{Botanical race}} & \multicolumn{3}{c}{\textbf{Heritability}} \\
-\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-9}
-\textbf{Species} & \textbf{Class} & $\varepsilon^2$ & $q$ & $\varepsilon^2$ & $q$ & $h^2$ & $h^2$ cond. & cond. $>0$ \\
-\midrule
-$\beta$-Sitosterol & Sterol Lipids & 0.095 & $7.7\times10^{-5}$ & 0.011 & 0.625 & 0.676 & 0.644 & yes \\
-PS(18:0/18:2) & PS & 0.088 & $1.2\times10^{-4}$ & 0.018 & 0.625 & 0.382 & 0.294 & yes \\
-11,14,17-Eicosatrienoic acid,(Z,Z,Z)-$^{\ddagger}$ & Fatty Acyls & 0.074 & $6.5\times10^{-4}$ & \textbf{0.113} & \textbf{0.007} & 0.816 & 0.782 & yes \\
-Fucosterol & Sterol Lipids & 0.073 & $6.5\times10^{-4}$ & 0.013 & 0.625 & 0.404 & 0.322 & yes \\
-Cycloartenol acetate & Prenol Lipids & 0.060 & $4.0\times10^{-3}$ & 0.031 & 0.597 & 0.688 & 0.662 & yes \\
-PC(18:0/20:2) & PC & 0.048 & 0.021 & 0.000 & 0.643 & 0.102 & 0.028 & no \\
-PE(18:0/18:3) & PE & 0.047 & 0.021 & 0.000 & 0.671 & 0.358 & 0.350 & yes \\
-AEG(o-15:2/15:0) & AEG & 0.046 & 0.023 & 0.043 & 0.433 & 0.392 & 0.290 & no \\
-SQDG(16:0/16:0) & SQDG & 0.041 & 0.043 & 0.049 & 0.428 & 0.486 & 0.454 & yes \\
-\bottomrule
-\end{tabular}
-\end{table*}
-
-
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=0.95\textwidth]{fig/main/Figure1_Population_Structure.png}
-\caption{\textbf{Lipid-class variation is largely independent of botanical race
-and of population structure, except for PS.} \textbf{(A,B)}~Variance explained
+\caption{\textbf{Lipid-class variation is largely independent of botanical race and of
+population structure, except for PS.} \textbf{(A,B)}~Variance explained
 ($\varepsilon^2$) by botanical race (six groups) and by marker-based genetic
-cluster ($K=6$), for total lipid signal and the 13 lipid classes, computed
-within each field trial. Stars mark tests significant after Benjamini--Hochberg
+cluster ($K=6$), for the total lipid signal and the 13 lipid classes, computed
+within each trial. Stars mark tests significant after Benjamini--Hochberg
 correction. \textbf{(C,D)}~PS abundance (\% TIC) by genetic cluster in each
-trial. Each panel keeps its own scale, since the comparison is between clusters
-within a trial. PS under LIN is the only trait of the 28 tested that is
-associated with cluster membership.}
+trial, each panel on its own scale.}
 \label{fig:fig1_population_structure}
 \end{figure*}
-
-
-\begin{table}[!ht]
-\centering
-\caption{\textbf{Genomic heritability of lipid-class sums, for the classes
-distinguishable from zero.} Estimated by profile likelihood against the
-marker-based relationship matrix, on the summed spatially corrected intensity of
-the class ($\log_{10}$ scale), using the accessions of each trial present in the
-matrix. Values are $h^2$ with the 95\% profile-likelihood
-interval; $^{*}$ marks an interval excluding zero, the criterion used throughout.
-Four of the 17 classes meet it in one trial or the other; all 17 are in
-Supplementary Table~S12. $N$, species summed into the class in that trial.}
-\label{tab:classsum_h2}
-\small
-\begin{tabular}{lrlrl}
-\toprule
- & \multicolumn{2}{c}{\textbf{CTL}} & \multicolumn{2}{c}{\textbf{LIN}} \\
-\cmidrule(lr){2-3}\cmidrule(lr){4-5}
-\textbf{Class} & \textbf{$N$} & \textbf{$h^2$} & \textbf{$N$} & \textbf{$h^2$} \\
-\midrule
-FA & 1 & 0.111 [0.000, 0.401] & 1 & 0.404 [0.153, 0.708]$^{*}$ \\
-PS & 2 & 0.017 [0.000, 0.243] & 1 & 0.382 [0.167, 0.657]$^{*}$ \\
-TG & 67 & 0.217 [0.000, 0.564] & 66 & 0.208 [0.017, 0.525]$^{*}$ \\
-PA & 1 & 0.555 [0.252, 0.893]$^{*}$ & 2 & 0.000 [0.000, 0.123] \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 \subsection*{Lipidome overview for CTL and LIN SAP}
 
@@ -382,18 +381,15 @@ Within each trial, PCA of the major glycerolipid and glycerophospholipid pools s
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=\textwidth]{fig/main/Figure2_Class_Composition.png}
-\caption{\textbf{Lipid-class composition of the SAP leaf lipidome in each field
-trial.} Composition is \%TIC, the share of total annotated signal, taken per
-sample and then averaged. \textbf{(A)}~Every annotated LIPID MAPS category on a log
-scale, so categories below 1\% remain legible. \textbf{(B)}~Every annotated
-species, stacked. A species appears under its lipid class where it carries a shorthand
-name and under its LIPID MAPS category otherwise, so the bars account for the whole
-annotated signal. \textbf{(C)}~LION ontology terms significant at
-FDR $q<0.05$, sized by the number of annotated lipids. Eight of the ten
-significant terms are shown; the two that are structural bins rather than
-functional or biophysical categories, \textit{PC(38:2)} and \textit{C20:1}, are
-reported in Supplementary Table~S20 only. Unlike (A) and (B), this panel is a direct CTL--LIN contrast,
-and the two trials differ in year, field and acquisition batch.}
+\caption{\textbf{Lipid-class composition of the SAP leaf lipidome in each field trial.}
+Composition is \%TIC, the share of total annotated signal, taken per sample and
+then averaged. \textbf{(A)}~Annotated LIPID MAPS categories, log scale.
+\textbf{(B)}~Annotated species, stacked under their lipid class where they carry
+a shorthand name and under their LIPID MAPS category otherwise.
+\textbf{(C)}~LION terms significant at FDR $q<0.05$, sized by the number of
+annotated lipids; the two structural bins among the ten, \textit{PC(38:2)} and
+\textit{C20:1}, are in Supplementary Table~S20 only. Panel~C is a direct
+CTL--LIN contrast and the trials differ in year, field and batch.}
 \label{fig:fig2_class_composition}
 \end{figure*}
 
@@ -452,21 +448,17 @@ Sums / ratios & 4:0.42--0.78 & 27 & \texttt{SORBI\_3004G004800} & Soluble acid i
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=\textwidth]{fig/main/Figure3_GWAS_Manhattan.png}
-\caption{\textbf{The same candidate locus recurs across multiple lipid phenotypes
-within each trial.} Each column stacks four phenotypes that share one candidate
-locus. An orange arrow marks the lead SNP for that locus in every plot, and the
-candidate gene is named once, above the arrow in the top plot of the column.
-\textbf{(A)}~CTL individual lipids, sharing \texttt{SORBI\_3006G040500}
-(phospholipid-transporting ATPase, chromosome~6). \textbf{(B)}~CTL class sums and
-ratios, sharing \texttt{SORBI\_3010G151000} (CMP-sialic acid transporter~1,
-chromosome~10). \textbf{(C)}~LIN individual lipids, sharing
-\texttt{SORBI\_3010G170000} (\textit{DGAT1}, chromosome~10). \textbf{(D)}~LIN
-class sums and ratios, sharing the chromosome~6 purine-permease array
-(\texttt{SORBI\_3006G195200}). Within a column, each plot is identified by the
-trait named in its upper-left corner. Red dashed horizontal lines mark the
-Bonferroni genome-wide threshold ($p \leq 8.19 \times 10^{-9}$). Point shading
-alternates by chromosome. All Manhattan and QQ plots for the full phenotype set
-are browsable in the SoLD Shiny application.}
+\caption{\textbf{The same candidate locus recurs across multiple lipid phenotypes within
+each trial.} Each column stacks four phenotypes sharing one candidate locus. An
+orange arrow marks the lead SNP, the gene is named once above it in the top
+plot, and each plot is labelled by its trait. \textbf{(A)}~CTL individual
+lipids, \texttt{SORBI\_3006G040500} (phospholipid-transporting ATPase, chr~6).
+\textbf{(B)}~CTL class sums and ratios, \texttt{SORBI\_3010G151000} (CMP-sialic
+acid transporter~1, chr~10). \textbf{(C)}~LIN individual lipids,
+\texttt{SORBI\_3010G170000} (\textit{DGAT1}, chr~10). \textbf{(D)}~LIN class
+sums and ratios, the chr~6 purine-permease array (\texttt{SORBI\_3006G195200}).
+Red dashed lines, Bonferroni genome-wide threshold
+($p \leq 8.19 \times 10^{-9}$); point shading alternates by chromosome.}
 \label{fig:gwas_manhattan}
 \end{figure*}
 
@@ -475,28 +467,20 @@ are browsable in the SoLD Shiny application.}
 \includegraphics[width=\textwidth]{fig/main/Figure5_GO_BP_LDaware.png}
 \caption[GO terms enriched among GWAS candidate genes, by lipid class]{\textbf{Gene
 Ontology terms enriched among LD-mapped GWAS candidate genes, grouped by the lipid
-class whose traits produced them.} Twenty-two gene sets are shown. Each began as an
-enrichment passing the LD-aware permutation null ($q_{\mathrm{LD}}<0.05$); terms
-sharing an identical candidate-gene set were then merged, first within a stratum,
-where the Gene Ontology's nested parent and child terms describe one locus several
-times, and then across lipid class, trait layer and ontology, where class sums and
-ratios share candidate genes by construction. Of the 217 gene sets remaining
-after those merges, the figure shows the strongest four per lipid class among those
-that draw on at most 30 background genes and span at least two independent
-intervals. The background limit is a criterion of interpretability rather than of
-significance: terms such as \textit{zinc ion binding} (909 background genes) or
-\textit{transmembrane transport} (865) pass the permutation null without naming a
-lipid-related process. The interval requirement removes 16 gene sets that reach
-high fold enrichment from a single LD block. Each label carries the number of
-independent intervals supporting it, and every tested term is in Supplementary
-Table S7.
-Points give fold enrichment over chance on a logarithmic axis and are coloured by
-trial. Left-hand strips name the lipid class; the two strips marked shared are gene
-sets recurring across several classes, which are correspondingly less specific. The
-complete set of 217 gene sets, with the number of independent 250\,kb intervals
-supporting each, is given in Supplementary Table~S2.}
+class whose traits produced them.} Twenty-two gene sets are shown, the strongest four
+per lipid class among the 71 that pass the LD-aware permutation null
+($q_{\mathrm{LD}}<0.05$), draw on at most 30 background genes and span at least two
+independent intervals. The background limit is a criterion of interpretability rather
+than significance, since terms such as \textit{zinc ion binding} (909 background
+genes) or \textit{transmembrane transport} (865) pass the null without naming a
+lipid-related process; the interval requirement removes 16 gene sets resting on a
+single LD block. Points give fold enrichment over chance on a logarithmic axis and
+are coloured by trial, and each label carries the number of independent intervals
+supporting it. Left-hand strips name the lipid class; the two marked shared are gene
+sets recurring across several classes, which are correspondingly less specific.}
 \label{fig:go_bp_main}
 \end{figure*}
+
 
 \subsection*{LD-aware GO enrichment reduces the candidate lists to a small number of interpretable terms}
 
@@ -508,7 +492,7 @@ Those 22 gene sets are unevenly split between trials, with 18 under LIN and 4 un
 
 \subsection*{Candidate genes overlap between trials only for individual species, and the overlap does not survive collapsing linkage}
 
-The two trials recovered largely different candidate lists, but different GO terms cannot indicate whether the underlying genetics differ. We therefore counted how many candidate genes the two trials share and compared that count with the chance expectation from the 34{,}027 \textit{Sorghum bicolor} v3.1 gene models, both at gene resolution and after collapsing linked genes into 100, 250, and 500 kb windows (Fig.~\ref{fig:fig7_ctl_lin_overlap}). Overlap was tested with a hypergeometric test and summarized as fold enrichment over chance and as the Jaccard index, the proportion of all candidate genes appearing in both conditions.
+The two trials recovered largely different candidate lists, but different GO terms cannot indicate whether the underlying genetics differ. We therefore counted how many candidate genes the two trials share and compared that count with the chance expectation from the 34{,}027 \textit{Sorghum bicolor} v3.1 gene models, both at gene resolution and after collapsing linked genes into 100, 250, and 500 kb windows Supplementary~\ref{fig:fig7_ctl_lin_overlap}). Overlap was tested with a hypergeometric test and summarized as fold enrichment over chance and as the Jaccard index, the proportion of all candidate genes appearing in both conditions.
 
 At the gene level, the two candidate sets overlapped more than chance, with 291 genes shared against 140 expected ($2.08\times$, $p = 1.1\times10^{-35}$), but the excess comes entirely from the individual-lipid layer ($2.07\times$, $p = 2.4\times10^{-34}$; Table~\ref{tab:overlap}). The class-sum and ratio layer shares no gene at all between trials, against 0.6 expected by chance, so it is neither enriched nor depleted, only empty. The shared genes are in any case a small fraction of the total, with a Jaccard index of 0.056. Within the individual-lipid layer, the excess is carried by TG alone ($1.74\times$, $q = 5.3\times10^{-3}$), while PC and the fatty acids overlap no more than chance, and four further classes share no genes at all, including SQDG, despite its 400 LIN candidates (Table~\ref{tab:overlap_class}; Supplementary Table~S24).
 
@@ -571,8 +555,20 @@ Cross-referencing branches with the LIN GWAS candidate tables supported three of
 \centering
 \includegraphics[width=\textwidth]{fig/main/Figure5_LINEX.png}
 \caption{\textbf{Candidate lipid reaction branches and the GWAS support for them.}
-\textbf{(A)} LINEX-enriched lipid reaction subnetwork connecting candidate reactions to their substrate and product lipid species. Central reaction nodes depict hypothesized LCAT-like acyl editing, PNPLA1-mediated TG$\rightarrow$DG lipolysis, LRO1-mediated acyl transfer between PE/DG and TG/LPE, and PNPLA3-associated DG/MG$\rightarrow$TG re-esterification; arrows show reaction direction, dashed arrows run right to left, and boxed labels give representative lipid species coloured by class. All four reactions were retrieved from the LINEX2 network; the enzyme label on the acyl-editing branch, marked LCAT*, was assigned from reaction specificity rather than returned by LINEX2.
-\textbf{(B--D)} GWAS support for the three branch-supporting candidate genes under LIN, two associated traits per gene: \textbf{(B)} \textit{DGAT1} (\texttt{SORBI\_3010G170000}), \textbf{(C)} an LCAT-like gene (\texttt{SORBI\_3006G214500}), and \textbf{(D)} an SDP1-like lipase (\texttt{SORBI\_3001G041900}). An orange arrow marks the lead SNP at each candidate locus, and the gene is named once above the arrow in the top plot of its column; each plot is identified by the trait in its upper-left corner. Red dashed horizontal lines mark the Bonferroni genome-wide threshold, and point shading alternates by chromosome. The reaction-balance scores for these branches are given in Supplementary Table~S26 rather than shown here, because they are a CTL--LIN contrast.}
+\textbf{(A)}~LINEX-enriched subnetwork linking four candidate reactions to their
+substrate and product species, LCAT-like acyl editing, PNPLA1-mediated
+TG$\rightarrow$DG lipolysis, LRO1-mediated PE/DG$\rightarrow$TG/LPE transfer,
+and PNPLA3-associated DG/MG$\rightarrow$TG re-esterification. Arrows show
+reaction direction, dashed arrows run right to left, and boxed labels give
+representative species coloured by class. All four reactions came from the
+LINEX2 network; the label on the acyl-editing branch, marked LCAT*, was assigned
+from reaction specificity rather than returned by LINEX2.
+\textbf{(B--D)}~GWAS support for the three branch-supporting LIN candidates, two
+traits per gene. \textbf{(B)}~\textit{DGAT1} (\texttt{SORBI\_3010G170000}),
+\textbf{(C)}~an LCAT-like gene (\texttt{SORBI\_3006G214500}), \textbf{(D)}~an
+SDP1-like lipase (\texttt{SORBI\_3001G041900}). Plotting conventions as in
+Fig.~\ref{fig:gwas_manhattan}. The reaction-balance scores are given in
+Supplementary Table~S26 rather than here, because they are a CTL--LIN contrast.}
 \label{fig:Fig4_linex_rewiring_abc}
 \end{figure*}
 
@@ -690,26 +686,24 @@ application.}
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S2_QC_RunOrder_SERRF_PCA_SpATS.png}
-\caption{\textbf{Quality control, SERRF normalization, and SpATS spatial adjustment diagnostics.}
-(A,B) Run-order TIC plots for CTL and LIN conditions demonstrating stable analytical performance throughout the acquisition sequence.
-(C,D) QC-RSD distributions before and after SERRF normalization, showing reduction in technical variation.
-(E,F) PCA score plots comparing sample clustering before and after normalization.
-(G,H) SpATS spatial residual maps indicating successful mitigation of field-position effects in both conditions.}
+\caption{\textbf{Quality control, SERRF normalization and SpATS spatial adjustment.}
+\textbf{(A,B)}~Run-order TIC for CTL and LIN. \textbf{(C,D)}~QC-RSD
+distributions before and after SERRF normalization. \textbf{(E,F)}~PCA scores
+before and after normalization. \textbf{(G,H)}~SpATS spatial residual maps for
+each trial.}
 \label{fig:suppfig_s2_qc}
 \end{figure*}
 
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S3_Class_PCA_Structure.png}
-\caption{\textbf{Lipid-class composition does not separate accessions by botanical
-race or by genetic cluster.} Principal component analysis of the 13 lipid-class
-percentages, run separately within each field trial on log$_{10}$ values scaled to
-unit variance so that no single dominant class sets the axes.
-\textbf{(A,B)}~Accessions coloured by botanical race in CTL and LIN.
-\textbf{(C,D)}~The same two ordinations coloured by marker-based genetic cluster
-($K=6$). Each panel gives the variance in PC1 and PC2 explained by that grouping
-($\varepsilon^2$, Kruskal--Wallis). No grouping explains either leading axis in
-either trial.}
+\caption{\textbf{Lipid-class composition does not separate accessions by botanical race
+or by genetic cluster.} Principal component analysis of the 13 lipid-class
+percentages, run within each trial on log$_{10}$ values scaled to unit variance.
+\textbf{(A,B)}~Coloured by botanical race, CTL and LIN. \textbf{(C,D)}~The same
+ordinations coloured by marker-based genetic cluster ($K=6$). Each panel gives
+the variance in PC1 and PC2 explained by that grouping ($\varepsilon^2$,
+Kruskal--Wallis).}
 \label{fig:suppfig_s3_class_pca}
 \end{figure*}
 
@@ -717,85 +711,75 @@ either trial.}
 \centering
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S4_Heritability.png}
 \caption{\textbf{Genomic heritability of lipid traits in the two field trials.}
-\textbf{(A)}~Genomic heritability of each of the 17 lipid-class sums, point
-estimate with its 95\% profile-likelihood interval, on every accession of the
-trial that is in the relationship matrix and
-every species of that class detected in that trial. \textbf{(B)}~Paired
-per-species heritability, one point per species, CTL on the horizontal axis and
-LIN on the vertical; the dashed line is equality. Panel~B is restricted to the
-same 351 genotypes and the same 164 species detected in both trials, so there
-the two trials differ only in the phenotype measured. Both panels use the same
-genomic relationship matrix and the same $\log_{10}$ scale.}
+\textbf{(A)}~The 17 lipid-class sums, point estimate with its 95\%
+profile-likelihood interval, on every accession of the trial that is in the
+relationship matrix (389 under CTL, 357 under LIN). \textbf{(B)}~Paired
+per-species heritability, CTL on the horizontal axis and LIN on the vertical,
+dashed line equality, restricted to the 351 genotypes and 164 species common to
+both trials. Both panels use the same relationship matrix and the same
+$\log_{10}$ scale.}
 \label{fig:suppfig_s4_heritability}
 \end{figure*}
 
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S5_Lipid_Species_Counts.png}
-\caption{\textbf{Lipid species counts and overlap between conditions.}
-\textbf{(A)}~Species detected in each trial, with the common and trial-specific counts.
-\textbf{(B)}~Counts by lipid class, with species carrying no shorthand name, among them
-the carotenoids, sterols, tocopherols, quinones and free sphingoid bases, shown under
-their LIPID MAPS category. \textbf{(C)}~Counts by LIPID MAPS category. Both panels cover
-every annotated species, so each sums to the trial totals in (A).}
+\caption{\textbf{Lipid species counts and overlap between trials.} \textbf{(A)}~Species
+detected in each trial, with the common and trial-specific counts.
+\textbf{(B)}~Counts by lipid class, species with no shorthand name shown under
+their LIPID MAPS category. \textbf{(C)}~Counts by LIPID MAPS category. B and C
+cover every annotated species, so each sums to the totals in (A).}
 \label{fig:suppfig_s5_counts}
 \end{figure*}
 
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S6_CLR_Correlations.png}
-\caption{\textbf{Correlation structure among lipid classes within each field
-trial.} Pearson correlation matrices computed on class-level centered log-ratio
-abundances for \textbf{(A)}~CTL and \textbf{(B)}~LIN. The lower triangle gives
-the correlation coefficient and the upper triangle its significance
-(*$p<0.05$, **$p<0.01$, ***$p<0.001$). Each matrix is computed within one trial
-and the two are not differenced.}
+\caption{\textbf{Correlation structure among lipid classes within each trial.} Pearson
+correlations on class-level centered log-ratio abundances, \textbf{(A)}~CTL and
+\textbf{(B)}~LIN. Lower triangle, the coefficient; upper triangle, its
+significance (*$p<0.05$, **$p<0.01$, ***$p<0.001$). Each matrix is computed
+within one trial; the two are not differenced.}
 \label{fig:suppfig_s6_pcor}
 \end{figure*}
 
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=\textwidth]{fig/supp/SuppFig_S7_PCA_Lipids.png}
-\caption{\textbf{PCA of lipid species in compositional space.}
-(A) PCA score plot of CLR-transformed lipid species in CTL samples, with 95\% confidence ellipses around four functional groupings, phospholipids (PC, PE, PG, PA, PS, LPC, LPE), glycolipids (MGDG, DGDG, SQDG), neutral lipids (DG, MG), and storage lipids (TG).
-(B) PCA score plot for LIN samples using the same transformation. Points are colored by lipid class.}
+\caption{\textbf{PCA of lipid species in compositional space.} \textbf{(A)}~CLR-transformed
+lipid species in CTL, with 95\% confidence ellipses around four groupings,
+phospholipids (PC, PE, PG, PA, PS, LPC, LPE), glycolipids (MGDG, DGDG, SQDG),
+neutral lipids (DG, MG) and storage lipids (TG). \textbf{(B)}~The same
+ordination for LIN. Points are coloured by lipid class.}
 \label{fig:suppfig_s7_pca}
 \end{figure*}
 
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=0.9\textwidth]{fig/supp/SuppFig_S8_Chemical_Space.png}
-\caption{\textbf{Lipid classes in a reduced chemical space.} Each point is one
-lipid class, placed at its abundance-weighted mean total carbon number and its
-abundance-weighted mean double-bond count across the species it contains, with
-the weights taken from the \%TIC composition. Colour gives the class and shape
-the trial, and the arrow runs from a class's CTL position to its LIN position.
-The two trials differ in year, field and acquisition batch, so these shifts are
-descriptive. Classes represented by one to three species (PS, PA, LPE, PG) have
-unstable positions, because the species detected in the two trials are not the
-same; the PS shift, for example, follows the loss of PS(18:0/20:4) from the
-detected set rather than remodelling of a PS pool.}
+\caption{\textbf{Lipid classes in a reduced chemical space.} Each point is one lipid
+class, at its \%TIC-weighted mean total carbon number and mean double-bond count
+across the species it contains. Colour gives the class and shape the trial; the
+arrow runs from a class's CTL position to its LIN position. The trials differ in
+year, field and batch, so the shifts are descriptive, and classes represented by
+one to three species (PS, PA, LPE, PG) have unstable positions because the
+species detected in the two trials are not the same.}
 \label{fig:suppfig_s8_chem}
 \end{figure*}
-
-
-
-
-
-
-
-
-
-
 
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width=\textwidth]{fig/supp/Figure7_CTL_LIN_Overlap.png}
 \caption{\textbf{CTL and LIN GWAS identify largely non-overlapping candidate loci.}
-(A) Overlap of candidate sets at gene level and after collapsing linkage blocks into 250~kb loci, with fold enrichment over chance and hypergeometric $P$.
-(B) Fold enrichment of the overlap as a function of the resolution at which it is counted, for individual-lipid and class-sum/ratio traits. The dashed line marks chance expectation; *** $P<0.001$, ** $P<0.01$, * $P<0.05$, n.s., not significant.
-(C) Candidate genes per lipid class in the individual-lipid GWAS, partitioned into CTL-only, shared, and LIN-only.
-(D) Candidate-gene counts compared with the number of independent 250~kb loci they occupy (log scale).}
+\textbf{(A)}~Overlap of the candidate sets at gene level and after collapsing
+linkage blocks into 250~kb loci, with fold enrichment and hypergeometric $P$.
+\textbf{(B)}~Fold enrichment against the resolution at which the overlap is
+counted, for individual-lipid and class-sum/ratio traits; dashed line, chance
+expectation. \textbf{(C)}~Candidate genes per lipid class in the
+individual-lipid GWAS, split into CTL-only, shared and LIN-only.
+\textbf{(D)}~Candidate-gene counts against the number of independent 250~kb loci
+they occupy (log scale). *** $P<0.001$, ** $P<0.01$, * $P<0.05$, n.s., not
+significant.}
 \label{fig:fig7_ctl_lin_overlap}
 \end{figure*}
 
