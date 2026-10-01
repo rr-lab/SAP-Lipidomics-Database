@@ -50,7 +50,7 @@ SORBI_3003G077700,Protein root UVB sensitive 5,3.140747e-09,1.01863e-11,1,2
 SORBI_3003G077800,Uncharacterized protein,3.140747e-09,1.01863e-11,1,2
 SORBI_3003G077900,Vesicle-fusing ATPase,3.140747e-09,1.01863e-11,1,2
 SORBI_3003G078000,Uncharacterized protein,3.140747e-09,1.01863e-11,1,2
-SORBI_3003G079800,Protein kinase domain-containing protein,3.183819e-09,1.367717e-12,2,3
+SORBI_3003G079800,Protein kinase domain-containing protein,3.183819e-09,1.367717e-12,2,2
 SORBI_3003G166500,NAD-dependent epimerase_dehydratase domain-containing protein,4.659387e-09,7.077691e-10,2,1
 SORBI_3003G185300,Dynein light chain,4.205869e-09,1.531726e-09,1,1
 SORBI_3003G185500,Uncharacterized protein,4.205869e-09,1.531726e-09,1,1
@@ -137,9 +137,9 @@ SORBI_3008G004900,Uncharacterized protein,2.103137e-09,5.915794e-11,1,1
 SORBI_3008G005100,Trichome birefringence-like N-terminal domain-containing protein,2.103137e-09,5.915794e-11,1,1
 SORBI_3008G005700,Uncharacterized protein,2.103137e-09,5.915794e-11,1,1
 SORBI_3008G005800,Trichome birefringence-like N-terminal domain-containing protein,2.103137e-09,5.915794e-11,1,1
-SORBI_3008G016900,glutamine--fructose-6-phosphate transaminase (isomerizing),6.556622e-09,1.605798e-09,1,2
-SORBI_3008G017100,PORR domain-containing protein,6.556622e-09,1.605798e-09,1,2
-SORBI_3008G019000,,6.556622e-09,5.260074e-11,1,3
+SORBI_3008G016900,glutamine--fructose-6-phosphate transaminase (isomerizing),6.556622e-09,1.605801e-09,1,1
+SORBI_3008G017100,PORR domain-containing protein,6.556622e-09,1.605801e-09,1,1
+SORBI_3008G019000,,6.556622e-09,5.260074e-11,1,2
 SORBI_3008G048933,Uncharacterized protein,5.035169e-09,2.114556e-16,1,1
 SORBI_3008G062700,Uncharacterized protein,7.506041e-13,1.53837e-10,8,1
 SORBI_3008G080900,Uncharacterized protein,1.60933e-09,5.121188e-14,7,1
@@ -274,10 +274,10 @@ SORBI_3010G150100,WRKY transcription factor 19,2.440979e-09,1.414455e-18,2,3
 SORBI_3010G150200,F-box domain-containing protein,2.440979e-09,1.414455e-18,2,3
 SORBI_3010G150325,F-box domain-containing protein,2.440979e-09,1.414455e-18,2,3
 SORBI_3010G150575,Small ribosomal subunit protein uS5 C-terminal domain-containing protein,2.440979e-09,1.414455e-18,2,3
-SORBI_3010G150600,Uncharacterized protein,2.440979e-09,1.414455e-18,2,8
-SORBI_3010G150700,PABC domain-containing protein,2.440979e-09,1.414455e-18,2,8
+SORBI_3010G150600,Uncharacterized protein,2.440979e-09,1.414455e-18,2,7
+SORBI_3010G150700,PABC domain-containing protein,2.440979e-09,1.414455e-18,2,7
 SORBI_3010G150701,Uncharacterized protein,2.054052e-10,5.401068e-11,1,2
-SORBI_3010G150900,Uncharacterized protein,2.054052e-10,5.936528e-12,1,8
-SORBI_3010G151000,CMP-sialic acid transporter 1,2.054052e-10,5.936528e-12,1,8
+SORBI_3010G150900,Uncharacterized protein,2.054052e-10,5.936528e-12,1,7
+SORBI_3010G151000,CMP-sialic acid transporter 1,2.054052e-10,5.936528e-12,1,7
 SORBI_3010G151200,GRF-type domain-containing protein,2.054052e-10,5.401068e-11,1,2
 SORBI_3010G151325,Protein FAR1-RELATED SEQUENCE,2.054052e-10,7.256755e-12,1,3

@@ -2,6 +2,6 @@ Condition,Layer,n_genes,n_loci,genes_per_locus
 CTL,individual lipids,1062,351,3.02564102564103
 CTL,class sums/ratios,54,17,3.17647058823529
 CTL,all layers,1091,358,3.04748603351955
-LIN,individual lipids,4370,948,4.60970464135021
+LIN,individual lipids,4367,947,4.61140443505808
 LIN,class sums/ratios,385,72,5.34722222222222
-LIN,all layers,4376,949,4.61116965226554
+LIN,all layers,4373,948,4.61286919831224

@@ -1,0 +1,267 @@
+Species,CommonName,Class,Category,Category_Code,SubClass,Sub_subclass,In_CTL,In_LIN,Status
+.gamma.-Linolenoyl ethanolamide,.gamma.-Linolenoyl ethanolamide,Other,Fatty Acyls,FA,Fatty acid,N-acylethanolamine,TRUE,TRUE,Common
+"11,14,17-Eicosatrienoic acid,(Z,Z,Z)-","11,14,17-Eicosatrienoic acid,(Z,Z,Z)-",Other,Fatty Acyls,FA,Fatty acid,Oxylipin,FALSE,TRUE,LIN only
+13S-HOTrE,13S-HOTrE,Other,Fatty Acyls,FA,Fatty acid,Oxylipin,FALSE,TRUE,LIN only
+"14(15)-Epoxy-5Z,8Z,11Z-eicosatrienoic acid, methyl ester","14(15)-Epoxy-5Z,8Z,11Z-eicosatrienoic acid, methyl ester",Other,Fatty Acyls,FA,Fatty acid,,TRUE,FALSE,CTL only
+"8(9)-Epoxy-5Z,11Z,14Z-eicosatrienoic acid, methyl ester","8(9)-Epoxy-5Z,11Z,14Z-eicosatrienoic acid, methyl ester",Other,Fatty Acyls,FA,Fatty acid,Oxidized fatty acid,TRUE,TRUE,Common
+"9,12,13,TriHODE","9,12,13,TriHODE",Other,Fatty Acyls,FA,Fatty acid,Oxylipin,TRUE,TRUE,Common
+FA(22:1),FA(22:1),Other,Fatty Acyls,FA,Fatty acid,,TRUE,TRUE,Common
+Hydroperoxy fatty acid (18:3),Hydroperoxy fatty acid (18:3),Other,Fatty Acyls,FA,Fatty acid,,FALSE,TRUE,LIN only
+NAE(16:0),NAE(16:0),Other,Fatty Acyls,FA,Fatty acid,N-acylethanolamine,FALSE,TRUE,LIN only
+NAE(18:0),NAE(18:0),Other,Fatty Acyls,FA,Fatty acid,N-acylethanolamine,FALSE,TRUE,LIN only
+Oxo fatty acid (18:3),Oxo fatty acid (18:3),Other,Fatty Acyls,FA,Fatty acid,,TRUE,TRUE,Common
+trans-EKODE-(E)-Ib,trans-EKODE-(E)-Ib,Other,Fatty Acyls,FA,Fatty acid,Oxylipin,TRUE,FALSE,CTL only
+DG(12:0/12:0),"",DG,Glycerolipids,GL,Diacylglycerol,,TRUE,TRUE,Common
+DG(16:0/16:0),"",DG,Glycerolipids,GL,Diacylglycerol,"",TRUE,FALSE,CTL only
+DG(16:0/18:0),"",DG,Glycerolipids,GL,Diacylglycerol,DG,TRUE,FALSE,CTL only
+DG(16:0/18:1),"",DG,Glycerolipids,GL,Diacylglycerol,,TRUE,TRUE,Common
+DG(16:0/18:2),"",DG,Glycerolipids,GL,Diacylglycerol,DG,TRUE,TRUE,Common
+DG(16:0/18:3),"",DG,Glycerolipids,GL,Diacylglycerol,DG,TRUE,TRUE,Common
+DG(16:0/2:0),"",DG,Glycerolipids,GL,Diacylglycerol,"",TRUE,FALSE,CTL only
+DG(16:1/18:2),"",DG,Glycerolipids,GL,Diacylglycerol,DG,FALSE,TRUE,LIN only
+DG(16:1/18:3),"",DG,Glycerolipids,GL,Diacylglycerol,"",TRUE,TRUE,Common
+DG(18:0/18:0),"",DG,Glycerolipids,GL,Diacylglycerol,,TRUE,FALSE,CTL only
+DG(18:0/18:2),"",DG,Glycerolipids,GL,Diacylglycerol,"",TRUE,TRUE,Common
+DG(18:0/20:3),"",DG,Glycerolipids,GL,Diacylglycerol,DG,FALSE,TRUE,LIN only
+DG(18:1/18:2),"",DG,Glycerolipids,GL,Diacylglycerol,DG,TRUE,TRUE,Common
+DG(18:1/18:3),"",DG,Glycerolipids,GL,Diacylglycerol,"",TRUE,TRUE,Common
+DG(18:1/2:0),"",DG,Glycerolipids,GL,Diacylglycerol,,TRUE,TRUE,Common
+DG(18:2/18:2),"",DG,Glycerolipids,GL,Diacylglycerol,,TRUE,TRUE,Common
+DG(18:2/18:3),"",DG,Glycerolipids,GL,Diacylglycerol,"",TRUE,TRUE,Common
+DG(18:3/18:3),"",DG,Glycerolipids,GL,Diacylglycerol,DG,TRUE,TRUE,Common
+DG(8:0/8:0),"",DG,Glycerolipids,GL,Diacylglycerol,"",FALSE,TRUE,LIN only
+DGDG(16:0/18:1),"",DGDG,Glycerolipids,GL,Digalactosyldiacylglycerol,Digalactosyldiacylglycerol,TRUE,TRUE,Common
+DGDG(16:0/18:2),"",DGDG,Glycerolipids,GL,Digalactosyldiacylglycerol,"",TRUE,TRUE,Common
+DGDG(16:0/18:3),"",DGDG,Glycerolipids,GL,Digalactosyldiacylglycerol,Digalactosyldiacylglycerol,TRUE,TRUE,Common
+DGDG(18:0/18:2),"",DGDG,Glycerolipids,GL,Digalactosyldiacylglycerol,"",TRUE,TRUE,Common
+DGDG(18:0/18:3),"",DGDG,Glycerolipids,GL,Digalactosyldiacylglycerol,Digalactosyldiacylglycerol,TRUE,TRUE,Common
+DGDG(18:2/18:3),"",DGDG,Glycerolipids,GL,Digalactosyldiacylglycerol,"",TRUE,TRUE,Common
+DGDG(18:2/18:4),"",DGDG,Glycerolipids,GL,Digalactosyldiacylglycerol,Digalactosyldiacylglycerol,TRUE,TRUE,Common
+MG(12:0),MG(12:0),MG,Glycerolipids,GL,Monoacylglycerol,,TRUE,TRUE,Common
+MG(16:0),"",MG,Glycerolipids,GL,Monoacylglycerol,"",TRUE,TRUE,Common
+MG(16:1),"",MG,Glycerolipids,GL,Monoacylglycerol,,TRUE,FALSE,CTL only
+MG(18:0),"",MG,Glycerolipids,GL,Monoacylglycerol,"",TRUE,FALSE,CTL only
+MG(18:1),"",MG,Glycerolipids,GL,Monoacylglycerol,,TRUE,TRUE,Common
+MG(18:2),"",MG,Glycerolipids,GL,Monoacylglycerol,"",TRUE,TRUE,Common
+MG(18:3),"",MG,Glycerolipids,GL,Monoacylglycerol,,TRUE,TRUE,Common
+MG(20:4),"",MG,Glycerolipids,GL,Monoacylglycerol,"",TRUE,FALSE,CTL only
+MGDG(16:0/18:1),"",MGDG,Glycerolipids,GL,Monogalactosyldiacylglycerol,Monogalactosyldiacylglycerol,TRUE,TRUE,Common
+MGDG(16:0/18:3),"",MGDG,Glycerolipids,GL,Monogalactosyldiacylglycerol,"",TRUE,TRUE,Common
+MGDG(18:2/18:2),"",MGDG,Glycerolipids,GL,Monogalactosyldiacylglycerol,Monogalactosyldiacylglycerol,TRUE,TRUE,Common
+MGDG(18:2/18:3),"",MGDG,Glycerolipids,GL,Monogalactosyldiacylglycerol,"",TRUE,TRUE,Common
+MGDG(18:3/18:3),"",MGDG,Glycerolipids,GL,Monogalactosyldiacylglycerol,Monogalactosyldiacylglycerol,TRUE,TRUE,Common
+AEG(o-15:2/15:0),AEG(o-15:2/15:0),Other,Glycerolipids,GL,Acyl‑ether glycerol,AEG,TRUE,TRUE,Common
+AEG(o-16:2/16:0),AEG(o-16:2/16:0),Other,Glycerolipids,GL,Acyl‑ether glycerol,AEG,TRUE,TRUE,Common
+AEG(o-16:2/18:2),AEG(o-16:2/18:2),Other,Glycerolipids,GL,Acyl‑ether glycerol,AEG,TRUE,TRUE,Common
+AEG(o-16:3/16:0),AEG(o-16:3/16:0),Other,Glycerolipids,GL,Acyl‑ether glycerol,AEG,TRUE,TRUE,Common
+AEG(o-18:3/16:1),AEG(o-18:3/16:1),Other,Glycerolipids,GL,Acyl‑ether glycerol,AEG,TRUE,TRUE,Common
+AEG(o-18:4/16:1),AEG(o-18:4/16:1),Other,Glycerolipids,GL,Acyl‑ether glycerol,AEG,TRUE,TRUE,Common
+AEG(o-18:4/18:2),AEG(o-18:4/18:2),Other,Glycerolipids,GL,Acyl‑ether glycerol,AEG,TRUE,TRUE,Common
+DGTS(34:5),DGTS(34:5),Other,Glycerolipids,GL,,,FALSE,TRUE,LIN only
+Glycerol Tri-n-octanoate - 40.0 eV,Glycerol Tri-n-octanoate - 40.0 eV,Other,Glycerolipids,GL,Triacylglycerol,,FALSE,TRUE,LIN only
+Panaxcerol B,"",Other,Glycerolipids,GL,Monoacylglycerol,,TRUE,TRUE,Common
+SQDG(16:0/14:0),"",SQDG,Glycerolipids,GL,Sulfoquinovosyldiacylglycerol,SQDG,TRUE,TRUE,Common
+SQDG(16:0/16:0),"",SQDG,Glycerolipids,GL,Sulfoquinovosyldiacylglycerol,"",TRUE,TRUE,Common
+SQDG(16:0/18:0),"",SQDG,Glycerolipids,GL,Sulfoquinovosyldiacylglycerol,SQDG,TRUE,FALSE,CTL only
+SQDG(16:0/18:1),"",SQDG,Glycerolipids,GL,Sulfoquinovosyldiacylglycerol,"",TRUE,TRUE,Common
+SQDG(16:0/18:2),"",SQDG,Glycerolipids,GL,Sulfoquinovosyldiacylglycerol,SQDG,TRUE,TRUE,Common
+SQDG(16:0/18:3),"",SQDG,Glycerolipids,GL,Sulfoquinovosyldiacylglycerol,"",TRUE,TRUE,Common
+SQDG(16:1/18:3),"",SQDG,Glycerolipids,GL,Sulfoquinovosyldiacylglycerol,SQDG,TRUE,TRUE,Common
+SQDG(18:0/18:3),"",SQDG,Glycerolipids,GL,Sulfoquinovosyldiacylglycerol,"",TRUE,TRUE,Common
+SQDG(18:1/18:3),"",SQDG,Glycerolipids,GL,Sulfoquinovosyldiacylglycerol,SQDG,TRUE,TRUE,Common
+SQDG(18:2/18:3),"",SQDG,Glycerolipids,GL,Sulfoquinovosyldiacylglycerol,"",TRUE,TRUE,Common
+SQDG(18:3/18:3),"",SQDG,Glycerolipids,GL,Sulfoquinovosyldiacylglycerol,SQDG,TRUE,TRUE,Common
+TG(10:0/10:0/10:0),"",TG,Glycerolipids,GL,Triacylglycerol,,TRUE,TRUE,Common
+TG(10:0/10:0/14:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(10:0/12:0/14:0),"",TG,Glycerolipids,GL,Triacylglycerol,,TRUE,TRUE,Common
+TG(10:0/12:0/16:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(10:0/14:0/16:0),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(10:0/16:0/16:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(10:0/16:1/18:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,FALSE,CTL only
+TG(12:0/12:0/12:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(12:0/12:0/14:0),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(12:0/12:0/16:1),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,FALSE,CTL only
+TG(12:0/12:0/18:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,FALSE,CTL only
+TG(12:0/12:0/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,FALSE,CTL only
+TG(12:0/14:0/16:0),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(12:0/14:0/18:1),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(12:0/14:0/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,,TRUE,FALSE,CTL only
+TG(12:0/16:0/16:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(12:0/16:0/18:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(12:0/16:0/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,FALSE,CTL only
+TG(12:0/16:0/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(12:0/18:1/18:1),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,FALSE,CTL only
+TG(12:0/18:1/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,FALSE,CTL only
+TG(12:0/18:1/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(12:0/18:2/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(14:0/14:0/16:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(14:0/14:0/18:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,FALSE,CTL only
+TG(14:0/14:1/18:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,FALSE,TRUE,LIN only
+TG(14:0/16:0/16:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,FALSE,CTL only
+TG(14:0/16:0/18:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(14:0/16:0/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(14:0/16:1/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,TG,FALSE,TRUE,LIN only
+TG(14:0/16:1/22:6),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(14:0/18:1/18:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,FALSE,TRUE,LIN only
+TG(14:0/18:1/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(14:0/18:1/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(14:0/18:2/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(14:0/18:3/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(16:0/16:0/16:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(16:0/16:0/18:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(16:0/16:0/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,FALSE,CTL only
+TG(16:0/16:0/20:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(16:0/16:0/20:3),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(16:0/18:0/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(16:0/18:0/22:1),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(16:0/18:1/18:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,FALSE,CTL only
+TG(16:0/18:1/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(16:0/18:1/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(16:0/18:1/20:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(16:0/18:1/20:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,FALSE,CTL only
+TG(16:0/18:1/20:2),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(16:0/18:1/22:0),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(16:0/18:1/22:1),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,FALSE,CTL only
+TG(16:0/18:2/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(16:0/18:2/22:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(16:0/18:3/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(16:1/16:1/22:5),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(16:1/18:1/18:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,FALSE,CTL only
+TG(16:1/20:1/20:2),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(16:1/20:1/22:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,FALSE,CTL only
+TG(18:0/18:0/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(18:0/18:0/20:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,FALSE,CTL only
+TG(18:0/18:1/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(18:0/18:1/22:0),"",TG,Glycerolipids,GL,Triacylglycerol,TG,FALSE,TRUE,LIN only
+TG(18:0/18:2/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(18:0/18:2/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,TG,FALSE,TRUE,LIN only
+TG(18:0/18:2/20:1),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,FALSE,CTL only
+TG(18:0/18:2/22:0),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(18:1/18:1/18:1),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(18:1/18:1/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,TG,FALSE,TRUE,LIN only
+TG(18:1/18:1/20:3),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(18:1/18:2/18:2),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(18:1/18:2/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(18:1/18:2/22:0),"",TG,Glycerolipids,GL,Triacylglycerol,TG,FALSE,TRUE,LIN only
+TG(18:1/18:3/22:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(18:1/20:0/22:1),"",TG,Glycerolipids,GL,Triacylglycerol,,TRUE,FALSE,CTL only
+TG(18:1/20:1/22:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,FALSE,CTL only
+TG(18:1/20:3/22:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,TRUE,Common
+TG(18:2/18:2/18:4),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(18:2/18:2/20:2),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,FALSE,CTL only
+TG(18:2/18:2/22:1),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(18:2/18:3/20:1),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(18:2/18:3/20:3),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(18:2/18:3/22:1),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(18:2/20:2/22:2),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(18:2/20:3/21:0),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,FALSE,CTL only
+TG(18:2/20:3/22:0),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(18:2/22:0/22:3),"",TG,Glycerolipids,GL,Triacylglycerol,"",TRUE,FALSE,CTL only
+TG(18:3/18:3/18:3),"",TG,Glycerolipids,GL,Triacylglycerol,TG,TRUE,TRUE,Common
+TG(18:3/18:3/20:3),"",TG,Glycerolipids,GL,Triacylglycerol,"",FALSE,TRUE,LIN only
+TG(8:0/10:0/10:0),"",TG,Glycerolipids,GL,Triacylglycerol,TG,FALSE,TRUE,LIN only
+LPC(16:0),"",LPC,Glycerophospholipids,GP,Lysophosphatidylcholine,"",TRUE,TRUE,Common
+LPC(18:2),LPC(18:2),LPC,Glycerophospholipids,GP,Lysophosphatidylcholine,,TRUE,TRUE,Common
+LPC(18:3),LPC(18:3),LPC,Glycerophospholipids,GP,Glycerophosphocholine,Lysophosphatidylcholine,TRUE,TRUE,Common
+LPC(22:0),LPC(22:0),LPC,Glycerophospholipids,GP,Lysophosphatidylcholine,,TRUE,FALSE,CTL only
+LPE(16:0),"",LPE,Glycerophospholipids,GP,Lysophosphatidylethanolamine,"",TRUE,TRUE,Common
+1-heptadecanoyl-2-hydroxy-sn-glycero-3-phosphocholine,1-heptadecanoyl-2-hydroxy-sn-glycero-3-phosphocholine,Other,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,FALSE,TRUE,LIN only
+CL(18:1),CL(18:1),Other,Glycerophospholipids,GP,Cardiolipin,,TRUE,FALSE,CTL only
+NCGC00380283-01!4-[5-[[4-[5-[acetyl(hydroxy)amino]pentylamino]-4-oxobutanoyl]-hydroxyamino]pentylamino]-4-oxobutanoic acid,NCGC00380283-01!4-[5-[[4-[5-[acetyl(hydroxy)amino]pentylamino]-4-oxobutanoyl]-hydroxyamino]pentylamino]-4-oxobutanoic acid,Other,Glycerophospholipids,GP,Glycerophosphoethanolamine,Phosphatidylethanolamine,FALSE,TRUE,LIN only
+PA(16:0/18:1),"",PA,Glycerophospholipids,GP,Phosphatidic acid,,FALSE,TRUE,LIN only
+PA(16:0/18:2),"",PA,Glycerophospholipids,GP,Phosphatidic acid,"",TRUE,TRUE,Common
+PC(14:0/14:0),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,TRUE,Common
+PC(14:0/18:0),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(14:0/18:2),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,TRUE,Common
+PC(14:0/18:3),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(14:0/20:4),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,FALSE,CTL only
+PC(14:0/22:5),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(14:0/22:6),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,TRUE,Common
+PC(16:0/16:0),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(16:0/18:0),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,,TRUE,TRUE,Common
+PC(16:0/18:1),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(16:0/18:2),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,,TRUE,TRUE,Common
+PC(16:0/18:3),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(16:0/20:1),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,FALSE,TRUE,LIN only
+PC(16:0/20:3),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(16:0/20:4),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,TRUE,Common
+PC(16:0/20:5),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(16:0/22:5),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,TRUE,Common
+PC(16:0/22:6),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(16:1/16:1),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,TRUE,Common
+PC(16:1/18:2),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(16:1/20:4),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,FALSE,TRUE,LIN only
+PC(16:1/20:5),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",FALSE,TRUE,LIN only
+PC(16:2/16:1),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,FALSE,TRUE,LIN only
+PC(18:0/18:1),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(18:0/18:2),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,,TRUE,TRUE,Common
+PC(18:0/18:3),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(18:0/20:2),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,TRUE,Common
+PC(18:0/20:3),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(18:0/20:4),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,TRUE,Common
+PC(18:1/14:0),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,FALSE,CTL only
+PC(18:1/16:0),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,,TRUE,TRUE,Common
+PC(18:1/18:1),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(18:1/18:2),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,TRUE,Common
+PC(18:1/20:1),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(18:1/20:4),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,TRUE,Common
+PC(18:1/22:1),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,FALSE,CTL only
+PC(18:1/24:0),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,FALSE,CTL only
+PC(18:1/24:1),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",TRUE,TRUE,Common
+PC(18:2/18:2),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",FALSE,TRUE,LIN only
+PC(18:2/20:0),"",PC,Glycerophospholipids,GP,Glycerophosphocholine,Phosphatidylcholine,TRUE,TRUE,Common
+PC(18:2/20:4),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",FALSE,TRUE,LIN only
+PC(18:3/18:3),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,"",FALSE,TRUE,LIN only
+PC(22:1/22:1),"",PC,Glycerophospholipids,GP,Phosphatidylcholine,,TRUE,FALSE,CTL only
+PE(12:0/12:0),"",PE,Glycerophospholipids,GP,Phosphatidylethanolamine,"",TRUE,TRUE,Common
+PE(14:0/22:6),"",PE,Glycerophospholipids,GP,Glycerophosphoethanolamine,Phosphatidylethanolamine,TRUE,TRUE,Common
+PE(16:0/18:0),"",PE,Glycerophospholipids,GP,Glycerophosphoethanolamine,Phosphatidylethanolamine,TRUE,TRUE,Common
+PE(16:0/18:1),"",PE,Glycerophospholipids,GP,Phosphatidylethanolamine,"",TRUE,TRUE,Common
+PE(16:0/18:2),"",PE,Glycerophospholipids,GP,Glycerophosphoethanolamine,Phosphatidylethanolamine,TRUE,TRUE,Common
+PE(16:0/18:3),"",PE,Glycerophospholipids,GP,Phosphatidylethanolamine,"",TRUE,TRUE,Common
+PE(16:0/20:4),"",PE,Glycerophospholipids,GP,Glycerophosphoethanolamine,Phosphatidylethanolamine,TRUE,TRUE,Common
+PE(16:0/20:5),"",PE,Glycerophospholipids,GP,Phosphatidylethanolamine,"",TRUE,TRUE,Common
+PE(16:1/18:2),"",PE,Glycerophospholipids,GP,Glycerophosphoethanolamine,Phosphatidylethanolamine,FALSE,TRUE,LIN only
+PE(18:0/18:1),"",PE,Glycerophospholipids,GP,Phosphatidylethanolamine,"",TRUE,FALSE,CTL only
+PE(18:0/18:2),"",PE,Glycerophospholipids,GP,Glycerophosphoethanolamine,Phosphatidylethanolamine,TRUE,TRUE,Common
+PE(18:0/18:3),"",PE,Glycerophospholipids,GP,Phosphatidylethanolamine,"",FALSE,TRUE,LIN only
+PE(18:1/18:1),"",PE,Glycerophospholipids,GP,Phosphatidylethanolamine,,FALSE,TRUE,LIN only
+PE(18:1/18:2),"",PE,Glycerophospholipids,GP,Phosphatidylethanolamine,"",TRUE,FALSE,CTL only
+PE(18:2/18:2),"",PE,Glycerophospholipids,GP,Glycerophosphoethanolamine,Phosphatidylethanolamine,TRUE,TRUE,Common
+PE(18:2/18:3),"",PE,Glycerophospholipids,GP,Phosphatidylethanolamine,"",TRUE,TRUE,Common
+PE(18:3/18:3),"",PE,Glycerophospholipids,GP,Phosphatidylethanolamine,,TRUE,TRUE,Common
+PG(16:0/16:0),"",PG,Glycerophospholipids,GP,Phosphatidylglycerol,"",TRUE,TRUE,Common
+PG(16:0/18:0),"",PG,Glycerophospholipids,GP,Phosphatidylglycerol,,FALSE,TRUE,LIN only
+PG(16:0/18:1),"",PG,Glycerophospholipids,GP,Phosphatidylglycerol,"",TRUE,TRUE,Common
+PG(18:0/16:0),"",PG,Glycerophospholipids,GP,Phosphatidylglycerol,"",TRUE,FALSE,CTL only
+PS(18:0/18:2),"",PS,Glycerophospholipids,GP,Phosphatidylserine,"",TRUE,TRUE,Common
+PS(18:0/20:4),"",PS,Glycerophospholipids,GP,Phosphatidylserine,"",TRUE,FALSE,CTL only
+(-)-Caryophyllene oxide,(-)-Caryophyllene oxide,Other,Prenol Lipids,PR,Sesquiterpenoid,,TRUE,FALSE,CTL only
+.alpha.-Amyrin,.alpha.-Amyrin,Other,Prenol Lipids,PR,Triterpenoid,,TRUE,TRUE,Common
+.alpha.-Ionone,.alpha.-Ionone,Other,Prenol Lipids,PR,Monoterpenoid,Cyclic monoterpenoid,TRUE,FALSE,CTL only
+.beta.-Amyrin,.beta.-Amyrin,Other,Prenol Lipids,PR,Triterpenoid,Pentacyclic triterpenoid,TRUE,FALSE,CTL only
+.beta.-Amyrin acetate,.beta.-Amyrin acetate,Other,Prenol Lipids,PR,Triterpenoid,Pentacyclic triterpenoid,FALSE,TRUE,LIN only
+.beta.-Cryptoxanthin,.beta.-Cryptoxanthin,Other,Prenol Lipids,PR,Tetraterpenoid,Carotenoid,TRUE,TRUE,Common
+3-Epilupeol,3-Epilupeol,Other,Prenol Lipids,PR,Triterpenoid,Pentacyclic triterpenoid,FALSE,TRUE,LIN only
+Antheraxanthin,Antheraxanthin,Other,Prenol Lipids,PR,Tetraterpenoid,Xanthophyll carotenoid,TRUE,TRUE,Common
+Apocarotenal,Apocarotenal,Other,Prenol Lipids,PR,Tetraterpenoid,Apolar carotenoid,TRUE,TRUE,Common
+Cycloartenol acetate,Cycloartenol acetate,Other,Prenol Lipids,PR,Triterpenoid,Sterol precursor,TRUE,TRUE,Common
+Lupeol,Lupeol,Other,Prenol Lipids,PR,Triterpenoid,Pentacyclic triterpenoid,FALSE,TRUE,LIN only
+Lutein,Lutein,Other,Prenol Lipids,PR,Tetraterpenoid,Xanthophyll carotenoid,TRUE,TRUE,Common
+Lycopene,Lycopene,Other,Prenol Lipids,PR,Tetraterpenoid,Acyclic carotenoid,FALSE,TRUE,LIN only
+Ubidecarenone,Ubidecarenone,Other,Prenol Lipids,PR,Prenol,,TRUE,TRUE,Common
+Ubiquinone 9,Ubiquinone 9,Other,Prenol Lipids,PR,Prenol,,TRUE,TRUE,Common
+Vitamin K1,Vitamin K1,Other,Prenol Lipids,PR,Prenol,Vitmain,TRUE,TRUE,Common
+Zeaxanthin,Zeaxanthin,Other,Prenol Lipids,PR,Tetraterpenoid,Xanthophyll carotenoid,FALSE,TRUE,LIN only
+alpha-Tocopherol,alpha-Tocopherol,Other,Prenol Lipids,PR,Prenol,Vitamin,TRUE,TRUE,Common
+beta-Carotene,beta-Carotene,Other,Prenol Lipids,PR,Tetraterpenoid,Carotenoid,TRUE,TRUE,Common
+gibberellic acid,gibberellic acid,Other,Prenol Lipids,PR,Diterpenoid,Plant hormone,TRUE,TRUE,Common
+Cer(24:1),Cer(24:1),Other,Sphingolipids,SP,Sphingolipid,Ceramide,TRUE,TRUE,Common
+Cer(d18:2/20:1),Cer(d18:2/20:1),Other,Sphingolipids,SP,Sphingolipid,Ceramides,TRUE,FALSE,CTL only
+GalCer(d18:2/18:1),GalCer(d18:2/18:1),Other,Sphingolipids,SP,Sphingolipid,Glycosphingolipid,TRUE,TRUE,Common
+GalCer(d18:2/20:1),GalCer(d18:2/20:1),Other,Sphingolipids,SP,Sphingolipid,Glycosphingolipid,TRUE,TRUE,Common
+GalCer(d18:2/22:1),GalCer(d18:2/22:1),Other,Sphingolipids,SP,Sphingolipid,Glycosphingolipid,TRUE,FALSE,CTL only
+SPB 18:0;2OH,SPB 18:0;2OH,Other,Sphingolipids,SP,Sphingolipid,,TRUE,FALSE,CTL only
+.beta.-Sitosterol,.beta.-Sitosterol,Other,Sterol Lipids,ST,Sterol,Phytosterol,TRUE,TRUE,Common
+Fucosterol,Fucosterol,Other,Sterol Lipids,ST,Sterol,Oxysterol,FALSE,TRUE,LIN only
+gamma-sitosterol,gamma-sitosterol,Other,Sterol Lipids,ST,Sterol,Phytosterol,TRUE,TRUE,Common

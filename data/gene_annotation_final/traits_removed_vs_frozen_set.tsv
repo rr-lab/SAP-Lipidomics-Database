@@ -1,0 +1,6 @@
+Condition	Trait	Species	Genes	Reason
+CTL	TG(8:0_16:1_18:1)	TG(8:0/16:1/18:1)	1	species not in the frozen set
+LIN	13-Keto-9Z,11E-octadecadienoic acid	13-Keto-9Z,11E-octadecadienoic acid	420	species not in the frozen set
+LIN	TG(14:0_14:0_18:0)	TG(14:0/14:0/18:0)	2	species not detected in this trial after curation
+LIN	SM(d18:1_17:0)	SM(d18:1/17:0)	6	species not in the frozen set
+LIN	TG(18:0_18:2_20:1)	TG(18:0/18:2/20:1)	1	species not detected in this trial after curation

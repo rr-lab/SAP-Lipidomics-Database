@@ -274,9 +274,19 @@ shared_layer <- function(ly, ref_path) {
               Best_P_Value_CTL = bp_CTL, Best_P_Value_LIN = bp_LIN,
               N_Phenotypes_CTL = np_CTL, N_Phenotypes_LIN = np_LIN)
   if (file.exists(ref_path)) {
+    # Row order is carried over from the submitted file where the shared set is
+    # still the same one, so a diff against the submitted supplement shows only
+    # the cells that changed. Once the candidate set itself moves -- as it did
+    # when the deduplicated trait names were removed on 2026-09-30 -- there is no
+    # order to carry over and the table falls back to its own, by GeneID.
     ord <- vroom(ref_path, show_col_types = FALSE)$GeneID
-    stopifnot(setequal(ord, x$GeneID))
-    x <- x[match(ord, x$GeneID), ]
+    if (setequal(ord, x$GeneID)) {
+      x <- x[match(ord, x$GeneID), ]
+    } else {
+      message(sprintf("  %s: shared set has changed (%d rows here, %d in %s); ordering by GeneID",
+                      ly, nrow(x), length(ord), basename(ref_path)))
+      x <- x[order(x$GeneID), ]
+    }
   }
   # The submitted files were written by Python, which prints the shortest
   # mantissa that round-trips; %.6e then stripping trailing zeros reproduces it,

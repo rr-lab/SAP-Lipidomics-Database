@@ -91,8 +91,13 @@ pA <- ggplot() +
   coord_fixed(xlim = c(-1.7, 1.7), ylim = c(-1.6, 1.4)) +
   labs(x = NULL, y = NULL) +
   plot_theme +
-  theme(axis.text = element_blank(), axis.ticks = element_blank(),
-        axis.line = element_blank(), panel.grid = element_blank(),
+  # plot_theme sets axis.text.x, axis.text.y and panel.grid.major by name, and a
+  # value set on the child wins over the parent whatever the order, so blanking
+  # axis.text and panel.grid here leaves the -1/0/1 ticks and the grid showing
+  # behind the circles. The children have to be named.
+  theme(axis.text.x = element_blank(), axis.text.y = element_blank(),
+        axis.ticks = element_blank(), axis.line = element_blank(),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         strip.text = element_text(face = "bold", size = 13))
 
 # ---- B: fold enrichment against the resolution it is counted at --------------

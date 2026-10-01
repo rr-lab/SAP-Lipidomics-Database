@@ -3,8 +3,8 @@ SORBI_3008G081400,Major facilitator superfamily (MFS) profile domain-containing 
 SORBI_3008G081000,Uncharacterized protein,2,9,4.496153e-33
 SORBI_3008G081150,Uncharacterized protein,2,9,4.496153e-33
 SORBI_3008G081200,Major facilitator superfamily (MFS) profile domain-containing protein,2,9,4.496153e-33
-SORBI_3010G150600,Uncharacterized protein,2,10,1.414455e-18
-SORBI_3010G150700,PABC domain-containing protein,2,10,1.414455e-18
+SORBI_3010G150600,Uncharacterized protein,2,9,1.414455e-18
+SORBI_3010G150700,PABC domain-containing protein,2,9,1.414455e-18
 SORBI_3010G149800,Uncharacterized protein,2,5,1.414455e-18
 SORBI_3010G150100,WRKY transcription factor 19,2,5,1.414455e-18
 SORBI_3010G150200,F-box domain-containing protein,2,5,1.414455e-18
@@ -73,7 +73,7 @@ SORBI_3001G295500,Uncharacterized protein,2,2,1.165916e-12
 SORBI_3001G295600,Uncharacterized protein,2,2,1.165916e-12
 SORBI_3001G356300,Uncharacterized protein,2,10,1.182781e-12
 SORBI_3001G357200,RRM domain-containing protein,2,10,1.182781e-12
-SORBI_3003G079800,Protein kinase domain-containing protein,2,5,1.367717e-12
+SORBI_3003G079800,Protein kinase domain-containing protein,2,4,1.367717e-12
 SORBI_3001G259600,Protein TIFY,2,12,1.626147e-12
 SORBI_3005G125400,S-type anion channel SLAH3,2,2,2.08943e-12
 SORBI_3009G111000,Pectinesterase,2,11,2.113399e-12
@@ -94,8 +94,8 @@ SORBI_3010G126200,Uncharacterized protein,2,5,5.483313e-12
 SORBI_3010G125866,Uncharacterized protein,2,4,5.483313e-12
 SORBI_3010G126300,Uncharacterized protein,2,4,5.483313e-12
 SORBI_3001G257100,Protein BIG GRAIN 1-like,2,4,5.511164e-12
-SORBI_3010G150900,Uncharacterized protein,2,9,5.936528e-12
-SORBI_3010G151000,CMP-sialic acid transporter 1,2,9,5.936528e-12
+SORBI_3010G150900,Uncharacterized protein,2,8,5.936528e-12
+SORBI_3010G151000,CMP-sialic acid transporter 1,2,8,5.936528e-12
 SORBI_3008G105366,Uncharacterized protein,2,7,7.031297e-12
 SORBI_3010G151325,Protein FAR1-RELATED SEQUENCE,2,4,7.256755e-12
 SORBI_3001G021400,Tr-type G domain-containing protein,2,4,7.25892e-12
@@ -143,7 +143,7 @@ SORBI_3003G069950,Protein kinase domain-containing protein,2,2,3.624862e-11
 SORBI_3010G139600,Protein kinase domain-containing protein,2,4,3.943959e-11
 SORBI_3010G147500,phosphoribosylanthranilate isomerase,2,4,4.397667e-11
 SORBI_3010G140500,RING-type E3 ubiquitin transferase,2,4,5.034469e-11
-SORBI_3008G019000,NA,2,4,5.260074e-11
+SORBI_3008G019000,NA,2,3,5.260074e-11
 SORBI_3006G210600,Protein ENDOSPERM DEFECTIVE 1,2,9,5.298874e-11
 SORBI_3006G210700,Potassium transporter,2,9,5.298874e-11
 SORBI_3010G150701,Uncharacterized protein,2,3,5.401068e-11
@@ -276,8 +276,8 @@ SORBI_3003G185800,Uncharacterized protein,2,2,1.531726e-9
 SORBI_3003G185900,protein-serine_threonine phosphatase,2,2,1.531726e-9
 SORBI_3003G186000,RAVE complex protein Rav1 C-terminal domain-containing protein,2,2,1.531726e-9
 SORBI_3003G186200,RWP-RK domain-containing protein,2,2,1.531726e-9
-SORBI_3008G016900,glutamine--fructose-6-phosphate transaminase (isomerizing),2,3,1.605798e-9
-SORBI_3008G017100,PORR domain-containing protein,2,3,1.605798e-9
+SORBI_3008G016900,glutamine--fructose-6-phosphate transaminase (isomerizing),2,2,1.605801e-9
+SORBI_3008G017100,PORR domain-containing protein,2,2,1.605801e-9
 SORBI_3006G038000,Uncharacterized protein,2,4,1.732315e-9
 SORBI_3006G038050,Uncharacterized protein,2,4,1.732315e-9
 SORBI_3005G054700,NA,2,2,1.986563e-9

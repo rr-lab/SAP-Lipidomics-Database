@@ -1,5 +1,5 @@
 Trial	Table	Layer	Candidate_genes	Phenotypes_with_candidates	Genes_multi_phenotype	Median_phenotypes_per_gene	Max_phenotypes_per_gene	Min_P	LD_cutoff_r2	Loci_250kb	Genes_without_functional_annotation	Loci_250kb_both_layers	Candidate_genes_both_layers
-CTL	S7	individual	1062	47	586	2	13	1.551627e-16	0.4	351	27	358	1091
+CTL	S7	individual	1062	46	586	2	13	1.551627e-16	0.4	351	27	358	1091
 CTL	S8	sum_ratio	54	11	27	1.5	6	2.017612e-10	0.4	17	0	358	1091
-LIN	S10	sum_ratio	385	18	84	1	13	7.073687e-16	0.4	72	3	949	4376
-LIN	S9	individual	4370	74	1474	1	8	4.496153e-33	0.4	948	71	949	4376
+LIN	S10	sum_ratio	385	18	84	1	13	7.073687e-16	0.4	72	3	948	4373
+LIN	S9	individual	4367	70	1315	1	7	4.496153e-33	0.4	947	71	948	4373
