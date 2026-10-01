@@ -205,7 +205,7 @@ Because LD-mapped candidates are not independent, terms were also tested with a 
 Because GO nesting and shared candidate sets cause repeated signals, terms with identical candidate gene sets were merged, labeled by the most specific term, while retaining all merged terms, GO IDs, and lipid classes where the set appeared. This reduced 344 LD-aware significant terms to 217 distinct gene sets across 159 terms. We interpret only gene sets whose term draws on ≤30 background genes and that span ≥2 independent intervals. Of 87 within the background limit, 71 met the interval requirement. All 217 gene sets are listed in Supplementary Table~S2, with the uncollapsed per-term results in Supplementary Tables~S3 and S4 and the genes making up each enriched term in Supplementary Table~S5, so nothing excluded here is lost.
 
 \subsection*{Genomic heritability}
-Genomic heritability was estimated as $h^2 = V_g/(V_g+V_e)$ from $y = \mathbf{1}\mu + u + e$ with $u \sim N(0, K\sigma_g^2)$, where $K$ is a genomic relationship matrix built in PLINK~2 (\texttt{--make-rel square}) from the LD-pruned GWAS genotypes (\texttt{--indep-pairwise 50 5 0.2}). Variance components were estimated by REML using the eigendecomposition of $K$, reparameterised as $V=\sigma^2(h^2K+(1-h^2)I)$ to profile $h^2$ directly. Estimates matched \texttt{lme4} \citep{Bates2015lme4} within 0.0005 across 34 class-sum traits. We report 95\% profile-likelihood intervals. The $h^2$ was called non-zero when the interval excluded 0. 
+Genomic heritability was estimated as $h^2 = V_g/(V_g+V_e)$ from $y = \mathbf{1}\mu + u + e$ with $u \sim N(0, K\sigma_g^2)$, where $K$ is a genomic relationship matrix built in PLINK~2 (\texttt{--make-rel square}) from the LD-pruned GWAS genotypes (\texttt{--indep-pairwise 50 5 0.2}) covering 401 accessions.. Variance components were estimated by REML using the eigendecomposition of $K$, reparameterized as $V=\sigma^2(h^2K+(1-h^2)I)$ to profile $h^2$ directly. Estimates use the accessions of each trial present in it: 389 under CTL, 357 under LIN, and the 351 common to both for the paired comparison. Estimates matched \texttt{lme4} \citep{Bates2015lme4} within 0.0005 across 34 class-sum traits. We report 95\% profile-likelihood intervals. The $h^2$ was called non-zero when the interval excluded 0. 
 
 For per-species comparisons, CTL and LIN were fitted to the same 351 genotypes and 164 shared species, differing only by phenotype. Phenotypic variation per species was summarized as the coefficient of variation of \%TIC across genotypes and compared between trials using a paired Wilcoxon signed-rank test. Class sums were fitted for all accessions and species within each trial using summed, spatially corrected intensities transformed as $\log_{10}(x+1)$. CTL--LIN comparisons reflect trial contrasts, not nutrient-treatment effects.
 
@@ -251,14 +251,24 @@ The near-absence of heritable species under CTL is consistent with either less g
 
 \begin{table}[!ht]
 \centering
-\caption{\textbf{Heritable lipid species are concentrated under LIN and fall mainly on the plastid membrane classes.} Genomic heritability was estimated for every lipid species detected in a trial, on one genomic relationship matrix. Species, the number of species of that class in each trial; median $h^2$, the class median; $h^2>0$, the number whose 95\% profile-likelihood interval excludes zero; conditioned, the number still excluding zero under LIN once the three leading eigenvectors of the relationship matrix are fitted as fixed effects, which removes variance between genetic clusters. The two counts are not nested, because removing structure can sharpen a borderline signal as well as remove one. Classes follow the LIPID MAPS assignments in Supplementary Table~S1, so the 13 focal classes are named and everything else is Other. The paired CTL--LIN comparison in the text uses only the 164 species measured in both trials; this table describes each trial as measured. $^{\dagger}$Represented by a single species, whose entry describes that species rather than a class. $^{\S}$Fatty acids, ether lipids, sphingolipids and other minor categories.}
+\caption{\textbf{Heritable lipid species are concentrated under LIN and fall mainly
+on the plastid membrane classes.} Species, the number of that class detected in the
+trial; med.\ $h^2$, the class median; $n{>}0$, the number whose 95\%
+profile-likelihood interval excludes zero; cond., the number still excluding zero
+under LIN with the three leading eigenvectors of the relationship matrix fitted as
+fixed effects. The two counts are not nested, because removing structure can sharpen
+a borderline signal as well as remove one. Each trial is described as measured; the
+paired comparison in the text uses only the 164 species common to both.
+$^{\dagger}$A single species, so the entry describes that species, not a class.
+$^{\S}$Fatty acids, ether lipids, sphingolipids and other minor categories.}
 \label{tab:species_heritability}
 \small
+\setlength{\tabcolsep}{4pt}
 \begin{tabular}{lrrccccc}
 \toprule
 & \multicolumn{2}{c}{\textbf{Species}} & \multicolumn{2}{c}{\textbf{CTL}} & \multicolumn{3}{c}{\textbf{LIN}} \\
 \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-8}
-\textbf{Class} & CTL & LIN & median $h^2$ & $h^2>0$ & median $h^2$ & $h^2>0$ & conditioned \\
+\textbf{Class} & CTL & LIN & med.\ $h^2$ & $n{>}0$ & med.\ $h^2$ & $n{>}0$ & cond. \\
 \midrule
 TG & 67 & 66 & 0.084 & 19 & 0.190 & 25 & 28 \\
 PC & 36 & 38 & 0.000 & 0 & 0.095 & 7 & 7 \\
@@ -284,7 +294,15 @@ LPE$^{\dagger}$ & 1 & 1 & 0.000 & 0 & 0.020 & 0 & 0 \\
 
 \begin{table*}[!ht]
 \centering
-\caption{\textbf{The individual lipid species associated with ancestry, all of them under LIN.} Every species detected in a trial was tested against botanical race and against marker-based genetic cluster (Kruskal--Wallis, Benjamini--Hochberg corrected within trial and grouping; 214 species under CTL, 216 under LIN). No species reached $q<0.05$ under CTL for either grouping, and the nine below are the complete set under LIN. Genomic heritability for the same species is given beside the tests, before and after the three leading eigenvectors of the genomic relationship matrix are fitted as fixed effects; conditioned, whether the 95\% profile-likelihood interval still excludes zero. Class is the abbreviation carried in the species name where there is one and the LIPID MAPS category otherwise. $^{\ddagger}$This feature carries most of its signal in a small number of accessions and lies near the detection limit, so its association is reported for completeness and is not interpreted. Full per-species results are in Supplementary Table~S8.}
+\caption{\textbf{The individual lipid species associated with ancestry, all of them
+under LIN.} Every species detected in a trial was tested against botanical race and
+against marker-based genetic cluster (Kruskal--Wallis, Benjamini--Hochberg corrected
+within trial and grouping). No species reached $q<0.05$ under CTL for either
+grouping; the nine below are the complete LIN set. $\varepsilon^2$, effect size;
+$h^2$ cond., heritability with the three leading eigenvectors of the relationship
+matrix fitted as fixed effects; cond.\ $>0$, whether the 95\% interval still excludes
+zero. $^{\ddagger}$Most of this feature's signal sits in a few accessions near the
+detection limit, so it is reported for completeness and not interpreted.}
 \label{tab:species_ancestry}
 \small
 \begin{tabular}{llcccccccc}
@@ -325,14 +343,14 @@ associated with cluster membership.}
 
 \begin{table}[!ht]
 \centering
-\caption{\textbf{Genomic heritability of lipid-class sums, for the classes distinguishable from zero.}
-Estimated by profile likelihood against the marker-based relationship matrix, using every accession of each
-trial that is in the relationship matrix (389 under CTL, 357 under LIN) and every species of that class
-detected in that trial. The phenotype is the summed spatially corrected intensity of the class on the
-$\log_{10}$ scale, the same construction used for the per-species estimates above. Values are $h^2$ with
-the 95\% profile-likelihood interval in brackets; $^{*}$ marks an interval excluding zero, the criterion
-used throughout for calling a trait heritable. Four of the 17 classes meet it in one trial or the other.
-All 17 are in Supplementary Table~S12. $N$ is the number of species summed into the class in that trial.}
+\caption{\textbf{Genomic heritability of lipid-class sums, for the classes
+distinguishable from zero.} Estimated by profile likelihood against the
+marker-based relationship matrix, on the summed spatially corrected intensity of
+the class ($\log_{10}$ scale), using the accessions of each trial present in the
+matrix (389 CTL, 357 LIN). Values are $h^2$ with the 95\% profile-likelihood
+interval; $^{*}$ marks an interval excluding zero, the criterion used throughout.
+Four of the 17 classes meet it in one trial or the other; all 17 are in
+Supplementary Table~S12. $N$, species summed into the class in that trial.}
 \label{tab:classsum_h2}
 \small
 \begin{tabular}{lrlrl}
