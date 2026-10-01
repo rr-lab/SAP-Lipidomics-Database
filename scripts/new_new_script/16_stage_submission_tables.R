@@ -76,4 +76,16 @@ writeLines(md, file.path(REPO, "SUPP_TABLE_NUMBERING.md"))
 message(sprintf("staged %d tables to final/table/supp_tables/ and final_submission/supplementary_tables/", n))
 if (any(idx$cites == 0))
   message("NOT CITED in main.tex: ", paste(idx$table[idx$cites == 0], collapse = ", "))
+
+# The journal numbers supporting items in order of first citation, so the table
+# whose first mention is earliest must be S1. Checking it here means a later edit
+# that moves a section, as moving Materials and methods above Results did on
+# 2026-10-01, cannot leave the numbering silently out of order.
+ord_ok <- order(idx$line, na.last = TRUE)
+if (!identical(ord_ok, seq_len(nrow(idx)))) {
+  message("\nNUMBERING IS NOT IN CITATION ORDER. By first mention it should run")
+  message("  ", paste(idx$table[ord_ok], collapse = " "))
+  stop("renumber the TABLES list in 15_SuppTables_build_flat.R, then rebuild")
+}
+message("numbering is in order of first citation, S1 to S", nrow(idx))
 print(idx[, c("table", "title", "rows", "line", "cites")], row.names = FALSE)

@@ -109,51 +109,43 @@ T <- function(n, title, sheet, was, merge = NULL)
   list(n = n, title = title, sheet = sheet, was = was, merge = merge)
 
 TABLES <- list(
-  # -- population structure and ancestry, first mentioned in Results 1 ----------
-  T( 1, "Population_structure_group_sizes",   "Group composition",      "S24a"),
-  T( 2, "Population_structure_lipid_tests",   "Lipid tests",            "S24"),
-  T( 3, "Population_structure_PC_tests",      "PC tests",               "S24b"),
-  # -- genomic heritability ----------------------------------------------------
-  T( 4, "Heritability_per_species_structure", "Per-species struct+h2",  "S28"),
-  T( 5, "Heritability_per_species_paired",    "Per-species paired",     "S25"),
-  T( 6, "Heritability_structure_conditioned", "Structure-conditioned",  "S27"),
-  T( 7, "Heritability_class_sums",            "Class sums",             "S26"),
-  T( 8, "Heritability_ancestry_robustness",   "Ancestry robustness",    "S29"),
-  # -- the frozen species set, cited from the Table 2 caption onward ------------
-  T( 9, "Frozen_lipid_species_set",           "Frozen species set",     "S32"),
-  # -- class composition and contrasts -----------------------------------------
-  T(10, "Top_variance_lipids",                "Top-variance lipids",    "S4"),
-  T(11, "Class_composition_pctTIC",           "Composition pctTIC",     "S5D"),
-  T(12, "Class_contrasts_CLR_and_ALR",        "CLR and ALR contrasts",
-       c("S5A", "S5B"), merge_contrasts),
-  T(13, "Class_CLR_correlation_delta",        "CLR correlation delta",  "S5C"),
-  T(14, "Lipid_ratio_statistics",             "Ratio statistics",       "S1"),
-  # -- species inventory and stability -----------------------------------------
-  T(15, "Species_counts_by_class_and_category", "Species counts",
-       c("S6b", "S6c"), merge_counts),
-  T(16, "Composition_stability",              "Composition stability",  "S5G"),
-  # -- lipid ontology and chemical space ---------------------------------------
-  T(17, "LION_enrichment",                    "LION enrichment",        "S5E"),
-  T(18, "Chemical_space",                     "Chemical space",         "S5F"),
-  # -- GWAS candidate genes ----------------------------------------------------
-  T(19, "GWAS_candidates_CTL",                "CTL candidates",
-       c("S7", "S8"),  merge_candidates),
-  T(20, "GWAS_candidates_LIN",                "LIN candidates",
-       c("S9", "S10"), merge_candidates),
-  # -- GO enrichment -----------------------------------------------------------
-  T(21, "GO_loci_collapsed",                  "Loci collapsed",         "S16"),
-  T(22, "GO_BP_all_terms",                    "BP all terms",           "S17"),
-  T(23, "GO_MF_all_terms",                    "MF all terms",           "S18"),
-  T(24, "GO_genes_in_enriched_terms",         "Genes in enriched terms","S19"),
-  # -- CTL/LIN candidate overlap -----------------------------------------------
-  T(25, "Overlap_by_lipid_class",             "By lipid class",         "S30"),
-  T(26, "Shared_candidate_genes",             "Shared genes",
-       c("S31", "S22"), merge_shared),
-  # -- LINEX reaction mapping --------------------------------------------------
-  T(27, "LINEX_reactions_and_balance",        "Reactions and balance",
-       c("S11", "S12"), merge_reactions),
-  T(28, "LINEX_GWAS_gene_support",            "GWAS gene support",      "S13"),
-  T(29, "LINEX_branch_summary",               "Branch summary",         "S14")
+  # -- cited first, from Materials and methods -----------------------------------
+  T( 1, "Frozen_lipid_species_set",           "Frozen species set",      "S32"),
+  T( 2, "GO_loci_collapsed",                  "Loci collapsed",          "S16"),
+  T( 3, "GO_BP_all_terms",                    "BP all terms",            "S17"),
+  T( 4, "GO_MF_all_terms",                    "MF all terms",            "S18"),
+  T( 5, "GO_genes_in_enriched_terms",         "Genes in enriched terms", "S19"),
+  # -- population structure, ancestry and heritability ---------------------------
+  T( 6, "Population_structure_group_sizes",   "Group composition",       "S24a"),
+  T( 7, "Population_structure_lipid_tests",   "Lipid tests",             "S24"),
+  T( 8, "Heritability_per_species_structure", "Per-species struct+h2",   "S28"),
+  T( 9, "Population_structure_PC_tests",      "PC tests",                "S24b"),
+  T(10, "Heritability_per_species_paired",    "Per-species paired",      "S25"),
+  T(11, "Heritability_structure_conditioned", "Structure-conditioned",   "S27"),
+  T(12, "Heritability_class_sums",            "Class sums",              "S26"),
+  T(13, "Heritability_ancestry_robustness",   "Ancestry robustness",     "S29"),
+  # -- species inventory, composition and contrasts ------------------------------
+  T(14, "Species_counts_by_class_and_category", "Species counts",        c("S6b", "S6c"), merge_counts),
+  T(15, "Top_variance_lipids",                "Top-variance lipids",     "S4"),
+  T(16, "Class_composition_pctTIC",           "Composition pctTIC",      "S5D"),
+  T(17, "Class_contrasts_CLR_and_ALR",        "CLR and ALR contrasts",   c("S5A", "S5B"), merge_contrasts),
+  T(18, "Composition_stability",              "Composition stability",   "S5G"),
+  T(19, "Class_CLR_correlation_delta",        "CLR correlation delta",   "S5C"),
+  # -- lipid ontology and chemical space -----------------------------------------
+  T(20, "LION_enrichment",                    "LION enrichment",         "S5E"),
+  T(21, "Chemical_space",                     "Chemical space",          "S5F"),
+  # -- GWAS candidate genes ------------------------------------------------------
+  T(22, "GWAS_candidates_CTL",                "CTL candidates",          c("S7", "S8"), merge_candidates),
+  T(23, "GWAS_candidates_LIN",                "LIN candidates",          c("S9", "S10"), merge_candidates),
+  # -- CTL/LIN candidate overlap -------------------------------------------------
+  T(24, "Overlap_by_lipid_class",             "By lipid class",          "S30"),
+  T(25, "Shared_candidate_genes",             "Shared genes",            c("S31", "S22"), merge_shared),
+  # -- LINEX reaction mapping ----------------------------------------------------
+  T(26, "LINEX_reactions_and_balance",        "Reactions and balance",   c("S11", "S12"), merge_reactions),
+  T(27, "LINEX_GWAS_gene_support",            "GWAS gene support",       "S13"),
+  T(28, "LINEX_branch_summary",               "Branch summary",          "S14"),
+  # -- cited first from the Discussion -------------------------------------------
+  T(29, "Lipid_ratio_statistics",             "Ratio statistics",        "S1")
 )
 
 DROPPED <- c(
